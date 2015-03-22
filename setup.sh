@@ -51,3 +51,23 @@ echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'10. '$ENDCOLOR'Uninstall CouchPotato '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
+echo -n "What would you like to do [01-99]: "
+read option
+case $option in
+    1 | 01)
+        echo 'Install .bash_aliases'
+		;;
+    2 | 02)
+		echo 'Install SickBeard'
+		;;
+    99)
+       echo 'Exiting'
+	   sleep 1
+	   exit 0
+	   ;;
+    *)
+        echo 'Invalid Option'
+		ScriptLoc=$(readlink -f "$0")
+		sleep 1
+		exec $ScriptLoc
+esac

@@ -39,4 +39,3 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
-echo "test"

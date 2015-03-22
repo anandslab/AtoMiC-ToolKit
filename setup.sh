@@ -39,3 +39,13 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
+echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
+echo -e $YELLOW'02. '$ENDCOLOR'Install Sick Beard'
+echo -e $YELLOW'03. '$ENDCOLOR'Install SickRage'
+echo -e $YELLOW'04. '$ENDCOLOR'Install SickGear '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'05. '$ENDCOLOR'Install Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'06. '$ENDCOLOR'Install CouchPotato'
+echo -e $YELLOW'07. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
+echo -e $YELLOW'08. '$ENDCOLOR'Uninstall Sick Beard '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'10. '$ENDCOLOR'Uninstall CouchPotato '$CYAN'(coming soon)'$ENDCOLOR

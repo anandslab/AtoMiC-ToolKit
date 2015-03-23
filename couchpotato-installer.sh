@@ -64,7 +64,7 @@ fi
 
 echo 
 
-echo -n 'Type the username of the user you want to run Transmission as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
+echo -n 'Type the username of the user you want to run CouchPotato as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then

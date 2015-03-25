@@ -18,6 +18,7 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 </ul></li>
+<li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>
 <li>Correctly sets required permissions for trouble free downloads</li>
 <li>Allows running multiple apps (Sick Beard, SickRage, and SickGear) simultaneously for testing</li>

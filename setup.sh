@@ -42,15 +42,15 @@ echo
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'02. '$ENDCOLOR'Install Sick Beard'
 echo -e $YELLOW'03. '$ENDCOLOR'Install SickRage'
-echo -e $YELLOW'04. '$ENDCOLOR'Install SickGear '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'04. '$ENDCOLOR'Install SickGear'
 echo -e $YELLOW'05. '$ENDCOLOR'Install Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'06. '$ENDCOLOR'Install CouchPotato'
 echo -e $YELLOW'07. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
-echo -e $YELLOW'08. '$ENDCOLOR'Uninstall Sick Beard'$ENDCOLOR
-echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage'$ENDCOLOR
-echo -e $YELLOW'10. '$ENDCOLOR'Uninstall SickGear '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'08. '$ENDCOLOR'Uninstall Sick Beard'
+echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage'
+echo -e $YELLOW'10. '$ENDCOLOR'Uninstall SickGear'
 echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato'$ENDCOLOR
+echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato'
 echo -e $YELLOW'13. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard with Database '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'15. '$ENDCOLOR'Backup SickRage with Database '$CYAN'(coming soon)'$ENDCOLOR
@@ -71,6 +71,9 @@ case $option in
     3 | 03)
     		sudo ./sickrage-installer.sh
     		;;
+    4 | 04)
+    		sudo ./sickgear-installer.sh
+    		;;
     6 | 06)
     		sudo ./couchpotato-installer.sh
     		;;
@@ -82,6 +85,9 @@ case $option in
     		;;
     9 | 09)
     		sudo ./sickrage-uninstaller.sh
+    		;;
+    10)
+    		sudo ./sickgear-uninstaller.sh
     		;;
     12) 
     		sudo ./couchpotato-uninstaller.sh

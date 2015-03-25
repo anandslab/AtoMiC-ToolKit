@@ -109,7 +109,7 @@ sleep 1
 
 echo -e $YELLOW'--->Downloading latest SickBeard...'$ENDCOLOR
 cd /home/$UNAME
-git clone git://github.com/midgetspy/Sick-Beard.git .sickbeard || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+git clone https://github.com/midgetspy/Sick-Beard.git .sickbeard || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
 chmod 775 -R /home/$UNAME/.sickbeard >/dev/null 2>&1
 sudo chown $UNAME: /home/$UNAME/.sickbeard >/dev/null 2>&1
 

@@ -92,6 +92,7 @@ sleep 1
 echo -e $YELLOW'--->Copying .bash_aliases...'$ENDCOLOR
 cd /home/$UNAME
 cp $SCRIPTPATH/.bash_aliases . || { echo -e $RED'.bash_aliases not copied.'$ENDCOLOR ; exit 1; }
+sudo chown $UNAME: .bash_aliases >/dev/null 2>&1
 chmod 755 .bash_aliases >/dev/null 2>&1
 
 echo

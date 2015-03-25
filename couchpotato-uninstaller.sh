@@ -90,7 +90,7 @@ sudo rm /etc/init.d/couchpotato || { echo -e $RED'Warning! Removing init script 
 echo
 sleep 1
 
-read -p 'You may keep CouchPotato installation files as a backup or reinstalling later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+read -p 'You may keep CouchPotato installation files as a backup or for reinstalling later. Do you want to keep the files? Type y/Y and press [ENTER]: '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 

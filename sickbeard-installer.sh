@@ -28,6 +28,10 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
+function pause(){
+   read -p "$*"
+}
+
 clear
 echo 
 echo -e $RED
@@ -75,7 +79,7 @@ fi
 echo
 
 echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
-sudo apt-get update
+#sudo apt-get update
 
 echo
 sleep 1
@@ -88,9 +92,8 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous versions of SickBeard...'$ENDCOLOR
 sleep 1
-sudo /etc/init.d/sickbeard* stop >/dev/null 2>&1
-sudo killall sickbeard* >/dev/null 2>&1
-echo -e 'Any running SickBeard processes killed'
+sudo /etc/init.d/sickbeard stop >/dev/null 2>&1
+echo -e 'Any running SickBeard processes stopped'
 sleep 1
 sudo update-rc.d -f sickbeard remove >/dev/null 2>&1
 sudo rm /etc/init.d/sickbeard >/dev/null 2>&1
@@ -106,7 +109,7 @@ sleep 1
 
 echo -e $YELLOW'--->Downloading latest SickBeard...'$ENDCOLOR
 cd /home/$UNAME
-git clone git://github.com/midgetspy/Sick-Beard.git /home/$UNAME/.sickbeard || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+git clone git://github.com/midgetspy/Sick-Beard.git .sickbeard || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
 chmod 775 -R /home/$UNAME/.sickbeard >/dev/null 2>&1
 sudo chown $UNAME: /home/$UNAME/.sickbeard >/dev/null 2>&1
 
@@ -158,7 +161,7 @@ echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC Sick Beard install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
-sleep 5
-URL=http://www.htpcbeginner.com/atomic-thanks
-[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
+
+pause 'Press [Enter] key to continue...'
+
+sudo $SCRIPTPATH/./setup.sh

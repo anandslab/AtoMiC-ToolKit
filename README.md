@@ -13,7 +13,7 @@ Features features of AtoMiC ToolKit include:
 <li>Sick Beard - Install, Uninstall, and Backup / Restore</li>
 <li>SickRage - Install, Uninstall, and Backup / Restore</li>
 <li>SickGear - Install, Uninstall, and Backup / Restore</li>
-<li>Sonarr - Install, Uninstall, and Backup / Restore</li>
+<li>Sonarr (formerly NzbDrone) - Install, Uninstall, and Backup / Restore</li>
 <li>CouchPotato - Install, Uninstall, and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>

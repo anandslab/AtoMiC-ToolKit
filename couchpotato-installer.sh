@@ -29,6 +29,10 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
+function pause(){
+   read -p "$*"
+}
+
 clear
 echo 
 echo -e $RED
@@ -89,9 +93,8 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous versions of CouchPotato...'$ENDCOLOR
 sleep 1
-sudo /etc/init.d/couchpotato* stop >/dev/null 2>&1
-sudo killall couchpotato* >/dev/null 2>&1
-echo -e 'Any running CouchPotato processes killed'
+sudo /etc/init.d/couchpotato stop >/dev/null 2>&1
+echo -e 'Any running CouchPotato processes stopped'
 sleep 1
 sudo update-rc.d -f couchpotato remove >/dev/null 2>&1
 sudo rm /etc/init.d/couchpotato >/dev/null 2>&1
@@ -150,7 +153,8 @@ echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
-sleep 5
-URL=http://www.htpcbeginner.com/atomic-thanks
-[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
+
+pause 'Press [Enter] key to continue...'
+
+cd $SCRIPTPATH
+sudo ./setup.sh

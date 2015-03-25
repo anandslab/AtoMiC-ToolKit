@@ -47,15 +47,15 @@ echo -e $YELLOW'05. '$ENDCOLOR'Install Sonarr / NzbDrone '$CYAN'(coming soon)'$E
 echo -e $YELLOW'06. '$ENDCOLOR'Install CouchPotato'
 echo -e $YELLOW'07. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
 echo -e $YELLOW'08. '$ENDCOLOR'Uninstall Sick Beard'$ENDCOLOR
-echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage'$ENDCOLOR
 echo -e $YELLOW'10. '$ENDCOLOR'Uninstall SickGear '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato'$ENDCOLOR
 echo -e $YELLOW'13. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard with Database'$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'15. '$ENDCOLOR'Backup SickRage with Database'$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'16. '$ENDCOLOR'Backup SickGear with Database'$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'17. '$ENDCOLOR'Backup CouchPotato with Database'$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'15. '$ENDCOLOR'Backup SickRage with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'16. '$ENDCOLOR'Backup SickGear with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'17. '$ENDCOLOR'Backup CouchPotato with Database '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo
@@ -63,11 +63,11 @@ echo -n "What would you like to do [01-99]: "
 read option
 case $option in
     1 | 01)
-         	sudo ./bashaliases-installer.sh
-		;;
+         	sudo ./bash_aliases-installer.sh
+			;;
     2 | 02)
-		sudo ./sickbeard-installer.sh
-		;;
+			sudo ./sickbeard-installer.sh
+			;;
     3 | 03)
     		sudo ./sickrage-installer.sh
     		;;
@@ -90,21 +90,20 @@ case $option in
     		sudo ./transmission-webui-uninstaller.sh
     		;;
     99)
-       echo 'Exiting'
-	   sleep 1
-	   ;;
+		echo 'Exiting...'
+		sleep 1
+		echo
+		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
+		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
+		echo
+		sleep 5
+		URL=http://www.htpcbeginner.com/atomic-thanks
+		[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
+		path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
+		;;
     *)
         echo 'Invalid Option'
 		ScriptLoc=$(readlink -f "$0")
 		sleep 1
 		exec $ScriptLoc
 esac
-
-echo
-echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
-echo
-sleep 5
-URL=http://www.htpcbeginner.com/atomic-thanks
-[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1

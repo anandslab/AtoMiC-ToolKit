@@ -25,6 +25,10 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
+function pause(){
+   read -p "$*"
+}
+
 clear
 echo 
 echo -e $RED
@@ -60,7 +64,7 @@ fi
 
 echo 
 
-echo -n 'Type the username of the user you installed Sick Rage as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
+echo -n 'Type the username of the user you installed SickRage as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
@@ -69,9 +73,46 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
   exit 0
 fi
 
-sudo service sickrage stop
-sudo update-rc.d -f sickrage remove
-sudo rm /etc/default/sickrage
-sudo rm /etc/init.d/sickrage
-cd ~
-sudo rm -r .sickrage
+echo
+sleep 1
+
+echo -e $YELLOW'--->Stopping SickRage...'$ENDCOLOR
+sudo /etc/init.d/sickrage stop >/dev/null 2>&1
+
+echo
+sleep 1
+
+echo -e $YELLOW'--->Removing SickRage Autostart scripts...'$ENDCOLOR
+sudo update-rc.d -f sickrage remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
+sudo rm /etc/default/sickrage || { echo -e $RED'Warning! Removing default script failed.'$ENDCOLOR ; }
+sudo rm /etc/init.d/sickrage || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
+
+echo
+sleep 1
+
+read -p 'You may keep SickRage installation files as a backup or reinstalling later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+FILEDEL=${REPLY,,}
+
+if [ "$FILEDEL" != "y" ] 
+then
+	echo
+	echo -e $YELLOW'--->Deleting SickRage files from '$CYAN'/home/'$UNAME'/.sickrage'$YELLOW'...'$ENDCOLOR
+	sudo rm -r /home/$UNAME/.sickrage
+else
+	echo
+	echo -e $YELLOW'--->Keeping SickRage files in '$CYAN'/home/'$UNAME'/.sickrage'$YELLOW'...'$ENDCOLOR
+fi
+
+echo
+sleep 1
+
+echo -e $GREEN'--->All done. SickRage Uninstalled.'$ENDCOLOR
+echo
+echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
+echo -e $YELLOW'Thank you for using the AtoMiC SickRage install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo
+
+pause 'Press [Enter] key to continue...'
+
+cd $SCRIPTPATH
+sudo ./setup.sh

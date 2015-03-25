@@ -90,9 +90,8 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous versions of SickRage...'$ENDCOLOR
 sleep 1
-sudo /etc/init.d/sickrage* stop >/dev/null 2>&1
-sudo killall sickrage* >/dev/null 2>&1
-echo -e 'Any running SickRage processes killed'
+sudo /etc/init.d/sickrage stop >/dev/null 2>&1
+echo -e 'Any running SickRage processes stopped'
 sleep 1
 sudo update-rc.d -f sickrage remove >/dev/null 2>&1
 sudo rm /etc/init.d/sickrage >/dev/null 2>&1
@@ -168,4 +167,5 @@ echo
 
 pause 'Press [Enter] key to continue...'
 
-sudo $SCRIPTPATH/./setup.sh
+cd $SCRIPTPATH
+sudo ./setup.sh

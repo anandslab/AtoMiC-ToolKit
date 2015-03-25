@@ -114,4 +114,5 @@ echo
 
 pause 'Press [Enter] key to continue...'
 
-sudo $SCRIPTPATH/./setup.sh
+cd $SCRIPTPATH
+sudo ./setup.sh

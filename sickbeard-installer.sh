@@ -79,7 +79,7 @@ fi
 echo
 
 echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
-#sudo apt-get update
+sudo apt-get update
 
 echo
 sleep 1
@@ -164,4 +164,5 @@ echo
 
 pause 'Press [Enter] key to continue...'
 
-sudo $SCRIPTPATH/./setup.sh
+cd $SCRIPTPATH
+sudo ./setup.sh

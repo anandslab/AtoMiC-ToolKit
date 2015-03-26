@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Sick Beard installer
+# Script Name: AtoMiC Sick Beard Installer
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -64,6 +64,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	cd $SCRIPTPATH
 	sudo ./setup.sh
 fi
+UGROUP=($(id -gn $UNAME))
 
 echo
 
@@ -99,8 +100,8 @@ sleep 1
 echo -e $YELLOW'--->Downloading latest SickBeard...'$ENDCOLOR
 cd /home/$UNAME
 git clone https://github.com/midgetspy/Sick-Beard.git .sickbeard || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
-chmod 775 -R /home/$UNAME/.sickbeard >/dev/null 2>&1
-sudo chown $UNAME: /home/$UNAME/.sickbeard >/dev/null 2>&1
+sudo chown -R $UNAME:$UGROUP /home/$UNAME/.sickbeard >/dev/null 2>&1
+sudo chmod 775 -R /home/$UNAME/.sickbeard >/dev/null 2>&1
 
 echo
 sleep 1

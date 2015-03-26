@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickGear installer
+# Script Name: AtoMiC SickGear Installer
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -64,6 +64,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	cd $SCRIPTPATH
 	sudo ./setup.sh
 fi
+UGROUP=($(id -gn $UNAME))
 
 echo
 
@@ -99,8 +100,8 @@ sleep 1
 echo -e $YELLOW'--->Downloading latest SickGear...'$ENDCOLOR
 cd /home/$UNAME
 git clone https://github.com/SickGear/SickGear /home/$UNAME/.sickgear || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
-chmod 775 -R /home/$UNAME/.sickgear >/dev/null 2>&1
-sudo chown $UNAME: /home/$UNAME/.sickgear >/dev/null 2>&1
+sudo chown -R $UNAME:$UGROUP /home/$UNAME/.sickgear >/dev/null 2>&1
+sudo chmod 775 -R /home/$UNAME/.sickgear >/dev/null 2>&1
 
 echo
 sleep 1

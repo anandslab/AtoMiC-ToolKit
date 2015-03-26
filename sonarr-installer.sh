@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Sonarr / NzbDrone installer
+# Script Name: AtoMiC Sonarr / NzbDrone Installer
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

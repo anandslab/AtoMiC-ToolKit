@@ -1,20 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC SickGear Uninstaller
-# Author: htpcBeginner.com
+# Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
-# Version: 1.0 (March 23, 2015) - Initial Release
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# License: MIT License (refer to README.md for more details)
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
@@ -45,10 +33,10 @@ echo
 echo -e $YELLOW'--->SickGear uninstallation will start soon. Please read the following carefully.'$ENDCOLOR
 
 echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
-echo -e '2. While several testing runs identified no known issues, www.htpcBeginner.com or the authors cannot be held accountable for any problems that might occur due to the script.'
+echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
 echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
 echo -e '4. By proceeding you authorize this script to uninstall any relevant files/packages.'
-echo -e '5. Best used to uninstall SickGear installed using AtoMiC ToolKit or htpcbeginner.com guides.'
+echo -e '5. Best used to uninstall SickGear installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
 
 echo
 
@@ -59,7 +47,9 @@ if [ "$RESP" != "y" ]
 then
 	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
 	echo
-	exit 0
+	pause 'Press [Enter] key to continue...'
+	cd $SCRIPTPATH
+	sudo ./setup.sh
 fi
 
 echo 
@@ -68,9 +58,11 @@ echo -n 'Type the username of the user you installed SickGear as and press [ENTE
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
-  echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
-  echo
-  exit 0
+	echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
+	echo
+	pause 'Press [Enter] key to continue...'
+	cd $SCRIPTPATH
+	sudo ./setup.sh
 fi
 
 echo
@@ -106,10 +98,11 @@ fi
 echo
 sleep 1
 
-echo -e $GREEN'--->All done. SickGear Uninstalled.'$ENDCOLOR
+echo -e $GREEN'--->All done.'$ENDCOLOR
+echo -e 'SickGear Uninstalled.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC SickGear install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC SickGear uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'

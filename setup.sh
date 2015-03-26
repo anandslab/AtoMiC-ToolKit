@@ -1,21 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC ToolKit
-# Author: htpcBeginner.com
+# Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
-# Version: 1.0 (March 15, 2015) - Initial Release
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# License: MIT License (refer to README.md for more details)
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
@@ -43,13 +30,13 @@ echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administ
 echo -e $YELLOW'02. '$ENDCOLOR'Install Sick Beard'
 echo -e $YELLOW'03. '$ENDCOLOR'Install SickRage'
 echo -e $YELLOW'04. '$ENDCOLOR'Install SickGear'
-echo -e $YELLOW'05. '$ENDCOLOR'Install Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'05. '$ENDCOLOR'Install Sonarr / NzbDrone'
 echo -e $YELLOW'06. '$ENDCOLOR'Install CouchPotato'
 echo -e $YELLOW'07. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
 echo -e $YELLOW'08. '$ENDCOLOR'Uninstall Sick Beard'
 echo -e $YELLOW'09. '$ENDCOLOR'Uninstall SickRage'
 echo -e $YELLOW'10. '$ENDCOLOR'Uninstall SickGear'
-echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sonarr / NzbDrone '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sonarr / NzbDrone'
 echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato'
 echo -e $YELLOW'13. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard with Database '$CYAN'(coming soon)'$ENDCOLOR
@@ -74,6 +61,9 @@ case $option in
     4 | 04)
     		sudo ./sickgear-installer.sh
     		;;
+    5 | 05)
+    		sudo ./sonarr-installer.sh
+    		;;
     6 | 06)
     		sudo ./couchpotato-installer.sh
     		;;
@@ -89,6 +79,9 @@ case $option in
     10)
     		sudo ./sickgear-uninstaller.sh
     		;;
+    11)
+    		sudo ./sonarr-uninstaller.sh
+    		;;
     12) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
@@ -97,8 +90,8 @@ case $option in
     		;;
     99)
 		echo 'Exiting...'
-		sleep 1
 		echo
+		sleep 1
 		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
 		echo

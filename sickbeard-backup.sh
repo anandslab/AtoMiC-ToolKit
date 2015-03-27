@@ -65,13 +65,46 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 fi
 UGROUP=($(id -gn $UNAME))
 
+echo
+sleep 1
+
+echo -e $YELLOW'--->Creating a list of files to backup...'$ENDCOLOR
 cd $SCRIPTPATH
 cp sickbeard-backup-files sb-backup-files
 sudo sed -i 's/UNAME/'$UNAME'/g' sickbeard-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
-tar -zcvf sickbeard_`date '+%m-%d-%Y_%H-%M'`.tar.gz --files-from sb-backup-files
-sudo chown $UNAME:$UGROUP sickbeard_`date '+%m-%d-%Y_%H-%M'`.tar.gz
-sudo chmod 755 sickbeard_`date '+%m-%d-%Y_%H-%M'`.tar.gz
-mv sickbeard_`date '+%m-%d-%Y_%H-%M'`.tar.gz /home/$UNAME/
+
+echo
+sleep 1
+
+echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
+BFN=sickbeard_`date '+%m-%d-%Y_%H-%M'`
+tar -zcvf $BFN.tar.gz --files-from sb-backup-files
+echo -e "Following files were backed up:"
+less sb-backup-files
 rm sb-backup-files
+
+echo
+sleep 1
+echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/$UNAME/'$BFN'.tar.gz...'$ENDCOLOR
+sudo chown $UNAME:$UGROUP $BFN.tar.gz
+sudo chmod 755 $BFN.tar.gz
+mv $BFN.tar.gz /home/$UNAME/
+
+sleep 1
+
+echo
+echo -e $GREEN'--->All done. '$ENDCOLOR
+echo -e 'Sick Beard files backed up. You can use the restore utility to restore it on a new computer.'
+echo
+echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
+echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo
+
+pause 'Press [Enter] key to continue...'
+
+cd $SCRIPTPATH
+sudo ./setup.sh
+
+
 
 

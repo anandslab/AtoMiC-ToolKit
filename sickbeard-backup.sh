@@ -80,7 +80,7 @@ echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
 BFN=sickbeard_`date '+%m-%d-%Y_%H-%M'`
 tar -zcvf $BFN.tar.gz --files-from sb-backup-files
 echo -e "Following files were backed up:"
-less sb-backup-files
+cat sb-backup-files
 rm sb-backup-files
 
 echo

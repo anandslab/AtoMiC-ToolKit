@@ -1,5 +1,5 @@
 # AtoMiC-ToolKit
-AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mated <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter ToolKit) is a tool that is developed by www.htpcbeginner.com to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, and maintaining download server apps. 
+AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by www.htpcbeginner.com to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, and maintaining download server apps. 
 
 <h2>Key Features</h2>
 Features features of AtoMiC ToolKit include:
@@ -17,6 +17,8 @@ Features features of AtoMiC ToolKit include:
 <li>CouchPotato - Install, Uninstall, and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
+<li>SABnzbd+ - Install and Uninstall</li>
+<li>NZBGet - Install and Uninstall</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

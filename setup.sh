@@ -13,6 +13,10 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
+function pause(){
+   read -p "$*"
+}
+
 clear
 echo 
 echo -e $RED
@@ -26,7 +30,7 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
-echo -e $YELLOW'00. '$ENDCOLOR'Check for AtoMiC ToolKit Updates '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'00. '$ENDCOLOR'Check for AtoMiC ToolKit Updates'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo
 echo -e $YELLOW'10. '$ENDCOLOR'Install Sick Beard'
@@ -67,7 +71,14 @@ echo -n "What would you like to do [01-99]: "
 read option
 case $option in
     0 | 00)
-         	git pull
+			echo
+         	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
+			git pull
+			echo
+			pause 'Press [Enter] key to continue...'
+			cd $SCRIPTPATH
+			sudo ./setup.sh
+			exit 0
 			;;
 	1 | 01)
          	sudo ./bash_aliases-installer.sh

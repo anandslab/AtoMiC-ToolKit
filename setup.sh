@@ -80,7 +80,7 @@ case $option in
          	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
 			git pull
 			echo
-			pause 'Press [Enter] key to continue...'
+			pause 'Press [Enter] restart and continue...'
 			cd $SCRIPTPATH
 			sudo ./setup.sh
 			exit 0

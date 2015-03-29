@@ -19,6 +19,7 @@ function pause(){
 
 if [ "$EUID" -ne 0 ]
   then echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo ./setup.sh'
+  echo
   exit 0
 fi
 

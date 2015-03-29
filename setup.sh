@@ -17,6 +17,11 @@ function pause(){
    read -p "$*"
 }
 
+if [ "$EUID" -ne 0 ]
+  then echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo ./setup.sh'
+  exit 0
+fi
+
 clear
 echo 
 echo -e $RED
@@ -75,7 +80,7 @@ case $option in
          	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
 			git pull
 			echo
-			pause 'Press [Enter] key to continue...'
+			pause 'Press [Enter] to restart and continue...'
 			cd $SCRIPTPATH
 			sudo ./setup.sh
 			exit 0

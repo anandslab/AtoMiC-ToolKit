@@ -18,7 +18,9 @@ function pause(){
 }
 
 if [ "$EUID" -ne 0 ]
-  then echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo ./setup.sh'
+  then 
+  echo
+  echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo ./setup.sh'
   echo
   exit 0
 fi
@@ -36,7 +38,7 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
-echo -e $YELLOW'00. '$ENDCOLOR'Check for AtoMiC ToolKit Updates'
+echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo
 echo -e $YELLOW'10. '$ENDCOLOR'Install Sick Beard'

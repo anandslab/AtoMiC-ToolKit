@@ -50,6 +50,7 @@ then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo 
@@ -63,6 +64,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo
@@ -102,10 +104,11 @@ echo -e $GREEN'--->All done.'$ENDCOLOR
 echo -e 'SickBeard Uninstalled.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC Sick Beard uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC Sick Beard Uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
 sudo ./setup.sh
+exit 0

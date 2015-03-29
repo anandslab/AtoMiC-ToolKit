@@ -49,6 +49,7 @@ then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo 
@@ -62,6 +63,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo
@@ -98,10 +100,11 @@ echo -e 'Please visit '$CYAN' http://www.htpcbeginner.com/create-shortcut-to-com
 echo -e 'Please read .bash_aliases file for all available shortcut commands.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC .bash_aliases install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC .bash_aliases Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
 sudo ./setup.sh
+exit 0

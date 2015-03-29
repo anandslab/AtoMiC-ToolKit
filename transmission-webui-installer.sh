@@ -51,6 +51,7 @@ then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo 
@@ -64,6 +65,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
 
@@ -222,10 +224,11 @@ echo -e 'Note down the the Transmission directories created above. Transmission 
 echo -e 'If you everything works, you may delete'$CYAN $SCRIPTPATH $ENDCOLOR'folder and reboot.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC Sick Beard install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC Transmission WebUI Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
 sudo ./setup.sh
+exit 0

@@ -50,6 +50,7 @@ then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo 
@@ -63,6 +64,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
 
@@ -140,10 +142,11 @@ echo -e 'If not you can start it using '$CYAN'/etc/init.d/couchpotato start'$END
 echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
 sudo ./setup.sh
+exit 0

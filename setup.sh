@@ -39,10 +39,13 @@ echo -e $YELLOW'10. '$ENDCOLOR'Uninstall SickGear'
 echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sonarr / NzbDrone'
 echo -e $YELLOW'12. '$ENDCOLOR'Uninstall CouchPotato'
 echo -e $YELLOW'13. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard with Database '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'15. '$ENDCOLOR'Backup SickRage with Database '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'16. '$ENDCOLOR'Backup SickGear with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'14. '$ENDCOLOR'Backup SickBeard Database and Settings'
+echo -e $YELLOW'15. '$ENDCOLOR'Backup SickRage Database and Settings'
+echo -e $YELLOW'16. '$ENDCOLOR'Backup SickGear Database and Settings'
 echo -e $YELLOW'17. '$ENDCOLOR'Backup CouchPotato with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'18. '$ENDCOLOR'Restore Sick Beard Database and Settings'
+echo -e $YELLOW'19. '$ENDCOLOR'Restire SickRage Database and Settings'
+echo -e $YELLOW'20. '$ENDCOLOR'Restore SickGear Database and Settings'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo
@@ -85,13 +88,27 @@ case $option in
     12) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
-    13)
-    		sudo ./transmission-webui-uninstaller.sh
+    14)
+    		sudo ./sickbeard-backup.sh
+    		;;
+    15)
+    		sudo ./sickrage-backup.sh
+    		;;
+    16)
+    		sudo ./sickgear-backup.sh
+    		;;
+	18)
+    		sudo ./sickbeard-restore.sh
+    		;;
+    19)
+    		sudo ./sickrage-restore.sh
+    		;;
+    20)
+    		sudo ./sickgear-restore.sh
     		;;
     99)
 		echo 'Exiting...'
 		echo
-		sleep 1
 		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
 		echo

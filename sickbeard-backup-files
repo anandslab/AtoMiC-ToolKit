@@ -1,3 +1,5 @@
-/home/htpcbeginner/.sickbeard/config.ini
-/home/htpcbeginner/.sickbeard/sickbeard.db
-/home/htpcbeginner/.sickbeard/autoProcessTV/autoProcessTV.cfg
+/home/UNAME/.sickbeard/config.ini
+/home/UNAME/.sickbeard/sickbeard.db
+/home/UNAME/.sickbeard/cache.db
+/home/UNAME/.sickbeard/failed.db
+/home/UNAME/.sickbeard/autoProcessTV/autoProcessTV.cfg

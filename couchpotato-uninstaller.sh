@@ -50,6 +50,7 @@ then
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
+	exit 0
 fi
 
 echo 
@@ -62,7 +63,8 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh0
+	sudo ./setup.sh
+	exit 0
 fi
 
 echo
@@ -102,10 +104,11 @@ echo -e $GREEN'--->All done.'$ENDCOLOR
 echo -e 'CouchPotato Uninstalled.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC CouchPotato Uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
 sudo ./setup.sh
+exit 0

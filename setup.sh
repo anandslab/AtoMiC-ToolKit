@@ -80,7 +80,7 @@ read option
 case $option in
     0 | 00)
 			echo
-         	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
+	         	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
 			git pull
 			echo
 			pause 'Press [Enter] to restart and continue...'

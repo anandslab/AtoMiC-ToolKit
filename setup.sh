@@ -78,78 +78,78 @@ echo
 echo -n "What would you like to do [01-99]: "
 read option
 case $option in
-    0 | 00)
-			echo
-	         	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
-			git pull
-			echo
-			pause 'Press [Enter] to restart and continue...'
-			cd $SCRIPTPATH
-			sudo ./setup.sh
-			exit 0
-			;;
+	0 | 00)
+		echo
+	        	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
+		git pull
+		echo
+		pause 'Press [Enter] to restart and continue...'
+		cd $SCRIPTPATH
+		sudo ./setup.sh
+		exit 0
+		;;
 	1 | 01)
          	sudo ./bash_aliases-installer.sh
-			;;
+		;;
 			
-    10)
-			sudo ./sickbeard-installer.sh
-			;;
-    11) 
+    	10)
+		sudo ./sickbeard-installer.sh
+		;;
+    	11) 
     		sudo ./sickbeard-uninstaller.sh
     		;;
-    12)
+    	12)
     		sudo ./sickbeard-backup.sh
     		;;
 	13)
     		sudo ./sickbeard-restore.sh
     		;;
-			
-    20)
+    	
+    	20)
     		sudo ./sickrage-installer.sh
     		;;
-    21)
+    	21)
     		sudo ./sickrage-uninstaller.sh
     		;;
-    22)
+    	22)
     		sudo ./sickrage-backup.sh
     		;;
-    23)
+    	23)
     		sudo ./sickrage-restore.sh
     		;;
 			
-    30)
+    	30)
     		sudo ./sickgear-installer.sh
     		;;
-    31)
+    	31)
     		sudo ./sickgear-uninstaller.sh
     		;;
-    32)
+    	32)
     		sudo ./sickgear-backup.sh
     		;;
-    33)
+    	33)
     		sudo ./sickgear-restore.sh
     		;;
 			
-    40)
+    	40)
     		sudo ./sonarr-installer.sh
     		;;
-    41)
+    	41)
     		sudo ./sonarr-uninstaller.sh
     		;;
 			
-    50)
+    	50)
     		sudo ./couchpotato-installer.sh
     		;;
-    51) 
+    	51) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
 			
-    60)
+    	60)
     		sudo ./transmission-webui-installer.sh
     		;;
 
-    99)
+    	99)
 		echo 'Exiting...'
 		echo
 		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
@@ -160,8 +160,8 @@ case $option in
 		[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
 		path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
 		;;
-    *)
-        echo -e $RED'Invalid Option'$ENDCOLOR
+    	*)
+        	echo -e $RED'Invalid Option'$ENDCOLOR
 		ScriptLoc=$(readlink -f "$0")
 		sleep 1
 		exec $ScriptLoc

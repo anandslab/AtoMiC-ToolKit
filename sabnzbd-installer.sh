@@ -20,9 +20,9 @@ function pause(){
 clear
 echo 
 echo -e $RED
-echo -e " - -- -- - - -+-++-++-+++ +-++-+-+++++++-+--+ +-++-++-+"
-echo -e " ¦¦¦¦¦¦¦¦¦ +-¦ ¦ +-+¦  +-++¦ ¦ -¦¦¦¦¦¦¦+¦ +-+ ¦  ¦ ¦¦¦¦"
-echo -e " +-++-++-+o- - - -  +-++-++-++-+-+++++++-+-+-o+-++-+- -"
+echo -e " ┬ ┬┬ ┬┬ ┬ ┬ ┬┌┬┐┌─┐┌─┐┌┐ ┌─┐┌─┐┬┌┐┌┌┐┌┌─┐┬─┐ ┌─┐┌─┐┌┬┐"
+echo -e " │││││││││ ├─┤ │ ├─┘│  ├┴┐├┤ │ ┬│││││││├┤ ├┬┘ │  │ ││││"
+echo -e " └┴┘└┴┘└┴┘o┴ ┴ ┴ ┴  └─┘└─┘└─┘└─┘┴┘└┘┘└┘└─┘┴└─o└─┘└─┘┴ ┴"
 echo -e $CYAN
 echo -e "                __     __           "
 echo -e "  /\ |_ _ |\/|./      (_  _ _. _ |_ "
@@ -68,9 +68,12 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 fi
 UGROUP=($(id -gn $UNAME))
 
-
 sudo add-apt-repository ppa:jcfp/ppa
 sudo apt-get update
+
 sudo nano /etc/default/sabnzbdplus
 USER=$UNAME
+For remote access:
 HOST=0.0.0.0
+sudo service sabnzbdplus restart
+

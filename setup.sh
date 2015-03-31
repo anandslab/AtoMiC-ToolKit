@@ -70,8 +70,8 @@ echo
 #echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install '$CYAN'(coming soon)'$ENDCOLOR
 #echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
+echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall'
 echo
 #echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
 #echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
@@ -153,6 +153,12 @@ case $option in
     		sudo ./transmission-webui-installer.sh
     		;;
 
+	70)
+    		sudo ./sabnzbd-installer.sh
+    		;;
+	71)
+    		sudo ./sabnzbd-uninstaller.sh
+    		;;
     	99)
 		echo 'Exiting...'
 		echo

@@ -27,7 +27,7 @@ Features features of AtoMiC ToolKit include:
 <li>And best of all its FREE!</li>
 </ul>
 
-Note that all features have not yet been implemented yet. 
+Note that AtoMiC ToolKit is Beta stage. While extensive testing has been done, there be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
 
 <h2>More Information</h2>
-Visit www.htpcbeginner.com for more information.
+Visit http://www.htpcbeginner.com/atomic-toolkit for more information.

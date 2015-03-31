@@ -1,4 +1,4 @@
-# AtoMiC-ToolKit
+# AtoMiC-ToolKit (Beta)
 <img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-ft-300x162.jpg" alt="atomic-toolkit-ft" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by www.htpcbeginner.com to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, and maintaining download server apps. 
 
 <h2>Key Features</h2>

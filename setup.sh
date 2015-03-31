@@ -61,16 +61,19 @@ echo -e $YELLOW'41. '$ENDCOLOR'Uninstall Sonarr / NzbDrone'
 echo
 echo -e $YELLOW'50. '$ENDCOLOR'Install CouchPotato'
 echo -e $YELLOW'51. '$ENDCOLOR'Uninstall CouchPotato'
-echo -e $YELLOW'52. '$ENDCOLOR'Backup CouchPotato with Database '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'52. '$ENDCOLOR'Backup CouchPotato Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'60. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
 echo -e $YELLOW'61. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
 echo
+echo -e $YELLOW'65. '$ENDCOLOR'Install qBittorrent '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'66. '$ENDCOLOR'Uninstall qBittorrent '$CYAN'(coming soon)'$ENDCOLOR
+echo
 echo -e $YELLOW'70. '$ENDCOLOR'Install SABNzbd+ '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'71. '$ENDCOLOR'Uninstall SABNzbd+ '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'80. '$ENDCOLOR'Install NZBGet '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'81. '$ENDCOLOR'Uninstall NZBGet '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'75. '$ENDCOLOR'Install NZBGet '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'76. '$ENDCOLOR'Uninstall NZBGet '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 

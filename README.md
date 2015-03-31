@@ -29,5 +29,12 @@ Features features of AtoMiC ToolKit include:
 
 Note that AtoMiC ToolKit is in Beta stage. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
 
+<h2>Installation and Usage</h2>
+[code]
+sudo apt-get -y install git-core
+[/code]
+
+Next, clone the AtoMiC ToolKit project from GitHub:
+
 <h2>More Information</h2>
 Visit <a href="http://www.htpcbeginner.com/atomic-toolkit/">AtoMiC ToolKit</a> page on on htpcBeginner.com.

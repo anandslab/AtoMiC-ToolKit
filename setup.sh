@@ -41,39 +41,40 @@ echo
 echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo
-echo -e $YELLOW'10. '$ENDCOLOR'Install Sick Beard'
-echo -e $YELLOW'11. '$ENDCOLOR'Uninstall Sick Beard'
-echo -e $YELLOW'12. '$ENDCOLOR'Backup SickBeard Database and Settings'
-echo -e $YELLOW'13. '$ENDCOLOR'Restore Sick Beard Database and Settings'
+echo -e $YELLOW'10. '$ENDCOLOR'Sick Beard - Install'
+echo -e $YELLOW'11. '$ENDCOLOR'Sick Beard - Uninstall'
+echo -e $YELLOW'12. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
+echo -e $YELLOW'13. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
 echo
-echo -e $YELLOW'20. '$ENDCOLOR'Install SickRage'
-echo -e $YELLOW'21. '$ENDCOLOR'Uninstall SickRage'
-echo -e $YELLOW'22. '$ENDCOLOR'Backup SickRage Database and Settings'
-echo -e $YELLOW'23. '$ENDCOLOR'Restore SickRage Database and Settings'
+echo -e $YELLOW'20. '$ENDCOLOR'SickRage - Install'
+echo -e $YELLOW'21. '$ENDCOLOR'SickRage - Uninstall'
+echo -e $YELLOW'22. '$ENDCOLOR'SickRage - Backup Database and Settings'
+echo -e $YELLOW'23. '$ENDCOLOR'SickRage - Restore Database and Settings'
 echo
-echo -e $YELLOW'30. '$ENDCOLOR'Install SickGear'
-echo -e $YELLOW'31. '$ENDCOLOR'Uninstall SickGear'
-echo -e $YELLOW'32. '$ENDCOLOR'Backup SickGear Database and Settings'
-echo -e $YELLOW'33. '$ENDCOLOR'Restore SickGear Database and Settings'
+echo -e $YELLOW'30. '$ENDCOLOR'SickGear - Install'
+echo -e $YELLOW'31. '$ENDCOLOR'SickGear - Uninstall'
+echo -e $YELLOW'32. '$ENDCOLOR'SickGear - Backup Database and Settings'
+echo -e $YELLOW'33. '$ENDCOLOR'SickGear - Restore Database and Settings'
 echo
-echo -e $YELLOW'40. '$ENDCOLOR'Install Sonarr / NzbDrone'
-echo -e $YELLOW'41. '$ENDCOLOR'Uninstall Sonarr / NzbDrone'
+echo -e $YELLOW'40. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
+echo -e $YELLOW'41. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
 echo
-echo -e $YELLOW'50. '$ENDCOLOR'Install CouchPotato'
-echo -e $YELLOW'51. '$ENDCOLOR'Uninstall CouchPotato'
-echo -e $YELLOW'52. '$ENDCOLOR'Backup CouchPotato Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'50. '$ENDCOLOR'CouchPotato - Install'
+echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
+echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'60. '$ENDCOLOR'Install Transmission with WebUI (no Desktop GUI)'
-echo -e $YELLOW'61. '$ENDCOLOR'Uninstall Transmission with WebUI '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
+echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'65. '$ENDCOLOR'Install qBittorrent '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'66. '$ENDCOLOR'Uninstall qBittorrent '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'70. '$ENDCOLOR'Install SABNzbd+ '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'71. '$ENDCOLOR'Uninstall SABNzbd+ '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'75. '$ENDCOLOR'Install NZBGet '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'76. '$ENDCOLOR'Uninstall NZBGet '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 

@@ -61,20 +61,20 @@ echo -e $YELLOW'41. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
 echo
 echo -e $YELLOW'50. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
-echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
-echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
-echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
-echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
+#echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 

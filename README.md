@@ -33,9 +33,9 @@ Note that AtoMiC ToolKit is in Beta stage. While extensive testing has been done
 Clone repository on any Ubuntu based distro and execute the setup.sh bash script file. 
 
 <pre>
-git clone https://github.com/htpcBeginner/AtoMiC-ToolKit
-cd ~/AtoMiC-ToolKit
-sudo ./setup.sh
+$ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit
+$ cd ~/AtoMiC-ToolKit
+$ sudo ./setup.sh
 </pre>
 
 For more information on installation and usage, visit <a href="http://www.htpcbeginner.com/atomic-toolkit/">AtoMiC ToolKit</a> page on on htpcBeginner.com.

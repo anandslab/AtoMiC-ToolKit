@@ -64,8 +64,6 @@ echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI
 echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall'
 echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
 echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall'
-#echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
-#echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo

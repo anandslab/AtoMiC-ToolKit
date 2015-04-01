@@ -59,7 +59,7 @@ echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
 echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
 echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
 echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
-#echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall'
 echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
 echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall'
 echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
@@ -147,6 +147,9 @@ case $option in
 			
     60)
     		sudo ./transmission-webui-installer.sh
+    		;;
+    61)
+    		sudo ./transmission-webui-uninstaller.sh
     		;;
     		
 	65)

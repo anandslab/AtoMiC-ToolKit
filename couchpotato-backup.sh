@@ -80,10 +80,10 @@ sleep 1
 
 echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
 BFN=couchpotato_`date '+%m-%d-%Y_%H-%M'`
-tar -zcvf $BFN.tar.gz --files-from sg-backup-files
+tar -zcvf $BFN.tar.gz --files-from cp-backup-files
 echo -e "Following files were backed up:"
-cat sg-backup-files
-rm sg-backup-files
+cat cp-backup-files
+rm cp-backup-files
 
 echo
 sleep 1

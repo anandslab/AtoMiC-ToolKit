@@ -93,8 +93,10 @@ sudo rm /etc/default/sickgear >/dev/null 2>&1
 echo -e 'Existing SickGear init scripts removed'
 sleep 1
 sudo update-rc.d -f sickgear remove >/dev/null 2>&1
-mv /home/$UNAME/.sickgear /home/$UNAME/.sickrage_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-echo -e 'Any existing SickGear files were moved to '$CYAN'/home/'$UNAME'/.sickrage_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+if [ ! -d "/home/$UNAME/.sickgear" ]; then
+	mv /home/$UNAME/.sickgear /home/$UNAME/.sickrage_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing SickGear files were moved to '$CYAN'/home/'$UNAME'/.sickrage_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+fi
 
 echo
 sleep 1

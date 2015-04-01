@@ -56,8 +56,8 @@ echo -e $YELLOW'40. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
 echo -e $YELLOW'41. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
 echo -e $YELLOW'50. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
-#echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
-#echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
+echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
+echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
 echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
 #echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
 echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
@@ -137,6 +137,12 @@ case $option in
     		;;
     51) 
     		sudo ./couchpotato-uninstaller.sh
+    		;;
+    52)
+    		sudo ./couchpotato-backup.sh
+    		;;
+    53) 
+    		sudo ./couchpotato-restore.sh
     		;;
 			
     60)

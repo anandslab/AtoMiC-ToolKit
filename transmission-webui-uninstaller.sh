@@ -106,6 +106,22 @@ fi
 echo
 sleep 1
 
+read -p 'You may keep Transmission downloads folder that has completed and incomplete downloads. Do you want to keep the folders? Type y/Y and press [ENTER]: '
+FILEDELE=${REPLY,,}
+
+if [ "$FILEDELE" != "y" ] 
+then
+	echo
+	echo -e $YELLOW'--->Deleting Transmission downloads folder '$CYAN'/home/'$UNAME'/Downloads/transmission'$YELLOW'...'$ENDCOLOR
+	sudo rm -r /home/$UNAME/Downloads/transmission >/dev/null 2>&1
+else
+	echo
+	echo -e $YELLOW'--->Keeping Transmission downloads folder '$CYAN'/home/'$UNAME'/Downloads/transmission'$YELLOW'...'$ENDCOLOR
+fi
+
+echo
+sleep 1
+
 echo -e $GREEN'--->All done.'$ENDCOLOR
 echo -e 'Transmission Uninstalled.'
 echo

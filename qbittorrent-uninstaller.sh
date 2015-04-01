@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickRage Backup Script
+# Script Name: AtoMiC qBittorrent Uninstaller
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -28,14 +28,15 @@ echo -e "                __     __           "
 echo -e "  /\ |_ _ |\/|./      (_  _ _. _ |_ "
 echo -e " /--\|_(_)|  ||\__    __)(_| ||_)|_ "
 echo -e "                              |     "
-echo -e $GREEN'AtoMiC SickRage Backup Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC qBittorrent Uninstaller Script'$ENDCOLOR
 echo 
-echo -e $YELLOW'--->SickRage backup will start soon. Please read the following carefully.'$ENDCOLOR
+echo -e $YELLOW'--->qBittorrent uninstallation will start soon. Please read the following carefully.'$ENDCOLOR
 
 echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
 echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
 echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
-echo -e '4. Best used to backup SickRage installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
+echo -e '4. By proceeding you authorize this script to uninstall any relevant files/packages.'
+echo -e '5. Best used to uninstall qBittorrent installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
 
 echo
 
@@ -54,52 +55,62 @@ fi
 
 echo 
 
-echo -n 'Type the username of the user you run SickRage as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
+echo -n 'Type the username of the user you installed SickBeard as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
-	echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
+  echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
 	sudo ./setup.sh
 	exit 0
 fi
-UGROUP=($(id -gn $UNAME))
 
 echo
 sleep 1
 
-echo -e $YELLOW'--->Creating a list of files to backup...'$ENDCOLOR
-cd $SCRIPTPATH
-cp sickrage-backup-files sr-backup-files
-sudo sed -i 's/UNAME/'$UNAME'/g' sickrage-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
+echo -e $YELLOW'--->Stopping qBittorrent...'$ENDCOLOR
+sudo service qbittorrent-nox stop >/dev/null 2>&1
+sudo killall qbittorrent-nox >/dev/null 2>&1
 
 echo
 sleep 1
 
-echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
-BFN=sickrage_`date '+%m-%d-%Y_%H-%M'`
-tar -zcvf $BFN.tar.gz --files-from sr-backup-files
-echo -e "Following files were backed up:"
-cat sr-backup-files
-rm sr-backup-files
+echo -e $YELLOW'--->Uninstalling qBittorrent...'$ENDCOLOR
+sudo apt-get -y remove qbittorrent-nox
 
 echo
 sleep 1
-echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/$UNAME/'$BFN'.tar.gz...'$ENDCOLOR
-sudo chown $UNAME:$UGROUP $BFN.tar.gz
-sudo chmod 755 $BFN.tar.gz
-mv $BFN.tar.gz /home/$UNAME/
 
-sleep 1
+echo -e $YELLOW'--->Removing qBittorrent Autostart scripts...'$ENDCOLOR
+sudo update-rc.d -f qbittorrent-nox-daemon remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
+sudo rm /etc/init.d/qbittorrent-nox-daemon || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
 
 echo
-echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e 'SickRage files backed up. You can use the restore utility to restore it on a new computer.'
+sleep 1
+
+read -p 'You may keep qBittorrent configuration files in case you want to reinstall later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+FILEDEL=${REPLY,,}
+
+if [ "$FILEDEL" != "y" ] 
+then
+	echo
+	echo -e $YELLOW'--->Deleting qBittorrent files from '$CYAN'/home/'$UNAME'/.config/qBittorrent'$YELLOW'...'$ENDCOLOR
+	sudo rm -r /home/$UNAME/.config/qBittorrent >/dev/null 2>&1
+else
+	echo
+	echo -e $YELLOW'--->Keeping qBittorrent files in '$CYAN'/home/'$UNAME'/.config/qBittorrent'$YELLOW'...'$ENDCOLOR
+fi
+
+echo
+sleep 1
+
+echo -e $GREEN'--->All done.'$ENDCOLOR
+echo -e 'qBittorrent Uninstalled.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC SickRage Backup script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC qBittorrent Uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'
@@ -107,6 +118,3 @@ pause 'Press [Enter] key to continue...'
 cd $SCRIPTPATH
 sudo ./setup.sh
 exit 0
-
-
-

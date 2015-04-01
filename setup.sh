@@ -40,42 +40,32 @@ echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
 echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
-echo
 echo -e $YELLOW'10. '$ENDCOLOR'Sick Beard - Install'
 echo -e $YELLOW'11. '$ENDCOLOR'Sick Beard - Uninstall'
 echo -e $YELLOW'12. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
 echo -e $YELLOW'13. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
-echo
 echo -e $YELLOW'20. '$ENDCOLOR'SickRage - Install'
 echo -e $YELLOW'21. '$ENDCOLOR'SickRage - Uninstall'
 echo -e $YELLOW'22. '$ENDCOLOR'SickRage - Backup Database and Settings'
 echo -e $YELLOW'23. '$ENDCOLOR'SickRage - Restore Database and Settings'
-echo
 echo -e $YELLOW'30. '$ENDCOLOR'SickGear - Install'
 echo -e $YELLOW'31. '$ENDCOLOR'SickGear - Uninstall'
 echo -e $YELLOW'32. '$ENDCOLOR'SickGear - Backup Database and Settings'
 echo -e $YELLOW'33. '$ENDCOLOR'SickGear - Restore Database and Settings'
-echo
 echo -e $YELLOW'40. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
 echo -e $YELLOW'41. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
-echo
 echo -e $YELLOW'50. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
 #echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
 #echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings '$CYAN'(coming soon)'$ENDCOLOR
-echo
 echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
 #echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
-echo
-#echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install '$CYAN'(coming soon)'$ENDCOLOR
-#echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
-echo
+echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
+echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall'
 echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
 echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall'
-echo
 #echo -e $YELLOW'75. '$ENDCOLOR'NZBGet - Install '$CYAN'(coming soon)'$ENDCOLOR
 #echo -e $YELLOW'76. '$ENDCOLOR'NZBGet - Uninstall '$CYAN'(coming soon)'$ENDCOLOR
-echo
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo
@@ -96,63 +86,70 @@ case $option in
          	sudo ./bash_aliases-installer.sh
 		;;
 			
-    	10)
+    10)
 		sudo ./sickbeard-installer.sh
 		;;
-    	11) 
+    11) 
     		sudo ./sickbeard-uninstaller.sh
     		;;
-    	12)
+    12)
     		sudo ./sickbeard-backup.sh
     		;;
 	13)
     		sudo ./sickbeard-restore.sh
     		;;
     	
-    	20)
+    20)
     		sudo ./sickrage-installer.sh
     		;;
-    	21)
+    21)
     		sudo ./sickrage-uninstaller.sh
     		;;
-    	22)
+    22)
     		sudo ./sickrage-backup.sh
     		;;
-    	23)
+    23)
     		sudo ./sickrage-restore.sh
     		;;
 			
-    	30)
+    30)
     		sudo ./sickgear-installer.sh
     		;;
-    	31)
+    31)
     		sudo ./sickgear-uninstaller.sh
     		;;
-    	32)
+    32)
     		sudo ./sickgear-backup.sh
     		;;
-    	33)
+    33)
     		sudo ./sickgear-restore.sh
     		;;
 			
-    	40)
+    40)
     		sudo ./sonarr-installer.sh
     		;;
-    	41)
+    41)
     		sudo ./sonarr-uninstaller.sh
     		;;
 			
-    	50)
+    50)
     		sudo ./couchpotato-installer.sh
     		;;
-    	51) 
+    51) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
 			
-    	60)
+    60)
     		sudo ./transmission-webui-installer.sh
     		;;
-
+    		
+	65)
+			sudo ./qbittorrent-installer.sh
+    		;;
+    66)
+    		sudo ./qbittorrent-uninstaller.sh
+    		;;
+    		
 	70)
     		sudo ./sabnzbd-installer.sh
     		;;

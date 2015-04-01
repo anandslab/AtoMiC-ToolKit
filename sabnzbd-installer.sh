@@ -83,7 +83,7 @@ echo
 sleep 1
 
 echo -e $YELLOW"--->Refreshing packages list again..."$ENDCOLOR
-#sudo apt-get update
+sudo apt-get update
 
 echo
 sleep 1

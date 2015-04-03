@@ -137,7 +137,7 @@ echo -e 'If not you can start it using '$CYAN'sudo service qbittorrent-nox-daemo
 echo -e 'Then open '$CYAN'http://localhost:8085'$ENDCOLOR' in your browser. The default username and password are admin and adminadmin, respectively'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-echo -e $YELLOW'Thank you for using the AtoMiC Sonarr Install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo -e $YELLOW'Thank you for using the AtoMiC qBittorrent Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
 pause 'Press [Enter] key to continue...'

@@ -93,7 +93,7 @@ sudo rm /etc/default/sickrage >/dev/null 2>&1
 echo -e 'Existing SickRage init scripts removed'
 sleep 1
 sudo update-rc.d -f sickrage remove >/dev/null 2>&1
-if [ ! -d "/home/$UNAME/.sickrage" ]; then
+if [ -d "/home/$UNAME/.sickrage" ]; then
 	mv /home/$UNAME/.sickrage /home/$UNAME/.sickrage_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
 	echo -e 'Existing SickRage files were moved to '$CYAN'/home/'$UNAME'/.sickrage_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 fi

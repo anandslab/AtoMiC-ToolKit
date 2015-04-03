@@ -93,7 +93,7 @@ sudo rm /etc/default/couchpotato >/dev/null 2>&1
 echo -e 'Existing CouchPotato init scripts removed'
 sleep 1
 sudo update-rc.d -f couchpotato remove >/dev/null 2>&1
-if [ ! -d "/home/$UNAME/.couchpotato" ]; then
+if [ -d "/home/$UNAME/.couchpotato" ]; then
 	mv /home/$UNAME/.couchpotato /home/$UNAME/.couchpotato_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
 	echo -e 'Existing CouchPotato files were moved to '$CYAN'/home/'$UNAME'/.couchpotato_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 fi

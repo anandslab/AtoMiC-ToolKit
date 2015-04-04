@@ -171,10 +171,10 @@ case $option in
 		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
 		echo
-		sleep 5
-		URL=http://www.htpcbeginner.com/atomic-thanks
-		[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-		path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
+		sleep 2
+		#URL=http://www.htpcbeginner.com/atomic-thanks
+		#[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
+		#path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
 		;;
     	*)
         	echo -e $RED'Invalid Option'$ENDCOLOR

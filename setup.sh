@@ -38,6 +38,8 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
+echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubuntu variants.'
+echo
 echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'10. '$ENDCOLOR'Sick Beard - Install'

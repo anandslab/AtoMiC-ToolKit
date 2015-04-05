@@ -18,7 +18,7 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 <li>SABnzbd+ - Install and Uninstall</li>
-<li>NZBGet - Install and Uninstall</li>
+<li>Planned - NZBGet, Plex, Deluge, Software Updates, RTorrent/RUTorrent, Apache, NginX, and Lighttpd</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

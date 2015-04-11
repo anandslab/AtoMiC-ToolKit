@@ -108,7 +108,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Creating Sonarr AutoStart script...'$ENDCOLOR
-sudo cp sonarr-init2 /etc/init.d/nzbdrone || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp sonarr-init /etc/init.d/nzbdrone || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME: /etc/init.d/nzbdrone
 sudo chmod +x /etc/init.d/nzbdrone
 if [ ! -d "/var/run/nzbdrone" ]; then

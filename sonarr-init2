@@ -16,7 +16,7 @@
 APP_PATH=/opt/NzbDrone
  
 # user
-RUN_AS=david
+RUN_AS=USERNAME
  
 # path to mono bin
 DAEMON=/usr/bin/mono

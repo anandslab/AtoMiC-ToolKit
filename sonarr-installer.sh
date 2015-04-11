@@ -119,7 +119,7 @@ echo
 sleep 1
 
 echo -e $YELLOW"--->Making some configuration changes..."$ENDCOLOR
-sudo sed -i 's/RUN_AS=nzbdrone/RUN_AS='$UNAME'/g' /etc/init.d/nzbdrone  || { echo -e $RED'Replacing Sonarr username in init failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's/RUN_AS=USERNAME/RUN_AS='$UNAME'/g' /etc/init.d/nzbdrone  || { echo -e $RED'Replacing Sonarr username in init failed.'$ENDCOLOR ; exit 1; }
 
 echo 
 sleep 1

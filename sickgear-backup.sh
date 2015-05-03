@@ -73,7 +73,7 @@ sleep 1
 echo -e $YELLOW'--->Creating a list of files to backup...'$ENDCOLOR
 cd $SCRIPTPATH
 cp sickgear-backup-files sg-backup-files
-sudo sed -i 's/UNAME/'$UNAME'/g' sickgear-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's/UNAME/'$UNAME'/g' sg-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
 
 echo
 sleep 1

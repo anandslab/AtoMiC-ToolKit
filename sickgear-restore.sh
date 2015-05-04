@@ -136,7 +136,7 @@ then
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 		echo
 		sleep 1
-		/etc/init.d/sickbeard start
+		/etc/init.d/sickgear start
 	else
 		echo -e $RED'Error! Selected file is not a backup file with '$CYAN'tar.gz'$RED' extension. Exiting now. Please rerun script.'$ENDCOLOR
 		echo

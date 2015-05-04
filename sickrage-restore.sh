@@ -86,6 +86,8 @@ echo -e $YELLOW'--->Stopping SickRage...'$ENDCOLOR
 sleep 1
 sudo /etc/init.d/sickrage stop >/dev/null 2>&1
 
+echo
+
 echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
 sleep 1
 cd /home/$UNAME

@@ -14,6 +14,7 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
+clear >/dev/null 2>&1
 echo -e $YELLOW'--->Preparing installer...'$ENDCOLOR
 sleep 1
 sudo apt-get -y install dos2unix >/dev/null 2>&1

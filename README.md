@@ -45,14 +45,16 @@ $ sudo ./setup.sh
 <h2>Default Usernames and Passwords</h2>
 In case you forget to note down the default port, username, and password after installation, here they are: 
 
-Sick Beard - Port: 8081, Username: none, Password: none
-SickRage - Port: 8081, Username: none, Password: none
-SickGear - Port: 8081, Username: none, Password: none
-Sonarr - Port: 8989, Username: none, Password: none
-CouchPotato - Port: 5050, Username: none, Password: none
-Transmission - Port: 9091, Username: transmission, Password: transmission
-qBittorrent - Port: 8085, Username: admin, Password: adminadmin
-SABNzbd - Port: 8080, Username: none, Password: none
+<ul>
+<li>Sick Beard - Port: 8081, Username: none, Password: none</li>
+<li>SickRage - Port: 8081, Username: none, Password: none</li>
+<li>SickGear - Port: 8081, Username: none, Password: none</li>
+<li>Sonarr - Port: 8989, Username: none, Password: none</li>
+<li>CouchPotato - Port: 5050, Username: none, Password: none</li>
+<li>Transmission - Port: 9091, Username: transmission, Password: transmission</li>
+<li>qBittorrent - Port: 8085, Username: admin, Password: adminadmin</li>
+<li>SABNzbd - Port: 8080, Username: none, Password: none</li>
+</ul>
 
 It is recommended that you set / update usernames and password for all services. 
 

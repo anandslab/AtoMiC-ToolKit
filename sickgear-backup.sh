@@ -87,7 +87,7 @@ rm sg-backup-files
 
 echo
 sleep 1
-echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/$UNAME/'$BFN'.tar.gz...'$ENDCOLOR
+echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/'$UNAME'/'$BFN'.tar.gz...'$ENDCOLOR
 sudo chown $UNAME:$UGROUP $BFN.tar.gz
 sudo chmod 755 $BFN.tar.gz
 mv $BFN.tar.gz /home/$UNAME/

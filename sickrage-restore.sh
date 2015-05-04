@@ -80,6 +80,12 @@ then
 	exit 0
 fi
 
+echo
+
+echo -e $YELLOW'--->Stopping SickRage...'$ENDCOLOR
+sleep 1
+sudo /etc/init.d/sickrage stop >/dev/null 2>&1
+
 echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
 sleep 1
 cd /home/$UNAME
@@ -126,6 +132,10 @@ then
 	then
 		echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
+		
+		echo
+		sleep 1
+		/etc/init.d/sickrage start
 	else
 		echo -e $RED'Error! Selected file is not a backup file with '$CYAN'tar.gz'$RED' extension. Exiting now. Please rerun script.'$ENDCOLOR
 		echo

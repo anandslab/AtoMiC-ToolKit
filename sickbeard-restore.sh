@@ -81,6 +81,7 @@ then
 fi
 
 echo
+
 echo -e $YELLOW'--->Stopping Sick Beard...'$ENDCOLOR
 sleep 1
 sudo /etc/init.d/sickbeard stop >/dev/null 2>&1

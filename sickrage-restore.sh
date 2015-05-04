@@ -134,7 +134,6 @@ then
 	then
 		echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
-		
 		echo
 		sleep 1
 		/etc/init.d/sickrage start

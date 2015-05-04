@@ -6,12 +6,20 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
 YELLOW='\e[93m'
 RED='\e[91m'
 ENDCOLOR='\033[0m'
 CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
+
+echo -e $YELLOW'--->Preparing installer...'$ENDCOLOR
+sleep 1
+sudo apt-get -y install dos2unix >/dev/null 2>&1
+dos2unix * >/dev/null 2>&1
+sudo chmod -R 775 * >/dev/null 2>&1
+clear >/dev/null 2>&1
 
 function pause(){
    read -p "$*"

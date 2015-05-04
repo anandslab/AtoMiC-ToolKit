@@ -42,4 +42,18 @@ $ cd ~/AtoMiC-ToolKit
 $ sudo ./setup.sh
 </pre>
 
+<h2>Default Usernames and Passwords</h2>
+In case you forget to note down the default port, username, and password after installation, here they are: 
+
+Sick Beard - Port: 8081, Username: none, Password: none
+SickRage - Port: 8081, Username: none, Password: none
+SickGear - Port: 8081, Username: none, Password: none
+Sonarr - Port: 8989, Username: none, Password: none
+CouchPotato - Port: 5050, Username: none, Password: none
+Transmission - Port: 9091, Username: transmission, Password: transmission
+qBittorrent - Port: 8085, Username: admin, Password: adminadmin
+SABNzbd - Port: 8080, Username: none, Password: none
+
+It is recommended that you set / update usernames and password for all services. 
+
 For more information on installation and usage, visit <a href="http://www.htpcbeginner.com/atomic-toolkit/">AtoMiC ToolKit</a> page on on htpcBeginner.com.

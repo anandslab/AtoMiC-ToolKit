@@ -80,7 +80,8 @@ sleep 1
 
 echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
 BFN=sickbeard_`date '+%m-%d-%Y_%H-%M'`
-tar -zcvf $BFN.tar.gz --files-from sb-backup-files
+tar -zcvf $BFN.tar.gz --files-from sb-backup-files || { echo -e $RED'Creating tar file failed.'$ENDCOLOR ; exit 1; }
+echo
 echo -e "Following files were backed up:"
 cat sb-backup-files
 rm sb-backup-files

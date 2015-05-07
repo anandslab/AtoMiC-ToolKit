@@ -71,7 +71,7 @@ echo -e $CYAN'Default Password:'$GREEN' transmission'$ENDCOLOR
 echo 
 
 echo -e $YELLOW'qBittorrent'$ENDCOLOR
-echo -e $CYAN'Port:'$GREEN' 8085'$ENDCOLOR
+echo -e $CYAN'Port:'$GREEN' 8086'$ENDCOLOR
 echo -e $CYAN'Default Username:'$GREEN' admin'$ENDCOLOR
 echo -e $CYAN'Default Password:'$GREEN' adminadmin'$ENDCOLOR
 
@@ -79,6 +79,13 @@ echo
 
 echo -e $YELLOW'SABNzbd'$ENDCOLOR
 echo -e $CYAN'Port:'$GREEN' 8080'$ENDCOLOR
+echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
+echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
+
+echo 
+
+echo -e $YELLOW'HTPC Manager'$ENDCOLOR
+echo -e $CYAN'Port:'$GREEN' 8085'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 

@@ -137,7 +137,7 @@ echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
 echo -e 'HTPC Manager should start within 10-20 seconds and your browser should open.'
 echo -e 'If not you can start it using '$CYAN'/etc/init.d/htpcmanager start'$ENDCOLOR' command.'
-echo -e 'Then open '$CYAN'http://localhost:8085'$ENDCOLOR' in your browser.'
+echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC HTPC Manager Install script from www.htpcBeginner.com.'$ENDCOLOR 

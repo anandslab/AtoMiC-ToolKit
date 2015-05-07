@@ -52,8 +52,9 @@ In case you forget to note down the default port, username, and password after i
 <li>Sonarr - Port: 8989, Username: none, Password: none</li>
 <li>CouchPotato - Port: 5050, Username: none, Password: none</li>
 <li>Transmission - Port: 9091, Username: transmission, Password: transmission</li>
-<li>qBittorrent - Port: 8085, Username: admin, Password: adminadmin</li>
+<li>qBittorrent - Port: 8086, Username: admin, Password: adminadmin</li>
 <li>SABNzbd - Port: 8080, Username: none, Password: none</li>
+<li>HTPC Manager - Port: 8085, Username: none, Password: none</li>
 </ul>
 
 It is recommended that you set / update usernames and password for all services. 

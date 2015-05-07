@@ -14,8 +14,6 @@ CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
 
-sudo apt-get -y install dos2unix >/dev/null 2>&1
-dos2unix * >/dev/null 2>&1
 sudo chmod -R 775 * >/dev/null 2>&1
 
 function pause(){

@@ -104,7 +104,7 @@ sleep 1
 
 echo -e $YELLOW'--->Downloading latest HTPC Manager...'$ENDCOLOR
 cd /home/$UNAME
-git clone https://github.com/Hellowlol/HTPC-Manager /home/$UNAME/.htpcmanager || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+git clone https://github.com/styxit/HTPC-Manager.git /home/$UNAME/.htpcmanager || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
 sudo chown -R $UNAME:$UGROUP /home/$UNAME/.htpcmanager >/dev/null 2>&1
 sudo chmod 775 -R /home/$UNAME/.htpcmanager >/dev/null 2>&1
 

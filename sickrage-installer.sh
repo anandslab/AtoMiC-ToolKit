@@ -130,7 +130,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling SickRage AutoStart at Boot...'$ENDCOLOR
-sudo cp init.ubuntu /etc/init.d/sickrage || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp runscripts/init.ubuntu /etc/init.d/sickrage || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME: /etc/init.d/sickrage
 sudo sed -i 's|/etc/default/sickbeard|/etc/default/sickrage|g' /etc/init.d/sickrage || { echo -e $RED'Replacing default path failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's|NAME=sickbeard|NAME=sickrage|g' /etc/init.d/sickrage || { echo -e $RED'Replacing NAME failed.'$ENDCOLOR ; exit 1; }

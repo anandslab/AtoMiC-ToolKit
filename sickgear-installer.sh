@@ -130,7 +130,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling SickGear AutoStart at Boot...'$ENDCOLOR
-sudo cp init.ubuntu /etc/init.d/sickgear || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp runscripts/init.ubuntu /etc/init.d/sickgear || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME: /etc/init.d/sickgear
 sudo sed -i 's|/etc/default/sickbeard|/etc/default/sickgear|g' /etc/init.d/sickgear || { echo -e $RED'Replacing default path failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's|NAME=sickbeard|NAME=sickgear|g' /etc/init.d/sickgear || { echo -e $RED'Replacing NAME failed.'$ENDCOLOR ; exit 1; }

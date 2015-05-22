@@ -149,6 +149,16 @@ sudo chown $UNAME: /var/run/sickgear >/dev/null 2>&1
 
 echo
 sleep 1
+
+echo -e 'Stashing any changes made to SickGear...'
+cd /home/$UNAME/.sickgear
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
+
+echo
+sleep 1
 /etc/init.d/sickgear start
 
 echo

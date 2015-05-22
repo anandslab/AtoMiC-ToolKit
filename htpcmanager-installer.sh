@@ -130,6 +130,16 @@ sudo update-rc.d htpcmanager defaults
 echo
 sleep 1
 
+echo -e 'Stashing any changes made to CouchPotato...'
+cd /home/$UNAME/.htpcmanager
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
+
+echo
+sleep 1
+
 echo -e 'Starting HTPC Manager'
 sudo /etc/init.d/htpcmanager start >/dev/null 2>&1
 

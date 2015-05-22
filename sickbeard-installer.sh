@@ -144,6 +144,16 @@ sudo chown $UNAME: /var/run/sickbeard >/dev/null 2>&1
 
 echo
 sleep 1
+
+echo -e 'Stashing any changes made to Sick Beard...'
+cd /home/$UNAME/.sickbeard
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
+
+echo
+sleep 1
 /etc/init.d/sickbeard start
 
 echo

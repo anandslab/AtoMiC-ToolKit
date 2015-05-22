@@ -130,7 +130,7 @@ sudo update-rc.d htpcmanager defaults
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to CouchPotato...'
+echo -e 'Stashing any changes made to HTPC Manager...'
 cd /home/$UNAME/.htpcmanager
 git config user.email “atomic@htpcbeginner.com”
 git config user.name “AtoMiCUser”

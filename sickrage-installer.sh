@@ -119,10 +119,10 @@ sleep 1
 
 echo -e $YELLOW'--->Configuring SickRage Install...'$ENDCOLOR
 echo "# COPY THIS FILE TO /etc/default/sickrage" >> sickrage_default || { echo -e $RED'Could not create default file.'$ENDCOLOR ; exit 1; }
-echo "SB_HOME=/home/"$UNAME"/.sickrage/" >> sickrage_default
-echo "SB_DATA=/home/"$UNAME"/.sickrage/" >> sickrage_default
+echo "SR_HOME=/home/"$UNAME"/.sickrage/" >> sickrage_default
+echo "SR_DATA=/home/"$UNAME"/.sickrage/" >> sickrage_default
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run SickRage...'
-echo "SB_USER="$UNAME >> sickrage_default
+echo "SR_USER="$UNAME >> sickrage_default
 sudo mv sickrage_default /etc/default/sickrage
 sudo chmod +x /etc/default/sickrage
 
@@ -132,10 +132,6 @@ sleep 1
 echo -e $YELLOW'--->Enabling SickRage AutoStart at Boot...'$ENDCOLOR
 sudo cp runscripts/init.ubuntu /etc/init.d/sickrage || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME: /etc/init.d/sickrage
-sudo sed -i 's|/etc/default/sickbeard|/etc/default/sickrage|g' /etc/init.d/sickrage || { echo -e $RED'Replacing default path failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's|NAME=sickbeard|NAME=sickrage|g' /etc/init.d/sickrage || { echo -e $RED'Replacing NAME failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's|DESC=SickBeard|DESC=SickRage|g' /etc/init.d/sickrage || { echo -e $RED'Replacing DESC failed.'$ENDCOLOR ; exit 1; }
-
 sudo chmod +x /etc/init.d/sickrage
 sudo update-rc.d sickrage defaults
 

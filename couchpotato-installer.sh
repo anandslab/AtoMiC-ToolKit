@@ -136,8 +136,8 @@ sleep 1
 
 echo -e 'Stashing any changes made to CouchPotato...'
 cd /home/$UNAME/.couchpotato
-git config –global user.email “you@example.com”
-git config –global user.name “Your Name”
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
 git stash
 git stash clear
 

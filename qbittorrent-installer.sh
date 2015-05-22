@@ -114,7 +114,7 @@ sleep 1
 
 echo -e $YELLOW"--->Making some configuration changes..."$ENDCOLOR
 sudo sed -i 's/MyUserName/'$UNAME'/g' /etc/init.d/qbittorrent-nox-daemon || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's/XXXX/8085/g' /etc/init.d/qbittorrent-nox-daemon || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's/XXXX/8086/g' /etc/init.d/qbittorrent-nox-daemon || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
 
 echo 
 sleep 1
@@ -134,7 +134,7 @@ echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
 echo -e 'qBittorrent should start within 10-20 seconds.'
 echo -e 'If not you can start it using '$CYAN'sudo service qbittorrent-nox-daemon start'$ENDCOLOR' command.'
-echo -e 'Then open '$CYAN'http://localhost:8085'$ENDCOLOR' in your browser. The default username and password are admin and adminadmin, respectively'
+echo -e 'Then open '$CYAN'http://localhost:8086'$ENDCOLOR' in your browser. The default username and password are admin and adminadmin, respectively'
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC qBittorrent Install script from www.htpcBeginner.com.'$ENDCOLOR 

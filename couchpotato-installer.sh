@@ -134,6 +134,16 @@ sudo update-rc.d couchpotato defaults
 echo
 sleep 1
 
+echo -e 'Stashing any changes made to CouchPotato...'
+cd /home/$UNAME/.couchpotato
+git config –global user.email “you@example.com”
+git config –global user.name “Your Name”
+git stash
+git stash clear
+
+echo
+sleep 1
+
 echo -e 'Starting CouchPotato'
 sudo /etc/init.d/couchpotato start >/dev/null 2>&1
 

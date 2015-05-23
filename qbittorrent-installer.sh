@@ -98,6 +98,9 @@ echo -e $YELLOW'--->Copying init and config file...'$ENDCOLOR
 sudo cp $SCRIPTPATH/qbittorrent-nox-daemon /etc/init.d/ || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
 sudo chmod 755 /etc/init.d/qbittorrent-nox-daemon
 
+if [ ! -d "/home/$UNAME/.config" ]; then
+    mkdir /home/$UNAME/.config
+fi
 if [ ! -d "/home/$UNAME/.config/qBittorrent" ]; then
 	mkdir /home/$UNAME/.config/qBittorrent
 fi

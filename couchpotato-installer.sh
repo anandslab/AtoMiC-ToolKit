@@ -120,7 +120,6 @@ echo "CP_DATA=/home/"$UNAME"/.couchpotato/" >> couchpotato
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run CouchPotato...'
 echo "CP_USER="$UNAME >> couchpotato
 sudo mv couchpotato /etc/default/
-sudo chmod +x /etc/default/couchpotato
 
 echo
 sleep 1

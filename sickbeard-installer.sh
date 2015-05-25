@@ -124,7 +124,6 @@ echo "SB_DATA=/home/"$UNAME"/.sickbeard/" >> sickbeard_default
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run SickBeard...'
 echo "SB_USER="$UNAME >> sickbeard_default
 sudo mv sickbeard_default /etc/default/sickbeard
-sudo chmod +x /etc/default/sickbeard
 
 echo
 sleep 1

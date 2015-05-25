@@ -124,7 +124,6 @@ echo "SR_DATA=/home/"$UNAME"/.sickrage/" >> sickrage_default
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run SickRage...'
 echo "SR_USER="$UNAME >> sickrage_default
 sudo mv sickrage_default /etc/default/sickrage
-sudo chmod +x /etc/default/sickrage
 
 echo
 sleep 1

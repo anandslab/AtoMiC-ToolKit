@@ -122,6 +122,9 @@ echo
 
 pause 'Press [Enter] key to continue...'
 
+echo -e $YELLOW'--->Installing necessary '$CYAN'dialog'$YELLOW' package...'$ENDCOLOR
+sudo apt-get -y install dialog
+
 BFILE=$(dialog --title "Restore CouchPotato" --stdout --title "Choose backup file to restore. Use TAB or ARROW keys to move and SPACE to select." --fselect /home/$UNAME/ 15 120)
 
 if [ -f $BFILE ] 

@@ -69,6 +69,7 @@ echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI
 echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall'
 echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
 echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall'
+echo -e $YELLOW'80. '$ENDCOLOR'Headphones - Install'
 echo -e $YELLOW'90. '$ENDCOLOR'HTPC Manager - Install'
 echo -e $YELLOW'91. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
@@ -171,7 +172,11 @@ case $option in
 	71)
     		sudo ./sabnzbd-uninstaller.sh
     		;;
-    
+
+	80)
+    		sudo ./headphones-installer.sh
+    		;;
+    		
 	90)
     		sudo ./htpcmanager-installer.sh
     		;;

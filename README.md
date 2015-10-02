@@ -21,6 +21,7 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 <li>SABnzbd+ - Install and Uninstall</li>
+<li>Headphones - Install</li>
 <li>HTPC Manager - Install and Uninstall</li>
 <li>Planned - NZBGet, Plex, Deluge, Software Updates, RTorrent/RUTorrent, Apache, NginX, and Lighttpd</li>
 </ul></li>
@@ -55,6 +56,7 @@ In case you forget to note down the default port, username, and password after i
 <li>Transmission - Port: 9091, Username: transmission, Password: transmission</li>
 <li>qBittorrent - Port: 8086, Username: admin, Password: adminadmin</li>
 <li>SABNzbd - Port: 8080, Username: none, Password: none</li>
+<li>Headphones - Port: 8181, Username: non, Password: none</li>
 <li>HTPC Manager - Port: 8085, Username: none, Password: none</li>
 </ul>
 

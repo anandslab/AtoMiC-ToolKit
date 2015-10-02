@@ -56,7 +56,7 @@ In case you forget to note down the default port, username, and password after i
 <li>Transmission - Port: 9091, Username: transmission, Password: transmission</li>
 <li>qBittorrent - Port: 8086, Username: admin, Password: adminadmin</li>
 <li>SABNzbd - Port: 8080, Username: none, Password: none</li>
-<li>Headphones - Port: 8181, Username: non, Password: none</li>
+<li>Headphones - Port: 8181, Username: none, Password: none</li>
 <li>HTPC Manager - Port: 8085, Username: none, Password: none</li>
 </ul>
 

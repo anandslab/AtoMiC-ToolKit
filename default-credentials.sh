@@ -21,10 +21,10 @@ echo -e " ┬ ┬┬ ┬┬ ┬ ┬ ┬┌┬┐┌─┐┌─┐┌┐ ┌─�
 echo -e " │││││││││ ├─┤ │ ├─┘│  ├┴┐├┤ │ ┬│││││││├┤ ├┬┘ │  │ ││││"
 echo -e " └┴┘└┴┘└┴┘o┴ ┴ ┴ ┴  └─┘└─┘└─┘└─┘┴┘└┘┘└┘└─┘┴└─o└─┘└─┘┴ ┴"
 echo -e $CYAN
-echo -e "                __     __           "
-echo -e "  /\ |_ _ |\/|./      (_  _ _. _ |_ "
-echo -e " /--\|_(_)|  ||\__    __)(_| ||_)|_ "
-echo -e "                              |     "
+echo -e "                __  ___             "
+echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
+echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
+echo
 echo -e $GREEN'AtoMiC Default Credientials'$ENDCOLOR
 echo 
 
@@ -86,6 +86,20 @@ echo
 
 echo -e $YELLOW'HTPC Manager'$ENDCOLOR
 echo -e $CYAN'Port:'$GREEN' 8085'$ENDCOLOR
+echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
+echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
+
+echo 
+
+echo -e $YELLOW'Headphones'$ENDCOLOR
+echo -e $CYAN'Port:'$GREEN' 8191'$ENDCOLOR
+echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
+echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
+
+echo 
+
+echo -e $YELLOW'Mylar'$ENDCOLOR
+echo -e $CYAN'Port:'$GREEN' 8090'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 

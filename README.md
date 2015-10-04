@@ -21,9 +21,9 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 <li>SABnzbd+ - Install and Uninstall</li>
-<li>Headphones - Install</li>
+<li>Headphones - Install and Uninstall</li>
 <li>HTPC Manager - Install and Uninstall</li>
-<li>Mylar - Install</li>
+<li>Mylar - Install and Uninstall</li>
 <li>Planned - NZBGet, Plex, Deluge, Software Updates, RTorrent/RUTorrent, Apache, NginX, and Lighttpd</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>

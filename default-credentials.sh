@@ -55,6 +55,8 @@ echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 
 echo 
+pause 'Press [Enter] for page 2...'
+echo 
 
 echo -e $YELLOW'CouchPotato'$ENDCOLOR
 echo -e $CYAN'Port:'$GREEN' 5050'$ENDCOLOR
@@ -82,6 +84,8 @@ echo -e $CYAN'Port:'$GREEN' 8080'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 
+echo 
+pause 'Press [Enter] for page 3...'
 echo 
 
 echo -e $YELLOW'HTPC Manager'$ENDCOLOR

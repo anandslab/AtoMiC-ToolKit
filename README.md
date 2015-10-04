@@ -21,8 +21,9 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 <li>SABnzbd+ - Install and Uninstall</li>
-<li>Headphones - Install</li>
+<li>Headphones - Install and Uninstall</li>
 <li>HTPC Manager - Install and Uninstall</li>
+<li>Mylar - Install and Uninstall</li>
 <li>Planned - NZBGet, Plex, Deluge, Software Updates, RTorrent/RUTorrent, Apache, NginX, and Lighttpd</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
@@ -58,6 +59,7 @@ In case you forget to note down the default port, username, and password after i
 <li>SABNzbd - Port: 8080, Username: none, Password: none</li>
 <li>Headphones - Port: 8181, Username: none, Password: none</li>
 <li>HTPC Manager - Port: 8085, Username: none, Password: none</li>
+<li>Mylar - Port: 8090, Username: none, Password: none</li>
 </ul>
 
 It is recommended that you set / update usernames and password for all services. 

@@ -45,33 +45,36 @@ echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubu
 echo
 echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
-echo -e $YELLOW'10. '$ENDCOLOR'Sick Beard - Install'
-echo -e $YELLOW'11. '$ENDCOLOR'Sick Beard - Uninstall'
-echo -e $YELLOW'12. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
-echo -e $YELLOW'13. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
-echo -e $YELLOW'20. '$ENDCOLOR'SickRage - Install'
-echo -e $YELLOW'21. '$ENDCOLOR'SickRage - Uninstall'
-echo -e $YELLOW'22. '$ENDCOLOR'SickRage - Backup Database and Settings'
-echo -e $YELLOW'23. '$ENDCOLOR'SickRage - Restore Database and Settings'
-echo -e $YELLOW'30. '$ENDCOLOR'SickGear - Install'
-echo -e $YELLOW'31. '$ENDCOLOR'SickGear - Uninstall'
-echo -e $YELLOW'32. '$ENDCOLOR'SickGear - Backup Database and Settings'
-echo -e $YELLOW'33. '$ENDCOLOR'SickGear - Restore Database and Settings'
-echo -e $YELLOW'40. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
-echo -e $YELLOW'41. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
-echo -e $YELLOW'50. '$ENDCOLOR'CouchPotato - Install'
-echo -e $YELLOW'51. '$ENDCOLOR'CouchPotato - Uninstall'
-echo -e $YELLOW'52. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
-echo -e $YELLOW'53. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
-echo -e $YELLOW'60. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
-echo -e $YELLOW'61. '$ENDCOLOR'Transmission - Uninstall'
-echo -e $YELLOW'65. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
-echo -e $YELLOW'66. '$ENDCOLOR'qBittorrent - Uninstall'
-echo -e $YELLOW'70. '$ENDCOLOR'SABNzbd - Install'
-echo -e $YELLOW'71. '$ENDCOLOR'SABNzbd - Uninstall'
-echo -e $YELLOW'80. '$ENDCOLOR'Headphones - Install'
-echo -e $YELLOW'90. '$ENDCOLOR'HTPC Manager - Install'
-echo -e $YELLOW'91. '$ENDCOLOR'HTPC Manager - Uninstall'
+echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
+echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
+echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
+echo -e $YELLOW'08. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
+echo -e $YELLOW'10. '$ENDCOLOR'SickRage - Install'
+echo -e $YELLOW'11. '$ENDCOLOR'SickRage - Uninstall'
+echo -e $YELLOW'12. '$ENDCOLOR'SickRage - Backup Database and Settings'
+echo -e $YELLOW'13. '$ENDCOLOR'SickRage - Restore Database and Settings'
+echo -e $YELLOW'15. '$ENDCOLOR'SickGear - Install'
+echo -e $YELLOW'16. '$ENDCOLOR'SickGear - Uninstall'
+echo -e $YELLOW'17. '$ENDCOLOR'SickGear - Backup Database and Settings'
+echo -e $YELLOW'18. '$ENDCOLOR'SickGear - Restore Database and Settings'
+echo -e $YELLOW'20. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
+echo -e $YELLOW'21. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
+echo -e $YELLOW'25. '$ENDCOLOR'CouchPotato - Install'
+echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
+echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
+echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
+echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
+echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
+echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
+echo -e $YELLOW'36. '$ENDCOLOR'qBittorrent - Uninstall'
+echo -e $YELLOW'40. '$ENDCOLOR'SABNzbd - Install'
+echo -e $YELLOW'41. '$ENDCOLOR'SABNzbd - Uninstall'
+echo -e $YELLOW'45. '$ENDCOLOR'Headphones - Install'
+echo -e $YELLOW'46. '$ENDCOLOR'Headphones - Uninstall'
+echo -e $YELLOW'50. '$ENDCOLOR'Mylar - Install'
+echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Install'
+echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
+echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
@@ -92,102 +95,112 @@ case $option in
 	1 | 01)
          	sudo ./bash_aliases-installer.sh
 		;;
-			
-    10)
+		
+    5 | 05)
 		sudo ./sickbeard-installer.sh
 		;;
-    11) 
+    6 | 06) 
     		sudo ./sickbeard-uninstaller.sh
     		;;
-    12)
+    7 | 07)
     		sudo ./sickbeard-backup.sh
     		;;
-	13)
+	8 | 08)
     		sudo ./sickbeard-restore.sh
     		;;
     	
-    20)
+    10)
     		sudo ./sickrage-installer.sh
     		;;
-    21)
+    11)
     		sudo ./sickrage-uninstaller.sh
     		;;
-    22)
+    12)
     		sudo ./sickrage-backup.sh
     		;;
-    23)
+    13)
     		sudo ./sickrage-restore.sh
     		;;
 			
-    30)
+    15)
     		sudo ./sickgear-installer.sh
     		;;
-    31)
+    16)
     		sudo ./sickgear-uninstaller.sh
     		;;
-    32)
+    17)
     		sudo ./sickgear-backup.sh
     		;;
-    33)
+    18)
     		sudo ./sickgear-restore.sh
     		;;
 			
-    40)
+    20)
     		sudo ./sonarr-installer.sh
     		;;
-    41)
+    21)
     		sudo ./sonarr-uninstaller.sh
     		;;
 			
-    50)
+    25)
     		sudo ./couchpotato-installer.sh
     		;;
-    51) 
+    26) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
-    52)
+    27)
     		sudo ./couchpotato-backup.sh
     		;;
-    53) 
+    28) 
     		sudo ./couchpotato-restore.sh
     		;;
 			
-    60)
+    30)
     		sudo ./transmission-webui-installer.sh
     		;;
-    61)
+    31)
     		sudo ./transmission-webui-uninstaller.sh
     		;;
     		
-	65)
+	35)
 			sudo ./qbittorrent-installer.sh
     		;;
-    66)
+    36)
     		sudo ./qbittorrent-uninstaller.sh
     		;;
     		
-	70)
+	40)
     		sudo ./sabnzbd-installer.sh
     		;;
-	71)
+	41)
     		sudo ./sabnzbd-uninstaller.sh
     		;;
 
-	80)
+	45)
     		sudo ./headphones-installer.sh
     		;;
-    		
-	90)
+	46)
+    		sudo ./headphones-installer.sh
+    		;;
+    
+	50)
+    		sudo ./mylar-installer.sh
+    		;;
+	51)
+    		sudo ./mylar-uninstaller.sh
+    		;;
+			
+	55)
     		sudo ./htpcmanager-installer.sh
     		;;
-	91)
+	56)
     		sudo ./htpcmanager-uninstaller.sh
     		;;
 			
-    	98)
+    98)
     		sudo ./default-credentials.sh
     	;;
-    	99)
+    99)
 		echo 'Exiting...'
 		echo
 		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR

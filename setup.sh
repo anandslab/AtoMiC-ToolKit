@@ -6,6 +6,7 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+sudo pkill -f atomic-updater.sh
 
 YELLOW='\e[93m'
 RED='\e[91m'

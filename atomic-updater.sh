@@ -64,7 +64,8 @@ git stash clear
 echo 
 sleep 1
 
-echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
+echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
+sudo killall setup.sh
 git pull
 echo
 pause 'Press [Enter] to restart and continue...'

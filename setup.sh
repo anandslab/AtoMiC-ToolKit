@@ -43,8 +43,9 @@ echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
 echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubuntu variants.'
 echo
-echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
-echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
+echo -e $YELLOW'00. '$ENDCOLOR'Read README.md'
+echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
+echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
 echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
 echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
@@ -83,9 +84,12 @@ echo -n "What would you like to do [00-99]: "
 read option
 case $option in
 	0 | 00)
-		sudo ./atomic-updater.sh
+		less README.md
 		;;
 	1 | 01)
+		sudo ./atomic-updater.sh
+		;;
+	2 | 02)
          	sudo ./bash_aliases-installer.sh
 		;;
 		

@@ -56,16 +56,17 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-git config user.email “atomic@htpcbeginner.com”
-git config user.name “AtoMiCUser”
-git stash
-git stash clear
+#git config user.email “atomic@htpcbeginner.com”
+#git config user.name “AtoMiCUser”
+#git stash
+#git stash clear
 
 echo 
 sleep 1
 
 echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-git pull
+git fetch -all
+
 echo
 pause 'Press [Enter] to restart and continue...'
 cd $SCRIPTPATH

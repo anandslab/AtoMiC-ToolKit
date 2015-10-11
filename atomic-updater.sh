@@ -65,7 +65,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-git fetch -all
+git fetch --all
 
 echo
 pause 'Press [Enter] to restart and continue...'

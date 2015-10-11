@@ -90,6 +90,7 @@ case $option in
 
 		if [ "$RESP" != "y" ] 
 		then
+			echo
 			echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
 			echo
 			pause 'Press [Enter] key to continue...'
@@ -97,7 +98,8 @@ case $option in
 			sudo ./setup.sh
 			exit 0
 		fi
-
+		
+		echo
 	        echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
 		sudo apt-get -y install git-core
 

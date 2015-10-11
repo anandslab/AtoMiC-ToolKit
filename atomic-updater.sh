@@ -65,7 +65,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-sudo killall setup.sh
+sudo pkill -f setup.sh
 git pull
 echo
 pause 'Press [Enter] to restart and continue...'

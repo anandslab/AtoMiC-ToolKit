@@ -39,7 +39,7 @@ echo -e "                __  ___             "
 echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
 echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
-echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
 echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubuntu variants.'
 echo
@@ -84,7 +84,13 @@ read option
 case $option in
 	0 | 00)
 		echo
-	        	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
+	        echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
+		sudo apt-get -y install git-core
+
+		echo
+		sleep 1
+		
+		echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
 		git pull
 		echo
 		pause 'Press [Enter] to restart and continue...'

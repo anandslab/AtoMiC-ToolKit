@@ -24,7 +24,7 @@ Features features of AtoMiC ToolKit include:
 <li>Headphones - Install and Uninstall</li>
 <li>HTPC Manager - Install and Uninstall</li>
 <li>Mylar - Install and Uninstall</li>
-<li>Planned - NZBGet, Plex, Deluge, Software Updates, RTorrent/RUTorrent, Apache, NginX, and Lighttpd</li>
+<li>Planned - NZBGet, Plex, Deluge, RTorrent/RUTorrent</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

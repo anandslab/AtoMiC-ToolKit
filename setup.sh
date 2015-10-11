@@ -83,45 +83,7 @@ echo -n "What would you like to do [00-99]: "
 read option
 case $option in
 	0 | 00)
-		echo
-
-		read -p 'This will overwrite any manual changes you made to the script. Type y/Y and press [ENTER] to continue with update or any other key to exit: '
-		RESP=${REPLY,,}
-
-		if [ "$RESP" != "y" ] 
-		then
-			echo
-			echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
-			echo
-			pause 'Press [Enter] key to continue...'
-			cd $SCRIPTPATH
-			sudo ./setup.sh
-			exit 0
-		fi
-		
-		echo
-	        echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-		sudo apt-get -y install git-core
-
-		echo
-		sleep 1
-		
-		echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-		git config user.email “atomic@htpcbeginner.com”
-		git config user.name “AtoMiCUser”
-		git stash
-		git stash clear
-		
-		echo 
-		sleep 1
-		
-		echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
-		git pull
-		echo
-		pause 'Press [Enter] to restart and continue...'
-		cd $SCRIPTPATH
-		sudo ./setup.sh
-		exit 0
+		sudo ./atomic-updater.sh
 		;;
 	1 | 01)
          	sudo ./bash_aliases-installer.sh

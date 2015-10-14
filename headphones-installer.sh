@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC headphones Installer
-# Author: htpcBeginner
+# Author: carrigan98
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #

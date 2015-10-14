@@ -41,7 +41,7 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
-echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubuntu variants.'
+echo -e 'NOTE: At this point, this script has only been confirmed to work on Ubuntu variants.'
 echo
 echo -e $YELLOW'00. '$ENDCOLOR'Read README.txt'
 echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'

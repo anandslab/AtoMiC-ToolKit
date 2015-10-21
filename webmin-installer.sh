@@ -72,7 +72,7 @@ sleep 1
 
 echo -e $YELLOW'--->Configuring Webmin Install...'$ENDCOLOR
 sudo dpkg --force-depends -i webmin_*.deb
-sudo apt-get -f install
+sudo apt-get install -f -y
 
 echo
 sleep 1

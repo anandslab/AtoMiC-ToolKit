@@ -94,16 +94,16 @@ sleep 1
 echo -e '--->Creating config file...'
 sudo mkdir -p /tmp/plex
 echo '# COPY THIS FILE TO ~/.plexupdate' >> /home/$UNAME/.plexupdate || { echo 'Could not create config file.' ; exit 1; }
-echo 'EMAIL=' 					>> /home/$UNAME/.plexupdate
-echo 'PASS=' 					>> /home/$UNAME/.plexupdate
-echo 'DOWNLOADDIR="/tmp/plex"' 	>> /home/$UNAME/.plexupdate
-echo 'KEEP=no' 					>> /home/$UNAME/.plexupdate
-echo 'FORCE=no' 				>> /home/$UNAME/.plexupdate
-echo 'PUBLIC=yes' 				>> /home/$UNAME/.plexupdate
-echo 'AUTOINSTALL=yes' 			>> /home/$UNAME/.plexupdate
-echo 'AUTODELETE=yes' 			>> /home/$UNAME/.plexupdate
-echo 'AUTOUPDATE=yes' 			>> /home/$UNAME/.plexupdate
-echo 'AUTOSTART=yes' 			>> /home/$UNAME/.plexupdate
+echo 'EMAIL='                           >> /home/$UNAME/.plexupdate
+echo 'PASS='                            >> /home/$UNAME/.plexupdate
+echo 'DOWNLOADDIR="/tmp/plex"'          >> /home/$UNAME/.plexupdate
+echo 'KEEP=no'                          >> /home/$UNAME/.plexupdate
+echo 'FORCE=no'                         >> /home/$UNAME/.plexupdate
+echo 'PUBLIC=yes'                       >> /home/$UNAME/.plexupdate
+echo 'AUTOINSTALL=yes'                  >> /home/$UNAME/.plexupdate
+echo 'AUTODELETE=yes'                   >> /home/$UNAME/.plexupdate
+echo 'AUTOUPDATE=yes'                   >> /home/$UNAME/.plexupdate
+echo 'AUTOSTART=yes'                    >> /home/$UNAME/.plexupdate
 
 echo 
 sleep 1

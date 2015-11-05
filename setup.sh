@@ -79,6 +79,7 @@ echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install'
 echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install'
+echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
 echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
@@ -207,6 +208,10 @@ case $option in
 
 	70)
     		sudo ./musicbrainz-installer.sh
+    		;;
+    	
+    	75)
+    		sudo ./webmin-installer.sh
     		;;
     		
     98)

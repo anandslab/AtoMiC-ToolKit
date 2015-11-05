@@ -76,6 +76,7 @@ echo -e $YELLOW'50. '$ENDCOLOR'Mylar - Install'
 echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Uninstall'
 echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
 echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
+echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
@@ -193,7 +194,11 @@ case $option in
 	56)
     		sudo ./htpcmanager-uninstaller.sh
     		;;
-			
+
+	60)
+    		sudo ./plex-installer.sh
+    		;;
+    		
     98)
     		sudo ./default-credentials.sh
     	;;

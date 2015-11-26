@@ -164,7 +164,7 @@ case $option in
     		;;
     		
 	35)
-			sudo ./qbittorrent-installer.sh
+		sudo ./qbittorrent-installer.sh
     		;;
     36)
     		sudo ./qbittorrent-uninstaller.sh
@@ -181,7 +181,7 @@ case $option in
     		sudo ./headphones-installer.sh
     		;;
 	46)
-    		sudo ./headphones-installer.sh
+    		sudo ./headphones-uninstaller.sh
     		;;
     
 	50)

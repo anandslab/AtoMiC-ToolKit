@@ -180,7 +180,7 @@ case $option in
     		sudo ./headphones-installer.sh
     		;;
 	46)
-    		sudo ./headphones-installer.sh
+    		sudo ./headphones-uninstaller.sh
     		;;
     
 	50)

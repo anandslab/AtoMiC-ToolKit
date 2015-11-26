@@ -30,7 +30,7 @@ echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
 echo -e $GREEN'AtoMiC Sonarr / NzbDrone Installer Script'$ENDCOLOR
 echo 
-echo -e $YELLOW'--->Transmission installation will start soon. Please read the following carefully.'$ENDCOLOR
+echo -e $YELLOW'--->Sonarr installation will start soon. Please read the following carefully.'$ENDCOLOR
 
 echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
 echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'

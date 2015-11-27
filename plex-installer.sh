@@ -53,45 +53,63 @@ then
 	exit 0
 fi
 
-clear
 echo
-
-echo -e '--->Plex Media Server installation will start soon. Please read the following carefully.'
 
 echo -n 'Type the username of the user you want to run Plex Media Server as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
-	echo -e 'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	exit 0
+        echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
+        echo
+        pause 'Press [Enter] key to continue...'
+        cd $SCRIPTPATH
+        sudo ./setup.sh
+        exit 0
 fi
 UGROUP=($(id -gn $UNAME))
 
 echo
 
-echo -e '--->Refreshing packages list...'
+echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
 sudo apt-get update
 
 echo
 sleep 1
 
-echo -e '--->Installing prerequisites...'
+echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
 sudo apt-get -y install git-core
 
 echo
 sleep 1
 
-echo -e '--->Downloading plexupdate...'
+echo -e $YELLOW'--->Checking for previous versions of Plex...'$ENDCOLOR
+sleep 1
+sudo service plexmediaserver stop >/dev/null 2>&1
+echo -e 'Any running Plex Media Server processes stopped'
+sleep 1
+sudo update-rc.d -f plexmediaserver remove >/dev/null 2>&1
+sudo rm /etc/init.d/plexmediaserver >/dev/null 2>&1
+sudo rm /etc/default/plexmediaserver >/dev/null 2>&1
+echo -e 'Any existing Plex init scripts removed'
+sleep 1
+sudo update-rc.d -f plexmediaserver remove >/dev/null 2>&1
+if [ -d "/home/$UNAME/.plexupdate" ]; then
+        sudo mv /home/$UNAME/.plexupdate /home/$UNAME/.plexupdate_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+        echo -e 'Any existing Plex Config files were moved to '$CYAN'/home/'$UNAME'/.plexupdate_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+fi
+if [ -d "/home/$UNAME/plexupdate" ]; then
+        sudo rm -r /home/$UNAME/plexupdate >/dev/null 2>&1
+        echo -e 'Any existing Plex Update folder deleted'
+fi
+
+echo -e $YELLOW'--->Downloading plexupdate...'$ENDCOLOR
 cd /home/$UNAME
-git clone https://github.com/mrworf/plexupdate.git /home/$UNAME/plexupdate || { echo -e 'Git not found.' ; exit 1; }
+git clone https://github.com/mrworf/plexupdate.git /home/$UNAME/plexupdate || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
 
 echo
 sleep 1
 
-echo -e '--->Creating config file...'
+echo -e $YELLOW'--->Creating config file...'$ENDCOLOR
 sudo mkdir -p /tmp/plex
 echo '# COPY THIS FILE TO ~/.plexupdate' >> /home/$UNAME/.plexupdate || { echo 'Could not create config file.' ; exit 1; }
 echo 'EMAIL='                           >> /home/$UNAME/.plexupdate
@@ -108,7 +126,7 @@ echo 'AUTOSTART=yes'                    >> /home/$UNAME/.plexupdate
 echo 
 sleep 1
 
-echo -e '--->Running plexupdate script...'
+echo -e $YELLOW'--->Running plexupdate script...'$ENDCOLOR
 sudo bash /home/$UNAME/plexupdate/plexupdate.sh
 
 echo 
@@ -123,6 +141,9 @@ echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC Plex Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
+
+pause 'Press [Enter] key to continue...'
+
 cd $SCRIPTPATH
 sudo ./setup.sh
 exit 0

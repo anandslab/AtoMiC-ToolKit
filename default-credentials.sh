@@ -96,7 +96,7 @@ echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 echo 
 
 echo -e $YELLOW'Headphones'$ENDCOLOR
-echo -e $CYAN'Port:'$GREEN' 8191'$ENDCOLOR
+echo -e $CYAN'Port:'$GREEN' 8181'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 

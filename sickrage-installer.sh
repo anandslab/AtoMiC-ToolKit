@@ -112,7 +112,8 @@ sleep 1
 
 echo -e $YELLOW'--->Installing SickRage...'$ENDCOLOR
 cd /home/$UNAME/.sickrage
-cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+# Disabled autoProcessTV.cfg https://github.com/htpcBeginner/AtoMiC-ToolKit/issues/29
+# cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
 
 echo
 sleep 1

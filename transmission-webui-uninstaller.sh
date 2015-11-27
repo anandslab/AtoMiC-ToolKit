@@ -90,7 +90,7 @@ sudo rm /etc/init.d/transmission-daemon || { echo -e $RED'Warning! Removing init
 echo
 sleep 1
 
-read -p 'You may keep Transmission configuration files in case you want to reinstall later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+read -p 'Do you want to keep Transmission configuration files in case you want to reinstall later? Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 

@@ -115,12 +115,12 @@ sleep 1
 sudo update-rc.d -f deluge-daemon remove >/dev/null 2>&1
 sudo rm /etc/init.d/deluge-daemon >/dev/null 2>&1
 sudo rm /etc/default/deluge-daemon >/dev/null 2>&1
-echo -e 'Existing Deluge init scripts removed'
+echo -e 'Any existing Deluge init scripts removed'
 sleep 1
 sudo update-rc.d -f deluge-daemon remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.config/deluge" ]; then
 	mv /home/$UNAME/.config/deluge /home/$UNAME/.config/deluge_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing Deluge files were moved to '$CYAN'/home/'$UNAME'/.config/deluge_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+	echo -e 'Any existing Deluge files were moved to '$CYAN'/home/'$UNAME'/.config/deluge_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 fi
 
 echo 

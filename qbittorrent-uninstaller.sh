@@ -55,7 +55,7 @@ fi
 
 echo 
 
-echo -n 'Type the username of the user you installed SickBeard as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
+echo -n 'Type the username of the user you installed qBittorrent as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
@@ -90,7 +90,7 @@ sudo rm /etc/init.d/qbittorrent-nox-daemon || { echo -e $RED'Warning! Removing i
 echo
 sleep 1
 
-read -p 'You may keep qBittorrent configuration files in case you want to reinstall later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+read -p 'Do you want to keep qBittorrent configuration files in case you want to reinstall later? Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 

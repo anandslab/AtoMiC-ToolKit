@@ -84,7 +84,7 @@ sudo rm /etc/init.d/headphones || { echo -e $RED'Warning! Removing init script f
 echo
 sleep 1
 
-read -p 'You may keep Headphones installation files as a backup or for reinstalling later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+read -p 'Do you want to keep Headphones installation files as a backup or for reinstalling later? Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 

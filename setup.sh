@@ -39,12 +39,13 @@ echo -e "                __  ___             "
 echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
 echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
 echo
-echo -e $GREEN'AtoMiC ToolKit HTPC / Home Server Setup Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
-echo -e 'NOTE: At this point, this script has been confirmed to work only on Ubuntu variants.'
+echo -e 'NOTE: At this point, this script has only been confirmed to work on Ubuntu variants.'
 echo
-echo -e $YELLOW'00. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
-echo -e $YELLOW'01. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
+# echo -e $YELLOW'00. '$ENDCOLOR'Read README.txt'
+echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
+echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
 echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
 echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
@@ -63,7 +64,7 @@ echo -e $YELLOW'25. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
 echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
 echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
-echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
+echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) (Broken)'
 echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
 echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
 echo -e $YELLOW'36. '$ENDCOLOR'qBittorrent - Uninstall'
@@ -72,9 +73,13 @@ echo -e $YELLOW'41. '$ENDCOLOR'SABNzbd - Uninstall'
 echo -e $YELLOW'45. '$ENDCOLOR'Headphones - Install'
 echo -e $YELLOW'46. '$ENDCOLOR'Headphones - Uninstall'
 echo -e $YELLOW'50. '$ENDCOLOR'Mylar - Install'
-echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Unstall'
+echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Uninstall'
 echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
 echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
+echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
+echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install (In Progress)'
+echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install (In Progress)'
+echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
 echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
@@ -83,16 +88,12 @@ echo -n "What would you like to do [00-99]: "
 read option
 case $option in
 	0 | 00)
-		echo
-	        	echo -e $YELLOW'--->Checking for updates...'$ENDCOLOR
-		git pull
-		echo
-		pause 'Press [Enter] to restart and continue...'
-		cd $SCRIPTPATH
-		sudo ./setup.sh
-		exit 0
+		less README.txt
 		;;
 	1 | 01)
+		sudo ./atomic-updater.sh
+		;;
+	2 | 02)
          	sudo ./bash_aliases-installer.sh
 		;;
 		
@@ -163,7 +164,7 @@ case $option in
     		;;
     		
 	35)
-			sudo ./qbittorrent-installer.sh
+		sudo ./qbittorrent-installer.sh
     		;;
     36)
     		sudo ./qbittorrent-uninstaller.sh
@@ -196,7 +197,23 @@ case $option in
 	56)
     		sudo ./htpcmanager-uninstaller.sh
     		;;
-			
+
+	60)
+    		sudo ./plex-installer.sh
+    		;;
+
+	65)
+    		sudo ./deluge-installer.sh
+    		;;
+
+	70)
+    		sudo ./musicbrainz-installer.sh
+    		;;
+    	
+    	75)
+    		sudo ./webmin-installer.sh
+    		;;
+    		
     98)
     		sudo ./default-credentials.sh
     	;;

@@ -90,12 +90,14 @@ sleep 1
 sudo update-rc.d -f sickrage remove >/dev/null 2>&1
 sudo rm /etc/init.d/sickrage >/dev/null 2>&1
 sudo rm /etc/default/sickrage >/dev/null 2>&1
-echo -e 'Existing SickRage init scripts removed'
+echo -e 'Any existing SickRage init scripts removed'
 sleep 1
 sudo update-rc.d -f sickrage remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.sickrage" ]; then
 	mv /home/$UNAME/.sickrage /home/$UNAME/.sickrage_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
 	echo -e 'Existing SickRage files were moved to '$CYAN'/home/'$UNAME'/.sickrage_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous SickRage folder found'
 fi
 
 echo
@@ -112,7 +114,10 @@ sleep 1
 
 echo -e $YELLOW'--->Installing SickRage...'$ENDCOLOR
 cd /home/$UNAME/.sickrage
-cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+# Check to see if autoProcessTV.cfg.sample exists https://github.com/htpcBeginner/AtoMiC-ToolKit/issues/29
+if [ -f "autoProcessTV/autoProcessTV.cfg.sample" ]; then
+ cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+fi
 
 echo
 sleep 1

@@ -84,7 +84,7 @@ sudo apt-get -y remove nzbdrone
 echo
 sleep 1
 
-read -p 'You may keep Sonarr config files as a backup or for reinstalling later. Do you want to keep the files? Type y/Y and press [ENTER]: '
+read -p 'Do you want to keep Sonarr config files as a backup or for reinstalling later? Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 

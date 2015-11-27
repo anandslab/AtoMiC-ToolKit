@@ -90,12 +90,14 @@ sleep 1
 sudo update-rc.d -f sickbeard remove >/dev/null 2>&1
 sudo rm /etc/init.d/sickbeard >/dev/null 2>&1
 sudo rm /etc/default/sickbeard >/dev/null 2>&1
-echo -e 'Existing SickBeard init scripts removed'
+echo -e 'Any existing SickBeard init scripts removed'
 sleep 1
 sudo update-rc.d -f sickbeard remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.sickbeard" ]; then
 	mv /home/$UNAME/.sickbeard /home/$UNAME/.sickbeard_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
 	echo -e 'Existing SickBeard files were moved to '$CYAN'/home/'$UNAME'/.sickbeard_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous SickBeard folder found'
 fi
 
 echo

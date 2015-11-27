@@ -187,8 +187,8 @@ echo -e $YELLOW"--->Setting permissions..."$ENDCOLOR
 cd /home/$UNAME/.config/deluge
 sudo usermod -a -G deluge $UNAME  || { echo -e $RED'Adding deluge group to user failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:deluge core.conf  || { echo -e $RED'Chown core.conf failed'$ENDCOLOR ; exit 1; }
-sudo rm /var/lib/transmission-daemon/info/settings.json > /dev/null 2>&1
-sudo ln -s /home/$UNAME/.config/transmission/settings.json /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
+#sudo rm /var/lib/transmission-daemon/info/settings.json > /dev/null 2>&1
+#sudo ln -s /home/$UNAME/.config/transmission/settings.json /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
 sudo chown -R $UNAME: /home/$UNAME/Downloads/deluge
 sudo chown -R $UNAME:deluge /home/$UNAME/.config/deluge
 sudo chmod -R 775 /home/$UNAME/Downloads/deluge

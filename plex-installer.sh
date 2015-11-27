@@ -95,11 +95,15 @@ sleep 1
 sudo update-rc.d -f plexmediaserver remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.plexupdate" ]; then
         sudo mv /home/$UNAME/.plexupdate /home/$UNAME/.plexupdate_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-        echo -e 'Any existing Plex Config files were moved to '$CYAN'/home/'$UNAME'/.plexupdate_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+        echo -e 'Existing Plex Config files were moved to '$CYAN'/home/'$UNAME'/.plexupdate_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous .plexupdate folder found'
 fi
 if [ -d "/home/$UNAME/plexupdate" ]; then
-        sudo rm -r /home/$UNAME/plexupdate >/dev/null 2>&1
-        echo -e 'Any existing Plex Update folder deleted'
+        sudo mv /home/$UNAME/plexupdate /home/$UNAME/plexupdate_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+        echo -e 'Existing PlexUpdate folder was moved to '$CYAN'/home/'$UNAME'/plexupdate_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous plexupdate folder found'
 fi
 
 echo -e $YELLOW'--->Downloading plexupdate...'$ENDCOLOR

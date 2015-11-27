@@ -94,7 +94,9 @@ sleep 1
 sudo update-rc.d -f mylar remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.mylar" ]; then
         mv /home/$UNAME/.mylar /home/$UNAME/.mylar_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-        echo -e 'Any existing Mylar files were moved to '$CYAN'/home/'$UNAME'/.mylar_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+        echo -e 'Existing Mylar files were moved to '$CYAN'/home/'$UNAME'/.mylar_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous Mylar folder found'
 fi
 
 echo

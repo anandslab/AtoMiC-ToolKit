@@ -102,6 +102,11 @@ if [ ! -d "/home/$UNAME/.config" ]; then
     mkdir /home/$UNAME/.config
 fi
 if [ ! -d "/home/$UNAME/.config/qBittorrent" ]; then
+	echo -e 'No previous qBittorrent configuration folder found'
+	mkdir /home/$UNAME/.config/qBittorrent
+else
+	mv /home/$UNAME/.config/qBittorrent /home/$UNAME/.config/qBittorrent_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing qBittorrent configurations were moved to '$CYAN'/home/$UNAME/.config/qBittorrent_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 	mkdir /home/$UNAME/.config/qBittorrent
 fi
 if [ ! -f "/home/$UNAME/.config/qBittorrent/qBittorrent.conf" ];

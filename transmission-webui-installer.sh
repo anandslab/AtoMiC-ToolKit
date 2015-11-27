@@ -121,7 +121,13 @@ echo -e $YELLOW"--->Creating download directories..."$ENDCOLOR
 if [ ! -d "/home/$UNAME/.config" ]; then
 	mkdir /home/$UNAME/.config
 fi
-if [ ! -d "/home/$UNAME/.config/transmission" ]; then
+if [ ! -d "/home/$UNAME/.config/transmission" ];
+then
+	echo -e 'No previous Transmission configuration files found'
+	mkdir /home/$UNAME/.config/transmission
+else
+	mv /home/$UNAME/.config/transmission /home/$UNAME/.config/transmission_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing Transmission configurations were moved to '$CYAN'/home/$UNAME/.config/transmission_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 	mkdir /home/$UNAME/.config/transmission
 fi
 if [ ! -d "/home/$UNAME/Downloads" ]; then

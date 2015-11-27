@@ -90,12 +90,14 @@ sleep 1
 sudo update-rc.d -f headphones remove >/dev/null 2>&1
 sudo rm /etc/init.d/headphones >/dev/null 2>&1
 sudo rm /etc/default/headphones >/dev/null 2>&1
-echo -e 'Existing headphones init scripts removed'
+echo -e 'Any existing headphones init scripts removed'
 sleep 1
 sudo update-rc.d -f headphones remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.headphones" ]; then
 	mv /home/$UNAME/.headphones /home/$UNAME/.headphones_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
 	echo -e 'Existing headphones files were moved to '$CYAN'/home/'$UNAME'/.headphones_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+else
+	echo -e 'No previous Headphones folder found'
 fi
 
 echo

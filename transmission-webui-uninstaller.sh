@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to uninstall any relevant fi
 echo -e '5. Best used to uninstall Transmission installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you installed SickBeard as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 
@@ -129,8 +112,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Transmission Uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

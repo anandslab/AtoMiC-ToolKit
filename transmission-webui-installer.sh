@@ -40,22 +40,6 @@ echo -e '5. Best used on a clean system (with no previous Transmission install) 
 echo -e '6. The script installs only Transmission WebUI and not the desktop GUI.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run Transmission as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -64,7 +48,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -87,15 +70,12 @@ echo -e $YELLOW"--->Adding Transmission repository..."$ENDCOLOR
 GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep transmissionbt)
 if [ "$GREPOUT" == "" ]; then
     sudo add-apt-repository -y ppa:transmissionbt/ppa
+    
+    echo -e $YELLOW"--->Refreshing packages list again..."$ENDCOLOR
+	sudo apt-get update
 else
     echo "Transmission PPA repository already exists..."
 fi
-
-echo
-sleep 1
-
-echo -e $YELLOW"--->Refreshing packages list again..."$ENDCOLOR
-sudo apt-get update
 
 echo
 sleep 1
@@ -233,8 +213,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Transmission WebUI Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

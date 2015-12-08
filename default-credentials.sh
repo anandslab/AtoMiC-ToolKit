@@ -4,6 +4,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #
+
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 YELLOW='\e[93m'
 RED='\e[91m'
@@ -11,9 +12,11 @@ ENDCOLOR='\033[0m'
 CYAN='\e[96m'
 GREEN='\e[92m'
 SCRIPTPATH=$(pwd)
+
 function pause(){
 read -p "$*"
 }
+
 clear
 echo 
 echo -e $RED
@@ -115,5 +118,6 @@ echo
 pause 'Press [Enter] key to continue...'
 
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

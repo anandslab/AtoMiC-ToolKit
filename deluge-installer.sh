@@ -40,22 +40,6 @@ echo -e '5. Best used on a clean system (with no previous Deluge install) or aft
 echo -e '6. The script installs only Deluge WebUI and not the desktop GUI.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run Deluge as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -64,7 +48,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -108,7 +91,6 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Checking for previous versions of Deluge...'$ENDCOLOR
-sleep 1
 sudo /etc/init.d/deluge-daemon stop >/dev/null 2>&1
 echo -e 'Any running Deluge processes stopped'
 sleep 1
@@ -155,20 +137,11 @@ echo
 sleep 1
 
 echo -e $YELLOW"--->Creating download directories..."$ENDCOLOR
-if [ ! -d "/home/$UNAME/.config" ]; then
-	mkdir /home/$UNAME/.config
-fi
 if [ ! -d "/home/$UNAME/.config/deluge" ]; then
-	mkdir /home/$UNAME/.config/deluge
-fi
-if [ ! -d "/home/$UNAME/Downloads" ]; then
-	mkdir /home/$UNAME/Downloads
-fi
-if [ ! -d "/home/$UNAME/Downloads/deluge" ]; then
-	mkdir /home/$UNAME/Downloads/deluge
+	mkdir -p /home/$UNAME/.config/deluge
 fi
 if [ ! -d "/home/$UNAME/Downloads/deluge/incomplete" ]; then
-	mkdir /home/$UNAME/Downloads/deluge/incomplete
+	mkdir -p /home/$UNAME/Downloads/deluge/incomplete
 fi
 
 echo -e 'Following directories created...'
@@ -275,8 +248,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Deluge WebUI Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

@@ -43,7 +43,6 @@ then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 
@@ -56,10 +55,10 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-#git config user.email “atomic@htpcbeginner.com”
-#git config user.name “AtoMiCUser”
-#git stash
-#git stash clear
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
 
 echo 
 sleep 1
@@ -69,7 +68,6 @@ git fetch --all
 git reset --hard origin/dev
 
 echo
-pause 'Press [Enter] to restart and continue...'
-cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 1
+
 exit 0

@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous SickBeard install) or after complete removal of previous SickBeard installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run Sick Beard as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -114,7 +97,9 @@ sleep 1
 
 echo -e $YELLOW'--->Installing SickBeard...'$ENDCOLOR
 cd /home/$UNAME/.sickbeard
-cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+if [ -f "autoProcessTV/autoProcessTV.cfg.sample" ]; then
+	cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+fi
 
 echo
 sleep 1
@@ -146,7 +131,7 @@ sudo chown $UNAME: /var/run/sickbeard >/dev/null 2>&1
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to Sick Beard...'
+echo -e 'Stashing any changes made to SickBeard...'
 cd /home/$UNAME/.sickbeard
 git config user.email “atomic@htpcbeginner.com”
 git config user.name “AtoMiCUser”
@@ -155,7 +140,12 @@ git stash clear
 
 echo
 sleep 1
+
+echo -e 'Starting SickBeard...'
 /etc/init.d/sickbeard start
+
+echo
+sleep 1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
@@ -167,8 +157,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Sick Beard Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

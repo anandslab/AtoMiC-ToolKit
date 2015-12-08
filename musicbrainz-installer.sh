@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Musicbrainz Installer
-# Author: htpcBeginner
+# Author: carrigan98
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #
@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous Musicbrainz install) or after complete removal of previous Musicbrainz installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run Musicbrainz as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -81,7 +64,6 @@ if [ ! -d $DIRPATH ]; then
         echo
         pause 'Press [Enter] key to continue...'
         cd $SCRIPTPATH
-        sudo ./setup.sh
         exit 0
     fi
     sudo mkdir -p $DIRPATH
@@ -105,6 +87,7 @@ sudo apt-get -y install \
     memcached \
     redis-server \
     nodejs \
+    nodejs-legacy \
     npm \
     build-essential \
     libxml2-dev \
@@ -121,10 +104,13 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Downloading latest Musicbrainz...'$ENDCOLOR
-cd $DIRPATH
-sudo git clone --recursive git://github.com/metabrainz/musicbrainz-server.git $DIRPATH/musicbrainz || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
-sudo chown -R $UNAME:$UGROUP $DIRPATH/musicbrainz >/dev/null 2>&1
-sudo chmod 775 -R $DIRPATH/musicbrainz >/dev/null 2>&1
+cd /home/$UNAME
+git clone --recursive git://github.com/metabrainz/musicbrainz-server.git /home/$UNAME/musicbrainz || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+sudo chown -R $UNAME:$UGROUP /home/$UNAME/musicbrainz >/dev/null 2>&1
+sudo chmod 775 -R /home/$UNAME/musicbrainz >/dev/null 2>&1
+
+echo
+sleep 1
 
 echo
 sleep 1
@@ -138,24 +124,26 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Installing Dependencies...'$ENDCOLOR
-cd $DIRPATH/musicbrainz
-echo 'eval $( perl -Mlocal::lib )' >> ~/.bashrc
-source ~/.bashrc
+cmd="grep -e 'eval $( perl -Mlocal::lib )' ~/.bashrc"
+if [ $(cmd) -ne 0 ]; then
+	echo 'eval $( perl -Mlocal::lib )' >> ~/.bashrc
+	source ~/.bashrc
+fi
+cd /home/$UNAME/musicbrainz
 cpanm --installdeps --force --notest .
 npm install
-./node_modules/.bin/gulp
-
-pause 'Press [Enter] key to continue...'
+/usr/bin/node /home/$UNAME/musicbrainz/node_modules/.bin/gulp
 
 echo
 sleep 1
 
 echo -e $YELLOW'--->Installing PostgreSQL Extensions...'$ENDCOLOR
-sudo mkdir -p $DIRPATH/postgresql
-sudo chown -R postgres:postgres $DIRPATH/postgresql
-sudo su postgres
-/usr/lib/postgresql/9.3/bin/initdb -D $DIRPATH/postgresql
-
+sudo mkdir -p $DIRPATH/postgresql/main
+sudo chown -R postgres:postgres $DIRPATH/postgresql/main
+sudo -u postgres /usr/lib/postgresql/9.3/bin/initdb -D $DIRPATH/postgresql/main
+sudo /etc/init.d/postgresql stop
+echo 'Manually change postgresql.conf data_directory prior to pressing [Enter]'
+sleep 5
 pause 'Press [Enter] key to continue...'
 
 #
@@ -168,14 +156,12 @@ pause 'Press [Enter] key to continue...'
 #
 #sed -i 'ssl = / s/ false'
 
-cd $DIRPATH/musicbrainz/postgresql-musicbrainz-unaccent
-sudo make
+cd /home/$UNAME/musicbrainz/postgresql-musicbrainz-unaccent
+make
 sudo make install
-cd $DIRPATH/musicbrainz/postgresql-musicbrainz-collate
-sudo make
+cd /home/$UNAME/musicbrainz/postgresql-musicbrainz-collate
+make
 sudo make install
-
-pause 'Press [Enter] key to continue...'
 
 echo
 sleep 1
@@ -184,11 +170,32 @@ echo -e $YELLOW'--->Downloading Database Export...'$ENDCOLOR
 if [ ! -d $DIRPATH/musicbrainz/tmp ]; then
     sudo mkdir -p $DIRPATH/musicbrainz/tmp
     cd $DIRPATH/musicbrainz/tmp
+    sudo chown -R $UNAME:$UGROUP $DIRPATH/musicbrainz >/dev/null 2>&1
+	sudo chmod 775 -R $DIRPATH/musicbrainz >/dev/null 2>&1
     DBVER=$(curl ftp://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/LATEST)
-    sudo wget ftp://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$DBVER/mbdump*.tar.bz2
+    wget ftp://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$DBVER/mbdump*.tar.bz2
 fi
 
 pause 'Press [Enter] key to continue...'
+
+# echo -e $YELLOW'--->Checking for previous versions of Musicbrainz...'$ENDCOLOR
+# sleep 1
+# sudo /etc/init.d/musicbrainz stop >/dev/null 2>&1
+# echo -e 'Any running Musicbrainz processes stopped'
+# sleep 1
+# sudo update-rc.d -f musicbrainz remove >/dev/null 2>&1
+# sudo rm /etc/init.d/musicbrainz >/dev/null 2>&1
+# sudo rm /etc/default/musicbrainz >/dev/null 2>&1
+# echo -e 'Existing Musicbrainz init scripts removed'
+# sleep 1
+# sudo update-rc.d -f musicbrainz remove >/dev/null 2>&1
+# if [ -d "/home/$UNAME/.musicbrainz" ]; then
+	# mv /home/$UNAME/.musicbrainz /home/$UNAME/.musicbrainz_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	# echo -e 'Existing Musicbrainz files were moved to '$CYAN'/home/'$UNAME'/.musicbrainz_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+# fi
+
+# echo
+# sleep 1
 
 # echo -e $YELLOW'--->Configuring Musicbrainz Install...'$ENDCOLOR
 # cd /home/$UNAME/.musicbrainz/init
@@ -212,46 +219,35 @@ pause 'Press [Enter] key to continue...'
 # echo
 # sleep 1
 
-# echo -e 'Stashing any changes made to Musicbrainz...'
-# cd /home/$UNAME/.musicbrainz
-# git config user.email “atomic@htpcbeginner.com”
-# git config user.name “AtoMiCUser”
-# git stash
-# git stash clear
+echo -e 'Stashing any changes made to Musicbrainz...'
+cd /home/$UNAME/.musicbrainz
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
 
 echo
 sleep 1
 
-# echo -e 'Starting Musicbrainz'
-# sudo /etc/init.d/musicbrainz start >/dev/null 2>&1
-# echo
-# echo -e $GREEN'--->All done. '$ENDCOLOR
-# echo -e 'Musicbrainz should start within 10-20 seconds and your browser should open.'
-# echo -e 'If not you can start it using '$CYAN'/etc/init.d/Musicbrainz start'$ENDCOLOR' command.'
-# echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
-# echo
-# echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-# echo -e $YELLOW'Thank you for using the AtoMiC Musicbrainz Install script from www.htpcBeginner.com.'$ENDCOLOR 
-# echo
-# pause 'Press [Enter] key to continue...'
-# cd $SCRIPTPATH
-# sudo ./setup.sh
+#echo -e 'Starting Musicbrainz'
+#sudo /etc/init.d/musicbrainz start >/dev/null 2>&1
+
+echo
+sleep 1
+
+echo
+echo -e $GREEN'--->All done. '$ENDCOLOR
+echo -e 'Musicbrainz should start within 10-20 seconds and your browser should open.'
+echo -e 'If not you can start it using '$CYAN'/etc/init.d/Musicbrainz start'$ENDCOLOR' command.'
+echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
+echo
+echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
+echo -e $YELLOW'Thank you for using the AtoMiC Musicbrainz Install script from www.htpcBeginner.com.'$ENDCOLOR 
+echo
+
+cd $SCRIPTPATH
+sleep 5
+
 exit 0
 
-# echo -e $YELLOW'--->Checking for previous versions of Musicbrainz...'$ENDCOLOR
-# sleep 1
-# sudo /etc/init.d/musicbrainz stop >/dev/null 2>&1
-# echo -e 'Any running Musicbrainz processes stopped'
-# sleep 1
-# sudo update-rc.d -f musicbrainz remove >/dev/null 2>&1
-# sudo rm /etc/init.d/musicbrainz >/dev/null 2>&1
-# sudo rm /etc/default/musicbrainz >/dev/null 2>&1
-# echo -e 'Existing Musicbrainz init scripts removed'
-# sleep 1
-# sudo update-rc.d -f musicbrainz remove >/dev/null 2>&1
-# if [ -d "/home/$UNAME/.musicbrainz" ]; then
-	# mv /home/$UNAME/.musicbrainz /home/$UNAME/.musicbrainz_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	# echo -e 'Existing Musicbrainz files were moved to '$CYAN'/home/'$UNAME'/.musicbrainz_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
-# fi
-# echo
-# sleep 1
+

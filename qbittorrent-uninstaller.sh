@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to uninstall any relevant fi
 echo -e '5. Best used to uninstall qBittorrent installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you installed qBittorrent as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 
@@ -72,7 +55,9 @@ sleep 1
 
 echo -e $YELLOW'--->Stopping qBittorrent...'$ENDCOLOR
 sudo service qbittorrent-nox-daemon stop >/dev/null 2>&1
+sleep 2
 sudo killall qbittorrent-nox >/dev/null 2>&1
+sleep 2
 
 echo
 sleep 1
@@ -113,8 +98,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC qBittorrent Uninstall script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

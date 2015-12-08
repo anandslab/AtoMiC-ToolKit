@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous SickRage install) or after complete removal of previous SickRage installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run SickRage as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -143,7 +126,6 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Creating Run Directories...'$ENDCOLOR
-
 sudo mkdir /var/run/sickrage >/dev/null 2>&1
 sudo chown $UNAME: /var/run/sickrage >/dev/null 2>&1
 
@@ -159,7 +141,12 @@ git stash clear
 
 echo
 sleep 1
+
+echo -e 'Starting SickRage...'
 /etc/init.d/sickrage start
+
+echo
+sleep 1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
@@ -171,8 +158,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC SickRage Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

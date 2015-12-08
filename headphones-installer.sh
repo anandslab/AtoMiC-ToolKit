@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous headphones install) or after complete removal of previous Headphones installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run Headphones as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -138,10 +121,10 @@ sleep 1
 
 echo -e 'Stashing any changes made to headphones...'
 cd /home/$UNAME/.headphones
-#git config user.email “atomic@htpcbeginner.com”
-#git config user.name “AtoMiCUser”
-#git stash
-#git stash clear
+git config user.email “atomic@htpcbeginner.com”
+git config user.name “AtoMiCUser”
+git stash
+git stash clear
 
 echo
 sleep 1
@@ -151,7 +134,7 @@ sudo /etc/init.d/headphones start >/dev/null 2>&1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e 'headphones should start within 10-20 seconds and your browser should open.'
+echo -e 'Headphones should start within 10-20 seconds.'
 echo -e 'If not you can start it using '$CYAN'/etc/init.d/headphones start'$ENDCOLOR' command.'
 echo -e 'Then open '$CYAN'http://localhost:8181'$ENDCOLOR' in your browser.'
 echo
@@ -159,8 +142,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Headphones Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

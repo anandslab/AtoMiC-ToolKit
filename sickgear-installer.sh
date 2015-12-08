@@ -39,22 +39,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous SickGear install) or after complete removal of previous SickGear installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo 
-
 echo -n 'Type the username of the user you want to run SickGear as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -63,7 +47,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	pause 'Press [Enter] key to continue...'
 	cd $SCRIPTPATH
-	sudo ./setup.sh
 	exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -114,8 +97,9 @@ sleep 1
 
 echo -e $YELLOW'--->Installing SickGear...'$ENDCOLOR
 cd /home/$UNAME/.sickgear
-cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
-
+if [ -f "autoProcessTV/autoProcessTV.cfg.sample" ]; then
+	cp -a autoProcessTV/autoProcessTV.cfg.sample autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
+fi
 echo
 sleep 1
 
@@ -144,7 +128,6 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Creating Run Directories...'$ENDCOLOR
-
 sudo mkdir /var/run/sickgear >/dev/null 2>&1
 sudo chown $UNAME: /var/run/sickgear >/dev/null 2>&1
 
@@ -160,7 +143,12 @@ git stash clear
 
 echo
 sleep 1
+
+echo -e 'Starting SickGear...'
 /etc/init.d/sickgear start
+
+echo
+sleep 1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
@@ -172,8 +160,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC SickGear Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

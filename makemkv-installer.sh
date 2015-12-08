@@ -40,36 +40,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous MakeMKV install) or after complete removal of previous MakeMKV installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo
-
-echo -n 'Type the username of the user you want to run MakeMKV as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
-read UNAME
-
-if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
-	echo -e 'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	exit 0
-fi
-UGROUP=($(id -gn $UNAME))
-
-echo
-
 echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
 sudo apt-get update
 
@@ -126,13 +96,13 @@ sleep 1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e 'makemkvcon should be located here '$CYAN'/usr/bin/makemkvcon'$ENDCOLOR
+echo -e 'makemkvcon should be located here: '$CYAN'/usr/bin/makemkvcon'$ENDCOLOR
 echo
 echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
 echo -e $YELLOW'Thank you for using the AtoMiC MakeMKV Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

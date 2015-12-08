@@ -38,22 +38,6 @@ echo -e '4. By proceeding you authorize this script to install any relevant pack
 echo -e '5. Best used on a clean system (with no previous Mylar install) or after complete removal of previous Mylar installation.'
 
 echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ]
-then
-        echo -e $RED'So you chickened out. Maybe you will try again later.'$ENDCOLOR
-        echo
-        pause 'Press [Enter] key to continue...'
-        cd $SCRIPTPATH
-        sudo ./setup.sh
-        exit 0
-fi
-
-echo
-
 echo -n 'Type the username of the user you want to run Mylar as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
 read UNAME
 
@@ -62,7 +46,6 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
         echo
         pause 'Press [Enter] key to continue...'
         cd $SCRIPTPATH
-        sudo ./setup.sh
         exit 0
 fi
 UGROUP=($(id -gn $UNAME))
@@ -76,7 +59,12 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo apt-get -y install git-core python python-cheetah python-cherrypy git
+sudo apt-get -y install \
+	git-core \
+	git \
+	python \
+	python-cheetah \
+	python-cherrypy
 
 echo
 sleep 1
@@ -136,8 +124,8 @@ sleep 1
 
 echo -e 'Stashing any changes made to Mylar...'
 cd /home/$UNAME/.mylar
-git config user.email “atomic@htpcbeginner.com"
-git config user.name “AtoMiCUser"
+git config user.email "atomic@htpcbeginner.com"
+git config user.name "AtoMiCUser"
 git stash
 git stash clear
 
@@ -157,8 +145,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Mylar Install script from www.htpcBeginner.com.'$ENDCOLOR
 echo
 
-pause 'Press [Enter] key to continue...'
-
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

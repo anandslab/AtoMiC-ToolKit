@@ -41,21 +41,6 @@ echo -e '5. Best used on a clean system (with no previous Webmin install) or aft
 
 echo
 
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
-then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo ./setup.sh
-	exit 0
-fi
-
-echo
-
 echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
 sudo apt-get update
 
@@ -71,8 +56,8 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Configuring Webmin Install...'$ENDCOLOR
-sudo dpkg --force-depends -i webmin_*.deb
-sudo apt-get install -f -y
+sudo dpkg -i webmin_*.deb
+sudo apt-get install -f -y || { echo -e $RED'Webmin Install Failed.'$ENDCOLOR ; exit 1; }
 
 echo
 sleep 1
@@ -96,7 +81,7 @@ echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.ht
 echo -e $YELLOW'Thank you for using the AtoMiC Webmin Install script from www.htpcBeginner.com.'$ENDCOLOR 
 echo
 
-pause 'Press [Enter] key to continue...'
 cd $SCRIPTPATH
-sudo ./setup.sh
+sleep 5
+
 exit 0

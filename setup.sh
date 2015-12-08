@@ -28,6 +28,14 @@ if [ "$EUID" -ne 0 ]
   exit 0
 fi
 
+# Verify Dialog Package Installed
+cmd="dpkg -l dialog"
+
+if [ $(cmd) -ne 0 ]; then
+	echo -e $YELLOW'--->Installing necessary '$CYAN'dialog'$YELLOW' package...'$ENDCOLOR
+	sudo apt-get -y install dialog
+fi
+
 clear
 echo 
 echo -e $RED
@@ -43,194 +51,211 @@ echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
 echo -e 'NOTE: At this point, this script has only been confirmed to work on Ubuntu variants.'
 echo
-# echo -e $YELLOW'00. '$ENDCOLOR'Read README.txt'
-echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
-echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
-echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
-echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
-echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
-echo -e $YELLOW'08. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
-echo -e $YELLOW'10. '$ENDCOLOR'SickRage - Install'
-echo -e $YELLOW'11. '$ENDCOLOR'SickRage - Uninstall'
-echo -e $YELLOW'12. '$ENDCOLOR'SickRage - Backup Database and Settings'
-echo -e $YELLOW'13. '$ENDCOLOR'SickRage - Restore Database and Settings'
-echo -e $YELLOW'15. '$ENDCOLOR'SickGear - Install'
-echo -e $YELLOW'16. '$ENDCOLOR'SickGear - Uninstall'
-echo -e $YELLOW'17. '$ENDCOLOR'SickGear - Backup Database and Settings'
-echo -e $YELLOW'18. '$ENDCOLOR'SickGear - Restore Database and Settings'
-echo -e $YELLOW'20. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
-echo -e $YELLOW'21. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
-echo -e $YELLOW'25. '$ENDCOLOR'CouchPotato - Install'
-echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
-echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
-echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
-echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) (Broken)'
-echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
-echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
-echo -e $YELLOW'36. '$ENDCOLOR'qBittorrent - Uninstall'
-echo -e $YELLOW'40. '$ENDCOLOR'SABNzbd - Install'
-echo -e $YELLOW'41. '$ENDCOLOR'SABNzbd - Uninstall'
-echo -e $YELLOW'45. '$ENDCOLOR'Headphones - Install'
-echo -e $YELLOW'46. '$ENDCOLOR'Headphones - Uninstall'
-echo -e $YELLOW'50. '$ENDCOLOR'Mylar - Install'
-echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Uninstall'
-echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
-echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
-echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
-echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install (In Progress)'
-echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install (In Progress)'
-echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
-echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
-echo -e $YELLOW'99. '$ENDCOLOR'Exit'
+
+echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
+echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
+echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
+echo -e '4. By proceeding you authorize this script to install any relevant packages required to install and configure the selected packages.'
+echo -e '5. Best used on a clean system (with no previous selected package install) or after complete removal of previous selected package installation.'
 
 echo
-echo -n "What would you like to do [00-99]: "
-read option
-case $option in
-	0 | 00)
-		less README.txt
-		;;
-	1 | 01)
-		sudo ./atomic-updater.sh
-		;;
-	2 | 02)
-         	sudo ./bash_aliases-installer.sh
-		;;
+
+read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
+RESP=${REPLY,,}
+
+if [ "$RESP" != "y" ] 
+then
+	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
+	echo
+	pause 'Press [Enter] key to continue...'
+	exit 0
+fi
+
+#
+# Create a dialog for the control user
+# Source the user to all of the options
+#
+# user_input=$(dialog --title "Master User" --clear --inputbox "Enter the master username:" 8 40)
+
+cmd=(dialog --backtitle "http://www.htpcBeginner.com" \
+	--title "AtoMiC ToolKit - HTPC / Home Server Setup Script" \
+	--separate-output --checklist "Use the UP/DOWN arrow keys to scroll. \n\
+	Press SPACE to toggle an option on/off. \n\n\
+		Which packages to install?" 22 76 16)
 		
-    5 | 05)
-		sudo ./sickbeard-installer.sh
-		;;
-    6 | 06) 
+options=(
+	00	'Read README.txt'											off
+	01	'Check and Update AtoMiC ToolKit'							off
+	02	'Install .bash_aliases HTPC / Home Server administration'	off
+	05	'Sick Beard - Install'										off
+	06	'Sick Beard - Uninstall'									off
+	07	'Sick Beard - Backup Database and Settings'					off
+	08	'Sick Beard - Restore Database and Settings'				off
+	10	'SickRage - Install'										off
+	11	'SickRage - Uninstall'										off
+	12	'SickRage - Backup Database and Settings'					off
+	13	'SickRage - Restore Database and Settings'					off
+	15	'SickGear - Install'										off
+	16	'SickGear - Uninstall'										off
+	17	'SickGear - Backup Database and Settings'					off
+	18	'SickGear - Restore Database and Settings'					off
+	20	'Sonarr (NzbDrone) - Install'								off
+	21	'Sonarr (NzbDrone) - Uninstall'								off
+	25	'CouchPotato - Install'										off
+	26	'CouchPotato - Uninstall'									off
+	27	'CouchPotato - Backup Database and Settings'				off
+	28	'CouchPotato - Restore Database and Settings'				off
+	30	'Transmission - Install (WebUI only, no Desktop GUI)'		off
+	31	'Transmission - Uninstall'									off
+	35	'qBittorrent - Install (WebUI only, no Desktop GUI)'		off
+	36	'qBittorrent - Uninstall'									off
+	40	'SABNzbd - Install'											off
+	41	'SABNzbd - Uninstall'										off
+	45	'Headphones - Install'										off
+	46	'Headphones - Uninstall'									off
+	50	'Mylar - Install'											off
+	51	'Mylar - Uninstall'											off
+	55	'HTPC Manager - Install'									off
+	56	'HTPC Manager - Uninstall'									off
+	60	'Plex Server - Install'										off
+	65	'Deluge - Install'											off
+	70	'MusicBrainz - Install'										off
+	75	'Webmin - Install'											off
+	98	'See default port numbers, usernames, and passwords'		off
+)
+         
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+
+for choice in $choices
+do
+    case $choice in
+		 0)
+			less README.txt
+			;;
+		 1)
+			sudo ./atomic-updater.sh
+			;;
+		 2)
+         	sudo ./bash_aliases-installer.sh
+			;;
+		 5)
+			sudo ./sickbeard-installer.sh
+			;;
+		 6) 
     		sudo ./sickbeard-uninstaller.sh
     		;;
-    7 | 07)
+		 7)
     		sudo ./sickbeard-backup.sh
     		;;
-	8 | 08)
+		 8)
     		sudo ./sickbeard-restore.sh
     		;;
-    	
-    10)
-    		sudo ./sickrage-installer.sh
+		10)
+			sudo ./sickrage-installer.sh
     		;;
-    11)
+		11)
     		sudo ./sickrage-uninstaller.sh
     		;;
-    12)
+		12)
     		sudo ./sickrage-backup.sh
     		;;
-    13)
+		13)
     		sudo ./sickrage-restore.sh
-    		;;
-			
-    15)
+    		;;	
+		15)
     		sudo ./sickgear-installer.sh
     		;;
-    16)
+		16)
     		sudo ./sickgear-uninstaller.sh
     		;;
-    17)
+		17)
     		sudo ./sickgear-backup.sh
     		;;
-    18)
+		18)
     		sudo ./sickgear-restore.sh
-    		;;
-			
-    20)
+    		;;	
+		20)
     		sudo ./sonarr-installer.sh
     		;;
-    21)
+		21)
     		sudo ./sonarr-uninstaller.sh
-    		;;
-			
-    25)
+    		;;	
+		25)
     		sudo ./couchpotato-installer.sh
     		;;
-    26) 
+		26) 
     		sudo ./couchpotato-uninstaller.sh
     		;;
-    27)
+		27)
     		sudo ./couchpotato-backup.sh
     		;;
-    28) 
+		28) 
     		sudo ./couchpotato-restore.sh
     		;;
-			
-    30)
+		30)
     		sudo ./transmission-webui-installer.sh
     		;;
-    31)
+		31)
     		sudo ./transmission-webui-uninstaller.sh
+    		;;	
+		35)
+			sudo ./qbittorrent-installer.sh
     		;;
-    		
-	35)
-		sudo ./qbittorrent-installer.sh
-    		;;
-    36)
+		36)
     		sudo ./qbittorrent-uninstaller.sh
     		;;
-    		
-	40)
+		40)
     		sudo ./sabnzbd-installer.sh
     		;;
-	41)
+		41)
     		sudo ./sabnzbd-uninstaller.sh
     		;;
-
-	45)
+		45)
     		sudo ./headphones-installer.sh
     		;;
-	46)
-    		sudo ./headphones-uninstaller.sh
+		46)
+    		sudo ./headphones-installer.sh
     		;;
-    
-	50)
+		50)
     		sudo ./mylar-installer.sh
     		;;
-	51)
+		51)
     		sudo ./mylar-uninstaller.sh
-    		;;
-			
-	55)
+    		;;	
+		55)
     		sudo ./htpcmanager-installer.sh
     		;;
-	56)
+		56)
     		sudo ./htpcmanager-uninstaller.sh
     		;;
-
-	60)
+		60)
     		sudo ./plex-installer.sh
     		;;
-
-	65)
+		65)
     		sudo ./deluge-installer.sh
     		;;
-
-	70)
+		70)
     		sudo ./musicbrainz-installer.sh
     		;;
-    	
     	75)
     		sudo ./webmin-installer.sh
-    		;;
-    		
-    98)
+    		;;	
+		98)
     		sudo ./default-credentials.sh
-    	;;
-    99)
-		echo 'Exiting...'
-		echo
-		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
-		echo
-		sleep 2
-		#URL=http://www.htpcbeginner.com/atomic-thanks
-		#[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-		#path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
-		;;
-    	*)
-        	echo -e $RED'Invalid Option'$ENDCOLOR
-		ScriptLoc=$(readlink -f "$0")
-		sleep 1
-		exec $ScriptLoc
-esac
+    esac
+done
+
+#URL=http://www.htpcbeginner.com/atomic-thanks
+#[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
+#path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
+#ScriptLoc=$(readlink -f "$0")
+#sleep 1
+#exec $ScriptLoc
+
+clear
+echo
+echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
+echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
+echo
+sleep 2

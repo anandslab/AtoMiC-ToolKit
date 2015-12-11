@@ -28,7 +28,7 @@ Features features of AtoMiC ToolKit include:
 <li>Deluge - Install</li>
 <li>MusicBrainz - Install</li>
 <li>Webmin - Install</li>
-<li>Planned - NZBGet, RTorrent/RUTorrent</li>
+<li>Planned - NZBGet, RTorrent/RUTorrent, Monit, ShellInABox</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

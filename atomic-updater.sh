@@ -66,7 +66,7 @@ sleep 1
 
 echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
 git fetch --all
-git reset --hard origin/dev
+git reset --hard origin/master
 
 echo
 pause 'Press [Enter] to restart and continue...'

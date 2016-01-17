@@ -26,6 +26,10 @@ source $SCRIPTPATH/inc/header.sh
 
 sleep 1
 
+if [ ! -d "$SCRIPTPATH/tmp" ]; then
+	mkdir $SCRIPTPATH/tmp
+fi
+
 echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
 	#echo 'consent file not present'

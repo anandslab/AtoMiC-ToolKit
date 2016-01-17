@@ -47,7 +47,7 @@ $ sudo apt-get install git-core
 $ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit
 $ cd ~/AtoMiC-ToolKit
 $ sudo chmod 755 *
-$ sudo ./setup.sh
+$ sudo bash setup.sh
 </pre>
 
 <h2>Default Usernames and Passwords</h2>

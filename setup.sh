@@ -7,43 +7,38 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-YELLOW='\e[93m'
-RED='\e[91m'
-ENDCOLOR='\033[0m'
-CYAN='\e[96m'
-GREEN='\e[92m'
-SCRIPTPATH=$(pwd)
+# Set caller id and script path
+export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
+export SCRIPTPATH=$(pwd)
 
-sudo chmod -R 775 * >/dev/null 2>&1
+cd $SCRIPTPATH
+source inc/commons.sh
 
-function pause(){
-   read -p "$*"
-}
-
+# Check if being run as root
 if [ "$EUID" -ne 0 ]
   then 
   echo
-  echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo ./setup.sh'
+  echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo bash setup.sh'
   echo
   exit 0
 fi
 
-clear
-echo 
-echo -e $RED
-echo -e " ┬ ┬┬ ┬┬ ┬ ┬ ┬┌┬┐┌─┐┌─┐┌┐ ┌─┐┌─┐┬┌┐┌┌┐┌┌─┐┬─┐ ┌─┐┌─┐┌┬┐"
-echo -e " │││││││││ ├─┤ │ ├─┘│  ├┴┐├┤ │ ┬│││││││├┤ ├┬┘ │  │ ││││"
-echo -e " └┴┘└┴┘└┴┘o┴ ┴ ┴ ┴  └─┘└─┘└─┘└─┘┴┘└┘┘└┘└─┘┴└─o└─┘└─┘┴ ┴"
-echo -e $CYAN
-echo -e "                __  ___             "
-echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
-echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
-echo
+source inc/header.sh
+
+echo 'PWD '$(pwd)
+echo 'SCRIPTPATH '$SCRIPTPATH
+echo '2 '$2
+
+source inc/consent.sh
+
+source inc/usercheck.sh
+
+sudo chmod -R 775 * >/dev/null 2>&1
+
 echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo 
 echo -e 'NOTE: At this point, this script has only been confirmed to work on Ubuntu variants.'
 echo
-# echo -e $YELLOW'00. '$ENDCOLOR'Read README.txt'
 echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
@@ -87,142 +82,138 @@ echo
 echo -n "What would you like to do [00-99]: "
 read option
 case $option in
-	0 | 00)
-		less README.txt
-		;;
 	1 | 01)
-		sudo ./atomic-updater.sh
+		sudo bash update.sh "$CALLER" "$SCRIPTPATH"
 		;;
 	2 | 02)
-         	sudo ./bash_aliases-installer.sh
+         	sudo bash system/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH"
 		;;
 		
     5 | 05)
-		sudo ./sickbeard-installer.sh
+		sudo bash sickbeard/sickbeard-installer.sh "$CALLER" "$SCRIPTPATH"
 		;;
     6 | 06) 
-    		sudo ./sickbeard-uninstaller.sh
+    		sudo bash sickbeard/sickbeard-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     7 | 07)
-    		sudo ./sickbeard-backup.sh
+    		sudo bash sickbeard/sickbeard-backup.sh "$CALLER" "$SCRIPTPATH"
     		;;
 	8 | 08)
-    		sudo ./sickbeard-restore.sh
+    		sudo bash sickbeard/sickbeard-restore.sh "$CALLER" "$SCRIPTPATH"
     		;;
     	
     10)
-    		sudo ./sickrage-installer.sh
+    		sudo bash sickrage/sickrage-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     11)
-    		sudo ./sickrage-uninstaller.sh
+    		sudo bash sickrage/sickrage-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     12)
-    		sudo ./sickrage-backup.sh
+    		sudo bash sickrage/sickrage-backup.sh "$CALLER" "$SCRIPTPATH"
     		;;
     13)
-    		sudo ./sickrage-restore.sh
+    		sudo bash sickrage/sickrage-restore.sh "$CALLER" "$SCRIPTPATH"
     		;;
 			
     15)
-    		sudo ./sickgear-installer.sh
+    		sudo bash sickgear/sickgear-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     16)
-    		sudo ./sickgear-uninstaller.sh
+    		sudo bash sickgear/sickgear-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     17)
-    		sudo ./sickgear-backup.sh
+    		sudo bash sickgear/sickgear-backup.sh "$CALLER" "$SCRIPTPATH"
     		;;
     18)
-    		sudo ./sickgear-restore.sh
+    		sudo bash sickgear/sickgear-restore.sh "$CALLER" "$SCRIPTPATH"
     		;;
 			
     20)
-    		sudo ./sonarr-installer.sh
+    		sudo bash sonarr/sonarr-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     21)
-    		sudo ./sonarr-uninstaller.sh
+    		sudo bash sonarr/sonarr-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
 			
     25)
-    		sudo ./couchpotato-installer.sh
+    		sudo bash couchpotato/couchpotato-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     26) 
-    		sudo ./couchpotato-uninstaller.sh
+    		sudo bash couchpotato/couchpotato-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     27)
-    		sudo ./couchpotato-backup.sh
+    		sudo bash couchpotato/couchpotato-backup.sh "$CALLER" "$SCRIPTPATH"
     		;;
     28) 
-    		sudo ./couchpotato-restore.sh
+    		sudo bash couchpotato/couchpotato-restore.sh "$CALLER" "$SCRIPTPATH"
     		;;
 			
     30)
-    		sudo ./transmission-webui-installer.sh
+    		sudo bash transmission/transmission-webui-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     31)
-    		sudo ./transmission-webui-uninstaller.sh
+    		sudo bash transmission/transmission-webui-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     		
 	35)
-		sudo ./qbittorrent-installer.sh
+			sudo bash qbittorrent/qbittorrent-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     36)
-    		sudo ./qbittorrent-uninstaller.sh
+    		sudo bash qbittorrent/qbittorrent-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     		
 	40)
-    		sudo ./sabnzbd-installer.sh
+    		sudo bash sabnzbd/sabnzbd-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 	41)
-    		sudo ./sabnzbd-uninstaller.sh
+    		sudo bash sabnzbd/sabnzbd-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
 
 	45)
-    		sudo ./headphones-installer.sh
+    		sudo bash headphones/headphones-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 	46)
-    		sudo ./headphones-uninstaller.sh
+    		sudo bash headphones/headphones-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
     
 	50)
-    		sudo ./mylar-installer.sh
+    		sudo bash mylar/mylar-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 	51)
-    		sudo ./mylar-uninstaller.sh
+    		sudo bash mylar/mylar-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
 			
 	55)
-    		sudo ./htpcmanager-installer.sh
+    		sudo bash htpcmanager/htpcmanager-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 	56)
-    		sudo ./htpcmanager-uninstaller.sh
+    		sudo bash htpcmanager/htpcmanager-uninstaller.sh "$CALLER" "$SCRIPTPATH"
     		;;
 
 	60)
-    		sudo ./plex-installer.sh
+    		sudo bash plex/plex-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 
 	65)
-    		sudo ./deluge-installer.sh
+    		sudo bash deluge/deluge-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
 
 	70)
-    		sudo ./musicbrainz-installer.sh
+    		sudo bash musicbrainz/musicbrainz-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     	
     	75)
-    		sudo ./webmin-installer.sh
+    		sudo bash webmin/webmin-installer.sh "$CALLER" "$SCRIPTPATH"
     		;;
     		
     98)
-    		sudo ./default-credentials.sh
+    		sudo bash defaults.sh "$CALLER" "$SCRIPTPATH"
     	;;
     99)
 		echo 'Exiting...'
-		echo
-		echo -e $YELLOW'If this script worked for you, please visit '$CYAN'http://www.htpcBeginner.com'$YELLOW' and like/follow us.'$ENDCOLOR
-		echo -e $YELLOW'Thank you for using the AtoMiC ToolKit from www.htpcBeginner.com.'$ENDCOLOR 
-		echo
+		
+		source inc/thankyou.sh
+		
 		sleep 2
 		#URL=http://www.htpcbeginner.com/atomic-thanks
 		#[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"

@@ -16,18 +16,14 @@ then
 fi
 
 source $2/inc/commons.sh
-source $2/inc/header.sh
+source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC CouchPotato Installer Script'$ENDCOLOR
 
-source $2/inc/consent.sh
-
-echo -n 'Type the username of the user you want to run CouchPotato as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
-
-source $2/inc/usercheck.sh
+source $SCRIPTPATH/inc/pause.sh
 
 echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
-sudo apt-get update
+source $SCRIPTPATH/inc/pkgupdate.sh
 
 echo
 sleep 1
@@ -93,7 +89,7 @@ sleep 1
 
 echo -e 'Stashing any changes made to CouchPotato...'
 cd /home/$UNAME/.couchpotato
-source $2/inc/gitstash.sh
+source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
@@ -108,6 +104,5 @@ echo -e 'CouchPotato should start within 10-20 seconds and your browser should o
 echo -e 'If not you can start it using '$CYAN'/etc/init.d/couchpotato start'$ENDCOLOR' command.'
 echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
 
-cd $2
-source $2/inc/thankyou.sh
-source $2/inc/exit.sh
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh

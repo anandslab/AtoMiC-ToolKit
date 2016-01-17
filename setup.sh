@@ -11,8 +11,7 @@
 export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 export SCRIPTPATH=$(pwd)
 
-cd $SCRIPTPATH
-source inc/commons.sh
+source $SCRIPTPATH/inc/commons.sh
 
 # Check if being run as root
 if [ "$EUID" -ne 0 ]
@@ -23,21 +22,50 @@ if [ "$EUID" -ne 0 ]
   exit 0
 fi
 
-source inc/header.sh
+source $SCRIPTPATH/inc/header.sh
 
-echo 'PWD '$(pwd)
-echo 'SCRIPTPATH '$SCRIPTPATH
-echo '2 '$2
+sleep 1
 
-source inc/consent.sh
+echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
+if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
+	#echo 'consent file not present'
+	source $SCRIPTPATH/inc/consent.sh
+else
+	echo -e 'Already agreed.'
+fi
 
-source inc/usercheck.sh
+echo
+sleep 1
 
-sudo chmod -R 775 * >/dev/null 2>&1
+echo -e $YELLOW'--->USER INFORMATION:'$ENDCOLOR
+if [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
+	#echo 'userinfo not present'
+	source $SCRIPTPATH/inc/usercheck.sh
+	# Set permissions for all files
+	sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
+	sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
+	sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
+else 
+	#echo 'userinfo present'
+	source $SCRIPTPATH/tmp/userinfo
+	if [ -z "$UNAME" ] || [ -z "$UGROUP" ]; then
+		#echo 'userinfo not complete'
+		source $SCRIPTPATH/inc/usercheck.sh
+		# Set permissions for all files
+		sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
+		sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
+		sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
+	else
+		echo -e 'Using previously supplied username and group: '$CYAN$UNAME$ENDCOLOR' and '$CYAN$UGROUP$ENDCOLOR
+		echo
+		echo -e 'Disclaimer consent and user information can be cleared in the next screen.'
+		source $SCRIPTPATH/inc/pause.sh
+	fi
+fi
+
+source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
-echo 
-echo -e 'NOTE: At this point, this script has only been confirmed to work on Ubuntu variants.'
 echo
 echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
@@ -75,7 +103,8 @@ echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install (In Progress)'
 echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install (In Progress)'
 echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
-echo -e $YELLOW'98. '$ENDCOLOR'See default port numbers, usernames, and passwords'
+echo -e $YELLOW'97. '$ENDCOLOR'See default port numbers, usernames, and passwords'
+echo -e $YELLOW'98. '$ENDCOLOR'Clear temporary data: disclaimer consent and username'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo
@@ -83,136 +112,148 @@ echo -n "What would you like to do [00-99]: "
 read option
 case $option in
 	1 | 01)
-		sudo bash update.sh "$CALLER" "$SCRIPTPATH"
+		sudo bash update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
 	2 | 02)
-         	sudo bash system/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH"
+         	sudo bash system/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
 		
     5 | 05)
-		sudo bash sickbeard/sickbeard-installer.sh "$CALLER" "$SCRIPTPATH"
+		sudo bash sickbeard/sickbeard-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
     6 | 06) 
-    		sudo bash sickbeard/sickbeard-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickbeard/sickbeard-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     7 | 07)
-    		sudo bash sickbeard/sickbeard-backup.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickbeard/sickbeard-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 	8 | 08)
-    		sudo bash sickbeard/sickbeard-restore.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickbeard/sickbeard-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     	
     10)
-    		sudo bash sickrage/sickrage-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickrage/sickrage-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     11)
-    		sudo bash sickrage/sickrage-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickrage/sickrage-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     12)
-    		sudo bash sickrage/sickrage-backup.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickrage/sickrage-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     13)
-    		sudo bash sickrage/sickrage-restore.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickrage/sickrage-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 			
     15)
-    		sudo bash sickgear/sickgear-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickgear/sickgear-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     16)
-    		sudo bash sickgear/sickgear-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickgear/sickgear-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     17)
-    		sudo bash sickgear/sickgear-backup.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickgear/sickgear-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     18)
-    		sudo bash sickgear/sickgear-restore.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sickgear/sickgear-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 			
     20)
-    		sudo bash sonarr/sonarr-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sonarr/sonarr-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     21)
-    		sudo bash sonarr/sonarr-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sonarr/sonarr-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 			
     25)
-    		sudo bash couchpotato/couchpotato-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash couchpotato/couchpotato-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     26) 
-    		sudo bash couchpotato/couchpotato-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash couchpotato/couchpotato-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     27)
-    		sudo bash couchpotato/couchpotato-backup.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash couchpotato/couchpotato-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     28) 
-    		sudo bash couchpotato/couchpotato-restore.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash couchpotato/couchpotato-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 			
     30)
-    		sudo bash transmission/transmission-webui-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash transmission/transmission-webui-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     31)
-    		sudo bash transmission/transmission-webui-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash transmission/transmission-webui-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     		
 	35)
-			sudo bash qbittorrent/qbittorrent-installer.sh "$CALLER" "$SCRIPTPATH"
+			sudo bash qbittorrent/qbittorrent-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     36)
-    		sudo bash qbittorrent/qbittorrent-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash qbittorrent/qbittorrent-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     		
 	40)
-    		sudo bash sabnzbd/sabnzbd-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sabnzbd/sabnzbd-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 	41)
-    		sudo bash sabnzbd/sabnzbd-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash sabnzbd/sabnzbd-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 
 	45)
-    		sudo bash headphones/headphones-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash headphones/headphones-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 	46)
-    		sudo bash headphones/headphones-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash headphones/headphones-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     
 	50)
-    		sudo bash mylar/mylar-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash mylar/mylar-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 	51)
-    		sudo bash mylar/mylar-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash mylar/mylar-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 			
 	55)
-    		sudo bash htpcmanager/htpcmanager-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash htpcmanager/htpcmanager-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 	56)
-    		sudo bash htpcmanager/htpcmanager-uninstaller.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash htpcmanager/htpcmanager-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 
 	60)
-    		sudo bash plex/plex-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash plex/plex-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 
 	65)
-    		sudo bash deluge/deluge-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash deluge/deluge-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
 
 	70)
-    		sudo bash musicbrainz/musicbrainz-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash musicbrainz/musicbrainz-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     	
     	75)
-    		sudo bash webmin/webmin-installer.sh "$CALLER" "$SCRIPTPATH"
+    		sudo bash webmin/webmin-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     		
+    97)
+    		sudo bash defaults.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    	;;
     98)
-    		sudo bash defaults.sh "$CALLER" "$SCRIPTPATH"
+    		echo 
+    		echo -e $YELLOW'--->Clearing temporary data...'$ENDCOLOR
+    		rm $SCRIPTPATH/tmp/* >/dev/null 2>&1
+    		if [ ! -f "$SCRIPTPATH/tmp/consented" ] && [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
+				echo -e 'Temporary data deleted successfully...'
+			else
+				echo -e $RED'Deleting temporary data filed...'$ENDCOLOR
+			fi
+			echo
+    		source $SCRIPTPATH/inc/exit.sh
     	;;
     99)
 		echo 'Exiting...'
 		
-		source inc/thankyou.sh
+		source $SCRIPTPATH/inc/thankyou.sh
 		
 		sleep 2
 		#URL=http://www.htpcbeginner.com/atomic-thanks

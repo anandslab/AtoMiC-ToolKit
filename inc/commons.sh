@@ -8,4 +8,11 @@ function pause(){
    read -p "$*"
 }
 
-# check current script and pass variables $1 $2 $3 and $4
+# IF NOT SETUP.SH THEN GET VALUES
+if [[ $0 != *"setup.sh"* ]]
+then 
+	#echo "Not setup.sh"
+	SCRIPTPATH=$2
+	UNAME=$3
+	UGROUP=$4
+fi

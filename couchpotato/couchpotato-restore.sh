@@ -16,31 +16,16 @@ then
 fi
 
 source $2/inc/commons.sh
-source $2/inc/header.sh
+source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC CouchPotato Restore Script'$ENDCOLOR
-echo 
-echo -e $YELLOW'--->CouchPotato backup will start soon. Please read the following carefully.'$ENDCOLOR
 
-echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
-echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
-echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
-echo -e '4. Best used to restore CouchPotato backed up using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
-echo -e '5. CouchPotato should already be installed before restoring library and settings.'
-
-source $2/inc/consent.sh
-
-echo -n 'Type the username of the user you run CouchPotato as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
-
-source $2/inc/usercheck.sh
+source $SCRIPTPATH/inc/pause.sh
 
 if [ ! -d "/home/$UNAME/.couchpotato" ]; 
 then
-	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.couchpotato'$RED' not found. Ensure that CouchPotato is installed. Exiting now. Please rerun script.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	sudo bash $2/setup.sh
-	exit 0
+	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.couchpotato'$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR
+	source $SCRIPTPATH/inc/exit.sh
 fi
 
 echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
@@ -81,9 +66,7 @@ sleep 1
 echo -e $YELLOW'--->Select CouchPotato backup file to restore...'$ENDCOLOR
 echo -e 'In the following file selection box use ARROW or TAB keys to move and SPACE key to select the backup file (with extension '$CYAN'tar.gz'$ENDCOLOR') to restore.'
 
-echo
-
-pause 'Press [Enter] key to continue...'
+source $SCRIPTPATH/inc/pause.sh
 
 echo -e $YELLOW'--->Installing necessary '$CYAN'dialog'$YELLOW' package...'$ENDCOLOR
 sudo apt-get -y install dialog
@@ -98,23 +81,17 @@ then
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 	else
 		echo -e $RED'Error! Selected file is not a backup file with '$CYAN'tar.gz'$RED' extension. Exiting now. Please rerun script.'$ENDCOLOR
-		echo
-		pause 'Press [Enter] key to continue...'
-	    sudo bash $2/setup.sh
-		exit 0
+		source $SCRIPTPATH/inc/exit.sh
 	fi
 else
 	echo -e $RED'Error! No file selected. Exiting now. Please rerun script.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	sudo bash $2/setup.sh
-	exit 0
+	source $SCRIPTPATH/inc/exit.sh
 fi 
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR
 echo -e 'CouchPotato files restored.'
 
-source $2/inc/thankyou.sh
-source $2/inc/exit.sh
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh
 

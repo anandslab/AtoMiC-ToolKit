@@ -21,8 +21,6 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN'AtoMiC CouchPotato Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
 source $SCRIPTPATH/inc/pkgupdate.sh
 
 echo
@@ -80,7 +78,7 @@ sleep 1
 
 echo -e $YELLOW'--->Enabling CouchPotato AutoStart at Boot...'$ENDCOLOR
 sudo cp ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
-sudo chown $UNAME: /etc/init.d/couchpotato
+sudo chown $UNAME:$UGROUP /etc/init.d/couchpotato
 sudo chmod +x /etc/init.d/couchpotato
 sudo update-rc.d couchpotato defaults
 
@@ -96,7 +94,6 @@ sleep 1
 
 echo -e 'Starting CouchPotato'
 sudo /etc/init.d/couchpotato start >/dev/null 2>&1
-
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR

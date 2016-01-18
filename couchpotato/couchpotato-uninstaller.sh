@@ -16,23 +16,11 @@ then
 fi
 
 source $2/inc/commons.sh
-source $2/inc/header.sh
+source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC CouchPotato Uninstaller Script'$ENDCOLOR
-echo 
-echo -e $YELLOW'--->CouchPotato uninstallation will start soon. Please read the following carefully.'$ENDCOLOR
 
-echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
-echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
-echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
-echo -e '4. By proceeding you authorize this script to uninstall any relevant files/packages.'
-echo -e '5. Best used to uninstall CouchPotato installed using AtoMiC ToolKit or '$CYAN'www.htpcBeginner.com'$ENDCOLOR' guides.'
-
-source $2/inc/consent.sh
-
-echo -n 'Type the username of the user you installed CouchPotato as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
-
-source $2/inc/usercheck.sh
+source $SCRIPTPATH/inc/pause.sh
 
 echo -e $YELLOW'--->Stopping CouchPotato...'$ENDCOLOR
 sudo /etc/init.d/couchpotato stop >/dev/null 2>&1
@@ -48,7 +36,8 @@ sudo rm /etc/init.d/couchpotato || { echo -e $RED'Warning! Removing init script 
 echo
 sleep 1
 
-read -p 'Do you want to keep CouchPotato installation files as a backup or for reinstalling later? Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
+echo -e $GREEN'Do you want to keep CouchPotato installation files as a backup or for reinstalling later?'$ENDCOLOR
+read -p 'Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
 FILEDEL=${REPLY,,}
 
 if [ "$FILEDEL" != "y" ] 
@@ -67,5 +56,5 @@ sleep 1
 echo -e $GREEN'--->All done.'$ENDCOLOR
 echo -e 'CouchPotato Uninstalled.'
 
-source $2/inc/thankyou.sh
-source $2/inc/exit.sh
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh

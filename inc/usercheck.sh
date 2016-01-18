@@ -1,6 +1,6 @@
 echo -e $GREEN'--->Type the username of the user you want to use for managing apps and press [ENTER]...'$ENDCOLOR
-echo -e 'Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case). Do not use "root". Current username is '$CYAN$SUDO_USER$ENDCOLOR': '
-read UNAME
+read -p 'Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case). Do not use "root". Current username is "'$SUDO_USER'": '
+UNAME=${REPLY,,}
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
 	echo
 	echo -e $RED'Invalid username. No changes were made. Please rerun script and provide correct username.'$ENDCOLOR

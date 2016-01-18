@@ -15,7 +15,7 @@ then
 fi
 
 source $2/inc/commons.sh
-source $2/inc/header.sh
+source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC Default Credientials'$ENDCOLOR
 echo 
@@ -99,5 +99,5 @@ echo -e $CYAN'Port:'$GREEN' 8090'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 
-source $2/inc/thankyou.sh
-source $2/inc/exit.sh
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh

@@ -92,7 +92,7 @@ echo
 sleep 1
 
 echo -e 'Starting Mylar'
-sudo /etc/init.d/mylar start >/dev/null 2>&1
+/etc/init.d/mylar start >/dev/null 2>&1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR

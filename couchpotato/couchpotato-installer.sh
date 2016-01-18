@@ -63,21 +63,20 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Configuring CouchPotato Install...'$ENDCOLOR
-cd /home/$UNAME/.couchpotato/init
-echo "# COPY THIS FILE TO /etc/default/couchpotato" >> couchpotato || { echo 'Could not create default file.' ; exit 1; }
-echo "# OPTIONS: CP_HOME, CP_USER, CP_DATA, CP_PIDFILE, PYTHON_BIN, CP_OPTS, SSD_OPTS" >> couchpotato
-echo "CP_HOME=/home/"$UNAME"/.couchpotato/" >> couchpotato
-echo "CP_DATA=/home/"$UNAME"/.couchpotato/" >> couchpotato
+echo "# COPY THIS FILE TO /etc/default/couchpotato" >> $SCRIPTPATH/tmp/couchpotato_default || { echo 'Could not create default file.' ; exit 1; }
+echo "# OPTIONS: CP_HOME, CP_USER, CP_DATA, CP_PIDFILE, PYTHON_BIN, CP_OPTS, SSD_OPTS" >> $SCRIPTPATH/tmp/couchpotato_default
+echo "CP_HOME=/home/"$UNAME"/.couchpotato/" >> $SCRIPTPATH/tmp/couchpotato_default
+echo "CP_DATA=/home/"$UNAME"/.couchpotato/" >> $SCRIPTPATH/tmp/couchpotato_default
 
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run CouchPotato...'
-echo "CP_USER="$UNAME >> couchpotato
-sudo mv couchpotato /etc/default/
+echo "CP_USER="$UNAME >> $SCRIPTPATH/tmp/couchpotato_default
+sudo mv $SCRIPTPATH/tmp/couchpotato_default /etc/default/
 
 echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling CouchPotato AutoStart at Boot...'$ENDCOLOR
-sudo cp ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp /home/$UNAME/.couchpotato/init/ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:$UGROUP /etc/init.d/couchpotato
 sudo chmod +x /etc/init.d/couchpotato
 sudo update-rc.d couchpotato defaults
@@ -93,7 +92,7 @@ echo
 sleep 1
 
 echo -e 'Starting CouchPotato'
-sudo /etc/init.d/couchpotato start >/dev/null 2>&1
+/etc/init.d/couchpotato start >/dev/null 2>&1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR

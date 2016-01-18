@@ -62,22 +62,21 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Configuring headphones Install...'$ENDCOLOR
-cd /home/$UNAME/.headphones/init-scripts
-echo "# COPY THIS FILE TO /etc/default/headphones" >> headphones || { echo 'Could not create default file.' ; exit 1; }
-echo "# OPTIONS: HP_HOME, HP_USER, HP_DATA, HP_PIDFILE, PYTHON_BIN, HP_OPTS, SSD_OPTS" >> headphones
-echo "HP_HOME=/home/"$UNAME"/.headphones/" >> headphones
-echo "HP_DATA=/home/"$UNAME"/.headphones/" >> headphones
-echo 'HP_OPTS=" --config=/home/'$UNAME'/.headphones/config.ini"' >> headphones
+echo "# COPY THIS FILE TO /etc/default/headphones" >> $SCRIPTPATH/tmp/headphones_default || { echo 'Could not create default file.' ; exit 1; }
+echo "# OPTIONS: HP_HOME, HP_USER, HP_DATA, HP_PIDFILE, PYTHON_BIN, HP_OPTS, SSD_OPTS" >> $SCRIPTPATH/tmp/headphones_default
+echo "HP_HOME=/home/"$UNAME"/.headphones/" >> $SCRIPTPATH/tmp/headphones_default
+echo "HP_DATA=/home/"$UNAME"/.headphones/" >> $SCRIPTPATH/tmp/headphones_default
+echo 'HP_OPTS=" --config=/home/'$UNAME'/.headphones/config.ini"' >> $SCRIPTPATH/tmp/headphones_default
 
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run headphones...'
-echo "HP_USER="$UNAME >> headphones
-sudo mv headphones /etc/default/
+echo "HP_USER="$UNAME >> $SCRIPTPATH/tmp/headphones_default
+sudo mv $SCRIPTPATH/tmp/headphones_default /etc/default/
 
 echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling headphones AutoStart at Boot...'$ENDCOLOR
-sudo cp init.ubuntu /etc/init.d/headphones || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp /home/$UNAME/.headphones/init-scripts/init.ubuntu /etc/init.d/headphones || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:$UGROUP /etc/init.d/headphones
 sudo chmod +x /etc/init.d/headphones
 sudo update-rc.d headphones defaults
@@ -93,7 +92,7 @@ echo
 sleep 1
 
 echo -e 'Starting headphones'
-sudo /etc/init.d/headphones start >/dev/null 2>&1
+/etc/init.d/headphones start >/dev/null 2>&1
 
 echo
 echo -e $GREEN'--->All done. '$ENDCOLOR

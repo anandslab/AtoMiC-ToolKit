@@ -25,7 +25,6 @@ source $SCRIPTPATH/inc/pause.sh
 echo -e $YELLOW'--->Creating a list of files to backup...'$ENDCOLOR
 cp $SCRIPTPATH/couchpotato/couchpotato-backup-files $SCRIPTPATH/tmp/cp-backup-files
 sudo sed -i 's/UNAME/'$UNAME'/g' $SCRIPTPATH/tmp/cp-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
-cat $SCRIPTPATH/tmp/cp-backup-files
 
 echo
 sleep 20

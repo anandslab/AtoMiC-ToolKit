@@ -19,9 +19,16 @@ source $2/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC ToolKit Updater'$ENDCOLOR
+
 echo 
 
-read -p 'This will overwrite any manual changes you made to the script. Type y/Y and press [ENTER] to continue with update or any other key to exit: '
+echo -e $GREEN'This will overwrite any manual changes you made to the script.'$ENDCOLOR
+read -p 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
+
+source $SCRIPTPATH/inc/pkgupdate.sh
+
+echo
+sleep 1
 
 echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
 sudo apt-get -y install git-core
@@ -40,5 +47,5 @@ git fetch --all
 #git reset --hard origin/master
 git reset --hard origin/dev
 
-echo
+source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

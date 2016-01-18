@@ -91,7 +91,7 @@ echo -e $YELLOW'25. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
 echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
 echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
-echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) (Broken)'
+echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
 echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
 echo -e $YELLOW'36. '$ENDCOLOR'qBittorrent - Uninstall'
@@ -104,9 +104,11 @@ echo -e $YELLOW'51. '$ENDCOLOR'Mylar - Uninstall'
 echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
 echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
-echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install (In Progress)'
-echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install (In Progress)'
+echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install '$RED'(Broken)'$ENDCOLOR
+echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install '$RED'(In Progress)'$ENDCOLOR
 echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
+echo -e $YELLOW'80. '$ENDCOLOR'Monit - Install '$RED'(In Progress)'$ENDCOLOR
+echo -e $YELLOW'90. '$ENDCOLOR'MakeMKV - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'97. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'98. '$ENDCOLOR'Clear temporary data: disclaimer consent and username'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
@@ -119,7 +121,7 @@ case $option in
 		sudo bash update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
 	2 | 02)
-         	sudo bash system/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+         	sudo bash utils/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
 		
     5 | 05)
@@ -226,16 +228,8 @@ case $option in
 	60)
     		sudo bash plex/plex-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-
-	65)
-    		sudo bash deluge/deluge-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
-    		;;
-
-	70)
-    		sudo bash musicbrainz/musicbrainz-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
-    		;;
-    	
-    	75)
+  	
+   	75)
     		sudo bash webmin/webmin-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
     		

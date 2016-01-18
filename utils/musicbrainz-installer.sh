@@ -6,69 +6,22 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-YELLOW='\e[93m'
-RED='\e[91m'
-ENDCOLOR='\033[0m'
-CYAN='\e[96m'
-GREEN='\e[92m'
-SCRIPTPATH=$(pwd)
 
-function pause(){
-   read -p "$*"
-}
-
-clear
-echo 
-echo -e $RED
-echo -e " ┬ ┬┬ ┬┬ ┬ ┬ ┬┌┬┐┌─┐┌─┐┌┐ ┌─┐┌─┐┬┌┐┌┌┐┌┌─┐┬─┐ ┌─┐┌─┐┌┬┐"
-echo -e " │││││││││ ├─┤ │ ├─┘│  ├┴┐├┤ │ ┬│││││││├┤ ├┬┘ │  │ ││││"
-echo -e " └┴┘└┴┘└┴┘o┴ ┴ ┴ ┴  └─┘└─┘└─┘└─┘┴┘└┘┘└┘└─┘┴└─o└─┘└─┘┴ ┴"
-echo -e $CYAN
-echo -e "                __  ___             "
-echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
-echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ "
-echo
-echo -e $GREEN'AtoMiC Musicbrainz Installer Script'$ENDCOLOR
-echo 
-echo -e $YELLOW'--->Musicbrainz installation will start soon. Please read the following carefully.'$ENDCOLOR
-
-echo -e '1. The script has been confirmed to work on Ubuntu variants, Mint, and Ubuntu Server.'
-echo -e '2. While several testing runs identified no known issues, '$CYAN'www.htpcBeginner.com'$ENDCOLOR' or the authors cannot be held accountable for any problems that might occur due to the script.'
-echo -e '3. If you did not run this script with sudo, you maybe asked for your root password during installation.'
-echo -e '4. By proceeding you authorize this script to install any relevant packages required to install and configure Musicbrainz.'
-echo -e '5. Best used on a clean system (with no previous Musicbrainz install) or after complete removal of previous Musicbrainz installation.'
-
-echo
-
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
-RESP=${REPLY,,}
-
-if [ "$RESP" != "y" ] 
+if [[ $1 != *"setup.sh"* ]]
 then
-	echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo bash setup.sh
-	exit 0
+  echo
+  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
+  echo
+  exit 0
 fi
 
-echo 
+source $2/inc/commons.sh
+source $SCRIPTPATH/inc/header.sh
 
-echo -n 'Type the username of the user you want to run Musicbrainz as and press [ENTER]. Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case): '
-read UNAME
+echo -e $GREEN'AtoMiC Musicbrainz Installer Script'$ENDCOLOR
 
-if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
-	echo -e $RED'Bummer! You may not have entered your username correctly. Exiting now. Please rerun script.'$ENDCOLOR
-	echo
-	pause 'Press [Enter] key to continue...'
-	cd $SCRIPTPATH
-	sudo bash setup.sh
-	exit 0
-fi
-UGROUP=($(id -gn $UNAME))
-
-echo
+source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
 
 echo -n 'Type the directory you want to store the Musicbrainz Database as and press [ENTER]. (IMPORTANT! Database needs 80GB of storage): '
 read DIRPATH
@@ -78,19 +31,10 @@ if [ ! -d $DIRPATH ]; then
     RESP=${REPLY,,}
     if [ "$RESP" != "y" ]; then
         echo -e $RED'So you chickened out. May be you will try again later.'$ENDCOLOR
-        echo
-        pause 'Press [Enter] key to continue...'
-        cd $SCRIPTPATH
-        sudo bash setup.sh
-        exit 0
+		source $SCRIPTPATH/inc/exit.sh
     fi
     sudo mkdir -p $DIRPATH
 fi
-
-echo
-
-echo -e $YELLOW'--->Refreshing packages list...'$ENDCOLOR
-sudo apt-get update
 
 echo
 sleep 1
@@ -175,7 +119,7 @@ cd $DIRPATH/musicbrainz/postgresql-musicbrainz-collate
 sudo make
 sudo make install
 
-pause 'Press [Enter] key to continue...'
+source $SCRIPTPATH/inc/pause.sh
 
 echo
 sleep 1
@@ -188,7 +132,7 @@ if [ ! -d $DIRPATH/musicbrainz/tmp ]; then
     sudo wget ftp://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$DBVER/mbdump*.tar.bz2
 fi
 
-pause 'Press [Enter] key to continue...'
+source $SCRIPTPATH/inc/pause.sh
 
 # echo -e $YELLOW'--->Configuring Musicbrainz Install...'$ENDCOLOR
 # cd /home/$UNAME/.musicbrainz/init
@@ -213,11 +157,7 @@ pause 'Press [Enter] key to continue...'
 # sleep 1
 
 # echo -e 'Stashing any changes made to Musicbrainz...'
-# cd /home/$UNAME/.musicbrainz
-# git config user.email “atomic@htpcbeginner.com”
-# git config user.name “AtoMiCUser”
-# git stash
-# git stash clear
+#source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
@@ -236,7 +176,7 @@ sleep 1
 # pause 'Press [Enter] key to continue...'
 # cd $SCRIPTPATH
 # sudo bash setup.sh
-exit 0
+# exit 0
 
 # echo -e $YELLOW'--->Checking for previous versions of Musicbrainz...'$ENDCOLOR
 # sleep 1
@@ -255,3 +195,6 @@ exit 0
 # fi
 # echo
 # sleep 1
+
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh

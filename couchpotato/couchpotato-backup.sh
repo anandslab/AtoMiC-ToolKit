@@ -31,7 +31,7 @@ sleep 20
 
 echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
 BFN=couchpotato_`date '+%m-%d-%Y_%H-%M'`
-tar -zcvf $BFN.tar.gz --files-from $SCRIPTPATH/tmp/cp-backup-files
+tar -zcvf $SCRIPTPATH/tmp/$BFN.tar.gz --ignore-failed-read --files-from $SCRIPTPATH/tmp/cp-backup-files
 echo -e "Following files were backed up:"
 cat $SCRIPTPATH/tmp/cp-backup-files
 rm $SCRIPTPATH/tmp/cp-backup-files
@@ -39,9 +39,9 @@ rm $SCRIPTPATH/tmp/cp-backup-files
 echo
 sleep 1
 echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/$UNAME/'$BFN'.tar.gz...'$ENDCOLOR
-sudo chown $UNAME:$UGROUP $BFN.tar.gz
-sudo chmod 755 $BFN.tar.gz
-mv $BFN.tar.gz /home/$UNAME/
+sudo chown $UNAME:$UGROUP $SCRIPTPATH/tmp/$BFN.tar.gz
+sudo chmod 755 $SCRIPTPATH/tmp/$BFN.tar.gz
+mv $SCRIPTPATH/tmp/$BFN.tar.gz /home/$UNAME/
 
 sleep 1
 

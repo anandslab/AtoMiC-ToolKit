@@ -7,11 +7,6 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-#http://www.tutorialspoint.com/unix_commands/whiptail.htm
-#https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
-#http://xmodulo.com/create-dialog-boxes-interactive-shell-script.html
-#http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
-
 # Set caller id and script path
 export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 export SCRIPTPATH=$(pwd)
@@ -83,7 +78,7 @@ echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
 echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings '$RED'(test)'$ENDCOLOR
 echo -e $YELLOW'08. '$ENDCOLOR'Sick Beard - Restore Database and Settings '$RED'(test)'$ENDCOLOR
 echo -e $YELLOW'10. '$ENDCOLOR'SickRage - Install '$RED'(Broken)'$ENDCOLOR
-echo -e $YELLOW'11. '$ENDCOLOR'SickRage - Uninstall '$RED'(change repo; python-pip)'$ENDCOLOR
+echo -e $YELLOW'11. '$ENDCOLOR'SickRage - Uninstall'
 echo -e $YELLOW'12. '$ENDCOLOR'SickRage - Backup Database and Settings '$RED'(test)'$ENDCOLOR
 echo -e $YELLOW'13. '$ENDCOLOR'SickRage - Restore Database and Settings '$RED'(test)'$ENDCOLOR
 echo -e $YELLOW'15. '$ENDCOLOR'SickGear - Install '$RED'(Broken)'$ENDCOLOR
@@ -119,9 +114,7 @@ echo -e $YELLOW'98. '$ENDCOLOR'Clear temporary data: disclaimer consent and user
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
 echo
-tput bold
 echo -n "What would you like to do [00-99]: "
-tput sgr0
 read option
 case $option in
 	1 | 01)

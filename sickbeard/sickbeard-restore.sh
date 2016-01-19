@@ -24,7 +24,7 @@ source $SCRIPTPATH/inc/pause.sh
 
 if [ ! -d "/home/$UNAME/.sickbeard" ]; 
 then
-	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.sickbeard'$RED' not found. Sick Bear not installed or incompatible installation.'$ENDCOLOR
+	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.sickbeard'$RED' not found. Sick Beard not installed or incompatible installation.'$ENDCOLOR
 	source $SCRIPTPATH/inc/exit.sh
 fi
 

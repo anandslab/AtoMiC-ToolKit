@@ -24,7 +24,7 @@ source $SCRIPTPATH/inc/pause.sh
 
 if [ ! -d "/home/$UNAME/.sickrage" ]; 
 then
-	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.sickrage'$RED' not found. Ensure that SickRage is installed. Exiting now. Please rerun script.'$ENDCOLOR
+	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.sickrage'$RED' not found. SickRage not installed or incompatible installation.'$ENDCOLOR
 	source $SCRIPTPATH/inc/exit.sh
 fi
 

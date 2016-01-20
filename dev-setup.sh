@@ -71,6 +71,19 @@ source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR
 echo
+
+whiptail --title "Menu example" --menu "Choose an option" 20 78 16 \
+"SickBear" "Return to the main menu." \
+"SickRage" "Add a user to the system." \
+"SickGear" "Modify an existing user." \
+"Sonarr" "List all users on the system." \
+"Add Group" "Add a user group to the system." \
+"Modify Group" "Modify a group and its list of members." \
+"List Groups" "List all groups on the system."
+
+
+source $SCRIPTPATH/inc/pause.sh
+
 echo -e $YELLOW'01. '$ENDCOLOR'Check and Update AtoMiC ToolKit'
 echo -e $YELLOW'02. '$ENDCOLOR'Install .bash_aliases HTPC / Home Server administration'
 echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'

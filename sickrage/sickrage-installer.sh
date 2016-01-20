@@ -56,6 +56,7 @@ sleep 1
 echo -e $YELLOW'--->Downloading latest SickRage...'$ENDCOLOR
 cd /home/$UNAME
 git clone https://github.com/SiCKRAGETV/SickRage.git /home/$UNAME/.sickrage || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+#git clone https://github.com/SickRage/SickRage.git /home/$UNAME/.sickrage || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
 sudo chown -R $UNAME:$UGROUP /home/$UNAME/.sickrage >/dev/null 2>&1
 sudo chmod 775 -R /home/$UNAME/.sickrage >/dev/null 2>&1
 

@@ -34,16 +34,16 @@ echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
 BFN=sickgear_`date '+%m-%d-%Y_%H-%M'`
 tar -zcvf $SCRIPTPATH/tmp/$BFN.tar.gz --ignore-failed-read --files-from $SCRIPTPATH/tmp/sg-backup-files || { echo -e $RED'Creating tar file failed.'$ENDCOLOR ; exit 1; }
 echo
-echo -e "Following files were backed up:"
+echo -e $GREEN"All files / folders present from the following list were backed up:"$ENDCOLOR
 cat $SCRIPTPATH/tmp/sg-backup-files
 rm $SCRIPTPATH/tmp/sg-backup-files
 
 echo
 sleep 1
 echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/'$UNAME'/'$BFN'.tar.gz...'$ENDCOLOR
-sudo chown $UNAME:$UGROUP $SCRIPTPATH/tmp/$BFN.tar.gz
-sudo chmod 755 $SCRIPTPATH/tmp/$BFN.tar.gz
 mv $SCRIPTPATH/tmp/$BFN.tar.gz /home/$UNAME/
+sudo chown $UNAME:$UGROUP /home/$UNAME/$BFN.tar.gz
+sudo chmod 755 /home/$UNAME/$BFN.tar.gz
 
 sleep 1
 

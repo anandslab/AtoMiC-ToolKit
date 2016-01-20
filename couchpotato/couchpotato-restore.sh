@@ -28,6 +28,12 @@ then
 	source $SCRIPTPATH/inc/exit.sh
 fi
 
+echo -e $YELLOW'--->Stopping CouchPotato...'$ENDCOLOR
+sudo /etc/init.d/couchpotato stop >/dev/null 2>&1
+
+echo
+sleep 1
+
 echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
 sleep 1
 cd /home/$UNAME
@@ -79,6 +85,9 @@ then
 	then
 		echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
+		echo
+		/etc/init.d/couchpotato start
+		sleep 1
 	else
 		echo -e $RED'Error! Selected file is not a backup file with '$CYAN'tar.gz'$RED' extension. Exiting now. Please rerun script.'$ENDCOLOR
 		source $SCRIPTPATH/inc/exit.sh

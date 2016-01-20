@@ -28,13 +28,11 @@ then
 	source $SCRIPTPATH/inc/exit.sh
 fi
 
-echo
-
 echo -e $YELLOW'--->Stopping Sick Beard...'$ENDCOLOR
-sleep 1
 sudo /etc/init.d/sickbeard stop >/dev/null 2>&1
 
 echo
+sleep 1
 
 echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
 sleep 1
@@ -70,8 +68,6 @@ sleep 1
 echo -e $YELLOW'--->Select Sick Beard backup file to restore...'$ENDCOLOR
 echo -e 'In the following file selection box use ARROW or TAB keys to move and SPACE key to select the backup file (with extension '$CYAN'tar.gz'$ENDCOLOR') to restore.'
 
-echo
-
 source $SCRIPTPATH/inc/pause.sh
 
 echo -e $YELLOW'--->Installing necessary '$CYAN'dialog'$YELLOW' package...'$ENDCOLOR
@@ -86,8 +82,8 @@ then
 		echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 		echo
-		sleep 1
 		/etc/init.d/sickbeard start
+		sleep 1
 	else
 		echo -e $RED'Error! Selected file is not a backup file with '$CYAN'tar.gz'$RED' extension. Exiting now. Please rerun script.'$ENDCOLOR
 		source $SCRIPTPATH/inc/exit.sh

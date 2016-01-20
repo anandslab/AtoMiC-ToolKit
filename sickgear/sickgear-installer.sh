@@ -44,8 +44,8 @@ echo -e 'Any existing SickGear init scripts removed'
 sleep 1
 sudo update-rc.d -f sickgear remove >/dev/null 2>&1
 if [ -d "/home/$UNAME/.sickgear" ]; then
-	mv /home/$UNAME/.sickgear /home/$UNAME/.sickrage_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing SickGear files were moved to '$CYAN'/home/'$UNAME'/.sickrage_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+	mv /home/$UNAME/.sickgear /home/$UNAME/.sickgear_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing SickGear files were moved to '$CYAN'/home/'$UNAME'/.sickgear_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 else
 	echo -e 'No previous SickGear folder found'
 fi
@@ -70,18 +70,18 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Configuring SickGear Install...'$ENDCOLOR
-echo "# COPY THIS FILE TO /etc/default/sickgear" >> $SCRIPTPATH/tmp/sickrage_default || { echo -e $RED'Could not create default file.'$ENDCOLOR ; exit 1; }
-echo "SB_HOME=/home/"$UNAME"/.sickgear/" >> $SCRIPTPATH/tmp/sickrage_default
-echo "SB_DATA=/home/"$UNAME"/.sickgear/" >> $SCRIPTPATH/tmp/sickrage_default
+echo "# COPY THIS FILE TO /etc/default/sickgear" >> $SCRIPTPATH/tmp/sickgear_default || { echo -e $RED'Could not create default file.'$ENDCOLOR ; exit 1; }
+echo "SG_HOME=/home/"$UNAME"/.sickgear/" >> $SCRIPTPATH/tmp/sickgear_default
+echo "SG_DATA=/home/"$UNAME"/.sickgear/" >> $SCRIPTPATH/tmp/sickgear_default
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run SickGear...'
-echo "SB_USER="$UNAME >> $SCRIPTPATH/tmp/sickrage_default
-sudo mv $SCRIPTPATH/tmp/sickrage_default /etc/default/sickgear
+echo "SG_USER="$UNAME >> $SCRIPTPATH/tmp/sickgear_default
+sudo mv $SCRIPTPATH/tmp/sickgear_default /etc/default/sickgear
 
 echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling SickGear AutoStart at Boot...'$ENDCOLOR
-sudo cp init.ubuntu /etc/init.d/sickgear || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp init-scripts/init.ubuntu /etc/init.d/sickgear || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:$UGROUP /etc/init.d/sickgear
 sudo sed -i 's|/etc/default/sickbeard|/etc/default/sickgear|g' /etc/init.d/sickgear || { echo -e $RED'Replacing default path failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's|NAME=sickbeard|NAME=sickgear|g' /etc/init.d/sickgear || { echo -e $RED'Replacing NAME failed.'$ENDCOLOR ; exit 1; }

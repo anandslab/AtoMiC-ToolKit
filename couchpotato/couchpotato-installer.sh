@@ -70,7 +70,7 @@ echo "CP_DATA=/home/"$UNAME"/.couchpotato/" >> $SCRIPTPATH/tmp/couchpotato_defau
 
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run CouchPotato...'
 echo "CP_USER="$UNAME >> $SCRIPTPATH/tmp/couchpotato_default
-sudo mv $SCRIPTPATH/tmp/couchpotato_default /etc/default/
+sudo mv $SCRIPTPATH/tmp/couchpotato_default /etc/default/couchpotato
 
 echo
 sleep 1

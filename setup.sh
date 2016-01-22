@@ -54,20 +54,12 @@ echo -e $YELLOW'--->USER INFORMATION:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
 	#echo 'userinfo not present'
 	source $SCRIPTPATH/inc/usercheck.sh
-	# Set permissions for all files
-	sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
-	sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
-	sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
 else 
 	#echo 'userinfo present'
 	source $SCRIPTPATH/tmp/userinfo
 	if [ -z "$UNAME" ] || [ -z "$UGROUP" ]; then
 		#echo 'userinfo not complete'
 		source $SCRIPTPATH/inc/usercheck.sh
-		# Set permissions for all files
-		sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
-		sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
-		sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
 	else
 		echo -e 'Using previously supplied username and group: '$CYAN$UNAME$ENDCOLOR' and '$CYAN$UGROUP$ENDCOLOR
 		echo
@@ -76,6 +68,11 @@ else
 	fi
 fi
 
+# Set permissions for all files
+sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
+sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
+sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
+    
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC ToolKit - HTPC / Home Server Setup Script'$ENDCOLOR

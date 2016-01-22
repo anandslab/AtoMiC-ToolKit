@@ -24,28 +24,36 @@ echo
 
 echo -e $GREEN'This will overwrite any manual changes you made to the script.'$ENDCOLOR
 read -p 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
-
-source $SCRIPTPATH/inc/pkgupdate.sh
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo apt-get -y install git-core
-
-echo
-sleep 1
-
-#echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-#source $SCRIPTPATH/inc/gitstash.sh
+RESP=${REPLY,,}
 
 echo 
-sleep 1
+    
+if [ "$RESP" == "y" ]
+then
+	source $SCRIPTPATH/inc/pkgupdate.sh
 
-echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-git fetch --all
-#git reset --hard origin/master
-git reset --hard origin/dev
+	echo
+	sleep 1
 
-source $SCRIPTPATH/inc/thankyou.sh
+	echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
+	sudo apt-get -y install git-core
+
+	echo
+	sleep 1
+
+	#echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
+	#source $SCRIPTPATH/inc/gitstash.sh
+
+	echo 
+	sleep 1
+
+	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
+	git fetch --all
+	#git reset --hard origin/master
+	git reset --hard origin/dev
+    echo -e 'AtoMiC ToolKit updated successfully.'
+else
+	echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
+fi
+
 source $SCRIPTPATH/inc/exit.sh

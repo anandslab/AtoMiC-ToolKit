@@ -99,5 +99,4 @@ echo -e $CYAN'Port:'$GREEN' 8090'$ENDCOLOR
 echo -e $CYAN'Default Username:'$RED' none'$ENDCOLOR
 echo -e $CYAN'Default Password:'$RED' none'$ENDCOLOR
 
-source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

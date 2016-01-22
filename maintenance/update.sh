@@ -41,8 +41,8 @@ then
 	echo
 	sleep 1
 
-	#echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-	#source $SCRIPTPATH/inc/gitstash.sh
+	echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
+	source $SCRIPTPATH/inc/gitstash.sh
 
 	echo 
 	sleep 1

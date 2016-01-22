@@ -7,11 +7,6 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-#http://www.tutorialspoint.com/unix_commands/whiptail.htm
-#https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
-#http://xmodulo.com/create-dialog-boxes-interactive-shell-script.html
-#http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
-
 # Set caller id and script path
 export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 export SCRIPTPATH=$(pwd)

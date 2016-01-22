@@ -38,6 +38,7 @@ rm $SCRIPTPATH/tmp/wm-backup-files
 
 echo
 sleep 1
+echo 
 
 echo -e $YELLOW'--->Moving backup file to '$CYAN$SCRIPTPATH'/backups/'$BFN'.tar.gz...'$ENDCOLOR
 mv $SCRIPTPATH/tmp/$BFN.tar.gz $SCRIPTPATH/backups/

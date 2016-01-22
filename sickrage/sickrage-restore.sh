@@ -73,7 +73,7 @@ source $SCRIPTPATH/inc/pause.sh
 echo -e $YELLOW'--->Installing necessary '$CYAN'dialog'$YELLOW' package...'$ENDCOLOR
 sudo apt-get -y install dialog
 
-BFILE=$(dialog --title "Restore SickRage" --stdout --title "Choose backup file to restore. Use TAB or ARROW keys to move and SPACE to select." --fselect /home/$UNAME/ 15 120)
+BFILE=$(dialog --title "Restore SickRage" --stdout --title "Choose backup file to restore. Use TAB or ARROW keys to move and SPACE to select." --fselect $SCRIPTPATH/backups/ 15 120)
 
 if [ -f $BFILE ] 
 then
@@ -82,6 +82,8 @@ then
 		echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 		tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 		echo
+        sleep 1
+        echo -e $YELLOW'--->Restarting SickRage...'$ENDCOLOR
 		/etc/init.d/sickrage start
 		sleep 1
 	else

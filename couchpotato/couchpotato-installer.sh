@@ -84,14 +84,14 @@ sudo update-rc.d couchpotato defaults
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to CouchPotato...'
+echo -e $YELLOW'--->Stashing any changes made to CouchPotato...'$ENDCOLOR
 cd /home/$UNAME/.couchpotato
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
 
-echo -e 'Starting CouchPotato'
+echo -e $YELLOW'--->Starting CouchPotato'$ENDCOLOR
 /etc/init.d/couchpotato start >/dev/null 2>&1
 
 echo

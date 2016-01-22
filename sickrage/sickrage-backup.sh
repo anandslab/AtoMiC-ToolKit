@@ -40,10 +40,10 @@ rm $SCRIPTPATH/tmp/sr-backup-files
 
 echo
 sleep 1
-echo -e $YELLOW'--->Moving backup file to '$CYAN'/home/'$UNAME'/'$BFN'.tar.gz...'$ENDCOLOR
-mv $SCRIPTPATH/tmp/$BFN.tar.gz /home/$UNAME/
-sudo chown $UNAME:$UGROUP /home/$UNAME/$BFN.tar.gz
-sudo chmod 755 /home/$UNAME/$BFN.tar.gz
+echo -e $YELLOW'--->Moving backup file to '$CYAN$SCRIPTPATH'/backups/'$BFN'.tar.gz...'$ENDCOLOR
+mv $SCRIPTPATH/tmp/$BFN.tar.gz $SCRIPTPATH/backups/
+sudo chown $UNAME:$UGROUP $SCRIPTPATH/backups/$BFN.tar.gz
+sudo chmod 755 $SCRIPTPATH/backups/$BFN.tar.gz
 
 
 sleep 1

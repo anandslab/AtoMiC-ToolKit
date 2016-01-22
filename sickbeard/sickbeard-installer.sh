@@ -96,12 +96,14 @@ sudo chown $UNAME:$UGROUP /var/run/sickbeard >/dev/null 2>&1
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to Sick Beard...'
+echo -e $YELLOW'--->Stashing any changes made to Sick Beard...'$ENDCOLOR
 cd /home/$UNAME/.sickbeard
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
+
+echo -e $YELLOW'--->Starting SickBeard...'$ENDCOLOR
 /etc/init.d/sickbeard start
 
 echo

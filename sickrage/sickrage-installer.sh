@@ -101,12 +101,14 @@ sudo chown $UNAME:$UGROUP /var/run/sickrage >/dev/null 2>&1
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to SickRage...'
+echo -e $YELLOW'--->Stashing any changes made to SickRage...'$ENDCOLOR
 cd /home/$UNAME/.sickrage
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
+
+echo -e $YELLOW'--->Starting SickRage...'$ENDCOLOR
 /etc/init.d/sickrage start
 
 echo

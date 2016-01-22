@@ -81,24 +81,24 @@ echo -e $YELLOW'05. '$ENDCOLOR'Sick Beard - Install'
 echo -e $YELLOW'06. '$ENDCOLOR'Sick Beard - Uninstall'
 echo -e $YELLOW'07. '$ENDCOLOR'Sick Beard - Backup Database and Settings'
 echo -e $YELLOW'08. '$ENDCOLOR'Sick Beard - Restore Database and Settings'
-echo -e $YELLOW'09. '$ENDCOLOR'Sick Beard - Manual Update'$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'09. '$ENDCOLOR'Sick Beard - Manual Update'
 echo -e $YELLOW'10. '$ENDCOLOR'SickRage - Install '$RED'(Broken - SickRage Issue)'$ENDCOLOR
 echo -e $YELLOW'11. '$ENDCOLOR'SickRage - Uninstall'
 echo -e $YELLOW'12. '$ENDCOLOR'SickRage - Backup Database and Settings'
 echo -e $YELLOW'13. '$ENDCOLOR'SickRage - Restore Database and Settings'
-echo -e $YELLOW'14. '$ENDCOLOR'SickRage - Manual Update'$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'14. '$ENDCOLOR'SickRage - Manual Update'
 echo -e $YELLOW'15. '$ENDCOLOR'SickGear - Install'
 echo -e $YELLOW'16. '$ENDCOLOR'SickGear - Uninstall'
 echo -e $YELLOW'17. '$ENDCOLOR'SickGear - Backup Database and Settings'
 echo -e $YELLOW'18. '$ENDCOLOR'SickGear - Restore Database and Settings'
-echo -e $YELLOW'19. '$ENDCOLOR'SickGear - Manual Update'$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'19. '$ENDCOLOR'SickGear - Manual Update'
 echo -e $YELLOW'20. '$ENDCOLOR'Sonarr (NzbDrone) - Install'
 echo -e $YELLOW'21. '$ENDCOLOR'Sonarr (NzbDrone) - Uninstall'
 echo -e $YELLOW'25. '$ENDCOLOR'CouchPotato - Install'
 echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
 echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
 echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
-echo -e $YELLOW'29. '$ENDCOLOR'CouchPotato - Manual Update'$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'29. '$ENDCOLOR'CouchPotato - Manual Update'
 echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
 echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
@@ -114,10 +114,10 @@ echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install '$RED'(In Progress)'$ENDCOLOR
-echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install '$RED'(test)'$ENDCOLOR
-echo -e $YELLOW'76. '$ENDCOLOR'Webmin - Uninstall '$RED'(test)'$ENDCOLOR
-echo -e $YELLOW'77. '$ENDCOLOR'Webmin - Backup Settings '$RED'(Planned)'$ENDCOLOR
-echo -e $YELLOW'78. '$ENDCOLOR'Webmin - Restore Settings '$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
+echo -e $YELLOW'76. '$ENDCOLOR'Webmin - Uninstall'
+echo -e $YELLOW'77. '$ENDCOLOR'Webmin - Backup Settings'
+echo -e $YELLOW'78. '$ENDCOLOR'Webmin - Restore Settings'
 echo -e $YELLOW'80. '$ENDCOLOR'Monit - Install '$RED'(Planned)'$ENDCOLOR
 echo -e $YELLOW'90. '$ENDCOLOR'MakeMKV - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'96. '$ENDCOLOR'See default port numbers, usernames, and passwords'
@@ -150,7 +150,9 @@ case $option in
 	8 | 08)
     		sudo bash sickbeard/sickbeard-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-    	
+	9 | 09)
+    		sudo bash sickbeard/sickbeard-update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;    	
     10)
     		sudo bash sickrage/sickrage-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
@@ -163,7 +165,10 @@ case $option in
     13)
     		sudo bash sickrage/sickrage-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-			
+    14)
+    		sudo bash sickrage/sickrage-update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;
+            
     15)
     		sudo bash sickgear/sickgear-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
@@ -176,7 +181,9 @@ case $option in
     18)
     		sudo bash sickgear/sickgear-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-			
+    19)
+    		sudo bash sickgear/sickgear-update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;			
     20)
     		sudo bash sonarr/sonarr-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
@@ -196,7 +203,9 @@ case $option in
     28) 
     		sudo bash couchpotato/couchpotato-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-			
+    29) 
+    		sudo bash couchpotato/couchpotato-update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;			
     30)
     		sudo bash transmission/transmission-webui-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;

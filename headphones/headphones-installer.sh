@@ -84,14 +84,14 @@ sudo update-rc.d headphones defaults
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to headphones...'
+echo -e $YELLOW'--->Stashing any changes made to headphones...'$ENDCOLOR
 cd /home/$UNAME/.headphones
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
 
-echo -e 'Starting headphones'
+echo -e $YELLOW'--->Starting headphones'$ENDCOLOR
 /etc/init.d/headphones start >/dev/null 2>&1
 
 echo

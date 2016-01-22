@@ -84,14 +84,14 @@ sudo update-rc.d mylar defaults
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to Mylar...'
+echo -e $YELLOW'--->Stashing any changes made to Mylar...'$ENDCOLOR
 cd /home/$UNAME/.mylar
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
 
-echo -e 'Starting Mylar'
+echo -e $YELLOW'--->Starting Mylar'$ENDCOLOR
 /etc/init.d/mylar start >/dev/null 2>&1
 
 echo

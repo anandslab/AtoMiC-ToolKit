@@ -101,12 +101,14 @@ sudo chown $UNAME:$UGROUP /var/run/sickgear >/dev/null 2>&1
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to SickGear...'
+echo -e $YELLOW'--->Stashing any changes made to SickGear...'$ENDCOLOR
 cd /home/$UNAME/.sickgear
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
+
+echo -e $YELLOW'--->Starting SickGear...'$ENDCOLOR
 /etc/init.d/sickgear start
 
 echo

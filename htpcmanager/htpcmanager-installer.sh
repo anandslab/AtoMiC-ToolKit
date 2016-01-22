@@ -83,14 +83,14 @@ sudo update-rc.d htpcmanager defaults
 echo
 sleep 1
 
-echo -e 'Stashing any changes made to HTPC Manager...'
+echo -e $YELLOW'--->Stashing any changes made to HTPC Manager...'$ENDCOLOR
 cd /home/$UNAME/.htpcmanager
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo
 sleep 1
 
-echo -e 'Starting HTPC Manager'
+echo -e $YELLOW'--->Starting HTPC Manager'$ENDCOLOR
 sudo /etc/init.d/htpcmanager start >/dev/null 2>&1
 
 echo

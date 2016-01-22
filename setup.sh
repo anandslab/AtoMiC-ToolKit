@@ -44,7 +44,7 @@ if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
 	#echo 'consent file not present'
 	source $SCRIPTPATH/inc/consent.sh
 else
-	echo -e 'Already agreed.'
+	echo -e 'Already agreed. Can be cleared in the next screen.'
 fi
 
 echo
@@ -61,9 +61,7 @@ else
 		#echo 'userinfo not complete'
 		source $SCRIPTPATH/inc/usercheck.sh
 	else
-		echo -e 'Using previously supplied username and group: '$CYAN$UNAME$ENDCOLOR' and '$CYAN$UGROUP$ENDCOLOR
-		echo
-		echo -e 'Disclaimer consent and user information can be cleared in the next screen.'
+		echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
 		source $SCRIPTPATH/inc/pause.sh
 	fi
 fi

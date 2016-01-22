@@ -31,6 +31,9 @@ sleep 1
 echo -e $YELLOW'--->Uninstalling Webmin...'$ENDCOLOR
 sudo apt-get -y remove webmin 
 
+echo 
+sleep 1
+
 echo -e $GREEN'--->All done.'$ENDCOLOR
 echo -e 'Webmin Uninstalled.'
 

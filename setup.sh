@@ -251,7 +251,10 @@ case $option in
     		;;
    	77)
     		sudo bash webmin/webmin-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
-    		;;            
+    		;;
+    	78)
+    		sudo bash webmin/webmin-restore.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;
     96)
     		sudo bash maintenance/defaults.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     	;;

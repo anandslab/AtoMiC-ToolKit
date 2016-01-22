@@ -21,30 +21,30 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN'AtoMiC Webmin Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+
+echo -e $YELLOW"--->Adding Webmin Repository..."$ENDCOLOR
+GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep webmin)
+if [ "$GREPOUT" == "" ]; then
+	wget -P $SCRIPTPATH/tmp/ http://www.webmin.com/jcameron-key.asc  || { echo -e $RED'Error! Downloading key failed.'$ENDCOLOR ; }
+	sudo apt-key add $SCRIPTPATH/tmp/jcameron-key.asc  || { echo -e $RED'Error! Adding key failed.'$ENDCOLOR ; }
+	echo "deb http://download.webmin.com/download/repository sarge contrib" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" | sudo tee -a /etc/apt/sources.list
+else
+    echo "Webmin repository repository already exists..."
+fi
+
+echo
+sleep 1
+
 source $SCRIPTPATH/inc/pkgupdate.sh
 
 echo
 sleep 1
 
-echo -e $YELLOW'--->Downloading latest Webmin...'$ENDCOLOR
-sudo mkdir -p /tmp/webmin
-cd /tmp/webmin 
-sudo wget "http://sourceforge.net/projects/webadmin/files/webmin/"$APPVERSION"/webmin_"$APPVERSION"_all.deb"
+echo -e $YELLOW"--->Installing Webmin and relevant packages..."$ENDCOLOR
+sudo apt-get -y install webmin
 
-echo
-sleep 1
-
-echo -e $YELLOW'--->Configuring Webmin Install...'$ENDCOLOR
-sudo dpkg --force-depends -i webmin_*.deb
-sudo apt-get install -f -y
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Removing temporary Webmin Files...'$ENDCOLOR
-sudo rm -rf /tmp/webmin
-
-echo
+echo 
 sleep 1
 
 echo -e 'Starting Webmin...'

@@ -35,6 +35,10 @@ if [ ! -d "$SCRIPTPATH/tmp" ]; then
 	mkdir $SCRIPTPATH/tmp
 fi
 
+if [ ! -d "$SCRIPTPATH/backups" ]; then
+	mkdir $SCRIPTPATH/backups
+fi
+
 echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
 	#echo 'consent file not present'
@@ -115,11 +119,14 @@ echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install '$RED'(In Progress)'$ENDCOLOR
-echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install '$RED'(Update)'$ENDCOLOR
-echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Uninstall '$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install '$RED'(test)'$ENDCOLOR
+echo -e $YELLOW'76. '$ENDCOLOR'Webmin - Uninstall '$RED'(test)'$ENDCOLOR
+echo -e $YELLOW'77. '$ENDCOLOR'Webmin - Backup Settings '$RED'(Planned)'$ENDCOLOR
+echo -e $YELLOW'78. '$ENDCOLOR'Webmin - Restore Settings '$RED'(Planned)'$ENDCOLOR
 echo -e $YELLOW'80. '$ENDCOLOR'Monit - Install '$RED'(Planned)'$ENDCOLOR
 echo -e $YELLOW'90. '$ENDCOLOR'MakeMKV - Install '$RED'(Broken)'$ENDCOLOR
-echo -e $YELLOW'97. '$ENDCOLOR'See default port numbers, usernames, and passwords'
+echo -e $YELLOW'96. '$ENDCOLOR'See default port numbers, usernames, and passwords'
+echo -e $YELLOW'97. '$ENDCOLOR'Clear all backups'
 echo -e $YELLOW'98. '$ENDCOLOR'Clear temporary data: disclaimer consent and username'
 echo -e $YELLOW'99. '$ENDCOLOR'Exit'
 
@@ -130,7 +137,7 @@ tput sgr0
 read option
 case $option in
 	1 | 01)
-		sudo bash update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+		sudo bash maintenance/update.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
 		;;
 	2 | 02)
          	sudo bash utils/bash_aliases-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
@@ -244,20 +251,20 @@ case $option in
    	75)
     		sudo bash webmin/webmin-installer.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     		;;
-    		
-    97)
-    		sudo bash defaults.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+   	76)
+    		sudo bash webmin/webmin-uninstaller.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;
+   	77)
+    		sudo bash webmin/webmin-backup.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    		;;            
+    96)
+    		sudo bash maintenance/defaults.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     	;;
-    98)
-    		echo 
-    		echo -e $YELLOW'--->Clearing temporary data...'$ENDCOLOR
-    		rm $SCRIPTPATH/tmp/* >/dev/null 2>&1
-    		if [ ! -f "$SCRIPTPATH/tmp/consented" ] && [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
-				echo -e 'Temporary data deleted successfully...'
-			else
-				echo -e $RED'Deleting temporary data filed...'$ENDCOLOR
-			fi
-    		source $SCRIPTPATH/inc/exit.sh
+    97)
+			sudo bash maintenance/clearbackups.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
+    	;;
+	98)
+			sudo bash maintenance/cleartmp.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP"
     	;;
     99)
 		echo 'Exiting...'

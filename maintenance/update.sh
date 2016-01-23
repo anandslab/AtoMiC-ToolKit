@@ -47,7 +47,6 @@ then
 	echo 
 	sleep 1
 
-<<<<<<< HEAD
 	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
 	git fetch --all
 	#git reset --hard origin/master
@@ -56,10 +55,5 @@ then
 else
 	echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
 fi
-=======
-echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-git fetch --all
-git reset --hard origin/master
->>>>>>> master
 
 source $SCRIPTPATH/inc/exit.sh

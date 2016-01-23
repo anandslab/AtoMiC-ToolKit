@@ -108,12 +108,11 @@ echo -e $YELLOW'55. '$ENDCOLOR'HTPC Manager - Install'
 echo -e $YELLOW'56. '$ENDCOLOR'HTPC Manager - Uninstall'
 echo -e $YELLOW'60. '$ENDCOLOR'Plex Server - Install'
 echo -e $YELLOW'65. '$ENDCOLOR'Deluge - Install '$RED'(Broken)'$ENDCOLOR
-echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install '$RED'(In Progress)'$ENDCOLOR
+echo -e $YELLOW'70. '$ENDCOLOR'MusicBrainz - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'75. '$ENDCOLOR'Webmin - Install'
 echo -e $YELLOW'76. '$ENDCOLOR'Webmin - Uninstall'
 echo -e $YELLOW'77. '$ENDCOLOR'Webmin - Backup Settings'
 echo -e $YELLOW'78. '$ENDCOLOR'Webmin - Restore Settings'
-echo -e $YELLOW'80. '$ENDCOLOR'Monit - Install '$RED'(Planned)'$ENDCOLOR
 echo -e $YELLOW'90. '$ENDCOLOR'MakeMKV - Install '$RED'(Broken)'$ENDCOLOR
 echo -e $YELLOW'96. '$ENDCOLOR'See default port numbers, usernames, and passwords'
 echo -e $YELLOW'97. '$ENDCOLOR'Clear all backups'

@@ -49,8 +49,8 @@ then
 
 	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
 	git fetch --all
-	#git reset --hard origin/master
-	git reset --hard origin/dev
+	git reset --hard origin/master
+	#git reset --hard origin/dev
     echo -e 'AtoMiC ToolKit updated successfully.'
 else
 	echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR

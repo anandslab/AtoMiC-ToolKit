@@ -269,13 +269,7 @@ case $option in
     	;;
     99)
 		echo 'Exiting...'
-		
 		source $SCRIPTPATH/inc/thankyou.sh
-		
-		sleep 2
-		#URL=http://www.htpcbeginner.com/atomic-thanks
-		#[[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-		#path=$(which xdg-open || which gnome-open) && exec "$path" "$URL" >/dev/null 2>&1
 		;;
     	*)
         	echo -e $RED'Invalid Option'$ENDCOLOR

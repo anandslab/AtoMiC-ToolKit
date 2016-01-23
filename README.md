@@ -1,8 +1,8 @@
 # AtoMiC-ToolKit
-<img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-300x162.jpg" alt="AtoMiC ToolKit form htpcBeginner.com" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by www.htpcbeginner.com to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, and maintaining download server apps. 
+<img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-300x162.jpg" alt="AtoMiC ToolKit form htpcBeginner.com" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by htpcBeginner.com and its community to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, and maintaining download server apps. 
 
 <h2>Compatibility</h2>
-Ubuntu (14.04, 14.10, and 15.04) and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. May work on other distributions but that has not been tested.
+Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 
 
 <h2>Key Features</h2>
 Features features of AtoMiC ToolKit include:
@@ -13,12 +13,12 @@ Features features of AtoMiC ToolKit include:
 <li>User- and newie-friendly</li>
 <li>One-stop shop
 <ul>
-<li>Sick Beard - Install, Uninstall, and Backup / Restore</li>
-<li>SickRage - Install, Uninstall, and Backup / Restore</li>
-<li>SickGear - Install, Uninstall, and Backup / Restore</li>
-<li>Sonarr (formerly NzbDrone) - Install, Uninstall, and Backup / Restore</li>
-<li>CouchPotato - Install, Uninstall, and Backup / Restore</li>
-<li>Transmission WebUI - Install, Uninstall, and Backup / Restore</li>
+<li>Sick Beard - Install, Uninstall, Update, and Backup / Restore</li>
+<li>SickRage - Install, Uninstall, Update, and Backup / Restore</li>
+<li>SickGear - Install, Uninstall, Update, and Backup / Restore</li>
+<li>Sonarr (formerly NzbDrone) - Install and Uninstall</li>
+<li>CouchPotato - Install, Uninstall, Update, and Backup / Restore</li>
+<li>Transmission WebUI - Install and Uninstall</li>
 <li>qBittorrent WebUI - Install and Uninstall</li>
 <li>SABnzbd+ - Install and Uninstall</li>
 <li>Headphones - Install and Uninstall</li>
@@ -27,7 +27,7 @@ Features features of AtoMiC ToolKit include:
 <li>Plex - Install</li>
 <li>Deluge - Install</li>
 <li>MusicBrainz - Install</li>
-<li>Webmin - Install</li>
+<li>Webmin - Install, Uninstall, Backup, and Restore</li>
 <li>Planned - NZBGet, RTorrent/RUTorrent, Monit, ShellInABox</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
@@ -37,7 +37,7 @@ Features features of AtoMiC ToolKit include:
 <li>And best of all its FREE!</li>
 </ul>
 
-Note that AtoMiC ToolKit will be continueous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
+Note that AtoMiC ToolKit will be on continueous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
 
 <h2>Installation and Usage</h2>
 Clone repository on any Ubuntu based distro and execute the setup.sh bash script file. 
@@ -46,7 +46,6 @@ Clone repository on any Ubuntu based distro and execute the setup.sh bash script
 $ sudo apt-get install git-core
 $ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit
 $ cd ~/AtoMiC-ToolKit
-$ sudo chmod 755 *
 $ sudo bash setup.sh
 </pre>
 

@@ -29,6 +29,9 @@ fi
 
 source $SCRIPTPATH/inc/header.sh
 
+echo -e $RED'This setup file is in development and can mess up your system. Exit and run '$CYAN'sudo ./setup.sh'$RED' instead.'$ENDCOLOR
+source $SCRIPTPATH/inc/pause.sh
+
 sleep 1
 
 if [ ! -d "$SCRIPTPATH/tmp" ]; then

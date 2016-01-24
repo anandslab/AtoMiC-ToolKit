@@ -1,43 +1,46 @@
 #eval `resize`
 #$LINES $COLUMNS $(( $LINES - 15 )) 25 78 16 
-MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "What would you like to do?" 25 78 16 \
-"SickBeard" "Install, Uninstall, Backup, Restore, and Update." \
-"SickRage" "Install, Uninstall, Backup, Restore, and Update." \
-"SickGear" "Install, Uninstall, Backup, Restore, and Update." \
-"Sonarr" "Install and Uninstall" \
-"CouchPotato" "Install, Uninstall, Backup, Restore, and Update." \
-"Transmission" "Install (headless) and Uninstall." \
-"qBittorrent" "Install (headless) and Uninstall." \
-"SABnzbd" "Install and Uninstall." \
-"Headphones" "Install and Uninstall." \
-"Mylar" "Install and Uninstall." \
-"HTPC Manager" "Install and Uninstall." \
-"Plex Server" "Install." \
-"Webmin" "Modify a group and its list of members." \
+MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" 25 78 15 \
+"SickBeard" "" \
+"SickRage" "" \
+"SickGear" "" \
+"Sonarr" "" \
+"CouchPotato" "" \
+"Transmission" "" \
+"qBittorrent" "" \
+"SABnzbd" "" \
+"Headphones" "" \
+"Mylar" "" \
+"HTPC Manager" "" \
+"Plex Server" "" \
+"Webmin" "" \
 "SCRIPTPATH" "$SCRIPTPATH" \
 "UNAME" "$UNAME" \
 "UGROUP" "$UGROUP" \
-"Maintenance" "List all groups on the system." 3>&1 1>&2 2>&3)
+"Maintenance" "" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo -e $ENDCOLOR"Your chosen option:" $MAINCHOICE
     case "$MAINCHOICE" in 
-		"SickBeard" ) source $SCRIPTPATH/inc/sickrage-menu.sh;;
+		"SickBeard" ) source $SCRIPTPATH/inc/sickbeard-menu.sh;;
 		"SickRage" ) source $SCRIPTPATH/inc/sickrage-menu.sh ;;
-		"SickGear" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Sonarr" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"CouchPotato" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Transmission" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"qBittorrent" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"SABnzbd" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Headphones" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Mylar" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"HTPC Manager" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Plex" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Webmin" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"Maintenance" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-	#*) echo "Exit" ;;
+		"SickGear" ) source $SCRIPTPATH/inc/sickgear-menu.sh ;;
+		"Sonarr" ) source $SCRIPTPATH/inc/sonarr-menu.sh ;;
+		"CouchPotato" ) source $SCRIPTPATH/inc/couchpotato-menu.sh ;;
+		"Transmission" ) source $SCRIPTPATH/inc/transmission-menu.sh ;;
+		"qBittorrent" ) source $SCRIPTPATH/inc/qbittorrent-menu.sh ;;
+		"SABnzbd" ) source $SCRIPTPATH/inc/sabnzbd-menu.sh ;;
+		"Headphones" ) source $SCRIPTPATH/inc/headphones-menu.sh ;;
+		"Mylar" ) source $SCRIPTPATH/inc/mylar-menu.sh ;;
+		"HTPC Manager" ) source $SCRIPTPATH/inc/htpcmanager-menu.sh ;;
+		"Plex" ) source $SCRIPTPATH/inc/plex-menu.sh ;;
+		"Webmin" ) source $SCRIPTPATH/inc/webmin-menu.sh ;;
+		"Maintenance" ) source $SCRIPTPATH/inc/maintenance-menu.sh ;;
+		*) 
+		echo -e $RED'Invalid Option'$ENDCOLOR
+		source $SCRIPTPATH/inc/exit.sh
+		;;
 	esac
 else
     source $SCRIPTPATH/inc/thankyou.sh

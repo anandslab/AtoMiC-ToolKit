@@ -1,12 +1,16 @@
 #!/bin/bash
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" 25 78 15 \
+if [[ $ISSETUP != "Yes" ]]
+then
+  echo
+  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
+  echo
+  exit 0
+fi
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
 "Default Credentials" "See default credentials for apps" \
 "Clear Temp Files" "Clear disclaimer consent and user info" \
-"Delete Backups" "Delete backups" \
+"Delete Backups" "Delete app backups" \
 "Update ToolKit" "Update AtoMiC ToolKit" \
-"SCRIPTPATH" "$SCRIPTPATH" \
-"UNAME" "$UNAME" \
-"UGROUP" "$UGROUP" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -17,7 +21,7 @@ if [ $exitstatus = 0 ]; then
 		"Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
 		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
 		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/sonarr/main-menu ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

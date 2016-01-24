@@ -1,14 +1,18 @@
 #!/bin/bash
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickGear" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" 25 78 15 \
+if [[ $ISSETUP != "Yes" ]]
+then
+  echo
+  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
+  echo
+  exit 0
+fi
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickGear" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
 "Install" "Install SickGear" \
 "Uninstall" "Uninstall SickGear" \
 "Backup" "Backup SickGear settings" \
 "Restore" "Restore SickGear settings from a previous backup" \
 "Manual Update" "Manually update SickGear" \
 "Reset Password" "Rest SickGear WebUI password" \
-"SCRIPTPATH" "$SCRIPTPATH" \
-"UNAME" "$UNAME" \
-"UGROUP" "$UGROUP" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?

@@ -1,5 +1,4 @@
 echo
-#echo 'SCRIPTPATH '$SCRIPTPATH
 cd $SCRIPTPATH
 pause 'Press [Enter] key to continue...'
 sudo bash $SCRIPTPATH/setup.sh

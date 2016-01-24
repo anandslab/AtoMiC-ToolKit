@@ -1,23 +1,28 @@
-#eval `resize`
-#$LINES $COLUMNS $(( $LINES - 15 )) 25 78 16 
-MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" 25 78 15 \
-"SickBeard" "" \
-"SickRage" "" \
-"SickGear" "" \
-"Sonarr" "" \
-"CouchPotato" "" \
-"Transmission" "" \
-"qBittorrent" "" \
-"SABnzbd" "" \
-"Headphones" "" \
-"Mylar" "" \
-"HTPC Manager" "" \
-"Plex Server" "" \
-"Webmin" "" \
-"SCRIPTPATH" "$SCRIPTPATH" \
-"UNAME" "$UNAME" \
-"UGROUP" "$UGROUP" \
-"Maintenance" "" 3>&1 1>&2 2>&3)
+#!/bin/bash
+if [[ $ISSETUP != "Yes" ]]
+then
+  echo
+  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
+  echo
+  exit 0
+fi
+MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+"SickBeard" "TV Shows PVR Client" \
+"SickRage" "TV Shows PVR Client" \
+"SickGear" "TV Shows PVR Client" \
+"Sonarr" "TV Shows PVR Client" \
+"CouchPotato" "Movies PVR Client" \
+"Transmission" "Bittorent Client" \
+"qBittorrent" "Bittorrent Client" \
+"SABnzbd" "NZB Newsgrabber / Downloader" \
+"Headphones" "Music PVR Client" \
+"Mylar" "Comics PVR Client" \
+"HTPC Manager" "Unified HTPC Web Interface" \
+"Plex Server" "Media Server" \
+"Webmin" "Web-based system administration" \
+"Utilities" "Other miscellaneous tools" \
+"Coming Soon" "Apps planned for future" \
+"Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -36,6 +41,8 @@ if [ $exitstatus = 0 ]; then
 		"HTPC Manager" ) source $SCRIPTPATH/inc/htpcmanager-menu.sh ;;
 		"Plex" ) source $SCRIPTPATH/inc/plex-menu.sh ;;
 		"Webmin" ) source $SCRIPTPATH/inc/webmin-menu.sh ;;
+		"Utilities" ) source $SCRIPTPATH/inc/utils-menu.sh ;;
+		"Coming Soon" ) source $SCRIPTPATH/inc/comingsoon-menu.sh ;;
 		"Maintenance" ) source $SCRIPTPATH/inc/maintenance-menu.sh ;;
 		*) 
 		echo -e $RED'Invalid Option'$ENDCOLOR

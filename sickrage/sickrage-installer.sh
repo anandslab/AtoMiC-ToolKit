@@ -7,7 +7,6 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-
 if [[ $1 != *"setup.sh"* ]]
 then
   echo

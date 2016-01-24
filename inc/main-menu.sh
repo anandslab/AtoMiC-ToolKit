@@ -1,4 +1,5 @@
-#!/bin/bash
+#eval `resize`
+#$LINES $COLUMNS $(( $LINES - 15 )) 25 78 16 
 MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "What would you like to do?" 25 78 16 \
 "SickBeard" "Install, Uninstall, Backup, Restore, and Update." \
 "SickRage" "Install, Uninstall, Backup, Restore, and Update." \
@@ -13,14 +14,17 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "What w
 "HTPC Manager" "Install and Uninstall." \
 "Plex Server" "Install." \
 "Webmin" "Modify a group and its list of members." \
+"SCRIPTPATH" "$SCRIPTPATH" \
+"UNAME" "$UNAME" \
+"UGROUP" "$UGROUP" \
 "Maintenance" "List all groups on the system." 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    echo "Your chosen option:" $MAINCHOICE
+    #echo -e $ENDCOLOR"Your chosen option:" $MAINCHOICE
     case "$MAINCHOICE" in 
-		"SickBeard" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
-		"SickRage" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
+		"SickBeard" ) source $SCRIPTPATH/inc/sickrage-menu.sh;;
+		"SickRage" ) source $SCRIPTPATH/inc/sickrage-menu.sh ;;
 		"SickGear" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
 		"Sonarr" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
 		"CouchPotato" ) sudo bash inc/sickrage-menu.sh "$CALLER" "$SCRIPTPATH" "$UNAME" "$UGROUP" ;;
@@ -37,5 +41,6 @@ if [ $exitstatus = 0 ]; then
 	esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
-    source $SCRIPTPATH/inc/exit.sh
+    echo
+    sleep 1
 fi

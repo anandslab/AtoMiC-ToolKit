@@ -94,7 +94,7 @@ echo -e $YELLOW'26. '$ENDCOLOR'CouchPotato - Uninstall'
 echo -e $YELLOW'27. '$ENDCOLOR'CouchPotato - Backup Database and Settings'
 echo -e $YELLOW'28. '$ENDCOLOR'CouchPotato - Restore Database and Settings'
 echo -e $YELLOW'29. '$ENDCOLOR'CouchPotato - Manual Update'
-echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI) '$RED'(Broken)'$ENDCOLOR
+echo -e $YELLOW'30. '$ENDCOLOR'Transmission - Install (WebUI only, no Desktop GUI)'
 echo -e $YELLOW'31. '$ENDCOLOR'Transmission - Uninstall'
 echo -e $YELLOW'35. '$ENDCOLOR'qBittorrent - Install (WebUI only, no Desktop GUI)'
 echo -e $YELLOW'36. '$ENDCOLOR'qBittorrent - Uninstall'

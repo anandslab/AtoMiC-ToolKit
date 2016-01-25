@@ -17,43 +17,13 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC Headphones Uninstaller Script'$ENDCOLOR
+APPNAME='headphones'
+APPPATH='/home/'$UNAME'/.headphones'
+APPTITLE='Headphones'
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-echo -e $YELLOW'--->Stopping Headphones...'$ENDCOLOR
-sudo /etc/init.d/headphones stop >/dev/null 2>&1
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Removing Headphones Autostart scripts...'$ENDCOLOR
-sudo update-rc.d -f headphones remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
-sudo rm /etc/default/headphones || { echo -e $RED'Warning! Removing default script failed.'$ENDCOLOR ; }
-sudo rm /etc/init.d/headphones || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
-
-echo
-sleep 1
-
-echo -e $GREEN'Do you want to keep Headphones installation files as a backup or for reinstalling later?'$ENDCOLOR
-read -p 'Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
-FILEDEL=${REPLY,,}
-
-if [ "$FILEDEL" != "y" ] 
-then
-	echo
-	echo -e $YELLOW'--->Deleting Headphones files from '$CYAN'/home/'$UNAME'/.headphones'$YELLOW'...'$ENDCOLOR
-	sudo rm -r /home/$UNAME/.headphones
-else
-	echo
-	echo -e $YELLOW'--->Keeping Headphones files in '$CYAN'/home/'$UNAME'/.headphones'$YELLOW'...'$ENDCOLOR
-fi
-
-echo
-sleep 1
-
-echo -e $GREEN'--->All done.'$ENDCOLOR
-echo -e 'Headphones Uninstalled.'
-
+source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

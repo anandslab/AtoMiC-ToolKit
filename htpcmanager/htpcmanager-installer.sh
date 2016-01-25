@@ -17,6 +17,9 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
+APPNAME='htpcmanager'
+APPPATH='/home/'$UNAME'/.htpcmanager'
+
 echo -e $GREEN'AtoMiC HTPC Manager Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
@@ -43,9 +46,9 @@ sudo rm /etc/default/htpcmanager >/dev/null 2>&1
 echo -e 'Any existing HTPC Manager init scripts removed'
 sleep 1
 sudo update-rc.d -f htpcmanager remove >/dev/null 2>&1
-if [ -d "/home/$UNAME/.htpcmanager" ]; then
-	mv /home/$UNAME/.htpcmanager /home/$UNAME/.htpcmanager_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing HTPC Manager files were moved to '$CYAN'/home/'$UNAME'/.htpcmanager_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+if [ -d "$APPPATH" ]; then
+	mv $APPPATH $APPPATH_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing HTPC Manager files were moved to '$CYAN$APPPATH'_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 else
 	echo -e 'No previous HTPC Manager folder found'
 fi
@@ -54,10 +57,9 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Downloading latest HTPC Manager...'$ENDCOLOR
-cd /home/$UNAME
-git clone https://github.com/styxit/HTPC-Manager.git /home/$UNAME/.htpcmanager || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
-sudo chown -R $UNAME:$UGROUP /home/$UNAME/.htpcmanager >/dev/null 2>&1
-sudo chmod 775 -R /home/$UNAME/.htpcmanager >/dev/null 2>&1
+git clone https://github.com/styxit/HTPC-Manager.git $APPPATH || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+sudo chown -R $UNAME:$UGROUP $APPPATH >/dev/null 2>&1
+sudo chmod 775 -R $APPPATH >/dev/null 2>&1
 
 echo
 sleep 1
@@ -83,7 +85,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Stashing any changes made to HTPC Manager...'$ENDCOLOR
-cd /home/$UNAME/.htpcmanager
+cd $APPPATH
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo

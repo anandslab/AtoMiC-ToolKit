@@ -17,14 +17,18 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
+APPNAME='couchpotato'
+APPPATH='/home/'$UNAME'/.couchpotato'
+
 echo -e $GREEN'AtoMiC CouchPotato Manual Update Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 
-if [ ! -d "/home/$UNAME/.couchpotato" ]; 
+if [ ! -d "$APPPATH" ]; 
 then
-	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.couchpotato'$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR
-	source $SCRIPTPATH/inc/exit.sh
+	echo -e $RED'Error! '$CYAN$APPPATH$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR
+    source $SCRIPTPATH/inc/pause.sh
+    source $SCRIPTPATH/inc/couchpotato-menu.sh
 fi
 
 echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
@@ -40,7 +44,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Stashing any changes made to CouchPotato...'$ENDCOLOR
-cd /home/$UNAME/.couchpotato
+cd $APPPATH
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo

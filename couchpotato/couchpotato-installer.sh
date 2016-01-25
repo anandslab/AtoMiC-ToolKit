@@ -17,6 +17,9 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
+APPNAME='couchpotato'
+APPPATH='/home/'$UNAME'/.couchpotato'
+
 echo -e $GREEN'AtoMiC CouchPotato Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
@@ -42,9 +45,9 @@ sudo rm /etc/default/couchpotato >/dev/null 2>&1
 echo -e 'Any existing CouchPotato init scripts removed'
 sleep 1
 sudo update-rc.d -f couchpotato remove >/dev/null 2>&1
-if [ -d "/home/$UNAME/.couchpotato" ]; then
-	mv /home/$UNAME/.couchpotato /home/$UNAME/.couchpotato_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing CouchPotato files were moved to '$CYAN'/home/'$UNAME'/.couchpotato_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+if [ -d "$APPPATH" ]; then
+	mv $APPPATH $APPPATH_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+	echo -e 'Existing CouchPotato files were moved to '$CYAN$APPPATH'_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 else
 	echo -e 'No previous CouchPotato folder found'
 fi
@@ -53,10 +56,9 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Downloading latest CouchPotato...'$ENDCOLOR
-cd /home/$UNAME
-git clone https://github.com/RuudBurger/CouchPotatoServer.git /home/$UNAME/.couchpotato || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
-sudo chown -R $UNAME:$UGROUP /home/$UNAME/.couchpotato >/dev/null 2>&1
-sudo chmod 775 -R /home/$UNAME/.couchpotato >/dev/null 2>&1
+git clone https://github.com/RuudBurger/CouchPotatoServer.git $APPPATH || { echo -e $RED'Git not found.'$ENDCOLOR ; exit 1; }
+sudo chown -R $UNAME:$UGROUP $APPPATH >/dev/null 2>&1
+sudo chmod 775 -R $APPPATH >/dev/null 2>&1
 
 echo
 sleep 1
@@ -64,8 +66,8 @@ sleep 1
 echo -e $YELLOW'--->Configuring CouchPotato Install...'$ENDCOLOR
 echo "# COPY THIS FILE TO /etc/default/couchpotato" >> $SCRIPTPATH/tmp/couchpotato_default || { echo 'Could not create default file.' ; exit 1; }
 echo "# OPTIONS: CP_HOME, CP_USER, CP_DATA, CP_PIDFILE, PYTHON_BIN, CP_OPTS, SSD_OPTS" >> $SCRIPTPATH/tmp/couchpotato_default
-echo "CP_HOME=/home/"$UNAME"/.couchpotato/" >> $SCRIPTPATH/tmp/couchpotato_default
-echo "CP_DATA=/home/"$UNAME"/.couchpotato/" >> $SCRIPTPATH/tmp/couchpotato_default
+echo "CP_HOME="$APPPATH"/" >> $SCRIPTPATH/tmp/couchpotato_default
+echo "CP_DATA="$APPPATH"/" >> $SCRIPTPATH/tmp/couchpotato_default
 
 echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run CouchPotato...'
 echo "CP_USER="$UNAME >> $SCRIPTPATH/tmp/couchpotato_default
@@ -75,7 +77,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Enabling CouchPotato AutoStart at Boot...'$ENDCOLOR
-sudo cp /home/$UNAME/.couchpotato/init/ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+sudo cp $APPPATH/init/ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:$UGROUP /etc/init.d/couchpotato
 sudo chmod +x /etc/init.d/couchpotato
 sudo update-rc.d couchpotato defaults
@@ -84,7 +86,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Stashing any changes made to CouchPotato...'$ENDCOLOR
-cd /home/$UNAME/.couchpotato
+cd $APPPATH
 source $SCRIPTPATH/inc/gitstash.sh
 
 echo

@@ -17,53 +17,18 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='couchpotato'
-APPPATH='/home/'$UNAME'/.couchpotato'
+source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
 
-echo -e $GREEN'AtoMiC CouchPotato Manual Update Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Update Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-if [ ! -d "$APPPATH" ]; 
-then
-	echo -e $RED'Error! '$CYAN$APPPATH$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR
-    source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/couchpotato-menu.sh
-fi
-
-echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo apt-get -y install git-core
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Stopping CouchPotato...'$ENDCOLOR
-sudo /etc/init.d/couchpotato stop >/dev/null 2>&1
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Stashing any changes made to CouchPotato...'$ENDCOLOR
-cd $APPPATH
-source $SCRIPTPATH/inc/gitstash.sh
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Manually updating CouchPotato...'$ENDCOLOR
-git fetch --all
-git pull
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Restarting CouchPotato...'$ENDCOLOR
-/etc/init.d/couchpotato start
-
-echo
-echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e 'CouchPotato should start within 10-20 seconds and your browser should open.'
-echo -e 'If not you can start it using '$CYAN'/etc/init.d/couchpotato start'$ENDCOLOR' command.'
-
+source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/inc/app-git-stash.sh
+source $SCRIPTPATH/inc/app-git-update.sh
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-update-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

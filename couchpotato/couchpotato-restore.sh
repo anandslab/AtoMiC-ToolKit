@@ -17,39 +17,30 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='couchpotato'
-APPPATH='/home/'$UNAME'/.couchpotato'
+source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
 
-echo -e $GREEN'AtoMiC CouchPotato Backup Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Restore Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-if [ ! -d "$APPPATH" ]; 
-then
-	echo -e $RED'Error! '$CYAN$APPPATH$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR
-    source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/couchpotato-menu.sh
-fi
+source $SCRIPTPATH/inc/app-folder-check.sh
 
 sleep 1
 
-echo -e $YELLOW'--->Select CouchPotato Settings backup file to restore...'$ENDCOLOR
+echo -e $YELLOW'--->Select '$APPTITLE' backup file to restore...'$ENDCOLOR
 
 echo
 sleep 1
 
-APPNAME='couchpotato'
 source $SCRIPTPATH/inc/fileselect.sh
 
 if [ $exitstatus = 0 ]; then
 	BFILE=$SCRIPTPATH'/backups/'$FILECHOICE
 
-	echo -e $YELLOW'--->Stopping CouchPotato...'$ENDCOLOR
-	sudo /etc/init.d/couchpotato stop >/dev/null 2>&1
+	source $SCRIPTPATH/inc/app-stop.sh
 
 	echo
 	sleep 1
-
+#http://www.cyberciti.biz/faq/bash-loop-over-file/
 	echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
     DATETIME=`date '+%m-%d-%Y_%H-%M'`
 	if [ -f "$APPPATH/settings.conf" ]; then
@@ -83,22 +74,13 @@ if [ $exitstatus = 0 ]; then
 	echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 	tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 
-	echo
-    sleep 1
-    
-    echo -e $YELLOW'--->Restarting CouchPotato...'$ENDCOLOR
-	/etc/init.d/couchpotato start
-	
-    echo
-    sleep 1
-    
-	echo -e $GREEN'--->All done. '$ENDCOLOR
-	echo -e 'CouchPotato files restored.'
+	source $SCRIPTPATH/inc/app-start.sh
+	source $SCRIPTPATH/inc/app-restore-confirmation.sh
     source $SCRIPTPATH/inc/thankyou.sh
 	source $SCRIPTPATH/inc/exit.sh
 else
     echo
-    echo -e $RED'Restoring backup cancelled.'$ENDCOLOR
+    echo -e $RED'Restoring '$APPTITLE' backup cancelled.'$ENDCOLOR
     source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/couchpotato-menu.sh
+    source $SCRIPTPATH/inc/menu-$APPNAME.sh
 fi 

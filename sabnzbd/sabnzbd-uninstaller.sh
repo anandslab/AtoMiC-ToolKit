@@ -17,50 +17,18 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC SABnzbd Uninstaller Script'$ENDCOLOR
+APPNAME='sabnzbdplus'
+APPPATH='/home/'$UNAME'/.sabnzbd'
+APPTITLE='SABnzbd'
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-echo -e $YELLOW'--->Stopping SABnzbd...'$ENDCOLOR
-sudo service sabnzbdplus stop >/dev/null 2>&1
+source $SCRIPTPATH/inc/app-stop.sh
 sudo killall sabnzbdplus >/dev/null 2>&1
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Uninstalling SABnzbd...'$ENDCOLOR
-sudo apt-get -y remove sabnzbdplus*
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Removing SABnzbd Autostart scripts...'$ENDCOLOR
-sudo update-rc.d -f sabnzbdplus remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
-sudo rm /etc/default/sabnzbdplus || { echo -e $RED'Warning! Removing default script failed.'$ENDCOLOR ; }
-sudo rm /etc/init.d/sabnzbdplus || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
-
-echo
-sleep 1
-
-echo -e $GREEN'Do you want to keep SABnzbd configuration files in case you want to reinstall later?'$ENDCOLOR
-read -p 'Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
-FILEDEL=${REPLY,,}
-
-if [ "$FILEDEL" != "y" ] 
-then
-	echo
-	echo -e $YELLOW'--->Deleting SABnzbd files from '$CYAN'/home/'$UNAME'/.sabnzbd'$YELLOW'...'$ENDCOLOR
-	sudo rm -r /home/$UNAME/.sabnzbd >/dev/null 2>&1
-else
-	echo
-	echo -e $YELLOW'--->Keeping SABnzbd files in '$CYAN'/home/'$UNAME'/.sabnzbd'$YELLOW'...'$ENDCOLOR
-fi
-
-echo
-sleep 1
-
-echo -e $GREEN'--->All done.'$ENDCOLOR
-echo -e 'SABnzbd Uninstalled.'
-
+source $SCRIPTPATH/inc/app-uninstall.sh
+source $SCRIPTPATH/inc/app-init-remove.sh
+source $SCRIPTPATH/inc/app-file-del.sh
+source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

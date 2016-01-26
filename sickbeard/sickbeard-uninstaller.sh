@@ -17,43 +17,16 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC Sick Beard Uninstaller Script'$ENDCOLOR
+APPNAME='sickbeard'
+APPPATH='/home/'$UNAME'/.sickbeard'
+APPTITLE='SickBeard'
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-echo -e $YELLOW'--->Stopping SickBeard...'$ENDCOLOR
-sudo /etc/init.d/sickbeard stop >/dev/null 2>&1
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Removing SickBeard Autostart scripts...'$ENDCOLOR
-sudo update-rc.d -f sickbeard remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
-sudo rm /etc/default/sickbeard || { echo -e $RED'Warning! Removing default script failed.'$ENDCOLOR ; }
-sudo rm /etc/init.d/sickbeard || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
-
-echo
-sleep 1
-
-echo -e $GREEN'Do you want to keep SickBeard installation files as a backup or for reinstalling later?'$ENDCOLOR
-read -p 'Type y/Y to keep files or any other key to delete files, and press [ENTER] : '
-FILEDEL=${REPLY,,}
-
-if [ "$FILEDEL" != "y" ] 
-then
-	echo
-	echo -e $YELLOW'--->Deleting SickBeard files from '$CYAN'/home/'$UNAME'/.sickbeard'$YELLOW'...'$ENDCOLOR
-	sudo rm -r /home/$UNAME/.sickbeard
-else
-	echo
-	echo -e $YELLOW'--->Keeping SickBeard files in '$CYAN'/home/'$UNAME'/.sickbeard'$YELLOW'...'$ENDCOLOR
-fi
-
-echo
-sleep 1
-
-echo -e $GREEN'--->All done.'$ENDCOLOR
-echo -e 'SickBeard Uninstalled.'
-
+source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/inc/app-init-remove.sh
+source $SCRIPTPATH/inc/app-file-del.sh
+source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

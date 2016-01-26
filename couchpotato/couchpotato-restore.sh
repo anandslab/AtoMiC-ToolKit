@@ -24,10 +24,6 @@ echo -e $GREEN'AtoMiC CouchPotato Backup Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 
-echo -e $GREEN'AtoMiC CouchPotato Restore Script'$ENDCOLOR
-
-source $SCRIPTPATH/inc/pause.sh
-
 if [ ! -d "$APPPATH" ]; 
 then
 	echo -e $RED'Error! '$CYAN$APPPATH$RED' not found. CouchPotato not installed or incompatible installation.'$ENDCOLOR

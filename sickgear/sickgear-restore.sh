@@ -93,7 +93,7 @@ else
 	echo
     echo -e $RED'Restoring backup cancelled.'$ENDCOLOR
     source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/sickgear-menu.sh
+    source $SCRIPTPATH/inc/menu-sickgear.sh
 fi 
 
 

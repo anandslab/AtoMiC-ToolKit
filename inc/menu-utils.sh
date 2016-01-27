@@ -18,5 +18,5 @@ if [ $exitstatus = 0 ]; then
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

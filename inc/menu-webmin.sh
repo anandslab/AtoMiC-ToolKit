@@ -11,6 +11,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Webmin" --menu "What would
 "Uninstall" "Uninstall Webmin" \
 "Backup" "Backup Webmin settings" \
 "Restore" "Restore Webmin settings from a previous backup" \
+"Access Details" "View Webmin access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -21,9 +22,9 @@ if [ $exitstatus = 0 ]; then
 		"Uninstall" ) source $SCRIPTPATH/webmin/webmin-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/webmin/webmin-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/webmin/webmin-restore.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

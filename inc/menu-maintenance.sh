@@ -21,9 +21,9 @@ if [ $exitstatus = 0 ]; then
 		"Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
 		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
 		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

@@ -12,7 +12,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickGear" --menu "What wou
 "Backup" "Backup SickGear settings" \
 "Restore" "Restore SickGear settings from a previous backup" \
 "Manual Update" "Manually update SickGear" \
-"Reset Password" "Rest SickGear WebUI password" \
+"Reset Password" "Reset SickGear WebUI password" \
+"Access Details" "View SickGear access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -24,9 +25,9 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickgear/sickgear-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickgear/sickgear-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickgear/sickgear-update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

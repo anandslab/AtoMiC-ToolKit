@@ -12,7 +12,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickRage" --menu "What wou
 "Backup" "Backup SickRage settings" \
 "Restore" "Restore SickRage settings from a previous backup" \
 "Manual Update" "Manually update SickRage" \
-"Reset Password" "Rest SickRage WebUI password" \
+"Reset Password" "Reset SickRage WebUI password" \
+"Access Details" "View SickRage access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -24,12 +25,12 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickrage/sickrage-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickrage/sickrage-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickrage/sickrage-update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) 
 		echo -e $RED'Invalid option or feature not implemented yet.'$ENDCOLOR
-		source $SCRIPTPATH/inc/main-menu.sh
+		source $SCRIPTPATH/inc/menu-main.sh
 		;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

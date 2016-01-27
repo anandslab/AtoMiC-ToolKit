@@ -28,22 +28,22 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo -e $ENDCOLOR"Your chosen option:" $MAINCHOICE
     case "$MAINCHOICE" in 
-		"SickBeard" ) source $SCRIPTPATH/inc/sickbeard-menu.sh;;
-		"SickRage" ) source $SCRIPTPATH/inc/sickrage-menu.sh ;;
-		"SickGear" ) source $SCRIPTPATH/inc/sickgear-menu.sh ;;
-		"Sonarr" ) source $SCRIPTPATH/inc/sonarr-menu.sh ;;
-		"CouchPotato" ) source $SCRIPTPATH/inc/couchpotato-menu.sh ;;
-		"Transmission" ) source $SCRIPTPATH/inc/transmission-menu.sh ;;
-		"qBittorrent" ) source $SCRIPTPATH/inc/qbittorrent-menu.sh ;;
-		"SABnzbd" ) source $SCRIPTPATH/inc/sabnzbd-menu.sh ;;
-		"Headphones" ) source $SCRIPTPATH/inc/headphones-menu.sh ;;
-		"Mylar" ) source $SCRIPTPATH/inc/mylar-menu.sh ;;
-		"HTPC Manager" ) source $SCRIPTPATH/inc/htpcmanager-menu.sh ;;
-		"Plex" ) source $SCRIPTPATH/inc/plex-menu.sh ;;
-		"Webmin" ) source $SCRIPTPATH/inc/webmin-menu.sh ;;
-		"Utilities" ) source $SCRIPTPATH/inc/utils-menu.sh ;;
-		"Coming Soon" ) source $SCRIPTPATH/inc/comingsoon-menu.sh ;;
-		"Maintenance" ) source $SCRIPTPATH/inc/maintenance-menu.sh ;;
+		"SickBeard" ) source $SCRIPTPATH/inc/menu-sickbeard.sh ;;
+		"SickRage" ) source $SCRIPTPATH/inc/menu-sickrage.sh ;;
+		"SickGear" ) source $SCRIPTPATH/inc/menu-sickgear.sh ;;
+		"Sonarr" ) source $SCRIPTPATH/inc/menu-sonarr.sh ;;
+		"CouchPotato" ) source $SCRIPTPATH/inc/menu-couchpotato.sh ;;
+		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission.sh ;;
+		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent.sh ;;
+		"SABnzbd" ) source $SCRIPTPATH/inc/menu-sabnzbd.sh ;;
+		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
+		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;
+		"HTPC Manager" ) source $SCRIPTPATH/inc/menu-htpcmanager.sh ;;
+		"Plex" ) source $SCRIPTPATH/inc/menu-plex.sh ;;
+		"Webmin" ) source $SCRIPTPATH/inc/menu-webmin.sh ;;
+		"Utilities" ) source $SCRIPTPATH/inc/menu-utils.sh ;;
+		"Coming Soon" ) source $SCRIPTPATH/inc/menu-comingsoon.sh ;;
+		"Maintenance" ) source $SCRIPTPATH/inc/menu-maintenance.sh ;;
 		*) 
 		echo -e $RED'Invalid Option'$ENDCOLOR
 		source $SCRIPTPATH/inc/exit.sh

@@ -94,5 +94,5 @@ else
     echo
     echo -e $RED'Restoring backup cancelled.'$ENDCOLOR
     source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/sickbeard-menu.sh
+    source $SCRIPTPATH/inc/menu-sickbeard.sh
 fi 

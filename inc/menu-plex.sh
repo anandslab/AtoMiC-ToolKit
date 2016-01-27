@@ -15,9 +15,9 @@ if [ $exitstatus = 0 ]; then
     #echo "Your chosen option:" $SUBCHOICE
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/plex/plex-installer.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

@@ -77,5 +77,5 @@ else
     echo
     echo -e $RED'Restoring backup cancelled.'$ENDCOLOR
     source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/webmin-menu.sh
+    source $SCRIPTPATH/inc/menu-webmin.sh
 fi

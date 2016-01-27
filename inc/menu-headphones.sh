@@ -17,9 +17,9 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/headphones/headphones-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/headphones/headphones-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

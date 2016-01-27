@@ -17,9 +17,9 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/qbittorrent/qbittorrent-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/qbittorrent/qbittorrent-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/main-menu.sh ;;		
+		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/main-menu.sh
+    source $SCRIPTPATH/inc/menu-main.sh
 fi

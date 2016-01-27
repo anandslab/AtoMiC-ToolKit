@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='webmin'
-APPPATH='/etc/webmin'
-APPTITLE='Webmin'
+source $SCRIPTPATH/webmin/webmin-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 

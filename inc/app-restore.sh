@@ -24,8 +24,9 @@ if [ $exitstatus = 0 ]; then
 	while IFS= read -r file
 	do
         if [ -f "$file" ] || [ -d "$file" ]; then
-        	mv $file $file_$DATETIME
-            echo -e 'Moved existing '$CYAN$file$ENDCOLOR' to '$CYAN$file'_'$DATETIME$ENDCOLOR
+        	NEWFILENAME=$file'_'$DATETIME
+        	mv $file $NEWFILENAME
+            echo -e 'Moved existing '$CYAN$file$ENDCOLOR' to '$CYAN$NEWFILENAME$ENDCOLOR
         fi
 	done < "$SCRIPTPATH/tmp/$APPSHORTNAME-backup-files"
 
@@ -35,6 +36,7 @@ if [ $exitstatus = 0 ]; then
 	echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
 	tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 
+	source $SCRIPTPATH/inc/app-set-permissions.sh
 	source $SCRIPTPATH/inc/app-start.sh
 else
     echo

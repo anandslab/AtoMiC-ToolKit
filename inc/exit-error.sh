@@ -1,4 +1,4 @@
 echo
 cd $SCRIPTPATH
 source $SCRIPTPATH/inc/pause.sh
-sudo bash $SCRIPTPATH/setup.sh
+sudo bash $SCRIPTPATH/inc/menu-$APPNAME.sh

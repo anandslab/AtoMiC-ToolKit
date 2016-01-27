@@ -1,10 +1,9 @@
 #!/bin/bash
-$SCRIPTPATH/inc/app-backup-list.sh
 echo
 sleep 1
 
 echo -e $YELLOW'--->Backing up files...'$ENDCOLOR
-BFN=$APPNAME_`date '+%m-%d-%Y_%H-%M'`
+BFN=$APPNAME'_'`date '+%m-%d-%Y_%H-%M'`
 tar -zcvf $SCRIPTPATH/tmp/$BFN.tar.gz --ignore-failed-read --files-from $SCRIPTPATH/tmp/$APPSHORTNAME-backup-files
 echo
 echo -e $GREEN"All files / folders present from the following list were backed up:"$ENDCOLOR

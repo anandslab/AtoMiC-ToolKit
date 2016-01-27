@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC CouchPotato Uninstaller
+# Script Name: AtoMiC CouchPotato Access Details
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,14 +17,23 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
+source $SCRIPTPATH/webmin/webmin-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-stop.sh
-source $SCRIPTPATH/inc/app-init-remove.sh
-source $SCRIPTPATH/inc/app-file-del.sh
-source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
+source $SCRIPTPATH/inc/app-folder-check.sh
+
+PORTSEARCH='port='
+source $SCRIPTPATH/inc/app-port-search.sh
+
+USERSEARCH='NOTAPPLICABLE'
+source $SCRIPTPATH/inc/app-user-search.sh
+
+source $SCRIPTPATH/inc/app-system-details.sh
+
+source $SCRIPTPATH/inc/app-access-urls.sh
+source $SCRIPTPATH/inc/app-access-credentials.sh
+
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

@@ -15,3 +15,4 @@ if [ ! -z "$HNAME" ]; then
 	echo -e '--->'$CYAN'http://'$HNAME':'$APPPORT$ENDCOLOR' from your local network'
 fi
 echo -e '--->'$CYAN'http://localhost:'$APPPORT$ENDCOLOR' on this system'
+echo -e 'If SSL is enabled, then use HTTPS instead of HTTP in the above URLs.'

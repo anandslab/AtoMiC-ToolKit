@@ -1,0 +1,9 @@
+#!/bin/bash
+APPNAME='webmin'
+APPSHORTNAME='wm'
+APPPATH='/etc/webmin'
+APPTITLE='Webmin'
+APPDEPS=''
+APPGIT=''
+APPDPORT='10000'
+APPSETTINGS=$APPPATH'/miniserv.conf'

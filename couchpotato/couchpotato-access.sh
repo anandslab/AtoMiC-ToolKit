@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC CouchPotato Restore Script
+# Script Name: AtoMiC CouchPotato Access Details
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -19,12 +19,21 @@ source $SCRIPTPATH/inc/header.sh
 
 source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Restore Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-backup-list.sh
-source $SCRIPTPATH/inc/app-restore.sh
-source $SCRIPTPATH/inc/app-restore-confirmation.sh
+
+PORTSEARCH='port ='
+source $SCRIPTPATH/inc/app-port-search.sh
+
+USERSEARCH='username ='
+source $SCRIPTPATH/inc/app-user-search.sh
+
+source $SCRIPTPATH/inc/app-system-details.sh
+
+source $SCRIPTPATH/inc/app-access-urls.sh
+source $SCRIPTPATH/inc/app-access-credentials.sh
+
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

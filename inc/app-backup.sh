@@ -1,8 +1,5 @@
 #!/bin/bash
-echo -e $YELLOW'--->Creating a list of '$APPTITLE' files to backup...'$ENDCOLOR
-cp $SCRIPTPATH/$APPNAME/$APPNAME\-backup-files $SCRIPTPATH/tmp/$APPSHORTNAME-backup-files
-sudo sed -i 's/UNAME/'$UNAME'/g' $SCRIPTPATH/tmp/$APPSHORTNAME-backup-files  || { echo -e $RED'Replacing username in backup list failed.'$ENDCOLOR ; exit 1; }
-
+$SCRIPTPATH/inc/app-backup-list.sh
 echo
 sleep 1
 

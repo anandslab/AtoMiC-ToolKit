@@ -46,10 +46,5 @@ source $SCRIPTPATH/inc/app-init-add.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-install-confirmation.sh
-
-echo -e 'CouchPotato should start within 10-20 seconds and your browser should open.'
-echo -e 'If not you can start it using '$CYAN'/etc/init.d/couchpotato start'$ENDCOLOR' command.'
-echo -e 'Then open '$CYAN'http://localhost:5050'$ENDCOLOR' in your browser.'
-
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

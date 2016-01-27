@@ -25,6 +25,8 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/couchpotato/couchpotato-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/couchpotato/couchpotato-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/couchpotato/couchpotato-update.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/couchpotato/couchpotato-reset.sh ;;
+        "Access Details" ) source $SCRIPTPATH/couchpotato/couchpotato-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

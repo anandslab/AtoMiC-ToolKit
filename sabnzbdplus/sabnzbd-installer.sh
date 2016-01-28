@@ -31,7 +31,7 @@ GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep jcfp)
 if [ "$GREPOUT" == "" ]; then
     sudo add-apt-repository -y ppa:jcfp/ppa
 else
-    echo $APPTITLE' pPA repository already exists...'
+    echo $APPTITLE' PPA repository already exists...'
 fi
 
 source $SCRIPTPATH/inc/pkgupdate.sh

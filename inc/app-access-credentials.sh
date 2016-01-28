@@ -7,5 +7,5 @@ else
 	RESETSUPPORT=''
 fi
 echo -e $YELLOW'Your '$APPTITLE' credentials are...'$ENDCOLOR
-echo -e '--->'$CYAN'Username: '$GREEN$UINAME
+echo -e '--->'$CYAN'Username: '$GREEN$UINAME$ENDCOLOR
 echo -e '--->'$CYAN'Password: '$RED'Not displayed for security. '$ENDCOLOR$RESETSUPPORT

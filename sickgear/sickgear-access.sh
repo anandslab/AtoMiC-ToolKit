@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickBeard Access Details
+# Script Name: AtoMiC SickGear Access Details
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickbeard/sickbeard-constants.sh
+source $SCRIPTPATH/sickgear/sickgear-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 

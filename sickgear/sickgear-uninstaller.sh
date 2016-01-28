@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='sickgear'
-APPPATH='/home/'$UNAME'/.sickgear'
-APPTITLE='SickGear'
+source $SCRIPTPATH/sickgear/sickgear-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 

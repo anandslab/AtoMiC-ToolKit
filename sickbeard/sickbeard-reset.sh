@@ -28,14 +28,9 @@ source $SCRIPTPATH/inc/app-folder-check.sh
 PASSSEARCH='web_password = '
 source $SCRIPTPATH/inc/app-password-search.sh
 
-echo 
-sleep 1
-
-echo -e $YELLOW'Setting temporary '$APPTITLE' WebUI password...'$ENDCOLOR
 # New password = atomic
 NEWPASS='23d33884d600e542d097cd3933df2ae4'
-sed -i 's@'"$PASSSEARCH$UIPASS"'@'"$PASSSEARCH$NEWPASS"'@g' $APPSETTINGS || { echo -e $RED'Setting temporary password failed.'$ENDCOLOR ; exit 1; }
-echo -e 'Temporary password set to: '$CYAN'atomic'$ENDCOLOR
+source $SCRIPTPATH/inc/app-password-temp.sh
 
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-reset-confirmation.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickBeard Access Details
+# Script Name: AtoMiC SickRage Password Reset
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,23 +17,22 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickbeard/sickbeard-constants.sh
+source $SCRIPTPATH/sickrage/sickrage-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 
-PORTSEARCH='web_port ='
-source $SCRIPTPATH/inc/app-port-search.sh
+PASSSEARCH='web_password = '
+source $SCRIPTPATH/inc/app-password-search.sh
 
-USERSEARCH='web_username ='
-source $SCRIPTPATH/inc/app-user-search.sh
+# New password = atomic
+NEWPASS='23d33884d600e542d097cd3933df2ae4'
+source $SCRIPTPATH/inc/app-password-temp.sh
 
-source $SCRIPTPATH/inc/app-system-details.sh
-
-source $SCRIPTPATH/inc/app-access-urls.sh
-source $SCRIPTPATH/inc/app-access-credentials.sh
-
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-reset-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

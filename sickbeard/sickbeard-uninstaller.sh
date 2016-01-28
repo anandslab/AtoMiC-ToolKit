@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='sickbeard'
-APPPATH='/home/'$UNAME'/.sickbeard'
-APPTITLE='SickBeard'
+source $SCRIPTPATH/sickbeard/sickbeard-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 

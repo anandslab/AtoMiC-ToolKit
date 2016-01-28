@@ -25,6 +25,8 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickgear/sickgear-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickgear/sickgear-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickgear/sickgear-update.sh ;;
+		"Reset Password" ) source $SCRIPTPATH/sickbeard/sickgear-reset.sh ;;
+		"Access Details" ) source $SCRIPTPATH/sickbeard/sickgear-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

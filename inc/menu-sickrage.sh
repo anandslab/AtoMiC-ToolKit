@@ -25,6 +25,8 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickrage/sickrage-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickrage/sickrage-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickrage/sickrage-update.sh ;;
+		"Reset Password" ) source $SCRIPTPATH/sickrage/sickrage-reset.sh ;;
+		"Access Details" ) source $SCRIPTPATH/sickrage/sickrage-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) 
 		echo -e $RED'Invalid option or feature not implemented yet.'$ENDCOLOR

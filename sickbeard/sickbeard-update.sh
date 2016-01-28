@@ -17,49 +17,18 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC Sick Beard Manual Update Script'$ENDCOLOR
+source $SCRIPTPATH/sickbeard/sickbeard-constants.sh
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Update Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-if [ ! -d "/home/$UNAME/.sickbeard" ]; 
-then
-	echo -e $RED'Error! '$CYAN'/home/'$UNAME/'.sickbeard'$RED' not found. Sick Beard not installed or incompatible installation.'$ENDCOLOR
-	source $SCRIPTPATH/inc/exit.sh
-fi
-
-echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo apt-get -y install git-core
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Stopping Sick Beard...'$ENDCOLOR
-sudo /etc/init.d/sickbeard stop >/dev/null 2>&1
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Stashing any changes made to Sick Beard...'$ENDCOLOR
-cd /home/$UNAME/.sickbeard
-source $SCRIPTPATH/inc/gitstash.sh
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Manually updating Sick Beard...'$ENDCOLOR
-git fetch --all
-git pull
-
-echo
-sleep 1
-
-echo -e $YELLOW'--->Restarting Sick Beard...'$ENDCOLOR
-/etc/init.d/sickbeard start
-
-echo
-echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e 'Sick Beard should start within 10-20 seconds and your browser should open.'
-echo -e 'If not you can start it using '$CYAN'/etc/init.d/sickbeard start'$ENDCOLOR' command.'
-
+source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/inc/app-git-stash.sh
+source $SCRIPTPATH/inc/app-git-update.sh
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-update-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

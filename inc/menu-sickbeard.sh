@@ -25,6 +25,8 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickbeard/sickbeard-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickbeard/sickbeard-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickbeard/sickbeard-update.sh ;;
+		"Reset Password" ) source $SCRIPTPATH/sickbeard/sickbeard-reset.sh ;;
+		"Access Details" ) source $SCRIPTPATH/sickbeard/sickbeard-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

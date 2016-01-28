@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='sickrage'
-APPPATH='/home/'$UNAME'/.sickrage'
-APPTITLE='SickRage'
+source $SCRIPTPATH/sickrage/sickrage-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 

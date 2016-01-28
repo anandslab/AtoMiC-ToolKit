@@ -27,18 +27,7 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 
-echo
-sleep 1
-
-echo -e $YELLOW'--->Configuring '$APPTITLE' Install...'$ENDCOLOR
-echo "# COPY THIS FILE TO /etc/default/couchpotato" >> $SCRIPTPATH/tmp/couchpotato_default || { echo 'Could not create default file.' ; exit 1; }
-echo "# OPTIONS: CP_HOME, CP_USER, CP_DATA, CP_PIDFILE, PYTHON_BIN, CP_OPTS, SSD_OPTS" >> $SCRIPTPATH/tmp/couchpotato_default
-echo "CP_HOME="$APPPATH"/" >> $SCRIPTPATH/tmp/couchpotato_default
-echo "CP_DATA="$APPPATH"/" >> $SCRIPTPATH/tmp/couchpotato_default
-
-echo -e 'Enabling user'$CYAN $UNAME $ENDCOLOR'to run CouchPotato...'
-echo "CP_USER="$UNAME >> $SCRIPTPATH/tmp/couchpotato_default
-sudo mv $SCRIPTPATH/tmp/couchpotato_default /etc/default/couchpotato
+source $SCRIPTPATH/inc/app-create-default.sh
 
 sudo cp $APPPATH/init/ubuntu /etc/init.d/couchpotato || { echo $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh

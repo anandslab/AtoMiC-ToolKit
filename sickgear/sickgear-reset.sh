@@ -22,14 +22,14 @@ source $SCRIPTPATH/sickgear/sickgear-constants.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/app-stop.sh
 
-PASSSEARCH='web_password = '
+source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic
-NEWPASS='23d33884d600e542d097cd3933df2ae4'
+NEWPASS='atomic'
 source $SCRIPTPATH/inc/app-password-temp.sh
 
 source $SCRIPTPATH/inc/app-start.sh

@@ -22,6 +22,7 @@ source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-init-remove.sh
 source $SCRIPTPATH/inc/app-file-del.sh

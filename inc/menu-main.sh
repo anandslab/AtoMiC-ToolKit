@@ -10,16 +10,16 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 "SickBeard" "TV Shows PVR Client" \
 "SickRage" "TV Shows PVR Client" \
 "SickGear" "TV Shows PVR Client" \
-"Sonarr" "TV Shows PVR Client" \
 "CouchPotato" "Movies PVR Client" \
-"Transmission" "Bittorent Client" \
-"qBittorrent" "Bittorrent Client" \
-"SABnzbd" "NZB Newsgrabber / Downloader" \
 "Headphones" "Music PVR Client" \
 "Mylar" "Comics PVR Client" \
 "HTPC Manager" "Unified HTPC Web Interface" \
-"Plex Server" "Media Server" \
+"SABnzbd+" "NZB Newsgrabber / Downloader" \
 "Webmin" "Web-based system administration" \
+"Sonarr" "TV Shows PVR Client" \
+"Transmission" "Bittorent Client" \
+"qBittorrent" "Bittorrent Client" \
+"Plex Server" "Media Server" \
 "Utilities" "Other miscellaneous tools" \
 "Coming Soon" "Apps planned for future" \
 "Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
@@ -35,7 +35,7 @@ if [ $exitstatus = 0 ]; then
 		"CouchPotato" ) source $SCRIPTPATH/inc/menu-couchpotato.sh ;;
 		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission.sh ;;
 		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent.sh ;;
-		"SABnzbd" ) source $SCRIPTPATH/inc/menu-sabnzbd.sh ;;
+		"SABnzbd+" ) source $SCRIPTPATH/inc/menu-sabnzbdplus.sh ;;
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
 		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;
 		"HTPC Manager" ) source $SCRIPTPATH/inc/menu-htpcmanager.sh ;;

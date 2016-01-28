@@ -15,4 +15,5 @@ if [ ! -z "$HNAME" ]; then
 	echo -e '--->'$CYAN'http://'$HNAME':'$APPPORT$ENDCOLOR' from your local network'
 fi
 echo -e '--->'$CYAN'http://localhost:'$APPPORT$ENDCOLOR' on this system'
+echo -e 'Actual port numbers could be different. Check your settings file: '$APPSETTINGS
 echo -e 'If SSL is enabled, then use HTTPS instead of HTTP in the above URLs.'

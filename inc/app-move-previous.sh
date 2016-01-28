@@ -12,8 +12,9 @@ sudo rm /etc/default/$APPNAME >/dev/null 2>&1
 echo -e 'Any existing '$APPTITLE' init scripts removed'
 sleep 1
 if [ -d "$APPPATH" ]; then
-	mv $APPPATH $APPPATH_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing '$APPTITLE' files were moved to '$CYAN$APPPATH'_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+	MOVEPATH=$APPPATH"_"`date '+%m-%d-%Y_%H-%M'`
+	mv $APPPATH $MOVEPATH || { echo 'Could not move exiting '$APPTITLE' folder.' ; exit 1; }
+	echo -e 'Existing '$APPTITLE' files were moved to '$CYAN$MOVEPATH$ENDCOLOR
 else
 	echo -e 'No previous '$APPTITLE' folder found'
 fi

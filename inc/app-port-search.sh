@@ -1,11 +1,13 @@
 #!/bin/bash
-echo -e $YELLOW'--->Finding '$APPTITLE' access port...'$ENDCOLOR
-PORTSTRING=$(grep "$PORTSEARCH" $APPSETTINGS | head -1)
+echo -e $YELLOW'--->Searching '$APPSETTINGS' for possible port numbers...'$ENDCOLOR
+echo -e 'Found the following port numbers:'
+grep "$PORTSEARCH" $APPSETTINGS | grep -v "_" | grep -Eo '[0-9]{4}'
+PORTSTRING=$(grep "$PORTSEARCH" $APPSETTINGS | grep -v "_" | head -1)
 #echo $PORTSTRING
 APPPORT=${PORTSTRING//[!0-9]/}
 #echo $APPPORT
 if [ ! -z "$APPPORT" ]; then
-	echo -e 'Found. Using port: '$APPPORT;
+	echo -e 'Possible port: '$APPPORT'. If this does not work, try the other ports listed above.'
 else
 	APPPORT=$APPDPORT
     echo -e 'Not found. Using default port: '$APPDPORT

@@ -22,10 +22,10 @@ source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/app-stop.sh
 
-PASSSEARCH='password = '
+source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic

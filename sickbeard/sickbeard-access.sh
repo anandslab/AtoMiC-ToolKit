@@ -24,10 +24,7 @@ echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 
-PORTSEARCH='web_port ='
 source $SCRIPTPATH/inc/app-port-search.sh
-
-USERSEARCH='web_username ='
 source $SCRIPTPATH/inc/app-user-search.sh
 
 source $SCRIPTPATH/inc/app-system-details.sh

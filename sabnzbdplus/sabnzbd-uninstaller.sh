@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script Name: AtoMiC Webmin Uninstaller
-# Author: carrigan98
+# Script Name: AtoMiC SABnzbd Uninstaller
+# Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #
@@ -17,14 +17,16 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/webmin/webmin-constants.sh
+source $SCRIPTPATH/sabnzbdplus/sabnzbd-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
+sudo killall sabnzbdplus >/dev/null 2>&1
 source $SCRIPTPATH/inc/app-uninstall.sh
+source $SCRIPTPATH/inc/app-init-remove.sh 
+source $SCRIPTPATH/inc/app-file-del.sh
 source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

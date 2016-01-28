@@ -22,10 +22,10 @@ source $SCRIPTPATH/sickrage/sickrage-constants.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/app-stop.sh
 
-PASSSEARCH='web_password = '
+source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic

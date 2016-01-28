@@ -7,9 +7,11 @@ UINAMESTRING=$(grep "$USERSEARCH" $APPSETTINGS | head -1)
 UINAME=$(cut -d "=" -f 2 <<< "$UINAMESTRING")
 UINAME=${UINAME//[[:blank:]]/}
 #echo $UINAME
-if [ ! -z "$UINAME" ]; then
+if [ ! -z "$UINAME" ] && [ $UINAME != '""' ]; then
 	echo -e 'Found. Using username: '$UINAME;
+    UINAMESTATUS="Set"
 else
 	UINAME='Cannot determine or username not set.'
+    UNINAMESTATUS=""
     echo -e 'Cannot determine or username not set.'
 fi

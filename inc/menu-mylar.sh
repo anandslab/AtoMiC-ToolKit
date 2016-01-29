@@ -9,6 +9,11 @@ fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Mylar" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
 "Install" "Install Mylar" \
 "Uninstall" "Uninstall Mylar" \
+"Backup" "Backup Mylar settings" \
+"Restore" "Restore Mylar settings from a previous backup" \
+"Manual Update" "Manually update Mylar" \
+"Reset Password" "Reset Mylar WebUI password" \
+"Access Details" "View Mylar access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -17,7 +22,12 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/mylar/mylar-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/mylar/mylar-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
+		"Backup" ) source $SCRIPTPATH/mylar/mylar-backup.sh ;;
+		"Restore" ) source $SCRIPTPATH/mylar/mylar-restore.sh ;;
+		"Manual Update" ) source $SCRIPTPATH/mylar/mylar-update.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/mylar/mylar-reset.sh ;;
+        "Access Details" ) source $SCRIPTPATH/mylar/mylar-access.sh ;;
+        "Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

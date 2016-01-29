@@ -17,13 +17,12 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='mylar'
-APPPATH='/home/'$UNAME'/.mylar'
-APPTITLE='Mylar'
+source $SCRIPTPATH/mylar/mylar-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-init-remove.sh
 source $SCRIPTPATH/inc/app-file-del.sh

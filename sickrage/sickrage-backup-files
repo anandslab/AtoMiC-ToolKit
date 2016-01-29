@@ -1,6 +1,6 @@
-/home/UNAME/.sickrage/config.ini
-/home/UNAME/.sickrage/sickbeard.db
-/home/UNAME/.sickrage/cache.db
-/home/UNAME/.sickrage/failed.db
-/home/UNAME/.sickrage/autoProcessTV/autoProcessTV.cfg
-/home/UNAME/.sickrage/cache
+APPPATH/config.ini
+APPPATH/sickbeard.db
+APPPATH/cache.db
+APPPATH/failed.db
+APPPATH/autoProcessTV/autoProcessTV.cfg
+APPPATH/cache

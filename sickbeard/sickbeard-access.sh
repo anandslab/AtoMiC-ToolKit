@@ -23,6 +23,7 @@ echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/app-settings-check.sh
 
 source $SCRIPTPATH/inc/app-port-search.sh
 source $SCRIPTPATH/inc/app-user-search.sh

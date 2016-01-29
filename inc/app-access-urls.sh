@@ -2,9 +2,9 @@
 echo
 sleep 1
 echo -e $YELLOW'You may access '$APPTITLE' with the following URLs...'$ENDCOLOR
-if [ ! -z "$FQDN" ]; then
-	echo -e '--->'$CYAN'http://'$FQDN':'$APPPORT$ENDCOLOR' from anywhere (requires port forwarding on router)'
-fi
+#if [ ! -z "$FQDN" ]; then
+#	echo -e '--->'$CYAN'http://'$FQDN':'$APPPORT$ENDCOLOR' from anywhere (requires port forwarding on router)'
+#fi
 if [ ! -z "$WANIP" ]; then
 	echo -e '--->'$CYAN'http://'$WANIP':'$APPPORT$ENDCOLOR' from anywhere (requires port forwarding on router)'
 fi

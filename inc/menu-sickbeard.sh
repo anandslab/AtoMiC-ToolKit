@@ -12,6 +12,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickBeard" --menu "What wo
 "Backup" "Backup SickBeard settings" \
 "Restore" "Restore SickBeard settings from a previous backup" \
 "Manual Update" "Manually update SickBeard" \
+"Reset Password" "Reset SickBeard WebUI password" \
 "Access Details" "View SickBeard access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -24,6 +25,7 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/sickbeard/sickbeard-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickbeard/sickbeard-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickbeard/sickbeard-update.sh ;;
+		"Reset Password" ) source $SCRIPTPATH/sickbeard/sickbeard-reset.sh ;;
 		"Access Details" ) source $SCRIPTPATH/sickbeard/sickbeard-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

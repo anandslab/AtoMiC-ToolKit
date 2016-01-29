@@ -1,8 +1,8 @@
 #!/bin/bash
 echo -e $YELLOW'--->Searching '$APPSETTINGS' for possible port numbers...'$ENDCOLOR
 echo -e 'Found the following port numbers:'
-grep "$PORTSEARCH" $APPSETTINGS | grep -v "_" | grep -Eo '[0-9]{4}'
-PORTSTRING=$(grep "$PORTSEARCH" $APPSETTINGS | grep -v "_" | head -1)
+grep "$PORTSEARCH" $APPSETTINGS | grep -v "http" | grep -Eo '[0-9]{4}'
+PORTSTRING=$(grep "$PORTSEARCH" $APPSETTINGS | grep -v "http" | head -1)
 #echo $PORTSTRING
 APPPORT=${PORTSTRING//[!0-9]/}
 #echo $APPPORT

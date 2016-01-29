@@ -38,7 +38,6 @@ if [ $exitstatus = 0 ]; then
 	tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 
 	source $SCRIPTPATH/inc/app-set-permissions.sh
-	rm $SCRIPTPATH/tmp/$APPSHORTNAME-backup-files
 	source $SCRIPTPATH/inc/app-start.sh
 else
     echo

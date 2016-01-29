@@ -17,19 +17,22 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC qBittorrent Installer Script'$ENDCOLOR
+source $SCRIPTPATH/qbittorrent/qbittorrent-constants.sh
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 
 echo
 sleep 1
 
-echo -e $YELLOW"--->Adding qBittorrent repository..."$ENDCOLOR
+#START WORKING HERE. SEE IF THIS CAN BE SOURCED
+echo -e $YELLOW"--->Adding '$APPTITLE' repository..."$ENDCOLOR
 GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep qbittorrent)
 if [ "$GREPOUT" == "" ]; then
-    sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
+    sudo add-apt-repository -y $APPREPO
 else
-    echo "qBittorrent PPA repository already exists..."
+    echo "'$APPTITLE' PPA repository already exists..."
 fi
 
 echo

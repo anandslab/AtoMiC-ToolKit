@@ -2,8 +2,10 @@
 echo
 sleep 1
 echo -e $YELLOW'--->Finding '$APPTITLE' WebUI username...'$ENDCOLOR
-if [ ! $USERSEARCH=="NA" ] || [ ! $APPSETTINGS == "NA" ]; then
-	UINAMESTRING=$(grep "$USERSEARCH" $APPSETTINGS | head -1)
+if [ $USERSEARCH=="NA" ] || [ $APPSETTINGS == "NA" ]; then
+    echo -e 'Incompatibility. Cannot determine username.'
+else
+UINAMESTRING=$(grep "$USERSEARCH" $APPSETTINGS | head -1)
 	#echo $UINAMESTRING
 	UINAME=$(cut -d "=" -f 2 <<< "$UINAMESTRING")
 	UINAME=${UINAME//[[:blank:]]/}
@@ -16,6 +18,4 @@ if [ ! $USERSEARCH=="NA" ] || [ ! $APPSETTINGS == "NA" ]; then
     	UNINAMESTATUS=""
     	echo -e 'Cannot determine or username not set.'
 	fi
-else
-    echo -e 'Incompatibility. Cannot determine username.'
 fi

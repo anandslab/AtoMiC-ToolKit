@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SABnzbd Access Details
+# Script Name: AtoMiC qBittorrent Access Details
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sabnzbdplus/sabnzbd-constants.sh
+source $SCRIPTPATH//qbittorrent-nox/qbittorrent-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 

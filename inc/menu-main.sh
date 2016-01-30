@@ -34,7 +34,7 @@ if [ $exitstatus = 0 ]; then
 		"Sonarr" ) source $SCRIPTPATH/inc/menu-sonarr.sh ;;
 		"CouchPotato" ) source $SCRIPTPATH/inc/menu-couchpotato.sh ;;
 		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission.sh ;;
-		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent.sh ;;
+		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent-nox.sh ;;
 		"SABnzbd+" ) source $SCRIPTPATH/inc/menu-sabnzbdplus.sh ;;
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
 		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;

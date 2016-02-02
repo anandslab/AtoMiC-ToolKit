@@ -12,8 +12,12 @@ else
 	#echo 'appport = '$APPPORT
 	if [ ! -z "$APPPORT" ]; then
 		echo -e 'Possible port: '$APPPORT'. If this does not work, try the other ports listed above.'
+    	UIPORTSTATUS="Set"      
 	else
 		APPPORT=$APPDPORT
-    	echo -e 'Not found. Using default port: '$APPDPORT
+    	UIPORTSTATUS=""        
+        if [ -z "$UIPORTSTATUS" ] && [ ! -z "$APPDPORT" ]; then
+   			echo -e 'Try default password: '$GREEN$APPDPORT$ENDCOLOR
+		fi
 	fi
 fi

@@ -30,8 +30,7 @@ source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic
-#NEWPASS="@ByteArray(23d33884d600e542d097cd3933df2ae4)"
-NEWPASS='ByteArray(23d33884d600e542d097cd3933df2ae4)'
+NEWPASS="@ByteArray(0ce6d6b393ab094aacd23da311370e3a)"
 source $SCRIPTPATH/inc/app-password-temp.sh
 
 source $SCRIPTPATH/inc/app-start.sh

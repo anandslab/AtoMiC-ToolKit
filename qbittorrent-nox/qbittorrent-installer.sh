@@ -20,7 +20,8 @@ source $SCRIPTPATH/inc/header.sh
 source $SCRIPTPATH/qbittorrent-nox/qbittorrent-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
-
+echo
+echo -e $YELLOW'By proceeding you are acceping qBittorrent Legal Notice...'$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 
 echo
@@ -44,7 +45,7 @@ sleep 1
 echo -e $YELLOW'--->Setting up autostart...'$ENDCOLOR
 sudo cp $SCRIPTPATH/qbittorrent-nox/qbittorrent-init /etc/init.d/qbittorrent-nox || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@XXXX@'"$APPDPORT"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
+#sudo sed -i 's@XXXX@'"$APPDPORT"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
 
 echo 

@@ -15,7 +15,10 @@ UINAMESTRING=$(grep "$USERSEARCH" $APPSETTINGS | head -1)
     	UINAMESTATUS="Set"
 	else
 		UINAME='Cannot determine or username not set.'
-    	UNINAMESTATUS=""
+    	UINAMESTATUS=""
     	echo -e 'Cannot determine or username not set.'
+        if [ -z "$UINAMESTATUS" ] && [ ! -z "$APPDEFAULTUNAME" ]; then
+   			echo -e 'Try default username: '$GREEN$APPDEFAULTUNAME$ENDCOLOR
+		fi
 	fi
 fi

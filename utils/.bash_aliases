@@ -71,10 +71,10 @@ alias webminstart='sudo /etc/init.d/webmin start'
 alias webminstatus='sudo /etc/init.d/webmin status'
 
 # PVR, TORRENTS, AND USENET
-alias qbitstart='sudo /etc/init.d/qbittorrent-nox-daemon start'
-alias qbitstop='sudo /etc/init.d/qbittorrent-nox-daemon stop'
-alias qbitrestart='sudo /etc/init.d/qbittorrent-nox-daemon restart'
-alias qbitstatus='sudo /etc/init.d/qbittorrent-nox-daemon status'
+alias qbitstart='sudo /etc/init.d/qbittorrent-nox start'
+alias qbitstop='sudo /etc/init.d/qbittorrent-nox stop'
+alias qbitrestart='sudo /etc/init.d/qbittorrent-nox restart'
+alias qbitstatus='sudo /etc/init.d/qbittorrent-nox status'
 
 alias transstop='sudo /etc/init.d/transmission-daemon stop'
 alias transstart='sudo /etc/init.d/transmission-daemon start'

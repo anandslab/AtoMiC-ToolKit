@@ -8,7 +8,13 @@ else
 fi
 echo -e $YELLOW'Your '$APPTITLE' credentials are...'$ENDCOLOR
 echo -e '--->'$CYAN'Username: '$GREEN$UINAME$ENDCOLOR
+        if [ -z "$UINAMESTATUS" ] && [ ! -z "$APPDEFAULTUNAME" ]; then
+   			echo -e 'Try default username: '$GREEN$APPDEFAULTUNAME$ENDCOLOR
+		fi
 echo -e '--->'$CYAN'Password: '$RED'Not displayed for security. '$ENDCOLOR$RESETSUPPORT
+        if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
+   			echo -e 'Try default password: '$GREEN$APPDEFAULTPASS$ENDCOLOR
+		fi
 
 echo 
 	sleep 1

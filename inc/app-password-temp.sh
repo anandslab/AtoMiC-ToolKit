@@ -3,7 +3,7 @@ echo
 sleep 1
 if [ ! -z $UINAMESTATUS ]; then
 	echo -e $YELLOW'Setting temporary '$APPTITLE' WebUI password...'$ENDCOLOR
-	sed -i 's@'"$PASSSEARCH$UIPASS"'@'"$PASSSEARCH$NEWPASS"'@g' $APPSETTINGS || { echo -e $RED'Setting temporary password failed.'$ENDCOLOR ; exit 1; }
+	sed -i 's|'"$PASSSEARCH$UIPASS"'|'"$PASSSEARCH$NEWPASS"'|g' $APPSETTINGS || { echo -e $RED'Setting temporary password failed.'$ENDCOLOR ; exit 1; }
 	echo -e 'Temporary password set to: '$GREEN'atomic'$ENDCOLOR
 else
 	echo -e $YELLOW'Setting temporary '$APPTITLE' WebUI password...'$ENDCOLOR

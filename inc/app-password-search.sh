@@ -10,7 +10,12 @@ else
 	UIPASS=${UIPASS//[[:blank:]]/}
 	if [ ! -z "$UIPASS" ]; then
 		echo -e 'Password found.';
+		UIPASSSTATUS="Set"
 	else
 		echo -e 'No password found.';
-	fi
+    	UIPASSSTATUS=""        
+        if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
+   			echo -e 'Try default password: '$GREEN$APPDEFAULTPASS$ENDCOLOR
+		fi
+   	fi
 fi

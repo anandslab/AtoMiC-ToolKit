@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-APPNAME='nzbdrone'
-APPPATH='/home/'$UNAME'/.config/NzbDrone'
-APPTITLE='Sonarr / NzbDrone'
+source $SCRIPTPATH/sonarr/sonarr-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Uninstaller Script'$ENDCOLOR
 

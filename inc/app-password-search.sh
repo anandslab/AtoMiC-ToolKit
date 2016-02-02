@@ -2,7 +2,7 @@
 echo
 sleep 1
 echo -e $YELLOW'--->Finding '$APPTITLE' WebUI password...'$ENDCOLOR
-if [ $PASSSEARCH=="NA" ] || [ $APPSETTINGS == "NA" ]; then
+if [ "$PASSSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
     echo -e 'Incompatibility. Cannot determine password.'
 else
 	UIPASSSTRING=$(grep "$PASSSEARCH" $APPSETTINGS | head -1)

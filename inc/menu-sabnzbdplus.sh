@@ -11,6 +11,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd" --menu "What woul
 "Uninstall" "Uninstall SABnzbd" \
 "Backup" "Backup SABnzbd settings" \
 "Restore" "Restore SABnzbd settings from a previous backup" \
+"Manual Update" "Manually update SABnzbd+" \
+"Reset Password" "Reset SABnzbd WebUI password" \
 "Access Details" "View SABnzbd access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -22,6 +24,8 @@ if [ $exitstatus = 0 ]; then
 		"Uninstall" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-restore.sh ;;
+		"Manual Update" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-update.sh ;;
+		"Reset Password" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-reset.sh ;;
         "Access Details" ) source $SCRIPTPATH/sabnzbdplus/sabnzbd-access.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

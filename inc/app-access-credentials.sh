@@ -2,7 +2,7 @@
 echo
 sleep 1
 if grep -q "reset.sh" "$SCRIPTPATH/inc/menu-$APPNAME.sh"; then
-   	RESETSUPPORT='If you forgot, you may use the AtoMiC '$APPTITLE' password reset utitlity.'
+   	RESETSUPPORT='If you forgot, you may use the AtoMiC '$APPTITLE' password reset utility.'
 else
 	RESETSUPPORT=''
 fi

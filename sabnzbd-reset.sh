@@ -26,6 +26,7 @@ source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-settings-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
 
+source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic

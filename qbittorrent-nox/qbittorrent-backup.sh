@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-constants.sh
+source $SCRIPTPATH/qbittorrent-nox/qbittorrent-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
 

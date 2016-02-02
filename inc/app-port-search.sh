@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e $YELLOW'--->Searching '$APPSETTINGS' for possible port numbers...'$ENDCOLOR
-if [ $PORTSEARCH=="NA" ] || [ $APPSETTINGS == "NA" ]; then
+if [ "$PORTSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
 	APPPORT=$APPDPORT
 	echo -e 'Incompatibility. Cannot determine port. Try default port: '$APPPORT
 else

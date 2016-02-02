@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC qBittorrent Restore Script
+# Script Name: AtoMiC qBittorrent Password Reset
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -19,12 +19,22 @@ source $SCRIPTPATH/inc/header.sh
 
 source $SCRIPTPATH/qbittorrent-nox/qbittorrent-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Restore Script'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-backup-list.sh
-source $SCRIPTPATH/inc/app-restore.sh
-source $SCRIPTPATH/inc/app-restore-confirmation.sh
+source $SCRIPTPATH/inc/app-settings-check.sh
+source $SCRIPTPATH/inc/app-stop.sh
+
+source $SCRIPTPATH/inc/app-user-search.sh
+source $SCRIPTPATH/inc/app-password-search.sh
+
+# New password = atomic
+#NEWPASS="@ByteArray(23d33884d600e542d097cd3933df2ae4)"
+NEWPASS='ByteArray(23d33884d600e542d097cd3933df2ae4)'
+source $SCRIPTPATH/inc/app-password-temp.sh
+
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-reset-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

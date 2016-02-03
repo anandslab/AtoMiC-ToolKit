@@ -17,16 +17,11 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC Transmission WebUI Installer Script'$ENDCOLOR
+source $SCRIPTPATH/transmission-daemon/transmission-constants.sh
+
+echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
-
-echo
-sleep 1
-
-echo -e $YELLOW"--->Installing prerequisites..."$ENDCOLOR
-sudo apt-get -y install python-software-properties
 
 echo
 sleep 1
@@ -43,49 +38,17 @@ echo
 sleep 1
 
 source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-move-previous.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-install.sh
 
-echo
-sleep 1
-
-echo -e $YELLOW"--->Installing Transmission commandline, and web interface..."$ENDCOLOR
-sudo apt-get -y install transmission-cli transmission-common transmission-daemon
-
-echo 
-sleep 1
-
-echo -e $YELLOW"--->Stopping Transmission temporarily..."$ENDCOLOR
-sudo /etc/init.d/transmission-daemon stop > /dev/null 2>&1 
+source $SCRIPTPATH/inc/app-stop.sh
 sleep 2
 sudo service transmission-daemon stop > /dev/null 2>&1 
 sleep 2
 sudo killall transmission-daemon > /dev/null 2>&1 
-sleep 2
 
-echo 
-sleep 1
-
-echo -e $YELLOW"--->Creating download directories..."$ENDCOLOR
-if [ ! -d "/home/$UNAME/.config" ]; then
-	mkdir /home/$UNAME/.config
-fi
-if [ ! -d "/home/$UNAME/.config/transmission" ];
-then
-	echo -e 'No previous Transmission configuration files found'
-	mkdir /home/$UNAME/.config/transmission
-else
-	mv /home/$UNAME/.config/transmission /home/$UNAME/.config/transmission_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing Transmission configurations were moved to '$CYAN'/home/$UNAME/.config/transmission_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
-	mkdir /home/$UNAME/.config/transmission
-fi
-if [ ! -d "/home/$UNAME/Downloads" ]; then
-	mkdir /home/$UNAME/Downloads
-fi
-if [ ! -d "/home/$UNAME/Downloads/transmission" ]; then
-	mkdir /home/$UNAME/Downloads/transmission
-fi
-if [ ! -d "/home/$UNAME/Downloads/transmission/incomplete" ]; then
-	mkdir /home/$UNAME/Downloads/transmission/incomplete
-fi
+source $SCRIPTPATH/inc/app-folders-create.sh
 
 echo -e 'Following directories created...'
 echo -e $CYAN'/home/'$UNAME'/.config/transmission'$ENDCOLOR ' - Transmission Settings'
@@ -154,26 +117,13 @@ echo -e $YELLOW"--->Setting setuid and setgid..."$ENDCOLOR
 sudo sed -i 's/setuid debian-transmission/setuid '$UNAME'/g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's/setgid debian-transmission/setgid '$UGROUP'/g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
 
-echo 
-sleep 1
+source $SCRIPTPATH/inc/app-init-add.sh
 
-echo -e $YELLOW"--->Enabling autostart during boot..."$ENDCOLOR
-sudo update-rc.d transmission-daemon defaults
+folders
 
-echo 
-sleep 1
-
-echo -e $YELLOW"--->Starting Transmission..."$ENDCOLOR
-sudo /etc/init.d/transmission-daemon start >/dev/null 2>&1
+source $SCRIPTPATH/inc/app-set-permissions.sh
+source $SCRIPTPATH/inc/app-start.sh
 kill -s SIGHUP `pidof transmission-daemon` >/dev/null 2>&1
-
-echo 
-sleep 1
-
-echo
-echo -e $GREEN'--->All done. '$ENDCOLOR
-echo -e $YELLOW'--->Please read the instructions below clearly. When you are done reboot your system using '$RED'sudo reboot'$YELLOW' command.'$ENDCOLOR
-echo -e 'Note down the the Transmission directories created above. Transmission should autostart on reboot. If not run '$CYAN'sudo /etc/init.d/transmission-daemon start'$ENDCOLOR'. Then open '$CYAN'http://localhost:9091'$ENDCOLOR' in your browser.'
-
+source $SCRIPTPATH/inc/app-install-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

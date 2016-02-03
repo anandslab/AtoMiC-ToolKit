@@ -30,7 +30,7 @@ source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
 # New password = atomic
-NEWPASS='atomic'
+NEWPASS='{38417807a96db37efd15e91f3517a8a0d6a2a1b74irIveLt'
 source $SCRIPTPATH/inc/app-password-temp.sh
 
 source $SCRIPTPATH/inc/app-start.sh

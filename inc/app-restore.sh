@@ -23,10 +23,11 @@ if [ $exitstatus = 0 ]; then
     
 	while IFS= read -r file
 	do
+       	echo -e 'Restoring '$CYAN$file$ENDCOLOR'...'
         if [ -f "$file" ] || [ -d "$file" ]; then
         	NEWFILENAME=$file'_'$DATETIME
         	mv $file $NEWFILENAME
-        	echo $NEWFILENAME
+        	#echo $NEWFILENAME
             echo -e 'Moved existing '$CYAN$file$ENDCOLOR' to '$CYAN$NEWFILENAME$ENDCOLOR
         fi
 	done < "$SCRIPTPATH/tmp/$APPSHORTNAME-backup-files"

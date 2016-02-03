@@ -8,7 +8,7 @@ APPGIT=''
 APPDPORT='8086'
 APPSETTINGS=$APPPATH'/qBittorrent.conf'
 PORTSEARCH='WebUI\\Port='
-USERSEARCH="WebUI\Username="
+USERSEARCH='WebUI\\Username='
 PASSSEARCH='WebUI\\Password_ha1='
 APPDEFAULTUNAME='admin'
 APPDEFAULTPASS='adminadmin'

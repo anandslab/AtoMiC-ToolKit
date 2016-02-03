@@ -6,9 +6,15 @@ if [ "$PASSSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
     echo -e 'Incompatibility. Cannot determine password.'
 else
 	UIPASSSTRING=$(grep "$PASSSEARCH" $APPSETTINGS | head -1)
-	UIPASS=$(cut -d "=" -f 2 <<< "$UIPASSSTRING")
+    #echo 'Search String: '$PASSSEARCH
+    #echo 'Search Output: '$UIPASSSTRING
+    UIPASS=${UIPASSSTRING##*$PASSSEARCH}
+    #echo 'Everything after usersearch: '$UIPASS
+    #UIPASS=$(cut -d "=" -f 2 <<< "$UIPASSSTRING")
 	#UIPASS=${UIPASS//[[:blank:]]/}
     UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
+	#echo 'Final password: '$UIPASS
+    
 	if [ ! -z "$UIPASS" ]; then
 		echo -e 'Password found.';
 		UIPASSSTATUS="Set"

@@ -8,17 +8,16 @@ else
 fi
 echo -e $YELLOW'Your '$APPTITLE' credentials are...'$ENDCOLOR
 echo -e '--->'$CYAN'Username: '$GREEN$UINAME$ENDCOLOR
-        if [ -z "$UINAMESTATUS" ] && [ ! -z "$APPDEFAULTUNAME" ]; then
-   			echo -e 'Try default username: '$GREEN$APPDEFAULTUNAME$ENDCOLOR
-		fi
+if [ -z "$UINAMESTATUS" ] && [ ! -z "$APPDEFAULTUNAME" ]; then
+	echo -e 'Try default username: '$GREEN$APPDEFAULTUNAME$ENDCOLOR
+fi
 echo -e '--->'$CYAN'Password: '$RED'Not displayed for security. '$ENDCOLOR$RESETSUPPORT
-        if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
-   			echo -e 'Try default password: '$GREEN$APPDEFAULTPASS$ENDCOLOR
-		fi
-
+if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
+	echo -e 'Try default password: '$GREEN$APPDEFAULTPASS$ENDCOLOR
+fi
 echo 
-	sleep 1
-	echo -e $YELLOW'Checking '$APPTITLE' status...'$ENDCOLOR
+sleep 1
+echo -e $YELLOW'Checking '$APPTITLE' status...'$ENDCOLOR
 if [ -f /etc/init.d/$APPNAME ]; then
 	if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
 		echo -e $RED$APPTITLE' is currently not running and will be inaccessible.'$ENDCOLOR

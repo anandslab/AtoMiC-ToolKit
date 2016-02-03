@@ -7,7 +7,6 @@ then
   exit 0
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
-"Default Credentials" "See default credentials for apps" \
 "Clear Temp Files" "Clear disclaimer consent and user info" \
 "Delete Backups" "Delete app backups" \
 "Update ToolKit" "Update AtoMiC ToolKit" \
@@ -17,7 +16,6 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo "Your chosen option:" $SUBCHOICE
     case "$SUBCHOICE" in 
-		"Default Credentials" ) source $SCRIPTPATH/maintenance/defaults.sh ;;
 		"Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
 		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
 		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;

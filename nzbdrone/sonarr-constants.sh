@@ -1,0 +1,12 @@
+#!/bin/bash
+APPNAME='nzbdrone'
+APPSHORTNAME='sonarr'
+APPPATH='/home/'$UNAME'/.config/NzbDrone'
+APPTITLE='Sonarr / NzbDrone'
+APPDEPS='mono-complete'
+APPGIT=''
+APPDPORT='8989'
+APPSETTINGS=$APPPATH'/config.xml'
+PORTSEARCH='<port>'
+USERSEARCH='NA'
+PASSSEARCH='NA'

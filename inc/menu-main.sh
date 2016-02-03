@@ -31,7 +31,7 @@ if [ $exitstatus = 0 ]; then
 		"SickBeard" ) source $SCRIPTPATH/inc/menu-sickbeard.sh ;;
 		"SickRage" ) source $SCRIPTPATH/inc/menu-sickrage.sh ;;
 		"SickGear" ) source $SCRIPTPATH/inc/menu-sickgear.sh ;;
-		"Sonarr" ) source $SCRIPTPATH/inc/menu-sonarr.sh ;;
+		"Sonarr" ) source $SCRIPTPATH/inc/menu-nzbdrone.sh ;;
 		"CouchPotato" ) source $SCRIPTPATH/inc/menu-couchpotato.sh ;;
 		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission.sh ;;
 		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent-nox.sh ;;

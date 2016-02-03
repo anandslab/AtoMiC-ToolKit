@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sonarr/sonarr-constants.sh
+source $SCRIPTPATH/nzbdrone/sonarr-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
@@ -53,7 +53,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Setting up autostart...'$ENDCOLOR
-sudo cp $SCRIPTPATH/sonarr/sonarr-init /etc/init.d/nzbdrone || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
+sudo cp $SCRIPTPATH/nzbdrone/sonarr-init /etc/init.d/nzbdrone || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@RUN_AS=USERNAME@RUN_AS='"$UNAME"'@g' /etc/init.d/nzbdrone  || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
 

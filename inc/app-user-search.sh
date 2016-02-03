@@ -6,11 +6,16 @@ if [ "$USERSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
     echo -e 'Incompatibility. Cannot determine username.'
     UINAME='Cannot determine or username not set.'
 else
-UINAMESTRING=$(grep "$USERSEARCH" $APPSETTINGS | head -1)
-	#echo $UINAMESTRING
-	UINAME=$(cut -d "=" -f 2 <<< "$UINAMESTRING")
-	UINAME=${UINAME//[[:blank:]]/}
-	#echo $UINAME
+UINAMESTRING=$(grep $USERSEARCH $APPSETTINGS | head -1)
+	echo 'search string = '$USERSEARCH
+    echo 'search output = '$UINAMESTRING
+    UINAME=${UINAMESTRING##*"$USERSEARCH" | tr -dc '[:alnum:]'}
+    echo 'everything after usersearch '$UINAME
+	#UINAME=$(cut -d "$USERSEARCH" -f 2 <<< "$UINAMESTRING")
+	#UINAME=${UINAME//[[:blank:]]/}
+    UINAME=$(echo "$UINAME" | tr -dc '[:alnum:]')
+	echo 'final username '$UINAME
+    
 	if [ ! -z "$UINAME" ] && [ $UINAME != '""' ]; then
 		echo -e 'Found. Using username: '$UINAME;
     	UINAMESTATUS="Set"

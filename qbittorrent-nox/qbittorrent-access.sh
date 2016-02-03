@@ -27,7 +27,6 @@ source $SCRIPTPATH/inc/app-settings-check.sh
 
 source $SCRIPTPATH/inc/app-port-search.sh
 source $SCRIPTPATH/inc/app-user-search.sh
-
 source $SCRIPTPATH/inc/app-password-search.sh
 
 source $SCRIPTPATH/inc/app-system-details.sh

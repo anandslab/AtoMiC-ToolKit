@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickGear Access Details
+# Script Name: AtoMiC Transmission Daemon Password Reset
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,22 +17,23 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickgear/sickgear-constants.sh
+source $SCRIPTPATH/transmission-daemon/transmission-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
+echo -e $GREEN'AtoMiC '$APPTITLE' Password Reset Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-settings-check.sh
+source $SCRIPTPATH/inc/app-stop.sh
 
-source $SCRIPTPATH/inc/app-port-search.sh
 source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
-source $SCRIPTPATH/inc/app-system-details.sh
+# New password = atomic
+NEWPASS='atomic'
+source $SCRIPTPATH/inc/app-password-temp.sh
 
-source $SCRIPTPATH/inc/app-access-urls.sh
-source $SCRIPTPATH/inc/app-access-credentials.sh
-
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-reset-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

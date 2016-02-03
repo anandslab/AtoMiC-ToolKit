@@ -7,7 +7,8 @@ if [ "$PASSSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
 else
 	UIPASSSTRING=$(grep "$PASSSEARCH" $APPSETTINGS | head -1)
 	UIPASS=$(cut -d "=" -f 2 <<< "$UIPASSSTRING")
-	UIPASS=${UIPASS//[[:blank:]]/}
+	#UIPASS=${UIPASS//[[:blank:]]/}
+    UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
 	if [ ! -z "$UIPASS" ]; then
 		echo -e 'Password found.';
 		UIPASSSTATUS="Set"

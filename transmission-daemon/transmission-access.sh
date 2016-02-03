@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickGear Access Details
+# Script Name: AtoMiC Transmission Daemon Access Details
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickgear/sickgear-constants.sh
+source $SCRIPTPATH/transmission-daemon/transmission-constants.sh
 
 echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 

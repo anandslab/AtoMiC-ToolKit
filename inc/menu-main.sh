@@ -33,7 +33,7 @@ if [ $exitstatus = 0 ]; then
 		"SickGear" ) source $SCRIPTPATH/inc/menu-sickgear.sh ;;
 		"Sonarr" ) source $SCRIPTPATH/inc/menu-nzbdrone.sh ;;
 		"CouchPotato" ) source $SCRIPTPATH/inc/menu-couchpotato.sh ;;
-		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission.sh ;;
+		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission-daemon.sh ;;
 		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent-nox.sh ;;
 		"SABnzbd+" ) source $SCRIPTPATH/inc/menu-sabnzbdplus.sh ;;
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;

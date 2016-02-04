@@ -10,3 +10,7 @@ APPSETTINGS=$APPPATH'/sabnzbd.ini'
 PORTSEARCH='port = '
 USERSEARCH='username = '
 PASSSEARCH='password = '
+# New password encrypted
+NEWPASS='atomic'
+# New password unencrypted
+APPNEWPASS='atomic'

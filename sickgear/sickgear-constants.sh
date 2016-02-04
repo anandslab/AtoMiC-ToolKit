@@ -10,3 +10,7 @@ APPSETTINGS=$APPPATH'/config.ini'
 PORTSEARCH='web_port = '
 USERSEARCH='web_username = '
 PASSSEARCH='web_password = '
+# New password encrypted
+NEWPASS='atomic'
+# New password unencrypted
+APPNEWPASS='atomic'

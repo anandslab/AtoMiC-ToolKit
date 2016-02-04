@@ -10,3 +10,7 @@ APPSETTINGS=$APPPATH'/settings.conf'
 PORTSEARCH='port = '
 USERSEARCH='username = '
 PASSSEARCH='password = '
+# New password unencrypted
+APPNEWPASS='atomic'
+# New password encrypted
+NEWPASS='23d33884d600e542d097cd3933df2ae4'

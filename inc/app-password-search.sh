@@ -12,7 +12,10 @@ else
     #echo 'Everything after usersearch: '$UIPASS
     #UIPASS=$(cut -d "=" -f 2 <<< "$UIPASSSTRING")
 	#UIPASS=${UIPASS//[[:blank:]]/}
-    UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
+    if [ "$PASSSEARCH" != "NA" ] && [ "$APPNEWPASS" == "atomic" ]; then
+    	UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
+        
+    fi
 	#echo 'Final password: '$UIPASS
     
 	if [ ! -z "$UIPASS" ]; then

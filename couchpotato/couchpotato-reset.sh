@@ -29,9 +29,7 @@ source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
-# New password = atomic
-NEWPASS='23d33884d600e542d097cd3933df2ae4'
-source $SCRIPTPATH/inc/app-password-temp.sh
+source $SCRIPTPATH/inc/app-password-reset.sh
 
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-reset-confirmation.sh

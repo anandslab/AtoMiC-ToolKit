@@ -29,11 +29,23 @@ source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-user-search.sh
 source $SCRIPTPATH/inc/app-password-search.sh
 
-# New password = atomic
-NEWPASS='{38417807a96db37efd15e91f3517a8a0d6a2a1b74irIveLt'
-source $SCRIPTPATH/inc/app-password-temp.sh
+echo
+sleep 1
+echo -e $YELLOW'--->Getting new '$APPTITLE' WebUI password...'$ENDCOLOR
+sleep 3
 
-source $SCRIPTPATH/inc/app-start.sh
-source $SCRIPTPATH/inc/app-reset-confirmation.sh
+APPNEWPASS=$(whiptail --title "Reset Transmission WebUI Password" --inputbox "Enter new password and choose Ok to continue." 10 60 3>&1 1>&2 2>&3)
+exitstatus=$?
+
+if [ $exitstatus = 0 ]; then
+	NEWPASS=$APPNEWPASS'",'
+    source $SCRIPTPATH/inc/app-password-reset.sh
+    source $SCRIPTPATH/inc/app-start.sh
+	source $SCRIPTPATH/inc/app-reset-confirmation.sh
+else
+    echo
+    echo -e $RED'Resetting '$APPTITLE' WebUI password cancelled.'$ENDCOLOR
+fi
+
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

@@ -12,7 +12,7 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 <tr>
 <td>1FEgpS3WrK51yzJpqrSo3RXcrLDGztqKPy<br />
 <img src="http://www.htpcbeginner.com/images/2016/02/hb-bitcoin200x196.png" width="200" height="196" /></td>
-<td><img src="http://www.htpcbeginner.com/images/2016/02/hb-paypal200x340.png" width="200" height="340" /></td>
+<td><img src="http://www.htpcbeginner.com/images/2016/02/hb-paypal200x340.png" width="340" height="200" /></td>
 </tr>
 </table>
 </blockquote>

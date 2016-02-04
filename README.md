@@ -4,16 +4,16 @@
 <blockquote>
 We have put in several hundred hours of work into developing AtoMiC ToolKit. If it helped you please consider donating. All donations will be used only for AtoMiC ToolKit development.
 
-<strong>BitCoin:</strong> 1FEgpS3WrK51yzJpqrSo3RXcrLDGztqKPy
-<strong>PayPal:</strong> 
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="PEVRBUVEW92KQ">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
+<table>
+<tr>
+<th>BitCoin</th>
+<td>PayPal</th>
+</tr>
+<tr>
+<td>1FEgpS3WrK51yzJpqrSo3RXcrLDGztqKPy</td>
+<td>&nbsp;</td>
+</tr>
+</table>
 
 <h2>Compatibility</h2>
 Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 

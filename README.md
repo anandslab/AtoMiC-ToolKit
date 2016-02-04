@@ -1,9 +1,7 @@
 # AtoMiC-ToolKit
 <img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-300x162.jpg" alt="AtoMiC ToolKit form htpcBeginner.com" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by htpcBeginner.com and its community to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, backing up, restoring, resetting, and maintaining download server apps. It is written in bash.
 
-<h2>Compatibility</h2>
-Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 
-
+<h2>Support AtoMiC ToolKit Development</h2>
 <blockquote>
 We have put in several hundred hours of work into developing AtoMiC ToolKit. If it helped you please consider donating. All donations will be used only for AtoMiC ToolKit development.
 
@@ -19,6 +17,9 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 </tr>
 </table>
 </blockquote>
+
+<h2>Compatibility</h2>
+Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 
 
 <h2>Key Features</h2>
 Features features of AtoMiC ToolKit include:

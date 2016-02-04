@@ -14,6 +14,7 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 <td>&nbsp;</td>
 </tr>
 </table>
+</blockquote>
 
 <h2>Compatibility</h2>
 Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 

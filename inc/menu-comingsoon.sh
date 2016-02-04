@@ -6,8 +6,14 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "These apps may be supported in future." --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
 "Deluge" "Bittorrent Client" \
+"Apache" "Apache Webserver" \
+"MySQL" "MySQL Server" \
+"Emby" "Media Server" \
+"PyLoad" "Storage and Download Client" \
+"Jackett" "Torrent trackers for Sonarr" \
+"nzbHydra" "Meta search for NZB Indexers" \
 "Make MKV" "Video Converter" \
 "Musicbrainz" "Music Tagger for Headphones" \
 "Monit" "Monitor your home server or HTPC" \

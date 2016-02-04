@@ -6,13 +6,13 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 
 <table>
 <tr>
-<th>BitCoin</th>
-<td>PayPal</th>
+<th style="text-align:center">BitCoin</th>
+<th style="text-align:center">PayPal</th>
 </tr>
 <tr>
-<td>1FEgpS3WrK51yzJpqrSo3RXcrLDGztqKPy<br />
-<img src="http://www.htpcbeginner.com/images/2016/02/hb-bitcoin200x196.png" width="200" height="196" /></td>
-<td><img src="http://www.htpcbeginner.com/images/2016/02/hb-paypal200x340.png" width="340" height="200" /></td>
+<td style="text-align:center">1FEgpS3WrK51yzJpqrSo3RXcrLDGztqKPy<br />
+<img src="http://www.htpcbeginner.com/images/2016/02/hb-bitcoin74x75.png" width="74" height="75" /></td>
+<td style="text-align:center"><img src="http://www.htpcbeginner.com/images/2016/02/hb-paypal128x75.png" width="128" height="75" /></td>
 </tr>
 </table>
 </blockquote>

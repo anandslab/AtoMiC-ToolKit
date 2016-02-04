@@ -50,76 +50,37 @@ sudo killall transmission-daemon > /dev/null 2>&1
 
 source $SCRIPTPATH/inc/app-folders-create.sh
 
-echo -e 'Following directories created...'
-echo -e $CYAN'/home/'$UNAME'/.config/transmission'$ENDCOLOR ' - Transmission Settings'
-echo -e $CYAN'/home/'$UNAME'/Downloads'$ENDCOLOR ' - Watched Folder'
-echo -e $CYAN'/home/'$UNAME'/Downloads/transmission'$ENDCOLOR ' - Completed Downloads'
-echo -e $CYAN'/home/'$UNAME'/Downloads/transmission/incomplete'$ENDCOLOR ' - Incomplete Downloads'
-
+echo
 sleep 1
-echo 
 
-echo -e $YELLOW"--->Making some configuration changes..."$ENDCOLOR
-sudo sed -i 's/USER=debian-transmission/USER='$UNAME'/g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's|/var/lib/transmission-daemon/info|/home/'$UNAME'/.config/transmission|g' /etc/default/transmission-daemon  || { echo -e $RED'Replacing config directory in defualt failed.'$ENDCOLOR ; exit 1; }
+echo -e $YELLOW"--->Creating init and default files..."$ENDCOLOR
+sudo cp $SCRIPTPATH/$APPNAME/transmission-default /etc/default/$APPNAME
+sudo cp $SCRIPTPATH/$APPNAME/transmission-init /etc/init.d/$APPNAME
+sudo sed -i 's@USER_NAME@'"$UNAME"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@/var/lib/transmission-daemon/info@'"$APPPATH"'@g' /etc/default/transmission-daemon  || { echo -e $RED'Replacing config directory in defualt failed.'$ENDCOLOR ; exit 1; }
 
 sleep 1
 echo 
 
 echo -e $YELLOW"--->Copying settings file and setting permissions..."$ENDCOLOR
-cp $SCRIPTPATH/transmission/transmission-initial-settings.json /home/$UNAME/.config/transmission/settings.json || { echo -e $RED'Initial settings move failed.'$ENDCOLOR ; exit 1; }
-cd /home/$UNAME/.config/transmission
+cp $SCRIPTPATH/$APPNAME/transmission-initial-settings.json $APPSETTINGS || { echo -e $RED'Initial settings move failed.'$ENDCOLOR ; exit 1; }
+sed -i 's@USER_NAME@'"$UNAME"'@g' $APPSETTINGS || { echo -e $RED'Replacing username in settings-json failed.'$ENDCOLOR ; exit 1; }
 sudo usermod -a -G debian-transmission $UNAME  || { echo -e $RED'Adding debian-transmission group to user failed.'$ENDCOLOR ; exit 1; }
-sudo chown $UNAME:debian-transmission settings.json  || { echo -e $RED'Chown settings.json failed'$ENDCOLOR ; exit 1; }
+sudo chown $UNAME:debian-transmission $APPSETTINGS  || { echo -e $RED'Chown settings.json failed'$ENDCOLOR ; exit 1; }
 sudo rm /var/lib/transmission-daemon/info/settings.json > /dev/null 2>&1
-sudo ln -s /home/$UNAME/.config/transmission/settings.json /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
-sudo chown -R $UNAME: /home/$UNAME/Downloads/transmission
-sudo chown -R $UNAME:debian-transmission /home/$UNAME/.config/transmission
-sudo chmod -R 775 /home/$UNAME/Downloads/transmission
-sudo chmod -R 775 /home/$UNAME/.config/transmission
-sudo chmod -R 775 /var/lib/transmission-daemon
+sudo ln -s $APPSETTINGS /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
+sudo chown -R $UNAME:debian-transmission $APPPATH
+sudo chmod -R 775 $APPPATH
 sudo chmod g+s /home/$UNAME/.config/transmission
-sudo chmod g+s /home/$UNAME/Downloads/transmission
-
-echo 
-sleep 1
-
-echo -e $YELLOW"--->Setting up Transmission User, WebUI User and Password..."$ENDCOLOR
-sed -i 's|USER_NAME|'$UNAME'|g' /home/$UNAME/.config/transmission/settings.json || { echo -e $RED'Replacing username in settings-json failed.'$ENDCOLOR ; exit 1; }
-
-echo -n 'Set a username for Transmission WebUI and press [ENTER]: '
-read TUNAME
-if [ -z "$TUNAME" ]
-   then
-   echo -e '    No username entered so setting default username: '$CYAN'transmission'$ENDCOLOR
-   TUNAME=transmission
-   else 
-   echo -e '    WebUI username set to:'$CYAN $TUNAME $ENDCOLOR
-fi
-sed -i 's|WEBUI_USERNAME|'$TUNAME'|g' /home/$UNAME/.config/transmission/settings.json || { echo -e $RED'Setting new username in settings.json failed.'$ENDCOLOR ; exit 1; }
-
-echo -n 'Set a password for Transmission WebUI and press [ENTER]: '
-read TPASS
-if [ -z "$TPASS" ]
-   then
-   echo -e '    No password entered so setting default password: '$CYAN'transmission'$ENDCOLOR
-   TPASS=transmission
-   else 
-   echo -e '    WebUI password set to: '$CYAN$TPASS$ENDCOLOR
-fi
-sed -i 's|WEBUI_PASSWORD|'$TPASS'|g' /home/$UNAME/.config/transmission/settings.json || { echo -e $RED'Setting new password in settings.json failed.'$ENDCOLOR ; exit 1; }
-sed -i 's|USER_NAME|'$UNAME'|g' /home/$UNAME/.config/transmission/settings.json || { echo -e $RED'Replacing username in settings-json failed.'$ENDCOLOR ; exit 1; }
 
 echo 
 sleep 1
 
 echo -e $YELLOW"--->Setting setuid and setgid..."$ENDCOLOR
-sudo sed -i 's/setuid debian-transmission/setuid '$UNAME'/g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's/setgid debian-transmission/setgid '$UGROUP'/g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
 
 source $SCRIPTPATH/inc/app-init-add.sh
-
-folders
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

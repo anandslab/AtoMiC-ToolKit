@@ -51,21 +51,11 @@ source $SCRIPTPATH/inc/app-init-add.sh
 echo 
 sleep 1
 
-echo -e $YELLOW"--->Creating folders..."$ENDCOLOR
-if [ ! -d "/home/$UNAME/.config" ]; then
-    mkdir /home/$UNAME/.config
-fi
-if [ ! -d "$APPPATH" ]; then
-	echo -e 'No previous qBittorrent configuration folder found'
-	mkdir $APPPATH
-fi
+source $SCRIPTPATH/inc/app-folders-create.sh
 if [ ! -f "$APPSETTINGS" ];
 then
 	sudo cp $SCRIPTPATH/qbittorrent-nox/qBittorrent.conf $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
 fi
-sudo chown -R $UNAME:$UGROUP $APPPATH
-sudo chmod -R 775 $APPPATH
-sudo chmod -R g+s $APPPATH
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

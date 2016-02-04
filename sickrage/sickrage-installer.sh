@@ -27,12 +27,7 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 
-echo
-sleep 1
-
-echo -e $YELLOW'--->Creating Run Directories and Files...'$ENDCOLOR
-sudo mkdir /var/run/sickrage >/dev/null 2>&1
-sudo chown $UNAME:$UGROUP /var/run/sickrage >/dev/null 2>&1
+source $SCRIPTPATH/inc/app-folders-create.sh
 # Check to see if autoProcessTV.cfg.sample exists https://github.com/htpcBeginner/AtoMiC-ToolKit/issues/29
 if [ -f "$APPPATH/autoProcessTV/autoProcessTV.cfg.sample" ]; then
  cp -a $APPPATH/autoProcessTV/autoProcessTV.cfg.sample $APPPATH/autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }

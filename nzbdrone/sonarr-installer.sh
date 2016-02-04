@@ -60,10 +60,7 @@ source $SCRIPTPATH/inc/app-init-add.sh
 echo 
 sleep 1
 
-echo -e $YELLOW"--->Creating folders..."$ENDCOLOR
-if [ ! -d "/var/run/nzbdrone" ]; then
-	sudo mkdir /var/run/nzbdrone
-fi
+source $SCRIPTPATH/inc/app-folders-create.sh
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

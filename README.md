@@ -61,6 +61,9 @@ $ cd ~/AtoMiC-ToolKit
 $ sudo bash setup.sh
 </pre>
 
+<h2>Video</h2>
+<a href="https://www.youtube.com/watch?v=mEoogc0fTBo" target="_blank">https://www.youtube.com/watch?v=mEoogc0fTBo</a>
+
 <h2>Screenshots</h2>
 Coming soon!
 

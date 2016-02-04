@@ -56,7 +56,7 @@ Clone repository on any Ubuntu based distro and execute the setup.sh bash script
 
 <pre>
 $ sudo apt-get install git-core
-$ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit
+$ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit ~/AtoMiC-ToolKit
 $ cd ~/AtoMiC-ToolKit
 $ sudo bash setup.sh
 </pre>

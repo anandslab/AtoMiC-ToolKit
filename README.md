@@ -64,6 +64,8 @@ $ sudo bash setup.sh
 <h2>Screenshots</h2>
 Coming soon!
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mEoogc0fTBo" frameborder="0" allowfullscreen></iframe>
+
 <h2>Default Usernames and Passwords</h2>
 Access details have now been simplified and automated. Access details for each app can be obtained through the ToolKit Menus. It is recommended that you set / update usernames and password for all services. 
 

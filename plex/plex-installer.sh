@@ -205,19 +205,20 @@ function installPlexPassMediaServer(){
 			echo 'AUTODELETE=yes'                    >> /home/$UNAME/.plexupdate
 			echo 'AUTOUPDATE=yes'                    >> /home/$UNAME/.plexupdate
 			echo 'AUTOSTART=yes'                     >> /home/$UNAME/.plexupdate
-		;;
+			;;
 		N|n)
 			echo "$PPanswer" | grep -iq "[Nn]" ;then
 			echo
 			echo "User replied with N/n - please try again"
 			echo 
 			installPlexPassMediaServer
-		;;
+			;;
 		*)
 			echo
 			echo "User did not reply with Y/y - please try again"
 			echo 
 			installPlexPassMediaServer
+			;;
 	esac
 }
 # Decide whether to use Plex Pass server or Public
@@ -245,7 +246,7 @@ function SetPlexMediaServerBranch(){
 			echo 'AUTODELETE=yes'                    >> /home/$UNAME/.plexupdate
 			echo 'AUTOUPDATE=yes'                    >> /home/$UNAME/.plexupdate
 			echo 'AUTOSTART=yes'                     >> /home/$UNAME/.plexupdate
-		;;
+			;;
 		*)
 			echo 
 			echo -e "\033[0mAnswer was not 1 or 2 - please try again."

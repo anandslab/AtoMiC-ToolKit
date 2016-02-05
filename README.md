@@ -40,8 +40,7 @@ Features features of AtoMiC ToolKit include:
 <li>HTPC Manager - Install, Uninstall, Update, and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update, and Backup / Restore</li>
-<li>Plex - Install</li>
-<li>Planned - Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, NZBGet, RTorrent/RUTorrent, etc.</li>
+<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, NZBGet, RTorrent/RUTorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

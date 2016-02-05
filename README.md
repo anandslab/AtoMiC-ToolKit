@@ -65,7 +65,7 @@ $ sudo bash setup.sh
 
 <h2>Screenshots</h2>
 <a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-main-menu.png" rel="attachment wp-att-20608"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-main-menu-500x371-1.jpg" alt="AtoMiC ToolKit Main Menu" width="500" height="371" class="size-large wp-image-20608" /></a>
-<h4>AtoMiC ToolKit Main Menu</h4>
+<h5>AtoMiC ToolKit Main Menu</h5>
 
 <a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu.png" rel="attachment wp-att-20609"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu-500x370-1.jpg" alt="AtoMiC ToolKit Submenu Example" width="500" height="370" class="size-large wp-image-20609" /></a> <br />AtoMiC ToolKit Submenu Example
 

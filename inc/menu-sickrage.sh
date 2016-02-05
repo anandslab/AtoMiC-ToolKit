@@ -7,7 +7,7 @@ then
   exit 0
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickRage" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
-"Install" "Install SickRage (BROKEN - SickRage Issue)" \
+"Install" "Install SickRage" \
 "Uninstall" "Uninstall SickRage" \
 "Backup" "Backup SickRage settings" \
 "Restore" "Restore SickRage settings from a previous backup" \

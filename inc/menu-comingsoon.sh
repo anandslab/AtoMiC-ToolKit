@@ -11,6 +11,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "The
 "Apache" "Apache Webserver" \
 "MySQL" "MySQL Server" \
 "Emby" "Media Server" \
+"Plex" "Media Server" \
 "PyLoad" "Storage and Download Client" \
 "Jackett" "Torrent trackers for Sonarr" \
 "nzbHydra" "Meta search for NZB Indexers" \

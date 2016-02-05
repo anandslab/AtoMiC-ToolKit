@@ -66,12 +66,8 @@ echo -e $YELLOW"--->Copying settings file and setting permissions..."$ENDCOLOR
 cp $SCRIPTPATH/$APPNAME/transmission-initial-settings.json $APPSETTINGS || { echo -e $RED'Initial settings move failed.'$ENDCOLOR ; exit 1; }
 sed -i 's@USER_NAME@'"$UNAME"'@g' $APPSETTINGS || { echo -e $RED'Replacing username in settings-json failed.'$ENDCOLOR ; exit 1; }
 sudo usermod -a -G debian-transmission $UNAME  || { echo -e $RED'Adding debian-transmission group to user failed.'$ENDCOLOR ; exit 1; }
-sudo chown $UNAME:debian-transmission $APPSETTINGS  || { echo -e $RED'Chown settings.json failed'$ENDCOLOR ; exit 1; }
 sudo rm /var/lib/transmission-daemon/info/settings.json > /dev/null 2>&1
 sudo ln -s $APPSETTINGS /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
-sudo chown -R $UNAME:debian-transmission $APPPATH
-sudo chmod -R 775 $APPPATH
-sudo chmod g+s /home/$UNAME/.config/transmission
 
 echo 
 sleep 1

@@ -19,7 +19,6 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 "Sonarr" "TV Shows PVR Client" \
 "Transmission" "Bittorent Client" \
 "qBittorrent" "Bittorrent Client" \
-"Plex Server" "Media Server" \
 "Utilities" "Other miscellaneous tools" \
 "Coming Soon" "Apps planned for future" \
 "Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
@@ -39,7 +38,6 @@ if [ $exitstatus = 0 ]; then
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
 		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;
 		"HTPC Manager" ) source $SCRIPTPATH/inc/menu-htpcmanager.sh ;;
-		"Plex" ) source $SCRIPTPATH/inc/menu-plex.sh ;;
 		"Webmin" ) source $SCRIPTPATH/inc/menu-webmin.sh ;;
 		"Utilities" ) source $SCRIPTPATH/inc/menu-utils.sh ;;
 		"Coming Soon" ) source $SCRIPTPATH/inc/menu-comingsoon.sh ;;

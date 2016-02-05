@@ -67,9 +67,11 @@ $ sudo bash setup.sh
 <h6>AtoMiC ToolKit Main Menu</h6>
 <a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-main-menu.png" rel="attachment wp-att-20608"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-main-menu-500x371-1.jpg" alt="AtoMiC ToolKit Main Menu" width="500" height="371" class="size-large wp-image-20608" /></a>
 
-<a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu.png" rel="attachment wp-att-20609"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu-500x370-1.jpg" alt="AtoMiC ToolKit Submenu Example" width="500" height="370" class="size-large wp-image-20609" /></a> <br />AtoMiC ToolKit Submenu Example
+<h6>AtoMiC ToolKit Submenu Example</h6>
+<a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu.png" rel="attachment wp-att-20609"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickbeard-sub-menu-500x370-1.jpg" alt="AtoMiC ToolKit Submenu Example" width="500" height="370" class="size-large wp-image-20609" /></a> 
 
-<a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickrage-access-details.png" rel="attachment wp-att-20610"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickrage-access-details-500x436-1.jpg" alt="AtoMiC ToolKit Script Execution Example" width="500" height="436" class="size-large wp-image-20610" /></a> <br />AtoMiC ToolKit Script Execution Example
+<h6>AtoMiC ToolKit Script Execution Example</h6>
+<a href="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickrage-access-details.png" rel="attachment wp-att-20610"><img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-sickrage-access-details-500x436-1.jpg" alt="AtoMiC ToolKit Script Execution Example" width="500" height="436" class="size-large wp-image-20610" /></a> 
 
 <h2>Default Usernames and Passwords</h2>
 Access details have now been simplified and automated. Access details for each app can be obtained through the ToolKit Menus. It is recommended that you set / update usernames and password for all services. 

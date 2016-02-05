@@ -1,0 +1,16 @@
+# defaults for transmission-daemon
+# sourced by /etc/init.d/transmission-daemon
+
+# Change to 0 to disable daemon
+ENABLE_DAEMON=1
+
+# This directory stores some runtime information, like torrent files 
+# and links to the config file, which itself can be found in 
+# /etc/transmission-daemon/settings.json
+CONFIG_DIR="/var/lib/transmission-daemon/info" 
+
+# Default options for daemon, see transmission-daemon(1) for more options
+OPTIONS="--config-dir $CONFIG_DIR"
+
+# (optional) extra options to start-stop-daemon
+#START_STOP_OPTIONS="--iosched idle --nicelevel 10"

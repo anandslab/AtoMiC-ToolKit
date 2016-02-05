@@ -1,0 +1,13 @@
+#!/bin/bash
+APPNAME='htpcmanager'
+APPSHORTNAME='hm'
+APPPATH='/home/'$UNAME'/.htpcmanager'
+APPTITLE='HTPC Manager'
+APPDEPS='build-essential git python-imaging python-dev python-setuptools python-pip python-cherrypy vnstat python-cheetah python-pyasn1'
+#APPGIT='https://github.com/styxit/HTPC-Manager.git'
+APPGIT='https://github.com/Hellowlol/HTPC-Manager'
+APPDPORT='8085'
+APPSETTINGS='NA'
+PORTSEARCH='NA'
+USERSEARCH='NA'
+PASSSEARCH='NA'

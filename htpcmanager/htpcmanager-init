@@ -21,7 +21,7 @@ DAEMON=/usr/bin/python
 DAEMON_OPTS=" Htpc.py"
 
 # script name
-NAME=htpc
+NAME=htpcmanager
 
 # app name
 DESC=HTPC-Manager

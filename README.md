@@ -25,7 +25,7 @@ Features features of AtoMiC ToolKit include:
 <li>Works on Ubuntu, Ubuntu Server, and other Ubuntu variants including Xubuntu, Lubuntu, Kubuntu, and more</li>
 <li>Almost entirely automated</li>
 <li>Very little commandline work</li>
-<li>User- and newie-friendly</li>
+<li>User- and newbie-friendly</li>
 <li>One-stop shop
 <ul>
 <li>Sick Beard - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>

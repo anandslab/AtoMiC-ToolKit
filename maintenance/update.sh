@@ -7,15 +7,14 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $1 != *"setup.sh"* ]]
+if [[ $ISSETUP != "Yes" ]]
 then
   echo
   echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
   echo
   exit 0
 fi
-
-source $2/inc/commons.sh
+source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN'AtoMiC ToolKit Updater'$ENDCOLOR
@@ -42,7 +41,7 @@ then
 	sleep 1
 
 	echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-	source $SCRIPTPATH/inc/gitstash.sh
+	source $SCRIPTPATH/inc/app-git-stash.sh
 
 	echo 
 	sleep 1

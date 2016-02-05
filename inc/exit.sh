@@ -1,6 +1,4 @@
 echo
-#echo 'SCRIPTPATH '$SCRIPTPATH
 cd $SCRIPTPATH
-pause 'Press [Enter] key to continue...'
+source $SCRIPTPATH/inc/pause.sh
 sudo bash $SCRIPTPATH/setup.sh
-exit 0

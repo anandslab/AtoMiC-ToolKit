@@ -1,0 +1,13 @@
+#!/bin/bash
+APPNAME='webmin'
+APPSHORTNAME='wm'
+APPPATH='/etc/webmin'
+APPTITLE='Webmin'
+APPDEPS=''
+APPGIT=''
+APPDPORT='10000'
+APPSETTINGS=$APPPATH'/miniserv.conf'
+PORTSEARCH='port='
+USERSEARCH='NOTAPPLICABLE'
+APPDEFAULTUNAME='System Username'
+APPDEFAULTPASS='System Password'

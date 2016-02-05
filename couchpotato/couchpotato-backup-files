@@ -1,6 +1,6 @@
-/home/UNAME/.couchpotato/settings.conf
-/home/UNAME/.couchpotato/cache
-/home/UNAME/.couchpotato/database
-/home/UNAME/.couchpotato/db_backup
-/home/UNAME/.couchpotato/logs/CouchPotato.log
-/home/UNAME/.couchpotato/logs/error.log
+APPPATH/settings.conf
+APPPATH/cache
+APPPATH/database
+APPPATH/db_backup
+APPPATH/logs/CouchPotato.log
+APPPATH/logs/error.log

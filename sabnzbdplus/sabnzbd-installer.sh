@@ -46,7 +46,7 @@ if [ ! -f /etc/default/sabnzbdplus ]; then
 sudo cp -a $SCRIPTPATH/sabnzbdplus/sabnzbdplus.default /etc/default/sabnzbdplus
 fi
 sudo sed -i 's@USER=@USER='"$UNAME"'@g' /etc/default/sabnzbdplus  || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@HOST=@HOST=0.0.0.0@g' /etc/default/sabnzbdplus  || { echo -e $RED'Replacing host in default failed.'$ENDCOLOR ; exit 1; }
+#sudo sed -i 's@HOST=@HOST=0.0.0.0@g' /etc/default/sabnzbdplus  || { echo -e $RED'Replacing host in default failed.'$ENDCOLOR ; exit 1; }
 #sudo sed -i 's@PORT=@PORT=8080@g' /etc/default/sabnzbdplus || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
 
 echo 

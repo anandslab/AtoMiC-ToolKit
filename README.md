@@ -61,7 +61,7 @@ $ sudo bash setup.sh
 </pre>
 
 <h2>Video</h2>
-<a href="https://www.youtube.com/watch?v=mEoogc0fTBo" target="_blank">https://www.youtube.com/watch?v=mEoogc0fTBo</a>
+<a href="https://www.youtube.com/watch?v=mEoogc0fTBo" target="_blank">https://youtu.be/Zji_3cZRcK4</a>
 
 <h2>Screenshots</h2>
 <h6>AtoMiC ToolKit Main Menu</h6>

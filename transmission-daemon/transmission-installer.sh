@@ -44,9 +44,9 @@ source $SCRIPTPATH/inc/app-install.sh
 
 source $SCRIPTPATH/inc/app-stop.sh
 sleep 2
-sudo service transmission-daemon stop > /dev/null 2>&1 
+sudo service transmission-daemon stop > /dev/null 2>&1
 sleep 2
-sudo killall transmission-daemon > /dev/null 2>&1 
+sudo killall transmission-daemon > /dev/null 2>&1
 
 source $SCRIPTPATH/inc/app-folders-create.sh
 
@@ -60,7 +60,7 @@ sudo sed -i 's@USER_NAME@'"$UNAME"'@g' /etc/init.d/transmission-daemon  || { ech
 sudo sed -i 's@/var/lib/transmission-daemon/info@'"$APPPATH"'@g' /etc/default/transmission-daemon  || { echo -e $RED'Replacing config directory in defualt failed.'$ENDCOLOR ; exit 1; }
 
 sleep 1
-echo 
+echo
 
 echo -e $YELLOW"--->Copying settings file and setting permissions..."$ENDCOLOR
 cp $SCRIPTPATH/$APPNAME/transmission-initial-settings.json $APPSETTINGS || { echo -e $RED'Initial settings move failed.'$ENDCOLOR ; exit 1; }
@@ -69,12 +69,12 @@ sudo usermod -a -G debian-transmission $UNAME  || { echo -e $RED'Adding debian-t
 sudo rm /var/lib/transmission-daemon/info/settings.json > /dev/null 2>&1
 sudo ln -s $APPSETTINGS /var/lib/transmission-daemon/info/settings.json || { echo -e $RED'Creating settings.json symbolic link failed.'$ENDCOLOR ; exit 1; }
 
-echo 
+echo
 sleep 1
 
 echo -e $YELLOW"--->Setting setuid and setgid..."$ENDCOLOR
-sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init.d/transmission-daemon || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init.d/transmission-daemon || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
 
 source $SCRIPTPATH/inc/app-init-add.sh
 

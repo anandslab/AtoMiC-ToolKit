@@ -73,8 +73,9 @@ echo
 sleep 1
 
 echo -e $YELLOW"--->Setting setuid and setgid..."$ENDCOLOR
-sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init/transmission-daemon.conf  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
+#fix for #65 by @iphilgood
+sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
 
 source $SCRIPTPATH/inc/app-init-add.sh
 

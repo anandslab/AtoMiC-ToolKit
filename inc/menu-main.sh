@@ -12,6 +12,7 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 "SickGear" "TV Shows PVR Client" \
 "CouchPotato" "Movies PVR Client" \
 "Headphones" "Music PVR Client" \
+"Lazy Librarian" "Book PVR Client" \
 "Mylar" "Comics PVR Client" \
 "HTPC Manager" "Unified HTPC Web Interface" \
 "SABnzbd+" "NZB Newsgrabber / Downloader" \
@@ -36,6 +37,7 @@ if [ $exitstatus = 0 ]; then
 		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent-nox.sh ;;
 		"SABnzbd+" ) source $SCRIPTPATH/inc/menu-sabnzbdplus.sh ;;
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
+		"Lazy Librarian" ) source $SCRIPTPATH/inc/menu-lazylibrarian.sh ;;
 		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;
 		"HTPC Manager" ) source $SCRIPTPATH/inc/menu-htpcmanager.sh ;;
 		"Webmin" ) source $SCRIPTPATH/inc/menu-webmin.sh ;;

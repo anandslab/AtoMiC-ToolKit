@@ -17,6 +17,8 @@ if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
 fi
 echo 
 sleep 1
+
+ERRORCOUNT=0
 echo -e $YELLOW'Checking '$APPTITLE' status...'$ENDCOLOR
 if [ -f /etc/init.d/$APPNAME ]; then
 	if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
@@ -26,5 +28,16 @@ if [ -f /etc/init.d/$APPNAME ]; then
     	echo -e $APPTITLE' is running and accessible.'
     fi
 else
-    echo -e $RED$APPTITLE' not installed properly or incompatible installation.'$ENDCOLOR' You may try reinstalling '$APPTITLE'.'
+  ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
 fi
+
+if [ -f /etc/systemd/system/$APPSYSTEMD ]; then
+ echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
+else
+  ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
+fi
+
+if (( $ERRORCOUNT == 2 )); then
+  echo -e $RED'No boot script found.'$ENDCOLOR' Try reinstalling '$APPTITLE'.'
+fi
+

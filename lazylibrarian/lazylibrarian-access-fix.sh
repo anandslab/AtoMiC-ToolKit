@@ -31,9 +31,10 @@ fi
 if [ -f $APPSETTINGS ]; then
 	echo 
 	sleep 2
-	echo -e $YELLOW'--->Making lazylibrarian accessible outside localhost...'$ENDCOLOR
 	source $SCRIPTPATH/inc/app-stop.sh
 	sleep 2
+	echo
+	echo -e $YELLOW'--->Making lazylibrarian only accessible from localhost...'$ENDCOLOR
 	sudo sed -i 's@http_host = 0.0.0.0@http_host = localhost@g' $APPSETTINGS  || { echo -e $RED'Modifying http_host in config file failed.'$ENDCOLOR; exit 1; }
 	sleep 2
 	source $SCRIPTPATH/inc/app-start.sh
@@ -43,6 +44,7 @@ if [ -f $APPSETTINGS ]; then
 	source $SCRIPTPATH/inc/exit.sh
 else
 	echo
-    echo -e $RED'Unable to find '$APPSETTINGS'. Start '$APPTITLE' manually using '$CYAN'sudo /etc/init.d/'$APPNAME' start'$ENDCOLOR' and verify that '$CYAN$APPSETTINGS$ENDCOLOR' exists.'
+    echo -e $RED'Unable to find '$APPSETTINGS'.'
+	source $SCRIPTPATH/inc/app-start.sh
     source $SCRIPTPATH/inc/exit.sh
 fi

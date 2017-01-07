@@ -22,12 +22,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-if [[ $0 == *"setup.sh"* ]]
-then
-  export ISSETUP="Yes"
-else
-  export ISSETUP="No"
-fi
+export ISSETUP="Yes"
 
 source $SCRIPTPATH/inc/commons.sh
 

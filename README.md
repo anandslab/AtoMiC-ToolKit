@@ -37,6 +37,7 @@ Features features of AtoMiC ToolKit include:
 <li>qBittorrent WebUI - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>SABnzbd+ - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>Headphones - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
+<li>Lazy Librarian - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>HTPC Manager - Install, Uninstall, Update, and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update, and Backup / Restore</li>

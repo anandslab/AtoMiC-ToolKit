@@ -24,11 +24,8 @@ echo -e $GREEN'AtoMiC '$APPTITLE' Access Fix'$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 
 if [ ! -f $APPSETTINGS ]; then
-	source $SCRIPTPATH/inc/app-stop.sh
-    source $SCRIPTPATH/inc/app-start.sh
-fi 
-
-if [ -f $APPSETTINGS ]; then
+	echo -e $RED $APPSETTINGS 'Doesnt exist please open Lazy Librarian, go to config and press save. '$ENDCOLOR
+else
 	echo 
 	sleep 2
 	source $SCRIPTPATH/inc/app-stop.sh
@@ -42,9 +39,4 @@ if [ -f $APPSETTINGS ]; then
 	source $SCRIPTPATH/inc/app-install-confirmation.sh
 	source $SCRIPTPATH/inc/thankyou.sh
 	source $SCRIPTPATH/inc/exit.sh
-else
-	echo
-    echo -e $RED'Unable to find '$APPSETTINGS'.'
-	source $SCRIPTPATH/inc/app-start.sh
-    source $SCRIPTPATH/inc/exit.sh
 fi

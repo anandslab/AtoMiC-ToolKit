@@ -22,8 +22,6 @@ source $SCRIPTPATH/webmin/webmin-constants.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
-source $SCRIPTPATH/inc/app-install-deps.sh
 
 echo -e $YELLOW"--->Adding '$APPTITLE' Repository..."$ENDCOLOR
 GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep webmin)
@@ -37,6 +35,7 @@ else
 fi
 
 source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-install-confirmation.sh

@@ -38,7 +38,7 @@ source $SCRIPTPATH/inc/app-access-credentials.sh
 if grep -q 'http_host = localhost' $APPSETTINGS; then 
   echo -e $RED'WARNING: '$ENDCOLOR'You can only access nzbget on localhost.'
 else
-  echo -e $GREEN'GOOD: '$ENDCOLOR'nzbget is accessible outside localhost. Run access fix to restrict to localhost.'
+  echo -e $GREEN'GOOD: '$ENDCOLOR'nzbget is accessible outside localhost.'
 fi
 
 source $SCRIPTPATH/inc/thankyou.sh

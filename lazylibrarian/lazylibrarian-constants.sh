@@ -15,4 +15,4 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='lazylibrarian.service'
-APPSYSTEMDLOC='/init/'$APPSYSTEMD
+APPSYSTEMDLOC=$APPPATH/'/init/'$APPSYSTEMD

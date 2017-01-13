@@ -16,6 +16,7 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 "Mylar" "Comics PVR Client" \
 "HTPC Manager" "Unified HTPC Web Interface" \
 "SABnzbd+" "NZB Newsgrabber / Downloader" \
+"NZBGet" "NZB Newsgrabber / Downloader" \
 "Webmin" "Web-based system administration" \
 "Sonarr" "TV Shows PVR Client" \
 "Transmission" "Bittorent Client" \
@@ -36,6 +37,7 @@ if [ $exitstatus = 0 ]; then
 		"Transmission" ) source $SCRIPTPATH/inc/menu-transmission-daemon.sh ;;
 		"qBittorrent" ) source $SCRIPTPATH/inc/menu-qbittorrent-nox.sh ;;
 		"SABnzbd+" ) source $SCRIPTPATH/inc/menu-sabnzbdplus.sh ;;
+		"NZBGet" ) source $SCRIPTPATH/inc/menu-nzbget.sh ;;
 		"Headphones" ) source $SCRIPTPATH/inc/menu-headphones.sh ;;
 		"Lazy Librarian" ) source $SCRIPTPATH/inc/menu-lazylibrarian.sh ;;
 		"Mylar" ) source $SCRIPTPATH/inc/menu-mylar.sh ;;

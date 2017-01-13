@@ -25,7 +25,7 @@ Features features of AtoMiC ToolKit include:
 <li>Works on Ubuntu, Ubuntu Server, and other Ubuntu variants including Xubuntu, Lubuntu, Kubuntu, and more</li>
 <li>Almost entirely automated</li>
 <li>Very little commandline work</li>
-<li>User- and newbie-friendly</li>
+<li>User and newbie-friendly</li>
 <li>One-stop shop
 <ul>
 <li>Sick Beard - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
@@ -36,12 +36,13 @@ Features features of AtoMiC ToolKit include:
 <li>Transmission WebUI - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>qBittorrent WebUI - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>SABnzbd+ - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
+<li>NZBGet - Install, Uninstall,Reset Password and Backup / Restore</li>
 <li>Headphones - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>Lazy Librarian - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>HTPC Manager - Install, Uninstall, Update, and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update, and Backup / Restore</li>
-<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, NZBGet, RTorrent/RUTorrent, etc.</li>
+<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, RTorrent/RUTorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>
@@ -52,7 +53,7 @@ Features features of AtoMiC ToolKit include:
 Note that AtoMiC ToolKit will be in continueous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
 
 <h2>Installation and Usage</h2>
-Clone repository on any Ubuntu based distro and execute the setup.sh bash script file. 
+Clone repository on any Debian or Ubuntu based distro and execute the setup.sh bash script file. 
 
 <pre>
 $ sudo apt-get install git-core

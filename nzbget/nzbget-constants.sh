@@ -2,7 +2,7 @@
 APPNAME='nzbget'
 APPSHORTNAME='ng'
 APPPATH='/opt/nzbget'
-APPTITLE='nzbget'
+APPTITLE='NZBGet'
 APPDEPS=''
 APPGIT=''
 APPDPORT='6789'

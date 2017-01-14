@@ -2,7 +2,7 @@
 APPNAME='lazylibrarian'
 APPSHORTNAME='ll'
 APPPATH='/opt/lazylibrarian'
-APPTITLE='lazylibrarian'
+APPTITLE='Lazy Librarian'
 APPDEPS='git python'
 APPGIT='https://github.com/DobyTang/LazyLibrarian.git'
 APPDPORT='5299'

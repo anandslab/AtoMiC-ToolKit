@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
         "Backup" ) source $SCRIPTPATH/nzbget/nzbget-backup.sh ;;
         "Restore" ) source $SCRIPTPATH/nzbget/nzbget-restore.sh ;;
         "Reset Password" ) source $SCRIPTPATH/nzbget/nzbget-reset.sh ;;
-        "Access Details" ) source $SCRIPTPATH/nzbget/nzbget-access.sh ;;        
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
         "Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

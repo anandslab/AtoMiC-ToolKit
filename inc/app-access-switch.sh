@@ -20,10 +20,8 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Access Fix'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-if [ ! -f $APPSETTINGS ]; then
-	echo -e $RED $APPSETTINGS 'Doesnt exist please open '$APPNAME', and try saving the config first else you may need to reinstall '$ENDCOLOR
-else
+source $SCRIPTPATH/inc/app-folder-check.sh
+source $SCRIPTPATH/inc/app-settings-check.sh
 
   echo 
   sleep 2

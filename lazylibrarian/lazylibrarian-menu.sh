@@ -35,7 +35,7 @@ if [ $exitstatus = 0 ]; then
 		"Restore" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-reset.sh ;;
-        "Access Details" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-access.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

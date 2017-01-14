@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC NZBGet Access Details
+# Script Name: AtoMiC Access Details
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -33,10 +33,12 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-system-details.sh
 source $SCRIPTPATH/inc/app-access-urls.sh
 source $SCRIPTPATH/inc/app-access-credentials.sh
-if grep -q 'http_host = localhost' $APPSETTINGS; then 
-  echo -e $RED'WARNING: '$ENDCOLOR'You can only access nzbget on localhost.'
-else
-  echo -e $GREEN'GOOD: '$ENDCOLOR'nzbget is accessible outside localhost.'
+
+if grep -Exq "${ACCESSPORT}localhost" $APPSETTINGS
+  then
+    echo -e $RED'WARNING: '$ENDCOLOR'You can only access '$APPTITLE' on localhost.'
+  else
+    echo -e $GREEN'GOOD: '$ENDCOLOR''$APPTITLE' is accessible outside localhost. Run Access Switch to restrict to localhost.'
 fi
 
 source $SCRIPTPATH/inc/thankyou.sh

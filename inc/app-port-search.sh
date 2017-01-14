@@ -2,7 +2,8 @@
 echo -e $YELLOW'--->Searching '$APPSETTINGS' for possible port numbers...'$ENDCOLOR
 if [ "$PORTSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
 	APPPORT=$APPDPORT
-	echo -e 'Incompatibility. Cannot determine port. Try default port: '$APPPORT
+	echo -e 'Incompatibility. Cannot determine port.'
+	echo -e 'Try default port: '$GREEN$APPDPORT$ENDCOLOR
 else
 	echo -e 'Found the following port numbers:'
 	grep "$PORTSEARCH" $APPSETTINGS | grep -v "http" | grep -Eo '[0-9]{4}'
@@ -17,7 +18,7 @@ else
 		APPPORT=$APPDPORT
     	UIPORTSTATUS=""        
         if [ -z "$UIPORTSTATUS" ] && [ ! -z "$APPDPORT" ]; then
-   			echo -e 'Try default password: '$GREEN$APPDPORT$ENDCOLOR
+   			echo -e 'Try default port: '$GREEN$APPDPORT$ENDCOLOR
 		fi
 	fi
 fi

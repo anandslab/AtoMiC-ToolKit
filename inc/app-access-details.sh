@@ -24,8 +24,8 @@ source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-settings-check.sh
 
 source $SCRIPTPATH/inc/app-port-search.sh
-source $SCRIPTPATH/inc/app-user-search.sh  2>&1 >/dev/null
-source $SCRIPTPATH/inc/app-password-search.sh  2>&1 >/dev/null
+source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
+source $SCRIPTPATH/inc/app-password-search.sh  >/dev/null
 
 APPDEPS+=" dnsutils"
 source $SCRIPTPATH/inc/app-install-deps.sh

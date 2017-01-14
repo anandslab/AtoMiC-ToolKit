@@ -17,8 +17,6 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/webmin/webmin-constants.sh
-
 echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh

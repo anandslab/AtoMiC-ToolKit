@@ -17,14 +17,14 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Webmin" --menu "What would
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/webmin/webmin-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/webmin/webmin-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/webmin/webmin-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/webmin/webmin-backup.sh ;;
 		"Restore" ) source $SCRIPTPATH/webmin/webmin-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/webmin/webmin-update.sh ;;
-        "Access Details" ) source $SCRIPTPATH/webmin/webmin-access.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

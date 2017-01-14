@@ -31,7 +31,7 @@ else
   sleep 2
   echo
 
-  if grep -Fxq "${ACCESSPORT}localhost" $APPSETTINGS
+  if grep -Exq "${ACCESSPORT}localhost" $APPSETTINGS
   then
     echo -e $YELLOW'--->Making '$APPTITLE' accessible from network...'$ENDCOLOR
     sudo sed -i "s@${ACCESSPORT}localhost@${ACCESSPORT}0.0.0.0@g" $APPSETTINGS  || { echo -e $RED'Modifying '$ACCESSPORT' in '$APPSETTINGS' file failed.'$ENDCOLOR; exit 1; }

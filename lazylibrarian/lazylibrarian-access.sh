@@ -17,8 +17,6 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/lazylibrarian/lazylibrarian-constants.sh
-
 echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh

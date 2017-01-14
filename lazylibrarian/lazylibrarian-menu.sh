@@ -22,12 +22,12 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Lazy Librarian" --menu "Wh
 "Manual Update" "Manually update Lazy Librarian" \
 "Reset Password" "Reset Lazy Librarian WebUI password" \
 "Access Details" "View Lazy Librarian access details" \
-"Access Fix" "Make Lazy Librarian UI only accessible from localhost" \
+"Access Switch" "Toggle NZBGet UI network accessibility" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/lazylibrarian/lazylibrarian-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-uninstaller.sh ;;
@@ -36,7 +36,7 @@ if [ $exitstatus = 0 ]; then
 		"Manual Update" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-reset.sh ;;
         "Access Details" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-access.sh ;;
-        "Access Fix" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-access-fix.sh ;;
+        "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

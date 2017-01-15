@@ -33,9 +33,8 @@ sudo pip install psutil
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 
-sudo cp $SCRIPTPATH/htpcmanager/htpcmanager-init /etc/init.d/htpcmanager || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/htpcmanager || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
+sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/htpcmanager || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
 
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh

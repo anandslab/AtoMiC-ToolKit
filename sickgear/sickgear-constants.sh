@@ -14,3 +14,4 @@ PASSSEARCH='web_password = '
 NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
+APPINITDLOC=$APPPATH'/init-scripts/init.ubuntu'

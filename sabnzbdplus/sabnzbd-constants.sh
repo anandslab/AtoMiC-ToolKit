@@ -14,3 +14,4 @@ PASSSEARCH='password = '
 NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
+APPINITDLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.init'

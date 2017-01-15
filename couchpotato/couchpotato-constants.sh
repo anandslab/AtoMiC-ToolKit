@@ -14,3 +14,4 @@ PASSSEARCH='password = '
 APPNEWPASS='atomic'
 # New password encrypted
 NEWPASS='23d33884d600e542d097cd3933df2ae4'
+APPINITDLOC=$APPPATH'/init/ubuntu'

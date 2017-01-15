@@ -34,10 +34,7 @@ if [ -f "$APPPATH/autoProcessTV/autoProcessTV.cfg.sample" ]; then
 fi
 
 source $SCRIPTPATH/inc/app-create-default.sh
-
-sudo cp $APPPATH/runscripts/init.ubuntu /etc/init.d/sickrage || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
-
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

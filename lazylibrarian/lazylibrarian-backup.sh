@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Lazy Librarian Backup Script
+# Script Name: AtoMiC Lazy Librarian Backup
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

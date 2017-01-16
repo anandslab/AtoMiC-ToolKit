@@ -17,6 +17,6 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='lazylibrarian.service'
-APPSYSTEMDLOC=$APPPATH/'/init/'$APPSYSTEMD
+APPSYSTEMDLOC=$APPPATH'/init/'$APPSYSTEMD
 APPINITDLOC=$APPPATH'/init/ubuntu.initd'
 APPDEFAULTLOC=$APPPATH'/init/ubuntu.default'

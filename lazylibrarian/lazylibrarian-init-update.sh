@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Lazy Librarian Installer
+# Script Name: AtoMiC Lazy Librarian init.d update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 #

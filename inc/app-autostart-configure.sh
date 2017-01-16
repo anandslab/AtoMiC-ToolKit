@@ -1,10 +1,10 @@
 #!/bin/bash
-# if [[ `systemctl` =~ -\.mount ]]; then 
-#     STARTUPTYPE='systemd'
-#     echo 'using systemd'
-#     source $SCRIPTPATH/inc/app-systemd-add.sh
-#     source $SCRIPTPATH/$APPNAME/$APPNAME-systemd-update.sh
-if [[ -f /etc/init.d/cron && ! -h /etc/init.d/cron ]]; then 
+if [[ `systemctl` =~ -\.mount ]]; then 
+    STARTUPTYPE='systemd'
+    echo 'using systemd'
+    source $SCRIPTPATH/inc/app-systemd-add.sh
+    source $SCRIPTPATH/$APPNAME/$APPNAME-systemd-update.sh
+elif [[ -f /etc/init.d/cron && ! -h /etc/init.d/cron ]]; then 
     STARTUPTYPE='sysv-init'
     echo
     echo 'using sysv-init'

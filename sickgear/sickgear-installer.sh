@@ -31,12 +31,10 @@ source $SCRIPTPATH/inc/app-folders-create.sh
 cp -a $APPPATH/autoProcessTV/autoProcessTV.cfg.sample $APPPATH/autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
 
 source $SCRIPTPATH/inc/app-create-default.sh
-
-sudo cp $APPPATH/init-scripts/init.ubuntu /etc/init.d/sickgear || { echo -e $RED'Creating init file failed.'$ENDCOLOR ; exit 1; }
+source $SCRIPTPATH/inc/app-init-add.sh
 sudo sed -i 's@/etc/default/sickbeard@etc/default/sickgear@g' /etc/init.d/sickgear || { echo -e $RED'Replacing default path failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@NAME=sickbeard@NAME=sickgear@g' /etc/init.d/sickgear || { echo -e $RED'Replacing NAME failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@DESC=SickBeard@DESC=SickGear@g' /etc/init.d/sickgear || { echo -e $RED'Replacing DESC failed.'$ENDCOLOR ; exit 1; }
-source $SCRIPTPATH/inc/app-init-add.sh
 
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh

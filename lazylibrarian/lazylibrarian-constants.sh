@@ -3,6 +3,7 @@ APPNAME='lazylibrarian'
 APPSHORTNAME='ll'
 APPPATH='/opt/lazylibrarian'
 APPTITLE='Lazy Librarian'
+APPPIDFILE=$APPPATH'/lazylibrarian.pid'
 APPDEPS='git python'
 APPGIT='https://github.com/DobyTang/LazyLibrarian.git'
 APPDPORT='5299'
@@ -16,4 +17,6 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='lazylibrarian.service'
-APPSYSTEMDLOC=$APPPATH/'/init/'$APPSYSTEMD
+APPSYSTEMDLOC=$APPPATH'/init/'$APPSYSTEMD
+APPINITDLOC=$APPPATH'/init/ubuntu.initd'
+APPDEFAULTLOC=$APPPATH'/init/ubuntu.default'

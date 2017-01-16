@@ -55,7 +55,6 @@ sleep 1
 
 echo -e $YELLOW"--->Creating init and default files..."$ENDCOLOR
 sudo cp $SCRIPTPATH/$APPNAME/transmission-default /etc/default/$APPNAME
-sudo cp $SCRIPTPATH/$APPNAME/transmission-init /etc/init.d/$APPNAME
 sudo sed -i 's@USER_NAME@'"$UNAME"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@/var/lib/transmission-daemon/info@'"$APPPATH"'@g' /etc/default/transmission-daemon  || { echo -e $RED'Replacing config directory in defualt failed.'$ENDCOLOR ; exit 1; }
 
@@ -72,12 +71,10 @@ sudo ln -s $APPSETTINGS /var/lib/transmission-daemon/info/settings.json || { ech
 echo 
 sleep 1
 
+source $SCRIPTPATH/inc/app-init-add.sh
 echo -e $YELLOW"--->Setting setuid and setgid..."$ENDCOLOR
-#fix for #65 by @iphilgood
 sudo sed -i 's@setuid debian-transmission@setuid '"$UNAME"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing setuid failed.'$ENDCOLOR ; exit 1; }
 sudo sed -i 's@setgid debian-transmission@setgid '"$UGROUP"'@g' /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing setgid failed.'$ENDCOLOR ; exit 1; }
-
-source $SCRIPTPATH/inc/app-init-add.sh
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

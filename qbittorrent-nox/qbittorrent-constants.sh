@@ -16,3 +16,4 @@ APPDEFAULTPASS='adminadmin'
 NEWPASS="@ByteArray(0ce6d6b393ab094aacd23da311370e3a)"
 # New password unencrypted
 APPNEWPASS='atomic'
+APPINITDLOC=$SCRIPTPATH'/qbittorrent-nox/qbittorrent-init'

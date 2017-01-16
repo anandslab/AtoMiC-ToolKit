@@ -20,6 +20,7 @@ echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
+echo
 
 wget -O - http://nzbget.net/info/nzbget-version-linux.json | \
 sed -n "s/^.*stable-download.*: \"\(.*\)\".*/\1/p" | \
@@ -28,8 +29,8 @@ wget --no-check-certificate -i - -O nzbget-latest-bin-linux.run
 sh nzbget-latest-bin-linux.run --destdir /opt/nzbget
 rm nzbget-latest-bin-linux.run
 
-source $SCRIPTPATH/inc/app-systemd-add.sh
-source $SCRIPTPATH/nzbget/nzbget-systemd-update.sh
+echo
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

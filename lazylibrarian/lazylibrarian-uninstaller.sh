@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Lazy Librarian Restore Script
+# Script Name: AtoMiC Lazy Librarian uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

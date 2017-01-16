@@ -26,7 +26,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo apt-get -y install git-core
+sudo apt-get -y install git
 
 echo
 sleep 1

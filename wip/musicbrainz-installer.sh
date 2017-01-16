@@ -44,7 +44,7 @@ sudo apt-get -y install \
     postgresql-server-dev-all \
     postgresql-contrib-9.3 \
     postgresql-plperl-9.3 \
-    git-core \
+    git \
     memcached \
     redis-server \
     nodejs \

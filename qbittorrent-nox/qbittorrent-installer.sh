@@ -43,10 +43,8 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Setting up autostart...'$ENDCOLOR
-sudo cp $SCRIPTPATH/qbittorrent-nox/qbittorrent-init /etc/init.d/qbittorrent-nox || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
-#sudo sed -i 's@XXXX@'"$APPDPORT"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing port in default failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
+sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
 
 echo 
 sleep 1

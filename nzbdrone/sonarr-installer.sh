@@ -52,10 +52,8 @@ source $SCRIPTPATH/inc/app-install.sh
 echo 
 sleep 1
 
-echo -e $YELLOW'--->Setting up autostart...'$ENDCOLOR
-sudo cp $SCRIPTPATH/nzbdrone/sonarr-init /etc/init.d/nzbdrone || { echo -e $RED'Init file not copied.'$ENDCOLOR ; exit 1; }
-sudo sed -i 's@RUN_AS=USERNAME@RUN_AS='"$UNAME"'@g' /etc/init.d/nzbdrone  || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
 source $SCRIPTPATH/inc/app-init-add.sh
+sudo sed -i 's@RUN_AS=USERNAME@RUN_AS='"$UNAME"'@g' /etc/init.d/nzbdrone  || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
 
 echo 
 sleep 1

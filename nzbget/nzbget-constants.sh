@@ -17,3 +17,7 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='nzbget.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/nzbget/'$APPSYSTEMD
+APPINITDLOC=$SCRIPTPATH'/nzbget/nzbget.initd'
+NZBGET_CONF=$APPSETTINGS
+NZBGET_BIN=$APPPATH'/nzbget'
+PID_FILE=$APPPATH'/downloads/nzbget.lock'

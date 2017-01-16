@@ -56,7 +56,7 @@ Note that AtoMiC ToolKit will be in continueous development. While extensive tes
 Clone repository on any Debian or Ubuntu based distro and execute the setup.sh bash script file. 
 
 <pre>
-$ sudo apt-get install git-core
+$ sudo apt-get install git
 $ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit ~/AtoMiC-ToolKit
 $ cd ~/AtoMiC-ToolKit
 $ sudo bash setup.sh

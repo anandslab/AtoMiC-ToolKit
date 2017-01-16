@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC NZBGet Backup Script
+# Script Name: AtoMiC NZBGet Backup
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

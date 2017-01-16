@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC NZBGet Initd Update Script
+# Script Name: AtoMiC NZBGet Initd Update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

@@ -1,4 +1,12 @@
 #!/bin/bash
+# Script Name: AtoMiC CouchPotato Menu
+# Author: htpcBeginner
+# Publisher: http://www.htpcBeginner.com
+# License: MIT License (refer to README.md for more details)
+#
+
+# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
 if [[ $ISSETUP != "Yes" ]]
 then
   echo
@@ -18,7 +26,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage CouchPotato" --menu "What 
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/couchpotato/couchpotato-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/couchpotato/couchpotato-uninstaller.sh ;;
@@ -26,7 +34,7 @@ if [ $exitstatus = 0 ]; then
 		"Restore" ) source $SCRIPTPATH/couchpotato/couchpotato-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/couchpotato/couchpotato-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/couchpotato/couchpotato-reset.sh ;;
-        "Access Details" ) source $SCRIPTPATH/couchpotato/couchpotato-access.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

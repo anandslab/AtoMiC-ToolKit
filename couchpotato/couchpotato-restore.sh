@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC CouchPotato Restore Script
+# Script Name: AtoMiC CouchPotato Restore
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

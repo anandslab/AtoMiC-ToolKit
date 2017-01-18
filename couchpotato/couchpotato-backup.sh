@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC CouchPotato Backup Script
+# Script Name: AtoMiC CouchPotato Backup
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Backup Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

@@ -17,20 +17,20 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
-source $SCRIPTPATH/inc/app-install-pips.sh
+#source $SCRIPTPATH/inc/app-install-pips.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 
-#source $SCRIPTPATH/inc/app-autostart-configure.sh
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 #This is temporary till i can work out why the Systemd script doesnt work on Raspbian. 
-source $SCRIPTPATH/inc/app-default-copy.sh
-source $SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh
-source $SCRIPTPATH/inc/app-init-add.sh
+#source $SCRIPTPATH/inc/app-default-copy.sh
+#source $SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh
+#source $SCRIPTPATH/inc/app-init-add.sh
 
 ######################################################################################
 source $SCRIPTPATH/inc/app-git-stash.sh

@@ -34,7 +34,7 @@ source $SCRIPTPATH/inc/app-system-details.sh
 source $SCRIPTPATH/inc/app-access-urls.sh
 source $SCRIPTPATH/inc/app-access-credentials.sh
 
-if ! [ $ACCESSPORT == 'NA' ]; then
+if ! [ "$ACCESSPORT" == 'NA' ]; then
   if grep -Exq "${ACCESSPORT}localhost" $APPSETTINGS
     then
       echo -e $RED'WARNING: '$ENDCOLOR'You can only access '$APPTITLE' on localhost.'

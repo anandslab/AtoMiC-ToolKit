@@ -24,7 +24,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "The
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo "Your chosen option:" $SUBCHOICE
-    case "$SUBCHOICE" in 	
+    case "$SUBCHOICE" in 
+    "Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;	
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Headphones Backup Script
+# Script Name: AtoMiC Headphones Backup
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/headphones/headphones-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Backup Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

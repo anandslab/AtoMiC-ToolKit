@@ -14,12 +14,12 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Headphones" --menu "What w
 "Manual Update" "Manually update Headphones" \
 "Reset Password" "Reset Headphones WebUI password" \
 "Access Details" "View Headphones access details" \
-"Access Fix" "Make Headphones UI accessible from anywhere" \
+"Access Switch" "Toggle Headphones UI network accessibility" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/headphones/headphones-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/headphones/headphones-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/headphones/headphones-uninstaller.sh ;;
@@ -27,8 +27,8 @@ if [ $exitstatus = 0 ]; then
 		"Restore" ) source $SCRIPTPATH/headphones/headphones-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/headphones/headphones-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/headphones/headphones-reset.sh ;;
-        "Access Details" ) source $SCRIPTPATH/headphones/headphones-access.sh ;;
-        "Access Fix" ) source $SCRIPTPATH/headphones/headphones-access-fix.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
+        "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

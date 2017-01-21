@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-sudo sed -i "s@ExecStart=/var/lib/CouchPotatoServer/CouchPotato.py@ExecStart=/usr/bin/python $APPPATH/CouchPotato.py --daemon --quiet --pid_file=\"$APPPIDFILE\" --data_dir=\"$APPPATH\"@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying ExecStart in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
+sudo sed -i "s@ExecStart=/var/lib/CouchPotatoServer/CouchPotato.py@ExecStart=/usr/bin/python $APPPATH/CouchPotato.py --daemon --quiet --pid_file=$APPPIDFILE --data_dir=$APPPATH@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying ExecStart in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
 sudo sed -i "s@Type=simple@Type=forking@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying TYPE in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
 sudo sed -i "s@User=couchpotato@User=$UNAME@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying USER in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
 sudo sed -i "s@Group=couchpotato@Group=$UGROUP@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying GROUP in SYSTEMD file failed.'$ENDCOLOR; exit 1; }

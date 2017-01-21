@@ -29,7 +29,7 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
         "Install" ) source $SCRIPTPATH/nzbget/nzbget-installer.sh ;;
         "Uninstall" ) source $SCRIPTPATH/nzbget/nzbget-uninstaller.sh ;;
-        "Backup" ) source $SCRIPTPATH/nzbget/nzbget-backup.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
         "Restore" ) source $SCRIPTPATH/nzbget/nzbget-restore.sh ;;
         "Reset Password" ) source $SCRIPTPATH/nzbget/nzbget-reset.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;

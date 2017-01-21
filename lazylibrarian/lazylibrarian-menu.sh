@@ -31,7 +31,7 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-backup.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-reset.sh ;;

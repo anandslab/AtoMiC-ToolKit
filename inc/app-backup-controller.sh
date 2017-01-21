@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Headphones Backup
+# Script Name: AtoMiC Backup Controller
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

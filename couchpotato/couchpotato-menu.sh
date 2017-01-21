@@ -30,7 +30,7 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/couchpotato/couchpotato-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/couchpotato/couchpotato-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/couchpotato/couchpotato-backup.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/couchpotato/couchpotato-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/couchpotato/couchpotato-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/couchpotato/couchpotato-reset.sh ;;

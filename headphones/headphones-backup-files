@@ -1,4 +1,4 @@
 APPPATH/headphones.ini
-APPPATH/.headphones/cache
-APPPATH/.headphones/headphones.db
-APPPATH/.lazylibrarian/logs/lazylibrarian.log
+APPPATH/cache
+APPPATH/headphones.db
+APPPATH/logs/lazylibrarian.log

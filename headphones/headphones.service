@@ -1,0 +1,67 @@
+# Headphones - Automatic eBook Downloader
+#
+# Service Unit file for systemd system manager
+#
+# INSTALLATION NOTES
+#
+#	1. Rename this file as you want, ensuring that it ends in .service
+#		e.g. 'headphones.service'
+#
+#	2. Adjust configuration settings as required.  More details in the
+#	   "CONFIGURATION NOTES" section shown below.
+#
+#	3. Copy this file into your systemd service unit directory, which is
+#	   often '/lib/systemd/system'.
+#
+#	4. Create any files/directories that you specified back in step #2.
+#		e.g. '/etc/headphones/headphones.ini'
+#			 '/home/sabnzbd/.headphones'
+#
+#	5. Enable boot-time autostart with the following commands:
+#		systemctl daemon-reload
+#		systemctl enable headphones.service
+#
+#	6. Start now with the following command:
+#		systemctl start headphones.service
+#
+#   7. If troubleshooting startup-errors, start by checking permissions
+#      and ownership on the files/directories that you created in step #4.
+#
+#
+# CONFIGURATION NOTES
+#
+#	 - The example settings in this file assume that:
+#		1. You will run headphones as user/group: headphones.headphones
+#		2. You will either have headphones installed as a subdirectory
+#		   under '~headphones', or that you will have a symlink under
+#		   '~/headphones' pointing to your headphones install dir.
+#	    3. Your headphones data directory and configuration file will be
+#		   in separate locations from your headphones install dir, to
+#		   simplify updates.
+#			
+#    - Option names (e.g. ExecStart=, Type=) appear to be case-sensitive)
+#
+#    - Adjust ExecStart= to point to:
+#		1. Your headphones executable,
+#		2. Your config file (recommended is to put it somewhere in /etc)
+#       3. Your datadir (recommended is to NOT put it in your headphones exec dir)
+#
+#    - Adjust User= and Group= to the user/group you want headphones to run as.
+#
+#    - WantedBy= specifies which target (i.e. runlevel) to start headphones for.
+#        multi-user.target equates to runlevel 3 (multi-user text mode)
+#        graphical.target  equates to runlevel 5 (multi-user X11 graphical mode)
+
+[Unit]
+Description=headphones
+
+[Service]
+ExecStart=/usr/bin/python /opt/headphones/Headphones.py --daemon --config /opt/headphones/headphones.ini --datadir /opt/headphones --nolaunch --quiet
+GuessMainPID=no
+Type=forking
+User=headphones
+Group=headphones
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

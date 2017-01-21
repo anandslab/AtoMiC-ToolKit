@@ -33,6 +33,5 @@ echo 'Now stop and start the service again to prevent locked database issues aft
 source $SCRIPTPATH/inc/app-stop.sh 
 source $SCRIPTPATH/inc/app-start.sh 
 source $SCRIPTPATH/inc/app-install-confirmation.sh
-echo -e $RED'IMPORTANT: '$YELLOW'If you want to only access Lazy Librarian on localhost, run Access Fix utility.'$ENDCOLOR
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

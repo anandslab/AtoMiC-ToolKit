@@ -1,0 +1,29 @@
+# This file is sourced by /etc/init.d/headphones
+#
+# When headphones is started using the init script
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+# [required] set path where headphones is installed:
+APP_PATH=/opt/headphones
+
+# [optional] change to 1 to enable daemon
+ENABLE_DAEMON=0
+
+# [required] user or uid of account to run the program as:
+RUN_AS=
+
+# [optional] change to 1 to enable updating from webinterface
+WEB_UPDATE=0
+
+# [optional] full path to the configuration file of your choice;
+CONFIG=
+
+# [optional] full path to the folder to store data (databases/thumbs) in;
+DATADIR=
+
+# [optional] Force port number to listen on, otherwise the one set in config.ini is used:
+PORT=
+
+# [optional] full path for the pidfile
+PID_FILE=

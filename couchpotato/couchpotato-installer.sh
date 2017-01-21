@@ -17,17 +17,15 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/couchpotato/couchpotato-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-install-pips.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
-source $SCRIPTPATH/inc/app-create-default.sh
-source $SCRIPTPATH/inc/app-init-add.sh
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

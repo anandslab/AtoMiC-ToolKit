@@ -10,6 +10,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What wo
 "Clear Temp Files" "Clear disclaimer consent and user info" \
 "Delete Backups" "Delete app backups" \
 "Update ToolKit" "Update AtoMiC ToolKit" \
+"Update Linux" "Update Distro and APPS" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -19,6 +20,7 @@ if [ $exitstatus = 0 ]; then
 		"Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
 		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
 		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
+    "Update Linux" ) source $SCRIPTPATH/maintenance/distro-update.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

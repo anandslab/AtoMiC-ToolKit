@@ -14,7 +14,10 @@ elif [[ -f /etc/init.d/cron && ! -h /etc/init.d/cron ]]; then
     fi
     
     source $SCRIPTPATH/inc/app-init-add.sh
-    source $SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh
+    if [ -f "$SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh" ]; then
+        source $SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh
+    fi
+
 else 
     STARTUPTYPE='unknown'
     echo $RED'Unknown startup type.'$ENDCOLOR

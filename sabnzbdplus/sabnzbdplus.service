@@ -1,0 +1,14 @@
+[Unit]
+Description=Sabnzbd
+
+[Service]
+User=sabnzbd
+Group=sabnzbd
+Type=forking
+RuntimeDirectory=sabnzbdplus
+RuntimeDirectoryMode=0700
+PIDFile=/var/run/sabnzbdplus/sabnzbdplus.pid
+ExecStart=/usr/bin/python /usr/bin/sabnzbdplus --config-file /usr/share/sabnzbdplus/sabnzbdplus.ini --logging 1 --daemon --browser 1 --pidfile /var/run/sabnzbdplus/sabnzbdplus.pid
+
+[Install]
+WantedBy=multi-user.target

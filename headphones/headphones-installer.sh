@@ -33,7 +33,7 @@ echo "Now stop to create the $APPSETTINGS file"
 source $SCRIPTPATH/inc/app-stop.sh 
 echo
 echo 'Set to Network Access'
-sudo sed -i "s@${ACCESSPORT}localhost@${ACCESSPORT}0.0.0.0@g" $APPSETTINGS  || { echo -e $RED'Modifying '$ACCESSPORT' in '$APPSETTINGS' file failed.'$ENDCOLOR; exit 1; }
+sudo sed -i "s@${ACCESSHOST}localhost@${ACCESSHOST}0.0.0.0@g" $APPSETTINGS  || { echo -e $RED'Modifying '$ACCESSHOST' in '$APPSETTINGS' file failed.'$ENDCOLOR; exit 1; }
 
 source $SCRIPTPATH/inc/app-start.sh 
 

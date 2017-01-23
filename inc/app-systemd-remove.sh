@@ -10,6 +10,9 @@ if [ ! -z ${APPSYSTEMD+x} ]; then
  		sudo systemctl disable $APPSYSTEMD >/dev/null 2>&1
 		sudo rm /etc/systemd/system/$APPSYSTEMD || { echo -e $RED'Warning! Removing systemd script failed.'$ENDCOLOR ; }
 		sudo systemctl daemon-reload
-sleep 5
+		echo "/etc/systemd/system/$APPSYSTEMD SystemD script removed"
+		sleep 5
 	fi
+else
+	echo "/etc/systemd/system/$APPSYSTEMD SystemD script not found"	
 fi

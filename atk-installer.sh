@@ -8,54 +8,43 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-YELLOW='\e[93m'
-RED='\e[91m'
-ENDCOLOR='\033[0m'
-CYAN='\e[96m'
-GREEN='\e[92m'
-
-echo -e $YELLOW'--->Creating AtoMiC ToolKit Install Log...'$ENDCOLOR
+echo
+echo '--->Creating AtoMiC ToolKit Install Log...'
 touch /var/log/atomic-install.log
-echo -e 'Log created: '$CYAN'/var/log/atomic-install.log'$ENDCOLOR
+echo 'Log created in /var/log/atomic-install.log'
 
-sleep 1
 echo
-
-echo -e $YELLOW'--->Updating APT ...'$ENDCOLOR
-apt-get -y update > /var/log/atomic-install.log
-
 sleep 1
+
+echo '--->Updating APT ...'
+sudo apt-get -y update > /var/log/atomic-install.log
+
 echo
-
-echo -e $YELLOW'--->Installing Prerequisites...'$ENDCOLOR
-apt-get -y install git-core nano python-software-properties > /var/log/atomic-install.log
-
 sleep 1
+
+echo '--->Installing Prerequisites...'
+sudo apt-get -y install git-core nano python-software-properties > /var/log/atomic-install.log
+
 echo
+sleep 1
 
 #Cloaning into the OPT folder for organization.
-echo -e $YELLOW'--->Downloading AtoMiC-ToolKit /opt folder...'$ENDCOLOR
+echo '--->Downloading AtoMiC-ToolKit /opt folder...'
 git clone https://github.com/htpcBeginner/AtoMiC-ToolKit.git /opt/AtoMiC-ToolKit > /var/log/atomic-install.log
 
-sleep 1
 echo
+sleep 1
 
 #Creating a sym link to the user bin so the toolkit can be accessed by typing atk.
-echo -e $YELLOW'--->Installing AtoMiC-ToolKit...'$ENDCOLOR
-ln -s -T /opt/AtoMiC-ToolKit/setup.sh /usr/local/bin/atk > /var/log/atomic-install.log
-
-sleep 1
-echo
-
-echo -e $GREEN'Install Finished.'$ENDCOLOR
+echo '--->Installing AtoMiC-ToolKit...'
+sudo ln -s -T /opt/AtoMiC-ToolKit/setup.sh /usr/local/bin/atk > /var/log/atomic-install.log
+echo 'Install Finished.'
 echo -e 'You can use the AtoMiC-ToolKit by typing '$CYAN'atk'$ENDCOLOR' anytime.'
 
-sleep 1
 echo
+sleep 1
 
 echo -e $YELLOW'--->Starting AtoMiC-ToolKit now...'$ENDCOLOR
-
 rm /tmp/atk-installer.sh
-
-sleep 25
+sleep 5
 #atk

@@ -6,6 +6,9 @@
 # License: MIT License (refer to README.md for more details)
 #
 
+# To auto-download and run this installer use the following command:
+# wget -q -O - https://git.io/vMNYu | sudo sh
+
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 echo

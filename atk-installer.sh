@@ -53,5 +53,5 @@ echo -e $YELLOW'--->Starting AtoMiC-ToolKit now...'$ENDCOLOR
 
 rm /tmp/atomicinstaller.sh
 
-sleep 20
+sleep 25
 #atk

@@ -50,4 +50,4 @@ sleep 1
 echo '--->Starting AtoMiC-ToolKit now...'
 #rm /tmp/atk-installer.sh
 sleep 5
-atk
+sudo atk

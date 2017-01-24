@@ -39,12 +39,12 @@ sleep 1
 echo '--->Installing AtoMiC-ToolKit...'
 sudo ln -s -T /opt/AtoMiC-ToolKit/setup.sh /usr/local/bin/atk > /var/log/atomic-install.log
 echo 'Install Finished.'
-echo -e 'You can use the AtoMiC-ToolKit by typing '$CYAN'atk'$ENDCOLOR' anytime.'
+echo 'You can use the AtoMiC-ToolKit by typing atk anytime.'
 
 echo
 sleep 1
 
-echo -e $YELLOW'--->Starting AtoMiC-ToolKit now...'$ENDCOLOR
+echo '--->Starting AtoMiC-ToolKit now...'
 rm /tmp/atk-installer.sh
 sleep 5
 #atk

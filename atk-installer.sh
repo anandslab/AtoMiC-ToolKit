@@ -49,9 +49,13 @@ echo
 
 echo -e $GREEN'Install Finished.'$ENDCOLOR
 echo -e 'You can use the AtoMiC-ToolKit by typing '$CYAN'atk'$ENDCOLOR' anytime.'
+
+sleep 1
+echo
+
 echo -e $YELLOW'--->Starting AtoMiC-ToolKit now...'$ENDCOLOR
 
-rm /tmp/atomicinstaller.sh
+rm /tmp/atk-installer.sh
 
 sleep 25
 #atk

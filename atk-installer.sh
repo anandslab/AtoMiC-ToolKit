@@ -14,10 +14,6 @@ ENDCOLOR='\033[0m'
 CYAN='\e[96m'
 GREEN='\e[92m'
 
-function pause(){
-   read -p "$*"
-}
-
 echo -e $YELLOW'--->Creating AtoMiC ToolKit Install Log...'$ENDCOLOR
 touch /var/log/atomic-install.log
 echo -e 'Log created: '$CYAN'/var/log/atomic-install.log'$ENDCOLOR
@@ -57,5 +53,5 @@ echo -e $YELLOW'--->Starting AtoMiC-ToolKit now...'$ENDCOLOR
 
 rm /tmp/atomicinstaller.sh
 
-sleep 5
+sleep 20
 #atk

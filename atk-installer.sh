@@ -42,7 +42,7 @@ sleep 1
 echo '--->Installing AtoMiC-ToolKit...'
 sudo ln -s -T /opt/AtoMiC-ToolKit/setup.sh /usr/local/bin/atk > /var/log/atomic-install.log
 echo 'Install Finished.'
-echo 'You can use the AtoMiC-ToolKit by typing atk anytime.'
+echo 'You can use the AtoMiC-ToolKit by typing the following command anytime: sudo atk'
 
 echo
 sleep 1

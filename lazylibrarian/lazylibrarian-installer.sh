@@ -27,6 +27,11 @@ source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh
+echo 'Waiting for Lazy Librarian to finish initial setup' 
+sleep 20 
+echo 'Now stop and start the service again to prevent locked database issues after initial setup' 
+source $SCRIPTPATH/inc/app-stop.sh 
+source $SCRIPTPATH/inc/app-start.sh 
 source $SCRIPTPATH/inc/app-install-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

@@ -23,6 +23,7 @@ source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
+source $SCRIPTPATH/inc/app-repository-remove.sh 
 source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

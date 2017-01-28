@@ -17,21 +17,10 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
-echo -e $YELLOW"--->Adding '$APPTITLE' Repository..."$ENDCOLOR
-GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep webmin)
-if [ "$GREPOUT" == "" ]; then
-	wget -P $SCRIPTPATH/tmp/ http://www.webmin.com/jcameron-key.asc  || { echo -e $RED'Error! Downloading key failed.'$ENDCOLOR ; }
-	sudo apt-key add $SCRIPTPATH/tmp/jcameron-key.asc  || { echo -e $RED'Error! Adding key failed.'$ENDCOLOR ; }
-	echo "deb http://download.webmin.com/download/repository sarge contrib" | sudo tee -a /etc/apt/sources.list
-    echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" | sudo tee -a /etc/apt/sources.list
-else
-    echo $APPTITLE'Webmin repository repository already exists...'
-fi
-
+source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-install.sh

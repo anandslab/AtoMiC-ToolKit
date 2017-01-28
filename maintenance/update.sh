@@ -30,7 +30,7 @@ echo
 if [ "$RESP" == "y" ]
 then
 	source $SCRIPTPATH/inc/pkgupdate.sh
-
+	APPPATH=$SCRIPTPATH
 	echo
 	sleep 1
 
@@ -47,9 +47,10 @@ then
 	sleep 1
 
 	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-	git fetch --all
-	git reset --hard origin/master
-	#git reset --hard origin/dev
+	git -C $SCRIPTPATH fetch --all
+	git -C $SCRIPTPATH reset --hard origin/master
+	git -C $SCRIPTPATH merge
+	source $SCRIPTPATH/inc/app-set-permissions.sh
     echo -e 'AtoMiC ToolKit updated successfully.'
 else
 	echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR

@@ -1,0 +1,26 @@
+#!/bin/bash
+APPNAME='sabnzbdplus'
+APPSHORTNAME='sab'
+APPPATH='/usr/share/sabnzbdplus'
+APPTITLE='SABnzbd'
+APPDEPS='software-properties-common par2 p7zip-full python-pip python-dev'
+APPPIPS='cryptography http://www.golug.it/pub/yenc/yenc-0.4.0.tar.gz'
+APPGIT=''
+APPDPORT='8080'
+APPSETTINGS=$APPPATH'/sabnzbdplus.ini'
+APPREPOSITORYNAME='jcfp'
+REPKEYSERVER='hkp://pool.sks-keyservers.net:11371'
+REPRECVKEYS='0x98703123E0F52B2BE16D586EF13930B14BB9F05F'
+REPRECVKEYSHORT='4BB9F05F'
+ACCESSHOST='host = '
+PORTSEARCH='port = '
+USERSEARCH='username = '
+PASSSEARCH='password = '
+# New password encrypted
+NEWPASS='atomic'
+# New password unencrypted
+APPNEWPASS='atomic'
+APPSYSTEMD='sabnzbdplus.service'
+APPSYSTEMDLOC=$SCRIPTPATH'/sabnzbdplus/'$APPSYSTEMD
+APPINITDLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.init'
+APPDEFAULTLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.default'

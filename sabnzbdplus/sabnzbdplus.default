@@ -17,7 +17,7 @@ USER=
 CONFIG=
 
 # [optional] hostname/ip and port number to listen on:
-HOST=0.0.0.0
+HOST=
 PORT=
 
 # [optional] extra command line options, if any:

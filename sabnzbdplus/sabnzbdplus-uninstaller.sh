@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script Name: AtoMiC SABnzbd Backup Script
-# Author: htpcBeginner
+# Script Name: AtoMiC SABnzbd Uninstaller
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #
@@ -17,14 +17,16 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sabnzbdplus/sabnzbd-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Uninstaller Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-backup-list.sh
-source $SCRIPTPATH/inc/app-backup.sh
-source $SCRIPTPATH/inc/app-backup-confirmation.sh
+source $SCRIPTPATH/inc/app-stop.sh
+sudo killall sabnzbdplus >/dev/null 2>&1
+source $SCRIPTPATH/inc/app-autostart-remove.sh
+source $SCRIPTPATH/inc/app-uninstall.sh
+source $SCRIPTPATH/inc/app-file-del.sh
+source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-repository-configurator.sh
+source $SCRIPTPATH/inc/app-repository-remove.sh 
+source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

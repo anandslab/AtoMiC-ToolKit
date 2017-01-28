@@ -10,6 +10,9 @@ echo
 echo -e $YELLOW'--->UPGRADING APPLICATION ...'$ENDCOLOR
 sudo apt-get -y dist-upgrade
 echo
+echo -e $YELLOW'--->REMOVING UNEEDED PACKAGE FILES ...'$ENDCOLOR
+sudo apt-get -y autoremove
+echo
 echo -e $YELLOW'--->CLEANING PACKAGE FILES ...'$ENDCOLOR
 sudo apt-get -y autoclean
 

@@ -7,6 +7,11 @@ if [ "$GREPOUT" == "" ]; then
         sudo add-apt-repository -y $APPREPOSITORYLINK
     else
         echo "$APPREPOSITORYLINK" | sudo tee -a /etc/apt/sources.list.d/$APPNAME.list
+
+        if [[ $APPREPOSITORYLINKBACKUP != "" ]]; then
+            echo "$APPREPOSITORYLINKBACKUP" | sudo tee -a /etc/apt/sources.list.d/$APPNAME.list
+        fi
+
         if [ "$REPOKEYSREQ" = 'YES' ]; then
             source $SCRIPTPATH/inc/app-keys-add.sh
         fi

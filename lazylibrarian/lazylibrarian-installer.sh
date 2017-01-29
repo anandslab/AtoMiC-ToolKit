@@ -16,7 +16,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/pkgupdate.sh

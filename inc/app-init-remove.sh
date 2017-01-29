@@ -12,6 +12,11 @@ else
 	echo "/etc/init.d/$APPNAME init script not found"	
 fi
 
+#Remove the PID file and folder if it exists
+if [ -d "/var/run/$APPNAME" ]; then
+sudo rm -r /var/run/$APPNAME
+fi
+
 echo
 echo -e $YELLOW'--->Removing '$APPTITLE' default Autostart scripts...'$ENDCOLOR
 if [ -f /etc/default/$APPNAME ]; then

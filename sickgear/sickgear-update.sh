@@ -7,8 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]
-then
+if [[ $ISSETUP != "Yes" ]]; then
   echo
   echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
   echo
@@ -17,9 +16,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickgear/sickgear-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Update Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

@@ -13,7 +13,7 @@ sudo sed -i "s@CP_USER=couchpotato@CP_USER=$UNAME@g" /etc/default/$APPNAME || { 
 sudo sed -i "s@CP_HOME=@CP_HOME=$APPPATH@g" /etc/default/$APPNAME || { echo -e $RED'Replacing CP_HOME failed.'$ENDCOLOR ; exit 1; }
 
 # directory of couchpotato's db, cache and logs
-sudo sed -i "s@CP_DATA=@CP_DATA=$APPPATH@g" /etc/default/$APPNAME || { echo -e $RED'Replacing CP_DATA failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i "s@CP_DATA=@CP_DATA=$APPPATH/data@g" /etc/default/$APPNAME || { echo -e $RED'Replacing CP_DATA failed.'$ENDCOLOR ; exit 1; }
 
 # full path of couchpotato.pid
 sudo sed -i "s@CP_PIDFILE=@CP_PIDFILE=$APPPIDFILE@g" /etc/default/$APPNAME || { echo -e $RED'Replacing CP_PIDFILE failed.'$ENDCOLOR ; exit 1; }

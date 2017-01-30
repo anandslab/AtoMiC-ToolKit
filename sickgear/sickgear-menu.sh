@@ -18,15 +18,14 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SickGear" --menu "What wou
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/sickgear/sickgear-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/sickgear/sickgear-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/sickgear/sickgear-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/sickgear/sickgear-backup.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickgear/sickgear-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickgear/sickgear-update.sh ;;
-		"Reset Password" ) source $SCRIPTPATH/sickgear/sickgear-reset.sh ;;
-		"Access Details" ) source $SCRIPTPATH/sickgear/sickgear-access.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

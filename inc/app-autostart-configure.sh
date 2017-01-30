@@ -17,7 +17,7 @@ elif [[ -f /etc/init.d/cron && ! -h /etc/init.d/cron ]]; then
     
     #Check if we've already got a default file because of a package install ie. SABnzbd
     if ! [ -f /etc/default/$APPNAME ]; then
-    source $SCRIPTPATH/inc/app-default-copy.sh
+        source $SCRIPTPATH/inc/app-default-copy.sh
     fi
 
     if [ -f $SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh ]; then

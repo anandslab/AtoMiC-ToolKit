@@ -1,0 +1,14 @@
+# This file is sourced by /etc/init.d/SickGear
+#
+# When SickGear is started using the init script
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+#$RUN_AS, username to run sickrage under, the default is sickrage
+SG_USER=
+
+#$APP_PATH, the location of SickBeard.py, the default is /opt/sickrage
+SG_HOME=
+
+#$DATA_DIR, the location of sickbeard.db, cache, logs, the default is /opt/sickrage
+SG_DATA=

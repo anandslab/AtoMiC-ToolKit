@@ -8,10 +8,10 @@ if ! [ "$GREPOUT" == "" ]; then
     else
         sudo rm /etc/apt/sources.list.d/$APPNAME.list
         echo 'OK'
-        if [ "$REPOKEYSREQ" = 'YES' ]; then
-            source $SCRIPTPATH/inc/app-keys-remove.sh
-        fi
     fi
+
+    source $SCRIPTPATH/inc/app-keys-remove.sh
+
 else
     echo $APPTITLE' repository doesnt exist'
 fi

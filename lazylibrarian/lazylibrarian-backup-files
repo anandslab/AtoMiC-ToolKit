@@ -1,4 +1,4 @@
 APPPATH/lazylibrarian.ini
-APPPATH/data/cache
-APPPATH/data/lazylibrarian.db
-APPPATH/data/Logs/lazylibrarian.log
+APPPATH/cache
+APPPATH/lazylibrarian.db
+APPPATH/Logs/lazylibrarian.log

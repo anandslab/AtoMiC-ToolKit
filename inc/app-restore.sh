@@ -4,7 +4,6 @@ sleep 1
 
 echo -e $YELLOW'--->Select '$APPTITLE' backup file to restore...'$ENDCOLOR
 
-echo
 sleep 1
 
 source $SCRIPTPATH/inc/fileselect.sh

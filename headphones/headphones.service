@@ -56,7 +56,7 @@
 Description=headphones
 
 [Service]
-ExecStart=/usr/bin/python /opt/headphones/Headphones.py --daemon --config /opt/headphones/headphones.ini --datadir /opt/headphones --nolaunch --quiet
+ExecStart=/usr/bin/python /opt/headphones/Headphones.py --daemon --config /opt/headphones/headphones.ini --datadir /opt/headphones/data --nolaunch --quiet
 GuessMainPID=no
 Type=forking
 User=headphones

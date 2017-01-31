@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickGear Restore Script
+# Script Name: AtoMiC SickGear Restore
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

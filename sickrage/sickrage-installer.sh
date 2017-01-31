@@ -17,24 +17,14 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickrage/sickrage-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
-
-source $SCRIPTPATH/inc/app-folders-create.sh
-# Check to see if autoProcessTV.cfg.sample exists https://github.com/htpcBeginner/AtoMiC-ToolKit/issues/29
-if [ -f "$APPPATH/autoProcessTV/autoProcessTV.cfg.sample" ]; then
- cp -a $APPPATH/autoProcessTV/autoProcessTV.cfg.sample $APPPATH/autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
-fi
-
-source $SCRIPTPATH/inc/app-create-default.sh
-source $SCRIPTPATH/inc/app-init-add.sh
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

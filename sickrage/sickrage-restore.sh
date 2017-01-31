@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SickRage Restore Script
+# Script Name: AtoMiC SickRage Restore
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sickrage/sickrage-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Restore Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Restore Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

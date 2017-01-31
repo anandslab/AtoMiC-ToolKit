@@ -1,6 +1,6 @@
 #!/bin/bash
 APPNAME='sickrage'
-APPSHORTNAME='sg'
+APPSHORTNAME='sr'
 APPPATH='/opt/sickrage'
 APPTITLE='SickRage'
 APPDEPS='curl build-essential libsqlite3-dev libbz2-dev libreadline-dev libssl-dev zlib1g-dev git python python-cheetah python-pyasn1'

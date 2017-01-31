@@ -86,11 +86,6 @@ alias couchstart='sudo /etc/init.d/couchpotato start'
 alias couchrestart='sudo /etc/init.d/couchpotato stop ; sudo /etc/init.d/couchpotato start'
 alias couchstatus='sudo /etc/init.d/couchpotato status'
 
-alias sickstop='sudo /etc/init.d/sickbeard stop'
-alias sickstart='sudo /etc/init.d/sickbeard start'
-alias sickrestart='sudo /etc/init.d/sickbeard stop ; sudo /etc/init.d/sickbeard start'
-alias sickstatus='sudo /etc/init.d/sickbeard status'
-
 alias ragestop='sudo /etc/init.d/sickrage stop'
 alias ragestart='sudo /etc/init.d/sickrage start'
 alias ragerestart='sudo /etc/init.d/sickrage stop ; sudo /etc/init.d/sickrage start'

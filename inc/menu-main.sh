@@ -7,7 +7,6 @@ then
   exit 0
 fi
 MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
-"SickBeard" "TV Shows PVR Client" \
 "SickRage" "TV Shows PVR Client" \
 "SickGear" "TV Shows PVR Client" \
 "CouchPotato" "Movies PVR Client" \
@@ -29,7 +28,6 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo -e $ENDCOLOR"Your chosen option:" $MAINCHOICE
     case "$MAINCHOICE" in 
-		"SickBeard" ) source $SCRIPTPATH/sickbeard/sickbeard-menu.sh ;;
 		"SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
 		"SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
 		"Sonarr" ) source $SCRIPTPATH/nzbdrone/nzbdrone-menu.sh ;;

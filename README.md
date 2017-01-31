@@ -28,20 +28,19 @@ Features features of AtoMiC ToolKit include:
 <li>User and newbie-friendly</li>
 <li>One-stop shop
 <ul>
-<li>Sick Beard - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>SickRage - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>SickGear - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>Sonarr (formerly NzbDrone) - Install, Uninstall, Update, and Backup / Restore</li>
-<li>CouchPotato - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>Transmission WebUI - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>qBittorrent WebUI - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>SABnzbd+ - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>NZBGet - Install, Uninstall,Reset Password and Backup / Restore</li>
-<li>Headphones - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>Lazy Librarian - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>HTPC Manager - Install, Uninstall, Update, and Backup / Restore</li>
-<li>Mylar - Install, Uninstall, Reset Password, Update, and Backup / Restore</li>
-<li>Webmin - Install, Uninstall, Update, and Backup / Restore</li>
+<li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>SickGear - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Sonarr (formerly NzbDrone) - Install, Uninstall, Update and Backup / Restore</li>
+<li>CouchPotato - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>qBittorrent WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>SABnzbd+ - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
+<li>Headphones - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>HTPC Manager - Install, Uninstall, Update and Backup / Restore</li>
+<li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
 <li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, RTorrent/RUTorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>

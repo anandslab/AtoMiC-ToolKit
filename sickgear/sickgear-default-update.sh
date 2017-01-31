@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Headphones default update
+# Script Name: AtoMiC SickGear default update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 #

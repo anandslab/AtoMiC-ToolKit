@@ -49,7 +49,6 @@ then
 	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
 	git -C $SCRIPTPATH fetch --all
 	git -C $SCRIPTPATH reset --hard origin/master
-	git -C $SCRIPTPATH merge
 	source $SCRIPTPATH/inc/app-set-permissions.sh
     echo -e 'AtoMiC ToolKit updated successfully.'
 else

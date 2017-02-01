@@ -1,4 +1,4 @@
-APPPATH/config.ini
+APPPATH/mylar.ini
 APPPATH/cache
-APPPATH/mylar.db
-APPPATH/logs
+APPPATH/data/mylar.db
+APPPATH/data/logs

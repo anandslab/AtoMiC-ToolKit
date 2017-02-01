@@ -1,0 +1,17 @@
+# mylar - An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents
+#
+# Service Unit file for systemd system manager
+
+[Unit]
+Description=mylar
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+ExecStart=/usr/bin/python /opt/mylar/Mylar.py --daemon --config /opt/mylar/mylar.ini --datadir /opt/mylar/data --nolaunch --quiet
+GuessMainPID=no
+Type=forking
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

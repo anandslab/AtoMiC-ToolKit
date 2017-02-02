@@ -28,6 +28,7 @@ Features features of AtoMiC ToolKit include:
 <li>User and newbie-friendly</li>
 <li>One-stop shop
 <ul>
+<li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
 <li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>SickGear - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Sonarr (formerly NzbDrone) - Install, Uninstall, Update and Backup / Restore</li>
@@ -41,7 +42,7 @@ Features features of AtoMiC ToolKit include:
 <li>HTPC Manager - Install, Uninstall, Update and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, nzbHydra, MusicBrainz, RTorrent/RUTorrent, etc.</li>
+<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, MusicBrainz, RTorrent/RUTorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

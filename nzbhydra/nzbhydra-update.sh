@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Lazy Librarian Restore
+# Script Name: AtoMiC NZBHydra Restore
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,7 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Update Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

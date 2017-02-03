@@ -32,7 +32,7 @@ if [ $exitstatus = 0 ]; then
 		"Install" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-restore.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;

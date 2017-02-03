@@ -30,7 +30,7 @@ if [ $exitstatus = 0 ]; then
 		"Install" ) source $SCRIPTPATH/nzbhydra/nzbhydra-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/nzbhydra/nzbhydra-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/nzbhydra/nzbhydra-restore.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/nzbhydra/nzbhydra-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		

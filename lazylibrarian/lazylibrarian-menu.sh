@@ -22,7 +22,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Lazy Librarian" --menu "Wh
 "Manual Update" "Manually update Lazy Librarian" \
 "Reset Password" "Reset Lazy Librarian WebUI password" \
 "Access Details" "View Lazy Librarian access details" \
-"Access Switch" "Toggle NZBGet UI network accessibility" \
+"Access Switch" "Toggle Lazy Librarian UI network accessibility" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?

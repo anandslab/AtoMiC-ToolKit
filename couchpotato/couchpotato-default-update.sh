@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Lazy Librarian default update
+# Script Name: AtoMiC CouchPotato default update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 #

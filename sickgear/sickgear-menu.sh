@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/sickgear/sickgear-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickgear/sickgear-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/sickgear/sickgear-reset.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

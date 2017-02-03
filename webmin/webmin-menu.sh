@@ -21,7 +21,7 @@ if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/webmin/webmin-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/webmin/webmin-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/webmin/webmin-backup.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/webmin/webmin-restore.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/webmin/webmin-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;

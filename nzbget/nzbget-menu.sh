@@ -30,8 +30,8 @@ if [ $exitstatus = 0 ]; then
         "Install" ) source $SCRIPTPATH/nzbget/nzbget-installer.sh ;;
         "Uninstall" ) source $SCRIPTPATH/nzbget/nzbget-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-        "Restore" ) source $SCRIPTPATH/nzbget/nzbget-restore.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/nzbget/nzbget-reset.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
         "Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		

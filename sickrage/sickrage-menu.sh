@@ -23,9 +23,9 @@ if [ $exitstatus = 0 ]; then
 		"Install" ) source $SCRIPTPATH/sickrage/sickrage-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/sickrage/sickrage-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/sickrage/sickrage-restore.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/sickrage/sickrage-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/sickrage/sickrage-reset.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;

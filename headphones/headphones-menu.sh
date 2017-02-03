@@ -24,9 +24,9 @@ if [ $exitstatus = 0 ]; then
 		"Install" ) source $SCRIPTPATH/headphones/headphones-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/headphones/headphones-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/headphones/headphones-restore.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/headphones/headphones-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/headphones/headphones-reset.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		

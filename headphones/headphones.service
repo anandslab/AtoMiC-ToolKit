@@ -15,7 +15,7 @@
 #
 #	4. Create any files/directories that you specified back in step #2.
 #		e.g. '/etc/headphones/headphones.ini'
-#			 '/home/sabnzbd/.headphones'
+#			 '/home/headphones/.headphones'
 #
 #	5. Enable boot-time autostart with the following commands:
 #		systemctl daemon-reload

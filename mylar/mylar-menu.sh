@@ -24,9 +24,9 @@ if [ $exitstatus = 0 ]; then
 		"Install" ) source $SCRIPTPATH/mylar/mylar-installer.sh ;;
 		"Uninstall" ) source $SCRIPTPATH/mylar/mylar-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/mylar/mylar-restore.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/mylar/mylar-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/mylar/mylar-reset.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		

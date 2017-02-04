@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/htpcmanager/htpcmanager-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Update Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

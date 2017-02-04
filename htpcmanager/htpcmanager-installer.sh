@@ -17,25 +17,15 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/htpcmanager/htpcmanager-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
-
-echo
-sleep 1
-echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-sudo pip install psutil
-
+source $SCRIPTPATH/inc/app-install-pips.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
-
-source $SCRIPTPATH/inc/app-init-add.sh
-sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/htpcmanager || { echo -e $RED'Replacing username in init failed.'$ENDCOLOR ; exit 1; }
-
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh

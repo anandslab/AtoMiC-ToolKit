@@ -17,14 +17,14 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Sonarr" --menu "What would
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/sonarr/sonarr-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/nzbdrone/sonarr-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/nzbdrone/sonarr-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/nzbdrone/sonarr-backup.sh ;;
-		"Restore" ) source $SCRIPTPATH/nzbdrone/sonarr-restore.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/nzbdrone/sonarr-update.sh ;;
-        "Access Details" ) source $SCRIPTPATH/nzbdrone/sonarr-access.sh ;;		
+		"Install" ) source $SCRIPTPATH/sonarr/sonarr-installer.sh ;;
+		"Uninstall" ) source $SCRIPTPATH/sonarr/sonarr-uninstaller.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+		"Manual Update" ) source $SCRIPTPATH/sonarr/sonarr-update.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;		
 		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

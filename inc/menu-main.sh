@@ -32,7 +32,7 @@ if [ $exitstatus = 0 ]; then
 		"NZBHydra" ) source $SCRIPTPATH/nzbhydra/nzbhydra-menu.sh ;;
 		"SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
 		"SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
-		"Sonarr" ) source $SCRIPTPATH/nzbdrone/nzbdrone-menu.sh ;;
+		"Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
 		"CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
 		"Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
 		"qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;

@@ -42,6 +42,4 @@ if [ $exitstatus = 0 ]; then
 else
     echo
     echo -e $RED'Restoring '$APPTITLE' backup cancelled.'$ENDCOLOR
-    #source $SCRIPTPATH/inc/pause.sh
-    #source $SCRIPTPATH/inc/menu-$APPNAME.sh
 fi 

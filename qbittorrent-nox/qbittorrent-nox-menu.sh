@@ -18,10 +18,10 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage qBittorrent" --menu "What 
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    source $SCRIPTPATH//qbittorrent-nox/qbittorrent-constants.sh
+    source $SCRIPTPATH//qbittorrent-nox/qbittorrent-nox-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-uninstaller.sh ;;
+		"Install" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-installer.sh ;;
+		"Uninstall" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-uninstaller.sh ;;
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-update.sh ;;

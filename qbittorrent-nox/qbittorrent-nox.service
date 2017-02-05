@@ -6,6 +6,7 @@ After=network.target
 Type=forking
 User=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox -d
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

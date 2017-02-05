@@ -17,7 +17,7 @@ USER="qbtuser"
 
 # No need to edit these. Logging is sent to /var/log/qbittorrent-nox.log by default.
 PATH="/sbin:/usr/sbin:/bin:/usr/bin"
-SCRIPTNAME="/etc/init.d/qbittorrent"
+SCRIPTNAME="/etc/init.d/qbittorrent-nox"
 NAME="qbittorrent-nox"
 DESC="QBittorrent"
 PIDFILE="/var/run/$NAME.pid"

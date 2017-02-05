@@ -17,9 +17,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/qbittorrent-nox/qbittorrent-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 echo
 echo -e $YELLOW'By proceeding you are acceping qBittorrent Legal Notice...'$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
@@ -27,31 +25,21 @@ source $SCRIPTPATH/inc/pause.sh
 echo
 sleep 1
 
-echo -e $YELLOW"--->Adding qBittorrent repository..."$ENDCOLOR
-GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep qbittorrent)
-if [ "$GREPOUT" == "" ]; then
-    sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
-else
-    echo "qBittorrent PPA repository already exists..."
-fi
-
+source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-repository-configurator.sh
+source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-install.sh
 
 echo
 sleep 1
-
-echo -e $YELLOW'--->Setting up autostart...'$ENDCOLOR
-source $SCRIPTPATH/inc/app-init-add.sh
-sudo sed -i 's@MyUserName@'"$UNAME"'@g' /etc/init.d/qbittorrent-nox || { echo -e $RED'Replacing username in default failed.'$ENDCOLOR ; exit 1; }
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 
 echo 
 sleep 1
 
 source $SCRIPTPATH/inc/app-folders-create.sh
-if [ ! -f "$APPSETTINGS" ];
-then
+if [ ! -f "$APPSETTINGS" ]; then
 	sudo cp $SCRIPTPATH/qbittorrent-nox/qBittorrent.conf $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
 fi
 

@@ -1,0 +1,132 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          qbittorrent-nox
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts QBittorrent
+# Description:       Start qbittorrent-nox on start. Change USER= before running
+### END INIT INFO
+
+# Author: Jesper Smith
+# Added log support and cleanup by DementedZA
+
+#Edit the user that qbittorrent-nox will run as.
+USER="qbtuser"
+
+# No need to edit these. Logging is sent to /var/log/qbittorrent-nox.log by default.
+PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+SCRIPTNAME="/etc/init.d/qbittorrent-nox"
+NAME="qbittorrent-nox"
+DESC="QBittorrent"
+PIDFILE="/var/run/$NAME.pid"
+QBTLOG="/var/log/$NAME.log"
+
+DAEMON="/usr/bin/qbittorrent-nox"
+DAEMON_ARGS=""
+DAEMONSTRING="$DAEMON >> $QBTLOG 2>&1"
+
+export DBUS_SESSION_BUS_ADDRESS=""
+
+# Exit if the package is not installed
+[ -x "$DAEMONPATH$DAEMON" ] || exit 0
+
+# Read configuration variable file if it is present
+#[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
+. /lib/lsb/init-functions
+
+#
+# Function that starts the daemon/service
+#
+do_start()
+{
+
+    #Check for log file. If it doesn't exist, create it.
+    if [ -f $QBTLOG ];
+    then
+            echo "Logging to $QBTLOG."
+    else
+            echo "Log file $QBTLOG doesn't exist. Creating it..."
+            touch $QBTLOG
+            chown $USER:$USER $QBTLOG
+            if [ -f $QBTLOG ];
+                    then
+                            echo "Logfile created. Logging to $QBTLOG"
+                    else
+                            echo "Couldn't create logfile $QBTLOG. Please investigate."
+            fi
+    fi
+
+        # Return
+        #   0 if daemon has been started
+        #   1 if daemon was already running
+        #   2 if daemon could not be started
+
+    start-stop-daemon --start --chuid $USER --test --quiet --make-pidfile --pidfile $PIDFILE --background --exec /bin/bash -- -c "$DAEMONSTRING" || return 1
+
+    start-stop-daemon --start --chuid $USER --make-pidfile --pidfile $PIDFILE --background --exec /bin/bash -- -c "$DAEMONSTRING" || return 2
+    sleep 1
+}
+
+#
+# Function that stops the daemon/service
+#
+do_stop()
+{
+    start-stop-daemon --stop --exec "$DAEMONPATH$DAEMON"
+    sleep 2
+    return "$?"
+}
+
+
+case "$1" in
+  start)
+    [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+    do_start
+    case "$?" in
+        0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+        2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+    esac
+    ;;
+  stop)
+    [ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+    do_stop
+    case "$?" in
+        0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+        2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+    esac
+    ;;
+  status)
+       status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
+       ;;
+  restart|force-reload)
+    log_daemon_msg "Restarting $DESC" "$NAME"
+    do_stop
+    case "$?" in
+      0|1)
+        do_start
+        case "$?" in
+            0) log_end_msg 0 ;;
+            1) log_end_msg 1 ;; # Old process is still running
+            *) log_end_msg 1 ;; # Failed to start
+        esac
+        ;;
+      *)
+        # Failed to stop
+        log_end_msg 1
+        ;;
+    esac
+    ;;
+  *)
+    #echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+    echo "Usage: service qbittorrent {start|stop|status|restart|force-reload}" >&2
+    exit 3
+    ;;
+esac

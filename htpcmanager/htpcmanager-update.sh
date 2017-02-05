@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC HTPC Mananger Updater
+# Script Name: AtoMiC HTPC Manager Updater
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

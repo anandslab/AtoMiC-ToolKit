@@ -25,6 +25,7 @@ source $SCRIPTPATH/inc/pause.sh
 echo
 sleep 1
 
+source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-repository-configurator.sh
 source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-move-previous.sh

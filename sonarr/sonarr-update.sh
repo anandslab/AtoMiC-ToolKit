@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Sonarr / NzbDrone Backup Script
+# Script Name: AtoMiC Sonarr Updater
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,14 +17,20 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/nzbdrone/sonarr-constants.sh
+source $SCRIPTPATH/sonarr/sonarr-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-backup-list.sh
-source $SCRIPTPATH/inc/app-backup.sh
-source $SCRIPTPATH/inc/app-backup-confirmation.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-stop.sh
+
+APPNAME='nzbdrone'
+source $SCRIPTPATH/inc/app-update.sh
+APPNAME='sonarr'
+
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-update-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

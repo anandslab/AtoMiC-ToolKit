@@ -1,0 +1,94 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          nzbdrone
+# Required-Start:    $local_fs $network $remote_fs
+# Required-Stop:     $local_fs $network $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: nzbdrone
+# Description:       Sonarr
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#set -e
+
+NAME=nzbdrone
+DESC="Sonarr"
+MONO=$(which mono)
+
+DAEMON=/opt/NzbDrone/NzbDrone.exe
+DAEMONOPTS=""
+
+PIDDIR=/var/run/${NAME}
+PIDFILE=${PIDDIR}/${NAME}.pid
+
+RUNASUSER=root
+RUNASGROUP=root
+RUNAS=$RUNASUSER:$RUNASGROUP
+
+DATADIR=/home/$RUNASUSER/
+
+if ! [ -r ${DAEMON} ]; then echo "Can't read: ${DAEMON}" 2>&1; exit 1; fi
+if ! [ -x ${MONO} ]; then echo "Not executable: ${MONO}" 2>&1; exit 1; fi
+if ! [ -d ${DATADIR} ]; then echo "No such directory: ${DATADIR}" 2>&1; exit 1; fi
+
+if [ ! -d ${PIDDIR} ]; then
+        mkdir -p ${PIDDIR}; chown ${RUNASUSER}:root ${PIDDIR}; chmod 0750 ${PIDDIR};
+fi
+
+do_start() {
+        RETVAL=1
+        if [ -e ${PIDFILE} ]; then
+                if ! kill -0 $(cat ${PIDFILE}) &> /dev/null; then
+                        rm -f $PIDFILE
+                fi
+        fi
+
+        log_daemon_msg "Starting ${DESC}" "${NAME}"
+        if pgrep -f "^${MONO} ${DAEMON}" > /dev/null 2>&1; then
+                log_progress_msg "(already running?)"
+        else
+                start-stop-daemon -q -d ${DATADIR} -c $RUNAS --start --background --make-pidfile --pidfile $PIDFILE --exec $MONO -- $DAEMON $DAEMON_OPTS
+                RETVAL=$?
+        fi
+        log_end_msg $RETVAL
+}
+do_stop() {
+        RETVAL=1
+        log_daemon_msg "Stopping ${DESC}" "${NAME}"
+        if ! pgrep -f "^${MONO} ${DAEMON}" > /dev/null 2>&1; then
+                log_progress_msg "(not running?)"
+        else
+                start-stop-daemon -q --stop --pidfile $PIDFILE --retry 15
+                RETVAL=$?
+        fi
+        log_end_msg $RETVAL
+
+}
+
+case "$1" in
+start)
+        do_start
+;;
+stop)
+        do_stop
+;;
+
+status)
+        status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
+;;
+
+restart|force-reload)
+        do_stop;
+        do_start;
+;;
+*)
+        N=/etc/init.d/$NAME
+        echo "Usage: $0 {start|stop|status|restart|force-reload}" >&2
+        exit 1
+;;
+esac
+
+exit 0

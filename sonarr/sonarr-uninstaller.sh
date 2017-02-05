@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Sonarr / NzbDrone Access Details
+# Script Name: AtoMiC Sonarr Uninstaller
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,22 +17,18 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/nzbdrone/sonarr-constants.sh
+source $SCRIPTPATH/sonarr/sonarr-constants.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Uninstaller Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-settings-check.sh
-
-source $SCRIPTPATH/inc/app-port-search.sh
-source $SCRIPTPATH/inc/app-user-search.sh
-source $SCRIPTPATH/inc/app-password-search.sh
-
-source $SCRIPTPATH/inc/app-system-details.sh
-
-source $SCRIPTPATH/inc/app-access-urls.sh
-source $SCRIPTPATH/inc/app-access-credentials.sh
-
+source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/inc/app-autostart-remove.sh
+APPNAME='nzbdrone'
+source $SCRIPTPATH/inc/app-uninstall.sh
+APPNAME='sonarr'
+source $SCRIPTPATH/inc/app-file-del.sh
+source $SCRIPTPATH/inc/app-repository-remove.sh 
+source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

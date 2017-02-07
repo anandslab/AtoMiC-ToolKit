@@ -1,10 +1,9 @@
 #!/bin/bash
 echo
-sleep 1
-echo -e $YELLOW'--->Starting '$APPTITLE'...'$ENDCOLOR
+echo -e $YELLOW"--->Starting $APPTITLE..."$ENDCOLOR
 
 if [ -f /etc/init.d/$APPNAME ]; then
-	sudo /etc/init.d/$APPNAME start >/dev/null 2>&1
+	sudo service $APPNAME start >/dev/null 2>&1
 fi
 
 if [ ! -z ${APPSYSTEMD+x} ]; then

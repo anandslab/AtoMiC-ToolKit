@@ -1,10 +1,10 @@
 #!/bin/bash
 echo 
 sleep 1
-echo -e $YELLOW'--->Stopping '$APPTITLE'...'$ENDCOLOR
+echo -e $YELLOW"--->Stopping $APPTITLE..."$ENDCOLOR
 
 if [ -f /etc/init.d/$APPNAME ]; then
-	sudo /etc/init.d/$APPNAME stop >/dev/null 2>&1
+	sudo service $APPNAME stop >/dev/null 2>&1
 fi
 
 if [ ! -z ${APPSYSTEMD+x} ]; then
@@ -12,3 +12,6 @@ if [ ! -z ${APPSYSTEMD+x} ]; then
 		sudo systemctl stop $APPSYSTEMD
 	fi
 fi
+sleep 2
+
+sudo killall $APPNAME stop >/dev/null 2>&1

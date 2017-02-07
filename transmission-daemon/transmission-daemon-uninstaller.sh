@@ -23,6 +23,7 @@ source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-stop.sh
 sudo killall transmission-daemon >/dev/null 2>&1
 source $SCRIPTPATH/inc/app-uninstall.sh
+source $SCRIPTPATH/inc/app-uninstall-deps.sh
 source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/inc/app-file-del.sh
 source $SCRIPTPATH/transmission-daemon/transmission-daemon-repository-configurator.sh

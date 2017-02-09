@@ -6,7 +6,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Headphones" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Headphones" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install" "Install Headphones" \
 "Uninstall" "Uninstall Headphones" \
 "Backup" "Backup Headphones settings" \
@@ -29,9 +29,11 @@ if [ $exitstatus = 0 ]; then
         "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
+        "Go Back" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/inc/thankyou.sh
+    echo
+    sleep 1
 fi

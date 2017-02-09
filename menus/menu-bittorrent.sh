@@ -6,15 +6,16 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
-"Install Bash Aliases" "Allows shortening commands" \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+"qBittorrent" "Bittorent Client" \
+"Transmission" "Bittorrent Client" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
-    case "$SUBCHOICE" in 	
-		"Install Bash Aliases" ) source $SCRIPTPATH/utils/bash_aliases-installer.sh ;;
+    case "$SUBCHOICE" in
+		"qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;
+		"Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
     "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

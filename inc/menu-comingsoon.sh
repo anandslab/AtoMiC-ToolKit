@@ -6,7 +6,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "These apps may be supported in future." --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "These apps may be supported in future." --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Deluge" "Bittorrent Client" \
 "Apache" "Apache Webserver" \
 "MySQL" "MySQL Server" \
@@ -18,16 +18,13 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Upcoming App Support" --menu "The
 "Make MKV" "Video Converter" \
 "Musicbrainz" "Music Tagger for Headphones" \
 "Monit" "Monitor your home server or HTPC" \
-"ShellInABox" "Web-based terminal" \
-"Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
+"ShellInABox" "Web-based terminal" \ 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
     case "$SUBCHOICE" in 
-    "Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;	
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/menus/menu-main.sh
 fi

@@ -14,7 +14,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage NZBHydra" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage NZBHydra" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install" "Install NZBHydra" \
 "Uninstall" "Uninstall NZBHydra" \
 "Backup" "Backup NZBHydra settings" \
@@ -33,9 +33,11 @@ if [ $exitstatus = 0 ]; then
 		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/nzbhydra/nzbhydra-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
+        "Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/inc/thankyou.sh
+    echo
+    sleep 1
 fi

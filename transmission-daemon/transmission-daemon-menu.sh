@@ -6,7 +6,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Transmission" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Transmission" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install" "Install Transmission" \
 "Uninstall" "Uninstall Transmission" \
 "Backup" "Backup Transmission settings" \
@@ -18,18 +18,20 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Transmission" --menu "What
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    #echo "Your chosen option:" $SUBCHOICE
+    source $SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/transmission-daemon/transmission-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/transmission-daemon/transmission-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/transmission-daemon/transmission-backup.sh ;;
-		"Restore" ) source $SCRIPTPATH/transmission-daemon/transmission-restore.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/transmission-daemon/transmission-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/transmission-daemon/transmission-reset.sh ;;
-        "Access Details" ) source $SCRIPTPATH/transmission-daemon/transmission-access.sh ;;		
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
+		"Install" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-installer.sh ;;
+		"Uninstall" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-uninstaller.sh ;;
+		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+		"Manual Update" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-update.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;	
+		"Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/inc/thankyou.sh
+    echo
+    sleep 1
 fi

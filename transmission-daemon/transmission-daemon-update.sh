@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Transmission Daemon Backup Script
+# Script Name: AtoMiC Transmission Updater
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -17,14 +17,14 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/transmission-daemon/transmission-constants.sh
-
-echo -e $GREEN'AtoMiC '$APPTITLE' Backup Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/app-backup-list.sh
-source $SCRIPTPATH/inc/app-backup.sh
-source $SCRIPTPATH/inc/app-backup-confirmation.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/inc/app-update.sh
+source $SCRIPTPATH/inc/app-start.sh
+source $SCRIPTPATH/inc/app-update-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

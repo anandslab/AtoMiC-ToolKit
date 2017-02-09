@@ -79,4 +79,4 @@ sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
 sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
     
 source $SCRIPTPATH/inc/header.sh
-source $SCRIPTPATH/inc/menu-main.sh
+source $SCRIPTPATH/menus/menu-main.sh

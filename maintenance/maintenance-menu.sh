@@ -6,7 +6,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Maintenance Menu" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Clear Temp Files" "Clear disclaimer consent and user info" \
 "Delete Backups" "Delete app backups" \
 "Update ToolKit" "Update AtoMiC ToolKit" \
@@ -21,9 +21,11 @@ if [ $exitstatus = 0 ]; then
 		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
 		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
     "Update Linux" ) source $SCRIPTPATH/maintenance/distro-update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
+    "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/inc/thankyou.sh
+    echo
+    sleep 1
 fi

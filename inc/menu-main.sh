@@ -8,19 +8,8 @@ then
 fi
 MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "NZBHydra" "Meta search for NZB indexers" \
-"SickRage" "TV Shows PVR Client" \
-"SickGear" "TV Shows PVR Client" \
-"CouchPotato" "Movies PVR Client" \
-"Headphones" "Music PVR Client" \
-"Lazy Librarian" "Book PVR Client" \
-"Mylar" "Comics PVR Client" \
-"HTPC Manager" "Unified HTPC Web Interface" \
 "SABnzbd+" "NZB Newsgrabber / Downloader" \
 "NZBGet" "NZB Newsgrabber / Downloader" \
-"Webmin" "Web-based system administration" \
-"Sonarr" "TV Shows PVR Client" \
-"Transmission" "Bittorent Client" \
-"qBittorrent" "Bittorrent Client" \
 "Utilities" "Other miscellaneous tools" \
 "Coming Soon" "Apps planned for future" \
 "Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
@@ -34,16 +23,12 @@ if [ $exitstatus = 0 ]; then
 		"SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
 		"Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
 		"CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
-		"Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
-		"qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;
 		"SABnzbd+" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-menu.sh ;;
 		"NZBGet" ) source $SCRIPTPATH/nzbget/nzbget-menu.sh ;;
 		"Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
 		"Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
 		"Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
 		"HTPC Manager" ) source $SCRIPTPATH/htpcmanager/htpcmanager-menu.sh ;;
-		"Webmin" ) source $SCRIPTPATH/webmin/webmin-menu.sh ;;
-		"Utilities" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
 		"Coming Soon" ) source $SCRIPTPATH/inc/menu-comingsoon.sh ;;
 		"Maintenance" ) source $SCRIPTPATH/maintenance/maintenance-menu.sh ;;
 		*) 

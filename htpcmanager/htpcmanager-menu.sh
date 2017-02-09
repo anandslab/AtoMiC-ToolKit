@@ -6,7 +6,7 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage HTPC Manager" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Back to Main Menu" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage HTPC Manager" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install" "Install HTPC Manager" \
 "Uninstall" "Uninstall HTPC Manager" \
 "Backup" "Backup HTPC Manager settings" \
@@ -24,10 +24,12 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/htpcmanager/htpcmanager-update.sh ;;
-        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;        
-		"Go Back" ) source $SCRIPTPATH/inc/menu-main.sh ;;		
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
+        "Go Back" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;      
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
-    source $SCRIPTPATH/inc/menu-main.sh
+    source $SCRIPTPATH/inc/thankyou.sh
+    echo
+    sleep 1
 fi

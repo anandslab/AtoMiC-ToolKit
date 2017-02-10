@@ -26,6 +26,7 @@ source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-file-del.sh
 source $SCRIPTPATH/inc/app-folders-create.sh
 source $SCRIPTPATH/radarr/radarr-download.sh
+source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-update-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh

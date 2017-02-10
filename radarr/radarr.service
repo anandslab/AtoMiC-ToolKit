@@ -1,0 +1,16 @@
+[Unit]
+Description=Radarr
+After=syslog.target network.target
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+
+Type=simple
+ExecStart=/usr/bin/mono /opt/radarr/Radarr.exe -nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

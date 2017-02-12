@@ -24,7 +24,9 @@ source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/inc/app-file-del.sh
-source $SCRIPTPATH/inc/app-repository-remove.sh 
+source $SCRIPTPATH/emby-server/emby-server-repository-configurator.sh
+source $SCRIPTPATH/inc/app-repository-remove.sh
+sudo rm /var/lib/dpkg/info/emby-server.list >/dev/null 2>&1
 source $SCRIPTPATH/inc/app-uninstall-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

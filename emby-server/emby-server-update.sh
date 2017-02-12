@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script Name: AtoMiC SABnzbd+ Updater
-# Author: htpcBeginner
+# Script Name: AtoMiC Emby-Server Updater
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #

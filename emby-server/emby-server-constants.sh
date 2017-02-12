@@ -18,4 +18,3 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='emby-server.service'
-APPSYSTEMDLOC=$SCRIPTPATH'/emby-server/'$APPSYSTEMD

@@ -11,11 +11,11 @@ echo -e $GREEN"AtoMiC FFmpeg Installer Script"$ENDCOLOR
 
 ARCHDETECT=$(uname -m)
 ARCH=''
-if [ "${ARCH:0:4}" = "armv" ]; then
-    ARCH='release-armhf'
+if [ "${ARCHDETECT:0:4}" = "armv" ]; then
+    ARCH='release-armhf-32bit'
 elif [ "$ARCHDETECT" = 'armel' ]; then
-    ARCH='release-armel'
-elif [ "${ARCH:0:1}" = 'i' ]; then
+    ARCH='release-armel-32bit'
+elif [ "${ARCHDETECT:0:1}" = 'i' ]; then
     ARCH='git-32bit'
 elif [ "$ARCHDETECT" = 'x86_64' ]; then
     ARCH='git-64bit'

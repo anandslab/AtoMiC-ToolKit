@@ -9,7 +9,7 @@
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
-if [ "$DISTNAME" = 'arm' ]; then
+if [ "$ARCHSHORT" = 'arm' ]; then
     TEMPDIST='xUbuntu_14.04'
 fi
 

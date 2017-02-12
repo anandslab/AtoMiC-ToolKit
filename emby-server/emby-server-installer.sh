@@ -29,6 +29,11 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh
+echo "Waiting for $APPTITLE to finish initial setup"
+sleep 30 
+echo "Now stop and start again"
+source $SCRIPTPATH/inc/app-stop.sh 
+source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-install-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh
 source $SCRIPTPATH/inc/exit.sh

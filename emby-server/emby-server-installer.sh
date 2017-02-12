@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Radarr Installer
+# Script Name: AtoMiC Emby Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -18,19 +18,21 @@ source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
-
-source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/utils/mono/mono-installer.sh
-source $SCRIPTPATH/radarr/radarr-constants.sh
 echo
-sleep 1
-source $SCRIPTPATH/inc/app-move-previous.sh
+source $SCRIPTPATH/utils/mono/mono-installer.sh
+source $SCRIPTPATH/emby-server/emby-server-constants.sh
+source $SCRIPTPATH/emby-server/emby-server-repository-configurator.sh
+source $SCRIPTPATH/inc/app-repository-add.sh
+source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
-source $SCRIPTPATH/inc/app-folders-create.sh
-source $SCRIPTPATH/radarr/radarr-download.sh
-source $SCRIPTPATH/inc/app-autostart-configure.sh
+source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
+source $SCRIPTPATH/inc/app-start.sh
+echo "Waiting for $APPTITLE to finish initial setup"
+sleep 30 
+echo "Now stop and start again"
+source $SCRIPTPATH/inc/app-stop.sh 
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-install-confirmation.sh
 source $SCRIPTPATH/inc/thankyou.sh

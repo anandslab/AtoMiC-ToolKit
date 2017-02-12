@@ -17,6 +17,11 @@ if [ -d "/var/run/$APPNAME" ]; then
 sudo rm -r /var/run/$APPNAME
 fi
 
+#Remove a conf file if there is one
+if [ -f /etc/$APPNAME.conf ]; then
+	sudo rm -r /etc/$APPNAME.conf
+fi
+
 echo
 echo -e $YELLOW'--->Removing '$APPTITLE' default Autostart scripts...'$ENDCOLOR
 if [ -f /etc/default/$APPNAME ]; then

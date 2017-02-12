@@ -11,19 +11,24 @@ echo -e $GREEN"AtoMiC FFmpeg Installer Script"$ENDCOLOR
 
 ARCHDETECT=$(uname -m)
 ARCH=''
+TYPE=''
 if [ "${ARCHDETECT:0:4}" = "armv" ]; then
     ARCH='release-armhf-32bit'
+    TYPE='releases'
 elif [ "$ARCHDETECT" = 'armel' ]; then
     ARCH='release-armel-32bit'
+    TYPE='releases'
 elif [ "${ARCHDETECT:0:1}" = 'i' ]; then
     ARCH='git-32bit'
+    TYPE='builds'
 elif [ "$ARCHDETECT" = 'x86_64' ]; then
     ARCH='git-64bit'
+    TYPE='builds'
 fi
 
 if ! [ "$ARCH" = '' ]; then
     echo -e $YELLOW'--->Downloading and extracting files...'$ENDCOLOR
-    URL=https://johnvansickle.com/ffmpeg/builds/ffmpeg-$ARCH-static.tar.xz
+    URL=https://johnvansickle.com/ffmpeg/$TYPE/ffmpeg-$ARCH-static.tar.xz
     echo $URL
     TMP_DIR=$( mktemp -d )
     curl --silent $URL | sudo tar Jx -C $TMP_DIR --strip-components=1

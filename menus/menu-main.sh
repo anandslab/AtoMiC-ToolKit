@@ -17,7 +17,8 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    case "$MAINCHOICE" in 
+    source $SCRIPTPATH/inc/app-constant-reset.sh
+	case "$MAINCHOICE" in 
 		"PVRs" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
 		"Administration Tools" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
 		"Usenet Downloaders" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;

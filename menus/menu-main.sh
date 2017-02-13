@@ -10,7 +10,7 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 "PVRs" "Automatic Media Library Manager" \
 "Administration Tools" "system configuration tools e.g. Webmin" \
 "Usenet Downloaders" "Download binary files from Usenet servers" \
-"Bittorent Clients" "Download Torrents" \
+"Bittorrent Clients" "Download Torrents" \
 "Personal Media Servers" "Organise and serve Media" \
 "Utilities" "Other miscellaneous tools" \
 "Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
@@ -21,7 +21,7 @@ if [ $exitstatus = 0 ]; then
 		"PVRs" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
 		"Administration Tools" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
 		"Usenet Downloaders" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
-		"Bittorent Clients" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
+		"Bittorrent Clients" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
 		"Personal Media Servers" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
 		"Utilities" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
 		"Maintenance" ) source $SCRIPTPATH/maintenance/maintenance-menu.sh ;;

@@ -14,6 +14,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
+    source $SCRIPTPATH/inc/app-constant-reset.sh
     case "$SUBCHOICE" in
 		"NZBGet" ) source $SCRIPTPATH/nzbget/nzbget-menu.sh ;;
 		"NZBHydra" ) source $SCRIPTPATH/nzbhydra/nzbhydra-menu.sh ;;

@@ -13,6 +13,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
+    source $SCRIPTPATH/inc/app-constant-reset.sh
     case "$SUBCHOICE" in
     "Emby" ) source $SCRIPTPATH/emby-server/emby-server-menu.sh ;;
     "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;; 

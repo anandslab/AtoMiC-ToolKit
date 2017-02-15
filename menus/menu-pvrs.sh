@@ -13,24 +13,24 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 "Mylar" "Comics PVR Client" \
 "Radarr" "Works with movies à la Couchpotato." \
 "SickGear" "TV Shows PVR Client" \
-"SickRage" "TV Shows PVR Client" \
-"Sonarr" "TV Shows PVR Client" \
+"SickRage" "Automatic Video Library Manager for TV Shows." \
+"Sonarr" "Smart TV show PVR for newsgroup and bittorrent users." \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
 	case "$SUBCHOICE" in
-		"CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
-		"Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
-		"Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
-		"Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
-		"Radarr" ) source $SCRIPTPATH/radarr/radarr-menu.sh ;;
-		"SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
-		"SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
-		"Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;			
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
+	  "CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
+	  "Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
+	  "Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
+	  "Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
+	  "Radarr" ) source $SCRIPTPATH/radarr/radarr-menu.sh ;;
+	  "SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
+	  "SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
+	  "Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
+	  "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;			
+	  *) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
     source $SCRIPTPATH/inc/thankyou.sh

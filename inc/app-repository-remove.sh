@@ -7,7 +7,7 @@ if [ ! "$APPREPOSITORYLINK" == "" ]; then
         if [ "$REPOPPA" = 'YES' ]; then
             sudo add-apt-repository -r -y $APPREPOSITORYLINK
         else
-            sudo rm /etc/apt/sources.list.d/$APPNAME.list
+            sudo rm /etc/apt/sources.list.d/$APPREPOSITORYNAME.list
             echo 'OK'
         fi
 

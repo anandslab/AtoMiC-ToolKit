@@ -16,11 +16,11 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
     case "$SUBCHOICE" in
-		"Jackett" ) source $SCRIPTPATH/jackett/jackett-menu.sh ;;
-    "qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;
-		"Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
-    "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
+      "Jackett" ) source $SCRIPTPATH/jackett/jackett-menu.sh ;;
+      "qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;
+      "Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
+      "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
+      *) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else
     source $SCRIPTPATH/inc/thankyou.sh

@@ -36,7 +36,7 @@ if [ $exitstatus = 0 ]; then
             source $SCRIPTPATH/inc/pause.sh
             source $SCRIPTPATH/utils/utils-menu.sh
           fi ;;
-      "unrar" ) 
+      "Unrar" ) 
         source $SCRIPTPATH/utils/unrar/unrar-installer.sh
         if [ $exitstatus = 0 ]; then
           source $SCRIPTPATH/inc/pause.sh

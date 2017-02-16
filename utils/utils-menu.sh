@@ -10,7 +10,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would y
 "FFmpeg" "Record, convert and stream audio and video" \
 "Mono" "Open source implementation of Microsoft's .NET Framework" \
 "nzbToMedia" "Provides NZB and Torrent postprocessing" \
-"Unrar" "Raspbian install of Unrar-nonfree" \
+"Unrar" "Raspbian\Debian install of Unrar-nonfree" \
 "Install Bash Aliases" "Allows shortening commands" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 

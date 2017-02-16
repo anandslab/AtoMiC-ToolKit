@@ -19,6 +19,9 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/app-init-remove.sh
+source $SCRIPTPATH/inc/app-systemd-remove.sh
+sleep 1
 source $SCRIPTPATH/inc/app-move-previous.sh
 echo
 

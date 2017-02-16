@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC mono Repo config Script
+# Script Name: AtoMiC Mono Repo config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

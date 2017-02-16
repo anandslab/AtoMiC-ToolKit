@@ -1,9 +1,5 @@
 #!/bin/bash
 echo
-source $SCRIPTPATH/inc/app-init-remove.sh
-source $SCRIPTPATH/inc/app-systemd-remove.sh
-sleep 1
-echo
 echo -e $YELLOW"--->Checking for previous version of $APPTITLE..."$ENDCOLOR
 if [ -d "$APPPATH" ]; then
 	MOVEPATH=$APPPATH"_"`date '+%m-%d-%Y_%H-%M'`

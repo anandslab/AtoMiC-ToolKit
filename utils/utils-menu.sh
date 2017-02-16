@@ -8,6 +8,9 @@ then
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "FFmpeg" "Record, convert and stream audio and video" \
+"Mono" "Open source implementation of Microsoft's .NET Framework" \
+"nzbToMedia" "Provides NZB and Torrent postprocessing" \
+"Unrar" "Raspbian install of Unrar-nonfree" \
 "Install Bash Aliases" "Allows shortening commands" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -21,6 +24,24 @@ if [ $exitstatus = 0 ]; then
             source $SCRIPTPATH/inc/pause.sh
             source $SCRIPTPATH/utils/utils-menu.sh
           fi ;;
+      "Mono" ) 
+          source $SCRIPTPATH/utils/mono/mono-menu.sh
+          if [ $exitstatus = 0 ]; then
+            source $SCRIPTPATH/inc/pause.sh
+            source $SCRIPTPATH/utils/utils-menu.sh
+          fi ;;
+      "nzbToMedia" ) 
+          source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh
+          if [ $exitstatus = 0 ]; then
+            source $SCRIPTPATH/inc/pause.sh
+            source $SCRIPTPATH/utils/utils-menu.sh
+          fi ;;
+      "unrar" ) 
+        source $SCRIPTPATH/utils/unrar/unrar-installer.sh
+        if [ $exitstatus = 0 ]; then
+          source $SCRIPTPATH/inc/pause.sh
+          source $SCRIPTPATH/utils/utils-menu.sh
+        fi ;;
       "Install Bash Aliases" ) source $SCRIPTPATH/utils/bash_aliases-installer.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;

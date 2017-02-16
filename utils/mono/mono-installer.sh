@@ -15,4 +15,5 @@ source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-constant-reset.sh
+echo
 echo -e $GREEN"---> Mono installation complete."$ENDCOLOR

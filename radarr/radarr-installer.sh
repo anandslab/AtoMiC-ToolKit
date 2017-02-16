@@ -22,7 +22,8 @@ echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/utils/mono/mono-installer.sh
 source $SCRIPTPATH/radarr/radarr-constants.sh
-echo
+source $SCRIPTPATH/inc/app-init-remove.sh
+source $SCRIPTPATH/inc/app-systemd-remove.sh
 sleep 1
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/pkgupdate.sh

@@ -22,7 +22,7 @@ echo
 sudo curl "${URL}" | tar -xz
 cd unrar
 echo
-sudo apt-get remove unrar unrar-nonfree -y
+sudo apt-get remove unrar -y
 echo 'Starting Build'
 sudo make
 sudo checkinstall -y --pkgversion="${VERSION}" --pakdir='/var/cache/apt/archives'

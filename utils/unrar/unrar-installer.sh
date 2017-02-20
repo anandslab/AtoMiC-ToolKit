@@ -9,22 +9,23 @@
 
 echo -e $GREEN"AtoMiC Unrar Installer Script"$ENDCOLOR
 
-CODENAME=$(lsb_release -c -s) 
+source $SCRIPTPATH/utils/unrar/unrar-constants.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
 
-case "$CODENAME" in
-  'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
-    sed -i "/non-free/s/^#//g" /etc/apt/sources.list
+cd $(mktemp -d)
 
-    source $SCRIPTPATH/inc/pkgupdate.sh
-    sudo apt-get build-dep unrar-nonfree
-    sudo apt-get source -b unrar-nonfree
-    dpkg -i unrar_*_armhf.deb
-    echo
-    echo -e $GREEN'---> Unrar installation complete.'$ENDCOLOR
-    ;;
-  *)
-    echo -e $RED'You can only usr this script on a Debian\Raspbian distro.'$ENDCOLOR
-    ;;
-esac
+URL=$(curl -s http://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g') # | grep '(?<=href=")[^"]*') 
+echo
+echo -e $YELLOW"URL Found: ${URL}"$ENDCOLOR
+VERSION=$(echo $URL | grep -oP '(?<=unrarsrc-).*(?=.tar)')
+echo -e $YELLOW"Version Found: $VERSION"$ENDCOLOR
+echo
+sudo curl "${URL}" | tar -xz
+cd unrar
+echo
+sudo apt-get remove unrar unrar-nonfree -y
+echo 'Starting Build'
+sudo make
+sudo checkinstall -y --pkgversion="${VERSION}" --pakdir='/var/cache/apt/archives'
 
-
+rm -r $(pwd)

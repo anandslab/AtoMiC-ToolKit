@@ -9,7 +9,6 @@
 
 echo -e $GREEN"AtoMiC Unrar Installer Script"$ENDCOLOR
 
-source $SCRIPTPATH/utils/unrar/unrar-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 
 cd $(mktemp -d)

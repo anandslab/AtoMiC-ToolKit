@@ -9,7 +9,7 @@ fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage FFmpeg" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install\Update" "FFmpeg, FFmpeg-10bit, FFprobe, FFserver" \
 "Uninstall" "FFmpeg, FFmpeg-10bit, FFprobe, FFserver" \
-"Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
+"Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then

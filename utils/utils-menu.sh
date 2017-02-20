@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
       "nzbToMedia" ) 
           source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh ;;
       "Unrar" ) 
-       source $SCRIPTPATH/utils/unrar/unrar-installer.sh ;;
+       source $SCRIPTPATH/utils/unrar/unrar-menu.sh ;;
       "Install Bash Aliases" ) source $SCRIPTPATH/utils/bash_aliases-installer.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;

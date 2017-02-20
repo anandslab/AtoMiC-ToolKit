@@ -7,10 +7,10 @@ then
   exit 0
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage nzbToMedia" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
-"Install" "" \
-"Update" "" \
-"Uninstall" "" \
-"Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
+"Install" "nzbTomedia Scripts" \
+"Update" "nzbTomedia Scripts" \
+"Uninstall" "nzbTomedia Scripts" \
+"Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then

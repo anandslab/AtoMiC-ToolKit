@@ -29,3 +29,4 @@ sudo make
 sudo checkinstall -y --pkgversion="${VERSION}" --pakdir='/var/cache/apt/archives'
 
 rm -r $(pwd)
+cd $SCRIPTPATH

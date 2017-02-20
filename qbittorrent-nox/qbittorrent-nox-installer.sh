@@ -22,16 +22,11 @@ echo
 echo -e $YELLOW'By proceeding you are acceping qBittorrent Legal Notice...'$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 
-echo
-sleep 1
-
+source $SCRIPTPATH/inc/app-autostart-remove.sh
+source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-repository-configurator.sh
 source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
-source $SCRIPTPATH/inc/app-init-remove.sh
-source $SCRIPTPATH/inc/app-systemd-remove.sh
-sleep 1
-source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-install.sh
 
 echo

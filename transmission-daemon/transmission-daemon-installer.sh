@@ -23,9 +23,7 @@ source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/transmission-daemon/transmission-daemon-repository-configurator.sh
 source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
-source $SCRIPTPATH/inc/app-init-remove.sh
-source $SCRIPTPATH/inc/app-systemd-remove.sh
-sleep 1
+source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/app-uninstall-deps.sh
@@ -44,6 +42,8 @@ source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/inc/app-folders-create.sh
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
+source $SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh
 source $SCRIPTPATH/inc/app-start.sh
 sleep 2
 source $SCRIPTPATH/transmission-daemon/transmission-daemon-settings-configurator.sh

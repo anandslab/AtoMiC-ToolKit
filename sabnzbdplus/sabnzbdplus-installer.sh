@@ -20,15 +20,17 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-install-deps.sh
-source $SCRIPTPATH/inc/app-install-pips.sh
+source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-repository-configurator.sh
 source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
-source $SCRIPTPATH/inc/app-autostart-remove.sh
+source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-install-pips.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
+source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh
 source $SCRIPTPATH/inc/app-start.sh
 echo "Waiting for $APPTITLE to finish initial setup"
 sleep 20 

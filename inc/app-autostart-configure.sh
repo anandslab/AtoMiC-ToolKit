@@ -34,5 +34,5 @@ elif [[ -f /etc/init.d/cron && ! -h /etc/init.d/cron ]]; then
 
 else 
     STARTUPTYPE='unknown'
-    echo $RED'Unknown startup type.'$ENDCOLOR
+    echo -e $RED'Unknown startup type.'$ENDCOLOR
 fi

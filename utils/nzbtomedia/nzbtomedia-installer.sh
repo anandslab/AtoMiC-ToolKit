@@ -6,7 +6,7 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
+echo
 echo -e $GREEN"AtoMiC nzbToMedia Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pkgupdate.sh

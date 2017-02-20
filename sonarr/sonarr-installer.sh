@@ -20,18 +20,11 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
-
+source $SCRIPTPATH/inc/app-autostart-remove.sh
+source $SCRIPTPATH/inc/app-move-previous.sh
+source $SCRIPTPATH/inc/app-repository-add.sh
 source $SCRIPTPATH/utils/mono/mono-installer.sh
 source $SCRIPTPATH/sonarr/sonarr-constants.sh
-echo
-sleep 1
-
-source $SCRIPTPATH/inc/app-repository-add.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
-source $SCRIPTPATH/inc/app-init-remove.sh
-source $SCRIPTPATH/inc/app-systemd-remove.sh
-sleep 1
-source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 APPNAME='nzbdrone'
 source $SCRIPTPATH/inc/app-install.sh

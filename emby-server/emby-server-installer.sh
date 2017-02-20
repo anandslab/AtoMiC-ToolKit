@@ -18,13 +18,13 @@ source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
-echo
-source $SCRIPTPATH/utils/mono/mono-installer.sh
-source $SCRIPTPATH/emby-server/emby-server-constants.sh
+source $SCRIPTPATH/inc/pause.sh
+
 source $SCRIPTPATH/emby-server/emby-server-repository-configurator.sh
 source $SCRIPTPATH/inc/app-repository-add.sh
+source $SCRIPTPATH/utils/mono/mono-installer.sh
+source $SCRIPTPATH/emby-server/emby-server-constants.sh
 source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh

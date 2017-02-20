@@ -11,6 +11,7 @@ echo -e $GREEN"AtoMiC nzbToMedia Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh

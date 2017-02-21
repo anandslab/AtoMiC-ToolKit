@@ -19,9 +19,10 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
+source $SCRIPTPATH/inc/app-autostart-remove.sh
+source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
-source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-git-stash.sh

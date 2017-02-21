@@ -21,9 +21,9 @@ echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-stop.sh
-source $SCRIPTPATH/inc/app-file-del.sh
+source $SCRIPTPATH/utils/mono/mono-installer.sh
+source $SCRIPTPATH/radarr/radarr-constants.sh
 source $SCRIPTPATH/inc/app-folders-create.sh
 source $SCRIPTPATH/radarr/radarr-download.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh

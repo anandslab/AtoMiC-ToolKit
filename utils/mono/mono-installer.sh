@@ -6,7 +6,7 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
+echo
 echo -e $GREEN"AtoMiC Mono Installer Script"$ENDCOLOR
 source $SCRIPTPATH/utils/mono/mono-constants.sh
 source $SCRIPTPATH/utils/mono/mono-repository-configurator.sh
@@ -15,4 +15,5 @@ source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-install.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-constant-reset.sh
+echo
 echo -e $GREEN"---> Mono installation complete."$ENDCOLOR

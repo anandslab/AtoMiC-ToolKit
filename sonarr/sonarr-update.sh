@@ -17,14 +17,13 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-source $SCRIPTPATH/sonarr/sonarr-constants.sh
-
 echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/inc/app-stop.sh
+source $SCRIPTPATH/utils/mono/mono-installer.sh
+source $SCRIPTPATH/sonarr/sonarr-constants.sh
 
 APPNAME='nzbdrone'
 source $SCRIPTPATH/inc/app-update.sh

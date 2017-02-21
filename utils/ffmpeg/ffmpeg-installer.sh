@@ -34,6 +34,9 @@ if ! [ "$ARCH" = '' ]; then
     curl --silent $URL | sudo tar Jx -C $TMP_DIR --strip-components=1
     mv $TMP_DIR/ff* /usr/bin
     rm -rf $TMP_DIR
+
+    source $SCRIPTPATH/utils/unrar/unrar-installer.sh
+
     echo -e $GREEN"---> FFmpeg installation complete."$ENDCOLOR
 else
     echo -e $RED'--->Unable to detect architecture to install FFmpeg...'$ENDCOLOR

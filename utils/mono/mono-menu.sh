@@ -6,16 +6,17 @@ then
   echo
   exit 0
 fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage FFmpeg" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
-"Install\Update" "FFmpeg, FFmpeg-10bit, FFprobe, FFserver" \
-"Uninstall" "FFmpeg, FFmpeg-10bit, FFprobe, FFserver" \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Mono" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+"Install" "Mono via repository" \
+"Uninstall" "Mono and remove repository" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
+    source $SCRIPTPATH/utils/mono/mono-constants.sh
     case "$SUBCHOICE" in 
-		"Install\Update" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-uninstaller.sh ;;
+		"Install" ) source $SCRIPTPATH/utils/mono/mono-installer.sh ;;
+		"Uninstall" ) source $SCRIPTPATH/utils/mono/mono-uninstaller.sh ;;
 		"Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

@@ -24,8 +24,6 @@ if [ -d "$APPPATH" ]; then
 	fi
 fi
 
-echo $APPSETTINGSDIR
-
 if [ -d "$APPSETTINGSDIR" ]; then
 	echo -e $GREEN"Do you want to keep the following $APPTITLE settings / data folder for reinstalling later?"$ENDCOLOR
 	echo -e 'Folder to be kept: '$CYAN$APPSETTINGSDIR$ENDCOLOR

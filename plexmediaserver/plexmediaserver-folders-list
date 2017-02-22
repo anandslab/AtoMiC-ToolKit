@@ -1,0 +1,2 @@
+/etc/systemd/system/plexmediaserver.service.d
+/var/lib/plexmediaserver

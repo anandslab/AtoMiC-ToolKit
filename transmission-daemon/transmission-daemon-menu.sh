@@ -11,7 +11,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Transmission" --menu "What
 "Uninstall" "Uninstall Transmission" \
 "Backup" "Backup Transmission settings" \
 "Restore" "Restore Transmission settings from a previous backup" \
-"Manual Update" "Manually update Transmission+" \
+"Manual Update" "Manually update Transmission" \
 "Reset Password" "Reset Transmission WebUI password" \
 "Access Details" "View Transmission access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)

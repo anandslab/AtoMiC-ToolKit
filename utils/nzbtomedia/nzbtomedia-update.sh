@@ -13,8 +13,9 @@ source $SCRIPTPATH/inc/header.sh
 echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
 source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-git-update.sh

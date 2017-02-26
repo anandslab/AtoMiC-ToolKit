@@ -12,6 +12,13 @@ if [[ ! -z $APPSYSTEMDLOC ]]; then
     echo "$APPSYSTEMD SystemD script added and enabled"
 fi
 
+if [[ ! -z $APPSYSTEMDLOC2 ]]; then
+    sudo cp "$APPSYSTEMDLOC2" /etc/systemd/system/$APPSYSTEMD2 || { echo -e $RED'Creating second systemd file failed.'$ENDCOLOR ; exit 1; }
+    sudo chmod 644 /etc/systemd/system/$APPSYSTEMD2
+    sudo systemctl enable $APPSYSTEMD2
+    echo "$APPSYSTEMD2 SystemD script added and enabled"
+fi
+
 # Some apps require an override to prevent the systemd file getting overwritten
 if [[ ! -z $APPSYSTEMDOVERIDE ]]; then
     sudo cp "$APPSYSTEMDOVERIDE" /etc/systemd/system/$APPNAME.service.d/override.conf || { echo -e $RED'Creating systemd override file failed.'$ENDCOLOR ; exit 1; }

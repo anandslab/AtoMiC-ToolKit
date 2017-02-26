@@ -19,6 +19,6 @@ source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-git-update.sh
-source $SCRIPTPATH/inc/app-constant-reset.sh
 echo
 echo -e $GREEN"AtoMiC $APPTITLE Update Complete"$ENDCOLOR
+source $SCRIPTPATH/inc/app-constant-reset.sh

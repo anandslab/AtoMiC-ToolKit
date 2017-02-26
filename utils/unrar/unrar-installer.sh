@@ -8,7 +8,7 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 echo -e $GREEN"AtoMiC Unrar Installer Script"$ENDCOLOR
-
+source $SCRIPTPATH/utils/unrar/unrar-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 
 cd $(mktemp -d)
@@ -25,7 +25,9 @@ echo
 sudo apt-get remove unrar -y
 echo 'Starting Build'
 sudo make
-sudo checkinstall -y --pkgversion="${VERSION}" --pakdir='/var/cache/apt/archives'
+sudo checkinstall -y --pkgversion="1:${VERSION}" --pakdir='/var/cache/apt/archives'
 
 rm -r $(pwd)
 cd $SCRIPTPATH
+source $SCRIPTPATH/inc/app-constant-reset.sh
+echo -e $GREEN"---> Unrar installation complete."$ENDCOLOR

@@ -7,6 +7,7 @@ then
   exit 0
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+"Deluge" "Lightweight, Full-featured BitTorrent client." \
 "Jackett" "API Support for your favorite private trackers" \
 "qBittorrent" "an open-source software alternative to µTorrent" \
 "Transmission" "Fast, easy, and free BitTorrent client" \
@@ -16,6 +17,7 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
     case "$SUBCHOICE" in
+      "Deluge" ) source $SCRIPTPATH/deluged/deluged-menu.sh ;;
       "Jackett" ) source $SCRIPTPATH/jackett/jackett-menu.sh ;;
       "qBittorrent" ) source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh ;;
       "Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;

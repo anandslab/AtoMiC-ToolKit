@@ -16,7 +16,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Installer Script'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Installer Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-autostart-remove.sh
@@ -34,6 +34,7 @@ echo
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
+source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
 source $SCRIPTPATH/nzbget/nzbget-constants.sh
 source $SCRIPTPATH/inc/app-start.sh

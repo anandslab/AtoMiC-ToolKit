@@ -23,8 +23,8 @@ source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/utils/mono/mono-installer.sh
-source $SCRIPTPATH/emby-server/emby-server-constants.sh
 source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
+source $SCRIPTPATH/emby-server/emby-server-constants.sh
 source $SCRIPTPATH/inc/app-update.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-update-confirmation.sh

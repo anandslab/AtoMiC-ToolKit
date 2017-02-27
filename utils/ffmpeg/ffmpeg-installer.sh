@@ -41,3 +41,5 @@ if [[ ! -z $ARCH ]]; then
 else
     echo -e $RED'--->Unable to detect architecture to install FFmpeg...'$ENDCOLOR
 fi
+
+source $SCRIPTPATH/inc/app-constant-reset.sh

@@ -8,6 +8,7 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 echo -e $GREEN"AtoMiC Unrar Installer Script"$ENDCOLOR
+source $SCRIPTPATH/inc/app-constant-reset.sh
 source $SCRIPTPATH/utils/unrar/unrar-constants.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 

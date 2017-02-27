@@ -11,6 +11,7 @@ source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
 echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
+source $SCRIPTPATH/inc/app-constant-reset.sh
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/pkgupdate.sh

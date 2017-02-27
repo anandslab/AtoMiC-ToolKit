@@ -6,6 +6,8 @@
 #
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+source $SCRIPTPATH/inc/app-constant-reset.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh
 if [ ! -d "$APPPATH" ]; then
     echo
     echo -e $GREEN"AtoMiC nzbToMedia Installer Script"$ENDCOLOR

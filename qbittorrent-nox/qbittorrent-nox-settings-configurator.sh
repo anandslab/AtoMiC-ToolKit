@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Transmission settings configurator
+# Script Name: AtoMiC qBittorrent settings configurator
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-echo -e $YELLOW'--->Configuring Transmission Settings...'$ENDCOLOR
+echo -e $YELLOW'--->Configuring qBittorrent Settings...'$ENDCOLOR
 
 #Set username
 sudo sed -i "s@UNAME@$UNAME@g" $APPSETTINGS  || { echo -e $RED"Modifying UNAME in $APPSETTINGS file failed."$ENDCOLOR; exit 1; }

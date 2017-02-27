@@ -36,7 +36,7 @@ source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
 source $SCRIPTPATH/deluged/deluged-constants.sh
 source $SCRIPTPATH/inc/app-start.sh
-sleep 2
+sleep 10
 source $SCRIPTPATH/inc/app-stop.sh
 source $SCRIPTPATH/deluged/deluged-settings-configurator.sh
 source $SCRIPTPATH/inc/app-start.sh

@@ -38,4 +38,5 @@ if [[ ! $CURRENTUNRAR = "1:${VERSION}-1" ]] ; then
     echo -e $GREEN"---> Unrar installation complete."$ENDCOLOR
 else
     echo -e $GREEN"---> Unrar update not required."$ENDCOLOR
+    echo
 fi

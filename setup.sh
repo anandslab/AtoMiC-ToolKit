@@ -77,6 +77,14 @@ fi
 sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
 sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
 sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
+
+if [[ ! -d '/opt' ]]; then
+	mkdir /opt
+	sudo chown -R $UNAME:$UGROUP /opt >/dev/null 2>&1
+	sudo chmod -R 775 /opt >/dev/null 2>&1
+	sudo chmod -R g+s /opt >/dev/null 2>&1
+	echo -e 'opt dir created.'
+fi
     
 source $SCRIPTPATH/inc/header.sh
 source $SCRIPTPATH/menus/menu-main.sh

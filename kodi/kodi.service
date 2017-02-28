@@ -1,0 +1,20 @@
+[Unit]
+Description=Kodi
+
+# if you don't need the MySQL DB backend, this should be sufficient
+After=systemd-user-sessions.service network.target sound.target
+
+# if you need the MySQL DB backend, use this block instead of the previous
+# After=systemd-user-sessions.service network.target sound.target mysql.service
+# Wants=mysql.service
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+Type=simple
+ExecStart=/usr/bin/xinit /usr/bin/dbus-launch --exit-with-session /usr/bin/kodi-standalone -- :0 -nolisten tcp vt7
+Restart=on-abort
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

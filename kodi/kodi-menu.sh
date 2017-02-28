@@ -8,6 +8,8 @@ then
 fi
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Kodi" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "Install" "Install Kodi" \
+"Enable" "Kodi to Launch on Boot" \
+"Disable" "Kodi to Launch on Boot" \
 "Uninstall" "Uninstall Kodi" \
 "Manual Update" "Manually update Kodi" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -17,6 +19,12 @@ if [ $exitstatus = 0 ]; then
 	source $SCRIPTPATH/kodi/kodi-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/kodi/kodi-installer.sh ;;
+    "Enable" ) source $SCRIPTPATH/inc/app-autostart-configure.sh 
+               source $SCRIPTPATH/inc/pause.sh
+               source $SCRIPTPATH/kodi/kodi-menu.sh;;
+    "Disable" ) source $SCRIPTPATH/inc/app-autostart-remove.sh 
+                source $SCRIPTPATH/inc/pause.sh
+                source $SCRIPTPATH/kodi/kodi-menu.sh;;
 		"Uninstall" ) source $SCRIPTPATH/kodi/kodi-uninstaller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/kodi/kodi-update.sh ;;
 		"Go Back" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;

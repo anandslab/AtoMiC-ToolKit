@@ -19,11 +19,9 @@ if [ $exitstatus = 0 ]; then
 	source $SCRIPTPATH/kodi/kodi-constants.sh
     case "$SUBCHOICE" in 
 		"Install" ) source $SCRIPTPATH/kodi/kodi-installer.sh ;;
-    "Enable" ) source $SCRIPTPATH/inc/app-autostart-configure.sh 
-               source $SCRIPTPATH/inc/pause.sh
+    "Enable" ) source $SCRIPTPATH/kodi/kodi-enable-startup.sh
                source $SCRIPTPATH/kodi/kodi-menu.sh;;
-    "Disable" ) source $SCRIPTPATH/inc/app-autostart-remove.sh 
-                source $SCRIPTPATH/inc/pause.sh
+    "Disable" ) source $SCRIPTPATH/kodi/kodi-remove-startup.sh 
                 source $SCRIPTPATH/kodi/kodi-menu.sh;;
 		"Uninstall" ) source $SCRIPTPATH/kodi/kodi-uninstaller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/kodi/kodi-update.sh ;;

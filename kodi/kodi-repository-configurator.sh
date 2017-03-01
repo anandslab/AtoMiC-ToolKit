@@ -15,7 +15,8 @@ if [ "$ARCHSHORT" = 'arm' ]; then
     APPREPOSITORYLINK="deb http://pipplware.pplware.pt/pipplware/dists/jessie/main/binary /"
     APPREPOSITORYLINKBACKUP="deb http://pipplware.pplware.pt/pipplware/dists/jessie/armv7/binary/ /"
     REPRECVKEYSASC="http://pipplware.pplware.pt/pipplware/key.asc"
-    REPRECVKEYSHORT=''
+    REPRECVKEYSHORT='BAA567BB'
+    REPOKEYSREQ='YES'
 else
     APPREPOSITORYNAME='team-xbmc'
     REPOPPA='YES'

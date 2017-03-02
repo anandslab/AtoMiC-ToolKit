@@ -27,15 +27,9 @@ if [ $exitstatus = 0 ]; then
       "Install Bash Aliases" ) source $SCRIPTPATH/utils/bash_aliases-installer.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo
     sleep 1
-fi
-
-if [ $exitstatus = 0 ]; then
-    source $SCRIPTPATH/inc/app-constant-reset.sh
-    source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/utils/utils-menu.sh
 fi

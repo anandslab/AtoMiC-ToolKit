@@ -29,7 +29,7 @@ if [ $exitstatus = 0 ]; then
         "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
-        "Go Back" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
+        "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

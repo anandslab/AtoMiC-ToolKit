@@ -12,7 +12,6 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage pyLoad" --menu "What would
 "Backup" "Backup pyLoad settings" \
 "Restore" "Restore pyLoad settings from a previous backup" \
 "Manual Update" "Manually update pyLoad" \
-"Reset Password" "Reset pyLoad WebUI password" \
 "Access Details" "View pyLoad access details" \
 "Access Switch" "Toggle pyLoad UI network accessibility" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -26,7 +25,6 @@ if [ $exitstatus = 0 ]; then
 		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
 		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/pyload/pyload-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
         "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
         "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;

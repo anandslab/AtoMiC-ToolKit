@@ -41,7 +41,7 @@ Features features of AtoMiC ToolKit include:
 <li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
-<li>pyLoad - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>
 <li>qBittorrent - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Radarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>SABnzbd+ - Install, Uninstall, Reset Password, Update and Backup / Restore</li>

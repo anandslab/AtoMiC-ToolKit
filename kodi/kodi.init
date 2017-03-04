@@ -16,7 +16,7 @@
 DAEMON=/usr/bin/xinit
 
 # startup args
-DAEMON_OPTS=" /usr/local/bin/kodi-standalone -- :0"
+DAEMON_OPTS=" /usr/bin/dbus-launch --exit-with-session /usr/bin/kodi-standalone -- :0 -nolisten tcp vt7"
 
 # script name
 NAME=kodi

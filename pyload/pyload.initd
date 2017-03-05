@@ -9,7 +9,7 @@
 ### END INIT INFO
  
 NAME=pyLoad
-DAEMON=/usr/bin/pyLoadCore
+DAEMON=/opt/pyload/pyLoadCore.py
 USER=ReplaceMe
 PIDFILE=/var/run/$NAME.pid
 OPTIONS="--daemon"

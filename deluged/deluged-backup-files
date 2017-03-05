@@ -1,1 +1,2 @@
-APPPATH
+APPPATH/web.conf
+APPPATH/core.conf

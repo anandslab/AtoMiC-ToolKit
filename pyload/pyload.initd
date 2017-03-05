@@ -1,0 +1,53 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides: pyload
+# Required-Start: $local_fs $remote_fs $network
+# Required-Stop: $local_fs $remote_fs $network
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start or stop pyload.
+### END INIT INFO
+ 
+NAME=pyLoad
+DAEMON=/opt/pyload/pyLoadCore.py
+USER=ReplaceMe
+PIDFILE=/var/run/$NAME.pid
+OPTIONS="--daemon"
+ 
+export PATH="${PATH:+$PATH:}/sbin"
+ 
+[ -x $DAEMON ] || exit 0
+ 
+. /lib/lsb/init-functions
+ 
+start_daemon () {
+    start-stop-daemon --start --pidfile $PIDFILE --chuid $USER --exec $DAEMON -- $OPTIONS | cut -d" " -f 3 > $PIDFILE
+}
+ 
+stop_daemon () {
+    start-stop-daemon --stop --retry="TERM/15/KILL/5" --pidfile "$PIDFILE" --user "$USER" --chuid "$USER" 
+}
+ 
+case "$1" in
+    start)
+       log_daemon_msg "Starting pyLoadCore" "$NAME"
+       start_daemon
+       log_end_msg 0
+       ;;
+    stop)
+       log_daemon_msg "Stopping pyLoadCore" "$NAME"
+       stop_daemon
+       log_end_msg 0
+       ;;
+    restart)
+       log_daemon_msg "Restarting pyLoadCore" "$NAME"
+       stop_daemon
+       start_daemon
+       log_end_msg 0
+       ;;
+    *)
+       echo "Usage: /etc/init.d/$NAME {start|stop|restart}"
+       exit 2
+       ;;
+esac
+exit 0

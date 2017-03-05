@@ -33,7 +33,9 @@ else
 fi
 
 if [ -f /etc/systemd/system/$APPSYSTEMD ]; then
- echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
+	echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
+elif [ -f /lib/systemd/system/$APPSYSTEMD ]; then
+	echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
 else
   ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
 fi

@@ -1,0 +1,62 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          kodi
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts instance of Kodi
+# Description:       starts instance of Kodi using start-stop-daemon and xinit
+### END INIT INFO
+
+############### EDIT ME ##################
+
+# path to xinit exec
+DAEMON=/usr/bin/xinit
+
+# startup args
+DAEMON_OPTS=" /usr/bin/dbus-launch --exit-with-session /usr/bin/kodi-standalone -- :0 -nolisten tcp vt7"
+
+# script name
+NAME=kodi
+
+# app name
+DESC=Kodi
+
+# user
+RUN_AS=ReplaceMe
+
+# Path of the PID file
+PID_FILE=/var/run/kodi.pid
+
+############### END EDIT ME ##################
+
+test -x $DAEMON || exit 0
+
+set -e
+
+case "$1" in
+  start)
+        echo "Starting $DESC"
+        start-stop-daemon --start -c $RUN_AS --background --pidfile $PID_FILE  --make-pidfile --exec $DAEMON -- $DAEMON_OPTS
+        ;;
+  stop)
+        echo "Stopping $DESC"
+        start-stop-daemon --stop --pidfile $PID_FILE
+        ;;
+
+  restart|force-reload)
+        echo "Restarting $DESC"
+        start-stop-daemon --stop --pidfile $PID_FILE
+        sleep 5
+        start-stop-daemon --start -c $RUN_AS --background --pidfile $PID_FILE  --make-pidfile --exec $DAEMON -- $DAEMON_OPTS
+        ;;
+  *)
+        N=/etc/init.d/$NAME
+        echo "Usage: $N {start|stop|restart|force-reload}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

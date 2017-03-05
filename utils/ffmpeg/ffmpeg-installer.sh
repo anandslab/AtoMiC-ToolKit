@@ -26,7 +26,7 @@ elif [ "$ARCHDETECT" = 'x86_64' ]; then
     TYPE='builds'
 fi
 
-if ! [ "$ARCH" = '' ]; then
+if [[ ! -z $ARCH ]]; then
     echo -e $YELLOW'--->Downloading and extracting files...'$ENDCOLOR
     URL=https://johnvansickle.com/ffmpeg/$TYPE/ffmpeg-$ARCH-static.tar.xz
     echo $URL
@@ -41,3 +41,5 @@ if ! [ "$ARCH" = '' ]; then
 else
     echo -e $RED'--->Unable to detect architecture to install FFmpeg...'$ENDCOLOR
 fi
+
+source $SCRIPTPATH/inc/app-constant-reset.sh

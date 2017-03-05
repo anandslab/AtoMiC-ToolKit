@@ -17,32 +17,40 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 </table>
 
 <h2>Compatibility</h2>
-Compatible with Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. Development will focus mainly on compatibility with Ubuntu LTS releases. While testing has been mainly on 14.04, this toolkit may also work on 14.10, 15.04, and 15,10. Some users have reported that it also works on Raspbian on Raspberry Pi. 
+Compatible with Latest Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. 
+Development will focus mainly on compatibility with current Ubuntu\Debian\Raspbian releases. 
+Testing has been mainly on Linux Mint 18.1 and Raspbian Jessie. 
 
 <h2>Key Features</h2>
 Features features of AtoMiC ToolKit include:
 <ul>
-<li>Works on Ubuntu, Ubuntu Server, and other Ubuntu variants including Xubuntu, Lubuntu, Kubuntu, and more</li>
 <li>Almost entirely automated</li>
 <li>Very little commandline work</li>
 <li>User and newbie-friendly</li>
 <li>One-stop shop
 <ul>
-<li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
-<li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>SickGear - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>Sonarr (formerly NzbDrone) - Install, Uninstall, Update and Backup / Restore</li>
 <li>CouchPotato - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>qBittorrent WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>SABnzbd+ - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
+<li>Deluge - Install, Uninstall, Update and Backup / Restore</li>
+<li>Emby - Install, Uninstall, Update and Backup / Restore</li>
 <li>Headphones - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
-<li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>HTPC Manager - Install, Uninstall, Update and Backup / Restore</li>
+<li>Jackett - Install, Uninstall, Update and Backup / Restore</li>
+<li>Kodi - Install, Uninstall Autoboot enable and Update</li>
+<li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
+<li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
+<li>Plex - Install, Uninstall, Update and Backup / Restore</li>
+<li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>
+<li>qBittorrent - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Radarr - Install, Uninstall, Update and Backup / Restore</li>
+<li>SABnzbd+ - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>SickGear - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Sonarr - Install, Uninstall, Update and Backup / Restore</li>
+<li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - Plex, Deluge, ShellInABox, Emby, Monit, Apache, MySQL, MusicBrainz, RTorrent/RUTorrent, etc.</li>
+<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, PlexPy, Rtorrent/rutorrent, ShellInABox, Subsonic, Tvheadend, Utorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

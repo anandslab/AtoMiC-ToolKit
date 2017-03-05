@@ -17,11 +17,10 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN'AtoMiC '$APPTITLE' Access Details'$ENDCOLOR
+echo -e $GREEN"AtoMiC $APPTITLE Access Details"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
-#source $SCRIPTPATH/inc/app-settings-check.sh
 
 source $SCRIPTPATH/inc/app-port-search.sh
 source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
@@ -34,12 +33,12 @@ source $SCRIPTPATH/inc/app-system-details.sh
 source $SCRIPTPATH/inc/app-access-urls.sh
 source $SCRIPTPATH/inc/app-access-credentials.sh
 
-if ! [ "$ACCESSHOST" == 'NA' ]; then
-  if grep -Exq "${ACCESSHOST}localhost" $APPSETTINGS
+if [[ ! $ACCESSHOST = 'NA' ]]; then
+  if grep -Exq "${ACCESSHOST}localhost" "$APPSETTINGS"
     then
       echo -e $RED'WARNING: '$ENDCOLOR'You can only access '$APPTITLE' on localhost.'
     else
-      echo -e $GREEN'GOOD: '$ENDCOLOR''$APPTITLE' is accessible outside localhost. Run Access Switch to restrict to localhost.'
+      echo -e $GREEN'GOOD: '$ENDCOLOR''$APPTITLE' is accessible outside localhost.'
   fi
 fi
 

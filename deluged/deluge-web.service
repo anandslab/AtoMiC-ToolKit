@@ -1,0 +1,17 @@
+[Unit]
+Description=Deluge-Web
+After=network-online.target
+
+[Service]
+Type=simple
+
+User=ReplaceMe
+Group=ReplaceMe
+UMask=027
+
+ExecStart=/usr/bin/deluge-web -l /var/log/deluge/web.log -L warning
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

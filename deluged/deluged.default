@@ -1,0 +1,8 @@
+# Defaults for deluged initscript
+# sourced by /etc/init.d/deluged
+
+# The init.d script will only run if this variable non-empty.
+DELUGED_USER="ReplaceMe"             
+
+# Should we run at startup?
+RUN_AT_STARTUP="YES"

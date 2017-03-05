@@ -20,13 +20,13 @@ DESC="Deluge Daemon"
 NAME1="deluged"
 NAME2="deluge"
 DAEMON1=/usr/bin/deluged
-DAEMON1_ARGS="-d -L warning -l /var/log/deluge/daemon/warning.log"             # Consult `man deluged` for more options
+DAEMON1_ARGS="-d -l /var/log/deluge/daemon.log -L warning" # Consult `man deluged` for more options
 DAEMON2=/usr/bin/deluge-web
-DAEMON2_ARGS="-L warning -l /var/log/deluge/web/warning.log"               # Consult `man deluge-web` for more options
-PIDFILE1=/var/run/deluge/$NAME1.pid
-PIDFILE2=/var/run/deluge/$NAME2.pid
+DAEMON2_ARGS="-l /var/log/deluge/web.log -L warning" # Consult `man deluge-web` for more options
+PIDFILE1=/var/run/$NAME1.pid
+PIDFILE2=/var/run/$NAME2.pid
 UMASK=022                     # Change this to 0 if running deluged as its own user
-PKGNAME=deluge-daemon
+PKGNAME=deluged
 SCRIPTNAME=/etc/init.d/$PKGNAME
 
 # Exit if the package is not installed

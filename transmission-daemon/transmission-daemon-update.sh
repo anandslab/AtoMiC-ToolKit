@@ -22,7 +22,8 @@ echo -e $GREEN"AtoMiC $APPTITLE Update Script"$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 source $SCRIPTPATH/inc/app-stop.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
+source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-update.sh
+source $SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh
 source $SCRIPTPATH/inc/app-update.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-update-confirmation.sh

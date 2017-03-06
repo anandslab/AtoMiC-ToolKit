@@ -1,0 +1,8 @@
+# This file is sourced by /etc/init.d/PlexPy
+#
+# When PlexPy is started using the init script
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+#$RUN_AS, username to run PlexPy under, the default is PlexPy
+HP_USER=

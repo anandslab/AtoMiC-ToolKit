@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
 		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/jackett/jackett-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;		
-		"Go Back" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
+		"Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

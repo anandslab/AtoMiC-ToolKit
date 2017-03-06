@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
                 source $SCRIPTPATH/kodi/kodi-menu.sh;;
 		"Uninstall" ) source $SCRIPTPATH/kodi/kodi-uninstaller.sh ;;
 		"Manual Update" ) source $SCRIPTPATH/kodi/kodi-update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-personal-home-theater.sh ;;
+		"Go Back" ) source $SCRIPTPATH/menus/menu-home-theater.sh ;;
 		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac
 else

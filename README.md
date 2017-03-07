@@ -51,12 +51,12 @@ Features features of AtoMiC ToolKit include:
 <li>Sonarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, PlexPy, Rtorrent/rutorrent, ShellInABox, Subsonic, Tvheadend, Utorrent, etc.</li>
+<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, Rtorrent/rutorrent, ShellInABox, Subsonic, Tvheadend, Utorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>
 <li>Correctly sets required permissions for trouble free operation</li>
-<li>And best of all its FREE! (please consider donating if toolkit helps you.</li>
+<li>And best of all its FREE! Please consider donating if toolkit helps you.</li>
 </ul>
 
 Note that AtoMiC ToolKit will be in continueous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 

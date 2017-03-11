@@ -12,4 +12,4 @@ OUTPUT="$(curl -s https://api.github.com/repos/tidusjar/Ombi/releases| grep brow
 echo "${OUTPUT}"
 echo
 echo -e $YELLOW'--->Downloading and extracting files...'$ENDCOLOR
-sudo curl -L "${OUTPUT}" | tar -xzf - -C $APPPATH --strip-components=1
+sudo curl -L "${OUTPUT}" | unzip - -d $APPPATH

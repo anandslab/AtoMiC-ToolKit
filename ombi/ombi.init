@@ -16,7 +16,7 @@
 . /lib/lsb/init-functions
  
 DAEMON_NAME="Ombi"
-DAEMON_USER=htpcguides
+DAEMON_USER=ReplaceMe
 DAEMON_PATH="/usr/bin/mono"
 DAEMON_OPTS="Ombi.exe"
 DAEMON_PWD="/opt/ombi/"

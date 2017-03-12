@@ -11,7 +11,7 @@ if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then
 
     source $SCRIPTPATH/$APPNAME/$APPNAME-systemd-update.sh
 
-elif [ -f /etc/init.d/cron ] && [ ! -h /etc/init.d/cron ]; then 
+elif [ -d /etc/init.d ]; then 
     echo 'Using sysv-init'
 
     source $SCRIPTPATH/inc/app-systemd-remove.sh >/dev/null

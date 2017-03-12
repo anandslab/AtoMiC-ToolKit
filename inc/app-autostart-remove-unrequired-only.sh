@@ -8,7 +8,7 @@ if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then
     source $SCRIPTPATH/inc/app-init-remove.sh >/dev/null
     sudo systemctl daemon-reload
     sudo systemctl enable $APPSYSTEMD 
-elif [ -f /etc/init.d/cron ] && [ ! -h /etc/init.d/cron ]; then 
+elif [ -d /etc/init.d ]; then 
     echo 'Using sysv-init so removing any systemd files'
     
     source $SCRIPTPATH/inc/app-systemd-remove.sh >/dev/null

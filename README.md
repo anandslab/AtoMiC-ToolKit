@@ -40,6 +40,7 @@ Features features of AtoMiC ToolKit include:
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
+<li>Ombi - Install, Uninstall, Update and Backup / Restore</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
 <li>PlexPy - Install, Uninstall, Update and Backup / Restore</li>
 <li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>

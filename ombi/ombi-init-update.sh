@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi init.d update
-# Author: TommyE123
+# Author: mgiljum
 # Publisher: http://www.htpcbeginner.com
 #
 

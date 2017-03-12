@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi Systemd Update
-# Author: TommyE123
+# Author: mgiljum
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #

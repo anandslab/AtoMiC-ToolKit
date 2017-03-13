@@ -15,6 +15,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 "SickGear" "TV Shows PVR Client" \
 "SickRage" "Automatic Video Library Manager for TV Shows." \
 "Sonarr" "Smart TV show PVR for newsgroup and bittorrent users." \
+"Watcher" "Automated movie NZB searcher and snatcher" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -29,6 +30,7 @@ if [ $exitstatus = 0 ]; then
 	  "SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
 	  "SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
 	  "Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
+		"Watcher" ) source $SCRIPTPATH/watcher/watcher-menu.sh ;;
 	  "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;			
 	  *) source $SCRIPTPATH/inc/invalid-option.sh ;;
 	esac

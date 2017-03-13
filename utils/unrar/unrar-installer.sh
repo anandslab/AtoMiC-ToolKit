@@ -14,7 +14,7 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 
 cd $(mktemp -d)
 
-URL=$(curl -s http://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g') # | grep '(?<=href=")[^"]*') 
+URL=$(curl -s http://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g') 
 echo
 echo -e $YELLOW"URL Found: ${URL}"$ENDCOLOR
 VERSION=$(echo $URL | grep -oP '(?<=unrarsrc-).*(?=.tar)')
@@ -32,11 +32,12 @@ if [[ ! $CURRENTUNRAR = "1:${VERSION}-1" ]] ; then
     sudo make
     sudo checkinstall -y --pkgversion="1:${VERSION}" --pakdir='/var/cache/apt/archives'
 
-    rm -r $(pwd)
-    cd $SCRIPTPATH
-    source $SCRIPTPATH/inc/app-constant-reset.sh
     echo -e $GREEN"---> Unrar installation complete."$ENDCOLOR
 else
     echo -e $GREEN"---> Unrar update not required."$ENDCOLOR
     echo
 fi
+
+rm -r $(pwd)
+cd $SCRIPTPATH
+source $SCRIPTPATH/inc/app-constant-reset.sh

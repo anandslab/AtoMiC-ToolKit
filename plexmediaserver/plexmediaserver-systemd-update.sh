@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC SABnzbd systemd update
+# Script Name: AtoMiC Plex Media Server systemd update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

@@ -9,7 +9,7 @@ APPGIT='https://github.com/theotherp/nzbhydra'
 APPDPORT='5075'
 APPSETTINGS=$APPPATH'/nzbhydra.cfg'
 ACCESSHOST='NA'
-PORTSEARCH='NA'
+PORTSEARCH='"port":'
 USERSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'

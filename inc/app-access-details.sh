@@ -27,12 +27,12 @@ then
   source $SCRIPTPATH/inc/app-port-search.sh
   source $SCRIPTPATH/inc/db-app-user-search.sh  >/dev/null
   source $SCRIPTPATH/inc/db-app-password-search.sh  >/dev/null
-  echo "I did a grep for the port and a DB query for the creds"
+  #echo "I did a grep for the port and a DB query for the creds"
 else
   source $SCRIPTPATH/inc/app-port-search.sh
   source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
   source $SCRIPTPATH/inc/app-password-search.sh  >/dev/null
-  echo "I'm doing a grep text search for port and creds"
+  #echo "I'm doing a grep text search for port and creds"
 fi
 
 APPDEPS+=" dnsutils"

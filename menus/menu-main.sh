@@ -6,9 +6,6 @@ then
   echo
   exit 0
 fi
-
-APPSETTINGSTYPE='NA'
-
 MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
 "PVRs" "Automatic Media Library Manager" \
 "Usenet Downloaders" "Download binary files from Usenet servers" \

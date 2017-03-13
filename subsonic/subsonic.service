@@ -1,0 +1,13 @@
+[Unit]
+Description=Subsonic
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+Type=forking
+ExecStart=/usr/bin/subsonic
+Restart=on-failure
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target

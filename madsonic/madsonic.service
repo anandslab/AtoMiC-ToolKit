@@ -1,0 +1,13 @@
+[Unit]
+Description=Madsonic
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+Type=forking
+ExecStart=/usr/bin/madsonic
+Restart=on-failure
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target

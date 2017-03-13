@@ -22,9 +22,18 @@ echo -e $GREEN"AtoMiC $APPTITLE Access Details"$ENDCOLOR
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh
 
-source $SCRIPTPATH/inc/app-port-search.sh
-source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
-source $SCRIPTPATH/inc/app-password-search.sh  >/dev/null
+if [[ $APPSETTINGSTYPE == "DB" ]]
+then
+  source $SCRIPTPATH/inc/app-port-search.sh
+  source $SCRIPTPATH/inc/db-app-user-search.sh  >/dev/null
+  source $SCRIPTPATH/inc/db-app-password-search.sh  >/dev/null
+  #echo "I did a grep for the port and a DB query for the creds"
+else
+  source $SCRIPTPATH/inc/app-port-search.sh
+  source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
+  source $SCRIPTPATH/inc/app-password-search.sh  >/dev/null
+  #echo "I'm doing a grep text search for port and creds"
+fi
 
 APPDEPS+=" dnsutils"
 source $SCRIPTPATH/inc/app-install-deps.sh

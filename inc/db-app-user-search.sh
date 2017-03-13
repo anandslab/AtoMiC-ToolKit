@@ -7,14 +7,6 @@ if [ "$DBUSERSEARCH" == "NA" ] || [ "$APPSETTINGSDB" == "NA" ]; then
     UINAME='Cannot determine or username not set.'
 else
 	UINAME=$(echo "$DBUSERSEARCH" | sqlite3 "$APPSETTINGSDB")
-	#echo 'Search String: '$USERSEARCH
-    #echo 'Search Output: '$UINAMESTRING
-    #UINAME=${UINAMESTRING##*$USERSEARCH}
-    #echo 'Everything after usersearch: '$UINAME
-	#UINAME=$(cut -d "=" -f 2 <<< "$UINAMESTRING")
-	#UINAME=${UINAME//[[:blank:]]/}
-    #UINAME=$(echo "$UINAME" | tr -dc '[:alnum:]')
-	#echo 'Final username: '$UINAME
     
 	if [ ! -z "$UINAME" ] && [ $UINAME != '""' ]; then
 		echo -e 'Found. Using username: '$UINAME;

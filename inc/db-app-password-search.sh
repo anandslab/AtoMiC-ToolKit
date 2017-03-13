@@ -6,12 +6,6 @@ if [ "$DBPASSSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
     echo -e 'Incompatibility. Cannot determine password.'
 else
 	UIPASS=$(echo "$DBPASSSEARCH" | sqlite3 "$APPSETTINGS")
-    #echo 'Search String: '$PASSSEARCH
-    #echo 'Search Output: '$UIPASSSTRING
-    #UIPASS=${UIPASSSTRING##*$PASSSEARCH}
-    #echo 'Everything after usersearch: '$UIPASS
-    #UIPASS=$(cut -d "=" -f 2 <<< "$UIPASSSTRING")
-	#UIPASS=${UIPASS//[[:blank:]]/}
     if [ "$PASSSEARCH" != "NA" ] && [ "$APPNEWPASS" == "atomic" ]; then
     	UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
         

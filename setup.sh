@@ -64,7 +64,7 @@ updateall=0;
 export ARGS=$(getopt -o "i:u:b:r:m:p:a:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
 
 #sleep 1
-echo $1
+#echo $1
 
 if [ ! -d "$SCRIPTPATH/tmp" ]; then
 	mkdir $SCRIPTPATH/tmp

@@ -40,7 +40,7 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         install="$1";
-						if [ ! -f "$SCRIPTPATH/$1/$1-install.sh" ];
+						if [ ! -f "$SCRIPTPATH/$1/$1-installer.sh" ];
 							then
 								echo
 								echo
@@ -58,7 +58,7 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         uninstall="$1";
-						if [ ! -f "$SCRIPTPATH/$1/$1-uninstall.sh" ];
+						if [ ! -f "$SCRIPTPATH/$1/$1-uninstaller.sh" ];
 							then
 								echo
 								echo

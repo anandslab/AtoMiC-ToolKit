@@ -13,7 +13,11 @@ if [[ ! -d '/opt' ]]; then
 	echo -e 'opt dir created.'
 fi
 
-#Check for bad arguments and move on
+#Response for bad arguments or unsupported features
+BADARG='The app you specified does not exist. Check the name again (note: it is case sensitive)'
+NOARGSUPPORT='This app doesn''t support this feature. Check the readme file for which operations are supported for each app.'
+
+#Check for bad option and move on
 if [ $? -ne 0 ];
 then
     help;
@@ -36,8 +40,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         install="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/$1/$1-installer.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-install.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/$1/$1-installer.sh
+						fi
                         shift;
                     fi
             ;;
@@ -46,8 +58,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         uninstall="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/$1/$1-uninstaller.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-uninstall.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/$1/$1-uninstaller.sh
+						fi
                         shift;
                     fi
             ;;
@@ -56,8 +76,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         backup="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/inc/app-backup-controller.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-constants.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/inc/app-backup-controller.sh
+						fi
                         shift;
                     fi
             ;;
@@ -66,8 +94,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         restore="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/inc/app-restore-controller.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-constants.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/inc/app-restore-controller.sh
+						fi
                         shift;
                     fi
             ;;
@@ -76,8 +112,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         manualupdate="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/$1/$1-updater.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-update.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/$1/$1-update.sh
+						fi
                         shift;
                     fi
             ;;
@@ -86,8 +130,24 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         passwordreset="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/inc/app-password-reset.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-constants.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									if grep -q "Reset Password" "$SCRIPTPATH/$1/$1-menu.sh"; 
+										then
+											source $SCRIPTPATH/$1/$1-constants.sh
+											source $SCRIPTPATH/inc/app-password-reset.sh
+									else
+										echo
+										echo
+										echo "$NOARGSUPPORT"
+										source $SCRIPTPATH/inc/exit.sh
+									fi
+						fi
                         shift;
                     fi
             ;;
@@ -96,8 +156,16 @@ while true; do
                     if [ -n "$1" ]; 
                     then
                         accessdetails="$1";
-						source $SCRIPTPATH/$1/$1-constants.sh
-						source $SCRIPTPATH/inc/app-access-details.sh
+						if [ ! -f "$SCRIPTPATH/$1/$1-constants.sh" ];
+							then
+								echo
+								echo
+								echo "$BADARG"
+								source $SCRIPTPATH/inc/exit.sh
+								else
+									source $SCRIPTPATH/$1/$1-constants.sh
+									source $SCRIPTPATH/inc/app-access-details.sh
+						fi
                         shift;
                     fi
             ;;

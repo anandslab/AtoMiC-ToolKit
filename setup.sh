@@ -41,16 +41,16 @@ function help(){
     echo -e $YELLOW'--->COMMAND LINE OPTIONS:'$ENDCOLOR
     echo
     echo "Usage example:";
-    echo "atomic-toolkit [(-i|--install) string] [(-u|--uninstall) string] [(-b|--backup) string] [(-r|--restore) string] [(-m|--manualupdate) string] [(-p|--passwordreset) string] [(-a|--accessdetails) string] [(-t|--updatetoolkit)] [(-U|--updateall)]";
+    echo "atomic-toolkit [(-i|--install) appname] [(-u|--uninstall) appname] [(-b|--backup) appname] [(-r|--restore) appname] [(-m|--manualupdate) appname] [(-p|--passwordreset) appname] [(-a|--accessdetails) appname] [(-t|--updatetoolkit)] [(-U|--updateall)]";
     echo "Options:";
     echo
-    echo "-i or --install string: Install an app.";
-    echo "-u or --uninstall string: Uninstall an app.";
-    echo "-b or --backup string: Backup an the config file for an app.";
-    echo "-r or --restore string: Restore an app config file from backup.";
-    echo "-m or --manualupdate string: Manually update a specific app.";
-    echo "-p or --passwordreset string: Reset the password to an app.";
-    echo "-a or --accessdetails string: View the access details for an app.";
+    echo "-i or --install appname: Install an app.";
+    echo "-u or --uninstall appname: Uninstall an app.";
+    echo "-b or --backup appname: Backup an the config file for an app.";
+    echo "-r or --restore appname: Restore an app config file from backup.";
+    echo "-m or --manualupdate appname: Manually update a specific app.";
+    echo "-p or --passwordreset appname: Reset the password to an app.";
+    echo "-a or --accessdetails appname: View the access details for an app.";
     echo "-t or --updatetoolkit: Update AtoMiC-ToolKit.";
     echo "-U or --updateall: Update Linux and all apps.";
     exit 1;

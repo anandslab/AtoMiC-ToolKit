@@ -72,6 +72,30 @@ $ cd ~/AtoMiC-ToolKit
 $ sudo bash setup.sh
 </pre>
 
+<h3>Command Line Arguments</h3>
+
+The script supports several command line arguments:
+
+`$ sudo bash setup.sh -[o]ption (appname)`
+
+- `-i appname or --install appname` - Install an app
+- `-u appname or --uninstall appname` - Uninstall an app
+- `-b appname or --backup appname` - Backup an the config file for an app
+- `-r appname or --restore appname` - Restore an app config file from backup
+- `-m appname or --manualupdate appname` - Manually update a specific app
+- `-p appname or --passwordreset appname` - Reset the password to an app
+- `-a appname or --accessdetails appname` - View the access details for an app
+- `-t appname or --updatetoolkit` - Update AtoMiC-ToolKit
+- `-U appname or --updateall` - Update Linux and all apps
+
+Examples:
+
+<pre>
+$ sudo bash setup.sh -i couchpotato
+$ sudo bash setup.sh -U
+$ sudo bash --manualupdate sonarr
+</pre>
+
 <h2>Video</h2>
 <a href="https://www.youtube.com/watch?v=mEoogc0fTBo" target="_blank">https://youtu.be/Zji_3cZRcK4</a>
 

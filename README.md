@@ -85,8 +85,8 @@ The script supports several command line arguments:
 - `-m appname or --manualupdate appname` - Manually update a specific app
 - `-p appname or --passwordreset appname` - Reset the password to an app
 - `-a appname or --accessdetails appname` - View the access details for an app
-- `-t appname or --updatetoolkit` - Update AtoMiC-ToolKit
-- `-U appname or --updateall` - Update Linux and all apps
+- `-t or --updatetoolkit` - Update AtoMiC-ToolKit
+- `-U or --updateall` - Update Linux and all apps
 
 Examples:
 

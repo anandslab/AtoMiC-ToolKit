@@ -97,7 +97,7 @@ else
 		source $SCRIPTPATH/inc/usercheck.sh
 	else
 		echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
-    source $SCRIPTPATH/inc/option-handler.sh
+		source $SCRIPTPATH/inc/option-handler.sh
 		source $SCRIPTPATH/inc/pause.sh
 	fi
 fi

@@ -1,0 +1,15 @@
+sudo: required
+language: bash
+addons:
+  apt:
+    sources:
+    - debian-sid    # Grab ShellCheck from the Debian repo
+    packages:
+    - shellcheck
+before_install:
+ - sudo pip install bashate
+script:
+ - find . -name '*.sh' | xargs shellcheck
+ - find . -name '*.sh' | xargs bashate
+matrix:
+  fast_finish: true

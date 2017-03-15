@@ -13,3 +13,4 @@ script:
  - find . -name '*.sh' | xargs bashate
 matrix:
   fast_finish: true
+

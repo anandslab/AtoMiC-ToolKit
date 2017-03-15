@@ -1,0 +1,16 @@
+[Unit]
+Description=rTorrent
+After=network.target
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+UMask=0002
+
+Type=simple
+KillMode=process
+Restart=on-failure
+ExecStart=/usr/bin/rtorrent -n -o import=~/.rtorrent/rtorrent.rc
+
+[Install]
+WantedBy=multi-user.target

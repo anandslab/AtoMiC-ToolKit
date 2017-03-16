@@ -35,8 +35,36 @@ source $SCRIPTPATH/inc/header.sh
 #echo -e $RED'This setup file is in development and can mess up your system. Exit and run '$CYAN'sudo ./setup.sh'$RED' instead.'$ENDCOLOR
 #source $SCRIPTPATH/inc/pause.sh
 
+# Define help function for options
+function help(){
+    echo
+    echo -e $YELLOW'--->COMMAND LINE OPTIONS:'$ENDCOLOR
+    echo
+    echo "Usage example:";
+    echo "atomic-toolkit [(-i|--install) appname] [(-u|--uninstall) appname] [(-b|--backup) appname] [(-r|--restore) appname] [(-m|--manualupdate) appname] [(-p|--passwordreset) appname] [(-a|--accessdetails) appname] [(-t|--updatetoolkit)] [(-U|--updateall)]";
+    echo "Options:";
+    echo
+    echo "-i or --install appname: Install an app.";
+    echo "-u or --uninstall appname: Uninstall an app.";
+    echo "-b or --backup appname: Backup an the config file for an app.";
+    echo "-r or --restore appname: Restore an app config file from backup.";
+    echo "-m or --manualupdate appname: Manually update a specific app.";
+    echo "-p or --passwordreset appname: Reset the password to an app.";
+    echo "-a or --accessdetails appname: View the access details for an app.";
+    echo "-t or --updatetoolkit: Update AtoMiC-ToolKit.";
+    echo "-U or --updateall: Update Linux and all apps.";
+    exit 1;
+}
+
+# Reset option vars
+updatetoolkit=0;
+updateall=0;
+
+# Capture options to getopts
+export ARGS=$(getopt -o "i:u:b:r:m:p:a:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
+
 #sleep 1
-echo $1
+#echo $1
 
 if [ ! -d "$SCRIPTPATH/tmp" ]; then
 	mkdir $SCRIPTPATH/tmp
@@ -69,6 +97,7 @@ else
 		source $SCRIPTPATH/inc/usercheck.sh
 	else
 		echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
+		source $SCRIPTPATH/inc/option-handler.sh
 		source $SCRIPTPATH/inc/pause.sh
 	fi
 fi

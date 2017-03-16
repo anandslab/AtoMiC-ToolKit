@@ -17,13 +17,13 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     #echo "Your chosen option:" $SUBCHOICE
     case "$SUBCHOICE" in 
-		"Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
-		"Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
-		"Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
+        "Clear Temp Files" ) source $SCRIPTPATH/maintenance/cleartmp.sh ;;
+        "Delete Backups" ) source $SCRIPTPATH/maintenance/clearbackups.sh ;;
+        "Update ToolKit" ) source $SCRIPTPATH/maintenance/update.sh ;;
     "Update Linux" ) source $SCRIPTPATH/maintenance/distro-update.sh ;;
     "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

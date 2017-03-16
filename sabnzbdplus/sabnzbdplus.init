@@ -38,95 +38,95 @@ DEFOPTS="--daemon --pidfile \"$PIDFILE\""
 unset USER CONFIG HOST PORT EXTRAOPTS
 
 [ -r /etc/default/locale ] && {
-	. /etc/default/locale;
-	[ -n "$LANG" ] && export LANG;
+    . /etc/default/locale;
+    [ -n "$LANG" ] && export LANG;
 }
 
 . /lib/lsb/init-functions
 
 check_retval() {
-	if [ $? -eq 0 ]; then
-		log_end_msg 0
-		return 0
-	else
-		log_end_msg 1
-		exit 1
-	fi
+    if [ $? -eq 0 ]; then
+        log_end_msg 0
+        return 0
+    else
+        log_end_msg 1
+        exit 1
+    fi
 }
 
 is_running() {
-	# don't try to match --name: it changes after restarting via the web interface
-	start-stop-daemon --status --quiet --user "${USER%:*}" --pidfile "$PIDFILE"
-	RET=$?
-	[ $RET -gt 3 ] && exit 1 || return $RET
+    # don't try to match --name: it changes after restarting via the web interface
+    start-stop-daemon --status --quiet --user "${USER%:*}" --pidfile "$PIDFILE"
+    RET=$?
+    [ $RET -gt 3 ] && exit 1 || return $RET
 }
 
 load_settings() {
-	if [ -z "$USER" ]; then
-		. "$SETTINGS"
+    if [ -z "$USER" ]; then
+        . "$SETTINGS"
 
-		[ -z "${USER%:*}" ] && {
-			log_action_msg "$DESC: service not enabled, edit $SETTINGS";
-			return 1;
-		}
+        [ -z "${USER%:*}" ] && {
+            log_action_msg "$DESC: service not enabled, edit $SETTINGS";
+            return 1;
+        }
 
-		OPTIONS="$DEFOPTS"
-		[ -n "$CONFIG" ] && OPTIONS="$OPTIONS --config-file \"$CONFIG\""
-		[ -n "$HOST" ] && SERVER="$HOST" || SERVER=
-		[ -n "$PORT" ] && SERVER="$SERVER:$PORT"
-		[ -n "$SERVER" ] && OPTIONS="$OPTIONS --server \"$SERVER\""
-		[ -n "$EXTRAOPTS" ] && OPTIONS="$OPTIONS $EXTRAOPTS"
-	fi
-	return 0
+        OPTIONS="$DEFOPTS"
+        [ -n "$CONFIG" ] && OPTIONS="$OPTIONS --config-file \"$CONFIG\""
+        [ -n "$HOST" ] && SERVER="$HOST" || SERVER=
+        [ -n "$PORT" ] && SERVER="$SERVER:$PORT"
+        [ -n "$SERVER" ] && OPTIONS="$OPTIONS --server \"$SERVER\""
+        [ -n "$EXTRAOPTS" ] && OPTIONS="$OPTIONS $EXTRAOPTS"
+    fi
+    return 0
 }
 
 start_sab() {
-	load_settings || exit 0
-	if ! is_running; then
-		install --directory --owner="${USER%:*}" --group=root --mode=0700 "$(dirname "$PIDFILE")" || exit 1
-		log_daemon_msg "Starting $DESC"
-		eval start-stop-daemon --start --quiet --chuid "$USER" --exec "$DAEMON" -- $OPTIONS
-		check_retval
-	else
-		log_action_msg "$DESC: already running (pid $(cat "$PIDFILE"))"
-	fi
+    load_settings || exit 0
+    if ! is_running; then
+        install --directory --owner="${USER%:*}" --group=root --mode=0700 "$(dirname "$PIDFILE")" || exit 1
+        log_daemon_msg "Starting $DESC"
+        eval start-stop-daemon --start --quiet --chuid "$USER" --exec "$DAEMON" -- $OPTIONS
+        check_retval
+    else
+        log_action_msg "$DESC: already running (pid $(cat "$PIDFILE"))"
+    fi
 }
 
 stop_sab() {
-	load_settings || exit 0
-	if is_running; then
-		log_daemon_msg "Stopping $DESC"
-		start-stop-daemon --stop --quiet --user "${USER%:*}" --pidfile "$PIDFILE" --retry 30
-		check_retval
-	else
-		log_action_msg "$DESC: not running"
-	fi
+    load_settings || exit 0
+    if is_running; then
+        log_daemon_msg "Stopping $DESC"
+        start-stop-daemon --stop --quiet --user "${USER%:*}" --pidfile "$PIDFILE" --retry 30
+        check_retval
+    else
+        log_action_msg "$DESC: not running"
+    fi
 }
 
 case "$1" in
-	start)
-		start_sab
-	;;
-	stop)
-		stop_sab
-	;;
-	force-reload|restart)
-		stop_sab
-		start_sab
-	;;
-	status)
-		load_settings || exit 4
-		if is_running; then
-			log_action_msg "$DESC: running (pid $(cat "$PIDFILE"))"
-		else
-			log_action_msg "$DESC: not running"
-			[ -f "$PIDFILE" ] && exit 1 || exit 3
-		fi
-	;;
-	*)
-		echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
-		exit 3
-	;;
+    start)
+        start_sab
+    ;;
+    stop)
+        stop_sab
+    ;;
+    force-reload|restart)
+        stop_sab
+        start_sab
+    ;;
+    status)
+        load_settings || exit 4
+        if is_running; then
+            log_action_msg "$DESC: running (pid $(cat "$PIDFILE"))"
+        else
+            log_action_msg "$DESC: not running"
+            [ -f "$PIDFILE" ] && exit 1 || exit 3
+        fi
+    ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
+        exit 3
+    ;;
 esac
 
 exit 0

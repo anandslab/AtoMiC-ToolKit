@@ -16,18 +16,18 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Kodi" --menu "What would y
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-	source $SCRIPTPATH/kodi/kodi-constants.sh
+    source $SCRIPTPATH/kodi/kodi-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/kodi/kodi-installer.sh ;;
+        "Install" ) source $SCRIPTPATH/kodi/kodi-installer.sh ;;
     "Enable" ) source $SCRIPTPATH/kodi/kodi-enable-startup.sh
                source $SCRIPTPATH/kodi/kodi-menu.sh;;
     "Disable" ) source $SCRIPTPATH/kodi/kodi-remove-startup.sh 
                 source $SCRIPTPATH/kodi/kodi-menu.sh;;
-		"Uninstall" ) source $SCRIPTPATH/kodi/kodi-uninstaller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/kodi/kodi-update.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-home-theater.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Uninstall" ) source $SCRIPTPATH/kodi/kodi-uninstaller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/kodi/kodi-update.sh ;;
+        "Go Back" ) source $SCRIPTPATH/menus/menu-home-theater.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

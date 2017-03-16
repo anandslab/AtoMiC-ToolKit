@@ -28,7 +28,7 @@ source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/inc/app-git-download.sh
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 if [ ! -f "$APPSETTINGS" ]; then
-	sudo cp $SCRIPTPATH/plexpy/plexpy-config.ini $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
+    sudo cp $SCRIPTPATH/plexpy/plexpy-config.ini $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
 fi
 source $SCRIPTPATH/inc/app-git-stash.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh

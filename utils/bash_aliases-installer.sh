@@ -24,11 +24,11 @@ source $SCRIPTPATH/inc/pause.sh
 echo -e $YELLOW'--->Checking for .bashrc file...'$ENDCOLOR
 if [ ! -f "/home/$UNAME/.bashrc" ];
 then
-	echo -e $CYAN'/home/'$UNAME'/.bashrc'$ENDCOLOR' file not found. Creating it.'
-	sudo cp /etc/skel/.bashrc /home/$UNAME/.bashrc || { echo -e $RED'Copying .bashrc failed.'$ENDCOLOR ; exit 1; }
-	sudo chown $UNAME: /home/$UNAME/.bashrc
+    echo -e $CYAN'/home/'$UNAME'/.bashrc'$ENDCOLOR' file not found. Creating it.'
+    sudo cp /etc/skel/.bashrc /home/$UNAME/.bashrc || { echo -e $RED'Copying .bashrc failed.'$ENDCOLOR ; exit 1; }
+    sudo chown $UNAME: /home/$UNAME/.bashrc
 else
-	echo -e $CYAN'/home/'$UNAME'/.bashrc'$ENDCOLOR' exists.'
+    echo -e $CYAN'/home/'$UNAME'/.bashrc'$ENDCOLOR' exists.'
 fi
 
 echo
@@ -37,11 +37,11 @@ sleep 1
 echo -e $YELLOW'--->Checking for .profile file...'$ENDCOLOR
 if [ ! -f "/home/$UNAME/.profile" ];
 then
-	echo -e $CYAN'/home/'$UNAME'/.profile'$ENDCOLOR' file not found. Creating it.'
-	sudo cp /etc/skel/.profile /home/$UNAME/.profile || { echo -e $RED'Copying .profile failed.'$ENDCOLOR ; exit 1; }
-	sudo chown $UNAME: /home/$UNAME/.profile
+    echo -e $CYAN'/home/'$UNAME'/.profile'$ENDCOLOR' file not found. Creating it.'
+    sudo cp /etc/skel/.profile /home/$UNAME/.profile || { echo -e $RED'Copying .profile failed.'$ENDCOLOR ; exit 1; }
+    sudo chown $UNAME: /home/$UNAME/.profile
 else
-	echo -e $CYAN'/home/'$UNAME'/.profile'$ENDCOLOR' exists.'
+    echo -e $CYAN'/home/'$UNAME'/.profile'$ENDCOLOR' exists.'
 fi
 
 echo
@@ -49,10 +49,10 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous .bash_aliases...'$ENDCOLOR
 if [ -f "/home/$UNAME/.bash_aliases" ]; then
-	mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-	echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+    mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
+    echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
 else
-	echo -e 'No previous .bash_aliases file found.'
+    echo -e 'No previous .bash_aliases file found.'
 fi
 
 echo

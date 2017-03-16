@@ -17,7 +17,7 @@ if [ $exitstatus = 0 ]; then
       "Kodi" ) source $SCRIPTPATH/kodi/kodi-menu.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;; 
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

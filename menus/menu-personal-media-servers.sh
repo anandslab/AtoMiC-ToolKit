@@ -25,7 +25,7 @@ if [ $exitstatus = 0 ]; then
       "Madsonic" ) source $SCRIPTPATH/madsonic/madsonic-menu.sh ;;      
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;; 
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

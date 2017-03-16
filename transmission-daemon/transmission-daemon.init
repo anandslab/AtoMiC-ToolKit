@@ -25,13 +25,13 @@ export PATH="${PATH:+$PATH:}/sbin"
 start_daemon () {
     if [ $ENABLE_DAEMON != 1 ]; then
         log_progress_msg "(disabled)"
-		log_end_msg 255 || true
+        log_end_msg 255 || true
     else    
         start-stop-daemon --start \
         --chuid $USER \
-		$START_STOP_OPTIONS \
+        $START_STOP_OPTIONS \
         --exec $DAEMON -- $OPTIONS || log_end_msg $?
-		log_end_msg 0
+        log_end_msg 0
     fi
 }
 

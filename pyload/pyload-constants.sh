@@ -8,7 +8,7 @@ APPGIT='https://github.com/pyload/pyload.git'
 APPDPORT='8000'
 APPSETTINGSDIR="/home/$UNAME/.pyload"
 APPSETTINGS=$APPSETTINGSDIR'/pyload.conf'
-ACCESSHOST='	ip host : "IP" = '
+ACCESSHOST='    ip host : "IP" = '
 PORTSEARCH='NA'
 USERSEARCH='NA'
 PASSSEARCH='NA'

@@ -1,12 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Access Details
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
-#
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
+# shellcheck disable=SC1090
 if [[ $ISSETUP != "Yes" ]]
 then
   echo
@@ -14,42 +7,40 @@ then
   echo
   exit 0
 fi
-source $SCRIPTPATH/inc/commons.sh
-source $SCRIPTPATH/inc/header.sh
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
 
-echo -e $GREEN"AtoMiC $APPTITLE Access Details"$ENDCOLOR
+echo -e "${GREEN}AtoMiC $APPTITLE Access Details$ENDCOLOR"
 
-source $SCRIPTPATH/inc/pause.sh
-source $SCRIPTPATH/inc/app-folder-check.sh
+source "$SCRIPTPATH/inc/pause.sh"
+source "$SCRIPTPATH/inc/app-folder-check.sh"
 
-if [[ $APPSETTINGSTYPE == "DB" ]]
-then
-  source $SCRIPTPATH/inc/app-port-search.sh
-  source $SCRIPTPATH/inc/db-app-user-search.sh  >/dev/null
-  source $SCRIPTPATH/inc/db-app-password-search.sh  >/dev/null
-  #echo "I did a grep for the port and a DB query for the creds"
+if [[ $APPSETTINGSTYPE = "DB" ]]; then
+    source "$SCRIPTPATH/inc/app-port-search.sh"
+    source "$SCRIPTPATH/inc/db-app-user-search.sh"  >/dev/null
+    source "$SCRIPTPATH/inc/db-app-password-search.sh"  >/dev/null
+    #echo "I did a grep for the port and a DB query for the creds"
 else
-  source $SCRIPTPATH/inc/app-port-search.sh
-  source $SCRIPTPATH/inc/app-user-search.sh  >/dev/null
-  source $SCRIPTPATH/inc/app-password-search.sh  >/dev/null
-  #echo "I'm doing a grep text search for port and creds"
+    source "$SCRIPTPATH/inc/app-port-search.sh"
+    source "$SCRIPTPATH/inc/app-user-search.sh"  >/dev/null
+    source "$SCRIPTPATH/inc/app-password-search.sh"  >/dev/null
+    #echo "I'm doing a grep text search for port and creds"
 fi
 
 APPDEPS+=" dnsutils"
-source $SCRIPTPATH/inc/app-install-deps.sh
+source "$SCRIPTPATH/inc/app-install-deps.sh"
 
-source $SCRIPTPATH/inc/app-system-details.sh
-source $SCRIPTPATH/inc/app-access-urls.sh
-source $SCRIPTPATH/inc/app-access-credentials.sh
+source "$SCRIPTPATH/inc/app-system-details.sh"
+source "$SCRIPTPATH/inc/app-access-urls.sh"
+source "$SCRIPTPATH/inc/app-access-credentials.sh"
 
 if [[ ! $ACCESSHOST = 'NA' ]]; then
-  if grep -Exq "${ACCESSHOST}localhost" "$APPSETTINGS"
-    then
-      echo -e $RED'WARNING: '$ENDCOLOR'You can only access '$APPTITLE' on localhost.'
+    if grep -Exq "${ACCESSHOST}localhost" "$APPSETTINGS"; then
+        echo -e "${RED}WARNING: ${ENDCOLOR}You can only access $APPTITLE on localhost."
     else
-      echo -e $GREEN'GOOD: '$ENDCOLOR''$APPTITLE' is accessible outside localhost.'
-  fi
+        echo -e "$GREEN GOOD: $ENDCOLOR$APPTITLE is accessible outside localhost."
+    fi
 fi
 
-source $SCRIPTPATH/inc/thankyou.sh
-source $SCRIPTPATH/inc/exit.sh
+source "$SCRIPTPATH/inc/thankyou.sh"
+source "$SCRIPTPATH/inc/exit.sh"

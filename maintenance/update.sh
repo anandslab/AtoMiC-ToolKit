@@ -29,30 +29,30 @@ echo
     
 if [ "$RESP" == "y" ]
 then
-	source $SCRIPTPATH/inc/pkgupdate.sh
-	APPPATH=$SCRIPTPATH
-	echo
-	sleep 1
+    source $SCRIPTPATH/inc/pkgupdate.sh
+    APPPATH=$SCRIPTPATH
+    echo
+    sleep 1
 
-	echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-	sudo apt-get -y install git
+    echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
+    sudo apt-get -y install git
 
-	echo
-	sleep 1
+    echo
+    sleep 1
 
-	echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-	source $SCRIPTPATH/inc/app-git-stash.sh
+    echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
+    source $SCRIPTPATH/inc/app-git-stash.sh
 
-	echo 
-	sleep 1
+    echo 
+    sleep 1
 
-	echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
-	git -C $SCRIPTPATH fetch --all
-	git -C $SCRIPTPATH reset --hard origin/master
-	source $SCRIPTPATH/inc/app-set-permissions.sh
+    echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
+    git -C $SCRIPTPATH fetch --all
+    git -C $SCRIPTPATH reset --hard origin/master
+    source $SCRIPTPATH/inc/app-set-permissions.sh
     echo -e 'AtoMiC ToolKit updated successfully.'
 else
-	echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
+    echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
 fi
 
 source $SCRIPTPATH/inc/exit.sh

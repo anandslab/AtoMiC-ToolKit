@@ -17,17 +17,17 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Subsonic" --menu "What wou
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-	source $SCRIPTPATH/subsonic/subsonic-constants.sh
+    source $SCRIPTPATH/subsonic/subsonic-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/subsonic/subsonic-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/subsonic/subsonic-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/subsonic/subsonic-update.sh ;;
+        "Install" ) source $SCRIPTPATH/subsonic/subsonic-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/subsonic/subsonic-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/subsonic/subsonic-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

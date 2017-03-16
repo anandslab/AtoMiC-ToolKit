@@ -19,19 +19,19 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd" --menu "What woul
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-	source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh
+    source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-update.sh ;;
-		"Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
+        "Install" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-update.sh ;;
+        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
+        "Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

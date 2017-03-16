@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script Name: AtoMiC Ombi Systemd Update
-# Author: mgiljum
+# Script Name: AtoMiC ruTorrent Systemd Update
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #

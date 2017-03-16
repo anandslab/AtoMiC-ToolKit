@@ -12,6 +12,10 @@ else
 	rm $SCRIPTPATH/tmp/userinfo >/dev/null 2>&1
 	echo 'UNAME='$UNAME >> $SCRIPTPATH/tmp/userinfo
 	echo 'UGROUP='$UGROUP >> $SCRIPTPATH/tmp/userinfo
+	if [ ! -z "$ARGS" ];
+		then
+			source $SCRIPTPATH/inc/option-handler.sh
+	fi
 fi
 
 echo

@@ -17,11 +17,11 @@ if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
     case "$SUBCHOICE" in
       "HTPC Manager" ) source $SCRIPTPATH/htpcmanager/htpcmanager-menu.sh ;;
-	  "Ombi" ) source $SCRIPTPATH/ombi/ombi-menu.sh ;;
+      "Ombi" ) source $SCRIPTPATH/ombi/ombi-menu.sh ;;
       "Webmin" ) source $SCRIPTPATH/webmin/webmin-menu.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

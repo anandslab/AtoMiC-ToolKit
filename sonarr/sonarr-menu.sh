@@ -19,15 +19,15 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/sonarr/sonarr-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/sonarr/sonarr-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/sonarr/sonarr-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/sonarr/sonarr-update.sh ;;
-        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;		
-		"Go Back" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
+        "Install" ) source $SCRIPTPATH/sonarr/sonarr-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/sonarr/sonarr-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/sonarr/sonarr-update.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;        
+        "Go Back" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

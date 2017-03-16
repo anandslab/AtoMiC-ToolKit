@@ -38,7 +38,7 @@ sleep 1
 
 source $SCRIPTPATH/inc/app-folders-create.sh
 if [ ! -f "$APPSETTINGS" ]; then
-	sudo cp $SCRIPTPATH/qbittorrent-nox/qBittorrent.conf $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
+    sudo cp $SCRIPTPATH/qbittorrent-nox/qBittorrent.conf $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
   source $SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-settings-configurator.sh
 fi
 

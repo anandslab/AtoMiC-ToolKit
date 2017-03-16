@@ -21,19 +21,19 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
-	case "$SUBCHOICE" in
-	  "CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
-	  "Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
-	  "Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
-	  "Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
-	  "Radarr" ) source $SCRIPTPATH/radarr/radarr-menu.sh ;;
-	  "SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
-	  "SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
-	  "Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
-		"Watcher" ) source $SCRIPTPATH/watcher/watcher-menu.sh ;;
-	  "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;			
-	  *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    case "$SUBCHOICE" in
+      "CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
+      "Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
+      "Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
+      "Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
+      "Radarr" ) source $SCRIPTPATH/radarr/radarr-menu.sh ;;
+      "SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
+      "SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
+      "Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
+        "Watcher" ) source $SCRIPTPATH/watcher/watcher-menu.sh ;;
+      "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;            
+      *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

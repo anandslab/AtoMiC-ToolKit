@@ -67,19 +67,19 @@ export ARGS=$(getopt -o "i:u:b:r:m:p:a:tUh" -l "install:,uninstall:,backup:,rest
 #echo $1
 
 if [ ! -d "$SCRIPTPATH/tmp" ]; then
-	mkdir $SCRIPTPATH/tmp
+    mkdir $SCRIPTPATH/tmp
 fi
 
 if [ ! -d "$SCRIPTPATH/backups" ]; then
-	mkdir $SCRIPTPATH/backups
+    mkdir $SCRIPTPATH/backups
 fi
 
 echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
-	#echo 'consent file not present'
-	source $SCRIPTPATH/inc/consent.sh
+    #echo 'consent file not present'
+    source $SCRIPTPATH/inc/consent.sh
 else
-	echo -e 'Already agreed. Can be cleared in the next screen.'
+    echo -e 'Already agreed. Can be cleared in the next screen.'
 fi
 
 echo
@@ -87,19 +87,19 @@ echo
 
 echo -e $YELLOW'--->USER INFORMATION:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
-	#echo 'userinfo not present'
-	source $SCRIPTPATH/inc/usercheck.sh
+    #echo 'userinfo not present'
+    source $SCRIPTPATH/inc/usercheck.sh
 else 
-	#echo 'userinfo present'
-	source $SCRIPTPATH/tmp/userinfo
-	if [ -z "$UNAME" ] || [ -z "$UGROUP" ]; then
-		#echo 'userinfo not complete'
-		source $SCRIPTPATH/inc/usercheck.sh
-	else
-		echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
-		source $SCRIPTPATH/inc/option-handler.sh
-		source $SCRIPTPATH/inc/pause.sh
-	fi
+    #echo 'userinfo present'
+    source $SCRIPTPATH/tmp/userinfo
+    if [ -z "$UNAME" ] || [ -z "$UGROUP" ]; then
+        #echo 'userinfo not complete'
+        source $SCRIPTPATH/inc/usercheck.sh
+    else
+        echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
+        source $SCRIPTPATH/inc/option-handler.sh
+        source $SCRIPTPATH/inc/pause.sh
+    fi
 fi
 
 # Set permissions for all files
@@ -108,11 +108,11 @@ sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
 sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
 
 if [[ ! -d '/opt' ]]; then
-	mkdir /opt
-	sudo chown -R $UNAME:$UGROUP /opt >/dev/null 2>&1
-	sudo chmod -R 775 /opt >/dev/null 2>&1
-	sudo chmod -R g+s /opt >/dev/null 2>&1
-	echo -e 'opt dir created.'
+    mkdir /opt
+    sudo chown -R $UNAME:$UGROUP /opt >/dev/null 2>&1
+    sudo chmod -R 775 /opt >/dev/null 2>&1
+    sudo chmod -R g+s /opt >/dev/null 2>&1
+    echo -e 'opt dir created.'
 fi
     
 source $SCRIPTPATH/inc/header.sh

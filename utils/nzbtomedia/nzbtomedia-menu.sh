@@ -20,8 +20,8 @@ if [ $exitstatus = 0 ]; then
       "Update" ) source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-update.sh ;;
       "Uninstall" ) source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-uninstaller.sh ;;
       "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

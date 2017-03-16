@@ -15,11 +15,11 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/utils/mono/mono-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/utils/mono/mono-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/utils/mono/mono-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Install" ) source $SCRIPTPATH/utils/mono/mono-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/utils/mono/mono-uninstaller.sh ;;
+        "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

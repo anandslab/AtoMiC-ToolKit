@@ -1,10 +1,9 @@
+#!/bin/bash
+# shellcheck disable=SC1090
 echo
-cd $SCRIPTPATH
-source $SCRIPTPATH/inc/pause.sh
-if [ -z "$ARGS" ]
-	then
-		sudo bash $SCRIPTPATH/setup.sh
-	else
-		exit
-	fi
+source "$SCRIPTPATH/inc/pause.sh"
+if [ -z "$ARGS" ]; then
+    sudo bash "$SCRIPTPATH/setup.sh"
+else
+    exit 0
 fi

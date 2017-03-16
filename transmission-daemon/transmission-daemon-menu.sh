@@ -20,16 +20,16 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-update.sh ;;
+        "Install" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-update.sh ;;
         "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
-        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;	
-		"Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
+        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;    
+        "Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

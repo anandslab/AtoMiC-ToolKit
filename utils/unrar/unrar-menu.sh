@@ -15,11 +15,11 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/utils/unrar/unrar-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/utils/unrar/unrar-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/utils/unrar/unrar-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Install" ) source $SCRIPTPATH/utils/unrar/unrar-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/utils/unrar/unrar-uninstaller.sh ;;
+        "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

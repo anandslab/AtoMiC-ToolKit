@@ -19,15 +19,15 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/webmin/webmin-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/webmin/webmin-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/webmin/webmin-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/webmin/webmin-update.sh ;;
+        "Install" ) source $SCRIPTPATH/webmin/webmin-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/webmin/webmin-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/webmin/webmin-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
+        "Go Back" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

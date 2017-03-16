@@ -4,25 +4,25 @@
 #
 # INSTALLATION NOTES
 #
-#	1. Rename this file as you want, ensuring that it ends in .service
-#		e.g. 'headphones.service'
+#    1. Rename this file as you want, ensuring that it ends in .service
+#        e.g. 'headphones.service'
 #
-#	2. Adjust configuration settings as required.  More details in the
-#	   "CONFIGURATION NOTES" section shown below.
+#    2. Adjust configuration settings as required.  More details in the
+#       "CONFIGURATION NOTES" section shown below.
 #
-#	3. Copy this file into your systemd service unit directory, which is
-#	   often '/lib/systemd/system'.
+#    3. Copy this file into your systemd service unit directory, which is
+#       often '/lib/systemd/system'.
 #
-#	4. Create any files/directories that you specified back in step #2.
-#		e.g. '/etc/headphones/headphones.ini'
-#			 '/home/headphones/.headphones'
+#    4. Create any files/directories that you specified back in step #2.
+#        e.g. '/etc/headphones/headphones.ini'
+#             '/home/headphones/.headphones'
 #
-#	5. Enable boot-time autostart with the following commands:
-#		systemctl daemon-reload
-#		systemctl enable headphones.service
+#    5. Enable boot-time autostart with the following commands:
+#        systemctl daemon-reload
+#        systemctl enable headphones.service
 #
-#	6. Start now with the following command:
-#		systemctl start headphones.service
+#    6. Start now with the following command:
+#        systemctl start headphones.service
 #
 #   7. If troubleshooting startup-errors, start by checking permissions
 #      and ownership on the files/directories that you created in step #4.
@@ -30,20 +30,20 @@
 #
 # CONFIGURATION NOTES
 #
-#	 - The example settings in this file assume that:
-#		1. You will run headphones as user/group: headphones.headphones
-#		2. You will either have headphones installed as a subdirectory
-#		   under '~headphones', or that you will have a symlink under
-#		   '~/headphones' pointing to your headphones install dir.
-#	    3. Your headphones data directory and configuration file will be
-#		   in separate locations from your headphones install dir, to
-#		   simplify updates.
-#			
+#     - The example settings in this file assume that:
+#        1. You will run headphones as user/group: headphones.headphones
+#        2. You will either have headphones installed as a subdirectory
+#           under '~headphones', or that you will have a symlink under
+#           '~/headphones' pointing to your headphones install dir.
+#        3. Your headphones data directory and configuration file will be
+#           in separate locations from your headphones install dir, to
+#           simplify updates.
+#            
 #    - Option names (e.g. ExecStart=, Type=) appear to be case-sensitive)
 #
 #    - Adjust ExecStart= to point to:
-#		1. Your headphones executable,
-#		2. Your config file (recommended is to put it somewhere in /etc)
+#        1. Your headphones executable,
+#        2. Your config file (recommended is to put it somewhere in /etc)
 #       3. Your datadir (recommended is to NOT put it in your headphones exec dir)
 #
 #    - Adjust User= and Group= to the user/group you want headphones to run as.

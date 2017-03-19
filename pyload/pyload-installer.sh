@@ -38,4 +38,6 @@ sudo -u $UNAME python /opt/pyload/pyLoadCore.py
 fi
 
 source $SCRIPTPATH/inc/app-start.sh
-
+source $SCRIPTPATH/inc/app-install-confirmation.sh
+source $SCRIPTPATH/inc/thankyou.sh
+source $SCRIPTPATH/inc/exit.sh

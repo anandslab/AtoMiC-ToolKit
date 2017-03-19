@@ -14,6 +14,7 @@ AtoMiC ToolKit root folder: ${ENDCOLOR}sudo bash setup.sh"
     echo
     exit 0
 fi
+
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 

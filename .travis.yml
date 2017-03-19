@@ -6,11 +6,28 @@ addons:
     - debian-sid    # Grab ShellCheck from the Debian repo
     packages:
     - shellcheck
+    - apt-transport-https
+    - build-essential
+    - checkinstall
+    - curl
+    - dnsutils
+    - git
+    - mediainfo
+    - mediainfo-gui
+    - p7zip-full
+    - par2
+    - sed
+    - software-properties-common
+    - sqlite3
+    - sqlite3-doc
+    - tar
+    - unzip
+    - wget
+    - zip
 before_install:
  - sudo pip install bashate
 script:
- - find . -name '*.sh' | xargs shellcheck
- - find . -name '*.sh' | xargs bashate
+ - sudo bash /inc/int-apps-install.sh
 matrix:
   fast_finish: true
 

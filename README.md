@@ -37,6 +37,7 @@ Features features of AtoMiC ToolKit include:
 <li>Jackett - Install, Uninstall, Update and Backup / Restore</li>
 <li>Kodi - Install, Uninstall Autoboot enable and Update</li>
 <li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Madsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
@@ -50,9 +51,11 @@ Features features of AtoMiC ToolKit include:
 <li>SickGear - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Sonarr - Install, Uninstall, Update and Backup / Restore</li>
+<li>Subsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Watcher - Install, Uninstall, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, Rtorrent/rutorrent, ShellInABox, Subsonic, Tvheadend, Utorrent, etc.</li>
+<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, Rtorrent/rutorrent, ShellInABox, Tvheadend, Utorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

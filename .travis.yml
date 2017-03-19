@@ -9,8 +9,7 @@ addons:
 before_install:
  - sudo pip install bashate
 script:
- - find . -name '*.sh' | xargs shellcheck
- - find . -name '*.sh' | xargs bashate
+ - sudo bash ./integration-tests/int-apps-install.sh
+ - sudo bash ./integration-tests/int-apps-uninstall.sh
 matrix:
   fast_finish: true
-

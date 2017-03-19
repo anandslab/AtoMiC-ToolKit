@@ -25,6 +25,11 @@ fi
 
 eval set -- "$ARGS";
 
+#Nothing passed in so just blank the ARGS variable
+if [[ $1 = '--' ]]; then
+    ARGS=''
+fi
+
 #Options
 while true; do
     case "$1" in

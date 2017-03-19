@@ -18,7 +18,7 @@ then
     echo
     exit 0
 else
-    echo "Agreed to disclaimers: `date '+%m-%d-%Y_%H-%M'`" >> "$SCRIPTPATH/tmp/consented"
+    echo "Agreed to disclaimers: $(date)" >> "$SCRIPTPATH/tmp/consented"
 fi
 
 echo 

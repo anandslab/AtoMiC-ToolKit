@@ -13,6 +13,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
 export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+mkdir "$SCRIPTPATH/tmp"
 
 echo "Agreed to disclaimers: `date '+%m-%d-%Y_%H-%M'`" >> "$SCRIPTPATH/tmp/consented"
 echo "UNAME=root" >> "$SCRIPTPATH/tmp/userinfo"

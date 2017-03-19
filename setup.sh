@@ -22,13 +22,14 @@ export ISSETUP="Yes"
 source $SCRIPTPATH/inc/commons.sh
 
 # Check if being run as root
-if [ "$EUID" -ne 0 ]
-  then 
+if [ "$EUID" -ne 0 ] ; then 
   echo
   echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo bash setup.sh'
   echo
   exit 0
 fi
+
+"$SCRIPTPATH/inc/app-toolkit-deps.sh"
 
 source $SCRIPTPATH/inc/header.sh
 

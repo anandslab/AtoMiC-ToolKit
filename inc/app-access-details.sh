@@ -27,9 +27,6 @@ else
     #echo "I'm doing a grep text search for port and creds"
 fi
 
-APPDEPS+=" dnsutils"
-source "$SCRIPTPATH/inc/app-install-deps.sh"
-
 source "$SCRIPTPATH/inc/app-system-details.sh"
 source "$SCRIPTPATH/inc/app-access-urls.sh"
 source "$SCRIPTPATH/inc/app-access-credentials.sh"

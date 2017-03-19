@@ -25,7 +25,7 @@ sudo bash setup.sh -i nzbhydra
 sudo bash setup.sh -i ombi
 sudo bash setup.sh -i plexmediaserver
 sudo bash setup.sh -i plexpy
-# sudo bash setup.sh -i pyload
+sudo bash setup.sh -i pyload
 sudo bash setup.sh -i qbittorrent-nox
 sudo bash setup.sh -i radarr
 sudo bash setup.sh -i sabnzbdplus

@@ -28,19 +28,19 @@ source $SCRIPTPATH/inc/app-move-previous.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/app-uninstall-deps.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
+source $SCRIPTPATH/inc/app-folders-create.sh
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-install.sh
 
 if ! grep -qF 'net.core.rmem_max' /etc/sysctl.conf;then
-  echo -e $YELLOW"--->Transmission UTP and UDP Buffer Optimizations..."$ENDCOLOR
-  echo 'net.core.rmem_max = 16777216' >> /etc/sysctl.conf
-  echo 'net.core.wmem_max = 4194304' >> /etc/sysctl.conf
-  sysctl -p
-  echo
+    echo -e $YELLOW"--->Transmission UTP and UDP Buffer Optimizations..."$ENDCOLOR
+    echo 'net.core.rmem_max = 16777216' >> /etc/sysctl.conf
+    echo 'net.core.wmem_max = 4194304' >> /etc/sysctl.conf
+    sysctl -p
+    echo
 fi
 
-source $SCRIPTPATH/inc/app-stop.sh
-source $SCRIPTPATH/inc/app-folders-create.sh
-source $SCRIPTPATH/inc/app-autostart-configure.sh
+source $SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
 source $SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh

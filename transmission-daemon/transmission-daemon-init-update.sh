@@ -7,4 +7,4 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo 'Updating init.d file'
 
-sudo sed -i "s@USER_NAME@$UNAME@g" /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
+sudo sed -i "s@USER=debian-transmission@USER=$UNAME@g" /etc/init.d/transmission-daemon  || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }

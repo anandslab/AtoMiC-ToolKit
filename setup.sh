@@ -16,22 +16,19 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
 export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-
 export ISSETUP="Yes"
 
-source $SCRIPTPATH/inc/commons.sh
+source "$SCRIPTPATH/inc/commons.sh"
 
 # Check if being run as root
-if [ "$EUID" -ne 0 ] ; then 
-  echo
-  echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo bash setup.sh'
-  echo
-  exit 0
+if [ "$EUID" -ne 0 ] ; then
+    echo
+    echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo bash setup.sh'
+    echo
+    exit 0
 fi
 
-"$SCRIPTPATH/inc/app-toolkit-deps.sh"
-
-source $SCRIPTPATH/inc/header.sh
+source "$SCRIPTPATH/inc/header.sh"
 
 #echo -e $RED'This setup file is in development and can mess up your system. Exit and run '$CYAN'sudo ./setup.sh'$RED' instead.'$ENDCOLOR
 #source $SCRIPTPATH/inc/pause.sh
@@ -78,7 +75,8 @@ fi
 echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
 if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
     #echo 'consent file not present'
-    source $SCRIPTPATH/inc/consent.sh
+    source "$SCRIPTPATH/inc/consent.sh"
+    source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
 else
     echo -e 'Already agreed. Can be cleared in the next screen.'
 fi
@@ -115,6 +113,6 @@ if [[ ! -d '/opt' ]]; then
     sudo chmod -R g+s /opt >/dev/null 2>&1
     echo -e 'opt dir created.'
 fi
-    
+
 source $SCRIPTPATH/inc/header.sh
 source $SCRIPTPATH/menus/menu-main.sh

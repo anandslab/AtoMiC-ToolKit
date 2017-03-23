@@ -14,5 +14,5 @@ PASSSEARCH='"rpc-password": "'
 APPDEFAULTUNAME='transmission'
 APPDEFAULTPASS='transmission'
 APPNEWPASS=''
-APPSYSTEMD='transmission.service'
+APPSYSTEMD='transmission-daemon.service'
 APPSYSTEMDOVERIDE="$SCRIPTPATH/transmission-daemon/transmission-daemon-override.conf"

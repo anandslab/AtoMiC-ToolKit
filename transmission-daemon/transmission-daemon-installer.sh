@@ -39,8 +39,8 @@ if ! grep -qF 'net.core.rmem_max' /etc/sysctl.conf;then
 fi
 
 #Need to do this seperately as the init\default files wouldnt have existed before the install.
-source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
+source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/transmission-daemon/transmission-daemon-init-update.sh"
 source "$SCRIPTPATH/transmission-daemon/transmission-daemon-default-update.sh"
 

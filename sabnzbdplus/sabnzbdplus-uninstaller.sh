@@ -21,7 +21,6 @@ echo -e $GREEN"AtoMiC $APPTITLE Uninstaller Script"$ENDCOLOR
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-stop.sh
-sudo killall sabnzbdplus >/dev/null 2>&1
 source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/app-file-del.sh

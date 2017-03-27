@@ -29,4 +29,4 @@ fi
 
 sleep 2
 
-sudo killall $APPNAME stop >/dev/null 2>&1
+sudo killall $APPNAME >/dev/null 2>&1

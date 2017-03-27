@@ -7,10 +7,13 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-echo -e $YELLOW'--->Configuring Transmission Settings...'$ENDCOLOR
+echo -e "$YELLOW--->Configuring Transmission Settings...$ENDCOLOR"
 
-#Set to allow network access instead of locallost.
-sudo sed -i "s@\"rpc-whitelist-enabled\": true@\"rpc-whitelist-enabled\": false@g" $APPSETTINGS  || { echo -e $RED"Modifying whitelist enabled in $APPSETTINGS file failed."$ENDCOLOR; exit 1; }
+#Set to allow network access instead of localhost.
+sudo sed -i "s@\"rpc-whitelist-enabled\": \
+true@\"rpc-whitelist-enabled\": false@g" "$APPSETTINGS" \
+|| { echo -e "${RED}Modifying whitelist enabled in \
+$APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
 
 #Enable incomplete folder & destination
 sudo sed -i "s@\"incomplete-dir-enabled\": false@\"incomplete-dir-enabled\": true@g" $APPSETTINGS  || { echo -e $RED"Modifying incomplete enabled in $APPSETTINGS file failed."$ENDCOLOR; exit 1; }

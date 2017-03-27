@@ -2,7 +2,6 @@
 # Script Name: AtoMiC Transmission default update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 

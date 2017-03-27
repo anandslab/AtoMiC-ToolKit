@@ -9,9 +9,6 @@
 
 echo -e "$YELLOW--->Configuring Transmission Settings...$ENDCOLOR"
 
-# Remove the settings file so we don't have two files'
-# rm /etc/transmission-daemon/settings.json
-
 #Set to allow network access instead of localhost.
 sudo sed -i "s@\"rpc-whitelist-enabled\": \
 true@\"rpc-whitelist-enabled\": false@g" "$APPSETTINGS" \

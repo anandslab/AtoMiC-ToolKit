@@ -45,21 +45,21 @@ set -e
 
 #Look for PID and create if doesn't exist
 if [ ! -d $PID_PATH ]; then
-	mkdir -p $PID_PATH
-	chown $RUN_AS $PID_PATH
+    mkdir -p $PID_PATH
+    chown $RUN_AS $PID_PATH
 fi
 
 if [ ! -d $DATA_DIR ]; then
-	mkdir -p $DATA_DIR
-	chown $RUN_AS $DATA_DIR
+    mkdir -p $DATA_DIR
+    chown $RUN_AS $DATA_DIR
 fi
 
 if [ -e $PID_FILE ]; then
-	PID=`cat $PID_FILE`
-		if ! kill -0 $PID > /dev/null 2>&1; then
-		echo "Removing stale $PID_FILE"
-		rm $PID_FILE
-	fi
+    PID=`cat $PID_FILE`
+        if ! kill -0 $PID > /dev/null 2>&1; then
+        echo "Removing stale $PID_FILE"
+        rm $PID_FILE
+    fi
 fi
 
 echo $JACKETT_PID > $PID_FILE
@@ -67,12 +67,12 @@ echo $JACKETT_PID > $PID_FILE
 case "$1" in
 start)
 if [ -z "${JACKETT_PID}" ]; then
-	echo "Starting $DESC"
-	rm -rf $PID_PATH || return 1
-	install -d --mode=0755 -o $RUN_AS $PID_PATH || return 1
-	start-stop-daemon -d $APP_PATH -c $RUN_AS --start --background --pidfile $PID_FILE --exec $DAEMON -- $DAEMON_OPTS
-	else
-	echo "Jackett already running."
+    echo "Starting $DESC"
+    rm -rf $PID_PATH || return 1
+    install -d --mode=0755 -o $RUN_AS $PID_PATH || return 1
+    start-stop-daemon -d $APP_PATH -c $RUN_AS --start --background --pidfile $PID_FILE --exec $DAEMON -- $DAEMON_OPTS
+    else
+    echo "Jackett already running."
 fi
 ;;
 stop)
@@ -89,25 +89,25 @@ start-stop-daemon -d $APP_PATH -c $RUN_AS --start --background --pidfile $PID_FI
 status)
 # Use LSB function library if it exists
 if [ -f /lib/lsb/init-functions ]; then
-	. /lib/lsb/init-functions
+    . /lib/lsb/init-functions
 if [ -e $PID_FILE ]; then
-	status_of_proc -p $PID_FILE "$DAEMON" "$NAME" && exit 0 || exit $?
-	else
-	log_daemon_msg "$NAME is not running"
-	exit 3
+    status_of_proc -p $PID_FILE "$DAEMON" "$NAME" && exit 0 || exit $?
+    else
+    log_daemon_msg "$NAME is not running"
+    exit 3
 fi
 
 else
 # Use basic functions
 if [ -e $PID_FILE ]; then
-	PID=`cat $PID_FILE`
+    PID=`cat $PID_FILE`
 if kill -0 $PID > /dev/null 2>&1; then
-	echo " * $NAME is running"
-	exit 0
+    echo " * $NAME is running"
+    exit 0
 fi
 else
-	echo " * $NAME is not running"
-	exit 3
+    echo " * $NAME is not running"
+    exit 3
 fi
 fi
 ;;

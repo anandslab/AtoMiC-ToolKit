@@ -19,19 +19,19 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
-	case "$MAINCHOICE" in 
-	  "PVRs" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
-	  "Usenet Downloaders" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
-	  "Bittorrent Clients" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
-	  "Personal Media Servers" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
-	  "Home Theater" ) source $SCRIPTPATH/menus/menu-home-theater.sh ;;
-	  "Administration Tools" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
-	  "Utilities" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
-	  "Maintenance" ) source $SCRIPTPATH/maintenance/maintenance-menu.sh ;;
-	  *) 
-	    echo -e $RED'Invalid Option'$ENDCOLOR
-	    source $SCRIPTPATH/inc/exit.sh;;
-	esac
+    case "$MAINCHOICE" in 
+      "PVRs" ) source $SCRIPTPATH/menus/menu-pvrs.sh ;;
+      "Usenet Downloaders" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
+      "Bittorrent Clients" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
+      "Personal Media Servers" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
+      "Home Theater" ) source $SCRIPTPATH/menus/menu-home-theater.sh ;;
+      "Administration Tools" ) source $SCRIPTPATH/menus/menu-administration-tools.sh ;;
+      "Utilities" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
+      "Maintenance" ) source $SCRIPTPATH/maintenance/maintenance-menu.sh ;;
+      *) 
+        echo -e $RED'Invalid Option'$ENDCOLOR
+        source $SCRIPTPATH/inc/exit.sh;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

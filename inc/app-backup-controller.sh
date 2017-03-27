@@ -1,18 +1,10 @@
 #!/bin/bash
-# Script Name: AtoMiC Backup Controller
-# Author: htpcBeginner
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
-#
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
-if [[ $ISSETUP != "Yes" ]]
-then
-  echo
-  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-  echo
-  exit 0
+if [[ $ISSETUP != "Yes" ]]; then
+    echo
+    echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
+    echo
+    exit 0
 fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh

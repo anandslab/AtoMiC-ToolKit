@@ -18,7 +18,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would y
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/inc/app-constant-reset.sh
-    case "$SUBCHOICE" in 	
+    case "$SUBCHOICE" in     
       "FFmpeg" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh ;;
       "Mono" ) source $SCRIPTPATH/utils/mono/mono-menu.sh ;;
       "nzbToMedia" ) source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh ;;
@@ -28,9 +28,6 @@ if [ $exitstatus = 0 ]; then
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
     esac
-
-    source $SCRIPTPATH/inc/thankyou.sh
-    source $SCRIPTPATH/inc/exit.sh
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

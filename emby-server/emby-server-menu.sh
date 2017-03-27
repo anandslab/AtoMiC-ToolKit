@@ -17,17 +17,17 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage Emby" --menu "What would y
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-	source $SCRIPTPATH/emby-server/emby-server-constants.sh
+    source $SCRIPTPATH/emby-server/emby-server-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/emby-server/emby-server-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/emby-server/emby-server-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/emby-server/emby-server-update.sh ;;
+        "Install" ) source $SCRIPTPATH/emby-server/emby-server-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/emby-server/emby-server-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/emby-server/emby-server-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Go Back" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

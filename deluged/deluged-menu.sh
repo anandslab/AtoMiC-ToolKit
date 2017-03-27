@@ -19,17 +19,17 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/deluged/deluged-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/deluged/deluged-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/deluged/deluged-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/deluged/deluged-update.sh ;;
+        "Install" ) source $SCRIPTPATH/deluged/deluged-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/deluged/deluged-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/deluged/deluged-update.sh ;;
         "Access Details" ) 
         APPSETTINGS=$APPPATH'/web.conf'
-        source $SCRIPTPATH/inc/app-access-details.sh ;;	
-		"Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
+        source $SCRIPTPATH/inc/app-access-details.sh ;;    
+        "Go Back" ) source $SCRIPTPATH/menus/menu-bittorrent.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

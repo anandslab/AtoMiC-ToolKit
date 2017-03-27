@@ -21,7 +21,7 @@ if [ $exitstatus = 0 ]; then
       "SABnzbd+" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-menu.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

@@ -19,15 +19,15 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     source $SCRIPTPATH/plexpy/plexpy-constants.sh
     case "$SUBCHOICE" in 
-		"Install" ) source $SCRIPTPATH/plexpy/plexpy-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/plexpy/plexpy-uninstaller.sh ;;
-		"Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-		"Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-		"Manual Update" ) source $SCRIPTPATH/plexpy/plexpy-update.sh ;;
+        "Install" ) source $SCRIPTPATH/plexpy/plexpy-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/plexpy/plexpy-uninstaller.sh ;;
+        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
+        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
+        "Manual Update" ) source $SCRIPTPATH/plexpy/plexpy-update.sh ;;
         "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-		"Go Back" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
+        "Go Back" ) source $SCRIPTPATH/menus/menu-personal-media-servers.sh ;;
         *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/menus/menu-pvrs.sh
 fi

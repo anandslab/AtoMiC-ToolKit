@@ -14,11 +14,11 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage FFmpeg" --menu "What would
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     case "$SUBCHOICE" in 
-		"Install\Update" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh ;;
-		"Uninstall" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-uninstaller.sh ;;
-		"Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
-		*) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+        "Install\Update" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh ;;
+        "Uninstall" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-uninstaller.sh ;;
+        "Go Back" ) source $SCRIPTPATH/utils/utils-menu.sh ;;
+        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

@@ -23,7 +23,7 @@ if [ $exitstatus = 0 ]; then
       "Transmission" ) source $SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh ;;
       "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
       *) source $SCRIPTPATH/inc/invalid-option.sh ;;
-	esac
+    esac
 else
     source $SCRIPTPATH/inc/thankyou.sh
     echo

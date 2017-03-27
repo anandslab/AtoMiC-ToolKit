@@ -9,5 +9,3 @@ ExecStart=/usr/bin/python /opt/pyload/pyLoadCore.py
 
 [Install]
 WantedBy=multi-user.target
-
-

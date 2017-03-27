@@ -40,8 +40,8 @@ fi
 
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
 
-#Need to do this seperately as the init file wouldnt have existed to before the install.
-source "$SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh"
+#Need to do this seperately as the init\default files wouldnt have existed before the install.
+source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"

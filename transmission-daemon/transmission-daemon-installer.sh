@@ -41,6 +41,7 @@ fi
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
 
 #Need to do this seperately as the init\default files wouldnt have existed before the install.
+source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 
 source "$SCRIPTPATH/inc/app-set-permissions.sh"

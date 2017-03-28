@@ -1,10 +1,11 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='sabnzbdplus'
 APPSHORTNAME='sab'
 APPPATH='/usr/share/sabnzbdplus'
-APPTITLE='SABnzbd'
+APPTITLE='SABnzbd+'
 APPDEPS='python-pip python-dev'
-APPPIPS='cryptography sabyenc http://www.golug.it/pub/yenc/yenc-0.4.0.tar.gz'
+APPPIPS='cryptography sabyenc'
 APPGIT=''
 APPDPORT='8080'
 APPSETTINGS=$APPPATH'/sabnzbdplus.ini'

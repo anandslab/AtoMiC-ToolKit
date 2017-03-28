@@ -9,3 +9,4 @@
 echo -e "$YELLOW--->Configuring SABnzbd+ Settings...$ENDCOLOR"
 echo 'Set to Network Access'
 sudo sed -i "s@^${ACCESSHOST}.*@${ACCESSHOST}0.0.0.0@g" $APPSETTINGS || { echo -e $RED'Modifying '$ACCESSHOST' in '$APPSETTINGS' file failed.'$ENDCOLOR; exit 1; }
+sudo -H pip install sabyenc --upgrade

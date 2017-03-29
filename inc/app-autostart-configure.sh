@@ -2,6 +2,7 @@
 # shellcheck disable=SC1090
 echo
 source "$SCRIPTPATH/inc/app-stop.sh"
+echo
 echo -e "$YELLOW--->Autostart configuring...$ENDCOLOR"
 if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then 
     echo 'Using systemd'

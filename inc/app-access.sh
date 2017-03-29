@@ -4,4 +4,4 @@ if grep -q "Access Details" "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"; then
 else
     ACCESSSUPPORT='You may now access '$APPTITLE'.'
 fi
-echo -e $ACCESSSUPPORT
+echo -e "$ACCESSSUPPORT"

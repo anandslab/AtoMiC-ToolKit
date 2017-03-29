@@ -1,11 +1,11 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='sabnzbdplus'
 APPSHORTNAME='sab'
 APPPATH='/usr/share/sabnzbdplus'
-APPTITLE='SABnzbd'
-APPDEPS='python-pip python-dev'
-APPPIPS='cryptography sabyenc http://www.golug.it/pub/yenc/yenc-0.4.0.tar.gz'
-APPGIT=''
+APPTITLE='SABnzbd+'
+APPDEPS='python-pip python-dev libssl-dev libffi-dev'
+APPPIPS='cffi cryptography sabyenc'
 APPDPORT='8080'
 APPSETTINGS=$APPPATH'/sabnzbdplus.ini'
 APPREPOSITORYNAME='jcfp'

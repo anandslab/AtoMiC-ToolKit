@@ -1,7 +1,9 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd+" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd+" \
+--menu "What would you like to do?" --backtitle "$BACKTITLE" \
+--fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install" "Install SABnzbd+" \
 "Uninstall" "Uninstall SABnzbd+" \
 "Backup" "Backup SABnzbd+ settings" \
@@ -14,21 +16,22 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd+" --menu "What wou
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh
-    case "$SUBCHOICE" in 
-        "Install" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-installer.sh ;;
-        "Uninstall" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-uninstaller.sh ;;
-        "Backup" ) source $SCRIPTPATH/inc/app-backup-controller.sh ;;
-        "Restore" ) source $SCRIPTPATH/inc/app-restore-controller.sh ;;
-        "Manual Update" ) source $SCRIPTPATH/sabnzbdplus/sabnzbdplus-update.sh ;;
-        "Reset Password" ) source $SCRIPTPATH/inc/app-password-reset-controller.sh ;;
-        "Access Details" ) source $SCRIPTPATH/inc/app-access-details.sh ;;
-        "Access Switch" ) source $SCRIPTPATH/inc/app-access-switch.sh ;;
-        "Go Back" ) source $SCRIPTPATH/menus/menu-usenet.sh ;;
-        *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    source "$SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh"
+    case "$SUBCHOICE" in
+        "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
+        "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
+        "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
+        "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
+        "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
+        "Reset Password" )
+                source "$SCRIPTPATH/inc/app-password-reset-controller.sh" ;;
+        "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
+        "Access Switch" ) source "$SCRIPTPATH/inc/app-access-switch.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-usenet.sh" ;;
+        *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else
-    source $SCRIPTPATH/inc/thankyou.sh
+    source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
 fi

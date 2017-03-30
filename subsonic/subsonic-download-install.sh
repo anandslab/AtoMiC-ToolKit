@@ -23,4 +23,3 @@ fi
 sudo dpkg -i '/var/cache/apt/archives'/$FILE
 
 cd $SCRIPTPATH
-

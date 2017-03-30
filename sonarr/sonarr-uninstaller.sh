@@ -19,7 +19,7 @@ source $SCRIPTPATH/inc/header.sh
 
 source $SCRIPTPATH/sonarr/sonarr-constants.sh
 
-echo -e $GREEN"AtoMiC $APPTITLE Uninstaller Script"$ENDCOLOR
+echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-stop.sh

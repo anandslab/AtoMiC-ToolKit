@@ -34,7 +34,6 @@ echo
 source $SCRIPTPATH/inc/app-autostart-configure.sh
 
 source $SCRIPTPATH/inc/app-set-permissions.sh
-source $SCRIPTPATH/inc/pkgupdate.sh
 source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh
 source $SCRIPTPATH/nzbget/nzbget-constants.sh
 source $SCRIPTPATH/inc/app-folders-create.sh

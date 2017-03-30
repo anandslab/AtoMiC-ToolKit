@@ -1,14 +1,11 @@
 #!/bin/bash
-if [[ $ISSETUP != "Yes" ]]
-then
-  echo
-  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-  echo
-  exit 0
-fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would you like to do?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+# shellcheck disable=SC1090
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage Other Tools" \
+--menu "What would you like to do?" --backtitle "$BACKTITLE" \
+--fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "FFmpeg" "Record, convert and stream audio and video" \
-"Mono" "Open source implementation of Microsoft's .NET Framework" \
+"Mono" "Open source implementation of MS .NET Framework" \
 "nzbToMedia" "Provides NZB and Torrent postprocessing" \
 "Unrar" "Install latest Unrar from RARLAB source" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
@@ -17,19 +14,29 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Other Tools" --menu "What would y
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    source $SCRIPTPATH/inc/app-constant-reset.sh
-    case "$SUBCHOICE" in     
-      "FFmpeg" ) source $SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh ;;
-      "Mono" ) source $SCRIPTPATH/utils/mono/mono-menu.sh ;;
-      "nzbToMedia" ) source $SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh ;;
-      "Unrar" ) source $SCRIPTPATH/utils/unrar/unrar-menu.sh ;;
-      "pyLoad" ) source $SCRIPTPATH/pyload/pyload-menu.sh ;;
-      "Install Bash Aliases" ) source $SCRIPTPATH/utils/bash_aliases-installer.sh ;;
-      "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;
-      *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+    source "$SCRIPTPATH/inc/app-constant-reset.sh"
+    case "$SUBCHOICE" in
+      "FFmpeg" )
+            source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh" ;;
+      "Mono" )
+            source "$SCRIPTPATH/utils/mono/mono-menu.sh" ;;
+      "nzbToMedia" )
+            source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh" ;;
+      "Unrar" )
+            source "$SCRIPTPATH/utils/unrar/unrar-menu.sh" ;;
+      "pyLoad" )
+            source "$SCRIPTPATH/pyload/pyload-menu.sh" ;;
+      "Install Bash Aliases" )
+            source "$SCRIPTPATH/utils/bash_aliases-installer.sh" ;;
+      "Go Back" )
+            source "$SCRIPTPATH/menus/menu-main.sh" ;;
+      *)
+            source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
+    source "$SCRIPTPATH/inc/thankyou.sh"
+    source "$SCRIPTPATH/inc/exit.sh"
 else
-    source $SCRIPTPATH/inc/thankyou.sh
+    source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
 fi

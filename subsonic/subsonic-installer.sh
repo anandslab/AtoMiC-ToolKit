@@ -24,9 +24,8 @@ source $SCRIPTPATH/inc/app-autostart-remove.sh
 source $SCRIPTPATH/inc/app-uninstall.sh
 source $SCRIPTPATH/inc/app-install-deps.sh
 source $SCRIPTPATH/subsonic/subsonic-download-install.sh
-source $SCRIPTPATH/inc/app-stop.sh
-source $SCRIPTPATH/subsonic/subsonic-ffmpeg-update.sh
 source $SCRIPTPATH/inc/app-autostart-configure.sh
+source $SCRIPTPATH/subsonic/subsonic-ffmpeg-update.sh
 source $SCRIPTPATH/inc/app-set-permissions.sh
 source $SCRIPTPATH/inc/app-start.sh
 source $SCRIPTPATH/inc/app-install-confirmation.sh

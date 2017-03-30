@@ -16,7 +16,7 @@ fi
 source $SCRIPTPATH/inc/commons.sh
 source $SCRIPTPATH/inc/header.sh
 
-echo -e $GREEN"AtoMiC $APPTITLE Uninstaller Script"$ENDCOLOR
+echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 
 source $SCRIPTPATH/inc/pause.sh
 source $SCRIPTPATH/inc/app-folder-check.sh

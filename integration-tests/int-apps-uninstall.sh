@@ -11,12 +11,12 @@ CI='YES'
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
-    echo "UNAME=$USER" >> "./tmp/userinfo"
-    echo "UGROUP=$USER" >> "./tmp/userinfo"
+    echo "UNAME=$SUDO_USER" > "$SCRIPTPATH/tmp/userinfo"
+    echo "UGROUP=$SUDO_USER" >> "$SCRIPTPATH/tmp/userinfo"
 fi
 
 if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
-    echo "Agreed to disclaimers: $(date)" >> "./tmp/consented"
+    echo "Agreed to disclaimers: $(date)" > "$SCRIPTPATH/tmp/consented"
 fi
 
 source "$SCRIPTPATH/setup.sh" -u couchpotato

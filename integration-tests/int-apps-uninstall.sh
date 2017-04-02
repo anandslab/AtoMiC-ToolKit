@@ -5,6 +5,12 @@
 # License: MIT License (refer to README.md for more details)
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+CI='YES'
+mkdir "./tmp"
+
+echo "Agreed to disclaimers: $(date)" >> "./tmp/consented"
+echo "UNAME=root" >> "./tmp/userinfo"
+echo "UGROUP=root" >> "./tmp/userinfo"
 sudo bash setup.sh -u couchpotato
 sudo bash setup.sh -u deluged
 sudo bash setup.sh -u emby-server

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Watcher Installer
-# Author: htpcBeginner
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 

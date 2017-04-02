@@ -1,7 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC1090
+# Script Name: AtoMiC SABnzbd+ Menu
+# Author: TommyE123
+# Publisher: http://www.htpcBeginner.com
+# License: MIT License (refer to README.md for more details)
+
+# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd+" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage SABnzbd+" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install" "Install SABnzbd+" \
@@ -15,7 +22,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage SABnzbd+" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh"
     case "$SUBCHOICE" in
         "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
@@ -34,4 +41,5 @@ else
     source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
+    exit 0
 fi

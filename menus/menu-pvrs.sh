@@ -1,12 +1,16 @@
 #!/bin/bash
-if [[ $ISSETUP != "Yes" ]]
-then
-  echo
-  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-  echo
-  exit 0
-fi
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" --fb --cancel-button "Exit" $LINES $COLUMNS $NETLINES \
+# shellcheck disable=SC1090
+# Script Name: AtoMiC PVRS Menu
+# Author: TommyE123
+# Publisher: http://www.htpcBeginner.com
+# License: MIT License (refer to README.md for more details)
+
+# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
+--menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
+--fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "CouchPotato" "Movies PVR Client" \
 "Headphones" "Music PVR Client" \
 "Lazy Librarian" "Book PVR Client" \
@@ -19,23 +23,35 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" --menu "Which a
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    source $SCRIPTPATH/inc/app-constant-reset.sh
+if [[ $exitstatus = 0 ]]; then
+    source "$SCRIPTPATH/inc/app-constant-reset.sh"
     case "$SUBCHOICE" in
-      "CouchPotato" ) source $SCRIPTPATH/couchpotato/couchpotato-menu.sh ;;
-      "Headphones" ) source $SCRIPTPATH/headphones/headphones-menu.sh ;;
-      "Lazy Librarian" ) source $SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh ;;
-      "Mylar" ) source $SCRIPTPATH/mylar/mylar-menu.sh ;;
-      "Radarr" ) source $SCRIPTPATH/radarr/radarr-menu.sh ;;
-      "SickGear" ) source $SCRIPTPATH/sickgear/sickgear-menu.sh ;;
-      "SickRage" ) source $SCRIPTPATH/sickrage/sickrage-menu.sh ;;
-      "Sonarr" ) source $SCRIPTPATH/sonarr/sonarr-menu.sh ;;
-        "Watcher" ) source $SCRIPTPATH/watcher/watcher-menu.sh ;;
-      "Go Back" ) source $SCRIPTPATH/menus/menu-main.sh ;;            
-      *) source $SCRIPTPATH/inc/invalid-option.sh ;;
+        "CouchPotato" )
+            source "$SCRIPTPATH/couchpotato/couchpotato-menu.sh" ;;
+        "Headphones" )
+            source "$SCRIPTPATH/headphones/headphones-menu.sh" ;;
+        "Lazy Librarian" )
+            source "$SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh" ;;
+        "Mylar" )
+            source "$SCRIPTPATH/mylar/mylar-menu.sh" ;;
+        "Radarr" )
+            source "$SCRIPTPATH/radarr/radarr-menu.sh" ;;
+        "SickGear" )
+            source "$SCRIPTPATH/sickgear/sickgear-menu.sh" ;;
+        "SickRage" )
+            source "$SCRIPTPATH/sickrage/sickrage-menu.sh" ;;
+        "Sonarr" )
+            source "$SCRIPTPATH/sonarr/sonarr-menu.sh" ;;
+        "Watcher" )
+            source "$SCRIPTPATH/watcher/watcher-menu.sh" ;;
+        "Go Back" )
+            source "$SCRIPTPATH/menus/menu-main.sh" ;;
+        *)
+            source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else
-    source $SCRIPTPATH/inc/thankyou.sh
+    source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
+    exit 0
 fi

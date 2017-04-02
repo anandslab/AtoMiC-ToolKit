@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage Unrar" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Unrar" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install" "Latest Unrar from RARLAB source" \
@@ -9,7 +9,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage Unrar" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/utils/unrar/unrar-constants.sh"
     case "$SUBCHOICE" in
         "Install" ) source "$SCRIPTPATH/utils/unrar/unrar-installer.sh" ;;

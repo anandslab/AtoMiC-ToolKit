@@ -8,7 +8,7 @@ sleep 1
 
 source $SCRIPTPATH/inc/fileselect.sh
 
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     BFILE=$SCRIPTPATH'/backups/'$FILECHOICE
 
     source $SCRIPTPATH/inc/app-stop.sh

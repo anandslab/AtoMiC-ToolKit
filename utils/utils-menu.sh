@@ -1,7 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC1090
+# Script Name: AtoMiC Utils Menu
+# Author: TommyE123
+# Publisher: http://www.htpcBeginner.com
+# License: MIT License (refer to README.md for more details)
+
+# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage Other Tools" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "FFmpeg" "Record, convert and stream audio and video" \
@@ -13,24 +20,24 @@ SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage Other Tools" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/inc/app-constant-reset.sh"
     case "$SUBCHOICE" in
-      "FFmpeg" )
+        "FFmpeg" )
             source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh" ;;
-      "Mono" )
+        "Mono" )
             source "$SCRIPTPATH/utils/mono/mono-menu.sh" ;;
-      "nzbToMedia" )
+        "nzbToMedia" )
             source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh" ;;
-      "Unrar" )
+        "Unrar" )
             source "$SCRIPTPATH/utils/unrar/unrar-menu.sh" ;;
-      "pyLoad" )
+        "pyLoad" )
             source "$SCRIPTPATH/pyload/pyload-menu.sh" ;;
-      "Install Bash Aliases" )
+        "Install Bash Aliases" )
             source "$SCRIPTPATH/utils/bash_aliases-installer.sh" ;;
-      "Go Back" )
+        "Go Back" )
             source "$SCRIPTPATH/menus/menu-main.sh" ;;
-      *)
+        *)
             source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
     source "$SCRIPTPATH/inc/thankyou.sh"
@@ -39,4 +46,5 @@ else
     source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
+    exit 0
 fi

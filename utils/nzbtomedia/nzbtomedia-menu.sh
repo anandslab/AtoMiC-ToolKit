@@ -9,7 +9,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage nzbTomedia" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh"
     case "$SUBCHOICE" in
         "Install\Update" )

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Deluge settings configurator
-# Author: htpcBeginner
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 #

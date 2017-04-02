@@ -1,14 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-if [[ $ISSETUP != "Yes" ]]; then
-    echo
-    echo -e "${RED}Cannot be run directly. Please run setup.sh from \
-AtoMiC ToolKit root folder: ${ENDCOLOR}sudo bash setup.sh"
-    echo
-    exit 0
-fi
+# Script Name: AtoMiC pyLoad Menu
+# Author: TommyE123
+# Publisher: http://www.htpcBeginner.com
+# License: MIT License (refer to README.md for more details)
 
-SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage pyLoad" \
+# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage pyLoad" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install" "Install pyLoad" \
@@ -21,14 +21,14 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage pyLoad" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/pyload/pyload-constants.sh"
     case "$SUBCHOICE" in
-        "Install" ) source "$SCRIPTPATH/pyload/pyload-installer.sh" ;;
-        "Uninstall" ) source "$SCRIPTPATH/pyload/pyload-uninstaller.sh" ;;
+        "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
+        "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
         "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
-        "Manual Update" ) source "$SCRIPTPATH/pyload/pyload-update.sh" ;;
+        "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
         "Access Switch" ) source "$SCRIPTPATH/inc/app-access-switch.sh" ;;
         "Go Back" ) source "$SCRIPTPATH/utils/utils-menu.sh" ;;
@@ -38,4 +38,5 @@ else
     source "$SCRIPTPATH/inc/thankyou.sh"
     echo
     sleep 1
+    exit 0
 fi

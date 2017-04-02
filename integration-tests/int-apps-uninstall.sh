@@ -10,6 +10,8 @@
 CI='YES'
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+"$SCRIPTPATH/inc/app-toolkit-deps.sh"
+
 if [[ ! -d $SCRIPTPATH/tmp ]]; then
     mkdir "$SCRIPTPATH/tmp"
 fi

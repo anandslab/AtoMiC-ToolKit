@@ -11,7 +11,7 @@ source $SCRIPTPATH/inc/fileselect.sh
 if [[ $exitstatus = 0 ]]; then
     BFILE=$SCRIPTPATH'/backups/'$FILECHOICE
 
-    source $SCRIPTPATH/inc/app-stop.sh
+    source "$SCRIPTPATH/inc/app-stop.sh"
 
     echo
     sleep 1
@@ -37,8 +37,8 @@ if [[ $exitstatus = 0 ]]; then
     echo -e 'Restoring the following files from: '$CYAN$BFILE$ENDCOLOR
     tar -C / -zxvf $BFILE || { echo -e $RED'Extracting files failed.'$ENDCOLOR ; exit 1; }
 
-    source $SCRIPTPATH/inc/app-set-permissions.sh
-    source $SCRIPTPATH/inc/app-start.sh
+    source "$SCRIPTPATH/inc/app-set-permissions.sh"
+    source "$SCRIPTPATH/inc/app-start.sh"
 else
     echo
     echo -e $RED'Restoring '$APPTITLE' backup cancelled.'$ENDCOLOR

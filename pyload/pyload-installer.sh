@@ -3,18 +3,11 @@
 # Script Name: AtoMiC pyLoad Installer
 # Author: PREngineer
 # Publisher: http://www.htpcbeginner.com
-#
+
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]; then
-    echo
-    echo -e "${RED}Cannot be run directly. Please run setup.sh from \
-AtoMiC ToolKit root folder: ${ENDCOLOR}sudo bash setup.sh"
-    echo
-    exit 0
-fi
-
+source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 

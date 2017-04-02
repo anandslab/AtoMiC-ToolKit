@@ -3,23 +3,16 @@
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]
-then
-  echo
-  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-  echo
-  exit 0
-fi
-source $SCRIPTPATH/inc/commons.sh
-source $SCRIPTPATH/inc/header.sh
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
 
 echo -e $GREEN'AtoMiC .bash_aliases Installer for HTPCs and Home Servers'$ENDCOLOR
 
-source $SCRIPTPATH/inc/pause.sh
+source "$SCRIPTPATH/inc/pause.sh"
 
 echo -e $YELLOW'--->Checking for .bashrc file...'$ENDCOLOR
 if [ ! -f "/home/$UNAME/.bashrc" ];
@@ -81,5 +74,5 @@ echo -e $GREEN'--->All done. New .bash_aliases now active.'$ENDCOLOR
 echo -e 'Please visit '$CYAN' http://www.htpcbeginner.com/create-shortcut-to-commands-using-bashaliases-in-ubuntu/'$ENDCOLOR' to understand how to use .bash_aliases.'
 echo -e 'Please read .bash_aliases file for all available shortcut commands.'
 
-source $SCRIPTPATH/inc/thankyou.sh
-source $SCRIPTPATH/inc/exit.sh
+source "$SCRIPTPATH/inc/thankyou.sh"
+source "$SCRIPTPATH/inc/exit.sh"

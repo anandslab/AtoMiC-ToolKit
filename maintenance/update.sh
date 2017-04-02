@@ -3,19 +3,12 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]
-then
-  echo
-  echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-  echo
-  exit 0
-fi
-source $SCRIPTPATH/inc/commons.sh
-source $SCRIPTPATH/inc/header.sh
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
 
 echo -e $GREEN'AtoMiC ToolKit Updater'$ENDCOLOR
 
@@ -29,7 +22,7 @@ echo
     
 if [ "$RESP" == "y" ]
 then
-    source $SCRIPTPATH/inc/pkgupdate.sh
+    source "$SCRIPTPATH/inc/pkgupdate.sh"
     APPPATH=$SCRIPTPATH
     echo
     sleep 1
@@ -41,7 +34,7 @@ then
     sleep 1
 
     echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-    source $SCRIPTPATH/inc/app-git-stash.sh
+    source "$SCRIPTPATH/inc/app-git-stash.sh"
 
     echo 
     sleep 1
@@ -49,10 +42,10 @@ then
     echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
     git -C $SCRIPTPATH fetch --all
     git -C $SCRIPTPATH reset --hard origin/master
-    source $SCRIPTPATH/inc/app-set-permissions.sh
+    source "$SCRIPTPATH/inc/app-set-permissions.sh"
     echo -e 'AtoMiC ToolKit updated successfully.'
 else
     echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR
 fi
 
-source $SCRIPTPATH/inc/exit.sh
+source "$SCRIPTPATH/inc/exit.sh"

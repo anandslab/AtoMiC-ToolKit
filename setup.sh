@@ -32,7 +32,7 @@ fi
 source "$SCRIPTPATH/inc/header.sh"
 
 #echo -e $RED'This setup file is in development and can mess up your system. Exit and run '$CYAN'sudo ./setup.sh'$RED' instead.'$ENDCOLOR
-#source $SCRIPTPATH/inc/pause.sh
+#source "$SCRIPTPATH/inc/pause.sh"
 
 # Define help function for options
 function help(){
@@ -115,7 +115,7 @@ if [[ ! -d '/opt' ]]; then
 fi
 
 if [ -z "$ARGS" ]; then
-    source $SCRIPTPATH/inc/pause.sh
-    source $SCRIPTPATH/inc/header.sh
+    source "$SCRIPTPATH/inc/pause.sh"
+    source "$SCRIPTPATH/inc/header.sh"
     source $SCRIPTPATH/menus/menu-main.sh
 fi

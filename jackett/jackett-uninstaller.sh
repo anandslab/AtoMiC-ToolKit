@@ -7,18 +7,10 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]; then
-    echo
-    echo -e "${RED}Cannot be run directly. Please run setup.sh from \
-AtoMiC ToolKit root folder: ${ENDCOLOR}sudo bash setup.sh"
-    echo
-    exit 0
-fi
+source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
-
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
-
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"

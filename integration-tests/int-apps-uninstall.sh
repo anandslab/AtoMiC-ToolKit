@@ -10,6 +10,10 @@
 CI='YES'
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+if [[ ! -d $SCRIPTPATH/tmp ]]; then
+    mkdir "$SCRIPTPATH/tmp"
+fi
+
 if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
     echo "UNAME=$SUDO_USER" > "$SCRIPTPATH/tmp/userinfo"
     echo "UGROUP=$SUDO_USER" >> "$SCRIPTPATH/tmp/userinfo"

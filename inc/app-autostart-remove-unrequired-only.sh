@@ -18,5 +18,3 @@ elif [ -d /etc/init.d ]; then
 else 
     echo -e $RED'Unknown startup type.'$ENDCOLOR
 fi
-
-source "$SCRIPTPATH/inc/app-start.sh"

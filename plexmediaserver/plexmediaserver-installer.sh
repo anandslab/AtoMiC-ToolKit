@@ -28,9 +28,10 @@ source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
 source $SCRIPTPATH/plexmediaserver/plexmediaserver-constants.sh
 source $SCRIPTPATH/inc/app-folders-create.sh
 #Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt)
-source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-install.sh
+source $SCRIPTPATH/inc/app-autostart-configure.sh
 source $SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh
+source "$SCRIPTPATH/inc/app-start.sh"
 source $SCRIPTPATH/inc/app-install-confirmation.sh
 echo 'Plex should start within a few seconds depending on the speed of your device.'
 echo -e 'Open '$CYAN'http://localhost:32400/web'$ENDCOLOR' in your browser to continue the setup.'

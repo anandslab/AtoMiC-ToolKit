@@ -14,7 +14,6 @@ source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 
 source "$SCRIPTPATH/inc/pause.sh"
-source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"
@@ -40,10 +39,8 @@ fi
 
 #Need to do this seperately as the init\default files wouldnt have existed before the install.
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
-source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/transmission-daemon/transmission-daemon-init-update.sh"
 source "$SCRIPTPATH/transmission-daemon/transmission-daemon-default-update.sh"
-
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"
 source "$SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh"

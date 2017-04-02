@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=SC2034
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Integration Test Application uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -6,33 +8,39 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 CI='YES'
-mkdir "./tmp"
+SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-echo "Agreed to disclaimers: $(date)" >> "./tmp/consented"
-echo "UNAME=root" >> "./tmp/userinfo"
-echo "UGROUP=root" >> "./tmp/userinfo"
-sudo bash setup.sh -u couchpotato
-sudo bash setup.sh -u deluged
-sudo bash setup.sh -u emby-server
-sudo bash setup.sh -u headphones
-sudo bash setup.sh -u htpcmanager
-sudo bash setup.sh -u jackett
-sudo bash setup.sh -u kodi
-sudo bash setup.sh -u lazylibrarian
-sudo bash setup.sh -u madsonic
-sudo bash setup.sh -u mylar
-sudo bash setup.sh -u nzbget
-sudo bash setup.sh -u nzbhydra
-sudo bash setup.sh -u ombi
-sudo bash setup.sh -u plexmediaserver
-sudo bash setup.sh -u plexpy
-sudo bash setup.sh -u pyload
-sudo bash setup.sh -u qbittorrent-nox
-sudo bash setup.sh -u radarr
-sudo bash setup.sh -u sabnzbdplus
-sudo bash setup.sh -u sickgear
-sudo bash setup.sh -u sickrage
-sudo bash setup.sh -u sonarr
-sudo bash setup.sh -u transmission-daemon
-sudo bash setup.sh -u watcher
-sudo bash setup.sh -u webmin
+if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
+    echo "UNAME=$USER" >> "./tmp/userinfo"
+    echo "UGROUP=$USER" >> "./tmp/userinfo"
+fi
+
+if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
+    echo "Agreed to disclaimers: $(date)" >> "./tmp/consented"
+fi
+
+source "$SCRIPTPATH/setup.sh" -u couchpotato
+source "$SCRIPTPATH/setup.sh" -u deluged
+source "$SCRIPTPATH/setup.sh" -u emby-server
+source "$SCRIPTPATH/setup.sh" -u headphones
+source "$SCRIPTPATH/setup.sh" -u htpcmanager
+source "$SCRIPTPATH/setup.sh" -u jackett
+source "$SCRIPTPATH/setup.sh" -u kodi
+source "$SCRIPTPATH/setup.sh" -u lazylibrarian
+source "$SCRIPTPATH/setup.sh" -u madsonic
+source "$SCRIPTPATH/setup.sh" -u mylar
+source "$SCRIPTPATH/setup.sh" -u nzbget
+source "$SCRIPTPATH/setup.sh" -u nzbhydra
+source "$SCRIPTPATH/setup.sh" -u ombi
+source "$SCRIPTPATH/setup.sh" -u plexmediaserver
+source "$SCRIPTPATH/setup.sh" -u plexpy
+source "$SCRIPTPATH/setup.sh" -u pyload
+source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
+source "$SCRIPTPATH/setup.sh" -u radarr
+source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
+source "$SCRIPTPATH/setup.sh" -u sickgear
+source "$SCRIPTPATH/setup.sh" -u sickrage
+source "$SCRIPTPATH/setup.sh" -u sonarr
+source "$SCRIPTPATH/setup.sh" -u transmission-daemon
+source "$SCRIPTPATH/setup.sh" -u watcher
+source "$SCRIPTPATH/setup.sh" -u webmin

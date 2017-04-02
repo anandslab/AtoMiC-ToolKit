@@ -19,6 +19,7 @@ export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 export ISSETUP="Yes"
 
 source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/app-constant-reset.sh"
 
 # Check if being run as root
 if [ "$EUID" -ne 0 ] ; then
@@ -97,7 +98,6 @@ else
     else
         echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
         source $SCRIPTPATH/inc/option-handler.sh
-        source $SCRIPTPATH/inc/pause.sh
     fi
 fi
 
@@ -114,5 +114,8 @@ if [[ ! -d '/opt' ]]; then
     echo -e 'opt dir created.'
 fi
 
-source $SCRIPTPATH/inc/header.sh
-source $SCRIPTPATH/menus/menu-main.sh
+if [ -z "$ARGS" ]; then
+    source $SCRIPTPATH/inc/pause.sh
+    source $SCRIPTPATH/inc/header.sh
+    source $SCRIPTPATH/menus/menu-main.sh
+fi

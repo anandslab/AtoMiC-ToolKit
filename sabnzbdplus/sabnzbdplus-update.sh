@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 # Script Name: AtoMiC SABnzbd+ Updater
-# Author: htpcBeginner
+# Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 

@@ -50,7 +50,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/$1/$1-installer.sh
@@ -68,7 +68,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/$1/$1-uninstaller.sh
@@ -86,7 +86,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/inc/app-backup-controller.sh
@@ -104,7 +104,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/inc/app-restore-controller.sh
@@ -122,7 +122,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/$1/$1-update.sh
@@ -140,7 +140,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     if grep -q "Reset Password" "$SCRIPTPATH/$1/$1-menu.sh"; 
                                         then
@@ -150,7 +150,7 @@ while true; do
                                         echo
                                         echo
                                         echo "$NOARGSUPPORT"
-                                        source $SCRIPTPATH/inc/exit.sh
+                                        source "$SCRIPTPATH/inc/exit.sh"
                                     fi
                         fi
                         shift;
@@ -166,7 +166,7 @@ while true; do
                                 echo
                                 echo
                                 echo "$BADARG"
-                                source $SCRIPTPATH/inc/exit.sh
+                                source "$SCRIPTPATH/inc/exit.sh"
                                 else
                                     source $SCRIPTPATH/$1/$1-constants.sh
                                     source $SCRIPTPATH/inc/app-access-details.sh

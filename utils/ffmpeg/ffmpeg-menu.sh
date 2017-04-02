@@ -9,7 +9,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage nzbTomedia" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Install\Update" )
             source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh" ;;

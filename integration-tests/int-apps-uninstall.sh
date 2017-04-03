@@ -47,6 +47,7 @@ source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -u sonarr
+source "$SCRIPTPATH/setup.sh" -u subsonic
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u watcher
 source "$SCRIPTPATH/setup.sh" -u webmin

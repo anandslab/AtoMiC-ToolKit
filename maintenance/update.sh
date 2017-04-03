@@ -36,7 +36,7 @@ then
     echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
     source "$SCRIPTPATH/inc/app-git-stash.sh"
 
-    echo 
+    echo
     sleep 1
 
     echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR

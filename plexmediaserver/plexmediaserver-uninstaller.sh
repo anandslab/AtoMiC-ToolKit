@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Plex Media Server Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -14,7 +15,7 @@ source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
-source "$SCRIPTPATH/plexmediaserver/plexmediaserver-repository-configurator.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-remove.sh"
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"

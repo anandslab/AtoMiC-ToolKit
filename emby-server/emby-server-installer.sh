@@ -1,9 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Emby Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -16,7 +16,7 @@ source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/utils/mono/mono-installer.sh"
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
-source "$SCRIPTPATH/emby-server/emby-server-constants.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-constants.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"

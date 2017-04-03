@@ -1,9 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Kodi Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -14,11 +14,11 @@ echo -e "${GREEN}AtoMiC $APPTITLE Update Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-folder-check.sh"
 sudo killall -9 kodi.bin >/dev/null 2>&1
-source $SCRIPTPATH/kodi/kodi-repository-configurator.sh
+source "$SCRIPTPATH/kodi/kodi-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
-source $SCRIPTPATH/kodi/kodi-constants.sh
+source "$SCRIPTPATH/kodi/kodi-constants.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-update.sh"
 source "$SCRIPTPATH/inc/app-update-confirmation.sh"

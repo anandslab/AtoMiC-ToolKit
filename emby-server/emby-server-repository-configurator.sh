@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 # Script Name: AtoMiC Emby Restore Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -41,7 +42,7 @@ if [ "$TEMPDIST" = '' ]; then
         TEMPDIST='xUbuntu_12.04'
         ;;
     *)
-        source $SCRIPTPATH/inc/invalid-option.sh
+        source "$SCRIPTPATH/inc/invalid-option.sh"
         ;;
     esac
 fi

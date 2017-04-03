@@ -2,7 +2,6 @@
 # shellcheck disable=SC1090
 # Script Name: AtoMiC Mono Installer
 # Author: TommyE123
-# shellcheck disable=SC1090
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 

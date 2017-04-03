@@ -10,9 +10,7 @@
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
-
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
-
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
@@ -26,7 +24,6 @@ source "$SCRIPTPATH/inc/app-folders-create.sh"
 
 # Just adds the override and updates it for systemd.
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-
 source "$SCRIPTPATH/inc/app-install.sh"
 
 if ! grep -qF 'net.core.rmem_max' /etc/sysctl.conf;then
@@ -39,11 +36,11 @@ fi
 
 #Need to do this seperately as the init\default files wouldnt have existed before the install.
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
-source "$SCRIPTPATH/transmission-daemon/transmission-daemon-init-update.sh"
-source "$SCRIPTPATH/transmission-daemon/transmission-daemon-default-update.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"
-source "$SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-constants.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 sleep 2
 source "$SCRIPTPATH/$APPNAME/$APPNAME-settings-configurator.sh"

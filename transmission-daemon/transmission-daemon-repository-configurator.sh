@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-CODENAME=$(lsb_release -c -s) 
+CODENAME=$(lsb_release -c -s)
 
 case "$CODENAME" in
     'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')

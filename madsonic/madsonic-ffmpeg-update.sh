@@ -6,7 +6,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-source $SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh
+source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
 echo
 echo -e $YELLOW'--->Copying ffmpeg file to /var/madsonic/transcode/...'$ENDCOLOR
 yes | cp -rf /usr/bin/ffmpeg /var/madsonic/transcode/

@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# Set permissions for all files
-sudo chown -R $UNAME:$UGROUP $SCRIPTPATH >/dev/null 2>&1
-sudo chmod -R 775 $SCRIPTPATH >/dev/null 2>&1
-sudo chmod -R g+s $SCRIPTPATH >/dev/null 2>&1
-
-if [[ ! -d '/opt' ]]; then
-    mkdir /opt
-    sudo chown -R $UNAME:$UGROUP /opt >/dev/null 2>&1
-    sudo chmod -R 775 /opt >/dev/null 2>&1
-    sudo chmod -R g+s /opt >/dev/null 2>&1
-    echo -e 'opt dir created.'
-fi
-
 #Response for bad arguments or unsupported features
 BADARG='The app you specified does not exist. Check the name again (note: it is case sensitive)'
 NOARGSUPPORT='This app doesn''t support the '$1' option. Check the readme file for which operations are supported for each app.'

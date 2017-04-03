@@ -3,19 +3,12 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-if [[ $ISSETUP != "Yes" ]]
-then
-    echo
-    echo -e '\e[91mCannot be run directly. Please run setup.sh from AtoMiC ToolKit root folder: \033[0msudo bash setup.sh'
-    echo
-    exit 0
-fi
-source $SCRIPTPATH/inc/commons.sh
-source $SCRIPTPATH/inc/header.sh
+source "$SCRIPTPATH/inc/app-setup-check.sh"
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
 
 echo -e $GREEN'AtoMiC ToolKit Backups Cleaner'$ENDCOLOR
 
@@ -52,4 +45,4 @@ else
     echo -e $RED"There are no backups to delete."$ENDCOLOR
 fi
 
-source $SCRIPTPATH/inc/exit.sh
+source "$SCRIPTPATH/inc/exit.sh"

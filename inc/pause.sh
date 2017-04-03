@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -z "$ARGS" ]; then
+if [ -z "$CI" ]; then
     echo
     pause 'Press [Enter] key to continue or Ctrl+C to exit...'
     echo

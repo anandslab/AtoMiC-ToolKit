@@ -16,7 +16,7 @@ source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
-source "$SCRIPTPATH/$APPNAME/$APPNAME-constants.sh"
+source "$SCRIPTPATH/plexmediaserver/plexmediaserver-constants.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
 #Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt)
 source "$SCRIPTPATH/inc/app-install.sh"

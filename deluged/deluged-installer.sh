@@ -25,7 +25,7 @@ source "$SCRIPTPATH/inc/app-folders-create.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"
-source "$SCRIPTPATH/$APPNAME/$APPNAME-constants.sh"
+source "$SCRIPTPATH/deluged/deluged-constants.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 sleep 10
 source "$SCRIPTPATH/inc/app-stop.sh"

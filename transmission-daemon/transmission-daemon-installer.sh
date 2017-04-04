@@ -40,7 +40,7 @@ source "$SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"
-source "$SCRIPTPATH/$APPNAME/$APPNAME-constants.sh"
+source "$SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 sleep 2
 source "$SCRIPTPATH/$APPNAME/$APPNAME-settings-configurator.sh"

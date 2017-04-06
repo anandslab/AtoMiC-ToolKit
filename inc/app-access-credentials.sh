@@ -7,6 +7,7 @@ if grep -q "reset.sh" "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"; then
 else
     RESETSUPPORT=''
 fi
+
 echo -e $YELLOW'Your '$APPTITLE' credentials are...'$ENDCOLOR
 echo -e '--->'$CYAN'Username: '$GREEN$UINAME$ENDCOLOR
 if [ -z "$UINAMESTATUS" ] && [ ! -z "$APPDEFAULTUNAME" ]; then
@@ -19,28 +20,30 @@ fi
 echo 
 sleep 1
 
-ERRORCOUNT=0
-echo -e $YELLOW'Checking '$APPTITLE' status...'$ENDCOLOR
-if [ -f /etc/init.d/$APPNAME ]; then
-    if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
-        echo -e $RED$APPTITLE' is currently not running and will be inaccessible.'$ENDCOLOR
-           echo -e 'Start '$APPTITLE' using the following command: '$CYAN'sudo /etc/init.d/'$APPNAME' start'$ENDCOLOR
+if [[ ! $APPUSESNGINX = 'YES' ]]; then
+
+    ERRORCOUNT=0
+    echo -e $YELLOW'Checking '$APPTITLE' status...'$ENDCOLOR
+    if [ -f /etc/init.d/$APPNAME ]; then
+        if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
+            echo -e $RED$APPTITLE' is currently not running and will be inaccessible.'$ENDCOLOR
+            echo -e 'Start '$APPTITLE' using the following command: '$CYAN'sudo /etc/init.d/'$APPNAME' start'$ENDCOLOR
+        else
+            echo -e $APPTITLE' is running and accessible.'
+        fi
     else
-        echo -e $APPTITLE' is running and accessible.'
+    ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi
-else
-  ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
-fi
 
-if [ -f /etc/systemd/system/$APPSYSTEMD ]; then
-    echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
-elif [ -f /lib/systemd/system/$APPSYSTEMD ]; then
-    echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
-else
-  ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
-fi
+    if [ -f /etc/systemd/system/$APPSYSTEMD ]; then
+        echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
+    elif [ -f /lib/systemd/system/$APPSYSTEMD ]; then
+        echo -e 'SYSTEMD '$APPSYSTEMD' found.'$ENDCOLOR
+    else
+    ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
+    fi
 
-if (( $ERRORCOUNT == 2 )); then
-  echo -e $RED'No boot script found.'$ENDCOLOR' Try reinstalling '$APPTITLE'.'
+    if [[ $ERRORCOUNT = 2 ]]; then
+    echo -e "${RED}No boot script found.$ENDCOLOR"
+    fi
 fi
-

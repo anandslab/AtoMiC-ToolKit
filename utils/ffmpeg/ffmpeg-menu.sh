@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC FFmpeg - Manage nzbTomedia" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage FFmpeg" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install\Update" "FFmpeg, FFmpeg-10bit, FFprobe, FFserver" \

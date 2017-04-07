@@ -33,7 +33,7 @@ source "$SCRIPTPATH/inc/app-folder-check.sh"
 
     if [[ -d $APPSETTINGSDIR ]] && [[ -z $CI ]]; then
         echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
-                "settings / data folder for reinstalling later?$ENDCOLOR"
+                "settings/data folder for reinstalling later?$ENDCOLOR"
         echo -e "Folder to be kept: $CYAN$APPSETTINGSDIR$ENDCOLOR"
         read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
         FILEDEL2=${REPLY,,}
@@ -41,7 +41,7 @@ source "$SCRIPTPATH/inc/app-folder-check.sh"
         if [[ $FILEDEL2 != "y" ]]; then
             echo
             if [ -d "$APPSETTINGSDIR" ]; then
-                echo -e "$YELLOW--->Deleting $APPTITLE files/folders "\
+                echo -e "$YELLOW--->Deleting $APPTITLE files/folders"\
                         "from $CYAN$APPSETTINGSDIR$YELLOW...$ENDCOLOR"
                 sudo rm -r "$APPSETTINGSDIR"
                 echo 'OK'

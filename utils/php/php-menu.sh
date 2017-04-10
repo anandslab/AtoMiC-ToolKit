@@ -1,11 +1,11 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage PHP 7.1" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage PHP 7.0" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install\Update" "PHP 7.1 via repository" \
-"Uninstall" "PHP 7.1 and remove repository" \
+"Install\Update" "PHP 7.0 via repository" \
+"Uninstall" "PHP 7.0 and remove repository" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?

@@ -1,0 +1,12 @@
+[Unit]
+Description=Ubooquity
+After=network.target
+
+[Service]
+User=ReplaceMe
+WorkingDirectory=/opt/ubooquity
+ExecStart=/usr/bin/java -jar Ubooquity.jar -headless -webadmin
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -34,6 +34,7 @@ source "$SCRIPTPATH/setup.sh" -i jackett
 source "$SCRIPTPATH/setup.sh" -i kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
+source "$SCRIPTPATH/setup.sh" -i maximux
 source "$SCRIPTPATH/setup.sh" -i mylar
 source "$SCRIPTPATH/setup.sh" -i nzbget
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
@@ -49,5 +50,6 @@ source "$SCRIPTPATH/setup.sh" -i sickrage
 source "$SCRIPTPATH/setup.sh" -i sonarr
 source "$SCRIPTPATH/setup.sh" -i subsonic
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
+source "$SCRIPTPATH/setup.sh" -i ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher
 source "$SCRIPTPATH/setup.sh" -i webmin

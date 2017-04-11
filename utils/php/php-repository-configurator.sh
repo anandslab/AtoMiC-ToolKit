@@ -17,9 +17,13 @@ case "$CODENAME" in
     'jessie'|'stretch'|'sid')
         wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
         APPREPOSITORYLINK="deb https://packages.sury.org/php/ $(lsb_release -sc) main"
+        APPNAME='php7.0'
+        APPDEPS='php7.0-fpm'
         ;;
     *)
         REPOPPA='YES'
         APPREPOSITORYLINK='ppa:ondrej/php'
+        APPNAME='php'
+        APPDEPS='php-fpm'
         ;;
 esac

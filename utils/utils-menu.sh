@@ -14,6 +14,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 "FFmpeg" "Record, convert and stream audio and video" \
 "Java 8" "general-purpose computer programming language" \
 "Mono" "Open source implementation of MS .NET Framework" \
+"Nginx" "High-performance HTTP server and reverse proxy" \
 "nzbToMedia" "Provides NZB and Torrent postprocessing" \
 "PHP 7.x" "open source general-purpose scripting language" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
@@ -31,6 +32,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/java/java-menu.sh" ;;
         "Mono" )
             source "$SCRIPTPATH/utils/mono/mono-menu.sh" ;;
+        "Nginx" )
+            source "$SCRIPTPATH/utils/nginx/nginx-menu.sh" ;;    
         "nzbToMedia" )
             source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh" ;;
         "PHP 7.x" )

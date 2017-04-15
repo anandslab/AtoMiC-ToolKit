@@ -14,7 +14,7 @@ CODENAME=$(lsb_release -c -s)
             ARCH=$(uname -m)
             ARCHSHORT=${ARCH:0:3}
             if [[ $ARCHSHORT = 'arm' ]]; then
-                Use the the dotdeb repo for arm devices
+                #Use the the dotdeb repo for arm devices
                 APPREPOSITORYNAME='dotdeb'
                 APPREPOSITORYLINK="deb http://packages.dotdeb.org $CODENAME all"
                 APPREPOSITORYLINKBACKUP="deb-src http://packages.dotdeb.org $CODENAME all"

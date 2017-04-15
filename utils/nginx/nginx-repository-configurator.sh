@@ -13,21 +13,14 @@ CODENAME=$(lsb_release -c -s)
        'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
             ARCH=$(uname -m)
             ARCHSHORT=${ARCH:0:3}
-            if [[ $ARCHSHORT = 'arm' ]]; then
-                #Use the the dotdeb repo for arm devices
-                APPREPOSITORYNAME='dotdeb'
-                APPREPOSITORYLINK="deb http://packages.dotdeb.org $CODENAME all"
-                APPREPOSITORYLINKBACKUP="deb-src http://packages.dotdeb.org $CODENAME all"
-                REPRECVKEYSASC="https://www.dotdeb.org/dotdeb.gpg"
-                REPRECVKEYSHORT='89DF5277'
-            else
+            if [[ ! $ARCHSHORT = 'arm' ]]; then
                 APPREPOSITORYNAME='nginx'
                 APPREPOSITORYLINK="deb http://nginx.org/packages/debian/ $CODENAME nginx"
                 APPREPOSITORYLINKBACKUP="deb-src http://nginx.org/packages/debian/ $CODENAME nginx"
                 REPRECVKEYSASC='http://nginx.org/keys/nginx_signing.key'
                 REPRECVKEYSHORT='7BD9BF62'
+                REPOKEYSREQ='YES'
             fi
-            REPOKEYSREQ='YES'
             ;;
         *)
             APPREPOSITORYNAME='nginx'

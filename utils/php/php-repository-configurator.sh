@@ -17,14 +17,15 @@ case "$CODENAME" in
     'jessie'|'stretch'|'sid')
         wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
         APPREPOSITORYLINK="deb https://packages.sury.org/php/ $(lsb_release -sc) main"
-        #APPNAME='php7.0'
-        #APPDEPS='php7.0-fpm'
+        APPNAME='php7.0'
+        APPDEPS='php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mcrypt php7.0-json php7.0-tidy php7.0-mbstring php-redis php-memcached'
+        FPMVERSION='php7.0-fpm'
         ;;
     *)
         REPOPPA='YES'
         APPREPOSITORYLINK='ppa:ondrej/php'
-        #APPNAME='php7.1'
-        #APPDEPS='php7.1 php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-tidy php7.1-mbstring php-redis php-memcached'
-        # FPMVERSION='php7.1-fpm'
+        APPNAME='php7.1'
+        APPDEPS='php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-tidy php7.1-mbstring php-redis php-memcached'
+        FPMVERSION='php7.1-fpm'
         ;;
 esac

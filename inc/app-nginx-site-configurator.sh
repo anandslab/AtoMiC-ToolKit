@@ -18,6 +18,10 @@ if [[ -d $APPPATH ]]; then
         { echo "Could not move $APPSETTINGS file." ; exit 1; }
     echo "Copied config file over"
 
+    sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
+            "/etc/nginx/sites-available/$APPNAME" || { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }
+    echo "Updated config file with correct PHP Version"
+
     if [[ ! -f "/etc/nginx/sites-enabled/$APPNAME" ]]; then
         sudo ln -s "/etc/nginx/sites-available/$APPNAME" \
                     "/etc/nginx/sites-enabled/$APPNAME"

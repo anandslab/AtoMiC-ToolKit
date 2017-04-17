@@ -9,6 +9,11 @@
 echo
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
+APPNAME='apache2'
+APPTITLE='apache2'
+APPSYSTEMD='apache2.service'
+source "$SCRIPTPATH/inc/app-autostart-disable.sh"
+source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"

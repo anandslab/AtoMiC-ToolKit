@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Subsonic Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -13,7 +14,8 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"
-source "$SCRIPTPATH/inc/app-install-deps.sh"
+source "$SCRIPTPATH/utils/java/java-installer.sh"
+source "$SCRIPTPATH/subsonic/subsonic-constants.sh"
 source "$SCRIPTPATH/subsonic/subsonic-download-install.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 source "$SCRIPTPATH/subsonic/subsonic-ffmpeg-update.sh"

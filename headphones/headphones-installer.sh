@@ -1,8 +1,8 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Headphones Installer
 # Author: PREngineer
 # Publisher: http://www.htpcbeginner.com
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -17,7 +17,6 @@ source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 echo "Waiting for $APPTITLE to finish initial setup"

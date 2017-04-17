@@ -1,9 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Mylar Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -19,7 +19,6 @@ source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install-pips.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"

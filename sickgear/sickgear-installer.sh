@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC SickGear Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -20,7 +21,6 @@ source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 
 cp -a $APPPATH/autoProcessTV/autoProcessTV.cfg.sample $APPPATH/autoProcessTV/autoProcessTV.cfg || { echo -e $RED'Could not copy autoProcess.cfg.'$ENDCOLOR ; exit 1; }
 
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"

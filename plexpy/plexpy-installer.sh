@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC PlexPy Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -20,7 +21,6 @@ source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 if [ ! -f "$APPSETTINGS" ]; then
     sudo cp $SCRIPTPATH/plexpy/plexpy-config.ini $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
 fi
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"

@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC HTPC Manager Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -18,7 +19,6 @@ source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install-pips.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"

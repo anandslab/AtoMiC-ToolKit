@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Madsonic Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -13,7 +14,8 @@ echo -e "${GREEN}AtoMiC $APPTITLE Update Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-folder-check.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
-source "$SCRIPTPATH/inc/app-install-deps.sh"
+source "$SCRIPTPATH/utils/java/java-installer.sh"
+source "$SCRIPTPATH/madsonic/madsonic-constants.sh"
 source "$SCRIPTPATH/madsonic/madsonic-download-install.sh"
 source "$SCRIPTPATH/madsonic/madsonic-ffmpeg-update.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"

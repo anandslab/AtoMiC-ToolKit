@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC ToolKit Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -29,12 +30,6 @@ then
 
     echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
     sudo apt-get -y install git
-
-    echo
-    sleep 1
-
-    echo -e $YELLOW'--->Stashing any local changes...'$ENDCOLOR
-    source "$SCRIPTPATH/inc/app-git-stash.sh"
 
     echo
     sleep 1

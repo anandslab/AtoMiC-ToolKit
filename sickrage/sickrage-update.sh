@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC SickRage Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -14,7 +15,6 @@ source "$SCRIPTPATH/inc/app-folder-check.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-git-update.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-update-confirmation.sh"

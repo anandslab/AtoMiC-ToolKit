@@ -20,7 +20,6 @@ source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-source "$SCRIPTPATH/inc/app-git-stash.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 
 # To get libmozjs running with pyLoad we need to create a symlink. 

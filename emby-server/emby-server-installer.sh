@@ -1,9 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC Emby Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -22,7 +22,7 @@ source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 echo "Waiting for $APPTITLE to finish initial setup"
-sleep 30 
+sleep 30
 echo "Now stop and start again"
 source "$SCRIPTPATH/inc/app-stop.sh" 
 source "$SCRIPTPATH/inc/app-start.sh"

@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC ToolKit Backups Cleaner
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -23,7 +24,7 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
     sleep 1
 
     echo -e $GREEN'Delete all backups?'$ENDCOLOR
-    echo -e 'Triple check. You will not be able to restore if you delete backups.' 
+    echo -e 'Triple check. You will not be able to restore if you delete backups.'
     read -p 'Type y/Y and press [ENTER] to delete or any other key to exit: '
     RESP=${REPLY,,}
 

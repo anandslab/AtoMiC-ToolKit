@@ -19,8 +19,7 @@ do
         echo -e '...already exists.'
         sudo chown $UNAME:$UGROUP $folder >/dev/null 2>&1
         sudo chmod -R 775 $folder >/dev/null 2>&1
-        sudo chmod -R g+s $folder >/dev/null 2>&1        
+        sudo chmod -R g+s $folder >/dev/null 2>&1
     fi
 
 done < "$SCRIPTPATH/tmp/$APPSHORTNAME-folders-list"
-    

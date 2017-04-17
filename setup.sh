@@ -1,9 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1090
 # Script Name: AtoMiC ToolKit
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -11,9 +11,9 @@
 export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+     [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
 export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 export ISSETUP="Yes"
@@ -22,22 +22,19 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 
 # Check if being run as root
-if [ "$EUID" -ne 0 ] ; then
+if [[ $EUID -ne 0 ]] ; then
     echo
-    echo -e $RED'Please run as root using the command: '$ENDCOLOR'sudo bash setup.sh'
+    echo -e "${RED}Please run as root using the command: ${ENDCOLOR}sudo bash setup.sh"
     echo
     exit 0
 fi
 
 source "$SCRIPTPATH/inc/header.sh"
 
-#echo -e $RED'This setup file is in development and can mess up your system. Exit and run '$CYAN'sudo ./setup.sh'$RED' instead.'$ENDCOLOR
-#source "$SCRIPTPATH/inc/pause.sh"
-
 # Define help function for options
 function help(){
     echo
-    echo -e $YELLOW'--->COMMAND LINE OPTIONS:'$ENDCOLOR
+    echo -e "${YELLOW}--->COMMAND LINE OPTIONS:$ENDCOLOR"
     echo
     echo "Usage example:";
     echo "atomic-toolkit [(-i|--install) appname] [(-u|--uninstall) appname] [(-b|--backup) appname] [(-r|--restore) appname] [(-m|--manualupdate) appname] [(-p|--passwordreset) appname] [(-a|--accessdetails) appname] [(-t|--updatetoolkit)] [(-U|--updateall)]";
@@ -65,16 +62,16 @@ export ARGS=$(getopt -o "i:u:b:r:m:p:a:tUh" -l "install:,uninstall:,backup:,rest
 #sleep 1
 #echo $1
 
-if [ ! -d "$SCRIPTPATH/tmp" ]; then
-    mkdir $SCRIPTPATH/tmp
+if [[ ! -d $SCRIPTPATH/tmp ]]; then
+    mkdir "$SCRIPTPATH/tmp"
 fi
 
-if [ ! -d "$SCRIPTPATH/backups" ]; then
-    mkdir $SCRIPTPATH/backups
+if [[ ! -d $SCRIPTPATH/backups ]]; then
+    mkdir "$SCRIPTPATH/backups"
 fi
 
-echo -e $YELLOW'--->DISCLAIMERS:'$ENDCOLOR
-if [ ! -f "$SCRIPTPATH/tmp/consented" ]; then
+echo -e "${YELLOW}--->DISCLAIMERS:$ENDCOLOR"
+if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
     #echo 'consent file not present'
     source "$SCRIPTPATH/inc/consent.sh"
     source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
@@ -85,19 +82,20 @@ fi
 echo
 #sleep 1
 
-echo -e $YELLOW'--->USER INFORMATION:'$ENDCOLOR
-if [ ! -f "$SCRIPTPATH/tmp/userinfo" ]; then
+echo -e "${YELLOW}--->USER INFORMATION:$ENDCOLOR"
+if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
     #echo 'userinfo not present'
-    source $SCRIPTPATH/inc/usercheck.sh
+    source "$SCRIPTPATH/inc/usercheck.sh"
 else 
     #echo 'userinfo present'
-    source $SCRIPTPATH/tmp/userinfo
-    if [ -z "$UNAME" ] || [ -z "$UGROUP" ]; then
+    source "$SCRIPTPATH/tmp/userinfo"
+    if [[ -z $UNAME ]] || [[ -z $UGROUP ]]; then
         #echo 'userinfo not complete'
-        source $SCRIPTPATH/inc/usercheck.sh
+        source "$SCRIPTPATH/inc/usercheck.sh"
     else
-        echo -e 'Already present: '$CYAN$UNAME$ENDCOLOR. 'Can be cleared in the next screen.'
-        source $SCRIPTPATH/inc/option-handler.sh
+        echo -e "Already present: $CYAN$UNAME$ENDCOLOR." \
+                "Can be cleared in the next screen."
+        source "$SCRIPTPATH/inc/option-handler.sh"
     fi
 fi
 
@@ -114,8 +112,8 @@ if [[ ! -d '/opt' ]]; then
     echo -e 'opt dir created.'
 fi
 
-if [ -z "$ARGS" ]; then
+if [ -z $ARGS ]; then
     source "$SCRIPTPATH/inc/pause.sh"
     source "$SCRIPTPATH/inc/header.sh"
-    source $SCRIPTPATH/menus/menu-main.sh
+    source "$SCRIPTPATH/menus/menu-main.sh"
 fi

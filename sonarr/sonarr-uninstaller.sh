@@ -17,7 +17,7 @@ APPNAME='nzbdrone'
 source "$SCRIPTPATH/inc/app-uninstall.sh"
 APPNAME='sonarr'
 source "$SCRIPTPATH/inc/app-file-del.sh"
-source "$SCRIPTPATH/inc/app-repository-remove.sh" 
+source "$SCRIPTPATH/inc/app-repository-remove.sh"
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

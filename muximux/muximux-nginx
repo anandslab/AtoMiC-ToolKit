@@ -1,0 +1,19 @@
+server {
+    listen       80;
+    server_name ~.;
+    access_log   /var/log/nginx/muximux.access.log;
+    error_log    /var/log/nginx/muximux.error.log;
+    root /var/www/muximux/;
+    index index.php;
+
+location / {
+    try_files $uri $uri/ /index.php?$args;
+    }
+    
+location ~ \.php$ {
+    try_files $uri =404;
+    include fastcgi_params;
+    fastcgi_pass unix:/var/run/php/FPMVERSION.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}

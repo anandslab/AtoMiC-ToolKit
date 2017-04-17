@@ -26,7 +26,7 @@ esac
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
-if [[ ! $ARCHSHORT = 'arm' ]]; then
+if [[ $ARCHSHORT = 'arm' ]]; then
     APPNAME='php7.0'
     APPDEPS='php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mcrypt php7.0-json php7.0-tidy php7.0-mbstring'
     FPMVERSION='php7.0-fpm'

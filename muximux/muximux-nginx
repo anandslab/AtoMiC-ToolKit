@@ -1,15 +1,15 @@
 server {
     listen       80;
-    server_name ~.;
+    server_name  IPADDRESS 0.0.0.0;
     access_log   /var/log/nginx/muximux.access.log;
     error_log    /var/log/nginx/muximux.error.log;
-    root /var/www/muximux/;
+    root /var/www;
     index index.php;
 
-location / {
+location /muximux/ {
     try_files $uri $uri/ /index.php?$args;
     }
-    
+
 location ~ \.php$ {
     try_files $uri =404;
     include fastcgi_params;

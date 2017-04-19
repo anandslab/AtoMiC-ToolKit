@@ -15,17 +15,23 @@ if [[ -d $APPPATH ]]; then
 
     cp "$SCRIPTPATH/$APPNAME/$APPNAME-nginx" \
         "/etc/nginx/sites-available/$APPNAME" || \
-        { echo "Could not move $APPSETTINGS file." ; exit 1; }
+        { echo "${RED}Could not move $APPSETTINGS file.$ENDCOLOR" ; exit 1; }
     echo "Copied config file over"
 
     sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
-            "/etc/nginx/sites-available/$APPNAME" || { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }
+            "/etc/nginx/sites-available/$APPNAME" || \
+            { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }
     echo "Updated config file with correct PHP Version"
 
-    if [[ ! -f "/etc/nginx/sites-enabled/$APPNAME" ]]; then
+    sudo sed -i "s@IPADDRESS@$(hostname -I)@g" \
+            "/etc/nginx/sites-available/$APPNAME" || \
+            { echo -e "${RED}Modifying IPADDRESS in Nginx file failed.$ENDCOLOR"; exit 1; }
+    echo "Updated config file with current IPAddress"
+
+    if [[ ! -L "/etc/nginx/sites-enabled/$APPNAME" ]]; then
         sudo ln -s "/etc/nginx/sites-available/$APPNAME" \
                     "/etc/nginx/sites-enabled/$APPNAME"
-        echo "Symlinked the muxmix virtual host"
+        echo "Symlinked the $APPNAME virtual host"
     fi
 
     # Start Nginx

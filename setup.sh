@@ -112,7 +112,7 @@ if [[ ! -d '/opt' ]]; then
     echo -e 'opt dir created.'
 fi
 
-if [ -z $ARGS ]; then
+if [[ -z $ARGS ]]; then
     source "$SCRIPTPATH/inc/pause.sh"
     source "$SCRIPTPATH/inc/header.sh"
     source "$SCRIPTPATH/menus/menu-main.sh"

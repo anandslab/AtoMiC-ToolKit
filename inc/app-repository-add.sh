@@ -20,7 +20,7 @@ if [ ! "$APPREPOSITORYLINK" = "" ]; then
 
             #Add a key if required
             if [ "$REPOKEYSREQ" = 'YES' ]; then
-                source $SCRIPTPATH/inc/app-keys-add.sh
+                source "$SCRIPTPATH/inc/app-keys-add.sh"
             fi
         fi
     else

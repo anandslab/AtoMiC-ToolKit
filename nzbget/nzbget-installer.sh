@@ -27,12 +27,10 @@ source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-installer.sh"
-source $SCRIPTPATH/nzbget/nzbget-constants.sh
+source "$SCRIPTPATH/nzbget/nzbget-constants.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
-
 source "$SCRIPTPATH/inc/app-start.sh"
-source $SCRIPTPATH/nzbget/nzbget-settings-configurator.sh
-
+source "$SCRIPTPATH/nzbget/nzbget-settings-configurator.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

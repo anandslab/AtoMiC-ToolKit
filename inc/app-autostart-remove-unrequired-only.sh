@@ -6,7 +6,7 @@ echo -e "$YELLOW--->Autostart Removing any unrequired files...$ENDCOLOR"
 if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then 
     echo 'Using systemd so removing any sysv-init files'
 
-    source $SCRIPTPATH/inc/app-init-remove.sh >/dev/null
+    source "$SCRIPTPATH/inc/app-init-remove.sh" >/dev/null
     sudo systemctl daemon-reload
     sudo systemctl enable $APPSYSTEMD 
 elif [ -d /etc/init.d ]; then 

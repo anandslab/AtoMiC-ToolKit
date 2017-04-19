@@ -39,8 +39,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/$1/$1-installer.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/$1/$1-installer.sh"
                         fi
                         shift;
                     fi
@@ -57,8 +57,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/$1/$1-uninstaller.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/$1/$1-uninstaller.sh"
                         fi
                         shift;
                     fi
@@ -75,8 +75,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/inc/app-backup-controller.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/inc/app-backup-controller.sh"
                         fi
                         shift;
                     fi
@@ -93,8 +93,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/inc/app-restore-controller.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/inc/app-restore-controller.sh"
                         fi
                         shift;
                     fi
@@ -111,8 +111,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/$1/$1-update.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/$1/$1-update.sh"
                         fi
                         shift;
                     fi
@@ -131,8 +131,8 @@ while true; do
                                 else
                                     if grep -q "Reset Password" "$SCRIPTPATH/$1/$1-menu.sh"; 
                                         then
-                                            source $SCRIPTPATH/$1/$1-constants.sh
-                                            source $SCRIPTPATH/inc/app-password-reset.sh
+                                            source "$SCRIPTPATH/$1/$1-constants.sh"
+                                            source "$SCRIPTPATH/inc/app-password-reset.sh"
                                     else
                                         echo
                                         echo
@@ -155,8 +155,8 @@ while true; do
                                 echo "$BADARG"
                                 source "$SCRIPTPATH/inc/exit.sh"
                                 else
-                                    source $SCRIPTPATH/$1/$1-constants.sh
-                                    source $SCRIPTPATH/inc/app-access-details.sh
+                                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                                    source "$SCRIPTPATH/inc/app-access-details.sh"
                         fi
                         shift;
                     fi
@@ -164,12 +164,12 @@ while true; do
         -t|--updatetoolkit)
             shift;
                     updatetoolkit="1";
-                    source $SCRIPTPATH/maintenance/update.sh
+                    source "$SCRIPTPATH/maintenance/update.sh"
             ;;
         -U|--updateall)
             shift;
                     updateall="1";
-                    source $SCRIPTPATH/maintenance/distro-update.sh
+                    source "$SCRIPTPATH/maintenance/distro-update.sh"
             ;;
 
         --)

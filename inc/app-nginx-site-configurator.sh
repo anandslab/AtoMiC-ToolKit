@@ -25,7 +25,7 @@ if [[ -d $APPPATH ]]; then
     if [[ ! -f "/etc/nginx/sites-enabled/$APPNAME" ]]; then
         sudo ln -s "/etc/nginx/sites-available/$APPNAME" \
                     "/etc/nginx/sites-enabled/$APPNAME"
-        echo "Symlinked the muxmix virtual host"
+        echo "Symlinked the $APPNAME virtual host"
     fi
 
     # Start Nginx

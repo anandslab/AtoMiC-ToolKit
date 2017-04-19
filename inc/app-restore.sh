@@ -6,7 +6,7 @@ echo -e $YELLOW'--->Select '$APPTITLE' backup file to restore...'$ENDCOLOR
 
 sleep 1
 
-source $SCRIPTPATH/inc/fileselect.sh
+source "$SCRIPTPATH/inc/fileselect.sh"
 
 if [[ $exitstatus = 0 ]]; then
     BFILE=$SCRIPTPATH'/backups/'$FILECHOICE

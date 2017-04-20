@@ -10,7 +10,6 @@ addons:
 before_install:
  - sudo pip install bashate
 script:
- - sudo bash ./integration-tests/int-apps-install.sh
- - sudo bash ./integration-tests/int-apps-uninstall.sh
+ - sudo bash ./integration-tests/int-apps-install-uninstall.sh
 matrix:
   fast_finish: true

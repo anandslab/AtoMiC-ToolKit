@@ -1,4 +1,7 @@
+
 # AtoMiC-ToolKit
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat)](https://gitter.im/AtoMiC-ToolKit/Main)
+
 <img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-300x162.jpg" alt="AtoMiC ToolKit form htpcBeginner.com" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by htpcBeginner.com and its community to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, backing up, restoring, resetting, and maintaining download server apps. It is written in bash.
 
 <h2>Support AtoMiC ToolKit Development</h2>
@@ -38,6 +41,7 @@ Features features of AtoMiC ToolKit include:
 <li>Kodi - Install, Uninstall Autoboot enable and Update</li>
 <li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Madsonic - Install, Uninstall, Update and Backup / Restore</li>
+<li>Muximux - Install, Uninstall, Update</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
@@ -53,9 +57,10 @@ Features features of AtoMiC ToolKit include:
 <li>Sonarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>Subsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>ubooquity- Install, Uninstall, Update and Backup / Restore</li>
 <li>Watcher - Install, Uninstall, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, Muximux, MythTV, Rtorrent/rutorrent, ShellInABox, Tvheadend, Utorrent, etc.</li>
+<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, MythTV, Rtorrent/rutorrent, ShellInABox, Tvheadend, Utorrent, etc.</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>
@@ -83,13 +88,13 @@ The script supports several command line arguments:
 
 - `-i appname or --install appname` - Install an app
 - `-u appname or --uninstall appname` - Uninstall an app
-- `-b appname or --backup appname` - Backup an the config file for an app
+- `-b appname or --backup appname` - Backup the config file for an app
 - `-r appname or --restore appname` - Restore an app config file from backup
 - `-m appname or --manualupdate appname` - Manually update a specific app
 - `-p appname or --passwordreset appname` - Reset the password to an app
 - `-a appname or --accessdetails appname` - View the access details for an app
 - `-t or --updatetoolkit` - Update AtoMiC-ToolKit
-- `-U or --updateall` - Update Linux and all apps
+- `-U or --updateall` - Update Linux packages
 
 Examples:
 

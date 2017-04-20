@@ -32,12 +32,15 @@ fi
 source "$SCRIPTPATH/setup.sh" -i headphones
 source "$SCRIPTPATH/setup.sh" -u headphones
 # source "$SCRIPTPATH/setup.sh" -i htpcmanager
-# source "$SCRIPTPATH/setup.sh" -i jackett
+source "$SCRIPTPATH/setup.sh" -i jackett
+source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi
-# source "$SCRIPTPATH/setup.sh" -i lazylibrarian
+source "$SCRIPTPATH/setup.sh" -i lazylibrarian
+source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 # source "$SCRIPTPATH/setup.sh" -i madsonic
 # source "$SCRIPTPATH/setup.sh" -i maximux
-# source "$SCRIPTPATH/setup.sh" -i mylar
+source "$SCRIPTPATH/setup.sh" -i mylar
+source "$SCRIPTPATH/setup.sh" -u mylar
 # source "$SCRIPTPATH/setup.sh" -i nzbget
 # source "$SCRIPTPATH/setup.sh" -i nzbhydra
 # source "$SCRIPTPATH/setup.sh" -i ombi
@@ -47,8 +50,10 @@ source "$SCRIPTPATH/setup.sh" -u headphones
 # source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 # source "$SCRIPTPATH/setup.sh" -i radarr
 # source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
-# source "$SCRIPTPATH/setup.sh" -i sickgear
-# source "$SCRIPTPATH/setup.sh" -i sickrage
+source "$SCRIPTPATH/setup.sh" -i sickgear
+source "$SCRIPTPATH/setup.sh" -u sickgear
+source "$SCRIPTPATH/setup.sh" -i sickrage
+source "$SCRIPTPATH/setup.sh" -u sickrage
 # source "$SCRIPTPATH/setup.sh" -i sonarr
 # source "$SCRIPTPATH/setup.sh" -i subsonic
 # source "$SCRIPTPATH/setup.sh" -i transmission-daemon

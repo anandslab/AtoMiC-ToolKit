@@ -27,9 +27,10 @@ fi
 
 # source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged
-source "$SCRIPTPATH/setup.sh" -i emby-server
-source "$SCRIPTPATH/setup.sh" -u emby-server
-# source "$SCRIPTPATH/setup.sh" -i headphones
+# source "$SCRIPTPATH/setup.sh" -i emby-server
+# source "$SCRIPTPATH/setup.sh" -u emby-server
+source "$SCRIPTPATH/setup.sh" -i headphones
+source "$SCRIPTPATH/setup.sh" -u headphones
 # source "$SCRIPTPATH/setup.sh" -i htpcmanager
 # source "$SCRIPTPATH/setup.sh" -i jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi

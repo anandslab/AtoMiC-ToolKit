@@ -1,14 +1,6 @@
 dist: trusty
 sudo: required
 language: bash
-addons:
-  apt:
-    sources:
-    - debian-sid    # Grab ShellCheck from the Debian repo
-    packages:
-    - shellcheck
-before_install:
- - sudo pip install bashate
 script:
  - sudo bash ./integration-tests/int-apps-install-uninstall.sh
 matrix:

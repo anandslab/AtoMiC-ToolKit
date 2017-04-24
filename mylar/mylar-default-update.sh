@@ -2,9 +2,10 @@
 # Script Name: AtoMiC Mylar default update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
+echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 #$RUN_AS, username to run mylar under, the default is mylar
 sudo sed -i "s@MYLAR_USER=@MYLAR_USER=$UNAME@g" /etc/default/$APPNAME || { echo -e $RED'Replacing MYLAR_USER failed.'$ENDCOLOR ; exit 1; }

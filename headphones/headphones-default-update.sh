@@ -2,9 +2,10 @@
 # Script Name: AtoMiC Headphones default update
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+
+echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 # [optional] change to 1 to enable daemon
 sudo sed -i 's@ENABLE_DAEMON=0@ENABLE_DAEMON=1@g' /etc/default/$APPNAME || { echo -e $RED'Replacing ENABLE_DAEMON failed.'$ENDCOLOR ; exit 1; }
@@ -20,3 +21,5 @@ sudo sed -i "s@DATADIR=@DATADIR=$APPPATH/data@g" /etc/default/$APPNAME || { echo
 
 # [optional] full path for the pidfile
 sudo sed -i "s@PID_FILE=@PID_FILE=$APPPIDFILE@g" /etc/default/$APPNAME || { echo -e $RED'Replacing PID_FILE failed.'$ENDCOLOR ; exit 1; }
+
+echo 'Updated Default file with new values'

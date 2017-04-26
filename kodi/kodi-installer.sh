@@ -21,7 +21,7 @@ source "$SCRIPTPATH/kodi/kodi-constants.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
-usermod -a -G cdrom,audio,video,plugdev,users,dialout,dip,input $UNAME
+sudo usermod -a -G cdrom,audio,video,plugdev,users,dialout,dip,input "$UNAME"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

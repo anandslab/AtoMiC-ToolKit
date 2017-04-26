@@ -13,7 +13,9 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Deluge" "Lightweight, Full-featured BitTorrent client." \
 "Jackett" "API Support for your favorite private trackers" \
-"qBittorrent" "an open-source software alternative to µTorrent" \
+"qBittorrent" "An open-source software alternative to µTorrent" \
+"rTorrent" "Command line bittorrent client" \
+"ruTorrent" "Web front-end for rTorrent." \
 "Transmission" "Fast, easy, and free BitTorrent client" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -27,6 +29,10 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/jackett/jackett-menu.sh" ;;
         "qBittorrent" )
             source "$SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh" ;;
+        "rTorrent" )
+            source "$SCRIPTPATH/rtorrent/rtorrent-menu.sh" ;;
+        "ruTorrent" )
+            source "$SCRIPTPATH/rutorrent/rutorrent-menu.sh" ;;
         "Transmission" )
         source "$SCRIPTPATH/transmission-daemon/transmission-daemon-menu.sh" ;;
         "Go Back" )

@@ -63,6 +63,10 @@ source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
 source "$SCRIPTPATH/setup.sh" -u radarr
+source "$SCRIPTPATH/setup.sh" -i rtorrent
+source "$SCRIPTPATH/setup.sh" -u rtorrent
+source "$SCRIPTPATH/setup.sh" -i rutorrent
+source "$SCRIPTPATH/setup.sh" -u rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -i sickgear

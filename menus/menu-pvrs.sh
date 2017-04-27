@@ -15,10 +15,10 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "Headphones" "Music PVR Client" \
 "Lazy Librarian" "Book PVR Client" \
 "Mylar" "Comics PVR Client" \
-"Radarr" "Works with movies à la Couchpotato." \
+"Radarr" "Works with movies à la Couchpotato" \
 "SickGear" "TV Shows PVR Client" \
-"SickRage" "Automatic Video Library Manager for TV Shows." \
-"Sonarr" "Smart TV show PVR for newsgroup and bittorrent users." \
+"SickRage" "Automatic Video Library Manager for TV Shows" \
+"Sonarr" "Smart TV show PVR for newsgroup and bittorrent users" \
 "Watcher" "Automated movie NZB searcher and snatcher" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 

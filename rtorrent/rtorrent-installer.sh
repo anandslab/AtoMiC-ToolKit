@@ -8,10 +8,9 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-source "$SCRIPTPATH/inc/commons.sh"
-source "$SCRIPTPATH/inc/header.sh"
+source "$SCRIPTPATH/inc/app-constant-reset.sh"
+source "$SCRIPTPATH/rtorrent/rtorrent-constants.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
-source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
@@ -24,6 +23,5 @@ sudo cp "$SCRIPTPATH/rtorrent/rtorrent.rc" ~/.rtorrent.rc || \
         { echo -e "$RED Coping rtorrent.rc failed.$ENDCOLOR" ; exit 1; }
 
 source "$SCRIPTPATH/inc/app-start.sh"
-source "$SCRIPTPATH/inc/app-install-confirmation.sh"
-source "$SCRIPTPATH/inc/thankyou.sh"
-source "$SCRIPTPATH/inc/exit.sh"
+echo -e "${GREEN}---> $APPTITLE installation complete.$ENDCOLOR"
+source "$SCRIPTPATH/inc/app-constant-reset.sh"

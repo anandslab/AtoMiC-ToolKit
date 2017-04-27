@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='emby-server'
 APPSHORTNAME='emby'
 APPPATH='/var/lib/emby-server'

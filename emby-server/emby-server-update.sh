@@ -1,10 +1,9 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-# Script Name: AtoMiC Emby-Server Updater
+# Script Name: AtoMiC Emby Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 

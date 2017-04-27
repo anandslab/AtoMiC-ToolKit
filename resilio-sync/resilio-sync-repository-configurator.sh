@@ -20,4 +20,6 @@ ARCH=$(uname -m)
         esac
 
 REPRECVKEYSASC="https://linux-packages.resilio.com/resilio-sync/key.asc"
-REPRECVKEYSHORT=''
+REPOPPA='NO'
+REPOKEYSREQ='YES'
+REPRECVKEYSHORT='1482402887'

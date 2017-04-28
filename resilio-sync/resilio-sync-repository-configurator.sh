@@ -9,7 +9,7 @@
 
 ARCH=$(uname -m)
     case $ARCH in
-        'armhf')
+        'armv7l')
             # Use for Arm devices such a Raspberry Pi
             APPREPOSITORYLINK="deb [arch=armhf] http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free"
             ;;

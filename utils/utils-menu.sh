@@ -16,6 +16,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 "Mono" "Open source implementation of MS .NET Framework" \
 "Nginx" "High-performance HTTP server and reverse proxy" \
 "nzbToMedia" "Provides NZB and Torrent postprocessing" \
+"OpenVPN" "VPN APP for creating secure point-to-point connections" \
 "PHP 7.x" "open source general-purpose scripting language" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
 "Unrar" "Install latest Unrar from RARLAB source" \
@@ -36,6 +37,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/nginx/nginx-menu.sh" ;;    
         "nzbToMedia" )
             source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh" ;;
+        "OpenVPN" )
+            source "$SCRIPTPATH/utils/openvpn/openvpn-menu.sh" ;;
         "PHP 7.x" )
             source "$SCRIPTPATH/utils/php/php-menu.sh" ;;
         "pyLoad" )

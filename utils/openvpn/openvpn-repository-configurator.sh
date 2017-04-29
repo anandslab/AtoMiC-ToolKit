@@ -24,7 +24,7 @@ if [[ ! $ARCHSHORT = 'arm' ]]; then
 fi
 
 if [[ ! -z $TEMPDIST ]]; then
-    APPREPOSITORYLINK="deb http://build.openvpn.net/debian/openvpn/stable $CODENAME main"
+    APPREPOSITORYLINK="deb http://build.openvpn.net/debian/openvpn/stable $TEMPDIST main"
     REPRECVKEYSASC="https://swupdate.openvpn.net/repos/repo-public.gpg"
     REPRECVKEYSHORT='F5699905'
     REPOPPA='NO'

@@ -1,7 +1,7 @@
 # enable/modify the options as needed. Remember to
 # uncomment the options you wish to enable.
 
-scgi_port = localhost:5000
+scgi_port = 0.0.0.0:5000
 
 # Maximum and minimum number of peers to connect to per torrent.
 #

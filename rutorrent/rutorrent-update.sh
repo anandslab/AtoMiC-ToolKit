@@ -14,6 +14,8 @@ echo -e "${GREEN}AtoMiC $APPTITLE Update Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-folder-check.sh"
 source "$SCRIPTPATH/utils/php/php-installer.sh"
+source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
+source "$SCRIPTPATH/utils/unrar/unrar-installer.sh"
 source "$SCRIPTPATH/rtorrent/rtorrent-update.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/inc/app-stop.sh" #STOPS NGINX

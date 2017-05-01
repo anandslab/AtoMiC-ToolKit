@@ -27,7 +27,7 @@ if [[ $exitstatus = 0 ]]; then
         "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
-        "Go Back" ) source "$SCRIPTPATH/menus/menu-pvrs.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-bittorrent.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else

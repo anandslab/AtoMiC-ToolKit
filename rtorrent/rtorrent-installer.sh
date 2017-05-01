@@ -17,11 +17,7 @@ source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-
-echo 'Coping rtorrent.rc to home dir'
-sudo cp "$SCRIPTPATH/rtorrent/rtorrent.rc" ~/.rtorrent.rc || \
-        { echo -e "$RED Coping rtorrent.rc failed.$ENDCOLOR" ; exit 1; }
-
+source "$SCRIPTPATH/rtorrent/rtorrent-settings-configurator.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 echo -e "${GREEN}---> $APPTITLE installation complete.$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

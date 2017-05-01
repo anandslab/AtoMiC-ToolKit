@@ -29,8 +29,7 @@ if [[ $exitstatus = 0 ]]; then
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
-        "Go Back" )
-            source "$SCRIPTPATH/menus/menu-resilio-sync.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-bittorrent.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else

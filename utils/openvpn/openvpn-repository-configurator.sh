@@ -26,7 +26,7 @@ fi
 if [[ ! -z $TEMPDIST ]]; then
     APPREPOSITORYLINK="deb http://build.openvpn.net/debian/openvpn/stable $TEMPDIST main"
     REPRECVKEYSASC="https://swupdate.openvpn.net/repos/repo-public.gpg"
-    REPRECVKEYSHORT='F5699905'
+    REPRECVKEYSHORT='E158C569'
     REPOPPA='NO'
     REPOKEYSREQ='YES'
 else

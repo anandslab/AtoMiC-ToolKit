@@ -2,6 +2,7 @@
 # shellcheck disable=SC1090
 echo
 source "$SCRIPTPATH/inc/app-stop.sh"
+echo
 echo -e "$YELLOW--->Autostart Removing any unrequired files...$ENDCOLOR"
 if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then 
     echo 'Using systemd so removing any sysv-init files'

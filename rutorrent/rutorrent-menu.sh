@@ -25,7 +25,7 @@ if [[ $exitstatus = 0 ]]; then
         "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
-        "Go Back" ) source "$SCRIPTPATH/menus/menu-pvrs.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-bittorrent.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else

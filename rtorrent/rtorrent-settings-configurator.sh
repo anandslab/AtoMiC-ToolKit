@@ -9,8 +9,8 @@ echo
 echo -e "$YELLOW--->Configuring rTorrent Settings...$ENDCOLOR"
 
 echo 'Coping rtorrent.rc to home dir'
-sudo cp "$SCRIPTPATH/rtorrent/rtorrent.rc" "/home/$UNAME/.rtorrent.rc" || \
+sudo cp "$SCRIPTPATH/rtorrent/rtorrent.rc" "$APPSETTINGS" || \
         { echo -e "$RED Coping rtorrent.rc failed.$ENDCOLOR" ; exit 1; }
 
 echo 'Setting rtorrent.rc owner'
-sudo chown "$UNAME":"$UGROUP" "/home/$UNAME/.rtorrent.rc"
+sudo chown "$UNAME":"$UGROUP" "$APPSETTINGS"

@@ -39,8 +39,8 @@ source "$SCRIPTPATH/setup.sh" -i jackett
 source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi
 # source "$SCRIPTPATH/setup.sh" -u kodi
-# source "$SCRIPTPATH/setup.sh" -i lazylibrarian
-# source "$SCRIPTPATH/setup.sh" -u lazylibrarian
+source "$SCRIPTPATH/setup.sh" -i lazylibrarian
+source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -u madsonic
 source "$SCRIPTPATH/setup.sh" -i muximux
@@ -63,8 +63,6 @@ source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
 source "$SCRIPTPATH/setup.sh" -u radarr
-source "$SCRIPTPATH/setup.sh" -i resilio-sync
-source "$SCRIPTPATH/setup.sh" -u resilio-sync
 source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -u rtorrent
 source "$SCRIPTPATH/setup.sh" -i rutorrent

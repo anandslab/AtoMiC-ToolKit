@@ -14,7 +14,6 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "Deluge" "Lightweight, Full-featured BitTorrent client" \
 "Jackett" "API Support for your favorite private trackers" \
 "qBittorrent" "An open-source software alternative to µTorrent" \
-"Resilio-Sync" "Fast and reliable file and folder synchronization" \
 "rTorrent" "Command line bittorrent client" \
 "ruTorrent" "Web front-end for rTorrent" \
 "Transmission" "Fast, easy, and free BitTorrent client" \

@@ -21,7 +21,6 @@ fi
 
 # Some apps require an override to prevent the systemd file getting overwritten
 if [[ ! -z $APPSYSTEMDOVERIDE ]]; then
-echo "$APPSYSTEMDOVERIDE"
     sudo cp "$APPSYSTEMDOVERIDE" \
     "/etc/systemd/system/$APPNAME.service.d/override.conf" \
     || { echo -e "${RED}Creating systemd override file failed.$ENDCOLOR" ; exit 1; }

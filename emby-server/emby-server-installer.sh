@@ -20,6 +20,8 @@ source "$SCRIPTPATH/emby-server/emby-server-constants.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"
+source "$SCRIPTPATH/$APPNAME/$APPNAME-settings-configurator.sh"
+sudo usermod -a -G emby $UNAME
 source "$SCRIPTPATH/inc/app-start.sh"
 echo "Waiting for $APPTITLE to finish initial setup"
 sleep 30

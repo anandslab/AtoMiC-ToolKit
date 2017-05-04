@@ -13,10 +13,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage ruTorrent" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Install" "Install ruTorrent" \
 "Uninstall" "Uninstall ruTorrent" \
-"Backup" "Backup ruTorrent settings" \
-"Restore" "Restore ruTorrent settings from a previous backup" \
 "Manual Update" "Manually update ruTorrent" \
-"Reset Password" "Reset ruTorrent WebUI password" \
 "Access Details" "View ruTorrent access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -26,13 +23,9 @@ if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
         "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
-        "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
-        "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
-        "Reset Password" )
-            source "$SCRIPTPATH/inc/app-password-reset-controller.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
-        "Go Back" ) source "$SCRIPTPATH/menus/menu-pvrs.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-bittorrent.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else

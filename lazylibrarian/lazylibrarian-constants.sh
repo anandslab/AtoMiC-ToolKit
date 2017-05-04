@@ -18,5 +18,5 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='lazylibrarian.service'
 APPSYSTEMDLOC=$APPPATH'/init/'$APPSYSTEMD
-APPINITDLOC=$APPPATH'/init/ubuntu.initd'
-APPDEFAULTLOC=$APPPATH'/init/ubuntu.default'
+APPINITDLOC=$APPPATH'/init/lazylibrarian.initd'
+APPDEFAULTLOC=$APPPATH'/init/lazylibrarian.default'

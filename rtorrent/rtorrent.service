@@ -1,0 +1,12 @@
+[Unit]
+Description=rtorrent (in tmux)
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=ReplaceMe
+ExecStart=/usr/bin/tmux -2 new-session -d -s rtorrent rtorrent
+ExecStop=/usr/bin/tmux kill-session -t rtorrent
+
+[Install]
+WantedBy=default.target

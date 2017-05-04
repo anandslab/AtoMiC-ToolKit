@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC PHP Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/php/php-constants.sh"
 source "$SCRIPTPATH/utils/php/php-repository-configurator.sh"

@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC Nginx Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 APPNAME='apache2'
 APPTITLE='apache2'
@@ -21,5 +21,7 @@ source "$SCRIPTPATH/utils/nginx/nginx-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
+source "$SCRIPTPATH/utils/nginx/nginx-site-configurator.sh"
+source "$SCRIPTPATH/inc/app-start.sh"
 echo -e "${GREEN}---> $APPTITLE installation complete.$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

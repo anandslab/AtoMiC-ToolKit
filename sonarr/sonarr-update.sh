@@ -3,7 +3,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
@@ -21,6 +20,11 @@ APPNAME='nzbdrone'
 source "$SCRIPTPATH/inc/app-update.sh"
 APPNAME='sonarr'
 
+source "$SCRIPTPATH/inc/app-start.sh"
+echo "Waiting for $APPTITLE to finish setup"
+sleep 5
+source "$SCRIPTPATH/inc/app-stop.sh"
+source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-update-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"

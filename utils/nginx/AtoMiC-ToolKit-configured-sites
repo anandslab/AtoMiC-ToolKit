@@ -1,10 +1,14 @@
 server {
     listen       80;
     server_name  IPADDRESS 0.0.0.0;
-    access_log   /var/log/nginx/muximux.access.log;
-    error_log    /var/log/nginx/muximux.error.log;
+    access_log   /var/log/nginx/AtoMiC-ToolKit-configured-sites.access.log;
+    error_log    /var/log/nginx/AtoMiC-ToolKit-configured-sites.error.log;
     root /var/www;
-    index index.php;
+    index index.html index.php;
+
+location /rutorrent/ {
+    try_files $uri $uri/ /index.html?$args;
+    }
 
 location /muximux/ {
     try_files $uri $uri/ /index.php?$args;
@@ -15,5 +19,10 @@ location ~ \.php$ {
     include fastcgi_params;
     fastcgi_pass unix:/var/run/php/FPMVERSION.sock;
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+location /RPC2 {
+      scgi_pass   127.0.0.1:5000;
+      include     scgi_params;
     }
 }

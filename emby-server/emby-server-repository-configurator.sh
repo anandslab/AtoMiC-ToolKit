@@ -1,10 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC2034
-# Script Name: AtoMiC Emby Restore Script
+# shellcheck disable=SC1090
+# Script Name: AtoMiC Emby Repository Config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 

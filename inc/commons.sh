@@ -13,3 +13,11 @@ NETLINES=16
 function pause(){
    read -p "$*"
 }
+
+function IsSystemdSupported(){
+    if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then
+        return 0
+    else
+        return 1
+    fi
+}

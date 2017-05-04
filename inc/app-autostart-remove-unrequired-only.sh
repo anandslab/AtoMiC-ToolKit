@@ -4,12 +4,13 @@ echo
 source "$SCRIPTPATH/inc/app-stop.sh"
 echo
 echo -e "$YELLOW--->Autostart Removing any unrequired files...$ENDCOLOR"
-if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then 
+if IsSystemdSupported; then 
     echo 'Using systemd so removing any sysv-init files'
 
     source "$SCRIPTPATH/inc/app-init-remove.sh" >/dev/null
     sudo systemctl daemon-reload
     sudo systemctl enable $APPSYSTEMD 
+
 elif [ -d /etc/init.d ]; then 
     echo 'Using sysv-init so removing any systemd files'
 
@@ -17,5 +18,5 @@ elif [ -d /etc/init.d ]; then
     sudo chown $UNAME:$UGROUP /etc/init.d/$APPNAME
     sudo update-rc.d $APPNAME defaults
 else 
-    echo -e $RED'Unknown startup type.'$ENDCOLOR
+    echo -e "${RED}Unknown startup type.$ENDCOLOR"
 fi

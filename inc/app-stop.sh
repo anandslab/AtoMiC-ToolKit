@@ -22,12 +22,8 @@ if IsSystemdSupported; then
 elif [[ -f /etc/init.d/$APPNAME ]]; then
     if [[ -f /etc/init.d/$APPNAME ]]; then
         sudo service $APPNAME stop
-        echo "$APPNAME is now: " && \
-        service $APPNAME status
         FOUND=1
     fi
-else
-    echo -e "${RED}Unknown startup type.$ENDCOLOR"
 fi
 
 sleep 2

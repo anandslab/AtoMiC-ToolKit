@@ -28,6 +28,9 @@ source "$SCRIPTPATH/inc/app-start.sh"
 echo "Waiting for $APPTITLE to finish initial setup"
 sleep 10
 source "$SCRIPTPATH/inc/app-stop.sh"
+#This is needed as it doesnt seem to create the ini file unless you restart twice?!?
+source "$SCRIPTPATH/inc/app-start.sh"
+source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-settings-configurator.sh"
 source "$SCRIPTPATH/inc/app-start.sh"

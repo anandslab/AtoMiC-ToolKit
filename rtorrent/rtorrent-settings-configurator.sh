@@ -14,3 +14,8 @@ sudo cp "$SCRIPTPATH/rtorrent/rtorrent.rc" "$APPSETTINGS" || \
 
 echo 'Setting rtorrent.rc owner'
 sudo chown "$UNAME":"$UGROUP" "$APPSETTINGS"
+
+if [[ -f /home/$UNAME/Downloads/rtorrent/session/rtorrent.lock ]]; then
+    sudo rm /home/$UNAME/Downloads/rtorrent/session/rtorrent.lock
+    echo 'Removed lock file'
+fi

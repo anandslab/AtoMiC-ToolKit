@@ -29,8 +29,6 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/jackett/jackett-menu.sh" ;;
         "qBittorrent" )
             source "$SCRIPTPATH/qbittorrent-nox/qbittorrent-nox-menu.sh" ;;
-        "Resilio-Sync" )
-            source "$SCRIPTPATH/resilio-sync/resilio-sync-menu.sh" ;;
         "rTorrent" )
             source "$SCRIPTPATH/rtorrent/rtorrent-menu.sh" ;;
         "ruTorrent" )

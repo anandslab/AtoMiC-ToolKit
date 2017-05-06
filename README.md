@@ -52,6 +52,7 @@ Features features of AtoMiC ToolKit include:
 <li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>
 <li>qBittorrent - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Radarr - Install, Uninstall, Update and Backup / Restore</li>
+<li>Resilio-Sync - Install, Uninstall, Update and Backup / Restore</li>
 <li>rTorrent - Install, Uninstall, Update and Backup / Restore</li>
 <li>ruTorrent - Install, Uninstall, Update</li>
 <li>SABnzbd+ - Install, Uninstall, Reset Password, Update and Backup / Restore</li>

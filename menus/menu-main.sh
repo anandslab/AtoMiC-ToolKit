@@ -16,6 +16,7 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "Bittorrent Clients" "Download Torrents" \
 "Personal Media Servers" "Organise and serve Media" \
 "Home Theater" "Media Playback" \
+"Sync Tools" "Keep files and folders synchronized" \
 "Administration Tools" "system configuration tools e.g. Webmin" \
 "Utilities" "Other miscellaneous tools" \
 "Maintenance" "Perform maintenance tasks" 3>&1 1>&2 2>&3)
@@ -34,6 +35,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/menus/menu-personal-media-servers.sh" ;;
         "Home Theater" )
             source "$SCRIPTPATH/menus/menu-home-theater.sh" ;;
+        "Sync Tools" )
+            source "$SCRIPTPATH/menus/menu-sync-tools.sh" ;;
         "Administration Tools" )
             source "$SCRIPTPATH/menus/menu-administration-tools.sh" ;;
         "Utilities" )

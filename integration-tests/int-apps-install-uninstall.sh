@@ -63,6 +63,8 @@ source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
 source "$SCRIPTPATH/setup.sh" -u radarr
+source "$SCRIPTPATH/setup.sh" -i resilio-sync
+source "$SCRIPTPATH/setup.sh" -u resilio-sync
 source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -u rtorrent
 source "$SCRIPTPATH/setup.sh" -i rutorrent

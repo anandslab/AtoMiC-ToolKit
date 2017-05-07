@@ -12,13 +12,8 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
-source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
-source "$SCRIPTPATH/inc/app-stop.sh" #Stops NGINX
 source "$SCRIPTPATH/muximux/muximux-constants.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
-source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
-source "$SCRIPTPATH/inc/app-start.sh" #Starts NGINX
-source "$SCRIPTPATH/muximux/muximux-constants.sh"
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

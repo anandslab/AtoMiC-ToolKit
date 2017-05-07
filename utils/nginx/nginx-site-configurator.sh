@@ -23,3 +23,5 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
                 "/etc/nginx/sites-enabled/$APPSETTINGS"
     echo "Symlinked $APPSETTINGS virtual host"
 fi
+
+sudo nginx -s reload

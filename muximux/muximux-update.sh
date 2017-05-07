@@ -1,6 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-# Script Name: AtoMiC SickGear Updater
+# Script Name: AtoMiC Muximux Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)

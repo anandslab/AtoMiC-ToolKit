@@ -53,6 +53,8 @@ source "$SCRIPTPATH/setup.sh" -i nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -i ombi
 source "$SCRIPTPATH/setup.sh" -u ombi
+source "$SCRIPTPATH/setup.sh" -i organizr
+source "$SCRIPTPATH/setup.sh" -u organizr
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
 source "$SCRIPTPATH/setup.sh" -i plexpy

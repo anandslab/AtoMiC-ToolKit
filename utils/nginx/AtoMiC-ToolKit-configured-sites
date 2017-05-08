@@ -6,12 +6,16 @@ server {
     root /var/www;
     index index.html index.php;
 
-location /rutorrent/ {
-    try_files $uri $uri/ /index.html?$args;
-    }
-
 location /muximux/ {
     try_files $uri $uri/ /index.php?$args;
+    }
+
+location /organizr/ {
+    try_files $uri $uri/ /index.php?$args;
+    }
+
+location /rutorrent/ {
+    try_files $uri $uri/ /index.html?$args;
     }
 
 location ~ \.php$ {

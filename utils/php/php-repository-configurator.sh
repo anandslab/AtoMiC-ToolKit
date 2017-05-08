@@ -28,10 +28,10 @@ ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
 if [[ $ARCHSHORT = 'arm' ]]; then
     APPNAME='php7.0'
-    APPDEPS='php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mcrypt php7.0-json php7.0-tidy php7.0-mbstring'
+    APPDEPS='php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mcrypt php7.0-json php7.0-tidy php7.0-mbstring php7.0-zip php7.0-mail php7.0-xml openssl php7.0-sqlite'
     FPMVERSION='php7.0-fpm'
 else
     APPNAME='php7.1'
-    APPDEPS='php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-tidy php7.1-mbstring php-redis php-memcached'
+    APPDEPS='php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-tidy php7.1-mbstring php-redis php-memcached php7.1-zip php7.1-mail php7.1-xml openssl php7.1-sqlite'
     FPMVERSION='php7.1-fpm'
 fi

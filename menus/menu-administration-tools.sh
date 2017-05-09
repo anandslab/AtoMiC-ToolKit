@@ -14,6 +14,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "HTPC Manager" "Unified HTPC Web Interface" \
 "Muximux" "A lightweight way to manage your HTPC" \
 "Ombi" "Allow your users to Request Movies, TV Shows and Albums" \
+"Organizr" "HTPC/Homelab Services Organizer" \
 "Webmin" "Web-based system administration" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -27,6 +28,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/muximux/muximux-menu.sh" ;;
         "Ombi" )
             source "$SCRIPTPATH/ombi/ombi-menu.sh" ;;
+        "Organizr" )
+            source "$SCRIPTPATH/organizr/organizr-menu.sh" ;;
         "Webmin" )
             source "$SCRIPTPATH/webmin/webmin-menu.sh" ;;
         "Go Back" )

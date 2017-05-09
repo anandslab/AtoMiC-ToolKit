@@ -3,6 +3,10 @@
 echo
 echo -e "${YELLOW}--->configuring NGINX $ENDCOLOR"
 
+sudo chmod 755 -R /var/www
+sudo chown -R www-data:www-data /var/www
+echo "Set the correct folder permissions"
+
 cp "$SCRIPTPATH/utils/nginx/$APPSETTINGS" \
     "/etc/nginx/sites-available/$APPSETTINGS" || \
     { echo "${RED}Could not move $APPSETTINGS file.$ENDCOLOR" ; exit 1; }
@@ -23,3 +27,5 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
                 "/etc/nginx/sites-enabled/$APPSETTINGS"
     echo "Symlinked $APPSETTINGS virtual host"
 fi
+
+sudo nginx -s reload

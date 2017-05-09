@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Muximux settings configurator
+# Script Name: AtoMiC Organizr settings configurator
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e "$YELLOW--->Configuring rutorrent Settings...$ENDCOLOR"
+echo -e "$YELLOW--->Configuring Organizr Settings...$ENDCOLOR"
 
 sudo chmod 755 -R "$APPPATH"
 sudo chown -R www-data:www-data "$APPPATH"

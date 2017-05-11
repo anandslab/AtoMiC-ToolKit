@@ -27,7 +27,7 @@ if [ "$TEMPDIST" = '' ]; then
         TEMPDIST='Debian_8.0'
         ;;
     'zesty')
-        TEMPDIST='xUbuntu_next'
+        TEMPDIST='xUbuntu_17.04'
         ;;
     'yakkety')
         TEMPDIST='xUbuntu_16.10'

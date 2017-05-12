@@ -25,14 +25,8 @@ if [ "$RESP" == "y" ]
 then
     source "$SCRIPTPATH/inc/pkgupdate.sh"
     APPPATH=$SCRIPTPATH
-    echo
-    sleep 1
 
-    echo -e $YELLOW'--->Installing prerequisites...'$ENDCOLOR
-    sudo apt-get -y install git
-
-    echo
-    sleep 1
+    "$SCRIPTPATH/inc/app-toolkit-deps.sh"
 
     echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
     git -C $SCRIPTPATH fetch --all

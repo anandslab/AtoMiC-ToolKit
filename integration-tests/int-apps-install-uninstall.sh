@@ -55,6 +55,8 @@ source "$SCRIPTPATH/setup.sh" -i ombi
 source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i organizr
 source "$SCRIPTPATH/setup.sh" -u organizr
+source "$SCRIPTPATH/setup.sh" -i phpsysinfo
+source "$SCRIPTPATH/setup.sh" -u phpsysinfo
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
 source "$SCRIPTPATH/setup.sh" -i plexpy

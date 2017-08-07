@@ -32,7 +32,7 @@ if [ "$TEMPDIST" = '' ]; then
     'yakkety')
         TEMPDIST='xUbuntu_16.10'
         ;;
-    'xenial'|'serena'|'sarah')
+    'xenial'|'serena'|'sarah'|'sonya')
         TEMPDIST='xUbuntu_16.04'
         ;;
     'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')

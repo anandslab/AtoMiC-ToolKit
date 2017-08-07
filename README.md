@@ -23,7 +23,7 @@ We have put in several hundred hours of work into developing AtoMiC ToolKit. If 
 <h2>Compatibility</h2>
 Compatible with Latest Ubuntu and variants (Kubuntu, Xubuntu, Lubuntu) and Linux Mint. 
 Development will focus mainly on compatibility with current Ubuntu\Debian\Raspbian releases. 
-Testing has been mainly on Linux Mint 18.1 and Raspbian Jessie. 
+Testing has been mainly on Linux Mint 18.2 and Raspbian Jessie. 
 
 <h2>Key Features</h2>
 Features features of AtoMiC ToolKit include:

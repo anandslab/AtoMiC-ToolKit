@@ -17,7 +17,7 @@ if [[ ! $ARCHSHORT = 'arm' ]]; then
         'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')
             TEMPDIST='trusty'
             ;;
-        'xenial'|'serena'|'sarah')
+        'xenial'|'serena'|'sarah'|'sonya')
             TEMPDIST='xenial'
             ;;
     esac

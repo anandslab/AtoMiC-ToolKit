@@ -19,5 +19,4 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='plexmediaserver.service'
-APPSYSTEMDLOC="$SCRIPTPATH/plexmediaserver/plexmediaserver.service"
 APPSYSTEMDOVERIDE="$SCRIPTPATH/plexmediaserver/plexmediaserver-override.conf"

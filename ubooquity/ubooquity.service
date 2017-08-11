@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=ReplaceMe
 WorkingDirectory=/opt/ubooquity
-ExecStart=/usr/bin/java -jar Ubooquity.jar -headless -webadmin
+ExecStart=/usr/bin/java -jar Ubooquity.jar -headless -remoteadmin
 Restart=always
 
 [Install]

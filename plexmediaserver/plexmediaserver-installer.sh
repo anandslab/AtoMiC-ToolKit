@@ -20,11 +20,15 @@ source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
 
-# Setup the override first so it runs correctly first time.
-# Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt) 
-source "$SCRIPTPATH/inc/app-autostart-configure.sh"
-
-source "$SCRIPTPATH/$APPNAME/$APPNAME-app-install.sh"
+if IsSystemdSupported; then 
+    # Setup the override first so it runs correctly first time.
+    # Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt) 
+    source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-app-install.sh"
+else
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-app-install.sh"
+    source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+fi
 
 #Remove the temp repo if there is one
 if [[ -f /etc/apt/sources.list.d/$APPNAME.list.dpkg-old ]]; then

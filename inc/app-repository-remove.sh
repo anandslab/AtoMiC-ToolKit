@@ -1,19 +1,18 @@
 #!/bin/bash
 echo
-if [ ! "$APPREPOSITORYLINK" = "" ]; then
+if [[ -n $APPREPOSITORYLINK ]]; then
     echo -e "$YELLOW--->Removing $APPTITLE repository...$ENDCOLOR"
     GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $APPREPOSITORYNAME)
-    if ! [ "$GREPOUT" = "" ]; then
-        if [ "$REPOPPA" = 'YES' ]; then
+    if [[ -n $GREPOUT ]]; then
+        if [[ $REPOPPA = 'YES' ]]; then
             sudo add-apt-repository --remove -y $APPREPOSITORYLINK
         else
             sudo rm "/etc/apt/sources.list.d/$APPREPOSITORYNAME.list"
             echo 'OK'
         fi
-
-        source "$SCRIPTPATH/inc/app-keys-remove.sh"
-
     else
-        echo $APPTITLE' repository doesnt exist'
+        echo "$APPTITLE repository doesn't exist"
     fi
+
+    source "$SCRIPTPATH/inc/app-keys-remove.sh"
 fi

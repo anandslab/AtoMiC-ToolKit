@@ -11,16 +11,31 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+
 source "$SCRIPTPATH/inc/app-stop.sh"
+source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
+source "$SCRIPTPATH/plexmediaserver/plexmediaserver-constants.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
-source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
-source "$SCRIPTPATH/plexmediaserver/plexmediaserver-constants.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
-#Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt)
-source "$SCRIPTPATH/inc/app-install.sh"
-source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+
+if IsSystemdSupported; then 
+    # Setup the override first so it runs correctly first time.
+    # Copies over a service file that will get overridden unless one isnt created. (Dev2day repo currently doesnt) 
+    source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-app-install.sh"
+else
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-app-install.sh"
+    source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+fi
+
+#Remove the temp repo if there is one
+if [[ -f /etc/apt/sources.list.d/$APPNAME.list.dpkg-old ]]; then
+    sudo rm "/etc/apt/sources.list.d/$APPNAME.list.dpkg-old"
+fi
+
+source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-enable.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove-unrequired-only.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"

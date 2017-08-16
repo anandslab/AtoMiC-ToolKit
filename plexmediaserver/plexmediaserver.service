@@ -8,7 +8,7 @@ Environment=PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
 Environment=PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
 Environment=PLEX_MEDIA_SERVER_TMPDIR=/tmp
 ExecStartPre=/bin/sh -c '/usr/bin/test -d "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" || /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"'
-ExecStart=/bin/sh -c 'LD_LIBRARY_PATH=/usr/lib/plexmediaserver /usr/lib/plexmediaserver/Plex\ Media\ Server'
+ExecStart=/bin/sh -c 'LD_LIBRARY_PATH=/usr/lib/plexmediaserver "/usr/lib/plexmediaserver/Plex Media Server"'
 Type=simple
 User=plex
 Group=plex

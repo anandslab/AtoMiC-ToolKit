@@ -15,8 +15,15 @@ fi
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
 CODENAME=$(lsb_release -c -s)
-if [[ $ARCHSHORT = 'arm' ]] && [[ $CODENAME = 'jessie' ]]; then
-    TEMPDIST='raspbianjessie'
+if [[ $ARCHSHORT = 'arm' ]] && [[ $CODENAME = 'jessie' || $CODENAME = 'stretch' ]]; then
+        case "$CODENAME" in
+        'jessie')
+            TEMPDIST='raspbianjessie'
+            ;;
+        'stretch')
+            TEMPDIST='raspbianstretch'
+            ;;
+    esac
 else
     case "$CODENAME" in
         'wheezy')
@@ -25,6 +32,9 @@ else
         'jessie')
             TEMPDIST='jessie'
             ;;
+        'stretch')
+            TEMPDIST='stretch'
+            ;;    
         'xenial'|'serena'|'sarah'|'sonya'|'zesty'|'yakkety'|'artful')
             TEMPDIST='xenial'
             ;;

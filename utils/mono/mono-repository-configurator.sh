@@ -18,31 +18,31 @@ CODENAME=$(lsb_release -c -s)
 if [[ $ARCHSHORT = 'arm' ]] && [[ $CODENAME = 'jessie' || $CODENAME = 'stretch' ]]; then
         case "$CODENAME" in
         'jessie')
-            TEMPDIST='raspbianjessie'
+            TEMPDIST='debian raspbianjessie'
             ;;
         'stretch')
-            TEMPDIST='raspbianstretch'
+            TEMPDIST='debian raspbianstretch'
             ;;
     esac
 else
     case "$CODENAME" in
         'wheezy')
-            TEMPDIST='wheezy'
+            TEMPDIST='debian wheezy'
             ;;
         'jessie')
-            TEMPDIST='jessie'
+            TEMPDIST='debian jessie'
             ;;
         'stretch')
-            TEMPDIST='stretch'
+            TEMPDIST='debian stretch'
             ;;    
         'xenial'|'serena'|'sarah'|'sonya'|'zesty'|'yakkety'|'artful')
-            TEMPDIST='xenial'
+            TEMPDIST='ubuntu xenial'
             ;;
         'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')
-            TEMPDIST='trusty'
+            TEMPDIST='ubuntu trusty'
             ;;
         'precise'|'maya'|'betsy')
-            TEMPDIST='precise'
+            TEMPDIST='ubuntu precise'
             ;;
         *)
             source "$SCRIPTPATH/inc/invalid-option.sh"
@@ -51,5 +51,5 @@ else
 fi
 
 if [[ ! $TEMPDIST = '' ]]; then
-    APPREPOSITORYLINK="deb http://download.mono-project.com/repo/ubuntu $TEMPDIST main"
+    APPREPOSITORYLINK="deb http://download.mono-project.com/repo/$TEMPDIST main"
 fi

@@ -25,7 +25,7 @@ else
             ;;
         *)
             # Default to the offical Plex repo
-            APPREPOSITORYLINK="deb https://downloads.plex.tv/repo/deb/ public main"
+            APPREPOSITORYLINK="deb https://downloads.plex.tv/repo/deb ./public main"
             REPRECVKEYSASC="https://downloads.plex.tv/plex-keys/PlexSign.key"
             REPRECVKEYSHORT='3ADCA79D'
             ;;

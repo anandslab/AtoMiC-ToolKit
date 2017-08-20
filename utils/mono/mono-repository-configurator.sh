@@ -5,15 +5,51 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
+# Remove the old repo if it exists
+if [[ -f /etc/apt/sources.list.d/mono-xamarin.list ]]; then
+    echo -e "${YELLOW}---> Removing old mono-xamarin.list...$ENDCOLOR"
+    sudo rm "/etc/apt/sources.list.d/mono-xamarin.list"
+    echo 'Done'
+fi
 
+ARCH=$(uname -m)
+ARCHSHORT=${ARCH:0:3}
 CODENAME=$(lsb_release -c -s)
+if [[ $ARCHSHORT = 'arm' ]] && [[ $CODENAME = 'jessie' || $CODENAME = 'stretch' ]]; then
+        case "$CODENAME" in
+        'jessie')
+            TEMPDIST='debian raspbianjessie'
+            ;;
+        'stretch')
+            TEMPDIST='debian raspbianstretch'
+            ;;
+    esac
+else
+    case "$CODENAME" in
+        'wheezy')
+            TEMPDIST='debian wheezy'
+            ;;
+        'jessie')
+            TEMPDIST='debian jessie'
+            ;;
+        'stretch')
+            TEMPDIST='debian stretch'
+            ;;    
+        'xenial'|'serena'|'sarah'|'sonya'|'zesty'|'yakkety'|'artful')
+            TEMPDIST='ubuntu xenial'
+            ;;
+        'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')
+            TEMPDIST='ubuntu trusty'
+            ;;
+        'precise'|'maya'|'betsy')
+            TEMPDIST='ubuntu precise'
+            ;;
+        *)
+            source "$SCRIPTPATH/inc/invalid-option.sh"
+            ;;
+    esac
+fi
 
-case "$CODENAME" in
-    'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
-        APPREPOSITORYLINKBACKUP="deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main"
-        ;;
-    *)
-        APPREPOSITORYLINKBACKUP=''
-        ;;
-esac
+if [[ ! $TEMPDIST = '' ]]; then
+    APPREPOSITORYLINK="deb http://download.mono-project.com/repo/$TEMPDIST main"
+fi

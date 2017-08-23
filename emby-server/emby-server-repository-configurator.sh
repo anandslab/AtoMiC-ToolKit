@@ -17,17 +17,20 @@ fi
 CODENAME=$(lsb_release -c -s)
 if [ "$TEMPDIST" = '' ]; then
    case "$CODENAME" in
-    'stretch'|'sid')
+    'sid')
         TEMPDIST='Debian_Next'
         ;;
-    'wheezy')
-        TEMPDIST='Debian_7.0'
+    'stretch')
+        TEMPDIST='Debian_9.0'
         ;;
     'jessie')
         TEMPDIST='Debian_8.0'
         ;;
+    'wheezy')
+        TEMPDIST='Debian_7.0'
+        ;;
     'zesty')
-        TEMPDIST='xUbuntu_next'
+        TEMPDIST='xUbuntu_17.04'
         ;;
     'yakkety')
         TEMPDIST='xUbuntu_16.10'

@@ -11,7 +11,7 @@ source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/rvm/rvm-constants.sh"
 source "$SCRIPTPATH/inc/app-keys-add.sh"
 su -c "\curl -sSL https://get.rvm.io | bash -s stable --ruby" $UNAME
-source /etc/profile.d/rvm.sh
+source ~/.rvm/scripts/rvm
 rvm install ruby
 
 if [[ -f .bashrc ]]; then

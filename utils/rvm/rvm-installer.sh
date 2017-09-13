@@ -12,7 +12,6 @@ source "$SCRIPTPATH/utils/rvm/rvm-constants.sh"
 source "$SCRIPTPATH/inc/app-keys-add.sh"
 su -c "\curl -sSL https://get.rvm.io | bash -s stable --ruby" $UNAME
 source /home/$UNAME/.rvm/scripts/rvm
-rvm install ruby
 
 if [[ -f .bashrc ]]; then
     echo "Set Ruby to use default version in .bashrc file"

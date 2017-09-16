@@ -20,7 +20,6 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 "OpenVPN" "VPN APP for creating secure point-to-point connections" \
 "PHP 7.x" "open source general-purpose scripting language" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
-"RVM" "Install latest Ruby Version Manager and Ruby" \
 "Unrar" "Install latest Unrar from RARLAB source" \
 "Install Bash Aliases" "Allows shortening commands" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)

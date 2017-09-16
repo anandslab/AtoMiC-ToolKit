@@ -35,8 +35,9 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
         ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi
 
-    if [[ -f /etc/systemd/system/$APPSYSTEMD ]] \
-        || [[ -f /lib/systemd/system/$APPSYSTEMD ]]; then
+    if [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         echo -e "SYSTEMD $APPSYSTEMD found.$ENDCOLOR"
         echo "$APPSYSTEMD is currently:" $(systemctl is-active $APPSYSTEMD)
     else

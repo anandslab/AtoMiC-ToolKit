@@ -4,7 +4,8 @@ echo -e "${YELLOW}--->Stopping $APPTITLE...$ENDCOLOR"
 
 if IsSystemdSupported; then
     if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD ]]; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         sudo systemctl stop $APPSYSTEMD
         echo "$APPSYSTEMD is now: " && \
         systemctl is-active $APPSYSTEMD
@@ -12,7 +13,8 @@ if IsSystemdSupported; then
     fi
 
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]]; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
         sudo systemctl stop $APPSYSTEMD2
         echo "$APPSYSTEMD2 is now: " && \
         systemctl is-active $APPSYSTEMD2

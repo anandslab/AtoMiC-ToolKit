@@ -4,7 +4,8 @@ echo -e "$YELLOW--->Starting $APPTITLE...$ENDCOLOR"
 
 if IsSystemdSupported; then
     if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD ]]; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         sudo systemctl start $APPSYSTEMD
         echo "$APPSYSTEMD is now: "
         sleep 5
@@ -12,7 +13,8 @@ if IsSystemdSupported; then
     fi
 
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]]; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
         sudo systemctl start $APPSYSTEMD2
         echo "$APPSYSTEMD2 is now: " 
         sleep 5

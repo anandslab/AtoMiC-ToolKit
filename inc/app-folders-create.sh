@@ -3,8 +3,9 @@ echo
 sleep 1
 echo -e "$YELLOW--->Creating $APPTITLE files / folders...$ENDCOLOR"
 cp $SCRIPTPATH/$APPNAME/$APPNAME-folders-list $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list || { echo -e "${RED}Creating folders list failed.$ENDCOLOR"; exit 1; }
-sudo sed -i 's@APPPATH@'"$APPPATH"'@g' $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list  || { echo -e "${RED}Replacing $APPTITLE path in folders list failed.$ENDCOLOR"; exit 1; }
-sudo sed -i 's@UNAME@'"$UNAME"'@g' $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list  || { echo -e "${RED}Replacing username in folders list failed.$ENDCOLOR"; exit 1; }
+sudo sed -i "s@APPPATH@$APPPATH@g" $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list  || { echo -e "${RED}Replacing $APPTITLE path in folders list failed.$ENDCOLOR"; exit 1; }
+sudo sed -i "s@APPSETTINGSDIR@$APPSETTINGSDIR@g" $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list  || { echo -e "${RED}Replacing $APPTITLE path in folders list failed.$ENDCOLOR"; exit 1; }
+sudo sed -i "s@UNAME@$UNAME@g" $SCRIPTPATH/tmp/$APPSHORTNAME-folders-list  || { echo -e "${RED}Replacing username in folders list failed.$ENDCOLOR"; exit 1; }
 
 #Need encapsulate the $folder for folders with spaces
 while IFS= read -r folder

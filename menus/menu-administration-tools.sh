@@ -11,6 +11,7 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
+"Grafana" "Open platform for beautiful analytics and monitoring" \
 "HTPC Manager" "Unified HTPC Web Interface" \
 "Muximux" "A lightweight way to manage your HTPC" \
 "Ombi" "Allow your users to Request Movies, TV Shows and Albums" \
@@ -23,6 +24,8 @@ exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/inc/app-constant-reset.sh"
     case "$SUBCHOICE" in
+        "Grafana" )
+            source "$SCRIPTPATH/grafana/grafana-menu.sh" ;;
         "HTPC Manager" )
             source "$SCRIPTPATH/htpcmanager/htpcmanager-menu.sh" ;;
         "Muximux" )

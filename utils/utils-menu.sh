@@ -46,6 +46,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/php/php-menu.sh" ;;
         "pyLoad" )
             source "$SCRIPTPATH/pyload/pyload-menu.sh" ;;
+        "RVM" )
+            source "$SCRIPTPATH/utils/rvm/rvm-menu.sh" ;;
         "Unrar" )
             source "$SCRIPTPATH/utils/unrar/unrar-menu.sh" ;;
         "Install Bash Aliases" )

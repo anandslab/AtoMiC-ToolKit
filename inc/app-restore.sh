@@ -2,7 +2,7 @@
 echo
 sleep 1
 
-echo -e $YELLOW'--->Select '$APPTITLE' backup file to restore...'$ENDCOLOR
+echo -e "$YELLOW--->Select $APPTITLE backup file to restore...$ENDCOLOR"
 
 sleep 1
 
@@ -19,14 +19,13 @@ if [[ $exitstatus = 0 ]]; then
     #http://www.cyberciti.biz/faq/bash-loop-over-file/
     echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
     DATETIME=`date '+%m-%d-%Y_%H-%M'`
-    
+   
     while IFS= read -r file
     do
-           echo -e 'Restoring '$CYAN$file$ENDCOLOR'...'
-        if [ -f "$file" ] || [ -d "$file" ]; then
+        echo -e "Restoring $CYAN$file$ENDCOLOR..."
+        if [[ -f $file ]] || [[ -d $file ]]; then
             NEWFILENAME=$file'_'$DATETIME
             mv $file $NEWFILENAME
-            #echo $NEWFILENAME
             echo -e 'Moved existing '$CYAN$file$ENDCOLOR' to '$CYAN$NEWFILENAME$ENDCOLOR
         fi
     done < "$SCRIPTPATH/tmp/$APPSHORTNAME-backup-files"
@@ -41,5 +40,5 @@ if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/inc/app-start.sh"
 else
     echo
-    echo -e $RED'Restoring '$APPTITLE' backup cancelled.'$ENDCOLOR
+    echo -e "${RED}Restoring $APPTITLE backup cancelled.$ENDCOLOR"
 fi 

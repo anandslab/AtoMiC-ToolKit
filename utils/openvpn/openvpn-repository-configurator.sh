@@ -11,13 +11,16 @@ ARCHSHORT=${ARCH:0:3}
 if [[ ! $ARCHSHORT = 'arm' ]]; then
     CODENAME=$(lsb_release -c -s)
     case "$CODENAME" in
-        'wheezy'|'jessie'|'precise')
+        'wheezy'|'jessie'|'stretch')
             TEMPDIST=$CODENAME
+            ;;
+        'precise'|'maya'|'betsy')
+            TEMPDIST='precise'
             ;;
         'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')
             TEMPDIST='trusty'
             ;;
-        'xenial'|'serena'|'sarah'|'sonya')
+        'xenial'|'serena'|'sarah'|'sonya'|'zesty'|'yakkety'|'artful')
             TEMPDIST='xenial'
             ;;
     esac

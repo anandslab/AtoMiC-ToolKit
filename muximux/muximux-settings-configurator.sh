@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e "$YELLOW--->Configuring rutorrent Settings...$ENDCOLOR"
+echo -e "$YELLOW--->Configuring $APPTITLE Settings...$ENDCOLOR"
 
 sudo chmod 755 -R "$APPPATH"
 sudo chown -R www-data:www-data "$APPPATH"

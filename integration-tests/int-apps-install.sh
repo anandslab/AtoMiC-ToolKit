@@ -45,6 +45,7 @@ source "$SCRIPTPATH/setup.sh" -i plexpy
 source "$SCRIPTPATH/setup.sh" -i pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
+source "$SCRIPTPATH/setup.sh" -i resilio-sync
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -i sickgear
 source "$SCRIPTPATH/setup.sh" -i sickrage

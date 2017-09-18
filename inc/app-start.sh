@@ -41,7 +41,7 @@ elif [[ -f /etc/init.d/$APPINITD ]]; then
     sudo service $APPINITD start
 fi
 
-if [[ ! -z $FOUND ]] && [[ $FOUND = 1 ]]; then
+if [[ ! -z $FOUND ]] && [[ $FOUND = 0 ]]; then
     echo -e "${RED}Startup file not found.$ENDCOLOR"
 fi
     

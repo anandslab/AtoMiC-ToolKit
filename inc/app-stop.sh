@@ -17,7 +17,7 @@ if IsSystemdSupported; then
     fi
 
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
         FOUND=1
         sudo systemctl stop $APPSYSTEMD2

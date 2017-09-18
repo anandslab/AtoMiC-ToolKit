@@ -6,6 +6,7 @@ if IsSystemdSupported; then
     if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
+        FOUND=1
         sudo systemctl start $APPSYSTEMD
         echo "Starting $APPSYSTEMD"
         sleep 5
@@ -20,6 +21,7 @@ if IsSystemdSupported; then
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
+        FOUND=1
         sudo systemctl start $APPSYSTEMD2
         echo "Starting $APPSYSTEMD2" 
         sleep 5
@@ -32,9 +34,14 @@ if IsSystemdSupported; then
     fi
     
 elif [[ -f /etc/init.d/$APPNAME ]]; then
-    if [[ -f /etc/init.d/$APPNAME ]]; then
-        sudo service $APPNAME start
-    fi
-else
-    echo -e "${RED}Unknown startup type.$ENDCOLOR"
+    FOUND=1
+    sudo service $APPNAME start
+elif [[ -f /etc/init.d/$APPINITD ]]; then
+    FOUND=1
+    sudo service $APPINITD start
 fi
+
+if [[ ! -z $FOUND ]] && [[ $FOUND = 1 ]]; then
+    echo -e "${RED}Startup file not found.$ENDCOLOR"
+fi
+    

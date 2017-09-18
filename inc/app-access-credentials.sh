@@ -39,7 +39,12 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
         [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         echo -e "SYSTEMD $APPSYSTEMD found.$ENDCOLOR"
-        echo "$APPSYSTEMD is currently:" $(systemctl is-active $APPSYSTEMD)
+        STATUS=$(systemctl is-active $APPSYSTEMD)
+        if [[ $STATUS = 'active' ]]; then
+            echo -e "$APPSYSTEMD is currently: ${GREEN}$STATUS$ENDCOLOR" 
+        else
+            echo -e "$APPSYSTEMD is currently: ${RED}$STATUS$ENDCOLOR"
+        fi
     else
         ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi

@@ -30,7 +30,7 @@ if [[ ! $ACCESSHOST = 'NA' ]]; then
     if grep -Exq "${ACCESSHOST}localhost" "$APPSETTINGS"; then
         echo -e "${RED}WARNING: ${ENDCOLOR}You can only access $APPTITLE on localhost."
     else
-        echo -e "$GREEN GOOD: $ENDCOLOR$APPTITLE is accessible outside localhost."
+        echo "$APPTITLE is configured to be accessible outside localhost."
     fi
 fi
 

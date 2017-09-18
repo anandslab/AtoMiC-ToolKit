@@ -11,7 +11,6 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
-source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 APPNAME='nzbdrone'
 source "$SCRIPTPATH/inc/app-uninstall.sh"

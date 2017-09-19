@@ -25,7 +25,7 @@ elif [[ -d /etc/init.d ]]; then
         source "$SCRIPTPATH/$APPNAME/$APPNAME-default-update.sh"
     fi
 
-    if ! [[ -f /etc/init.d/$APPNAME ]]; then
+    if ! [[ -f /etc/init.d/$APPINITD ]]; then
         source "$SCRIPTPATH/inc/app-init-add.sh"
     fi
 

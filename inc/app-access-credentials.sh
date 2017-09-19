@@ -24,10 +24,10 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
 
     ERRORCOUNT=0
     echo -e "${YELLOW}Checking $APPTITLE status...$ENDCOLOR"
-    if [[ -f /etc/init.d/$APPNAME ]]; then
-        if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
+    if [[ -f /etc/init.d/$APPINITD ]]; then
+        if [[ $(sudo /etc/init.d/$APPINITD status) == *"not running"* ]]; then
             echo -e "$RED$APPTITLE is currently not running and will be inaccessible.$ENDCOLOR"
-            echo -e "Start $APPTITLE using the following command: ${CYAN}sudo /etc/init.d/$APPNAME start$ENDCOLOR"
+            echo -e "Start $APPTITLE using the following command: ${CYAN}sudo /etc/init.d/$APPINITD start$ENDCOLOR"
         else
             echo -e "$APPTITLE is running and accessible."
         fi

@@ -2,9 +2,9 @@
 echo 
 echo -e $YELLOW"--->Disabling $APPTITLE..."$ENDCOLOR
 
-if [ -f /etc/init.d/$APPNAME ]; then
-    echo "/etc/init.d/$APPNAME Disabled"
-    update-rc.d $APPNAME disable
+if [ -f /etc/init.d/$APPINITD ]; then
+    echo "/etc/init.d/$APPINITD Disabled"
+    update-rc.d $APPINITD disable
 fi
 
 if [[ -f /etc/systemd/system/$APPSYSTEMD ]] ; then

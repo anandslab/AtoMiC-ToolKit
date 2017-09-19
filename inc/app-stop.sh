@@ -29,7 +29,7 @@ if IsSystemdSupported; then
         fi
     fi
     
-elif [[ -f /etc/init.d/$APPNAME ]]; then
+elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=1
     sudo service $APPNAME stop
 elif [[ -f /etc/init.d/$APPINITD ]]; then

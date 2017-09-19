@@ -4,12 +4,12 @@ sleep 1
 
 echo -e $YELLOW"--->Removing $APPTITLE Init.d startup scripts..."$ENDCOLOR
 
-if [[ -f /etc/init.d/$APPNAME ]]; then
-    sudo update-rc.d -f $APPNAME remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
-    sudo rm /etc/init.d/$APPNAME || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
-    echo "/etc/init.d/$APPNAME init script removed"
+if [[ -f /etc/init.d/$APPINITD ]]; then
+    sudo update-rc.d -f $APPINITD remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
+    sudo rm /etc/init.d/$APPINITD || { echo -e $RED'Warning! Removing init script failed.'$ENDCOLOR ; }
+    echo "/etc/init.d/$APPINITD init script removed"
 else
-    echo "/etc/init.d/$APPNAME init script not found"    
+    echo "/etc/init.d/$APPINITD init script not found"    
 fi
 
 #Remove the PID file and folder if it exists

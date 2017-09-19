@@ -18,5 +18,6 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='mylar.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/mylar/'$APPSYSTEMD
+APPINITD='mylar'
 APPINITDLOC=$APPPATH'/init-scripts/ubuntu.init.d'
 APPDEFAULTLOC=$SCRIPTPATH'/mylar/mylar.default'

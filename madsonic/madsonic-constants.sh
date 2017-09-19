@@ -14,4 +14,5 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='madsonic.service'
+APPINITD='madsonic'
 APPSYSTEMDLOC=$SCRIPTPATH'/madsonic/'$APPSYSTEMD

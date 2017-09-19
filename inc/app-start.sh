@@ -32,10 +32,6 @@ if IsSystemdSupported; then
             echo -e "$APPSYSTEMD2 is now: ${RED}$STATUS$ENDCOLOR"
         fi
     fi
-    
-elif [[ -f /etc/init.d/$APPNAME ]]; then
-    FOUND=1
-    sudo service $APPNAME start
 elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=1
     sudo service $APPINITD start

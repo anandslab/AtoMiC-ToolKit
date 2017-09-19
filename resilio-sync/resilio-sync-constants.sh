@@ -12,3 +12,4 @@ APPREPOSITORYNAME='resilio-sync'
 ACCESSHOST='NA'
 PORTSEARCH='NA'
 APPSYSTEMDOVERIDE="$SCRIPTPATH/resilio-sync/resilio-sync-override.conf"
+APPINITD='resilio-sync'

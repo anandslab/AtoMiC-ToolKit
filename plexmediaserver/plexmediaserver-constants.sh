@@ -21,3 +21,4 @@ APPNEWPASS='atomic'
 APPSYSTEMD='plexmediaserver.service'
 APPSYSTEMDLOC="$SCRIPTPATH/plexmediaserver/plexmediaserver.service" 
 APPSYSTEMDOVERIDE="$SCRIPTPATH/plexmediaserver/plexmediaserver-override.conf"
+APPINITD='plexmediaserver'

@@ -18,5 +18,6 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='headphones.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/headphones/'$APPSYSTEMD
+APPINITD='headphones'
 APPINITDLOC=$SCRIPTPATH'/headphones/headphones.initd'
 APPDEFAULTLOC=$SCRIPTPATH'/headphones/headphones.default'

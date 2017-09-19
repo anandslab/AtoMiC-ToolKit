@@ -17,5 +17,6 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='nzbhydra.service'
 APPSYSTEMDLOC=$APPPATH'/contrib/'$APPSYSTEMD
+APPINITD='nzbhydra'
 APPINITDLOC=$APPPATH'/contrib/init.ubuntu'
 APPDEFAULTLOC=$APPPATH'/contrib/defaults'

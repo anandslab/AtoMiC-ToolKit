@@ -19,18 +19,16 @@ CODENAME=$(lsb_release -c -s)
             # Use for Arm devices such a Raspberry Pi 1
             APPREPOSITORYLINK="deb https://dl.bintray.com/fg2it/deb-rpi-1b $TEMPDIST main"
             REPRECVKEYSASC='https://bintray.com/user/downloadSubjectPublicKey?username=bintray'
-            REPRECVKEYSHORT='D401AB61'
             ;;
         'armv7l')
             # Use for Arm devices such a Raspberry Pi 2/3
             APPREPOSITORYLINK="deb https://dl.bintray.com/fg2it/deb $TEMPDIST main"
             REPRECVKEYSASC='https://bintray.com/user/downloadSubjectPublicKey?username=bintray'
-            REPRECVKEYSHORT='D401AB61'
             ;;
         *)
             # Default Repo
             APPREPOSITORYLINK='deb https://packagecloud.io/grafana/stable/debian/ jessie main'
             REPRECVKEYSASC='https://packagecloud.io/gpg.key'
-            REPRECVKEYSHORT='D59097AB'
             ;;
         esac
+# don't set a REPRECVKEYSHORT as we don't want to remove it because its generic.

@@ -11,7 +11,7 @@ if [[ -n $APPREPOSITORYLINK ]]; then
             echo 'OK'
         fi
     else
-        echo "$APPTITLE repository doesn't exist"
+        echo "$APPTITLE repository not found"
     fi
 
     source "$SCRIPTPATH/inc/app-keys-remove.sh"

@@ -13,7 +13,8 @@ source "$SCRIPTPATH/utils/unrar/unrar-constants.sh"
 
 cd $(mktemp -d)
 
-URL=$(curl -s http://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g')
+URL="https://www.rarlab.com/"
+URL=$URL$(curl -s https://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g')
 echo
 echo -e "${YELLOW}URL Found: ${URL}$ENDCOLOR"
 VERSION=$(echo $URL | grep -oP '(?<=unrarsrc-).*(?=.tar)')

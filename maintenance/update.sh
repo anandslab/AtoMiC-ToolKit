@@ -25,13 +25,11 @@ if [ "$RESP" == "y" ]
 then
     source "$SCRIPTPATH/inc/pkgupdate.sh"
     APPPATH=$SCRIPTPATH
-
-    "$SCRIPTPATH/inc/app-toolkit-deps.sh"
-
     echo -e $YELLOW'--->Updating AtoMiC ToolKit...'$ENDCOLOR
     git -C $SCRIPTPATH fetch --all
     git -C $SCRIPTPATH reset --hard origin/master
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
+    "$SCRIPTPATH/inc/app-toolkit-deps.sh"
     echo -e 'AtoMiC ToolKit updated successfully.'
 else
     echo -e $RED'AtoMiC ToolKit not updated.'$ENDCOLOR

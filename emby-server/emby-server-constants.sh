@@ -19,3 +19,4 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='emby-server.service'
+APPINITD='emby-server'

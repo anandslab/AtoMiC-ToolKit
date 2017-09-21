@@ -8,7 +8,8 @@ echo -e "$YELLOW--->Removing $APPTITLE Systemd Startup scripts...$ENDCOLOR"
 if [[ ! -z $APPSYSTEMD ]]; then
     #Check if the systemd file exists
     if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD ]]; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         
         if IsSystemdSupported; then
             sudo systemctl stop "$APPSYSTEMD"
@@ -18,6 +19,7 @@ if [[ ! -z $APPSYSTEMD ]]; then
         sudo rm "/etc/systemd/system/.$APPSYSTEMD.swp" >/dev/null 2>&1
         sudo rm "/etc/systemd/system/$APPSYSTEMD" >/dev/null 2>&1
         sudo rm "/lib/systemd/system/$APPSYSTEMD" >/dev/null 2>&1
+        sudo rm "/usr/lib/systemd/system/$APPSYSTEMD" >/dev/null 2>&1
 
         echo "$APPSYSTEMD SystemD script removed"
     else
@@ -28,7 +30,8 @@ fi
 if [[ ! -z $APPSYSTEMD2 ]]; then
     #Check if the second systemd file exists
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] ; then
+        [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]] ; then
 
         if IsSystemdSupported; then
             sudo systemctl stop "$APPSYSTEMD2"
@@ -37,7 +40,7 @@ if [[ ! -z $APPSYSTEMD2 ]]; then
         sudo rm "/etc/systemd/system/.$APPSYSTEMD2.swp" >/dev/null 2>&1
         sudo rm "/etc/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
         sudo rm "/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
-   
+        sudo rm "/usr/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1   
         echo "$APPSYSTEMD2 SystemD script removed"
     else
         echo "$APPSYSTEMD2 SystemD script not found"

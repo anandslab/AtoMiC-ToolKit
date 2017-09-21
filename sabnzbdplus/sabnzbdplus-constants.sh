@@ -22,5 +22,6 @@ NEWPASS='atomic'
 APPNEWPASS='atomic'
 APPSYSTEMD='sabnzbdplus.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/sabnzbdplus/'$APPSYSTEMD
+APPINITD='sabnzbdplus'
 APPINITDLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.init'
 APPDEFAULTLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.default'

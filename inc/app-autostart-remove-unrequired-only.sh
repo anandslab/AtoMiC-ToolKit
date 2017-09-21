@@ -11,12 +11,12 @@ if IsSystemdSupported; then
     sudo systemctl daemon-reload
     sudo systemctl enable $APPSYSTEMD 
 
-elif [ -d /etc/init.d ]; then 
+elif [[ -d /etc/init.d ]]; then 
     echo 'Using sysv-init so removing any systemd files'
 
     source "$SCRIPTPATH/inc/app-systemd-remove.sh" >/dev/null
-    sudo chown $UNAME:$UGROUP /etc/init.d/$APPNAME
-    sudo update-rc.d $APPNAME defaults
+    sudo chown $UNAME:$UGROUP /etc/init.d/$APPINITD
+    sudo update-rc.d $APPINITD defaults
 else 
     echo -e "${RED}Unknown startup type.$ENDCOLOR"
 fi

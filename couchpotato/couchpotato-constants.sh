@@ -18,5 +18,6 @@ APPNEWPASS='atomic'
 NEWPASS='23d33884d600e542d097cd3933df2ae4'
 APPSYSTEMD='couchpotato.service'
 APPSYSTEMDLOC=$APPPATH'/init/'$APPSYSTEMD
+APPINITD='couchpotato'
 APPINITDLOC=$APPPATH'/init/ubuntu'
 APPDEFAULTLOC=$APPPATH'/init/ubuntu.default'

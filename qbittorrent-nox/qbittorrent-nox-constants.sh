@@ -18,4 +18,5 @@ NEWPASS="@ByteArray(0ce6d6b393ab094aacd23da311370e3a)"
 APPNEWPASS='atomic'
 APPSYSTEMD='qbittorrent-nox.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/qbittorrent-nox/'$APPSYSTEMD
+APPINITD='qbittorrent-nox'
 APPINITDLOC=$SCRIPTPATH'/qbittorrent-nox/qbittorrent-nox.init'

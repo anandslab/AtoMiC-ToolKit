@@ -24,10 +24,10 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
 
     ERRORCOUNT=0
     echo -e "${YELLOW}Checking $APPTITLE status...$ENDCOLOR"
-    if [[ -f /etc/init.d/$APPNAME ]]; then
-        if [[ $(sudo /etc/init.d/$APPNAME status) == *"not running"* ]]; then
+    if [[ -f /etc/init.d/$APPINITD ]]; then
+        if [[ $(sudo /etc/init.d/$APPINITD status) == *"not running"* ]]; then
             echo -e "$RED$APPTITLE is currently not running and will be inaccessible.$ENDCOLOR"
-            echo -e "Start $APPTITLE using the following command: ${CYAN}sudo /etc/init.d/$APPNAME start$ENDCOLOR"
+            echo -e "Start $APPTITLE using the following command: ${CYAN}sudo /etc/init.d/$APPINITD start$ENDCOLOR"
         else
             echo -e "$APPTITLE is running and accessible."
         fi
@@ -35,10 +35,16 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
         ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi
 
-    if [[ -f /etc/systemd/system/$APPSYSTEMD ]] \
-        || [[ -f /lib/systemd/system/$APPSYSTEMD ]]; then
+    if [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
         echo -e "SYSTEMD $APPSYSTEMD found.$ENDCOLOR"
-        echo "$APPSYSTEMD is currently:" $(systemctl is-active $APPSYSTEMD)
+        STATUS=$(systemctl is-active $APPSYSTEMD)
+        if [[ $STATUS = 'active' ]]; then
+            echo -e "$APPSYSTEMD is currently: ${GREEN}$STATUS$ENDCOLOR" 
+        else
+            echo -e "$APPSYSTEMD is currently: ${RED}$STATUS$ENDCOLOR"
+        fi
     else
         ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi

@@ -35,7 +35,7 @@ else
 fi
 
 if ! [[ $APPSETTINGS = 'NA' ]]; then
-    echo -e "Actual port numbers could be different. " \
+    echo -e "Actual port numbers could be different." \
             "Check your settings file: $APPSETTINGS"
 fi
 

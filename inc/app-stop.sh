@@ -19,7 +19,7 @@ if IsSystemdSupported; then
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
-        FOUND=1
+        FOUND=2
         sudo systemctl stop $APPSYSTEMD2
         STATUS=$(systemctl is-active $APPSYSTEMD2)
         if [[ $STATUS = 'active' ]]; then
@@ -28,18 +28,16 @@ if IsSystemdSupported; then
             echo -e "$APPSYSTEMD2 is now: ${RED}$STATUS$ENDCOLOR"
         fi
     fi
-    
-elif [[ -f /etc/init.d/$APPINITD ]]; then
-    FOUND=1
-    sudo service $APPNAME stop
-elif [[ -f /etc/init.d/$APPINITD ]]; then
-    FOUND=1
+fi   
+
+if [[ -f /etc/init.d/$APPINITD ]]; then
+    FOUND=3
     sudo service $APPINITD stop
 fi
 
 sleep 2
 
-if [[ ! -z $FOUND ]] && [[ $FOUND = 1 ]]; then
+if [[ -n $FOUND ]] && [[ $FOUND >0 ]]; then
     sudo killall $APPNAME >/dev/null 2>&1
 else
     echo 'Nothing found to stop'

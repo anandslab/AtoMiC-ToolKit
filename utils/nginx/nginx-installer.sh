@@ -14,7 +14,7 @@ APPTITLE='apache2'
 APPSYSTEMD='apache2.service'
 APPINITD='apache2'
 source "$SCRIPTPATH/inc/app-autostart-disable.sh"
-source "$SCRIPTPATH/inc/app-constant-reset.sh"
+source "$SCRIPTPATH/utils/php/php-installer.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"

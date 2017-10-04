@@ -55,7 +55,7 @@ base=$(su -c 'echo $HOME' $user)
 config="$base/.rtorrent.rc"
 
 # the full path to the session directory of rtorrent
-sessiondir="/mnt/Torrents/.rtorrent/.session"
+sessiondir="ReplaceMe"
 
 # options to pass to rtorrent; e.g. don't read config from $HOME but load alternate
 #options="-n -O import=$config"

@@ -22,7 +22,7 @@ CODENAME=$(lsb_release -c -s)
             ;;
         'rosa' | 'rafaela' | 'rebecca' | 'qiana')
             DIST='ubuntu'
-            CODENAME='xenial'
+            CODENAME='trusty'
             ;; 
         'betsy')
             DIST='debian'

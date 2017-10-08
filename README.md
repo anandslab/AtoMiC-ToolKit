@@ -87,7 +87,7 @@ $ cd /opt/AtoMiC-ToolKit
 $ sudo bash setup.sh
 </pre>
 
-The installer will install the AtoMiC ToolKit and after the initial setup will be accessible from anywhere by typing: 
+The setup script will configure AtoMiC ToolKit and after the initial setup will be accessible from anywhere by typing: 
 <pre>sudo atk</pre>
 
 <h3>Command Line Arguments</h3>

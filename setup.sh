@@ -116,7 +116,7 @@ fi
 if [[ ! -L "/usr/local/bin/atk" ]]; then
     echo
     echo -e "${YELLOW}--->Installing AtoMiC-ToolKit symbolic link...$ENDCOLOR"
-    sudo ln -s -T /opt/AtoMiC-ToolKit/setup.sh /usr/local/bin/atk
+    sudo ln -s -T "$SCRIPTPATH/setup.sh" /usr/local/bin/atk
     echo 'You can use the AtoMiC-ToolKit by typing the following command from anywhere:'
     echo -e "${GREEN}sudo atk$ENDCOLOR"
     echo

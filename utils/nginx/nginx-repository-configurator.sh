@@ -10,22 +10,40 @@
 CODENAME=$(lsb_release -c -s)
 
     case "$CODENAME" in
-       'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
-            ARCH=$(uname -m)
-            ARCHSHORT=${ARCH:0:3}
-            if [[ ! $ARCHSHORT = 'arm' ]]; then
-                APPREPOSITORYNAME='nginx'
-                APPREPOSITORYLINK="deb http://nginx.org/packages/debian/ $CODENAME nginx"
-                APPREPOSITORYLINKBACKUP="deb-src http://nginx.org/packages/debian/ $CODENAME nginx"
-                REPRECVKEYSASC='http://nginx.org/keys/nginx_signing.key'
-                REPRECVKEYSHORT='7BD9BF62'
-                REPOKEYSREQ='YES'
-            fi
+       'squeeze'|'wheezy'|'jessie'|'stretch')
+            DIST='debian'
             ;;
-        *)
-            APPREPOSITORYNAME='nginx'
-            REPOPPA='YES'
-            APPREPOSITORYLINK='ppa:nginx/stable'
-            REPRECVKEYSHORT='C300EE8C'
+        'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty') 
+            DIST='ubuntu'
+            ;;
+        'sonya' | 'serena' | 'sarah')
+            DIST='ubuntu'
+            CODENAME='xenial'
+            ;;
+        'rosa' | 'rafaela' | 'rebecca' | 'qiana')
+            DIST='ubuntu'
+            CODENAME='xenial'
+            ;; 
+        'betsy')
+            DIST='debian'
+            CODENAME='jessie'
             ;;
     esac
+
+ARCH=$(uname -m)
+ARCHSHORT=${ARCH:0:3}
+if [[ ! $ARCHSHORT = 'arm' ]]; then
+    APPREPOSITORYNAME='nginx'
+    APPREPOSITORYLINK="deb http://nginx.org/packages/mainline/$DIST/ $CODENAME nginx"
+    APPREPOSITORYLINKBACKUP="deb-src http://nginx.org/packages/mainline/$DIST/ $CODENAME nginx"
+    REPRECVKEYSASC='http://nginx.org/keys/nginx_signing.key'
+    REPRECVKEYSHORT='7BD9BF62'
+    REPOKEYSREQ='YES'
+elif [[ $DIST = 'ubuntu' ]]; then
+    if [[ $CODENAME = 'trusty' || $CODENAME = 'xenial' || $CODENAME = 'yakkety' ]]; then
+        APPREPOSITORYNAME="nginx-development-$CODENAME"
+        REPOPPA='YES'
+        APPREPOSITORYLINK='ppa:nginx/development'
+        REPRECVKEYSHORT='C300EE8C'
+    fi
+fi

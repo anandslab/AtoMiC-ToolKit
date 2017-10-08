@@ -3,3 +3,5 @@
 APPTITLE='Nginx'
 APPNAME='nginx'
 APPSETTINGS="AtoMiC-ToolKit-configured-sites"
+APPSYSTEMD='nginx.service'
+APPINITD='nginx'

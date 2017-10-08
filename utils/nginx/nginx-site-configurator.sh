@@ -9,8 +9,8 @@ echo "Set the correct folder permissions"
 
 cp "$SCRIPTPATH/utils/nginx/$APPSETTINGS" \
     "/etc/nginx/sites-available/$APPSETTINGS" || \
-    { echo "${RED}Could not move $APPSETTINGS file.$ENDCOLOR" ; exit 1; }
-echo "Copied config file over"
+    { echo -e "${RED}Could not move $APPSETTINGS file.$ENDCOLOR" ; exit 1; }
+echo "Copied AtoMiC-ToolKit-configured-sites file over"
 
 sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
@@ -28,4 +28,10 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
     echo "Symlinked $APPSETTINGS virtual host"
 fi
 
+cp -f "$SCRIPTPATH/utils/nginx/nginx.conf" \
+    "/etc/nginx" || \
+    { echo -e "${RED}Could not move nginx.conf file.$ENDCOLOR" ; exit 1; }
+echo "Copied nginx.conf file over" 
+
+source "$SCRIPTPATH/inc/app-start.sh"
 sudo nginx -s reload

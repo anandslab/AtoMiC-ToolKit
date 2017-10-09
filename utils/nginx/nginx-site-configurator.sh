@@ -28,9 +28,10 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
     echo "Symlinked $APPSETTINGS virtual host"
 fi
 
-cat "$SCRIPTPATH/utils/nginx/nginx.conf" > /etc/nginx/nginx.conf || \
+#COpy over the previous nginx.conf so we get the default settings for the hardware\distro.
+cat /etc/nginx/nginx.conf.old > /etc/nginx/nginx.conf || \
 { echo -e "${RED}Could not update nginx.conf file.$ENDCOLOR" ; exit 1; }
-echo "Updated nginx.conf file" 
+echo "Updated nginx.conf file with previous version" 
 
 source "$SCRIPTPATH/inc/app-start.sh"
 sudo nginx -s reload

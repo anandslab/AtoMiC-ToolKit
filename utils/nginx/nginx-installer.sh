@@ -18,6 +18,7 @@ source "$SCRIPTPATH/utils/php/php-installer.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"
+source "$SCRIPTPATH/inc/app-uninstall-deps.sh"
 sudo rm /etc/apt/sources.list.d/nginx* > /dev/null 2>&1
 source "$SCRIPTPATH/utils/nginx/nginx-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"

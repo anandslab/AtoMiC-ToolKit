@@ -28,10 +28,9 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
     echo "Symlinked $APPSETTINGS virtual host"
 fi
 
-cp -f "$SCRIPTPATH/utils/nginx/nginx.conf" \
-    "/etc/nginx" || \
-    { echo -e "${RED}Could not move nginx.conf file.$ENDCOLOR" ; exit 1; }
-echo "Copied nginx.conf file over" 
+cat "$SCRIPTPATH/utils/nginx/nginx.conf" > /etc/nginx/nginx.conf || \
+{ echo -e "${RED}Could not update nginx.conf file.$ENDCOLOR" ; exit 1; }
+echo "Updated nginx.conf file" 
 
 source "$SCRIPTPATH/inc/app-start.sh"
 sudo nginx -s reload

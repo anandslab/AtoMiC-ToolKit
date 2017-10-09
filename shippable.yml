@@ -1,0 +1,3 @@
+script:
+ - sudo bash ./integration-tests/int-apps-install-uninstall.sh
+

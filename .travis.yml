@@ -12,11 +12,6 @@ addons:
       - libdw-dev
       - cmake
 
- script: 
-      - sudo bash ./integration-tests/int-apps-install-uninstall.sh 
- 
- matrix: fast_finish: true
-
 after_success: |
   wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
   tar xzf master.tar.gz &&
@@ -31,4 +26,9 @@ after_success: |
   mkdir -p coverage &&
   kcov coverage ./integration-tests/int-apps-install-uninstall.sh &&
   bash <(curl -s https://codecov.io/bash)
-
+  
+script:
+ - sudo bash ./integration-tests/int-apps-install-uninstall.sh
+ 
+matrix:
+  fast_finish: true

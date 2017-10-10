@@ -29,7 +29,7 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
 fi
 
 #COpy over the previous nginx.conf so we get the default settings for the hardware\distro.
-cat /etc/nginx/nginx.conf.old > /etc/nginx/nginx.conf || \
+cat "$SCRIPTPATH/utils/nginx/nginx.conf" > /etc/nginx/nginx.conf || \
 { echo -e "${RED}Could not update nginx.conf file.$ENDCOLOR" ; exit 1; }
 echo "Updated nginx.conf file with previous version" 
 

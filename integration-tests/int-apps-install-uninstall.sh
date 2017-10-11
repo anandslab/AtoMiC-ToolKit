@@ -1,16 +1,18 @@
 #!/bin/bash
 # shellcheck disable=SC2034
 # shellcheck disable=SC1090
-# Script Name: AtoMiC Integration Test Application Installer
+# Script Name: AtoMiC Integration Test Application Install Uninstall
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-CI='YES'
+
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
+CI='YES'
 source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
 
 if [[ ! -d $SCRIPTPATH/tmp ]]; then

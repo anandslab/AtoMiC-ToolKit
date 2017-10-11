@@ -8,11 +8,11 @@
 
 echo
 echo -e "${GREEN}AtoMiC Nginx Installer Script$ENDCOLOR"
-source "$SCRIPTPATH/inc/app-constant-reset.sh"
+source "$SCRIPTPATH/utils/php/php-installer.sh"
 APPNAME='apache2'
 APPTITLE='apache2'
 source "$SCRIPTPATH/inc/app-uninstall.sh"
-source "$SCRIPTPATH/utils/php/php-installer.sh"
+source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"

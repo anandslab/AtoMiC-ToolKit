@@ -96,3 +96,4 @@ source "$SCRIPTPATH/setup.sh" -i watcher
 source "$SCRIPTPATH/setup.sh" -u watcher
 source "$SCRIPTPATH/setup.sh" -i webmin
 source "$SCRIPTPATH/setup.sh" -u webmin
+source "$SCRIPTPATH/inc/thankyou.sh"

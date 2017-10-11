@@ -62,3 +62,4 @@ source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher
 source "$SCRIPTPATH/setup.sh" -i webmin
+source "$SCRIPTPATH/inc/thankyou.sh"

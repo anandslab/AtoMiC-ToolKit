@@ -3,6 +3,10 @@
 echo
 echo -e "${YELLOW}--->configuring NGINX $ENDCOLOR"
 
+if [[ ! -d /var/www ]]; then
+    mkdir /var/www
+fi
+
 sudo chmod 755 -R /var/www
 sudo chown -R www-data:www-data /var/www
 echo "Set the correct folder permissions"

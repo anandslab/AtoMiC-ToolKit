@@ -1,7 +1,11 @@
 dist: trusty
+
+language: generic
+
 sudo: required
-language: bash
+
 script:
  - sudo bash ./integration-tests/int-apps-install-uninstall.sh
+ 
 matrix:
   fast_finish: true

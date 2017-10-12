@@ -2,7 +2,7 @@
 
 #Force a full update, distro upgrade and autoclean
 
-echo -e "${GREEN}AtoMiC $APPTITLE Update Distro and APPS Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC Update Distro and APPS Script$ENDCOLOR"
 echo
 echo -e "$YELLOW--->UPDATING REPOPSITORIES ...$ENDCOLOR"
 sudo apt-get update

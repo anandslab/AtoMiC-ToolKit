@@ -112,6 +112,16 @@ if [[ ! -d '/opt' ]]; then
     echo -e 'opt dir created.'
 fi
 
+#Creating a sym link to the user bin so the toolkit can be accessed by typing atk.
+if [[ ! -L "/usr/local/bin/atk" ]]; then
+    echo
+    echo -e "${YELLOW}--->Installing AtoMiC-ToolKit symbolic link...$ENDCOLOR"
+    sudo ln -s -T "$SCRIPTPATH/setup.sh" /usr/local/bin/atk
+    echo 'You can use the AtoMiC-ToolKit by typing the following command from anywhere:'
+    echo -e "${GREEN}sudo atk$ENDCOLOR"
+    echo
+fi
+
 if [[ -z $ARGS ]]; then
     source "$SCRIPTPATH/inc/pause.sh"
     source "$SCRIPTPATH/inc/header.sh"

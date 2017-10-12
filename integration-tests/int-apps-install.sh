@@ -7,10 +7,13 @@
 # License: MIT License (refer to README.md for more details)
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-CI='YES'
+
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-"$SCRIPTPATH/inc/app-toolkit-deps.sh"
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
+CI='YES'
+source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
 
 if [[ ! -d $SCRIPTPATH/tmp ]]; then
     mkdir "$SCRIPTPATH/tmp"
@@ -59,3 +62,4 @@ source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher
 source "$SCRIPTPATH/setup.sh" -i webmin
+source "$SCRIPTPATH/inc/thankyou.sh"

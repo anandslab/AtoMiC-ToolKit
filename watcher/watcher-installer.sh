@@ -1,11 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-# Script Name: AtoMiC Watcher Installer
+# shellcheck disable=SC2034
+# Script Name: AtoMiC Wtcher Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
@@ -13,6 +12,15 @@ source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
+
+#If we find the old version move
+if [[ -d /opt/watcher ]]; then
+    source "$SCRIPTPATH/inc/app-constant-reset.sh"
+    APPPATH='/opt/watcher'
+    source "$SCRIPTPATH/inc/app-file-del.sh"
+    source "$SCRIPTPATH/watcher/watcher-constants.sh"
+fi
+
 source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"

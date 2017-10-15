@@ -11,8 +11,8 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 NAME=watcher
-DAEMON=/usr/bin/python
-DAEMONARGS="/opt/watcher/watcher.py"
+DAEMON=/usr/bin/python3
+DAEMONARGS="/opt/watcher3/watcher.py"
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=/var/log/$NAME.log
 

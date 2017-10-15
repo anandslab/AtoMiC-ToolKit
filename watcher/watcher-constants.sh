@@ -1,10 +1,10 @@
 #!/bin/bash
 APPNAME='watcher'
 APPSHORTNAME='wt'
-APPPATH='/opt/watcher'
+APPPATH='/opt/watcher3'
 APPTITLE='Watcher'
-APPDEPS='python python-levenshtein'
-APPGIT='https://github.com/nosmokingbandit/watcher.git'
+APPDEPS='python3 python-levenshtein'
+APPGIT='https://github.com/nosmokingbandit/Watcher3.git'
 APPDPORT='9090'
 APPSETTINGS=$APPPATH'/config.cfg'
 ACCESSHOST='NA'

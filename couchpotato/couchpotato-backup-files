@@ -1,4 +1,4 @@
-APPPATH/settings.conf
+APPPATH/data/settings.conf
 APPPATH/data/cache
 APPPATH/data/database
 APPPATH/data/db_backup

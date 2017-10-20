@@ -75,7 +75,7 @@ Features features of AtoMiC ToolKit include:
 <li>And best of all its FREE! Please consider donating if toolkit helps you.</li>
 </ul>
 
-Note that AtoMiC ToolKit will be in continueous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
+Note that AtoMiC ToolKit will be in continuous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
 
 <h2>Installation and Usage</h2>
 Clone repository on any Debian or Ubuntu based distro and execute the setup.sh bash script file. 

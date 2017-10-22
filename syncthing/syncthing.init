@@ -13,7 +13,7 @@
 
 # Replace with users you want to run syncthing clients for
 syncthing_USERS="REPLACEME"
-DAEMON=/usr/local/bin/syncthing
+DAEMON=/usr/bin/syncthing
 
 startd() {
   for stuser in $syncthing_USERS; do

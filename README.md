@@ -52,6 +52,7 @@ Features features of AtoMiC ToolKit include:
 <li>Organizr - Install, Uninstall, Update</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
 <li>PlexPy - Install, Uninstall, Update and Backup / Restore</li>
+<li>Private Internet Access - Install, Uninstall, Update</li>
 <li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>
 <li>qBittorrent - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Radarr - Install, Uninstall, Update and Backup / Restore</li>
@@ -63,11 +64,12 @@ Features features of AtoMiC ToolKit include:
 <li>SickRage - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Sonarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>Subsonic - Install, Uninstall, Update and Backup / Restore</li>
+<li>Syncthing - Install, Uninstall, Update and Backup / Restore</li>
 <li>Transmission WebUI - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>ubooquity- Install, Uninstall, Update and Backup / Restore</li>
 <li>Watcher - Install, Uninstall, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Planned - DuckieTV, ktorrent, Monit, MusicBrainz, MythTV, ShellInABox, Tvheadend, etc.</li>
+<li>Please submit an issue to request further applications</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

@@ -5,5 +5,5 @@
 
 if [[ -f /etc/init.d/$APPINITD ]]; then
     echo 'Updating init.d file'
-    sudo sed -i "s@REPLCEME@$UNAME@g" /etc/init.d/syncthing || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
+    sudo sed -i "s@REPLACEME@$UNAME@g" /etc/init.d/syncthing || { echo -e $RED'Replacing daemon username in init failed.'$ENDCOLOR ; exit 1; }
 fi

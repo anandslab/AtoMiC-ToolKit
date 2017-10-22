@@ -82,7 +82,7 @@ Clone repository on any Debian or Ubuntu based distro and execute the setup.sh b
 
 <pre>
 $ sudo apt-get install git
-$ git clone https://github.com/htpcBeginner/AtoMiC-ToolKit /opt/AtoMiC-ToolKit
+$ sudo git clone https://github.com/htpcBeginner/AtoMiC-ToolKit /opt/AtoMiC-ToolKit
 $ cd /opt/AtoMiC-ToolKit
 $ sudo bash setup.sh
 </pre>

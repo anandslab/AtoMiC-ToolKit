@@ -35,9 +35,11 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
         ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
     fi
 
-    if [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
+    if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
-        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]]; then
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]] || \
+        [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD ]] ; then
+        
         echo -e "SYSTEMD $APPSYSTEMD found.$ENDCOLOR"
         STATUS=$(systemctl is-active $APPSYSTEMD)
         if [[ $STATUS = 'active' ]]; then

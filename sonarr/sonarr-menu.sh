@@ -15,7 +15,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Sonarr" \
 "Uninstall" "Uninstall Sonarr" \
 "Backup" "Backup Sonarr settings" \
 "Restore" "Restore Sonarr settings from a previous backup" \
-"Manual Update" "Manually update Sonarr+" \
+"Manual Update" "Manually update Sonarr" \
 "Access Details" "View Sonarr access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 

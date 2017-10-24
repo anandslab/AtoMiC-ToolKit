@@ -4,6 +4,7 @@ APPNAME='syncthing'
 APPSHORTNAME='sc'
 APPPATH=''
 APPTITLE='Syncthing'
+APPDEPS='syncthing-inotify'
 APPPATH="/home/$UNAME/.config/syncthing"
 APPSETTINGS="$APPPATH/config.xml"
 APPREPOSITORYNAME='syncthing'
@@ -16,11 +17,13 @@ REPOKEYSREQ='YES'
 APPDPORT='8384'
 USERSEARCH="NA"
 PASSSEARCH='NA'
-APPSYSTEMD="syncthing@$UNAME.service"
-APPINITD='syncthing'
 ACCESSHOST='        <address>'
+APPSYSTEMD="syncthing@$UNAME.service"
+APPSYSTEMD2="syncthing-inotify@$UNAME.service"
 APPINITD='syncthing'
+APPINITD2='syncthing-inotify'
 APPINITDLOC=$SCRIPTPATH'/syncthing/syncthing.init'
+APPINITDLOC2=$SCRIPTPATH'/syncthing/syncthing-inotify.init'
 
 if [[ -f $APPSETTINGS ]]; then
     IPSTRING=$(grep -o -P '(?<=<address>).*(?=:)' $HOME/.config/syncthing/config.xml)

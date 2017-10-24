@@ -4,5 +4,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
+echo -e "$YELLOW--->Enable Systemd Scripts...$ENDCOLOR"
 sudo systemctl daemon-reload
-sudo systemctl enable $APPSYSTEMD
+sudo systemctl enable "$APPSYSTEMD"
+sudo systemctl enable "$APPSYSTEMD2"

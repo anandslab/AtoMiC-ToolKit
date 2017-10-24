@@ -1,19 +1,19 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:          syncthing
+# Provides:          syncthing-inotify
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Controls Syncthing execution
-# Description:       Used for starting the decentralized syncthing platform
+# Short-Description: Controls Syncthing-Inotify execution
+# Description:       Used for starting the decentralized syncthing-inotify platform
 ### END INIT INFO
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="Syncthing decentralized file sync platform"
-NAME=syncthing
-DAEMON=/opt/syncthing/$NAME
+DESC="Syncthing-Inotify decentralized file sync platform"
+NAME=syncthing-inotify
+DAEMON=/opt/syncthing-inotify/$NAME
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME

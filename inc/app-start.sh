@@ -9,10 +9,9 @@ if IsSystemdSupported; then
         [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD ]] ; then
         
         FOUND=1
-        sudo systemctl start $APPSYSTEMD
-        echo "Starting $APPSYSTEMD"
+        sudo systemctl start "$APPSYSTEMD"
         sleep 5
-        STATUS=$(systemctl is-active $APPSYSTEMD)
+        STATUS=$(systemctl is-active "$APPSYSTEMD")
         if [[ $STATUS = 'active' ]]; then
             echo -e "$APPSYSTEMD is now: ${GREEN}$STATUS$ENDCOLOR" 
         else
@@ -22,12 +21,12 @@ if IsSystemdSupported; then
 
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]]; then
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]] || \
+        [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD2 ]] ; then
         FOUND=1
-        sudo systemctl start $APPSYSTEMD2
-        echo "Starting $APPSYSTEMD2" 
+        sudo systemctl start "$APPSYSTEMD2"
         sleep 5
-        STATUS=$(systemctl is-active $APPSYSTEMD)
+        STATUS=$(systemctl is-active "$APPSYSTEMD2")
         if [[ $STATUS = 'active' ]]; then
             echo -e "$APPSYSTEMD2 is now: ${GREEN}$STATUS$ENDCOLOR" 
         else

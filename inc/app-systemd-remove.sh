@@ -33,7 +33,8 @@ if [[ -n $APPSYSTEMD2 ]]; then
     #Check if the second systemd file exists
     if  [[ -f /etc/systemd/system/$APPSYSTEMD2 ]] || \
         [[ -f /lib/systemd/system/$APPSYSTEMD2 ]] || \
-        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]] ; then
+        [[ -f /usr/lib/systemd/system/$APPSYSTEMD2 ]] || \
+        [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD2 ]] ; then
 
         if IsSystemdSupported; then
             sudo systemctl stop "$APPSYSTEMD2"
@@ -43,6 +44,7 @@ if [[ -n $APPSYSTEMD2 ]]; then
         sudo rm "/etc/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
         sudo rm "/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
         sudo rm "/usr/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1 
+        sudo rm "/etc/systemd/system/multi-user.target.wants/$APPSYSTEMD2" >/dev/null 2>&1
 
         echo "$APPSYSTEMD2 SystemD script removed"
     else

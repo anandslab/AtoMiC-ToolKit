@@ -10,14 +10,26 @@ LINES=26
 COLUMNS=78
 NETLINES=16
 
-function pause(){
+pause(){
    read -p "$*"
 }
 
-function IsSystemdSupported(){
+IsSystemdSupported()
+{
     if command -v systemctl > /dev/null && systemctl | grep -q '\-\.mount'; then
         return 0
     else
         return 1
+    fi
+}
+
+DoesAppFolderExist()
+{
+    if [[ -n $APPPATH ]] && [[ ! -d $APPPATH ]]; then
+        echo -e "${RED}Error! $CYAN$APPPATH$RED not found." \
+                "$ENDCOLOR$APPTITLE not installed or incompatible installation."
+        return 1
+    else
+        return 0
     fi
 }

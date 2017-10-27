@@ -58,6 +58,7 @@ source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -u sonarr
 source "$SCRIPTPATH/setup.sh" -u subsonic
+source "$SCRIPTPATH/setup.sh" -u syncthing
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u ubooquity
 source "$SCRIPTPATH/setup.sh" -u watcher

@@ -19,6 +19,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 "nzbToMedia" "Provides NZB and Torrent postprocessing" \
 "OpenVPN" "VPN APP for creating secure point-to-point connections" \
 "PHP 7.x" "open source general-purpose scripting language" \
+"PIA" "Private Internet Access VPN Service + Ad-blocking" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
 "Unrar" "Install latest Unrar from RARLAB source" \
 "Install Bash Aliases" "Allows shortening commands" \
@@ -44,6 +45,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/openvpn/openvpn-menu.sh" ;;
         "PHP 7.x" )
             source "$SCRIPTPATH/utils/php/php-menu.sh" ;;
+        "PIA" )
+            source "$SCRIPTPATH/utils/pia/pia-menu.sh" ;;
         "pyLoad" )
             source "$SCRIPTPATH/pyload/pyload-menu.sh" ;;
         "RVM" )

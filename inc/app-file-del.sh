@@ -4,7 +4,6 @@ sleep 1
 
 echo -e "${YELLOW}--->Removing $APPTITLE files/folders...$ENDCOLOR"
 
-source "$SCRIPTPATH/inc/app-folder-check.sh"
 FOUND=0
 if [[ -d $APPPATH ]] && [[ -z $CI ]]; then
     FOUND=1

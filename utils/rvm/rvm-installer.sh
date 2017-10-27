@@ -16,8 +16,8 @@ source /home/$UNAME/.rvm/scripts/rvm
 if [[ -f .bashrc ]]; then
     echo "Set Ruby to use default version in .bashrc file"
 
-    grep -q -F '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' .bashrc || 
-    echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
+    grep -q -F '[[ -s "/home/$UNAME/.rvm/scripts/rvm" ]] && source "/home/$UNAME/.rvm/scripts/rvm"' .bashrc || 
+    echo '[[ -s "/home/$UNAME/.rvm/scripts/rvm" ]] && source "/home/$UNAME/.rvm/scripts/rvm"' >> .bashrc
 fi
 
 VERSION=$(ruby -v | grep -o -P '(?<=ruby ).*(?=p)')

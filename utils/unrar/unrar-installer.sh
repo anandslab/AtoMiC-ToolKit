@@ -11,7 +11,7 @@ echo -e "${GREEN}AtoMiC Unrar Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/unrar/unrar-constants.sh"
 
-cd $(mktemp -d)
+cd "$(mktemp -d)"
 
 URL="https://www.rarlab.com/"
 URL=$URL$(curl -s https://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g')

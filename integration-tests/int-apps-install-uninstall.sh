@@ -88,6 +88,8 @@ source "$SCRIPTPATH/setup.sh" -i sonarr
 source "$SCRIPTPATH/setup.sh" -u sonarr
 source "$SCRIPTPATH/setup.sh" -i subsonic
 source "$SCRIPTPATH/setup.sh" -u subsonic
+source "$SCRIPTPATH/setup.sh" -i syncthing
+source "$SCRIPTPATH/setup.sh" -u syncthing
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity

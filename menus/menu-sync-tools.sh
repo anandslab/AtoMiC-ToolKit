@@ -12,6 +12,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Resilio-Sync" "Fast and reliable file and folder synchronization" \
+"Syncthing" "Open Source Continuous File Synchronization" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -20,6 +21,8 @@ if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Resilio-Sync" )
             source "$SCRIPTPATH/resilio-sync/resilio-sync-menu.sh" ;;
+        "Syncthing" )
+            source "$SCRIPTPATH/syncthing/syncthing-menu.sh" ;;
         "Go Back" )
             source "$SCRIPTPATH/menus/menu-main.sh" ;;
         *)

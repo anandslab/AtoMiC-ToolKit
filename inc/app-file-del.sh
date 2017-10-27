@@ -5,13 +5,15 @@ sleep 1
 echo -e "${YELLOW}--->Removing $APPTITLE files/folders...$ENDCOLOR"
 
 FOUND=0
-if [[ -d $APPPATH ]] && [[ -z $CI ]]; then
+if [[ -d $APPPATH ]]; then
     FOUND=1
-    echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
-            "settings/data folder for reinstalling later?$ENDCOLOR"
-    echo -e "Folder to be kept: $CYAN$APPPATH$ENDCOLOR"
-    read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
-    FILEDEL=${REPLY,,}
+    if [[ -z $CI ]]; then
+        echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
+                "settings/data folder for reinstalling later?$ENDCOLOR"
+        echo -e "Folder to be kept: $CYAN$APPPATH$ENDCOLOR"
+        read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
+        FILEDEL=${REPLY,,}
+    fi
 
     if [[ $FILEDEL != "y" ]]; then
         echo
@@ -20,9 +22,6 @@ if [[ -d $APPPATH ]] && [[ -z $CI ]]; then
                     "files/folders from $CYAN$APPPATH$YELLOW...$ENDCOLOR"
             sudo rm -r "$APPPATH"
             echo 'OK'
-        else
-            echo -e "$RED--->$APPTITLE files/folders not deleted. "\
-                    "Path not found: $CYAN$APPPATH$ENDCOLOR"
         fi
     else
         echo
@@ -31,13 +30,15 @@ if [[ -d $APPPATH ]] && [[ -z $CI ]]; then
     fi
 fi
 
-if [[ -d $APPSETTINGSDIR ]] && [[ -z $CI ]]; then
+if [[ -d $APPSETTINGSDIR ]]; then
     FOUND=1
-    echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
-            "settings/data folder for reinstalling later?$ENDCOLOR"
-    echo -e "Folder to be kept: $CYAN$APPSETTINGSDIR$ENDCOLOR"
-    read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
-    FILEDEL2=${REPLY,,}
+    if [[ -z $CI ]]; then
+        echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
+                "settings/data folder for reinstalling later?$ENDCOLOR"
+        echo -e "Folder to be kept: $CYAN$APPSETTINGSDIR$ENDCOLOR"
+        read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
+        FILEDEL2=${REPLY,,}
+    fi
 
     if [[ $FILEDEL2 != "y" ]]; then
         echo
@@ -46,9 +47,6 @@ if [[ -d $APPSETTINGSDIR ]] && [[ -z $CI ]]; then
                     "from $CYAN$APPSETTINGSDIR$YELLOW...$ENDCOLOR"
             sudo rm -r "$APPSETTINGSDIR"
             echo 'OK'
-        else
-            echo -e "$RED--->$APPTITLE files/folders not deleted. "\
-                    "Path not found: $CYAN$APPSETTINGSDIR$ENDCOLOR"
         fi
     else
         echo
@@ -57,24 +55,23 @@ if [[ -d $APPSETTINGSDIR ]] && [[ -z $CI ]]; then
     fi
 fi
 
-if [[ -f $APPSETTINGS ]] && [[ -z $CI ]]; then
+if [[ -f $APPSETTINGS ]]; then
     FOUND=1
-    echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
-            "settings file for reinstalling later?$ENDCOLOR"
-    echo -e "File to be kept: $CYAN$APPSETTINGS$ENDCOLOR"
-    read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
-    FILEDEL2=${REPLY,,}
+    if [[ -z $CI ]]; then
+        echo -e "${GREEN}Do you want to keep the following $APPTITLE"\
+                "settings file for reinstalling later?$ENDCOLOR"
+        echo -e "File to be kept: $CYAN$APPSETTINGS$ENDCOLOR"
+        read -r -p "Type y/Y to keep or any other key to delete, and press [ENTER] : "
+        FILEDEL3=${REPLY,,}
+    fi
 
-    if [[ $FILEDEL2 != "y" ]]; then
+    if [[ $FILEDEL3 != "y" ]]; then
         echo
         if [[ -f $APPSETTINGS ]]; then
             echo -e "$YELLOW--->Deleting $APPTITLE deleting settings file"\
                     "from $CYAN$APPSETTINGS$YELLOW...$ENDCOLOR"
             sudo rm "$APPSETTINGS"
             echo 'OK'
-        else
-            echo -e "$RED--->$APPTITLE settings file not deleted. "\
-                    "Path not found: $CYAN$APPSETTINGS$ENDCOLOR"
         fi
     else
         echo

@@ -1,6 +1,6 @@
 language: none
 before_script:
   - sudo apt-get update
-  - sudo apt-get install systemd -y
+  - sudo apt-get install systemd -y
 script:
- - sudo bash ./integration-tests/int-apps-install-uninstall.sh
+  - sudo bash ./integration-tests/int-apps-install-uninstall.sh

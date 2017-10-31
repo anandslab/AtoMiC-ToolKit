@@ -1,4 +1,6 @@
 language: none
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install dialog apt-utils systemd -y --yes
 script:
- - sudo bash ./integration-tests/int-apps-install-uninstall.sh
-
+  - sudo bash ./integration-tests/int-apps-install-uninstall.sh

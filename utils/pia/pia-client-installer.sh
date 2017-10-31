@@ -27,5 +27,6 @@ curl "${URL}" | tar -xz
 SCRIPTNAME=$(ls)
 chmod +x "$SCRIPTNAME"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
+echo
 sudo -u "$UNAME" bash "$SCRIPTNAME"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

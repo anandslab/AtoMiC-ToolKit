@@ -4,10 +4,10 @@ APPNAME='ubooquity'
 APPSHORTNAME='uq'
 APPPATH='/opt/ubooquity'
 APPTITLE='Ubooquity'
-APPDPORT='2202/admin'
-APPSETTINGS="$APPPATH/preferences.xml"
+APPDPORT='2203/admin'
+APPSETTINGS="$APPPATH/preferences.json"
 ACCESSHOST='NA'
-PORTSEARCH='<portNumber>'
+PORTSEARCH='libraryPortNumber'
 USERSEARCH='NA'
 PASSSEARCH='NA'
 # New password encrypted

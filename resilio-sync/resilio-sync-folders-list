@@ -1,1 +1,3 @@
 /etc/systemd/system/resilio-sync.service.d
+/home/UNAME/.config
+/home/UNAME/.config/resilio-sync

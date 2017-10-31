@@ -95,6 +95,7 @@ else
     else
         echo -e "Already present: $CYAN$UNAME$ENDCOLOR." \
                 "Can be cleared in the next screen."
+        echo
         source "$SCRIPTPATH/inc/option-handler.sh"
     fi
 fi

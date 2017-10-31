@@ -6,4 +6,4 @@ ca-certificates checkinstall curl dnsutils git lsb-release \
 mediainfo mediainfo-gui p7zip-full par2 sed gnupg2 zip \
 software-properties-common sqlite3 tar unzip wget dirmngr \
 whiptail -y
-echo
+echo "Done"

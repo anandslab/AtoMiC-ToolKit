@@ -15,7 +15,7 @@ echo -e "${GREEN}AtoMiC ToolKit Updater$ENDCOLOR"
 echo 
 
 echo -e "${GREEN}This will overwrite any manual changes you made to the script.$ENDCOLOR"
-read -pr 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
+read -p 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
 RESP=${REPLY,,}
 
 echo 

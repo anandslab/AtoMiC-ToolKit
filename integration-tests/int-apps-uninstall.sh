@@ -14,7 +14,7 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 CI='YES'
 source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
-
+echo
 if [[ ! -d $SCRIPTPATH/tmp ]]; then
     mkdir "$SCRIPTPATH/tmp"
 fi

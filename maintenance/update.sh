@@ -17,8 +17,6 @@ echo
 echo -e "${GREEN}This will overwrite any manual changes you made to the script.$ENDCOLOR"
 read -p 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
 RESP=${REPLY,,}
-
-echo 
     
 if [[ $RESP == 'y' ]]; then
     source "$SCRIPTPATH/inc/pkgupdate.sh"
@@ -30,7 +28,7 @@ if [[ $RESP == 'y' ]]; then
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
     echo
-    echo -e 'AtoMiC ToolKit updated successfully.'
+    echo -e "${GREEN}AtoMiC ToolKit updated successfully.$ENDCOLOR"
 else
     echo -e "${RED}AtoMiC ToolKit not updated.$ENDCOLOR"
 fi

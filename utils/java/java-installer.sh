@@ -5,9 +5,8 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC Java 8 Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/java/java-constants.sh"
 source "$SCRIPTPATH/utils/java/java-repository-configurator.sh"

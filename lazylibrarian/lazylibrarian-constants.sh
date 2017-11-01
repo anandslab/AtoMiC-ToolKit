@@ -1,10 +1,12 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='lazylibrarian'
 APPSHORTNAME='ll'
 APPPATH='/opt/lazylibrarian'
 APPTITLE='Lazy Librarian'
 APPPIDFILE='/var/run/lazylibrarian/lazylibrarian.pid'
-APPDEPS='python'
+APPDEPS='python python-pip python-dev libssl-dev libffi-dev'
+APPPIPS='cryptography pyopenssl'
 APPGIT='https://github.com/DobyTang/LazyLibrarian.git'
 APPDPORT='5299'
 APPSETTINGS=$APPPATH'/lazylibrarian.ini'

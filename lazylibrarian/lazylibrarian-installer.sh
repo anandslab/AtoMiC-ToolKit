@@ -4,8 +4,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
@@ -15,8 +13,8 @@ source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"
+source "$SCRIPTPATH/inc/app-install-pips.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
-
 
 #Now uses all 3 boot files regardless
 source "$SCRIPTPATH/inc/app-default-copy.sh"

@@ -1,17 +1,17 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-# Script Name: AtoMiC netdata Menu
+# Script Name: AtoMiC NetData Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage netdata" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage NetData" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install" "Install netdata" \
-"Uninstall" "Uninstall netdata" \
-"Access Details" "View netdata access details" \
+"Install" "Install NetData" \
+"Uninstall" "Uninstall NetData" \
+"Access Details" "View NetData access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?

@@ -46,6 +46,7 @@ Features features of AtoMiC ToolKit include:
 <li>Madsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Muximux - Install, Uninstall, Update</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>NetData - Install, Uninstall</li>
 <li>NZBGet - Install, Uninstall, Reset Password and Backup / Restore</li>
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
 <li>Ombi - Install, Uninstall, Update and Backup / Restore</li>

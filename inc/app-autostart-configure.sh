@@ -31,6 +31,7 @@ elif [[ -d /etc/init.d ]]; then
 
     if [[ -f $SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh ]]; then
         source "$SCRIPTPATH/$APPNAME/$APPNAME-init-update.sh"
+        update-rc.d "$APPINITD" defaults
     fi
 else
     echo -e "${RED}Unknown startup type.$ENDCOLOR"

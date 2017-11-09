@@ -2,7 +2,7 @@
 APPNAME='ombi'
 APPSHORTNAME='ombi'
 APPPATH='/opt/ombi'
-APPTITLE='ombi'
+APPTITLE='Ombi'
 APPDEPS='libmono-cil-dev'
 APPDOWNLOADURL='https://api.github.com/ombi/ombi/releases'
 APPDPORT='3579'

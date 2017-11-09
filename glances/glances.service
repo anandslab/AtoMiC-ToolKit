@@ -1,0 +1,12 @@
+[Unit]
+Description=Glances
+
+[Service]
+User=ReplaceMe
+Group=ReplaceMe
+After=network.target
+ExecStart=/usr/local/bin/glances -w
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

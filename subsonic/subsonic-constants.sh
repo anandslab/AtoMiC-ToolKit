@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='subsonic'
 APPSHORTNAME='sub'
 APPPATH='/var/subsonic'

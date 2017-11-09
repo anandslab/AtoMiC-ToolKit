@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='qbittorrent-nox'
 APPSHORTNAME='qbit'
 APPPATH='/home/'$UNAME'/.config/qBittorrent'

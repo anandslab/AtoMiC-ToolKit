@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='plexpy'
 APPSHORTNAME='pp'
 APPPATH='/opt/plexpy'

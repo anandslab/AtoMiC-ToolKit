@@ -1,7 +1,10 @@
 <!--- PLEASE CHECK THIS PREVIEWS CORRECTLY BEFORE SUBMITTING! -->
 
+## New features
+Please visit http://feathub.com/htpcBeginner/AtoMiC-ToolKit
+
 ## The problem
-<!--- Please delete this section of text and describe the issue you are experiencing in as much detail as possible and if required what are the steps to reproduce the error.OR explain the new feature you want to see added to AtoMiC-ToolKit and remove everything else below.
+<!--- Please delete this section of text and describe the issue you are experiencing in as much detail as possible and if required what are the steps to reproduce the error.
 Remember, this is NOT a way to ask questions. For that, go to[![Chat Gitter](https://badges.gitter.im/htpcBeginner/AtoMiC-ToolKit.svg)](https://gitter.im/htpcBeginner/AtoMiC-ToolKit)Use an X to mark items on the lists -->
 
 ### My Linux distribution and version is: <!--- (Delete as required) -->

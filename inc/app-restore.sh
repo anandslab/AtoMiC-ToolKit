@@ -25,7 +25,7 @@ if [[ $exitstatus = 0 ]]; then
         echo -e "Restoring $CYAN$file$ENDCOLOR..."
         if [[ -f $file ]] || [[ -d $file ]]; then
             NEWFILENAME=$file'_'$DATETIME
-            mv $file $NEWFILENAME
+            mv "$file" "$NEWFILENAME"
             echo -e 'Moved existing '$CYAN$file$ENDCOLOR' to '$CYAN$NEWFILENAME$ENDCOLOR
         fi
     done < "$SCRIPTPATH/tmp/$APPSHORTNAME-backup-files"

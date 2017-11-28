@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='webmin'
 APPSHORTNAME='wm'
 APPPATH='/etc/webmin'
@@ -12,7 +13,6 @@ APPREPOSITORYLINK='deb http://download.webmin.com/download/repository sarge cont
 REPRECVKEYSASC='http://www.webmin.com/jcameron-key.asc'
 REPRECVKEYSHORT='11F63C51'
 ACCESSHOST='NA'
-PORTSEARCH='NA'
 USERSEARCH='NA'
 APPDEFAULTUNAME='System Username'
 APPDEFAULTPASS='System Password'

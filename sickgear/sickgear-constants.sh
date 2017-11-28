@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='sickgear'
 APPSHORTNAME='sg'
 APPPATH='/opt/sickgear'

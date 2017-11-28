@@ -2,7 +2,7 @@
 echo
 sleep 1
 echo -e "${YELLOW}You may be able to access $APPTITLE" \
-        " on any of the following URLs...$ENDCOLOR"
+        "on any of the following URLs...$ENDCOLOR"
 
 if [[ $APPUSESNGINX = 'YES' ]]; then
     HTTP=''

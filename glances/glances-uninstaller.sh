@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# Script Name: AtoMiC Sonarr Uninstaller
+# shellcheck disable=SC1090
+# Script Name: AtoMiC netdata Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
@@ -11,11 +11,9 @@ source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
-APPNAME='nzbdrone'
-source "$SCRIPTPATH/inc/app-uninstall.sh"
-APPNAME='sonarr'
-source "$SCRIPTPATH/inc/app-file-del.sh"
-source "$SCRIPTPATH/inc/app-repository-remove.sh"
+echo
+echo -e "$YELLOW--->Uninstalling pip $APPTITLE package...$ENDCOLOR"
+sudo -H pip uninstall -y $APPNAME
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

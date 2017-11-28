@@ -28,6 +28,4 @@ APPINITDLOC2=$SCRIPTPATH'/syncthing/syncthing-inotify.init'
 if [[ -f $APPSETTINGS ]]; then
     IPSTRING=$(grep -o -P '(?<=<address>).*(?=:)' $HOME/.config/syncthing/config.xml)
     PORTSEARCH="$IPSTRING:"
-else
-    PORTSEARCH='NA'
 fi

@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='plexmediaserver'
 APPSHORTNAME='plex'
 APPPATH='/var/lib/plexmediaserver'
@@ -11,7 +12,6 @@ REPOPPA='NO'
 REPOKEYSREQ='YES'
 APPREPOSITORYNAME='plexmediaserver'
 ACCESSHOST='NA'
-PORTSEARCH='NA'
 DBUSERSEARCH='SELECT name FROM accounts WHERE id = 1;'
 DBPASSSEARCH='NA'
 # New password encrypted

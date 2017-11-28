@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='nzbhydra'
 APPSHORTNAME='nh'
 APPPATH='/opt/nzbhydra'

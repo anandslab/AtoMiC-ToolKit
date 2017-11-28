@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='kodi'
 APPSHORTNAME='kodi'
 APPTITLE='Kodi'

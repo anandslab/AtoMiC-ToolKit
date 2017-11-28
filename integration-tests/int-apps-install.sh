@@ -31,6 +31,7 @@ fi
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -i emby-server
+source "$SCRIPTPATH/setup.sh" -i glances
 source "$SCRIPTPATH/setup.sh" -i grafana
 source "$SCRIPTPATH/setup.sh" -i headphones
 source "$SCRIPTPATH/setup.sh" -i htpcmanager

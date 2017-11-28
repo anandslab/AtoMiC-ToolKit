@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 APPNAME='htpcmanager'
 APPSHORTNAME='hm'
 APPPATH='/opt/htpcmanager'
@@ -9,10 +10,8 @@ APPPIPS='psutil'
 APPGIT='https://github.com/Hellowlol/HTPC-Manager'
 APPDPORT='8085'
 APPSETTINGSTYPE='DB'
-APPSETTINGS='NA'
 APPSETTINGSDB=$APPPATH'/userdata/database.db'
 ACCESSHOST='NA'
-PORTSEARCH='NA'
 DBUSERSEARCH='SELECT val FROM setting WHERE key = "app_username";'
 DBPASSSEARCH='SELECT val FROM setting WHERE key = "app_password";'
 APPSYSTEMD='htpcmanager.service'

@@ -37,6 +37,7 @@ Features features of AtoMiC ToolKit include:
 <li>CouchPotato - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Deluge - Install, Uninstall, Update and Backup / Restore</li>
 <li>Emby - Install, Uninstall, Update and Backup / Restore</li>
+<li>Glances - Install, Uninstall, Update</li>
 <li>Grafana - Install, Uninstall, Update and Backup / Restore</li>
 <li>Headphones - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>HTPC Manager - Install, Uninstall, Update and Backup / Restore</li>
@@ -79,6 +80,11 @@ Features features of AtoMiC ToolKit include:
 </ul>
 
 Note that AtoMiC ToolKit will be in continuous development. While extensive testing has been done, there may be errors or unexpected behaviors at times. Also, not all features have been implemented yet. 
+
+<h2>Feature Requests</h2>
+Please add new features and vote to help steer the direction of AtoMiC-ToolKit. Current requests and voting can be seen below.
+
+[![Feature Requests](http://feathub.com/htpcBeginner/AtoMiC-ToolKit?format=svg)](http://feathub.com/htpcBeginner/AtoMiC-ToolKit)
 
 <h2>Installation and Usage</h2>
 Clone repository on any Debian or Ubuntu based distro and execute the setup.sh bash script file. 

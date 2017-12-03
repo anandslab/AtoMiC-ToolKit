@@ -3,11 +3,9 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
-echo -e $YELLOW'--->Configuring Deluge Settings...'$ENDCOLOR
+echo -e "${YELLOW}--->Configuring Deluge Settings...$ENDCOLOR"
 
 #Enable torrentfiles folder & destination
 sudo sed -i "s@\"copy_torrent_file\": false@\"copy_torrent_file\": true@g" $APPSETTINGS || { echo -e $RED"Modifying copy_torrent_file in $APPSETTINGS file failed."$ENDCOLOR; exit 1; }

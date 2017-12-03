@@ -35,7 +35,7 @@ else
         'stretch')
             TEMPDIST='debian stretch'
             ;;    
-        'xenial'|'serena'|'sarah'|'sonya'|'zesty'|'yakkety'|'artful')
+        'xenial'|'serena'|'sarah'|'sonya'|'sylvia'|'zesty'|'yakkety'|'artful')
             TEMPDIST='ubuntu xenial'
             ;;
         'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')

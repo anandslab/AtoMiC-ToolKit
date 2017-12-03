@@ -16,7 +16,7 @@ CODENAME=$(lsb_release -c -s)
         'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty') 
             DIST='ubuntu'
             ;;
-        'sonya' | 'serena' | 'sarah')
+        'sonya' | 'serena' | 'sarah'| 'sylvia')
             DIST='ubuntu'
             CODENAME='xenial'
             ;;

@@ -13,14 +13,14 @@ source "$SCRIPTPATH/inc/header.sh"
 
 echo -e $GREEN'AtoMiC ToolKit Backups Cleaner'$ENDCOLOR
 
-echo 
+echo
 
 target=$SCRIPTPATH/backups/
 if find "$target" -mindepth 1 -print -quit | grep -q .; then
     echo -e $YELLOW'--->Below are the backups folder contents...'$ENDCOLOR
     ls -l $SCRIPTPATH/backups/*
-    
-    echo 
+
+    echo
     sleep 1
 
     echo -e $GREEN'Delete all backups?'$ENDCOLOR
@@ -28,13 +28,12 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
     read -p 'Type y/Y and press [ENTER] to delete or any other key to exit: '
     RESP=${REPLY,,}
 
-    echo 
-    
-    if [ "$RESP" == "y" ]
-    then
+    echo
+
+    if [ "$RESP" == "y" ]; then
         echo -e $YELLOW'--->Deleting all backups...'$ENDCOLOR
         rm $SCRIPTPATH/backups/* >/dev/null 2>&1
-       if find "$target" -mindepth 1 -print -quit | grep -q .; then
+        if find "$target" -mindepth 1 -print -quit | grep -q .; then
             echo -e $RED'Deleting backups failed.'$ENDCOLOR
         else
             echo -e 'All backups deleted successfully.'

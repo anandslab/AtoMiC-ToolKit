@@ -15,8 +15,7 @@ echo -e $GREEN'AtoMiC .bash_aliases Installer for HTPCs and Home Servers'$ENDCOL
 source "$SCRIPTPATH/inc/pause.sh"
 
 echo -e $YELLOW'--->Checking for .bashrc file...'$ENDCOLOR
-if [ ! -f "/home/$UNAME/.bashrc" ];
-then
+if [ ! -f "/home/$UNAME/.bashrc" ]; then
     echo -e $CYAN'/home/'$UNAME'/.bashrc'$ENDCOLOR' file not found. Creating it.'
     sudo cp /etc/skel/.bashrc /home/$UNAME/.bashrc || { echo -e $RED'Copying .bashrc failed.'$ENDCOLOR ; exit 1; }
     sudo chown $UNAME: /home/$UNAME/.bashrc
@@ -28,8 +27,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Checking for .profile file...'$ENDCOLOR
-if [ ! -f "/home/$UNAME/.profile" ];
-then
+if [ ! -f "/home/$UNAME/.profile" ]; then
     echo -e $CYAN'/home/'$UNAME'/.profile'$ENDCOLOR' file not found. Creating it.'
     sudo cp /etc/skel/.profile /home/$UNAME/.profile || { echo -e $RED'Copying .profile failed.'$ENDCOLOR ; exit 1; }
     sudo chown $UNAME: /home/$UNAME/.profile

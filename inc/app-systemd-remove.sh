@@ -11,12 +11,12 @@ if [[ -n $APPSYSTEMD ]]; then
         [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD ]] ; then
-        
+
         if IsSystemdSupported; then
             sudo systemctl stop "$APPSYSTEMD"
             sudo systemctl disable "$APPSYSTEMD"
         fi
-        
+
         sudo rm "/etc/systemd/system/.$APPSYSTEMD.swp" >/dev/null 2>&1
         sudo rm "/etc/systemd/system/$APPSYSTEMD" >/dev/null 2>&1
         sudo rm "/lib/systemd/system/$APPSYSTEMD" >/dev/null 2>&1
@@ -43,7 +43,7 @@ if [[ -n $APPSYSTEMD2 ]]; then
         sudo rm "/etc/systemd/system/.$APPSYSTEMD2.swp" >/dev/null 2>&1
         sudo rm "/etc/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
         sudo rm "/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
-        sudo rm "/usr/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1 
+        sudo rm "/usr/lib/systemd/system/$APPSYSTEMD2" >/dev/null 2>&1
         sudo rm "/etc/systemd/system/multi-user.target.wants/$APPSYSTEMD2" >/dev/null 2>&1
 
         echo "$APPSYSTEMD2 SystemD script removed"

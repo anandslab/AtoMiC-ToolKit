@@ -18,7 +18,7 @@ APPREPOSITORYLINK='deb http://ppa.launchpad.net/jcfp/ppa/ubuntu trusty main'
     REPOKEYSREQ='YES'
 elif [[ $CODENAME = 'stretch' ]]; then
 APPREPOSITORYLINK='deb http://ppa.launchpad.net/jcfp/ppa/ubuntu xenial main'
-    REPOKEYSREQ='YES'    
+    REPOKEYSREQ='YES'
 else
     REPOPPA='YES'
     APPREPOSITORYLINK='ppa:jcfp/ppa'

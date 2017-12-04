@@ -26,7 +26,7 @@ echo
 sleep 1
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 
-echo 
+echo
 sleep 1
 
 source "$SCRIPTPATH/inc/app-folders-create.sh"

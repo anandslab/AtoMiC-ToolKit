@@ -8,12 +8,12 @@
 CODENAME=$(lsb_release -c -s)
 
 case "$CODENAME" in
-  'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
-    APPREPOSITORYLINK=''
-    ;;
-  *)
-    REPOPPA='YES'
-    APPREPOSITORYLINK='ppa:deluge-team/ppa'
-    REPRECVKEYSHORT='249AD24C'
-    ;;
+    'squeeze'|'wheezy'|'jessie'|'stretch'|'sid')
+        APPREPOSITORYLINK=''
+        ;;
+    *)
+        REPOPPA='YES'
+        APPREPOSITORYLINK='ppa:deluge-team/ppa'
+        REPRECVKEYSHORT='249AD24C'
+        ;;
 esac

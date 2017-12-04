@@ -14,7 +14,7 @@ fi
 
 CODENAME=$(lsb_release -c -s)
 if [ "$TEMPDIST" = '' ]; then
-   case "$CODENAME" in
+    case "$CODENAME" in
     'sid')
         TEMPDIST='Debian_Next'
         ;;

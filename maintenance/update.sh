@@ -11,13 +11,11 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 
 echo -e "${GREEN}AtoMiC ToolKit Updater$ENDCOLOR"
-
-echo 
-
+echo
 echo -e "${GREEN}This will overwrite any manual changes you made to the script.$ENDCOLOR"
 read -p 'Type y/Y and press [ENTER] to continue with update or any other key to exit: '
 RESP=${REPLY,,}
-    
+
 if [[ $RESP == 'y' ]]; then
     source "$SCRIPTPATH/inc/pkgupdate.sh"
     APPPATH=$SCRIPTPATH

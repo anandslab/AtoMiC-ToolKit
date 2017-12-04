@@ -35,7 +35,7 @@ fi
 #COpy over the previous nginx.conf so we get the default settings for the hardware\distro.
 cat "$SCRIPTPATH/utils/nginx/nginx.conf" > /etc/nginx/nginx.conf || \
 { echo -e "${RED}Could not update nginx.conf file.$ENDCOLOR" ; exit 1; }
-echo "Updated nginx.conf file with previous version" 
+echo "Updated nginx.conf file with previous version"
 
 source "$SCRIPTPATH/inc/app-start.sh"
 sudo nginx -s reload

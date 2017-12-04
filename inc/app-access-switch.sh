@@ -10,8 +10,7 @@ source "$SCRIPTPATH/inc/pause.sh"
 if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-settings-check.sh"
 
-    echo 
-    sleep 2
+    echo
     source "$SCRIPTPATH/inc/app-stop.sh"
     sleep 2
     echo
@@ -24,9 +23,7 @@ if DoesAppFolderExist; then
         sudo sed -i "s@^${ACCESSHOST}localhost@${ACCESSHOST}0.0.0.0@g" $APPSETTINGS  || { echo -e $RED'Modifying '$ACCESSHOST' in '$APPSETTINGS' file failed.'$ENDCOLOR; exit 1; }
     fi
 
-    sleep 2
     source "$SCRIPTPATH/inc/app-start.sh"
-    sleep 2
     echo
     echo -e $GREEN'--->All done. '$APPTITLE' access switch complete.'$ENDCOLOR
 

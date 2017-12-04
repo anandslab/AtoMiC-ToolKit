@@ -32,7 +32,7 @@ fi
 source "$SCRIPTPATH/inc/header.sh"
 
 # Define help function for options
-function help(){
+help(){
     echo
     echo -e "${YELLOW}--->COMMAND LINE OPTIONS:$ENDCOLOR"
     echo

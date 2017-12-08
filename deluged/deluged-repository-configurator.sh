@@ -34,5 +34,5 @@ if [[ -n $TEMPDIST ]]; then
     APPREPOSITORYLINK="deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu $TEMPDIST main"
     REPOKEYSREQ='YES'
     REPKEYSERVER='http://keyserver.ubuntu.com:11371'
-    REPRECVKEY='0x8eed8fb4a8e6da6dfdf0192bc5e6a5ed249ad24c'
+    REPRECVKEYS='0x8eed8fb4a8e6da6dfdf0192bc5e6a5ed249ad24c'
 fi

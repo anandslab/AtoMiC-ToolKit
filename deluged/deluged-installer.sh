@@ -12,6 +12,8 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
+source "$SCRIPTPATH/inc/app-uninstall.sh"
+source "$SCRIPTPATH/inc/app-uninstall-deps.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 

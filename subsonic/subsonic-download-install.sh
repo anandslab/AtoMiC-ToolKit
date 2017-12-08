@@ -3,13 +3,10 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 cd $(mktemp -d)
 
-FILE=$(curl -s http://www.subsonic.org/pages/download.jsp | grep -o '".*"' | grep -o 'subsonic.*\.deb' | sed 's/"//g' | head -1) 
+FILE=$(curl -s http://www.subsonic.org/pages/download.jsp | grep -o '".*"' | grep -o 'subsonic.*\.deb' | sed 's/"//g' | head -1)
 echo
 echo -e $YELLOW"File Found: ${FILE}"$ENDCOLOR
 URL="https://s3-eu-west-1.amazonaws.com/subsonic-public/download/${FILE}"

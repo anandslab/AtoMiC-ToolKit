@@ -18,7 +18,7 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/$APPNAME/$APPNAME-uninstaller.sh" ;;
         "Go Back" )
             source "$SCRIPTPATH/utils/utils-menu.sh" ;;
-        *) 
+        *)
             source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
 else

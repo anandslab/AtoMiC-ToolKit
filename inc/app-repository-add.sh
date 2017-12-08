@@ -10,7 +10,7 @@ if [ ! "$APPREPOSITORYLINK" = "" ]; then
         else
             #Add the key
             echo "$APPREPOSITORYLINK" | sudo tee -a /etc/apt/sources.list.d/$APPREPOSITORYNAME.list
-            
+
             #Check if backup required and add if needed
             if [ ! "$APPREPOSITORYLINKBACKUP" = "" ]; then
                 if [ "$GREPOUTBACK" = "" ]; then

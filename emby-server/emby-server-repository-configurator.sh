@@ -6,8 +6,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
 if [ "$ARCHSHORT" = 'arm' ]; then
@@ -16,7 +14,7 @@ fi
 
 CODENAME=$(lsb_release -c -s)
 if [ "$TEMPDIST" = '' ]; then
-   case "$CODENAME" in
+    case "$CODENAME" in
     'sid')
         TEMPDIST='Debian_Next'
         ;;
@@ -29,13 +27,13 @@ if [ "$TEMPDIST" = '' ]; then
     'wheezy')
         TEMPDIST='Debian_7.0'
         ;;
-    'zesty')
+    'zesty'|'artful')
         TEMPDIST='xUbuntu_17.04'
         ;;
     'yakkety')
         TEMPDIST='xUbuntu_16.10'
         ;;
-    'xenial'|'serena'|'sarah'|'sonya')
+    'xenial'|'serena'|'sarah'|'sonya'|'sylvia')
         TEMPDIST='xUbuntu_16.04'
         ;;
     'trusty'|'rosa'|'rafaela'|'rebecca'|'qiana')

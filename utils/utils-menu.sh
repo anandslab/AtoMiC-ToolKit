@@ -38,7 +38,7 @@ if [[ $exitstatus = 0 ]]; then
         "Nginx" )
             source "$SCRIPTPATH/utils/nginx/nginx-menu.sh" ;;
         "Node.js" )
-            source "$SCRIPTPATH/utils/nodejs/nodejs-menu.sh" ;;    
+            source "$SCRIPTPATH/utils/nodejs/nodejs-menu.sh" ;;
         "nzbToMedia" )
             source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-menu.sh" ;;
         "OpenVPN" )

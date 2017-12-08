@@ -11,7 +11,7 @@ COLUMNS=78
 NETLINES=16
 
 pause(){
-   read -p "$*"
+    read -p "$*"
 }
 
 IsSystemdSupported()

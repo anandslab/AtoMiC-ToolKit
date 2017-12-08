@@ -15,13 +15,12 @@ if [[ $exitstatus = 0 ]]; then
 
     echo
     sleep 1
-    
+
     #http://www.cyberciti.biz/faq/bash-loop-over-file/
     echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
     DATETIME=`date '+%m-%d-%Y_%H-%M'`
-   
-    while IFS= read -r file
-    do
+
+    while IFS= read -r file; do
         echo -e "Restoring $CYAN$file$ENDCOLOR..."
         if [[ -f $file ]] || [[ -d $file ]]; then
             NEWFILENAME=$file'_'$DATETIME
@@ -41,4 +40,4 @@ if [[ $exitstatus = 0 ]]; then
 else
     echo
     echo -e "${RED}Restoring $APPTITLE backup cancelled.$ENDCOLOR"
-fi 
+fi

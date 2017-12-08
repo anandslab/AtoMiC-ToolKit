@@ -4,7 +4,11 @@ language: generic
 
 sudo: required
 
+before_install:
+    - sudo pip install bashate
+    
 script:
+ - sudo bash ./integration-tests/int-bashate.sh
  - sudo bash ./integration-tests/int-apps-install-uninstall.sh
  
 matrix:

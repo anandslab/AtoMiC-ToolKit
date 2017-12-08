@@ -3,7 +3,7 @@ echo
 sleep 1
 
 if grep -q "reset.sh" "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"; then
-       RESETSUPPORT="If you forgot, you may use the AtoMiC $APPTITLE password reset utility."
+    RESETSUPPORT="If you forgot, you may use the AtoMiC $APPTITLE password reset utility."
 else
     RESETSUPPORT=''
 fi
@@ -17,7 +17,7 @@ echo -e "--->${CYAN}Password: ${RED}Not displayed for security.$ENDCOLOR$RESETSU
 if [[ -z $UIPASSSTATUS ]] && [[ ! -z $APPDEFAULTPASS ]]; then
     echo -e "Try default password: $GREEN$APPDEFAULTPASS$ENDCOLOR"
 fi
-echo 
+echo
 sleep 1
 
 if [[ ! $APPUSESNGINX = 'YES' ]]; then
@@ -39,11 +39,11 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
         [[ -f /lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -f /usr/lib/systemd/system/$APPSYSTEMD ]] || \
         [[ -L /etc/systemd/system/multi-user.target.wants/$APPSYSTEMD ]] ; then
-        
+
         echo -e "SYSTEMD $APPSYSTEMD found.$ENDCOLOR"
         STATUS=$(systemctl is-active $APPSYSTEMD)
         if [[ $STATUS = 'active' ]]; then
-            echo -e "$APPSYSTEMD is currently: ${GREEN}$STATUS$ENDCOLOR" 
+            echo -e "$APPSYSTEMD is currently: ${GREEN}$STATUS$ENDCOLOR"
         else
             echo -e "$APPSYSTEMD is currently: ${RED}$STATUS$ENDCOLOR"
         fi

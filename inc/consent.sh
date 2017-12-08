@@ -11,8 +11,7 @@ echo
 read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
 RESP=${REPLY,,}
 
-if [ "$RESP" != "y" ] 
-then
+if [ "$RESP" != "y" ]; then
     echo
     echo -e "${RED}Because you disagreed to the disclaimers, no changes were made. If you change your mind, you may rerun ToolKit later.$ENDCOLOR"
     echo
@@ -21,4 +20,4 @@ else
     echo "Agreed to disclaimers: $(date)" >> "$SCRIPTPATH/tmp/consented"
 fi
 
-echo 
+echo

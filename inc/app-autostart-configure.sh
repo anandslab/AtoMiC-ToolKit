@@ -4,14 +4,14 @@ echo
 source "$SCRIPTPATH/inc/app-stop.sh"
 echo
 echo -e "$YELLOW--->Autostart configuring...$ENDCOLOR"
-if IsSystemdSupported; then 
+if IsSystemdSupported; then
     echo 'Using systemd'
 
     source "$SCRIPTPATH/inc/app-init-remove.sh"
     source "$SCRIPTPATH/inc/app-systemd-add.sh"
     source "$SCRIPTPATH/$APPNAME/$APPNAME-systemd-update.sh"
 
-elif [[ -d /etc/init.d ]]; then 
+elif [[ -d /etc/init.d ]]; then
     echo 'Using sysv-init'
 
     source "$SCRIPTPATH/inc/app-systemd-remove.sh"

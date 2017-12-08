@@ -12,5 +12,5 @@ if [[ ! -z $APPSETTINGSDIR ]] && [[ -d $APPSETTINGSDIR ]]; then
     sudo chown -R $UNAME:$UGROUP "$APPSETTINGSDIR"
     sudo chmod -R 775 "$APPSETTINGSDIR"
     sudo chmod -R g+s "$APPSETTINGSDIR"
-    echo -e "$CYAN$APPSETTINGSDIR$ENDCOLOR Done"   
+    echo -e "$CYAN$APPSETTINGSDIR$ENDCOLOR Done"
 fi

@@ -10,20 +10,20 @@
 CODENAME=$(lsb_release -c -s)
 
     case "$CODENAME" in
-       'squeeze'|'wheezy'|'jessie'|'stretch')
+        'squeeze'|'wheezy'|'jessie'|'stretch')
             DIST='debian'
             ;;
-        'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty') 
+        'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty')
             DIST='ubuntu'
             ;;
-        'sonya' | 'serena' | 'sarah')
+        'sonya' | 'serena' | 'sarah'| 'sylvia')
             DIST='ubuntu'
             CODENAME='xenial'
             ;;
         'rosa' | 'rafaela' | 'rebecca' | 'qiana')
             DIST='ubuntu'
             CODENAME='trusty'
-            ;; 
+            ;;
         'betsy')
             DIST='debian'
             CODENAME='jessie'

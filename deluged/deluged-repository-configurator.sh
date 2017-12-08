@@ -12,13 +12,13 @@ case "$CODENAME" in
         APPREPOSITORYLINK=''
         ;;
     'wheezy')
-        APPREPOSITORYLINK='deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu precise main'
+        TEMPDIST='precise'
         ;; 
     'jessie')
-        APPREPOSITORYLINK='deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu trusty main'
+        TEMPDIST='trusty'
         ;;
     'stretch')
-        APPREPOSITORYLINK='deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu xenial main'
+        TEMPDIST='xenial'
         ;;
     *)
         REPOPPA='YES'
@@ -26,6 +26,13 @@ case "$CODENAME" in
         ;;
 esac
 
-if [[ -n $APPREPOSITORYLINK ]]; then
+if [[ -n $APPREPOSITORYLINK || -n $TEMPDIST ]]; then
     REPRECVKEYSHORT='249AD24C'
+fi
+
+if [[ -n $TEMPDIST ]]; then
+    APPREPOSITORYLINK="deb http://ppa.launchpad.net/deluge-team/ppa/ubuntu $TEMPDIST main"
+    REPOKEYSREQ='YES'
+    REPKEYSERVER='http://keyserver.ubuntu.com:11371'
+    REPRECVKEY='0x8eed8fb4a8e6da6dfdf0192bc5e6a5ed249ad24c'
 fi

@@ -13,7 +13,7 @@ case "$CODENAME" in
         ;;
     'wheezy')
         TEMPDIST='precise'
-        ;; 
+        ;;
     'jessie')
         TEMPDIST='trusty'
         ;;

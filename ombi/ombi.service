@@ -8,9 +8,9 @@ Group=ReplaceMe
 
 Type=simple
 ExecStart=/usr/bin/mono /opt/ombi/Ombi.exe
-TimeoutStopSec=20
-KillMode=process
-Restart=on-failure
+TimeoutStopSec=30
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target

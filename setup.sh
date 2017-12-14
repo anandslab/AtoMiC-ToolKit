@@ -70,34 +70,39 @@ if [[ ! -d $SCRIPTPATH/backups ]]; then
     mkdir "$SCRIPTPATH/backups"
 fi
 
-echo -e "${YELLOW}--->DISCLAIMERS:$ENDCOLOR"
-if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
-    #echo 'consent file not present'
-    source "$SCRIPTPATH/inc/consent.sh"
-    source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
-else
-    echo -e 'Already agreed. Can be cleared in the next screen.'
+if [[ -z $CI ]]; then
+    echo -e "${YELLOW}--->DISCLAIMERS:$ENDCOLOR"
+    if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
+        #echo 'consent file not present'
+        source "$SCRIPTPATH/inc/consent.sh"
+        source "$SCRIPTPATH/inc/app-toolkit-deps.sh"
+    else
+        echo -e 'Already agreed. Can be cleared in the next screen.'
+    fi
 fi
 
 echo
 #sleep 1
-
-echo -e "${YELLOW}--->USER INFORMATION:$ENDCOLOR"
-if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
-    #echo 'userinfo not present'
-    source "$SCRIPTPATH/inc/usercheck.sh"
-else
-    #echo 'userinfo present'
-    source "$SCRIPTPATH/tmp/userinfo"
-    if [[ -z $UNAME ]] || [[ -z $UGROUP ]]; then
-        #echo 'userinfo not complete'
+if [[ -z $CI ]]; then
+    echo -e "${YELLOW}--->USER INFORMATION:$ENDCOLOR"
+    if [[ ! -f $SCRIPTPATH/tmp/userinfo ]]; then
+        #echo 'userinfo not present'
         source "$SCRIPTPATH/inc/usercheck.sh"
     else
-        echo -e "Already present: $CYAN$UNAME$ENDCOLOR." \
-                "Can be cleared in the next screen."
-        echo
-        source "$SCRIPTPATH/inc/option-handler.sh"
+        #echo 'userinfo present'
+        source "$SCRIPTPATH/tmp/userinfo"
+        if [[ -z $UNAME ]] || [[ -z $UGROUP ]]; then
+            #echo 'userinfo not complete'
+            source "$SCRIPTPATH/inc/usercheck.sh"
+        else
+            echo -e "Already present: $CYAN$UNAME$ENDCOLOR." \
+                    "Can be cleared in the next screen."
+            echo
+            source "$SCRIPTPATH/inc/option-handler.sh"
+        fi
     fi
+else
+    source "$SCRIPTPATH/inc/option-handler.sh"
 fi
 
 # Set permissions for all files

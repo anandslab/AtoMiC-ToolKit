@@ -56,6 +56,8 @@ source "$SCRIPTPATH/setup.sh" -i mylar
 source "$SCRIPTPATH/setup.sh" -u mylar
 source "$SCRIPTPATH/setup.sh" -i nzbget
 source "$SCRIPTPATH/setup.sh" -u nzbget
+source "$SCRIPTPATH/setup.sh" -i netdata
+source "$SCRIPTPATH/setup.sh" -u netdata
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -i ombi

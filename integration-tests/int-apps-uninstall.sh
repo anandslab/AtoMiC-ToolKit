@@ -41,6 +41,7 @@ source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 source "$SCRIPTPATH/setup.sh" -u madsonic
 source "$SCRIPTPATH/setup.sh" -u muximux
 source "$SCRIPTPATH/setup.sh" -u mylar
+source "$SCRIPTPATH/setup.sh" -u netdata
 source "$SCRIPTPATH/setup.sh" -u nzbget
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -u ombi

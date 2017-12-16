@@ -16,6 +16,7 @@ if IsSystemdSupported; then
             echo -e "$APPSYSTEMD is now: ${GREEN}$STATUS$ENDCOLOR"
         else
             echo -e "$APPSYSTEMD is now: ${RED}$STATUS$ENDCOLOR"
+            exit 1
         fi
     fi
 
@@ -31,11 +32,19 @@ if IsSystemdSupported; then
             echo -e "$APPSYSTEMD2 is now: ${GREEN}$STATUS$ENDCOLOR"
         else
             echo -e "$APPSYSTEMD2 is now: ${RED}$STATUS$ENDCOLOR"
+            exit 1
         fi
     fi
 elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=1
-    sudo service $APPINITD start
+    sudo service "$APPINITD" start
+    sleep 5
+    if P=$(pgrep "$APPINITD"); then
+        echo "$APPINITD is running, PID is $P"
+    else
+        echo "$APPINITD is not running"
+        exit 1
+    fi
 fi
 
 if [[ ! -z $FOUND ]] && [[ $FOUND = 0 ]]; then

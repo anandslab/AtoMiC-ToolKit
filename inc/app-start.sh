@@ -43,7 +43,7 @@ elif [[ -f /etc/init.d/$APPINITD ]]; then
         echo "$APPINITD is running, PID is $P"
     else
         echo "$APPINITD is not running"
-        exit 1
+        #exit 1
     fi
 fi
 

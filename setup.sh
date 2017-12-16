@@ -102,6 +102,8 @@ if [[ -z $CI ]]; then
         fi
     fi
 else
+    source "$SCRIPTPATH/inc/usercheck.sh"
+    source "$SCRIPTPATH/tmp/userinfo"
     source "$SCRIPTPATH/inc/option-handler.sh"
 fi
 

@@ -1,12 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC2034
 # shellcheck disable=SC1090
-# Script Name: AtoMiC Integration Test Application uninstaller
+# Script Name: AtoMiC Integration Test Application Update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
@@ -28,4 +26,4 @@ if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
     echo "Agreed to disclaimers: $(date)" > "$SCRIPTPATH/tmp/consented"
 fi
 
-source "$SCRIPTPATH/batch-processes/bat-apps-uninstall.sh"
+source "$SCRIPTPATH/batch-processes/bat-apps-update.sh"

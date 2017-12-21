@@ -13,7 +13,6 @@ REPOKEYSREQ='YES'
 APPREPOSITORYNAME='plexmediaserver'
 ACCESSHOST='NA'
 DBUSERSEARCH='SELECT name FROM accounts WHERE id = 1;'
-DBPASSSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'
 # New password unencrypted

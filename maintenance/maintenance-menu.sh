@@ -5,8 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Maintenance" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
@@ -14,12 +12,11 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Maintenance" \
 "Clear Temp Files" "Clear disclaimer consent and user info" \
 "Delete Backups" "Delete app backups" \
 "Update ToolKit" "Update AtoMiC ToolKit" \
-"Update Linux" "Update Distro and APPS" \
+"Update Linux" "Update Distro Packages" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
-    #echo "Your chosen option:" $SUBCHOICE
     case "$SUBCHOICE" in
         "Clear Temp Files" ) source "$SCRIPTPATH/maintenance/cleartmp.sh" ;;
         "Delete Backups" ) source "$SCRIPTPATH/maintenance/clearbackups.sh" ;;

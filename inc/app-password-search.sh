@@ -3,7 +3,7 @@
 
 if [[ -n $PASSSEARCH ]] && [[ -n $APPSETTINGS ]]; then
     UIPASSSTRING=$(grep "$PASSSEARCH" "$APPSETTINGS" | head -1)
-    
+
     if [[ -n $UIPASSSTRING ]]; then
         UIPASS=${UIPASSSTRING##*$PASSSEARCH}
     fi

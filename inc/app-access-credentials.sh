@@ -6,7 +6,6 @@ if grep -q "reset.sh" "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"; then
     RESETSUPPORT="If you forgot, you may use the AtoMiC $APPTITLE password reset utility."
 else
     RESETSUPPORT=''
-    
 fi
 
 echo -e "${YELLOW}Your $APPTITLE credentials are...$ENDCOLOR"

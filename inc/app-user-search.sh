@@ -7,7 +7,7 @@ if [[ -n $USERSEARCH ]] && [[ -n $APPSETTINGS ]]; then
     if [[ -n $UINAMESTRING ]]; then
         UINAME=${UINAMESTRING##*$USERSEARCH}
     fi
-    
+
     if [[ -n $UINAME ]]; then
         UINAME=$(echo "$UINAME" | tr -dc '[:alnum:]')
     fi

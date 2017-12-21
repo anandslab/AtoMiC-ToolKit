@@ -26,4 +26,5 @@ if [[ ! -f $SCRIPTPATH/tmp/consented ]]; then
     echo "Agreed to disclaimers: $(date)" > "$SCRIPTPATH/tmp/consented"
 fi
 
+source "$SCRIPTPATH/maintenance/distro-update.sh"
 source "$SCRIPTPATH/batch-processes/bat-apps-install-uninstall.sh"

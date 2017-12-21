@@ -1,25 +1,14 @@
 #!/bin/bash
-echo
-sleep 1
-echo -e "${YELLOW}--->Finding $APPTITLE WebUI password...$ENDCOLOR"
-if [ "$PASSSEARCH" == "NA" ] || [ "$APPSETTINGS" == "NA" ]; then
-    echo -e 'Incompatibility. Cannot determine password.'
-else
-    UIPASSSTRING=$(grep "$PASSSEARCH" $APPSETTINGS | head -1)
-    UIPASS=${UIPASSSTRING##*$PASSSEARCH}
+#Finds the password in the services config file
 
-    if [ "$PASSSEARCH" != "NA" ] && [ "$APPNEWPASS" == "atomic" ]; then
-        UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
+if [[ -n $PASSSEARCH ]] && [[ -n $APPSETTINGS ]]; then
+    UIPASSSTRING=$(grep "$PASSSEARCH" "$APPSETTINGS" | head -1)
+    
+    if [[ -n $UIPASSSTRING ]]; then
+        UIPASS=${UIPASSSTRING##*$PASSSEARCH}
     fi
 
-    if [ ! -z "$UIPASS" ]; then
-        echo -e 'Password found.';
-        UIPASSSTATUS="Set"
-    else
-        echo -e 'No password found.';
-        UIPASSSTATUS=""
-        if [ -z "$UIPASSSTATUS" ] && [ ! -z "$APPDEFAULTPASS" ]; then
-            echo -e "Try default password: $GREEN$APPDEFAULTPASS$ENDCOLOR"
-        fi
+    if [[ -n $UIPASS ]]; then
+        UIPASS=$(echo "$UIPASS" | tr -dc '[:alnum:]')
     fi
 fi

@@ -6,19 +6,30 @@ if grep -q "reset.sh" "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"; then
     RESETSUPPORT="If you forgot, you may use the AtoMiC $APPTITLE password reset utility."
 else
     RESETSUPPORT=''
+    
 fi
 
 echo -e "${YELLOW}Your $APPTITLE credentials are...$ENDCOLOR"
-echo -e "--->${CYAN}Username: $GREEN$UINAME$ENDCOLOR"
-if [[ -z $UINAMESTATUS ]] && [[ ! -z $APPDEFAULTUNAME ]]; then
-    echo -e "Try default username: $GREEN$APPDEFAULTUNAME$ENDCOLOR"
+
+if [[ -z $UINAME ]]; then
+    echo -e "--->${CYAN}Username: ${RED}Incompatibility. Cannot determine username.$ENDCOLOR"
+    if [[ -n $APPDEFAULTUNAME ]]; then
+        echo -e "Try default username: $GREEN$APPDEFAULTUNAME$ENDCOLOR$RESETSUPPORT"
+    fi
+else
+    echo -e "--->${CYAN}Username: $GREEN$UINAME$ENDCOLOR"
 fi
-echo -e "--->${CYAN}Password: ${RED}Not displayed for security.$ENDCOLOR$RESETSUPPORT"
-if [[ -z $UIPASSSTATUS ]] && [[ ! -z $APPDEFAULTPASS ]]; then
-    echo -e "Try default password: $GREEN$APPDEFAULTPASS$ENDCOLOR"
+
+if [[ -z $UIPASS ]]; then
+    echo -e "--->${CYAN}Password: ${RED}Incompatibility. Cannot determine password.$ENDCOLOR"
+    if [[ -n $APPDEFAULTPASS ]]; then
+        echo -e "Try default Password: $GREEN$APPDEFAULTPASS$ENDCOLOR"
+    fi
+else
+    echo -e "--->${CYAN}Password: $GREEN$UIPASS$ENDCOLOR"
 fi
+
 echo
-sleep 1
 
 if [[ ! $APPUSESNGINX = 'YES' ]]; then
 

@@ -11,7 +11,6 @@ APPDPORT='5075'
 APPSETTINGS=$APPPATH'/nzbhydra.cfg'
 ACCESSHOST='NA'
 PORTSEARCH='"port":'
-USERSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'
 # New password unencrypted

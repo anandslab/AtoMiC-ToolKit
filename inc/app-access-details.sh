@@ -11,13 +11,13 @@ source "$SCRIPTPATH/inc/pause.sh"
 if DoesAppFolderExist; then
     if [[ $APPSETTINGSTYPE = "DB" ]]; then
         source "$SCRIPTPATH/inc/app-port-search.sh"
-        source "$SCRIPTPATH/inc/db-app-user-search.sh"  >/dev/null
-        source "$SCRIPTPATH/inc/db-app-password-search.sh"  >/dev/null
+        source "$SCRIPTPATH/inc/db-app-user-search.sh"
+        source "$SCRIPTPATH/inc/db-app-password-search.sh"
         #echo "I did a grep for the port and a DB query for the creds"
     else
         source "$SCRIPTPATH/inc/app-port-search.sh"
-        source "$SCRIPTPATH/inc/app-user-search.sh"  >/dev/null
-        source "$SCRIPTPATH/inc/app-password-search.sh"  >/dev/null
+        source "$SCRIPTPATH/inc/app-user-search.sh"
+        source "$SCRIPTPATH/inc/app-password-search.sh"
         #echo "I'm doing a grep text search for port and creds"
     fi
 

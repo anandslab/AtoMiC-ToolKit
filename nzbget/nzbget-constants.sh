@@ -14,6 +14,8 @@ PASSSEARCH='ControlPassword='
 NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
+APPDEFAULTUNAME='nzbget'
+APPDEFAULTPASS='tegbzn6789'
 APPSYSTEMD='nzbget.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/nzbget/'$APPSYSTEMD
 APPINITD='nzbget'

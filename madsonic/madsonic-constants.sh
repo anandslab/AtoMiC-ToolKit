@@ -8,8 +8,6 @@ APPDPORT='4040'
 APPSETTINGS=$APPPATH'/madsonic.properties'
 ACCESSHOST='NA'
 PORTSEARCH='Port='
-USERSEARCH='NA'
-PASSSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'
 # New password unencrypted

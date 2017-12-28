@@ -39,14 +39,15 @@ elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=1
     sudo service "$APPINITD" start
     sleep 5
-    if P=$(pgrep "$APPINITD"); then
-        echo "$APPINITD is running, PID is $P"
+
+    if [[ $(ps -ef | grep -v grep | grep -c "$APPINITD" ) != 0 ]]; then
+        echo "$APPINITD is running"
     else
         echo "$APPINITD is not running"
-        #exit 1
+        exit 1
     fi
 fi
 
-if [[ ! -z $FOUND ]] && [[ $FOUND = 0 ]]; then
+if [[ -n $FOUND ]] && [[ $FOUND = 0 ]]; then
     echo -e "${RED}Startup file not found.$ENDCOLOR"
 fi

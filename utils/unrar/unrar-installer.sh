@@ -18,7 +18,7 @@ URL=$URL$(curl -s https://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'un
 echo
 echo -e "${YELLOW}URL Found: ${URL}$ENDCOLOR"
 VERSION=$(echo $URL | grep -oP '(?<=unrarsrc-).*(?=.tar)')
-echo -e "${YELLOW}Downloaded Version: 1:${VERSION}-1$ENDCOLOR"
+echo -e "${YELLOW}Available Version: 1:${VERSION}-1$ENDCOLOR"
 CURRENTUNRAR=$(dpkg -s unrar | grep Version | cut -d " " -f2-)
 echo -e "${YELLOW}Installed Version:  $CURRENTUNRAR$ENDCOLOR"
 

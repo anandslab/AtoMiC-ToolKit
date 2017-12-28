@@ -1,0 +1,6 @@
+APPPATH/config.ini
+APPPATH/main.db
+APPPATH/cache.db
+APPPATH/failed.db
+APPPATH/cache/application.dbm
+APPPATH/cache/subliminal.dbm

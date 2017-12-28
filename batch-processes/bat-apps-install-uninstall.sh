@@ -28,6 +28,8 @@ source "$SCRIPTPATH/setup.sh" -i lazylibrarian
 source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -u madsonic
+source "$SCRIPTPATH/setup.sh" -i medusa
+source "$SCRIPTPATH/setup.sh" -u medusa
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -u muximux
 source "$SCRIPTPATH/setup.sh" -i mylar

@@ -17,6 +17,7 @@ source "$SCRIPTPATH/setup.sh" -m jackett
 source "$SCRIPTPATH/setup.sh" -m kodi
 source "$SCRIPTPATH/setup.sh" -m lazylibrarian
 source "$SCRIPTPATH/setup.sh" -m madsonic
+source "$SCRIPTPATH/setup.sh" -m medusa
 source "$SCRIPTPATH/setup.sh" -m muximux
 source "$SCRIPTPATH/setup.sh" -m mylar
 source "$SCRIPTPATH/setup.sh" -m netdata

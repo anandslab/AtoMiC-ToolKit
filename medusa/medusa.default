@@ -1,0 +1,11 @@
+# This file is sourced by /etc/init.d/Medusa
+#
+# When Medusa is started using the init script
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+#$RUN_AS, username to run Medusa under, the default is Medusa
+APP_USER=
+
+#$RUN_AS, Group to run Medusa under, the default is Medusa
+APP_GROUP=

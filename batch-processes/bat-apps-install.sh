@@ -14,7 +14,7 @@ source "$SCRIPTPATH/setup.sh" -i grafana
 source "$SCRIPTPATH/setup.sh" -i headphones
 source "$SCRIPTPATH/setup.sh" -i htpcmanager
 source "$SCRIPTPATH/setup.sh" -i jackett
-# source "$SCRIPTPATH/setup.sh" -i kodi
+source "$SCRIPTPATH/setup.sh" -i kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -i medusa
@@ -28,7 +28,7 @@ source "$SCRIPTPATH/setup.sh" -i organizr
 source "$SCRIPTPATH/setup.sh" -i phpsysinfo
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -i plexpy
-source "$SCRIPTPATH/setup.sh" -i pyload
+# source "$SCRIPTPATH/setup.sh" -i pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
 source "$SCRIPTPATH/setup.sh" -i resilio-sync

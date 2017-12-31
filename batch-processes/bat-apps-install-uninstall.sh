@@ -18,8 +18,8 @@ source "$SCRIPTPATH/setup.sh" -i grafana
 source "$SCRIPTPATH/setup.sh" -u grafana
 source "$SCRIPTPATH/setup.sh" -i headphones
 source "$SCRIPTPATH/setup.sh" -u headphones
-source "$SCRIPTPATH/setup.sh" -i htpcmanager
-source "$SCRIPTPATH/setup.sh" -u htpcmanager
+# source "$SCRIPTPATH/setup.sh" -i htpcmanager
+# source "$SCRIPTPATH/setup.sh" -u htpcmanager
 source "$SCRIPTPATH/setup.sh" -i jackett
 source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi

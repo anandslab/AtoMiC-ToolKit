@@ -40,7 +40,7 @@ if IsSystemdSupported; then
 elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=3
     sudo service "$APPINITD" start
-    sleep 5
+    sleep 10
 
     if [[ $(ps -ef | grep -v grep | grep -c "$APPINITD" ) != 0 ]]; then
         echo "$APPINITD is running"

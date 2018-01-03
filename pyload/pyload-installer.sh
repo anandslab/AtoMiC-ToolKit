@@ -23,9 +23,9 @@ sudo ln -sf /usr/bin/js24 /usr/bin/js
 if [[ ! -f $APPSETTINGS ]] && [[ -z $CI ]]; then
     # Only run the setup if we've not done it before
     sudo -u "$UNAME" python /opt/pyload/pyLoadCore.py
+    source "$SCRIPTPATH/inc/app-start.sh"
 fi
 
-source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

@@ -64,8 +64,8 @@ source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -u rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
-source "$SCRIPTPATH/setup.sh" -i sickgear
-source "$SCRIPTPATH/setup.sh" -u sickgear
+# source "$SCRIPTPATH/setup.sh" -i sickgear
+# source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -i sickrage
 source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -i sonarr

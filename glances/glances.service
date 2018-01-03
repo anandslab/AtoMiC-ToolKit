@@ -1,10 +1,10 @@
 [Unit]
 Description=Glances
+After=network.target
 
 [Service]
 User=ReplaceMe
 Group=ReplaceMe
-After=network.target
 ExecStart=/usr/local/bin/glances -w
 Restart=on-abort
 

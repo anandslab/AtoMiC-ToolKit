@@ -1,94 +1,106 @@
-#!/bin/bash
-
+#!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          nzbdrone
-# Required-Start:    $local_fs $network $remote_fs
-# Required-Stop:     $local_fs $network $remote_fs
+# Provides: Sonarr
+# Required-Start:    $local_fs $network $remote_fs $syslog
+# Required-Stop:     $local_fs $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: nzbdrone
-# Description:       Sonarr
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-. /lib/lsb/init-functions
+user="ReplaceMe"
+group="ReplaceMe"
+cmd="/usr/bin/mono /opt/NzbDrone/NzbDrone.exe -nobrowser #sonarr"
 
-#set -e
+name=`basename $0`
+PIDDIR="/var/run/$name"
+pid_file="/var/run/$name/$name.pid"
+stdout_log="/var/log/$name.log"
+stderr_log="/var/log/$name.err"
 
-NAME=nzbdrone
-DESC="Sonarr"
-MONO=$(which mono)
+get_pid() {
+    cat "$pid_file"
+}
 
-DAEMON=/opt/NzbDrone/NzbDrone.exe
-DAEMONOPTS=""
-
-PIDDIR=/var/run/${NAME}
-PIDFILE=${PIDDIR}/${NAME}.pid
-
-RUNASUSER=root
-RUNASGROUP=root
-RUNAS=$RUNASUSER:$RUNASGROUP
-
-DATADIR=/home/$RUNASUSER/
-
-if ! [ -r ${DAEMON} ]; then echo "Can't read: ${DAEMON}" 2>&1; exit 1; fi
-if ! [ -x ${MONO} ]; then echo "Not executable: ${MONO}" 2>&1; exit 1; fi
-if ! [ -d ${DATADIR} ]; then echo "No such directory: ${DATADIR}" 2>&1; exit 1; fi
+is_running() {
+    [ -f "$pid_file" ] && ps -p `get_pid` > /dev/null 2>&1
+}
 
 if [ ! -d ${PIDDIR} ]; then
-        mkdir -p ${PIDDIR}; chown ${RUNASUSER}:root ${PIDDIR}; chmod 0750 ${PIDDIR};
+     mkdir -p ${PIDDIR}; chown ${user}:${group} ${PIDDIR}; chmod 0750 ${PIDDIR};
 fi
 
-do_start() {
-        RETVAL=1
-        if [ -e ${PIDFILE} ]; then
-                if ! kill -0 $(cat ${PIDFILE}) &> /dev/null; then
-                        rm -f $PIDFILE
-                fi
-        fi
-
-        log_daemon_msg "Starting ${DESC}" "${NAME}"
-        if pgrep -f "^${MONO} ${DAEMON}" > /dev/null 2>&1; then
-                log_progress_msg "(already running?)"
-        else
-                start-stop-daemon -q -d ${DATADIR} -c $RUNAS --start --background --make-pidfile --pidfile $PIDFILE --exec $MONO -- $DAEMON $DAEMON_OPTS
-                RETVAL=$?
-        fi
-        log_end_msg $RETVAL
-}
-do_stop() {
-        RETVAL=1
-        log_daemon_msg "Stopping ${DESC}" "${NAME}"
-        if ! pgrep -f "^${MONO} ${DAEMON}" > /dev/null 2>&1; then
-                log_progress_msg "(not running?)"
-        else
-                start-stop-daemon -q --stop --pidfile $PIDFILE --retry 15
-                RETVAL=$?
-        fi
-        log_end_msg $RETVAL
-
-}
-
 case "$1" in
-start)
-        do_start
-;;
-stop)
-        do_stop
-;;
+    start)
+    if is_running; then
+        echo "Already started"
+    else
+        echo "Starting $name"
+        if [ -z "$user" ]; then
+            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            echo $! > "$pid_file"
+        else
+            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sleep 1 # process not always started fast enough
+            echo $(pgrep -U "$user" -xf "$cmd") > "$pid_file"
+        fi
+        echo $! > "$pid_file"
+        if ! is_running; then
+            echo "Unable to start, see $stdout_log and $stderr_log"
+            exit 1
+        fi
+    fi
+    ;;
+    stop)
+    if is_running; then
+        echo -n "Stopping $name.."
+        kill `get_pid`
+        for i in 1 2 3 4 5 6 7 8 9 10
+        # for i in `seq 10`
+        do
+            if ! is_running; then
+                break
+            fi
 
-status)
-        status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
-;;
+            echo -n "."
+            sleep 1
+        done
+        echo
 
-restart|force-reload)
-        do_stop;
-        do_start;
-;;
-*)
-        N=/etc/init.d/$NAME
-        echo "Usage: $0 {start|stop|status|restart|force-reload}" >&2
+        if is_running; then
+            echo "Not stopped; may still be shutting down or shutdown may have failed"
+            exit 1
+        else
+            echo "Stopped"
+            if [ -f "$pid_file" ]; then
+                rm "$pid_file"
+            fi
+        fi
+    else
+        echo "Not running"
+    fi
+    ;;
+    restart)
+    $0 stop
+    if is_running; then
+        echo "Unable to stop, will not attempt to start"
         exit 1
-;;
+    fi
+    $0 start
+    ;;
+    status)
+    if is_running; then
+        echo "Running"
+    else
+        echo "Stopped"
+        exit 1
+    fi
+    ;;
+    *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
 esac
 
 exit 0

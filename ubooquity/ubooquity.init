@@ -1,106 +1,108 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          Ubooquity
-# Required-Start:    $local_fs $remote_fs $network
-# Required-Stop:     $local_fs $remote_fs $network
+# Provides: Ubooquity
+# Required-Start:    $local_fs $network $remote_fs $syslog
+# Required-Stop:     $local_fs $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Ubooquity
-# Description:       Ubooquity for ebook management
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-. /lib/lsb/init-functions
- 
-export UBOOQUITY_HOME=/opt/ubooquity 
-DAEMON_NAME="Ubooquity"
-DAEMON_USER=ReplaceMe
-DAEMON_PATH="/usr/bin/java"
-DAEMON_OPTS="-jar Ubooquity.jar -headless -webadmin"
-DAEMON_PWD="/opt/ubooquity"
-DAEMON_DESC=$(get_lsb_header_val $0 "Short-Description")
-DAEMON_PID="/var/run/${DAEMON_NAME}.pid"
-DAEMON_NICE=0
-DAEMON_LOG='/var/log/cherrymusic'
- 
-[ -r "/etc/default/${DAEMON_NAME}" ] && . "/etc/default/${DAEMON_NAME}"
- 
-do_start() {
-  local result
- 
-	pidofproc -p "${DAEMON_PID}" "${DAEMON_PATH}" > /dev/null
-	if [ $? -eq 0 ]; then
-		log_warning_msg "${DAEMON_NAME} is already started"
-		result=0
-	else
-		log_daemon_msg "Starting ${DAEMON_DESC}" "${DAEMON_NAME}"
-		touch "${DAEMON_LOG}"
-		chown $DAEMON_USER "${DAEMON_LOG}"
-		chmod u+rw "${DAEMON_LOG}"
-		if [ -z "${DAEMON_USER}" ]; then
-			start-stop-daemon --start --quiet --oknodo --background \
-				--nicelevel $DAEMON_NICE \
-				--chdir "${DAEMON_PWD}" \
-				--pidfile "${DAEMON_PID}" --make-pidfile \
-				--exec "${DAEMON_PATH}" -- $DAEMON_OPTS
-			result=$?
-		else
-			start-stop-daemon --start --quiet --oknodo --background \
-				--nicelevel $DAEMON_NICE \
-				--chdir "${DAEMON_PWD}" \
-				--pidfile "${DAEMON_PID}" --make-pidfile \
-				--chuid "${DAEMON_USER}" \
-				--exec "${DAEMON_PATH}" -- $DAEMON_OPTS
-			result=$?
-		fi
-		log_end_msg $result
-	fi
-	return $result
+user="ReplaceMe"
+group="ReplaceMe"
+cmd="/usr/bin/java -jar Ubooquity.jar -headless -remoteadmin"
+dir="/opt/ubooquity"
+
+name=`basename $0`
+PIDDIR="/var/run/$name"
+pid_file="/var/run/$name/$name.pid"
+stdout_log="/var/log/$name.log"
+stderr_log="/var/log/$name.err"
+
+get_pid() {
+    cat "$pid_file"
 }
- 
-do_stop() {
-	local result
- 
-	pidofproc -p "${DAEMON_PID}" "${DAEMON_PATH}" > /dev/null
-	if [ $? -ne 0 ]; then
-		log_warning_msg "${DAEMON_NAME} is not started"
-		result=0
-	else
-		log_daemon_msg "Stopping ${DAEMON_DESC}" "${DAEMON_NAME}"
-		killproc -p "${DAEMON_PID}" "${DAEMON_PATH}"
-		result=$?
-		log_end_msg $result
-		rm "${DAEMON_PID}"
-	fi
-	return $result
+
+is_running() {
+    [ -f "$pid_file" ] && ps -p `get_pid` > /dev/null 2>&1
 }
- 
-do_restart() {
-	local result
-	do_stop
-	result=$?
-	if [ $result = 0 ]; then
-		do_start
-		result=$?
-	fi
-	return $result
-}
- 
-do_status() {
-	local result
-	status_of_proc -p "${DAEMON_PID}" "${DAEMON_PATH}" "${DAEMON_NAME}"
-	result=$?
-	return $result
-}
- 
-do_usage() {
-	echo $"Usage: $0 {start | stop | restart | status}"
-	exit 1
-}
- 
+
+if [ ! -d ${PIDDIR} ]; then
+     mkdir -p ${PIDDIR}; chown ${user}:${group} ${PIDDIR}; chmod 0750 ${PIDDIR};
+fi
+
 case "$1" in
-start)   do_start;   exit $? ;;
-stop)    do_stop;    exit $? ;;
-restart) do_restart; exit $? ;;
-status)  do_status;  exit $? ;;
-*)       do_usage;   exit  1 ;;
+    start)
+    if is_running; then
+        echo "Already started"
+    else
+        echo "Starting $name"
+        cd "$dir"
+        if [ -z "$user" ]; then
+            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            echo $! > "$pid_file"
+        else
+            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sleep 1 # process not always started fast enough
+            echo $(pgrep -U "$user" -xf "$cmd") > "$pid_file"
+        fi
+        echo $! > "$pid_file"
+        if ! is_running; then
+            echo "Unable to start, see $stdout_log and $stderr_log"
+            exit 1
+        fi
+    fi
+    ;;
+    stop)
+    if is_running; then
+        echo -n "Stopping $name.."
+        kill `get_pid`
+        for i in 1 2 3 4 5 6 7 8 9 10
+        # for i in `seq 10`
+        do
+            if ! is_running; then
+                break
+            fi
+
+            echo -n "."
+            sleep 1
+        done
+        echo
+
+        if is_running; then
+            echo "Not stopped; may still be shutting down or shutdown may have failed"
+            exit 1
+        else
+            echo "Stopped"
+            if [ -f "$pid_file" ]; then
+                rm "$pid_file"
+            fi
+        fi
+    else
+        echo "Not running"
+    fi
+    ;;
+    restart)
+    $0 stop
+    if is_running; then
+        echo "Unable to stop, will not attempt to start"
+        exit 1
+    fi
+    $0 start
+    ;;
+    status)
+    if is_running; then
+        echo "Running"
+    else
+        echo "Stopped"
+        exit 1
+    fi
+    ;;
+    *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
 esac
+
+exit 0

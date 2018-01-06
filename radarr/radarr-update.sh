@@ -5,8 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
@@ -18,7 +16,9 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/utils/mono/mono-installer.sh"
     source "$SCRIPTPATH/radarr/radarr-constants.sh"
     source "$SCRIPTPATH/inc/app-folders-create.sh"
-    source "$SCRIPTPATH/radarr/radarr-download.sh"
+    if "$SCRIPTPATH/radarr/radarr-version-handler.sh"; then
+        source "$SCRIPTPATH/radarr/radarr-download.sh"
+    fi
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

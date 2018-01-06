@@ -12,6 +12,7 @@ else
     source "$SCRIPTPATH/tmp/ServiceVersions.cfg"
     combined=$1version
     if [[ -z ${!combined} ]]; then
+        echo "Current version not currently known so recording and will download latest"
         echo "${1}version=$2" >> $SCRIPTPATH/tmp/ServiceVersions.cfg
     elif [[ ${!combined} = "$2" ]]; then
         echo "Installed Version: $2"

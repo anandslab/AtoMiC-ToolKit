@@ -7,7 +7,7 @@
 # License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -i couchpotato
-source "$SCRIPTPATH/setup.sh" -i deluged
+# source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -i emby-server
 source "$SCRIPTPATH/setup.sh" -i glances
 source "$SCRIPTPATH/setup.sh" -i grafana
@@ -35,10 +35,10 @@ source "$SCRIPTPATH/setup.sh" -i resilio-sync
 source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
-source "$SCRIPTPATH/setup.sh" -i sickgear
-source "$SCRIPTPATH/setup.sh" -i sickrage
+# source "$SCRIPTPATH/setup.sh" -i sickgear
+# source "$SCRIPTPATH/setup.sh" -i sickrage
 source "$SCRIPTPATH/setup.sh" -i sonarr
-source "$SCRIPTPATH/setup.sh" -i subsonic
+# source "$SCRIPTPATH/setup.sh" -i subsonic
 source "$SCRIPTPATH/setup.sh" -i syncthing
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity

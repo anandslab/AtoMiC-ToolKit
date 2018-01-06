@@ -1,7 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-echo
 source "$SCRIPTPATH/inc/pause.sh"
-if [ -z "$ARGS" ]; then
+
+if [[ -z $ARGS ]] && [[ -z $CI ]]; then
+echo 'test'
     sudo bash "$SCRIPTPATH/setup.sh"
 fi

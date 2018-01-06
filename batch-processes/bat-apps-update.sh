@@ -44,5 +44,6 @@ source "$SCRIPTPATH/setup.sh" -m transmission-daemon
 source "$SCRIPTPATH/setup.sh" -m ubooquity
 source "$SCRIPTPATH/setup.sh" -m watcher
 source "$SCRIPTPATH/setup.sh" -m webmin
+ARGS=''
 CI=''
 source "$SCRIPTPATH/inc/thankyou.sh"

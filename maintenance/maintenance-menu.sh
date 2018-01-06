@@ -25,7 +25,7 @@ if [[ $exitstatus = 0 ]]; then
         "Delete Backups" ) source "$SCRIPTPATH/maintenance/clearbackups.sh" ;;
         "Update ToolKit" ) source "$SCRIPTPATH/maintenance/update.sh" ;;
         "Update Linux" ) source "$SCRIPTPATH/maintenance/distro-update.sh" ;;
-        "Update ALL services" ) 
+        "Update ALL services" )
             source "$SCRIPTPATH/maintenance/distro-services-update-cron.sh"
             source "$SCRIPTPATH/inc/exit.sh";;
         "Create Update Cron Job" ) source "$SCRIPTPATH/maintenance/distro-services-update-cron-create.sh" ;;

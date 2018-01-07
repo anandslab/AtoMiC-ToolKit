@@ -20,7 +20,7 @@ echo -e "${YELLOW}URL Found: ${URL}$ENDCOLOR"
 VERSION=$(echo $URL | grep -oP '(?<=unrarsrc-).*(?=.tar)')
 echo -e "${YELLOW}Available Version: 1:${VERSION}-1$ENDCOLOR"
 CURRENTUNRAR=$(dpkg -s unrar | grep Version | cut -d " " -f2-)
-echo -e "${YELLOW}Installed Version:  $CURRENTUNRAR$ENDCOLOR"
+echo -e "${YELLOW}Installed Version: $CURRENTUNRAR$ENDCOLOR"
 
 if [[ ! $CURRENTUNRAR = "1:${VERSION}-1" ]] ; then
     echo

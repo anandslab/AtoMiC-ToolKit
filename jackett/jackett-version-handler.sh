@@ -9,7 +9,7 @@ source "$SCRIPTPATH/inc/commons.sh"
 echo -e "${YELLOW}--->Jackett Version Check...$ENDCOLOR"
 JACKETTVERSION=$(curl -s https://github.com/Jackett/Jackett/releases/latest  | \
 grep -o '".*"' | \
-awk -F / '{print $NF}' | 
+awk -F / '{print $NF}' |
 \sed s'/[v"]//g')
 echo "Available Version: $JACKETTVERSION"
 

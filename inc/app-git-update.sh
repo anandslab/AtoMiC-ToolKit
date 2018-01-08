@@ -6,3 +6,4 @@ cd $APPPATH
 git config core.filemode false
 git fetch --all
 git pull
+cd $SCRIPTPATH

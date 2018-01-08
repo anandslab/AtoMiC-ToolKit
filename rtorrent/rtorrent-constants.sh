@@ -3,7 +3,7 @@
 APPNAME='rtorrent'
 APPSHORTNAME='rt'
 APPTITLE='rTorrent'
-APPPATH='/usr/local/share/doc/rtorrent'
+APPPATH='/usr/share/doc/rtorrent'
 APPDEPS='tmux'
 APPSETTINGS="/home/$UNAME/.rtorrent.rc"
 APPSYSTEMD='rtorrent.service'

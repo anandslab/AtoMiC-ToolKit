@@ -4,6 +4,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
+echo
 cd $(mktemp -d) || exit
 
 echo -e "${YELLOW}--->Downloading files...$ENDCOLOR"

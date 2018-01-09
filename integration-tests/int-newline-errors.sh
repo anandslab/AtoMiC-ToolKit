@@ -16,6 +16,6 @@ if [[ $(pcregrep --exclude_dir='.git|backups' -LMr '\n\Z' . | wc -l) -ge 0 ]]; t
     FOUND=1
 fi
 
-if [[ -z $FOUND ]]; then
+if [[ -n $FOUND ]]; then
     exit 1
 fi

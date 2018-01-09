@@ -92,4 +92,3 @@ restart|force-reload)
 esac
 
 exit 0
-3) Press Ctrl+X

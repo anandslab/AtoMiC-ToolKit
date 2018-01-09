@@ -6,8 +6,10 @@ sudo: required
 
 before_install:
     - sudo pip install bashate
-    
+    - sudo apt-get install pcregrep
+
 script:
+ - sudo bash ./integration-tests/int-newline-errors.sh
  - sudo bash ./integration-tests/int-bashate.sh
  - sudo bash ./integration-tests/int-apps-install-uninstall.sh
  

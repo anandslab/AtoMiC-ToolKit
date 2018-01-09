@@ -18,4 +18,6 @@ fi
 
 if [[ -n $FOUND ]]; then
     exit 1
+else
+    exit 0
 fi

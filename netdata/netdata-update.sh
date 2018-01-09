@@ -20,4 +20,3 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/thankyou.sh"
 fi
 source "$SCRIPTPATH/inc/exit.sh"
-

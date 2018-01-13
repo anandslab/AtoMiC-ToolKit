@@ -1,121 +1,105 @@
-#! /bin/sh
+#!/bin/sh
 ### BEGIN INIT INFO
 # Provides: Jackett
-# Required-Start: $local_fs $network $remote_fs
-# Required-Stop: $local_fs $network $remote_fs
-# Should-Start: $NetworkManager
-# Should-Stop: $NetworkManager
-# Default-Start: 2 3 4 5
-# Default-Stop: 0 1 6
-# Short-Description: starts instance of Jackett
-# Description: starts instance of Jackett using start-stop-daemon
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-############### EDIT ME ##################
-# path to app
-APP_PATH=/opt/jackett
+dir="/opt/jackett"
+user="ReplaceMe"
 
-# user
-RUN_AS=ReplaceMe
+name=`basename $0`
+PIDDIR="/var/run/$name"
+pid_file="/var/run/$name/$name.pid"
+stdout_log="/var/log/$name.log"
+stderr_log="/var/log/$name.err"
 
-# path to mono bin
-DAEMON=$(which mono)
+get_pid() {
+    cat "$pid_file"
+}
 
-# Path to store PID file
-PID_FILE=/var/run/jackett/jackett.pid
-PID_PATH=$(dirname $PID_FILE)
+is_running() {
+    [ -f "$pid_file" ] && ps -p `get_pid` > /dev/null 2>&1
+}
 
-# script name
-NAME=jackett
-
-# app name
-DESC=Jackett
-
-# startup args
-EXENAME="JackettConsole.exe"
-DAEMON_OPTS=" "$EXENAME
-
-############### END EDIT ME ##################
-
-JACKETT_PID=`ps auxf | grep $EXENAME | grep -v grep | awk '{print $2}'`
-
-test -x $DAEMON || exit 0
-
-set -e
-
-#Look for PID and create if doesn't exist
-if [ ! -d $PID_PATH ]; then
-    mkdir -p $PID_PATH
-    chown $RUN_AS $PID_PATH
+if [ ! -d ${PIDDIR} ]; then
+     mkdir -p ${PIDDIR}; chown ${user}:${user} ${PIDDIR}; chmod 0750 ${PIDDIR};
 fi
 
-if [ ! -d $DATA_DIR ]; then
-    mkdir -p $DATA_DIR
-    chown $RUN_AS $DATA_DIR
-fi
-
-if [ -e $PID_FILE ]; then
-    PID=`cat $PID_FILE`
-        if ! kill -0 $PID > /dev/null 2>&1; then
-        echo "Removing stale $PID_FILE"
-        rm $PID_FILE
-    fi
-fi
-
-echo $JACKETT_PID > $PID_FILE
-
+#cmd="$dir -c $user --start --background --pidfile $pid_file --exec $(which mono) -- JackettConsole.exe"
+cmd="/usr/bin/mono --debug /opt/jackett/JackettConsole.exe"
 case "$1" in
-start)
-if [ -z "${JACKETT_PID}" ]; then
-    echo "Starting $DESC"
-    rm -rf $PID_PATH || return 1
-    install -d --mode=0755 -o $RUN_AS $PID_PATH || return 1
-    start-stop-daemon -d $APP_PATH -c $RUN_AS --start --background --pidfile $PID_FILE --exec $DAEMON -- $DAEMON_OPTS
+    start)
+    if is_running; then
+        echo "Already started"
     else
-    echo "Jackett already running."
-fi
-;;
-stop)
-echo "Stopping $DESC"
-echo $JACKETT_PID > $PID_FILE
-start-stop-daemon --stop --pidfile $PID_FILE --retry 15
-;;
+        echo "Starting $name"
+        cd "$dir"
+        if [ -z "$user" ]; then
+            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        else
+            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        fi
+        echo $! > "$pid_file"
+        if ! is_running; then
+            echo "Unable to start, see $stdout_log and $stderr_log"
+            exit 1
+        fi
+    fi
+    ;;
+    stop)
+    if is_running; then
+        echo -n "Stopping $name.."
+        kill `get_pid`
+        for i in 1 2 3 4 5 6 7 8 9 10
+        # for i in `seq 10`
+        do
+            if ! is_running; then
+                break
+            fi
 
-restart|force-reload)
-echo "Restarting $DESC"
-start-stop-daemon --stop --pidfile $PID_FILE --retry 15
-start-stop-daemon -d $APP_PATH -c $RUN_AS --start --background --pidfile $PID_FILE --exec $DAEMON -- $DAEMON_OPTS
-;;
-status)
-# Use LSB function library if it exists
-if [ -f /lib/lsb/init-functions ]; then
-    . /lib/lsb/init-functions
-if [ -e $PID_FILE ]; then
-    status_of_proc -p $PID_FILE "$DAEMON" "$NAME" && exit 0 || exit $?
+            echo -n "."
+            sleep 1
+        done
+        echo
+
+        if is_running; then
+            echo "Not stopped; may still be shutting down or shutdown may have failed"
+            exit 1
+        else
+            echo "Stopped"
+            if [ -f "$pid_file" ]; then
+                rm "$pid_file"
+            fi
+        fi
     else
-    log_daemon_msg "$NAME is not running"
-    exit 3
-fi
-
-else
-# Use basic functions
-if [ -e $PID_FILE ]; then
-    PID=`cat $PID_FILE`
-if kill -0 $PID > /dev/null 2>&1; then
-    echo " * $NAME is running"
-    exit 0
-fi
-else
-    echo " * $NAME is not running"
-    exit 3
-fi
-fi
-;;
-*)
-N=/etc/init.d/$NAME
-echo "Usage: $N {start|stop|restart|force-reload|status}" >&2
-exit 1
-;;
+        echo "Not running"
+    fi
+    ;;
+    restart)
+    $0 stop
+    if is_running; then
+        echo "Unable to stop, will not attempt to start"
+        exit 1
+    fi
+    $0 start
+    ;;
+    status)
+    if is_running; then
+        echo "Running"
+    else
+        echo "Stopped"
+        exit 1
+    fi
+    ;;
+    *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
 esac
 
 exit 0

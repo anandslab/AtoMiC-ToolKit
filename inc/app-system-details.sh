@@ -1,7 +1,7 @@
 #!/bin/bash
 echo
 sleep 1
-echo -e $YELLOW'--->Finding '$APPTITLE' System details...'$ENDCOLOR
+echo -e "${YELLOW}--->Finding $APPTITLE System details...$ENDCOLOR"
 FQDN=$(hostname -f)
 FQDN=${FQDN//[[:blank:]]/}
 HNAME=$(hostname)

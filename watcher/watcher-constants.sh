@@ -10,8 +10,6 @@ APPDPORT='9090'
 APPSETTINGS=$APPPATH'/config.cfg'
 ACCESSHOST='NA'
 PORTSEARCH='serverport": "'
-USERSEARCH='NA'
-PASSSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'
 # New password unencrypted

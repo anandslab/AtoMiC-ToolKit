@@ -15,7 +15,9 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
     source "$SCRIPTPATH/utils/java/java-installer.sh"
     source "$SCRIPTPATH/ubooquity/ubooquity-constants.sh"
-    source "$SCRIPTPATH/$APPNAME/$APPNAME-download-install.sh"
+    if "$SCRIPTPATH/ubooquity/ubooquity-version-handler.sh"; then
+        source "$SCRIPTPATH/$APPNAME/$APPNAME-download-install.sh"
+    fi
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

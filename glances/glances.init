@@ -1,20 +1,21 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          glances
-# Required-Start:    $remote_fs $syslog
-# Required-Stop:     $remote_fs $syslog
+# Provides: Glances
+# Required-Start:    $local_fs $network $remote_fs $syslog
+# Required-Stop:     $local_fs $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Starts instance of glances
-# Description:       Starts instance of glances using start-stop-daemon
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-dir="/"
-cmd="/usr/local/bin/glances -w"
 user="ReplaceMe"
+group="ReplaceMe"
+cmd="/usr/local/bin/glances -w"
 
-name=$(basename $0)
-pid_file="/var/run/$name.pid"
+name=`basename $0`
+PIDDIR="/var/run/$name"
+pid_file="/var/run/$name/$name.pid"
 stdout_log="/var/log/$name.log"
 stderr_log="/var/log/$name.err"
 
@@ -23,8 +24,12 @@ get_pid() {
 }
 
 is_running() {
-    [ -f "$pid_file" ] && ps `get_pid` > /dev/null 2>&1
+    [ -f "$pid_file" ] && ps -p `get_pid` > /dev/null 2>&1
 }
+
+if [ ! -d ${PIDDIR} ]; then
+     mkdir -p ${PIDDIR}; chown ${user}:${group} ${PIDDIR}; chmod 0750 ${PIDDIR};
+fi
 
 case "$1" in
     start)
@@ -32,11 +37,13 @@ case "$1" in
         echo "Already started"
     else
         echo "Starting $name"
-        cd "$dir"
         if [ -z "$user" ]; then
             sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            echo $! > "$pid_file"
         else
             sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sleep 1 # process not always started fast enough
+            echo $(pgrep -U "$user" -xf "$cmd") > "$pid_file"
         fi
         echo $! > "$pid_file"
         if ! is_running; then
@@ -49,7 +56,8 @@ case "$1" in
     if is_running; then
         echo -n "Stopping $name.."
         kill `get_pid`
-        for i in {1..10}
+        for i in 1 2 3 4 5 6 7 8 9 10
+        # for i in `seq 10`
         do
             if ! is_running; then
                 break

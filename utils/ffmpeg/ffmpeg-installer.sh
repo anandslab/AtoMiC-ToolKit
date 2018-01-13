@@ -4,9 +4,7 @@
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-#
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
 echo -e "${GREEN}AtoMiC FFmpeg Installer Script$ENDCOLOR"
 
@@ -27,15 +25,18 @@ elif [ "$ARCHDETECT" = 'x86_64' ]; then
     TYPE='builds'
 fi
 
-if [[ ! -z $ARCH ]]; then
-    echo -e "$YELLOW--->Downloading and extracting files...$ENDCOLOR"
-    URL=https://johnvansickle.com/ffmpeg/$TYPE/ffmpeg-$ARCH-static.tar.xz
-    echo $URL
-    TMP_DIR=$( mktemp -d )
-    curl $URL | sudo tar Jx -C "$TMP_DIR" --strip-components=1
-    mv "$TMP_DIR"/ff* /usr/bin
-    rm -rf "$TMP_DIR"
-    echo -e "${GREEN}---> FFmpeg installation complete.$ENDCOLOR"
+if [[ -n $ARCH ]]; then
+    if "$SCRIPTPATH/utils/ffmpeg/ffmpeg-version-handler.sh"; then
+        echo
+        echo -e "$YELLOW--->Downloading and extracting files...$ENDCOLOR"
+        URL=https://johnvansickle.com/ffmpeg/$TYPE/ffmpeg-$ARCH-static.tar.xz
+        echo $URL
+        TMP_DIR=$( mktemp -d )
+        curl $URL | sudo tar Jx -C "$TMP_DIR" --strip-components=1
+        mv "$TMP_DIR"/ff* /usr/bin
+        rm -rf "$TMP_DIR"
+        echo -e "${GREEN}---> FFmpeg installation complete.$ENDCOLOR"
+    fi
 else
     echo -e "$RED--->Unable to detect architecture to install FFmpeg$ENDCOLOR"
 fi

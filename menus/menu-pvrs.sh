@@ -14,6 +14,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "CouchPotato" "Movies PVR Client" \
 "Headphones" "Music PVR Client" \
 "Lazy Librarian" "Book PVR Client" \
+"Medusa" "Automatic Video Library Manager for TV Shows" \
 "Mylar" "Comics PVR Client" \
 "Radarr" "Works with movies à la Couchpotato" \
 "SickGear" "TV Shows PVR Client" \
@@ -32,6 +33,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/headphones/headphones-menu.sh" ;;
         "Lazy Librarian" )
             source "$SCRIPTPATH/lazylibrarian/lazylibrarian-menu.sh" ;;
+        "Medusa" )
+            source "$SCRIPTPATH/medusa/medusa-menu.sh" ;;
         "Mylar" )
             source "$SCRIPTPATH/mylar/mylar-menu.sh" ;;
         "Radarr" )

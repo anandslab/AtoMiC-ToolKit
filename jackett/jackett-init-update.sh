@@ -6,6 +6,6 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo 'Updating init.d file'
 
-sudo sed -i "s@RUN_AS=ReplaceMe@RUN_AS=$UNAME@g" \
+sudo sed -i "s@user=\"ReplaceMe\"@user=\"$UNAME\"@g" \
 "/etc/init.d/$APPINITD" || \
-{ echo -e "$RED Replacing RUN_AS failed.$ENDCOLOR" ; exit 1; }
+{ echo -e "$RED Replacing USER failed.$ENDCOLOR" ; exit 1; }

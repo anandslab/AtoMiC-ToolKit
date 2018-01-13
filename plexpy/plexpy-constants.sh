@@ -12,7 +12,6 @@ APPSETTINGSDB=$APPPATH'/plexpy.db'
 ACCESSHOST='http_host = '
 PORTSEARCH='http_port = '
 DBUSERSEARCH='SELECT username FROM users WHERE id = 2;'
-DBPASSSEARCH='NA'
 # New password encrypted
 NEWPASS='atomic'
 # New password unencrypted

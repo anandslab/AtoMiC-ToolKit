@@ -22,21 +22,21 @@ if [[ ! -z $LANIP ]]; then
             "from your local network"
 fi
 
-if [[ ! -z $HNAME ]] || [[ $APPUSESNGINX = 'YES' ]]; then
+if [[ -n $HNAME ]] || [[ $APPUSESNGINX = 'YES' ]]; then
     echo -e "--->$CYAN$HTTP$HNAME$DIVIDE$APPDPORT$ENDCOLOR" \
             "from your local network"
 fi
 
-if [[ $APPUSESNGINX = 'YES' ]]; then
+if [[ $APPUSESNGINX = 'YES' ]] || [[ -n $APPDPORT ]]; then
     echo -e "--->${CYAN}0.0.0.0/$APPDPORT$ENDCOLOR on this system"
 else
     echo -e "--->$CYAN${HTTP}localhost:$APPDPORT$ENDCOLOR" \
         "on this system"
 fi
 
-if ! [[ $APPSETTINGS = 'NA' ]]; then
+if [[ -n $APPSETTINGS ]]; then
     echo -e "Actual port numbers could be different." \
-            "Check your settings file: $APPSETTINGS"
+            "Check your settings file: $GREEN$APPSETTINGS$ENDCOLOR"
 fi
 
 echo -e "If SSL is enabled," \

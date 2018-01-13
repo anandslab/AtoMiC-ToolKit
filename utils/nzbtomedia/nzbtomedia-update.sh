@@ -5,7 +5,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-echo -e "${GREEN}AtoMiC $APPTITLE Update Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC nzbToMedia Update Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh"
 

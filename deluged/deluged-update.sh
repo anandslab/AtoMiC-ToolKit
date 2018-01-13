@@ -14,6 +14,8 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
     source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-update.sh"
     source "$SCRIPTPATH/deluged/deluged-constants.sh"
+    source "$SCRIPTPATH/inc/app-install-deps.sh"
+    source "$SCRIPTPATH/inc/app-install-pips.sh"
     source "$SCRIPTPATH/inc/app-update.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

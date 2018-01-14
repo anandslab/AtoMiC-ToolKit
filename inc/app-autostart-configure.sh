@@ -1,6 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-echo
+
 source "$SCRIPTPATH/inc/app-stop.sh"
 echo
 echo -e "$YELLOW--->Autostart configuring...$ENDCOLOR"

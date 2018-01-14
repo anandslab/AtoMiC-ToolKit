@@ -52,4 +52,6 @@ fi
 
 if [[ -z $FOUND ]]; then
     echo -e "${RED}Startup file not found.$ENDCOLOR"
+else
+    FOUND=''
 fi

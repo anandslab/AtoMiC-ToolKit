@@ -82,4 +82,6 @@ fi
 
 if [[ $FOUND = 0 ]]; then
     echo 'No files/folders found to delete'
+else
+    FOUND=''
 fi

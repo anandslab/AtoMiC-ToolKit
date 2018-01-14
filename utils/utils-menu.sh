@@ -5,8 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
@@ -21,6 +19,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 "PHP 7.x" "open source general-purpose scripting language" \
 "PIA" "Private Internet Access VPN Service + Ad-blocking" \
 "pyLoad" "Download manager, lightweight and remotely manageable" \
+"Python" "python programming packages" \
 "Unrar" "Install latest Unrar from RARLAB source" \
 "Install Bash Aliases" "Allows shortening commands" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -49,6 +48,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/pia/pia-menu.sh" ;;
         "pyLoad" )
             source "$SCRIPTPATH/pyload/pyload-menu.sh" ;;
+        "Python" )
+            source "$SCRIPTPATH/utils/python/python-menu.sh" ;;
         "RVM" )
             source "$SCRIPTPATH/utils/rvm/rvm-menu.sh" ;;
         "Unrar" )

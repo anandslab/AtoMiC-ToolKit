@@ -7,7 +7,7 @@
 
 CODENAME=$(lsb_release -c -s)
 
-if [[ $APPNAME = 'python3.6' ]]; then 
+if [[ $APPNAME = 'python3.6' ]]; then
     case "$CODENAME" in
     'xenial'|'trusty'|'sylvia'|'sonya'|'serena'|'sarah'|'rosa'|'rafaela'|'rebecca'|'qiana'| 'zesty')
         REPOPPA='YES'

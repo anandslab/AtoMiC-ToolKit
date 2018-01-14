@@ -8,8 +8,8 @@
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/pause.sh"
-if [[ $1 = 'python3.6' ]]; then 
-    APPNAME='python3.6' 
+if [[ $1 = 'python3.6' ]]; then
+    APPNAME='python3.6'
 fi
 source "$SCRIPTPATH/inc/app-uninstall.sh"
 source "$SCRIPTPATH/utils/python/python-repository-configurator.sh"

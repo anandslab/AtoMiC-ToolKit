@@ -11,7 +11,7 @@ echo -e "${GREEN}AtoMiC Python Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/python/python-constants.sh"
 
-if [[ $1 = 'python3.6' ]]; then 
+if [[ $1 = 'python3.6' ]]; then
     APPNAME='python3.6'
     PIP=pip3
 fi

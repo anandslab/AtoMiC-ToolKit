@@ -17,7 +17,6 @@ if [[ ! -d $APPPATH ]]; then
     source "$SCRIPTPATH/utils/unrar/unrar-installer.sh"
     source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh"
     source "$SCRIPTPATH/inc/app-git-download.sh"
-    source "$SCRIPTPATH/inc/app-set-permissions.sh"
     echo -e "${GREEN}---> $APPTITLE installation complete.$ENDCOLOR"
     source "$SCRIPTPATH/inc/app-constant-reset.sh"
 else

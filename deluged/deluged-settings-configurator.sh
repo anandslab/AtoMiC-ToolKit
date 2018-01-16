@@ -5,7 +5,18 @@
 # License: MIT License (refer to README.md for more details)
 
 echo
+if [[ ! -f $APPSETTINGS ]]; then
+    echo -e "${RED}Can't find $APPSETTINGS$ENDCOLOR. Attempting a Start/Stop again to create it..."
+    source "$SCRIPTPATH/inc/app-start.sh"
+    source "$SCRIPTPATH/inc/app-stop.sh"
+    echo
+fi
+
 echo -e "${YELLOW}--->Configuring Deluge Settings...$ENDCOLOR"
+
+if [[ ! -f $APPSETTINGS ]]; then
+    echo -e "${RED}$APPSETTINGS has failed to be created.$ENDCOLOR"; exit 1
+fi
 
 #Enable torrentfiles folder & destination
 sudo sed -i "s@\"copy_torrent_file\": false@\"copy_torrent_file\": true@g" $APPSETTINGS || { echo -e $RED"Modifying copy_torrent_file in $APPSETTINGS file failed."$ENDCOLOR; exit 1; }

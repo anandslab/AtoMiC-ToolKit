@@ -1,6 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-
+echo "test1" $1
+echo "test2" $2
 if [[ -n $1 && -n $2 ]]; then 
     if [[ ! -f $SCRIPTPATH/tmp/ServiceVersions.cfg ]]; then
         source "$SCRIPTPATH/inc/commons.sh"
@@ -26,6 +27,13 @@ if [[ -n $1 && -n $2 ]]; then
         fi
     fi
 fi
+
+removeappversion () {
+    combined=$1version   
+    if sed -i "/$combined/d" $SCRIPTPATH/tmp/ServiceVersions.cfg; then
+        echo "$1 removed from $SCRIPTPATH/tmp/ServiceVersions.cfg"
+    fi
+}
 
 vercomp () {
     if [[ $1 == $2 ]]; then

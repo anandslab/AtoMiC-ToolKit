@@ -12,7 +12,7 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
-# source "$SCRIPTPATH/utils/python/python-installer.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh"
 source "$SCRIPTPATH/inc/app-version-check.sh"
 
 PythonVersion=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')

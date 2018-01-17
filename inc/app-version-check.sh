@@ -1,8 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-echo "test1" $1
-echo "test2" $2
-if [[ -n $1 && -n $2 ]]; then 
+if [[ -n $1 && -n $2 ]]; then
     if [[ ! -f $SCRIPTPATH/tmp/ServiceVersions.cfg ]]; then
         source "$SCRIPTPATH/inc/commons.sh"
         touch $SCRIPTPATH/tmp/ServiceVersions.cfg
@@ -29,7 +27,7 @@ if [[ -n $1 && -n $2 ]]; then
 fi
 
 removeappversion () {
-    combined=$1version   
+    combined=$1version
     if sed -i "/$combined/d" $SCRIPTPATH/tmp/ServiceVersions.cfg; then
         echo "$1 removed from $SCRIPTPATH/tmp/ServiceVersions.cfg"
     fi
@@ -42,12 +40,10 @@ vercomp () {
     local IFS=.
     local i ver1=($1) ver2=($2)
     # fill empty fields in ver1 with zeros
-    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
-    do
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++)); do
         ver1[i]=0
     done
-    for ((i=0; i<${#ver1[@]}; i++))
-    do
+    for ((i=0; i<${#ver1[@]}; i++)); do
         if [[ -z ${ver2[i]} ]]; then
             # fill empty fields in ver2 with zeros
             ver2[i]=0

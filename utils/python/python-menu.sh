@@ -5,9 +5,8 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Python" \
 --menu " Installs https://launchpad.net/~jonathonf python repo to update Python." --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install/Update" "python 2.7 via repository" \
-"Install/Update " "python 3.6 via repository" \
-"Uninstall" "python 3.6 and remove repository" \
+"Install/Update" "python 2.7 via 3rd party repository" \
+"Install/Update " "python 3.x via default repository" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -17,9 +16,7 @@ if [[ $exitstatus = 0 ]]; then
         "Install/Update" )
             source "$SCRIPTPATH/utils/python/python-installer.sh" ;;
         "Install/Update " )
-            source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3.6' ;;
-        "Uninstall" )
-            source "$SCRIPTPATH/utils/python/python-uninstaller.sh" 'python3.6' ;;
+            source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3' ;;
         "Go Back" )
             source "$SCRIPTPATH/utils/utils-menu.sh" ;;
         *)

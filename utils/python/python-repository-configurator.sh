@@ -7,17 +7,9 @@
 
 CODENAME=$(lsb_release -c -s)
 
-if [[ $APPNAME = 'python3.6' ]]; then
-    case "$CODENAME" in
-    'xenial'|'trusty'|'sylvia'|'sonya'|'serena'|'sarah'|'rosa'|'rafaela'|'rebecca'|'qiana'| 'zesty')
-        REPOPPA='YES'
-        APPREPOSITORYNAME='jonathonf-python-3_6'
-        APPREPOSITORYLINK='ppa:jonathonf/python-3.6'
-        APPDEPS='python3-pip python3-dev python3-setuptools python-setuptools-doc python3-wheel'
-        REPRECVKEYSHORT='' ;;
-    *)
-        APPREPOSITORYLINK='' ;;
-    esac
+if [[ $APPNAME = 'python3' ]]; then
+    APPDEPS='python3-pip python3-dev python3-setuptools python-setuptools-doc python3-wheel'
+    APPPIPS='cffi enum34 asn1crypto idna six ipaddress pycparser chardet urllib3 pycparser markdown asn1crypto pyasn1 lxml setuptools regex certifi cryptography pyopenssl requests[security]'
 else
     case "$CODENAME" in
         'xenial'|'trusty'|'sylvia'|'sonya'|'serena'|'sarah'|'rosa'|'rafaela'|'rebecca'|'qiana')
@@ -25,8 +17,10 @@ else
             APPREPOSITORYNAME='jonathonf-python-2_7'
             APPREPOSITORYLINK='ppa:jonathonf/python-2.7'
             APPDEPS='python-pip python-dev python-setuptools python-setuptools-doc python-wheel'
-            REPRECVKEYSHORT='' ;;
+            APPPIPS='cffi enum34 asn1crypto idna six ipaddress pycparser chardet urllib3 pycparser markdown asn1crypto pyasn1 lxml setuptools regex certifi cheetah cryptography pyopenssl requests[security]'
+            ;;
         *)
             APPREPOSITORYLINK='' ;;
     esac
+
 fi

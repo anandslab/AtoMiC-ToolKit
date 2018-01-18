@@ -4,7 +4,7 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage nzbTomedia" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install\Update" "nzbTomedia Scripts" \
+"Install/Update" "nzbTomedia Scripts" \
 "Uninstall" "nzbTomedia Scripts" \
 "Go Back" "to previous menu" 3>&1 1>&2 2>&3)
 
@@ -12,7 +12,7 @@ exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh"
     case "$SUBCHOICE" in
-        "Install\Update" )
+        "Install/Update" )
             source "$SCRIPTPATH/utils/$APPNAME/$APPNAME-installer.sh" ;;
         "Uninstall" )
             source "$SCRIPTPATH/utils/$APPNAME/$APPNAME-uninstaller.sh" ;;

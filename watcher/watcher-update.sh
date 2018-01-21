@@ -13,8 +13,9 @@ source "$SCRIPTPATH/inc/pause.sh"
 
 if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
-    source "$SCRIPTPATH/inc/pkgupdate.sh"
-    source "$SCRIPTPATH/inc/app-install-deps.sh"
+    source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3'
+    source "$SCRIPTPATH/watcher/watcher-constants.sh"
+    source "$SCRIPTPATH/inc/app-install-pips.sh" "pip3"
     source "$SCRIPTPATH/inc/app-git-update.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

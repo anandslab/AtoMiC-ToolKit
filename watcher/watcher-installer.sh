@@ -22,8 +22,9 @@ if [[ -d /opt/watcher ]]; then
 fi
 
 source "$SCRIPTPATH/inc/app-move-previous.sh"
-source "$SCRIPTPATH/inc/pkgupdate.sh"
-source "$SCRIPTPATH/inc/app-install-deps.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3'
+source "$SCRIPTPATH/watcher/watcher-constants.sh"
+source "$SCRIPTPATH/inc/app-install-pips.sh" "pip3"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 source "$SCRIPTPATH/inc/app-set-permissions.sh"

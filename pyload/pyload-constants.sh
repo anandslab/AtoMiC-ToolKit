@@ -4,8 +4,8 @@ APPNAME='pyload'
 APPSHORTNAME='pl'
 APPPATH='/opt/pyload'
 APPTITLE='pyLoad'
-APPDEPS="python python-crypto python-pycurl python-imaging \
-tesseract-ocr python-openssl libmozjs-24-bin"
+APPDEPS="tesseract-ocr libmozjs-24-bin"
+APPPIPS='pycurl'
 APPGIT='-b stable https://github.com/pyload/pyload.git'
 APPDPORT='8000'
 APPSETTINGSDIR="/home/$UNAME/.pyload"

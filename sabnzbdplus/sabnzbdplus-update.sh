@@ -13,11 +13,11 @@ source "$SCRIPTPATH/inc/pause.sh"
 
 if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
+    source "$SCRIPTPATH/utils/python/python-installer.sh"
     source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-update.sh"
     source "$SCRIPTPATH/sabnzbdplus/sabnzbdplus-constants.sh"
     source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
-    source "$SCRIPTPATH/inc/app-repository-remove.sh"
-    source "$SCRIPTPATH/inc/app-repository-add.sh"
+    source "$SCRIPTPATH/inc/app-install-pips.sh"
     source "$SCRIPTPATH/inc/app-update.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

@@ -8,7 +8,7 @@
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
-echo -e $GREEN"AtoMiC $APPTITLE Restore Script"$ENDCOLOR
+echo -e "${GREEN}AtoMiC $APPTITLE Restore Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 
 if DoesAppFolderExist; then

@@ -27,19 +27,19 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
 
     echo
 
-    if [ "$RESP" == "y" ]; then
-        echo -e $YELLOW'--->Deleting all temporary...'$ENDCOLOR
+    if [[ $RESP == "y" ]]; then
+        echo -e "$YELLOW--->Deleting all temporary...$ENDCOLOR"
         rm $SCRIPTPATH/tmp/* >/dev/null 2>&1
         if find "$target" -mindepth 1 -print -quit | grep -q .; then
-            echo -e $RED'Deleting temporary data failed.'$ENDCOLOR
+            echo -e "${RED}Deleting temporary data failed.$ENDCOLOR"
         else
             echo -e 'All temporary data deleted successfully.'
         fi
     else
-        echo -e $RED'Temporary data not deleted.'$ENDCOLOR
+        echo -e "${RED}Temporary data not deleted.$ENDCOLOR"
     fi
 else
-    echo -e $RED"There are no temporary data to delete."$ENDCOLOR
+    echo -e "${RED}There are no temporary data to delete.$ENDCOLOR"
 fi
 
 source "$SCRIPTPATH/inc/exit.sh"

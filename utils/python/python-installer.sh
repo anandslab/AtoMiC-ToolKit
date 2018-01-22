@@ -16,8 +16,7 @@ if [[ $1 = 'python3' ]]; then
     PIP=pip3
 fi
 
-source "$SCRIPTPATH/utils/python/python-repository-configurator.sh"
-source "$SCRIPTPATH/inc/app-repository-add.sh"
+source "$SCRIPTPATH/utils/python/python-dependency-configurator.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-install.sh"
 source "$SCRIPTPATH/inc/app-install-deps.sh"

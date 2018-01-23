@@ -5,6 +5,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
+echo
 source "$SCRIPTPATH/inc/commons.sh"
 echo -e "${YELLOW}--->Jackett Version Check...$ENDCOLOR"
 JACKETTVERSION=$(curl -s https://github.com/Jackett/Jackett/releases/latest  | \
@@ -13,6 +14,6 @@ awk -F / '{print $NF}' |
 \sed s'/[v"]//g')
 echo "Available Version: $JACKETTVERSION"
 
-if ! "$SCRIPTPATH/inc/app-version-check.sh" "JACKETT" "$JACKETTVERSION" ; then
+if ! checkappversion "JACKETT" "$JACKETTVERSION" ; then
     exit 1
 fi

@@ -15,7 +15,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
     source "$SCRIPTPATH/utils/mono/mono-installer.sh"
     source "$SCRIPTPATH/ombi/ombi-constants.sh"
-    source "$SCRIPTPATH/inc/app-folders-create.sh"
+    source "$SCRIPTPATH/inc/app-install-deps.sh"
     source "$SCRIPTPATH/ombi/ombi-download.sh"
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-start.sh"

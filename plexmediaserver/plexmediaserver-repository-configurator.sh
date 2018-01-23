@@ -23,6 +23,8 @@ else
             REPRECVKEYSASC="http://shell.ninthgate.se/packages/shell.ninthgate.se.gpg.key"
             REPRECVKEYSHORT='521D8275'
             ;;
+        'artful')
+            APPREPOSITORYLINK='' ;;
         *)
             # Default to the offical Plex repo
             APPREPOSITORYLINK="deb https://downloads.plex.tv/repo/deb ./public main"

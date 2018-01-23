@@ -2,7 +2,7 @@
 echo
 sleep 1
 
-echo -e $YELLOW"--->Removing $APPTITLE Init.d startup scripts..."$ENDCOLOR
+echo -e "$YELLOW--->Removing $APPTITLE Init.d startup scripts...$ENDCOLOR"
 
 if [[ -f /etc/init.d/$APPINITD ]]; then
     sudo update-rc.d -f $APPINITD remove || { echo -e $RED'Warning! update-rc.d remove failed.'$ENDCOLOR ; }
@@ -25,7 +25,7 @@ elif [[ -f /etc/init/$APPNAME.conf ]]; then
 fi
 
 echo
-echo -e $YELLOW"--->Removing $APPTITLE default config scripts..."$ENDCOLOR
+echo -e "$YELLOW--->Removing $APPTITLE default config scripts...$ENDCOLOR"
 if [[ -f /etc/default/$APPNAME ]]; then
     sudo rm /etc/default/$APPNAME || { echo -e $RED'Warning! Removing default script failed.'$ENDCOLOR ; }
     echo "/etc/default/$APPNAME default script removed"

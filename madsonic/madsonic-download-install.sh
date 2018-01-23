@@ -6,7 +6,7 @@
 
 FILE=$(curl -s http://beta.madsonic.org/pages/download62.jsp | grep -o '".*"' | grep -o '.*\.deb' | grep -oP '(?<=target=).*' | sed 's/"//g' | head -1)
 echo
-echo -e $YELLOW"File Found: ${FILE}"$ENDCOLOR
+echo -e "${YELLOW}File Found: ${FILE}$ENDCOLOR"
 SHORTVERSION=${FILE:18:3}
 URL="http://madsonic.org/download/$SHORTVERSION/$FILE"
 echo -e $YELLOW"URL Found: "$URL$ENDCOLOR

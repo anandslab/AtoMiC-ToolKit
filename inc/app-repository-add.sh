@@ -1,7 +1,7 @@
 #!/bin/bash
 echo
 if [ ! "$APPREPOSITORYLINK" = "" ]; then
-    echo -e $YELLOW"--->Adding $APPTITLE repository..."$ENDCOLOR
+    echo -e "$YELLOW--->Adding $APPTITLE repository...$ENDCOLOR"
     #Check if needed and add
     GREPOUT=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $APPREPOSITORYNAME)
     if [ "$GREPOUT" = "" ]; then

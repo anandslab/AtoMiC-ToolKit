@@ -38,8 +38,8 @@ source "$SCRIPTPATH/setup.sh" -i nzbget
 source "$SCRIPTPATH/setup.sh" -u nzbget
 # source "$SCRIPTPATH/setup.sh" -i netdata
 # source "$SCRIPTPATH/setup.sh" -u netdata
-# source "$SCRIPTPATH/setup.sh" -i nzbhydra
-# source "$SCRIPTPATH/setup.sh" -u nzbhydra
+source "$SCRIPTPATH/setup.sh" -i nzbhydra
+source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -i ombi
 source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i organizr
@@ -64,8 +64,8 @@ source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -u rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
-# source "$SCRIPTPATH/setup.sh" -i sickgear
-# source "$SCRIPTPATH/setup.sh" -u sickgear
+source "$SCRIPTPATH/setup.sh" -i sickgear
+source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -i sickrage
 source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -i sonarr

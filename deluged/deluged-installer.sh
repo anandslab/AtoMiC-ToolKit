@@ -17,7 +17,7 @@ source "$SCRIPTPATH/inc/app-uninstall-deps.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"
 
-source "$SCRIPTPATH/inc/app-constant-reset.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh"
 source "$SCRIPTPATH//qbittorrent-nox/qbittorrent-nox-constants.sh"
 source "$SCRIPTPATH/$APPNAME/$APPNAME-repository-configurator.sh"
 if [[ -n $APPREPOSITORYLINK ]]; then

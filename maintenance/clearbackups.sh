@@ -30,19 +30,19 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
 
     echo
 
-    if [ "$RESP" == "y" ]; then
-        echo -e $YELLOW'--->Deleting all backups...'$ENDCOLOR
+    if [[ $RESP == "y" ]]; then
+        echo -e "$YELLOW--->Deleting all backups...$ENDCOLOR"
         rm $SCRIPTPATH/backups/* >/dev/null 2>&1
         if find "$target" -mindepth 1 -print -quit | grep -q .; then
-            echo -e $RED'Deleting backups failed.'$ENDCOLOR
+            echo -e "${RED}Deleting backups failed.$ENDCOLOR"
         else
-            echo -e 'All backups deleted successfully.'
+            echo 'All backups deleted successfully.'
         fi
     else
-        echo -e $RED'Backups not deleted.'$ENDCOLOR
+        echo -e "${RED}Backups not deleted.$ENDCOLOR"
     fi
 else
-    echo -e $RED"There are no backups to delete."$ENDCOLOR
+    echo -e "${RED}There are no backups to delete.$ENDCOLOR"
 fi
 
 source "$SCRIPTPATH/inc/exit.sh"

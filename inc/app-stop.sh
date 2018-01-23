@@ -42,9 +42,9 @@ elif [[ -f /etc/init.d/$APPINITD ]]; then
 fi
 
 sleep 2
-
 if [[ -n $FOUND ]]; then
     sudo killall "$APPNAME" >/dev/null 2>&1
+    FOUND=''
 else
     echo 'Nothing found to stop'
 fi

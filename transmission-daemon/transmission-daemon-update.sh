@@ -23,6 +23,7 @@ if DoesAppFolderExist; then
     sudo chmod -R 644 "/etc/systemd/system/$APPNAME.service.d" \
     || { echo -e "${RED}Chmod on $APPSYSTEMDOVERIDELOC failed.$ENDCOLOR"; exit 1; }
 
+    source "$SCRIPTPATH/inc/app-install-deps.sh"
     source "$SCRIPTPATH/inc/app-update.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"

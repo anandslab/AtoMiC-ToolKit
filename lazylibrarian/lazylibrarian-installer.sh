@@ -11,9 +11,8 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
-source "$SCRIPTPATH/inc/pkgupdate.sh"
-source "$SCRIPTPATH/inc/app-install-deps.sh"
-source "$SCRIPTPATH/inc/app-install-pips.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh"
+source "$SCRIPTPATH/lazylibrarian/lazylibrarian-constants.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 
 #Now uses all 3 boot files regardless

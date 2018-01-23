@@ -15,6 +15,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
     source "$SCRIPTPATH/inc/pkgupdate.sh"
     source "$SCRIPTPATH/inc/app-update.sh"
+    source "$SCRIPTPATH/inc/app-install-deps.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"

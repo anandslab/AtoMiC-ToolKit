@@ -8,9 +8,9 @@ cd $(mktemp -d)
 
 FILE=$(curl -s http://www.subsonic.org/pages/download.jsp | grep -o '".*"' | grep -o 'subsonic.*\.deb' | sed 's/"//g' | head -1)
 echo
-echo -e $YELLOW"File Found: ${FILE}"$ENDCOLOR
+echo -e "${YELLOW}File Found: ${FILE}$ENDCOLOR"
 URL="https://s3-eu-west-1.amazonaws.com/subsonic-public/download/${FILE}"
-echo -e $YELLOW"URL Found: "$URL$ENDCOLOR
+echo -e "${YELLOW}URL Found: $URL$ENDCOLOR"
 
 if ! [[ -f "/var/cache/apt/archives/$FILE" ]]; then
     wget $URL -P '/var/cache/apt/archives'

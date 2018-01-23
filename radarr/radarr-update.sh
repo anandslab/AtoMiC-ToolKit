@@ -15,7 +15,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"
     source "$SCRIPTPATH/utils/mono/mono-installer.sh"
     source "$SCRIPTPATH/radarr/radarr-constants.sh"
-    source "$SCRIPTPATH/inc/app-folders-create.sh"
+    source "$SCRIPTPATH/inc/app-install-deps.sh"
     if "$SCRIPTPATH/radarr/radarr-version-handler.sh"; then
         source "$SCRIPTPATH/radarr/radarr-download.sh"
     fi

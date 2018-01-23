@@ -17,6 +17,6 @@ RADARRVERSION=$(curl -s https://api.github.com/repos/radarr/radarr/releases | \
     sed s'/[v"]//g')
 echo "Available Version: $RADARRVERSION"
 
-if ! "$SCRIPTPATH/inc/app-version-check.sh" "RADARR" "$RADARRVERSION" ; then
+if ! checkappversion "RADARR" "$RADARRVERSION" ; then
     exit 1
 fi

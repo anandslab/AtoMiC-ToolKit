@@ -10,17 +10,16 @@ source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
-source "$SCRIPTPATH/inc/app-autostart-remove.sh"
-source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/utils/python/python-installer.sh"
-source "$SCRIPTPATH/inc/app-version-check.sh"
+source "$SCRIPTPATH/sickgear/sickgear-constants.sh"
 
 PythonVersion=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')
 vercomp "$PythonVersion" "$APPPYTHONVERREQ"
 if [[ $? = 2 ]]; then
-    echo -e "${RED}Python Version $PythonVersion is not supported.$ENDCOLOR"
+    echo -e "${RED}Python Version $PythonVersion is not supported.($APPPYTHONVERREQ required) Please consider upgrading your Linux OS.$ENDCOLOR"
 else
-    source "$SCRIPTPATH/sickgear/sickgear-constants.sh"
+    source "$SCRIPTPATH/inc/app-autostart-remove.sh"
+    source "$SCRIPTPATH/inc/app-move-previous.sh"
     source "$SCRIPTPATH/inc/app-install-deps.sh"
     source "$SCRIPTPATH/inc/app-git-download.sh"
     source "$SCRIPTPATH/inc/app-autostart-configure.sh"

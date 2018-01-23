@@ -1,6 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
-if [[ -n $1 && -n $2 ]]; then
+
+checkappversion () {
     if [[ ! -f $SCRIPTPATH/tmp/ServiceVersions.cfg ]]; then
         source "$SCRIPTPATH/inc/commons.sh"
         touch $SCRIPTPATH/tmp/ServiceVersions.cfg
@@ -24,7 +25,7 @@ if [[ -n $1 && -n $2 ]]; then
             || { echo -e $RED'Modifying ServiceVersions file failed.'$ENDCOLOR; exit 1; }
         fi
     fi
-fi
+}
 
 removeappversion () {
     combined=$1version

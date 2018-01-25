@@ -2,7 +2,6 @@
 # shellcheck disable=SC2034
 APPNAME='syncthing'
 APPSHORTNAME='sc'
-APPPATH=''
 APPTITLE='Syncthing'
 APPDEPS='syncthing-inotify'
 APPPATH="/home/$UNAME/.config/syncthing"

@@ -11,6 +11,7 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
+"Rclone" "Command line program to sync files and directories" \
 "Resilio-Sync" "Fast and reliable file and folder synchronization" \
 "Syncthing" "Open Source Continuous File Synchronization" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -19,6 +20,8 @@ exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/inc/app-constant-reset.sh"
     case "$SUBCHOICE" in
+        "Rclone" )
+            source "$SCRIPTPATH/rclone/rclone-menu.sh" ;;
         "Resilio-Sync" )
             source "$SCRIPTPATH/resilio-sync/resilio-sync-menu.sh" ;;
         "Syncthing" )

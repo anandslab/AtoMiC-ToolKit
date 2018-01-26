@@ -32,6 +32,7 @@ source "$SCRIPTPATH/setup.sh" -m pyload
 source "$SCRIPTPATH/setup.sh" -m qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -m radarr
 source "$SCRIPTPATH/setup.sh" -m rclone
+source "$SCRIPTPATH/setup.sh" -m rclone-browser
 source "$SCRIPTPATH/setup.sh" -m resilio-sync
 source "$SCRIPTPATH/setup.sh" -m rtorrent
 source "$SCRIPTPATH/setup.sh" -m rutorrent

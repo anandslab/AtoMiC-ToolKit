@@ -5,13 +5,12 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Rclone" "Command line program to sync files and directories" \
+"Rclone Browser" "Simple GUI for rclone command line tool" \
 "Resilio-Sync" "Fast and reliable file and folder synchronization" \
 "Syncthing" "Open Source Continuous File Synchronization" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -22,6 +21,8 @@ if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Rclone" )
             source "$SCRIPTPATH/rclone/rclone-menu.sh" ;;
+        "Rclone Browser" )
+            source "$SCRIPTPATH/rclone-browser/rclone-browser-menu.sh" ;;
         "Resilio-Sync" )
             source "$SCRIPTPATH/resilio-sync/resilio-sync-menu.sh" ;;
         "Syncthing" )

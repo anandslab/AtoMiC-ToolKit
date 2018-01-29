@@ -25,6 +25,13 @@ sudo sed -i "s@IPADDRESS@$(hostname -I)@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying IPADDRESS in Nginx file failed.$ENDCOLOR"; exit 1; }
 echo "Updated config file with current IPAddress"
+echo "Updated config file with current IPADDRESS"
+
+sudo sed -i "s@HOSTNAME@$(hostname)@g" \
+        "/etc/nginx/sites-available/$APPSETTINGS" || \
+        { echo -e "${RED}Modifying HOSTNAME in Nginx file failed.$ENDCOLOR"; exit 1; }
+echo "Updated config file with current HOSTNAME"
+
 
 if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
     sudo ln -s "/etc/nginx/sites-available/$APPSETTINGS" \

@@ -1,2 +1,4 @@
 /etc/nginx/sites-available
 /etc/nginx/sites-enabled
+/etc/nginx/locations-available
+/etc/nginx/locations-enabled

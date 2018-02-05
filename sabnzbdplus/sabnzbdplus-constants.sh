@@ -24,3 +24,4 @@ APPSYSTEMDLOC=$SCRIPTPATH'/sabnzbdplus/'$APPSYSTEMD
 APPINITD='sabnzbdplus'
 APPINITDLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.init'
 APPDEFAULTLOC=$SCRIPTPATH'/sabnzbdplus/sabnzbdplus.default'
+NGINXCONF='sabnzbd.atomic.conf'

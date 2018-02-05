@@ -53,6 +53,7 @@ Features features of AtoMiC ToolKit include:
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
 <li>Ombi - Install, Uninstall, Update and Backup / Restore</li>
 <li>Organizr - Install, Uninstall, Update</li>
+<li>PhpSysInfo - Install, Uninstall, Update</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
 <li>PlexPy - Install, Uninstall, Update and Backup / Restore</li>
 <li>Private Internet Access - Install, Uninstall, Update</li>
@@ -74,7 +75,6 @@ Features features of AtoMiC ToolKit include:
 <li>ubooquity- Install, Uninstall, Update and Backup / Restore</li>
 <li>Watcher - Install, Uninstall, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Please submit an issue to request further applications</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>

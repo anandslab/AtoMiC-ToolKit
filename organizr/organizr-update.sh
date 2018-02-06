@@ -15,7 +15,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/utils/nginx/nginx-update.sh"
     source "$SCRIPTPATH/organizr/organizr-constants.sh"
     source "$SCRIPTPATH/inc/app-git-update.sh"
-    source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh"
+    source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" 'SKIP'
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"
 fi

@@ -12,7 +12,7 @@ echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/rutorrent/rutorrent-constants.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
-source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh"
+source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" 'SKIP'
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

@@ -21,3 +21,4 @@ APPSYSTEMDLOC=$APPPATH'/init/'$APPSYSTEMD
 APPINITD='couchpotato'
 APPINITDLOC=$APPPATH'/init/ubuntu'
 APPDEFAULTLOC=$APPPATH'/init/ubuntu.default'
+REVPROXYSTRING='url_base = '

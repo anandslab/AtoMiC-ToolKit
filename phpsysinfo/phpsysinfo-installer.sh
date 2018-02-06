@@ -15,7 +15,7 @@ source "$SCRIPTPATH/phpsysinfo/phpsysinfo-constants.sh"
 source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/phpsysinfo/phpsysinfo-settings-configurator.sh"
-source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh"
+source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" 'SKIP'
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

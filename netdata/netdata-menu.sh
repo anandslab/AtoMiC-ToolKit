@@ -12,6 +12,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage NetData" \
 "Install" "Install NetData" \
 "Uninstall" "Uninstall NetData" \
 "Manual Update" "Manually update NetData" \
+"Enable Reverse Proxy" "Allow access" \
+"Disable Reverse Proxy" "Remove access" \
 "Access Details" "View NetData access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
@@ -22,6 +24,8 @@ if [[ $exitstatus = 0 ]]; then
         "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
         "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
+        "Enable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
+        "Disable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" ;;
         "Reset Password" )
             source "$SCRIPTPATH/inc/app-password-reset-controller.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;

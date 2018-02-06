@@ -16,6 +16,6 @@ source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/muximux/muximux-settings-configurator.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
-source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh"
+source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" 'SKIP'
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"

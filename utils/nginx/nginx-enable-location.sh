@@ -33,7 +33,9 @@ if [[ -d /etc/nginx/ ]]; then
     fi
     sudo nginx -s reload
 
-    source "$SCRIPTPATH/inc/app-http-responses.sh"
+    if [[ -z $1 ]]; then
+        source "$SCRIPTPATH/inc/app-http-responses.sh"
+    fi
 else
     echo "Nginx not found. Please install via the Utils menu and then try again."
 fi

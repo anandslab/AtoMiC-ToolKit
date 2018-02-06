@@ -11,3 +11,4 @@ LANIP=$1
 LANIP=${LANIP//[[:blank:]]/}
 WANIP=$(dig +short myip.opendns.com @resolver1.opendns.com)
 WANIP=${WANIP//[[:blank:]]/}
+set -- 

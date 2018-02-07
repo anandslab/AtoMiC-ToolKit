@@ -115,6 +115,7 @@ The script supports several command line arguments:
 - `-m appname or --manualupdate appname` - Manually update a specific app
 - `-p appname or --passwordreset appname` - Reset the password to an app
 - `-a appname or --accessdetails appname` - View the access details for an app
+- `-x appname or --reverseproxy appname` - Enable Reverse Proxy for an app
 - `-t or --updatetoolkit` - Update AtoMiC-ToolKit
 - `-U or --updateall` - Update Linux packages
 

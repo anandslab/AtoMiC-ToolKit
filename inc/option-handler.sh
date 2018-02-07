@@ -149,6 +149,22 @@ while true; do
                 shift;
             fi
             ;;
+        -x|--reverseproxy)
+            shift;
+            if [[ -x $1 ]]; then
+                reverseproxy="$1";
+                if [[ ! -f $SCRIPTPATH/$1/$1-constants.sh ]]; then
+                    echo
+                    echo
+                    echo "$BADARG"
+                    source "$SCRIPTPATH/inc/exit.sh"
+                else
+                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                    source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh"
+                fi
+                shift;
+            fi
+            ;;
         -t|--updatetoolkit)
             shift;
             updatetoolkit="1";

@@ -37,7 +37,7 @@ help(){
     echo -e "${YELLOW}--->COMMAND LINE OPTIONS:$ENDCOLOR"
     echo
     echo "Usage example:";
-    echo "atomic-toolkit [(-i|--install) appname] [(-u|--uninstall) appname] [(-b|--backup) appname] [(-r|--restore) appname] [(-m|--manualupdate) appname] [(-p|--passwordreset) appname] [(-a|--accessdetails) appname] [(-t|--updatetoolkit)] [(-U|--updateall)]";
+    echo "atomic-toolkit [(-i|--install) appname] [(-u|--uninstall) appname] [(-b|--backup) appname] [(-r|--restore) appname] [(-m|--manualupdate) appname] [(-p|--passwordreset) appname] [(-a|--accessdetails) appname] [(-x|--reverseproxy)] [(-t|--updatetoolkit)] [(-U|--updateall)]";
     echo "Options:";
     echo
     echo "-i or --install appname: Install an app.";
@@ -47,6 +47,7 @@ help(){
     echo "-m or --manualupdate appname: Manually update a specific app.";
     echo "-p or --passwordreset appname: Reset the password to an app.";
     echo "-a or --accessdetails appname: View the access details for an app.";
+    echo "-x or --reverseproxy appname: Enable Reverse Proxy for an app.";
     echo "-t or --updatetoolkit: Update AtoMiC-ToolKit.";
     echo "-U or --updateall: Update Linux and all apps.";
     exit 1;
@@ -57,7 +58,7 @@ updatetoolkit=0;
 updateall=0;
 
 # Capture options to getopts
-export ARGS=$(getopt -o "i:u:b:r:m:p:a:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
+export ARGS=$(getopt -o "i:u:b:r:m:p:a:x:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,reverseproxy:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
 
 #sleep 1
 #echo $1

@@ -15,8 +15,14 @@ fi
 
 HttpResponseCheck()
 {
-    response=$(curl -Lo /dev/null --silent --head --write-out '%{http_code}\n' "$1" | grep '000\|404\|502')
-    if [[ -n $response ]]; then
+    # if [[ $1 = *":"* ]]; then
+    #     CURLSTR='-o'
+    # else
+    #     CURLSTR='-Lo'
+    # fi
+
+    response=$(curl -L --write-out "%{http_code}" --silent --output /dev/null "$1" | grep '200')
+    if [[ -z $response ]]; then
         echo -e "${RED}Error! couldnt connect to: $CYAN$1$ENDCOLOR"
         ERRORFOUND+=1
     else
@@ -37,3 +43,7 @@ if [[ $APPUSESNGINX != 'YES' ]]; then
     HttpResponseCheck "127.0.0.1/$APPNAME"
     HttpResponseCheck "0.0.0.0/$APPNAME"
 fi
+
+# if [[ -n $ERRORFOUND ]]; then
+#     exit 1
+# fi

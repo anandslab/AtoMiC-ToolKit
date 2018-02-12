@@ -18,19 +18,27 @@ if [[ -z $1 ]]; then
     source "$SCRIPTPATH/inc/pause.sh"
 fi
 
-if [[ -z $NGINXCONF ]]; then
-    NGINXCONF="$APPNAME.atomic.conf"
+source "$SCRIPTPATH/inc/app-stop.sh"
+
+if [[ -z $NGINXCONFNAME ]]; then
+    NGINXCONFNAME="$APPNAME"
 fi
 
-if [[ -L "/etc/nginx/locations-enabled/$NGINXCONF" ]]; then
+if [[ -f $SCRIPTPATH/$APPNAME/$APPNAME-reverse-proxy-disable.sh ]]; then
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-reverse-proxy-disable.sh"
+fi
 
-    sudo rm "/etc/nginx/locations-enabled/$NGINXCONF"
-    echo "Removed Symlink $NGINXCONF location file"
+if [[ -L "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf" ]]; then
+
+    sudo rm "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf"
+    echo "Removed Symlink $NGINXCONFNAME.atomic.conf location file"
 
     sudo nginx -s reload
 else
-    echo "Nginx $NGINXCONF location file not found"
+    echo "Nginx $NGINXCONFNAME.atomic.conf location file not found"
 fi
+
+source "$SCRIPTPATH/inc/app-start.sh"
 
 if [[ -z $1 ]]; then
     source "$SCRIPTPATH/inc/thankyou.sh"

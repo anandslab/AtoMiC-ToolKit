@@ -21,9 +21,9 @@ HttpResponseCheck()
     #     CURLSTR='-Lo'
     # fi
 
-    response=$(curl -L --write-out "%{http_code}" --silent --output /dev/null "$1" | grep '200')
+    response=$(curl -L --write-out "%{http_code}" --silent --output /dev/null "$1" | grep '200\|401')
     if [[ -z $response ]]; then
-        echo -e "${RED}Error! couldnt connect to: $CYAN$1$ENDCOLOR"
+        echo -e "${CYAN}Address: ${YELLOW}$1 ${RED}Error! couldnt connect$ENDCOLOR"
         ERRORFOUND+=1
     else
         echo -e "${CYAN}Address: ${GREEN}$1 ${CYAN}Available $ENDCOLOR"
@@ -31,17 +31,17 @@ HttpResponseCheck()
     fi
 }
 
-HttpResponseCheck "$HNAME$DIVIDE$APPDPORT"
-HttpResponseCheck "$LANIP$DIVIDE$APPDPORT"
-HttpResponseCheck "127.0.0.1$DIVIDE$APPDPORT"
-HttpResponseCheck "0.0.0.0$DIVIDE$APPDPORT"
+HttpResponseCheck "$HNAME$DIVIDE$APPDPORT/$NGINXCONFNAME"
+HttpResponseCheck "$LANIP$DIVIDE$APPDPORT/$NGINXCONFNAME"
+HttpResponseCheck "127.0.0.1$DIVIDE$APPDPORT/$NGINXCONFNAME"
+HttpResponseCheck "0.0.0.0$DIVIDE$APPDPORT/$NGINXCONFNAME"
 
 if [[ $APPUSESNGINX != 'YES' ]]; then
-    HttpResponseCheck "localhost:$APPDPORT"
-    HttpResponseCheck "$HNAME/$APPNAME"
-    HttpResponseCheck "$LANIP/$APPNAME"
-    HttpResponseCheck "127.0.0.1/$APPNAME"
-    HttpResponseCheck "0.0.0.0/$APPNAME"
+    HttpResponseCheck "localhost:$APPDPORT/$NGINXCONFNAME"
+    HttpResponseCheck "$HNAME/$NGINXCONFNAME"
+    HttpResponseCheck "$LANIP/$NGINXCONFNAME"
+    HttpResponseCheck "127.0.0.1/$NGINXCONFNAME"
+    HttpResponseCheck "0.0.0.0/$NGINXCONFNAME"
 fi
 
 # if [[ -n $ERRORFOUND ]]; then

@@ -19,19 +19,28 @@ if [[ $1 != 'SKIP' ]]; then
 fi
 
 if [[ -d /etc/nginx/ ]]; then
-    if [[ -z $NGINXCONF ]]; then
-        NGINXCONF="$APPNAME.atomic.conf"
+    if [[ -z $NGINXCONFNAME ]]; then
+        NGINXCONFNAME="$APPNAME"
     fi
 
-    if [[ ! -L "/etc/nginx/locations-enabled/$NGINXCONF" ]]; then
-        if sudo ln -s "/etc/nginx/locations-available/$NGINXCONF" \
-            "/etc/nginx/locations-enabled/$NGINXCONF"; then
-            echo "Symlinked $NGINXCONF location file"
+    source "$SCRIPTPATH/inc/app-stop.sh"
+
+    if [[ ! -L "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf" ]]; then
+        if sudo ln -s "/etc/nginx/locations-available/$NGINXCONFNAME.atomic.conf" \
+            "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf"; then
+            echo "Symlinked $NGINXCONFNAME.atomic.conf location file"
         fi
     else
-        echo "Symlink for $NGINXCONF location already exists"
+        echo "Symlink for $NGINXCONFNAME.atomic.conf location already exists"
     fi
+
+    if [[ -f $SCRIPTPATH/$APPNAME/$APPNAME-reverse-proxy-enable.sh ]]; then
+        source "$SCRIPTPATH/$APPNAME/$APPNAME-reverse-proxy-enable.sh"
+    fi
+
     sudo nginx -s reload
+
+    source "$SCRIPTPATH/inc/app-start.sh"
 
     if [[ $1 != 'SKIP' ]]; then
         source "$SCRIPTPATH/inc/app-http-responses.sh"

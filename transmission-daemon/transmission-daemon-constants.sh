@@ -17,4 +17,4 @@ APPNEWPASS=''
 APPSYSTEMD='transmission-daemon.service'
 APPSYSTEMDOVERIDE="$SCRIPTPATH/transmission-daemon/transmission-daemon-override.conf"
 APPINITD='transmission-daemon'
-NGINXCONF='transmission.atomic.conf'
+NGINXCONFNAME='transmission'

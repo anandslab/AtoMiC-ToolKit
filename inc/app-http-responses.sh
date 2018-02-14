@@ -13,14 +13,14 @@ else
     DIVIDE=':'
 fi
 
+if [[ $PROXYREQSUFFIX != 'NO' ]]; then
+    PROXYREQSUFFIX="/$NGINXCONFNAME"
+else
+    PROXYREQSUFFIX=''  
+fi
+
 HttpResponseCheck()
 {
-    # if [[ $1 = *":"* ]]; then
-    #     CURLSTR='-o'
-    # else
-    #     CURLSTR='-Lo'
-    # fi
-
     response=$(curl -L --write-out "%{http_code}" --silent --output /dev/null "$1" | grep '200\|401')
     if [[ -z $response ]]; then
         echo -e "${CYAN}Address: ${YELLOW}$1 ${RED}Error! couldnt connect$ENDCOLOR"
@@ -31,13 +31,13 @@ HttpResponseCheck()
     fi
 }
 
-HttpResponseCheck "$HNAME$DIVIDE$APPDPORT/$NGINXCONFNAME"
-HttpResponseCheck "$LANIP$DIVIDE$APPDPORT/$NGINXCONFNAME"
-HttpResponseCheck "127.0.0.1$DIVIDE$APPDPORT/$NGINXCONFNAME"
-HttpResponseCheck "0.0.0.0$DIVIDE$APPDPORT/$NGINXCONFNAME"
+HttpResponseCheck "$HNAME$DIVIDE$APPDPORT$PROXYREQSUFFIX"
+HttpResponseCheck "$LANIP$DIVIDE$APPDPORT$PROXYREQSUFFIX"
+HttpResponseCheck "127.0.0.1$DIVIDE$APPDPORT$PROXYREQSUFFIX"
+HttpResponseCheck "0.0.0.0$DIVIDE$APPDPORT$PROXYREQSUFFIX"
 
 if [[ $APPUSESNGINX != 'YES' ]]; then
-    HttpResponseCheck "localhost:$APPDPORT/$NGINXCONFNAME"
+    HttpResponseCheck "localhost:$APPDPORT$PROXYREQSUFFIX"
     HttpResponseCheck "$HNAME/$NGINXCONFNAME"
     HttpResponseCheck "$LANIP/$NGINXCONFNAME"
     HttpResponseCheck "127.0.0.1/$NGINXCONFNAME"

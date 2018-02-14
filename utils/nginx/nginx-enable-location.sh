@@ -25,6 +25,14 @@ if [[ -d /etc/nginx/ ]]; then
 
     source "$SCRIPTPATH/inc/app-stop.sh"
 
+    if [[ ! -f /etc/nginx/locations-available/$NGINXCONFNAME.atomic.conf ]]; then
+        if cp "$SCRIPTPATH/utils/nginx/locations-available/$NGINXCONFNAME.atomic.conf" \
+                "/etc/nginx/locations-available/$NGINXCONFNAME.atomic.conf" || \
+            { echo -e "${RED}Could not move location file $NGINXCONFNAME.atomic.conf over.$ENDCOLOR"; exit 1; }; then
+            echo "Location file $NGINXCONFNAME.atomic.conf copied over to available"
+        fi
+    fi
+
     if [[ ! -L "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf" ]]; then
         if sudo ln -s "/etc/nginx/locations-available/$NGINXCONFNAME.atomic.conf" \
             "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf"; then

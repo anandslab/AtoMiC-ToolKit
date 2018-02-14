@@ -23,7 +23,7 @@ APPINITD='syncthing'
 APPINITD2='syncthing-inotify'
 APPINITDLOC=$SCRIPTPATH'/syncthing/syncthing.init'
 APPINITDLOC2=$SCRIPTPATH'/syncthing/syncthing-inotify.init'
-
+PROXYREQSUFFIX='NO'
 if [[ -f $APPSETTINGS ]]; then
     IPSTRING=$(grep -o -P '(?<=<address>).*(?=:)' $HOME/.config/syncthing/config.xml)
     PORTSEARCH="$IPSTRING:"

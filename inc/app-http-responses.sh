@@ -16,7 +16,7 @@ fi
 if [[ $PROXYREQSUFFIX != 'NO' ]]; then
     PROXYREQSUFFIX="/$NGINXCONFNAME"
 else
-    PROXYREQSUFFIX=''  
+    PROXYREQSUFFIX=''
 fi
 
 HttpResponseCheck()

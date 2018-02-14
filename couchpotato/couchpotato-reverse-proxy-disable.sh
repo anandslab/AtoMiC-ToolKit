@@ -5,5 +5,5 @@
 # License: MIT License (refer to README.md for more details)
 
 if sed -i "/url_base/c\\url_base = " "$APPSETTINGS"; then
-    echo "updated url_base in $APPSETTINGS"
+    echo "Updated url_base in $APPSETTINGS"
 fi

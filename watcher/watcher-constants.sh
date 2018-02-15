@@ -7,7 +7,7 @@ APPTITLE='Watcher'
 APPPIPS='python-levenshtein'
 APPGIT='https://github.com/nosmokingbandit/Watcher3.git'
 APPDPORT='9090'
-APPSETTINGS=$APPPATH'/config.cfg'
+APPSETTINGS=$APPPATH'/userdata/config.cfg'
 ACCESSHOST='NA'
 PORTSEARCH='serverport": "'
 # New password encrypted

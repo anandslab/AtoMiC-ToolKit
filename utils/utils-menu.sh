@@ -9,6 +9,7 @@ source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
+"Certbot" "Automatically obtain certs from Let's Encrypt" \
 "FFmpeg" "Record, convert and stream audio and video" \
 "Java 8" "general-purpose computer programming language" \
 "Mono" "Open source implementation of MS .NET Framework" \
@@ -28,6 +29,8 @@ exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     source "$SCRIPTPATH/inc/app-constant-reset.sh"
     case "$SUBCHOICE" in
+        "Certbot" )
+            source "$SCRIPTPATH/utils/certbot/certbot-menu.sh" ;;
         "FFmpeg" )
             source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh" ;;
         "Java 8" )

@@ -18,6 +18,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/rtorrent/rtorrent-update.sh"
     source "$SCRIPTPATH/rutorrent/rutorrent-constants.sh"
     source "$SCRIPTPATH/inc/app-git-update.sh"
+    source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" 'SKIP'
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"
 fi

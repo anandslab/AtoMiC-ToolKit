@@ -14,6 +14,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Medusa" \
 "Backup" "Backup Medusa settings" \
 "Restore" "Restore Medusa settings from a previous backup" \
 "Manual Update" "Manually update Medusa" \
+"Enable Reverse Proxy" "Allow access" \
+"Disable Reverse Proxy" "Remove access" \
 "Reset Password" "Reset Medusa WebUI password" \
 "Access Details" "View Medusa access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
@@ -27,6 +29,8 @@ if [[ $exitstatus = 0 ]]; then
         "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
+        "Enable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
+        "Disable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" ;;
         "Reset Password" )
             source "$SCRIPTPATH/inc/app-password-reset-controller.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;

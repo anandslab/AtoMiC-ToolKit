@@ -21,3 +21,4 @@ APPSYSTEMD='qbittorrent-nox.service'
 APPSYSTEMDLOC=$SCRIPTPATH'/qbittorrent-nox/'$APPSYSTEMD
 APPINITD='qbittorrent-nox'
 APPINITDLOC=$SCRIPTPATH'/qbittorrent-nox/qbittorrent-nox.init'
+NGINXCONFNAME='qbittorrent'

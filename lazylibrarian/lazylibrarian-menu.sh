@@ -5,8 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
-
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Lazy Librarian" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
@@ -16,6 +14,8 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Lazy Librarian" \
 "Backup" "Backup Lazy Librarian settings" \
 "Restore" "Restore Lazy Librarian settings from a previous backup" \
 "Manual Update" "Manually update Lazy Librarian" \
+"Enable Reverse Proxy" "Allow access" \
+"Disable Reverse Proxy" "Remove access" \
 "Reset Password" "Reset Lazy Librarian WebUI password" \
 "Access Details" "View Lazy Librarian access details" \
 "Access Switch" "Toggle Lazy Librarian UI network accessibility" \
@@ -30,6 +30,8 @@ if [[ $exitstatus = 0 ]]; then
         "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
+        "Enable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
+        "Disable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" ;;
         "Reset Password" )
             source "$SCRIPTPATH/inc/app-password-reset-controller.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;

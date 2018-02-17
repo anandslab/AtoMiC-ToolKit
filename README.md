@@ -53,6 +53,7 @@ Features features of AtoMiC ToolKit include:
 <li>NZBHydra - Install, Uninstall, Update and Backup / Restore</li>
 <li>Ombi - Install, Uninstall, Update and Backup / Restore</li>
 <li>Organizr - Install, Uninstall, Update</li>
+<li>PhpSysInfo - Install, Uninstall, Update</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
 <li>PlexPy - Install, Uninstall, Update and Backup / Restore</li>
 <li>Private Internet Access - Install, Uninstall, Update</li>
@@ -74,7 +75,6 @@ Features features of AtoMiC ToolKit include:
 <li>ubooquity- Install, Uninstall, Update and Backup / Restore</li>
 <li>Watcher - Install, Uninstall, Update and Backup / Restore</li>
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
-<li>Please submit an issue to request further applications</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
 <li>Makes moving apps between different computers easier</li>
@@ -115,6 +115,7 @@ The script supports several command line arguments:
 - `-m appname or --manualupdate appname` - Manually update a specific app
 - `-p appname or --passwordreset appname` - Reset the password to an app
 - `-a appname or --accessdetails appname` - View the access details for an app
+- `-x appname or --reverseproxy appname` - Enable Reverse Proxy for an app
 - `-t or --updatetoolkit` - Update AtoMiC-ToolKit
 - `-U or --updateall` - Update Linux packages
 

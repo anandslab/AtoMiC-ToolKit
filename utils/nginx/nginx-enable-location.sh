@@ -46,8 +46,7 @@ if [[ -d /etc/nginx/ ]]; then
         source "$SCRIPTPATH/$APPNAME/$APPNAME-reverse-proxy-enable.sh"
     fi
 
-    sudo nginx -s reload
-
+    source "$SCRIPTPATH/utils/nginx/nginx-reload.sh"
     source "$SCRIPTPATH/inc/app-start.sh"
 
     if [[ $1 != 'SKIP' ]]; then

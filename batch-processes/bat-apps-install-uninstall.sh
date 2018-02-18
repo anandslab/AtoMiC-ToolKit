@@ -60,7 +60,7 @@ source "$SCRIPTPATH/setup.sh" -u nzbget
 # source "$SCRIPTPATH/setup.sh" -x netdata
 # source "$SCRIPTPATH/setup.sh" -u netdata
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
-source "$SCRIPTPATH/setup.sh" -x nzbhydra
+# source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
 # source "$SCRIPTPATH/setup.sh" -i ombi
 # source "$SCRIPTPATH/setup.sh" -x ombi

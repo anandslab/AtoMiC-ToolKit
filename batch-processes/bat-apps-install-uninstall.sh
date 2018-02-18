@@ -35,7 +35,7 @@ source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi
 # source "$SCRIPTPATH/setup.sh" -u kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
-source "$SCRIPTPATH/setup.sh" -x lazylibrarian
+# source "$SCRIPTPATH/setup.sh" -x lazylibrarian
 source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -x madsonic
@@ -69,7 +69,7 @@ source "$SCRIPTPATH/setup.sh" -i plexpy
 source "$SCRIPTPATH/setup.sh" -x plexpy
 source "$SCRIPTPATH/setup.sh" -u plexpy
 source "$SCRIPTPATH/setup.sh" -i pyload
-source "$SCRIPTPATH/setup.sh" -x pyload
+# source "$SCRIPTPATH/setup.sh" -x pyload
 source "$SCRIPTPATH/setup.sh" -u pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -x qbittorrent-nox

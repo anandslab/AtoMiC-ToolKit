@@ -1,5 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC1090
+# shellcheck disable=SC2034
 # Script Name: AtoMiC Ubooquity Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -28,7 +29,9 @@ if [[ $exitstatus = 0 ]]; then
         "Backup" ) source "$SCRIPTPATH/inc/app-backup-controller.sh" ;;
         "Restore" ) source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
-        "Enable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
+        "Enable Reverse Proxy" ) 
+        APPDPORT='2203/ubooquity/admin'
+        source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
         "Disable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
         "Go Back" ) source "$SCRIPTPATH/menus/menu-usenet.sh" ;;

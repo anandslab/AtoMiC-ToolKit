@@ -92,4 +92,4 @@ if [[ ! -f /etc/nginx/nginx.conf ]]; then
 fi
 
 source "$SCRIPTPATH/inc/app-start.sh"
-sudo nginx -s reload
+source "$SCRIPTPATH/utils/nginx/nginx-reload.sh"

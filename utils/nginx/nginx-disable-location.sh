@@ -33,7 +33,7 @@ if [[ -L "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf" ]]; then
     sudo rm "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf"
     echo "Removed Symlink $NGINXCONFNAME.atomic.conf location file"
 
-    sudo nginx -s reload
+    source "$SCRIPTPATH/utils/nginx/nginx-reload.sh"
 else
     echo "Nginx $NGINXCONFNAME.atomic.conf location file not found"
 fi

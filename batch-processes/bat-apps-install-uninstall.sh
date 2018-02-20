@@ -8,6 +8,13 @@
 
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -u muximux
+source "$SCRIPTPATH/setup.sh" -i organizr
+source "$SCRIPTPATH/setup.sh" -u organizr
+source "$SCRIPTPATH/setup.sh" -i phpsysinfo
+source "$SCRIPTPATH/setup.sh" -u phpsysinfo
+source "$SCRIPTPATH/setup.sh" -i rutorrent
+source "$SCRIPTPATH/setup.sh" -u rutorrent
+
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 source "$SCRIPTPATH/setup.sh" -x couchpotato
 source "$SCRIPTPATH/setup.sh" -u couchpotato
@@ -35,7 +42,7 @@ source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi
 # source "$SCRIPTPATH/setup.sh" -u kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
-source "$SCRIPTPATH/setup.sh" -x lazylibrarian
+# source "$SCRIPTPATH/setup.sh" -x lazylibrarian
 source "$SCRIPTPATH/setup.sh" -u lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -x madsonic
@@ -53,15 +60,11 @@ source "$SCRIPTPATH/setup.sh" -u nzbget
 # source "$SCRIPTPATH/setup.sh" -x netdata
 # source "$SCRIPTPATH/setup.sh" -u netdata
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
-source "$SCRIPTPATH/setup.sh" -x nzbhydra
+# source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
-source "$SCRIPTPATH/setup.sh" -i ombi
-source "$SCRIPTPATH/setup.sh" -x ombi
-source "$SCRIPTPATH/setup.sh" -u ombi
-source "$SCRIPTPATH/setup.sh" -i organizr
-source "$SCRIPTPATH/setup.sh" -u organizr
-source "$SCRIPTPATH/setup.sh" -i phpsysinfo
-source "$SCRIPTPATH/setup.sh" -u phpsysinfo
+# source "$SCRIPTPATH/setup.sh" -i ombi
+# source "$SCRIPTPATH/setup.sh" -x ombi
+# source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
@@ -69,7 +72,7 @@ source "$SCRIPTPATH/setup.sh" -i plexpy
 source "$SCRIPTPATH/setup.sh" -x plexpy
 source "$SCRIPTPATH/setup.sh" -u plexpy
 source "$SCRIPTPATH/setup.sh" -i pyload
-source "$SCRIPTPATH/setup.sh" -x pyload
+# source "$SCRIPTPATH/setup.sh" -x pyload
 source "$SCRIPTPATH/setup.sh" -u pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -x qbittorrent-nox
@@ -86,8 +89,6 @@ source "$SCRIPTPATH/setup.sh" -x resilio-sync
 source "$SCRIPTPATH/setup.sh" -u resilio-sync
 source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -u rtorrent
-source "$SCRIPTPATH/setup.sh" -i rutorrent
-source "$SCRIPTPATH/setup.sh" -u rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -x sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sabnzbdplus

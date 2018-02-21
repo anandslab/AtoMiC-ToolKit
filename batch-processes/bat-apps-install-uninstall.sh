@@ -85,7 +85,7 @@ source "$SCRIPTPATH/setup.sh" -u rclone
 source "$SCRIPTPATH/setup.sh" -i rclone-browser
 source "$SCRIPTPATH/setup.sh" -u rclone-browser
 source "$SCRIPTPATH/setup.sh" -i resilio-sync
-source "$SCRIPTPATH/setup.sh" -x resilio-sync
+# source "$SCRIPTPATH/setup.sh" -x resilio-sync
 source "$SCRIPTPATH/setup.sh" -u resilio-sync
 source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -u rtorrent
@@ -93,7 +93,7 @@ source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -x sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -i sickgear
-source "$SCRIPTPATH/setup.sh" -x sickgear
+# source "$SCRIPTPATH/setup.sh" -x sickgear
 source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -i sickrage
 source "$SCRIPTPATH/setup.sh" -x sickrage
@@ -111,6 +111,7 @@ source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -x transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity
+APPDPORT='2203/ubooquity/admin'
 source "$SCRIPTPATH/setup.sh" -x ubooquity
 source "$SCRIPTPATH/setup.sh" -u ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher

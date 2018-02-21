@@ -13,4 +13,5 @@ NEWPASS='atomic'
 # New password unencrypted
 APPNEWPASS='atomic'
 APPSYSTEMD='subsonic.service'
+APPINITD='subsonic'
 APPSYSTEMDLOC=$SCRIPTPATH'/subsonic/'$APPSYSTEMD

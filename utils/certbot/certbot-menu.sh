@@ -27,7 +27,7 @@ if [[ $exitstatus = 0 ]]; then
             APPNAME='certbot'
             source "$SCRIPTPATH/inc/app-restore-controller.sh" ;;
         "Go Back" )
-            source "$SCRIPTPATH/utils/utils/utils-menu.sh" ;;
+            source "$SCRIPTPATH/utils/utils-menu.sh" ;;
         *)
             source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac

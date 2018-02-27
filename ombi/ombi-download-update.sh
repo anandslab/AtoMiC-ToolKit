@@ -1,17 +1,10 @@
 #!/bin/bash
 echo
-echo -e "$YELLOW--->Updating to Latest version...$ENDCOLOR"
+echo -e "$YELLOW--->Getting Latest version...$ENDCOLOR"
 ####################################
 ##   update_ombi systemd script   ##
 ## GitHub: Unimatrix0/update_ombi ##
-####################################
-
-####################################
-##  Override default settings by  ##
-##  creating update_ombi.conf in  ##
-##  the same directory that the   ##
-##  script is running in and set  ##
-##  the required variables there  ##
+##  Modified for AtoMiC-ToolKit   ##
 ####################################
 
 ##   The systemd unit for Ombi    ##
@@ -103,53 +96,9 @@ unzip-strip() (
     fi && rm -rf "$temp"/* "$temp"
 )
 
-# Import any custom config to override the defaults, if necessary
-configfile="$(dirname $0)/update_ombi.conf"
-if [ -e $configfile ]; then
-    source $configfile > /dev/null 2>&1
-    .log 6 "Script config file found...parsing..."
-    if [ $? -ne 0 ] ; then
-        .log 3 "Unable to use config file...using defaults..."
-    else
-        .log 6 "Parsed config file"
-    fi
-else
-    .log 6 "No config file found...using defaults..."
-fi
-
 .log 6 "$name v$version"
 .log 6 "Verbosity level: [${LOG_LEVELS[$verbosity]}]"
 scriptuser=$(whoami)
-.log 7 "Update script running as: $scriptuser"
-if [ -e $ombiservicefile ]; then
-    .log 6 "Ombi service file for systemd found...parsing..."
-    parseresults="Parsing complete: "
-    ombiservice=$(<$ombiservicefile)
-    installdir=$(grep -Po '(?<=WorkingDirectory=)(\S|(?<=\\)\s)+' <<< "$ombiservice")
-    if [ -n "${installdir}" ]; then
-        parseresults+="InstallDir: $installdir, "
-    fi
-    user=$(grep -Po '(?<=User=)(\w+)' <<< "$ombiservice")
-    if [ -n "${user}" ]; then
-        parseresults+="User: $user, "
-    fi
-    group=$(grep -Po '(?<=Group=)(\w+)' <<< "$ombiservice")
-    if [ -n "${group}" ]; then
-         parseresults+="Group: $group, "
-    fi
-    url=$(grep -Po '(?<=\-\-host )(http://.+)$' <<< "$ombiservice")
-    ip=$(grep -Po '(?<=http://)((\d{1,3}\.){3}\d{1,3})(?=:)' <<< "$url")
-    if [ -n "${ip}" ]; then
-        parseresults+="IP: $ip, "
-    fi
-    port=$(grep -Po '(?<=:)(\d+)$' <<< "$url")
-    if [ -n "${port}" ]; then
-        parseresults+="Port: $port "
-    fi
-    parseresults="${parseresults//  / }"
-    parseresults="${parseresults/%, /}"
-    .log 6 "$parseresults"
-fi
 
 if [ -z "${installdir}" ]; then
     .log 5 "InstallDir not parsed...setting to default: $defaultinstalldir"
@@ -220,99 +169,10 @@ if [ $(wc -c < $file) != $size ]; then
     .log 3 "Downloaded file size does not match expected file size...bailing!"
     exit 2
 fi
-.log 6 "File size validated...checking Ombi service status..."
-
-declare -i running=0
-if [ "`systemctl is-active $ombiservicename`" == "active" ]; then
-    running=1
-    .log 6 "Ombi is active...attempting to stop..."
-    declare -i i=1
-    declare -i j=5
-    while [ $i -le $j ]
-    do
-        if [ $scriptuser = "root" ]; then
-            systemctl stop $ombiservicename.service > /dev/null 2>&1
-        else
-            sudo systemctl stop $ombiservicename.service > /dev/null 2>&1
-        fi
-        if [ $? -ne 0 ] || [ "`systemctl is-active $ombiservicename`" == "active" ] ; then
-            if [ $i -lt $j ]; then
-                .log 3 "Failed to stop Ombi...[attempt $i of $j]"
-                sleep 1
-            else
-                .log 2 "Failed to stop Ombi...[attempt $i of $j]...Bailing!"
-                exit 2
-            fi
-            i+=1
-            continue
-        elif [ "`systemctl is-active $ombiservicename`" == "inactive" ]; then
-            .log 6 "Ombi stopped...installing update..."
-            break
-        else
-            .log 1 "Unknown error...bailing!"
-            exit 99
-        fi
-    done
-else
-    .log 6 "Ombi is not active...installing update..."
-fi
 
 unzip-strip $file $installdir
 .log 6 "Update installed...setting ownership..."
 chown -R $user:$group $installdir
-
-if [ $running -eq 1 ]; then
-    .log 6 "Ownership set...starting Ombi..."
-    declare -i i=1
-    declare -i j=5
-    while [ $i -le $j ]
-    do
-        if [ $scriptuser = "root" ]; then
-            systemctl start $ombiservicename.service > /dev/null 2>&1
-        else
-            sudo systemctl start $ombiservicename.service > /dev/null 2>&1
-        fi
-        if [ $? -ne 0 ] || [ "`systemctl is-active $ombiservicename`" != "active" ] ; then
-            if [ $i -lt $j ]; then
-                .log 3 "Failed to start Ombi...[attempt $i of $j]"
-                sleep 1
-            else
-                .log 2 "Failed to start Ombi...[attempt $i of $j]...Bailing!"
-               exit 3
-            fi
-            i+=1
-            continue
-        elif [ "`systemctl is-active $ombiservicename`" == "active" ]; then
-            .log 6 "Ombi started...waiting for confirmation..."
-            declare -i k=1
-            declare -i l=5
-            while [ $k -le $l ]
-            do
-                sleep 5
-                curl -sIL $ip:$port > /dev/null 2>&1
-                if [ $? -ne 0 ]; then
-                    if [ $k -lt $l ]; then
-                        .log 4 "Ombi startup not confirmed...waiting 5 seconds...[attempt $k of $l]"
-                    else
-                        .log 2 "Ombi startup not confirmed...[attempt $k of $l]...bailing!"
-                        exit 4
-                    fi
-                    k+=1
-                    continue
-                else
-                    .log 6 "Ombi startup confirmed...cleaning up..."
-                    break
-                fi
-            done
-            break
-        else
-            .log 1 "Unknown error...bailing!"
-            exit 99
-        fi
-    done
-else
-    .log 6 "Ownership set...not starting Ombi"
-fi
 
 .log 6 "Cleaning up..."
 rm -rf "$tempdir"/* "$tempdir"

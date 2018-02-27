@@ -3,8 +3,8 @@ Description=Ombi - PMS Requests System
 After=network-online.target
 
 [Service]
-User=root
-Group=root
+User=ReplaceMe
+Group=ReplaceMe
 WorkingDirectory=/opt/ombi/
 ExecStart=/opt/ombi/Ombi
 Type=simple

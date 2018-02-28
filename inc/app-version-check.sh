@@ -21,8 +21,8 @@ checkappversion () {
             echo "Update not required"
             exit 1
         else
-            sudo sed -i "s@${1}version=${!combined}@${1}version=$2@g" $SCRIPTPATH/tmp/ServiceVersions.cfg \
-            || { echo -e $RED'Modifying ServiceVersions file failed.'$ENDCOLOR; exit 1; }
+            sudo sed -i "s@${1}version=${!combined}@${1}version=$2@g" $SCRIPTPATH/tmp/ServiceVersions.cfg || \
+            { echo -e $RED'Modifying ServiceVersions file failed.'$ENDCOLOR; exit 1; }
         fi
     fi
 }
@@ -35,7 +35,7 @@ removeappversion () {
 }
 
 vercomp () {
-    if [[ $1 == $2 ]]; then
+    if [[ $1 == "$2" ]]; then
         return 0
     fi
     local IFS=.

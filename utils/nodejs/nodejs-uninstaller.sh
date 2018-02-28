@@ -5,7 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-setup-check.sh"

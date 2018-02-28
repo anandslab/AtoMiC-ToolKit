@@ -12,7 +12,7 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/utils/pia/pia-client-kill.sh"
 
 TEMPDIR="$(mktemp -d)"
-cd "$TEMPDIR"
+cd "$TEMPDIR" || exit
 chown "$UNAME":"$UGROUP" "$TEMPDIR" || { echo -e "${RED}Chown on $TEMPDIR failed.$ENDCOLOR"; exit 1; }
 chmod -R 775 "$TEMPDIR" || { echo -e "${RED}Chmod on $TEMPDIR failed.$ENDCOLOR"; exit 1; }
 chmod -R g+s "$TEMPDIR" || { echo -e "${RED}Chmod on $TEMPDIR failed.$ENDCOLOR"; exit 1; }

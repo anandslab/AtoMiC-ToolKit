@@ -18,4 +18,4 @@ else
 fi
 sudo dpkg -i '/var/cache/apt/archives'/$FILE
 
-cd $SCRIPTPATH
+cd $SCRIPTPATH || exit

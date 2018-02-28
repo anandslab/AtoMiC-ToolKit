@@ -2,8 +2,8 @@
 echo
 sleep 1
 echo -e "${YELLOW}--->Manually updating $APPTITLE...$ENDCOLOR"
-cd $APPPATH
+cd $APPPATH || exit
 git config core.filemode false
 git fetch --all
 git pull
-cd $SCRIPTPATH
+cd $SCRIPTPATH || exit

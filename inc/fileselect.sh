@@ -1,7 +1,7 @@
 #!/bin/bash
-cd "$SCRIPTPATH/backups"
+cd "$SCRIPTPATH/backups" || exit
 FILES=(*)
-cd $SCRIPTPATH
+cd $SCRIPTPATH || exit
 FILELIST=()
 for ((i=0; i<${#FILES[@]}; i++)); do
     if [[ ${FILES[$i]} == *"$APPNAME"* ]]; then

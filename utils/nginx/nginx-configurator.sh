@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 echo
 echo -e "${YELLOW}--->configuring NGINX $ENDCOLOR"
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPTITLE='PIA'
 APPNAME='pia'
 APPPATH="/home/$UNAME/.pia_manager"

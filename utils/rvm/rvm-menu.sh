@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Ruby Version Manager (RVM)" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \

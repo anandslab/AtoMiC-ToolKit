@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Ombi Updater
 # Author: mgiljum
 # Publisher: http://www.htpcBeginner.com

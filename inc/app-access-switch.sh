@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"

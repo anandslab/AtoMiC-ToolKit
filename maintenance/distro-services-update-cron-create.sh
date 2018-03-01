@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 #Create the update Cron Job
 echo -e "${GREEN}AtoMiC Cron Job Installer Script$ENDCOLOR"
 echo

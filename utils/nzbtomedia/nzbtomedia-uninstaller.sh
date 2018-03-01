@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC nzbToMedia Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

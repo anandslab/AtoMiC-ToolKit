@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 
 checkappversion () {
     if [[ ! -f $SCRIPTPATH/tmp/ServiceVersions.cfg ]]; then

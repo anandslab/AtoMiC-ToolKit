@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Kodi Remove Launch on boot
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

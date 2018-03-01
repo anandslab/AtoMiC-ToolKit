@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC ToolKit
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com

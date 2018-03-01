@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Rclone Update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

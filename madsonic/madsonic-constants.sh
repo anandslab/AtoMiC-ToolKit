@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='madsonic'
 APPSHORTNAME='sub'
 APPPATH='/var/madsonic'

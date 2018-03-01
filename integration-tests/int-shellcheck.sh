@@ -1,6 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC2059
-# shellcheck disable=SC2055
 # Script Name: AtoMiC Integration Test shellcheck check
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

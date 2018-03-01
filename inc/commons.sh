@@ -14,7 +14,7 @@ NETLINES=16
 source "$SCRIPTPATH/inc/app-version-check.sh"
 
 pause(){
-    read -p "$*"
+    read -r -p"$*"
 }
 
 IsSystemdSupported()

@@ -25,7 +25,7 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
 
     echo -e $GREEN'Delete all backups?'$ENDCOLOR
     echo -e 'Triple check. You will not be able to restore if you delete backups.'
-    read -p 'Type y/Y and press [ENTER] to delete or any other key to exit: '
+    read -r -p'Type y/Y and press [ENTER] to delete or any other key to exit: '
     RESP=${REPLY,,}
 
     echo

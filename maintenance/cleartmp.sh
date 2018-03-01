@@ -22,7 +22,7 @@ if find "$target" -mindepth 1 -print -quit | grep -q .; then
 
     echo -e $GREEN'Delete all temporary data?'$ENDCOLOR
     echo -e 'Temporary data can be safely deleted and recreated.'
-    read -p 'Type y/Y and press [ENTER] to delete or any other key to exit: '
+    read -r -p'Type y/Y and press [ENTER] to delete or any other key to exit: '
     RESP=${REPLY,,}
 
     echo

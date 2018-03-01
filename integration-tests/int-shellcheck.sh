@@ -15,3 +15,5 @@ if [[ $numprocesses -gt 0 ]] ; then
     grep -rn "$SCRIPTPATH" -e '^# shellcheck disable'
     exit 1
 fi
+
+https://github.com/koalaman/shellcheck/wiki/severity

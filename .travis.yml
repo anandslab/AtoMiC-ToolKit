@@ -12,7 +12,7 @@ script:
     - sudo bash ./integration-tests/int-newline-errors.sh
     - sudo bash ./integration-tests/int-bashate.sh
     - sudo bash ./integration-tests/int-shellcheck.sh
-    # - sudo bash ./integration-tests/int-apps-install-uninstall.sh
+    - sudo bash ./integration-tests/int-apps-install-uninstall.sh
 
 matrix:
   fast_finish: true

@@ -40,8 +40,8 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous .bash_aliases...'$ENDCOLOR
 if [ -f "/home/$UNAME/.bash_aliases" ]; then
-    mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_"`date '+%m-%d-%Y_%H-%M'`" >/dev/null 2>&1
-    echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'"`date '+%m-%d-%Y_%H-%M'`"$ENDCOLOR
+    mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_"$(date '+%m-%d-%Y_%H-%M')" >/dev/null 2>&1
+    echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'"$(date '+%m-%d-%Y_%H-%M')"$ENDCOLOR
 else
     echo -e 'No previous .bash_aliases file found.'
 fi

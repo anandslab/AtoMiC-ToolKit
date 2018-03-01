@@ -8,7 +8,7 @@ echo -e '4. By proceeding you agree to assume all risks and authorize the ToolKi
 
 echo
 
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
+read -r -p'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
 RESP=${REPLY,,}
 
 if [ "$RESP" != "y" ]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e "$GREEN--->Type the username of the user you want to use for managing apps and press [ENTER]...$ENDCOLOR"
-read -p 'Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case). Do not use "root". Current username is "'$SUDO_USER'": '
+read -r -p'Typically, this is your system login name (IMPORTANT! Ensure correct spelling and case). Do not use "root". Current username is "'$SUDO_USER'": '
 UNAME=${REPLY,,}
 if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
     echo

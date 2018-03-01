@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPTITLE='Ruby Version Manager (RVM)'
 APPNAME='rvm'
 REPRECVKEYSGPG='YES'

@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-# shellcheck disable=SC2034
+
+
 # Script Name: AtoMiC Sonarr Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

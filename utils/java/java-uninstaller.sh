@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Java Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

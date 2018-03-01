@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 echo
 sleep 1
 echo -e "$YELLOW--->Downloading latest $APPTITLE...$ENDCOLOR"

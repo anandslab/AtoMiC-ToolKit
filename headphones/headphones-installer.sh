@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Headphones Installer
 # Author: PREngineer
 # Publisher: http://www.htpcbeginner.com

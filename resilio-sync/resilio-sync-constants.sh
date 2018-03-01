@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='resilio-sync'
 APPSHORTNAME='rs'
 APPPATH="/var/lib/resilio-sync"

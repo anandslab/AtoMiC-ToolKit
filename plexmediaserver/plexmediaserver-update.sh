@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Plex Media Server Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -18,11 +18,11 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/plexmediaserver/plexmediaserver-constants.sh"
 
     #Temp fixes previous incorrect permissions
-    sudo chown root:root "/etc/systemd/system/$APPNAME.service.d" \
-    || { echo -e "${RED}Chown on $APPSYSTEMDOVERIDELOC failed.$ENDCOLOR"; exit 1; }
+    sudo chown root:root "/etc/systemd/system/$APPNAME.service.d" || \
+    { echo -e "${RED}Chown on $APPSYSTEMDOVERIDELOC failed.$ENDCOLOR"; exit 1; }
 
-    sudo chmod -R 644 "/etc/systemd/system/$APPNAME.service.d" \
-    || { echo -e "${RED}Chmod on $APPSYSTEMDOVERIDELOC failed.$ENDCOLOR"; exit 1; }
+    sudo chmod -R 644 "/etc/systemd/system/$APPNAME.service.d" || \
+    { echo -e "${RED}Chmod on $APPSYSTEMDOVERIDELOC failed.$ENDCOLOR"; exit 1; }
 
     source "$SCRIPTPATH/inc/app-update.sh"
     source "$SCRIPTPATH/inc/app-start.sh"

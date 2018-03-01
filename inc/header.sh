@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC1117
 if [[ -z $CI ]]; then
     clear
     echo -e "$RED"

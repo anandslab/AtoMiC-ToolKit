@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='transmission-daemon'
 APPSHORTNAME='trans'
 APPPATH="/home/$UNAME/.config/transmission-daemon"

@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPTITLE='Mono'
 APPNAME='mono-complete'
 APPDEPS='libmono-cil-dev'

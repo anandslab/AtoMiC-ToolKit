@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 # Script Name: AtoMiC Sonarr Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

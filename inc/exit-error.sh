@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 echo
 cd $SCRIPTPATH || exit
 source "$SCRIPTPATH/inc/pause.sh"

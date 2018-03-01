@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 #Force a full update, distro upgrade and autoclean
 
 echo -e "${GREEN}AtoMiC Update Distro and Packages Script$ENDCOLOR"

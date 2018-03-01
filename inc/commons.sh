@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-# shellcheck disable=SC2034
+
+
 YELLOW='\e[33m'
 RED='\e[31m'
 ENDCOLOR='\033[0m'

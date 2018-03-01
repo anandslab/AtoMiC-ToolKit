@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='plexmediaserver'
 APPSHORTNAME='plex'
 APPPATH='/var/lib/plexmediaserver'

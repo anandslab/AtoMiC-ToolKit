@@ -1,5 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2059
+# shellcheck disable=SC2055
 # Script Name: AtoMiC Integration Test shellcheck check
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -9,8 +10,10 @@ find . -name '*.sh' -print0 | xargs -0 shellcheck -e SC1001 -e SC1090 -e SC1117 
 
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-numprocesses=$(grep -rn "$SCRIPTPATH" -e 'shellcheck\s+disable' | wc -l)
+numprocesses=$(grep -r '^# shellcheck disable' "$SCRIPTPATH" | grep -c 'shellcheck disable')
+
 if [[ $numprocesses -gt 0 ]] ; then
-    grep -rn "$SCRIPTPATH" -e 'shellcheck\s+disable'
+    echo "shellcheck disable warnings found"
+    grep -rn "$SCRIPTPATH" -e '^# shellcheck disable'
     exit 1
 fi

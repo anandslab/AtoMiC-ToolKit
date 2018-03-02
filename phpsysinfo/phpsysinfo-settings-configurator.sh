@@ -17,7 +17,7 @@ sudo cp "$APPPATH/phpsysinfo.ini.new" "$APPPATH/phpsysinfo.ini" || { echo -e "${
 echo "created new $APPPATH/phpsysinfo.ini"
 
 sudo sed -i "s@PLUGINS=false@PLUGINS=\"PS,PSStatus,SMART\"@g" "$APPPATH/phpsysinfo.ini" || \
-{ echo -e $RED'Modifying "$APPPATH/phpsysinfo.ini" PLUGINS failed.'$ENDCOLOR; exit 1; }
+{ echo -e $RED'Modifying '"$APPPATH/phpsysinfo.ini"' PLUGINS failed.'$ENDCOLOR; exit 1; }
 
 sudo chmod 755 -R "$APPPATH"
 sudo chown -R www-data:www-data "$APPPATH"

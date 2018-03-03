@@ -9,7 +9,7 @@ if [ ! -d "/home/$UNAME" ] || [ -z "$UNAME" ]; then
     exit 0
 else
     export UNAME=$UNAME
-    export UGROUP=($(id -gn $UNAME))
+    export UGROUP=("$(id -gn $UNAME)")
     rm "$SCRIPTPATH/tmp/userinfo" >/dev/null 2>&1
     echo "UNAME=$UNAME" >> "$SCRIPTPATH/tmp/userinfo"
     echo "UGROUP=$UGROUP" >> "$SCRIPTPATH/tmp/userinfo"

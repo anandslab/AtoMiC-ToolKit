@@ -4,10 +4,17 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
+echo
 echo -e "$YELLOW--->Configuring NZBGet Settings...$ENDCOLOR"
 
 #Set Main folder destination
-sudo sed -i 's@MainDir=${AppDir}/downloads@MainDir=~/Downloads/nzbget@g' $APPSETTINGS || { echo -e "${RED}Modifying MainDir location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
+if sudo sed -i 's@^MainDir=.*@MainDir=~/Downloads/nzbget@' "$APPSETTINGS" || \
+        { echo -e "${RED}Modifying MainDir location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }; then
+    echo "Modifed MainDir location in $APPSETTINGS file"
+fi
 
 #Set LogFile destination
-sudo sed -i 's@LogFile=${MainDir}/nzbget.log@LogFile=/var/log/nzbget/nzbget.log@g' $APPSETTINGS || { echo -e "${RED}Modifying LogFile location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
+if sudo sed -i 's@^LogFile=.*@LogFile=/var/log/nzbget/nzbget.log@' "$APPSETTINGS" || \
+        { echo -e "${RED}Modifying LogFile location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }; then
+    echo "Modifed LogFile location in $APPSETTINGS file"
+fi

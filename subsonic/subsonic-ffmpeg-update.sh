@@ -10,5 +10,7 @@
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
 echo
 echo -e "${YELLOW}--->Copying ffmpeg file to /var/subsonic/transcode/...$ENDCOLOR"
-yes | cp -rf /usr/bin/ffmpeg /var/subsonic/transcode/
+if \cp -rf /usr/bin/ffmpeg /var/subsonic/transcode/; then
+    echo 'ffmpeg files copied to /var/subsonic/transcode/'
+fi
 source "$SCRIPTPATH/subsonic/subsonic-constants.sh"

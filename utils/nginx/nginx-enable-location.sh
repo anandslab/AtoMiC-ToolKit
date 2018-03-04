@@ -7,7 +7,7 @@
 
 echo
 if [[ $1 != 'SKIP' ]]; then
-    source "$SCRIPTPATH/inc/app-setup-check.sh"
+    
     source "$SCRIPTPATH/inc/commons.sh"
     source "$SCRIPTPATH/inc/header.sh"
 fi

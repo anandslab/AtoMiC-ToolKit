@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - Manage nzbTomedia" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

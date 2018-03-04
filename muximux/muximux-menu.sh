@@ -7,7 +7,7 @@
 
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Muximux" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

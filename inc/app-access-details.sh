@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 

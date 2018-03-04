@@ -7,7 +7,6 @@
 
 echo
 if [[ -z $1 ]]; then
-    
     source "$SCRIPTPATH/inc/commons.sh"
     source "$SCRIPTPATH/inc/header.sh"
 fi

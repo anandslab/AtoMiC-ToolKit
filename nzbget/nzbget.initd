@@ -36,7 +36,7 @@ NZBGET_IOSCHED="best-effort:4"
 
 # Usually MainDir/nzbget.lock 
 # Check LockFile setting in your nzbget.conf
-PID_FILE=/home/user/downloads/nzbget.lock
+PID_FILE=/var/lock/nzbget.lock
 
 #######################################################################
 ##

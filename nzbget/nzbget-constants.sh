@@ -5,7 +5,7 @@ APPSHORTNAME='ng'
 APPPATH='/opt/nzbget'
 APPTITLE='NZBGet'
 APPDPORT='6789'
-APPSETTINGS=$APPPATH'/nzbget.conf'
+APPSETTINGS="$APPPATH/nzbget.conf"
 ACCESSHOST='ControlIP='
 PORTSEARCH='ControlPort='
 USERSEARCH='ControlUsername='
@@ -17,9 +17,9 @@ APPNEWPASS='atomic'
 APPDEFAULTUNAME='nzbget'
 APPDEFAULTPASS='tegbzn6789'
 APPSYSTEMD='nzbget.service'
-APPSYSTEMDLOC=$SCRIPTPATH'/nzbget/'$APPSYSTEMD
+APPSYSTEMDLOC="$SCRIPTPATH/nzbget/$APPSYSTEMD"
 APPINITD='nzbget'
-APPINITDLOC=$SCRIPTPATH'/nzbget/nzbget.initd'
+APPINITDLOC="$SCRIPTPATH/nzbget/nzbget.initd"
 NZBGET_CONF=$APPSETTINGS
-NZBGET_BIN=$APPPATH'/nzbget'
-PID_FILE=$APPPATH'/downloads/nzbget.lock'
+NZBGET_BIN="$APPPATH/nzbget"
+PID_FILE='/var/lock/nzbget.lock'

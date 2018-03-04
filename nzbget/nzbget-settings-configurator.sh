@@ -18,3 +18,9 @@ if sudo sed -i 's@^LogFile=.*@LogFile=/var/log/nzbget/nzbget.log@' "$APPSETTINGS
         { echo -e "${RED}Modifying LogFile location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }; then
     echo "Modifed LogFile location in $APPSETTINGS file"
 fi
+
+#Set LockFile destination
+if sudo sed -i "s@^LockFile=.*@LockFile=$PID_FILE@" "$APPSETTINGS" || \
+        { echo -e "${RED}Modifying LockFile location in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }; then
+    echo "Modifed LockFile location in $APPSETTINGS file"
+fi

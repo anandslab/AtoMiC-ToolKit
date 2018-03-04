@@ -35,7 +35,7 @@ removeappversion () {
 }
 
 vercomp () {
-    if [[ $1 == $2 ]]; then
+    if [[ $1 == "$2" ]]; then
         return 0
     fi
     local IFS=.

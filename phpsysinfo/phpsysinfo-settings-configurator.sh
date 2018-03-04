@@ -26,7 +26,7 @@ sudo sed -i "s@PLUGINS=false@PLUGINS=\"PS,PSStatus,SMART\"@g" "$APPPATH/phpsysin
 =======
 if sudo sed -i "s@PLUGINS=false@PLUGINS=\"PS,PSStatus,SMART\"@g" "$APPPATH/phpsysinfo.ini" || \
         { echo -e "${RED}Modifying $APPPATH/phpsysinfo.ini PLUGINS failed.$ENDCOLOR"; exit 1; }; then
-     echo "Updated $APPPATH/phpsysinfo.ini to enable PLUGINS"
+    echo "Updated $APPPATH/phpsysinfo.ini to enable PLUGINS"
 fi
 >>>>>>> master
 

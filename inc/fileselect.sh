@@ -15,5 +15,4 @@ if [ ${#FILELIST[@]} -eq 0 ]; then
     source "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"
 else
     FILECHOICE=$(whiptail --title "AtoMiC ToolKit - Restore Backup" --menu "Select the backup file you want to restore:" --backtitle "$BACKTITLE" --fb --ok-button "Select" $LINES $COLUMNS $NETLINES "${FILELIST[@]}" 3>&1 1>&2 2>&3)
-    exitstatus=$?
 fi

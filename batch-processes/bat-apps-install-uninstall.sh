@@ -77,9 +77,9 @@ source "$SCRIPTPATH/setup.sh" -u pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -x qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
-# source "$SCRIPTPATH/setup.sh" -i radarr
-# source "$SCRIPTPATH/setup.sh" -x radarr
-# source "$SCRIPTPATH/setup.sh" -u radarr
+source "$SCRIPTPATH/setup.sh" -i radarr
+source "$SCRIPTPATH/setup.sh" -x radarr
+source "$SCRIPTPATH/setup.sh" -u radarr
 source "$SCRIPTPATH/setup.sh" -i rclone
 source "$SCRIPTPATH/setup.sh" -u rclone
 source "$SCRIPTPATH/setup.sh" -i rclone-browser

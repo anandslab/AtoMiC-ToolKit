@@ -9,7 +9,7 @@ for ((i=0; i<${#FILES[@]}; i++)); do
     fi
 done
 
-if [[ -z "$FILELIST" ]]; then
+if [ ${#FILELIST[@]} -eq 0 ]; then
     echo -e "${RED}No '$APPNAME' backups were found in '$CYAN$SCRIPTPATH'/backups folder. Cannot perform restore. Returning to menu.$ENDCOLOR"
     source "$SCRIPTPATH/inc/pause.sh"
     source "$SCRIPTPATH/$APPNAME/$APPNAME-menu.sh"

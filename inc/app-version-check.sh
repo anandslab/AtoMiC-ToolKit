@@ -39,7 +39,9 @@ vercomp () {
         return 0
     fi
     local IFS=.
-    local i ver1=("${1}") ver2=("${2}")
+    local i
+    read -r -a ver1 <<< "${1}"
+    read -r -a ver2 <<< "${2}"
     # fill empty fields in ver1 with zeros
     for ((i=${#ver1[@]}; i<${#ver2[@]}; i++)); do
         ver1[i]=0

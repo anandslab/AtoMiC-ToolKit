@@ -8,7 +8,7 @@
 # DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 # Set caller id and script path
-CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
+CALLER=$(ps -o args= $PPID | awk '{print $NF}')
 export CALLER
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink

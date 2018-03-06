@@ -5,7 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/nzbtomedia/nzbtomedia-constants.sh"

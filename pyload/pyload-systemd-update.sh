@@ -5,7 +5,6 @@
 # License: MIT License (refer to README.md for more details)
 #
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 sudo sed -i "s@User=ReplaceMe@User=$UNAME@g" \
 "/etc/systemd/system/$APPSYSTEMD" || \

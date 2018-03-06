@@ -4,7 +4,6 @@
 # Publisher: http://www.htpcbeginner.com
 #
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"

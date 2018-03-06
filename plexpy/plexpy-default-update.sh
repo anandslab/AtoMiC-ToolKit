@@ -4,7 +4,6 @@
 # Publisher: http://www.htpcbeginner.com
 #
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 #$HP_USER, username to run PlexPy under, the default is PlexPy
 sudo sed -i "s@HP_USER=@HP_USER=$UNAME@g" /etc/default/$APPNAME || { echo -e $RED'Replacing HP_USER failed.'$ENDCOLOR ; exit 1; }

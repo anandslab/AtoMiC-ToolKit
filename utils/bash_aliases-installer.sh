@@ -5,7 +5,7 @@
 # License: MIT License (refer to README.md for more details)
 
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 
@@ -39,8 +39,8 @@ sleep 1
 
 echo -e $YELLOW'--->Checking for previous .bash_aliases...'$ENDCOLOR
 if [ -f "/home/$UNAME/.bash_aliases" ]; then
-    mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_`date '+%m-%d-%Y_%H-%M'` >/dev/null 2>&1
-    echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'`date '+%m-%d-%Y_%H-%M'`$ENDCOLOR
+    mv /home/$UNAME/.bash_aliases /home/$UNAME/.bash_aliases_"$(date '+%m-%d-%Y_%H-%M')" >/dev/null 2>&1
+    echo -e 'Existing .bash_aliases file was moved to '$CYAN'/home/'$UNAME'/.bash_aliases_'"$(date '+%m-%d-%Y_%H-%M')"$ENDCOLOR
 else
     echo -e 'No previous .bash_aliases file found.'
 fi
@@ -55,7 +55,7 @@ echo
 sleep 1
 
 echo -e $YELLOW'--->Copying .bash_aliases...'$ENDCOLOR
-cd /home/$UNAME
+cd /home/$UNAME || exit
 cp $SCRIPTPATH/utils/.bash_aliases . || { echo -e $RED'.bash_aliases not copied.'$ENDCOLOR ; exit 1; }
 sudo chown $UNAME:$UGROUP .bash_aliases >/dev/null 2>&1
 chmod 755 .bash_aliases >/dev/null 2>&1

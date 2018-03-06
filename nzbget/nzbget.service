@@ -7,9 +7,9 @@ After=network.target
 User=ReplaceMe
 Group=ReplaceMe
 Type=forking
-ExecStart=</path/to/nzbget/nzbget> -D
-ExecStop=</path/to/nzbget/nzbget> -Q
-ExecReload=</path/to/nzbget/nzbget> -O
+ExecStart=</path/to/nzbget> -D
+ExecStop=</path/to/nzbget> -Q
+ExecReload=</path/to/nzbget> -O
 KillMode=process
 Restart=on-failure
 

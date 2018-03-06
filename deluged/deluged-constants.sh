@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='deluged'
 APPSHORTNAME='deluge'
 APPPATH="/home/$UNAME/.config/deluge"

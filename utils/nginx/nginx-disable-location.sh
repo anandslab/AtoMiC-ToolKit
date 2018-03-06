@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC Nginx Location Enabler
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -7,7 +7,6 @@
 
 echo
 if [[ -z $1 ]]; then
-    source "$SCRIPTPATH/inc/app-setup-check.sh"
     source "$SCRIPTPATH/inc/commons.sh"
     source "$SCRIPTPATH/inc/header.sh"
 fi

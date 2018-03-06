@@ -13,11 +13,11 @@ sudo sed -i "s@^${ACCESSHOST}.*@${ACCESSHOST}0.0.0.0@g" \
 in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
 
 sudo sed -i "s@download_dir = Downloads/incomplete@download_dir = \
-/home/$UNAME/Downloads/sabnzbdplus/incomplete@g" "$APPSETTINGS" \
-|| { echo -e "${RED}Modifying incomplete location in \
+/home/$UNAME/Downloads/sabnzbdplus/incomplete@g" "$APPSETTINGS" || \
+{ echo -e "${RED}Modifying incomplete location in \
 $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
 
 sudo sed -i "s@complete_dir = Downloads/complete@complete_dir = \
-/home/$UNAME/Downloads/sabnzbdplus/complete@g" "$APPSETTINGS" \
-|| { echo -e "${RED}Modifying incomplete location in \
+/home/$UNAME/Downloads/sabnzbdplus/complete@g" "$APPSETTINGS" || \
+{ echo -e "${RED}Modifying incomplete location in \
 $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }

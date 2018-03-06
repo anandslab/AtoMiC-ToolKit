@@ -6,5 +6,5 @@
 
 echo 'Updating init.d file'
 
-sudo sed -i "s@USER=ReplaceMe@USER=$UNAME@g" "/etc/init.d/$APPINITD" \
-|| { echo -e "${RED}Replacing USER failed.$ENDCOLOR" ; exit 1; }
+sudo sed -i "s@USER=ReplaceMe@USER=$UNAME@g" "/etc/init.d/$APPINITD" || \
+{ echo -e "${RED}Replacing USER failed.$ENDCOLOR" ; exit 1; }

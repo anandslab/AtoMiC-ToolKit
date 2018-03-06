@@ -42,7 +42,7 @@ elif [[ -f /etc/init.d/$APPINITD ]]; then
     sudo service "$APPINITD" start
     sleep 10
 
-    if [[ $(ps -ef | grep -v grep | grep -ci "$APPINITD" ) != 0 ]]; then
+    if [[ $(pgrep -cfi "$APPINITD") != 0 ]]; then
         echo "$APPINITD is running"
     else
         echo "$APPINITD is not running"

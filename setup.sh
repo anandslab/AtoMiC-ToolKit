@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC ToolKit
 # Author: htpcBeginner
 # Publisher: http://www.htpcBeginner.com
@@ -7,14 +7,16 @@
 
 
 # Set caller id and script path
-export CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
+CALLER=$(ps -o args= $PPID | awk '{print $NF}')
+export CALLER
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
     DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
     SOURCE="$(readlink "$SOURCE")"
     [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-export SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+export SCRIPTPATH
 export ISSETUP="Yes"
 
 source "$SCRIPTPATH/inc/commons.sh"
@@ -57,7 +59,8 @@ updatetoolkit=0;
 updateall=0;
 
 # Capture options to getopts
-export ARGS=$(getopt -o "i:u:b:r:m:p:a:x:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,reverseproxy:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
+ARGS=$(getopt -o "i:u:b:r:m:p:a:x:tUh" -l "install:,uninstall:,backup:,restore:,manualupdate:,passwordreset:,accessdetails:,reverseproxy:,updatetoolkit,updateall,help" -n "AtoMiC-ToolKit" -- "$@");
+export ARGS
 
 #sleep 1
 #echo $1

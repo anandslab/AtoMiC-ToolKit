@@ -4,7 +4,7 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 APPDEPS='xorg dbus-x11 xserver-xorg-legacy'
 source "$SCRIPTPATH/inc/app-install-deps.sh"

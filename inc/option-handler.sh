@@ -1,13 +1,8 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 #Response for bad arguments or unsupported features
 BADARG='The app you specified does not exist. Check the name again (note: it is case sensitive)'
 NOARGSUPPORT='This app doesn''t support the '$1' option. Check the readme file for which operations are supported for each app.'
-
-#Check for bad option and move on
-if [[ $? -ne 0 ]]; then
-    help;
-fi
 
 eval set -- "$ARGS";
 

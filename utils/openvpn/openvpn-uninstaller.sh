@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 # Script Name: AtoMiC OpenVPN Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
@@ -7,7 +7,7 @@
 
 
 echo -e "${GREEN}AtoMiC $APPTITLE Uninstaller Script$ENDCOLOR"
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 source "$SCRIPTPATH/inc/pause.sh"
 source "$SCRIPTPATH/inc/app-uninstall.sh"
 source "$SCRIPTPATH/utils/$APPNAME/$APPNAME-repository-configurator.sh"

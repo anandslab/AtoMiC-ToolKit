@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='webmin'
 APPSHORTNAME='wm'
 APPPATH='/etc/webmin'

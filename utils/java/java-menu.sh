@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
+
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Java 8" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

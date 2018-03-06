@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC2086
 echo
 sleep 1
 echo -e "$YELLOW--->Installing pip prerequisites for $APPTITLE...$ENDCOLOR"

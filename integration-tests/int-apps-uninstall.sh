@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
+
+
 # Script Name: AtoMiC Integration Test Application uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

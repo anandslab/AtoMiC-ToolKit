@@ -8,6 +8,7 @@ sleep 1
 
 source "$SCRIPTPATH/inc/fileselect.sh"
 
+exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     BFILE=$SCRIPTPATH'/backups/'$FILECHOICE
 
@@ -18,7 +19,7 @@ if [[ $exitstatus = 0 ]]; then
 
     #http://www.cyberciti.biz/faq/bash-loop-over-file/
     echo -e $YELLOW'--->Checking for existing files...'$ENDCOLOR
-    DATETIME=`date '+%m-%d-%Y_%H-%M'`
+    DATETIME=$(date '+%m-%d-%Y_%H-%M')
 
     while IFS= read -r file; do
         echo -e "Restoring $CYAN$file$ENDCOLOR..."

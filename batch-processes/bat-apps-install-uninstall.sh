@@ -1,6 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
+
+
 # Script Name: AtoMiC Batch Application Install Uninstall
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

@@ -41,7 +41,7 @@ fi
 do_start() {
         RETVAL=1
         if [ -e ${PIDFILE} ]; then
-                if ! kill -0 $(cat ${PIDFILE}) &> /dev/null; then
+                if ! kill -0 "$(cat ${PIDFILE})" &> /dev/null; then
                         rm -f $PIDFILE
                 fi
         fi
@@ -50,7 +50,7 @@ do_start() {
         if pgrep -f "^${MONO} ${DAEMON}" > /dev/null 2>&1; then
                 log_progress_msg "(already running?)"
         else
-                start-stop-daemon -q -d ${DATADIR} -c $RUNAS --start --background --make-pidfile --pidfile $PIDFILE --exec $MONO -- $DAEMON $DAEMON_OPTS
+                start-stop-daemon -q -d ${DATADIR} -c $RUNAS --start --background --make-pidfile --pidfile $PIDFILE --exec $MONO -- $DAEMON $DAEMONOPTS
                 RETVAL=$?
         fi
         log_end_msg $RETVAL

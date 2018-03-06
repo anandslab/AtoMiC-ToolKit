@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 # Script Name: AtoMiC Java Repo config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

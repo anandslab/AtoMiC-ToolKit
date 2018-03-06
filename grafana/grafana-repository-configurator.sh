@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 # Script Name: AtoMiC Grafana Repo Config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

@@ -13,9 +13,9 @@ sudo chown -R www-data:www-data "$APPPATH"
 echo "Set the correct folder permissions"
 
 #Set curl location
-sudo sed -i "s@\"curl\"	=> '',@\"curl\"	=> '/usr/bin/curl',@g" "$APPSETTINGS" \
-|| { echo -e "${RED}Modifying CURL LOCATION in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
+sudo sed -i "s@\"curl\"	=> '',@\"curl\"	=> '/usr/bin/curl',@g" "$APPSETTINGS" || \
+{ echo -e "${RED}Modifying CURL LOCATION in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
 
 #Set Stat location
-sudo sed -i "s@\"stat\"	=> '',@\"stat\"	=> '/usr/bin/stat',@g" "$APPSETTINGS" \
-|| { echo -e "${RED}Modifying STAT LOCATION in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }
+sudo sed -i "s@\"stat\"	=> '',@\"stat\"	=> '/usr/bin/stat',@g" "$APPSETTINGS" || \
+{ echo -e "${RED}Modifying STAT LOCATION in $APPSETTINGS file failed.$ENDCOLOR"; exit 1; }

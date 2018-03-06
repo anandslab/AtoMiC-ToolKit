@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPTITLE='Node.js'
 APPNAME='nodejs'
 APPREPOSITORYNAME='nodesource'

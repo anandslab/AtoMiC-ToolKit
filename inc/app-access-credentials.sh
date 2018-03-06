@@ -42,7 +42,7 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
             echo -e "$APPTITLE is running and accessible."
         fi
     else
-        ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
+        ERRORCOUNT=$(( ERRORCOUNT + 1 ))
     fi
 
     if  [[ -f /etc/systemd/system/$APPSYSTEMD ]] || \
@@ -58,7 +58,7 @@ if [[ ! $APPUSESNGINX = 'YES' ]]; then
             echo -e "$APPSYSTEMD is currently: ${RED}$STATUS$ENDCOLOR"
         fi
     else
-        ERRORCOUNT=$(( $ERRORCOUNT + 1 ))
+        ERRORCOUNT=$(( ERRORCOUNT + 1 ))
     fi
 
     if [[ $ERRORCOUNT = 2 ]]; then

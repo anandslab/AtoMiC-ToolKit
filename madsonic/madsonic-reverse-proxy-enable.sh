@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Madsonic Reverse Proxy Enable.
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

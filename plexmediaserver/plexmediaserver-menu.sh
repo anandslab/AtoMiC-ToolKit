@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Plex Media Server Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

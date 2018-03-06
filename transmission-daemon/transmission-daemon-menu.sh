@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Transmission Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

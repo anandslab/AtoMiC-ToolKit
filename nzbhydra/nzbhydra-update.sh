@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC NZBHydra Update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

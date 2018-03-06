@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Force a full update, distro upgrade and autoclean
 #export TERM=xterm
 logger "Started AtoMiC-ToolKit Services Update"

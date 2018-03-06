@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Integration Test Application uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

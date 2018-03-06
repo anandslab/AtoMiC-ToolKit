@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Resilio Sync Repo Config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

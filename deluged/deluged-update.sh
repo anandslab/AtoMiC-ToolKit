@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Deluge Updater
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

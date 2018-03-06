@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC pyLoad Installer
 # Author: PREngineer
 # Publisher: http://www.htpcbeginner.com

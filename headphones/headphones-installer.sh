@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Headphones Installer
 # Author: PREngineer
 # Publisher: http://www.htpcbeginner.com

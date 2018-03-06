@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Subsonic Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

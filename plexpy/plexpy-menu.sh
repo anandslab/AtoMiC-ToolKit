@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC PlexPy Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

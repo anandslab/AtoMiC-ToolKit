@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Ombi Updater
 # Author: mgiljum
 # Publisher: http://www.htpcBeginner.com

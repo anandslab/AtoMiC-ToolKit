@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Muximux Uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

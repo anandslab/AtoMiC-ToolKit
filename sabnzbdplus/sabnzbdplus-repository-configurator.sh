@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC SABnzbd+ Restore Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Syncthing Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

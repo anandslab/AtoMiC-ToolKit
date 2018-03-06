@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Subsonic ffmpeg update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

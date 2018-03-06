@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC NZBHydra Installer
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com

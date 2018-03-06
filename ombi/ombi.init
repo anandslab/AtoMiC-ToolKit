@@ -12,7 +12,7 @@
 user="ReplaceMe"
 group="ReplaceMe"
 dir="/opt/ombi"
-cmd="Ombi"
+cmd="/usr/bin/mono Ombi.exe"
 
 name=`basename $0`
 PIDDIR="/var/run/$name"

@@ -1,15 +1,15 @@
 [Unit]
-Description=Ombi - PMS Requests System
-After=network-online.target
+Description=Ombi
+After=syslog.target network.target
 
 [Service]
 User=ReplaceMe
 Group=ReplaceMe
-WorkingDirectory=/opt/ombi/
-ExecStart=/opt/ombi/Ombi
+
 Type=simple
+ExecStart=/usr/bin/mono /opt/ombi/Ombi.exe
 TimeoutStopSec=30
-Restart=on-failure
+Restart=always
 RestartSec=5
 
 [Install]

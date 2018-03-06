@@ -9,11 +9,11 @@ source "$SCRIPTPATH/inc/commons.sh"
 
 shellcheck -V
 
-# -e SC1017 -e SC1090 -e SC2034 -e SC2086 -e SC2215
-NoShellCheckCodeWarningsFound=$(find . -name '*.sh' -print0 | xargs -0 shellcheck)
+# Check for Shellcheck errors in the code.
+NoShellCheckCodeWarningsFound=$(find . -name '*.sh' -print0 | xargs -0 shellcheck -e SC1017 -e SC1090 -e SC2034 -e SC2086 -e SC2215)
 if [[ -n $NoShellCheckCodeWarningsFound ]] ; then
     echo -e "${RED}Shellcheck warnings found$ENDCOLOR"
-    find . -name '*.sh' -print0 | xargs -0 shellcheck
+    find . -name '*.sh' -print0 | xargs -0 shellcheck -e SC1017 -e SC1090 -e SC2034 -e SC2086 -e SC2215
     exit 1
 fi
 

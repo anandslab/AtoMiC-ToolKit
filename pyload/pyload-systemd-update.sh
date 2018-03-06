@@ -5,7 +5,6 @@
 # License: MIT License (refer to README.md for more details)
 #
 
-
 sudo sed -i "s@User=ReplaceMe@User=$UNAME@g" \
 "/etc/systemd/system/$APPSYSTEMD" || \
 { echo -e "${RED}Modifying USER in SYSTEMD file failed. \

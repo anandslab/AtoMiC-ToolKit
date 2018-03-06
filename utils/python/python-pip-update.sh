@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Script Name: AtoMiC Python Pip update
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

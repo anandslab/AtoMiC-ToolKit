@@ -3,7 +3,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 
-
 echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 #$RUN_AS, username to run Medusa under, the default is Medusa

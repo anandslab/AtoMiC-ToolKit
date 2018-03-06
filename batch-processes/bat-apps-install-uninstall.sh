@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Script Name: AtoMiC Batch Application Install Uninstall
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

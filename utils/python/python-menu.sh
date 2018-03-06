@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Python" \
 --menu " Installs https://launchpad.net/~jonathonf python repo to update Python." --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

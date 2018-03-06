@@ -4,7 +4,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-
 echo -e "${YELLOW}--->Updating $APPTITLE systemd file to run as $CYAN$UNAME$ENDCOLOR...$ENDCOLOR"
 
 sudo sed -i "s@User=ReplaceMe@User=$UNAME@g" "/etc/systemd/system/$APPSYSTEMD" || \

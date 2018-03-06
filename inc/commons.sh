@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 YELLOW='\e[33m'
 RED='\e[31m'
 ENDCOLOR='\033[0m'

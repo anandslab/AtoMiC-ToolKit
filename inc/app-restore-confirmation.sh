@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo
 sleep 1
 rm "$SCRIPTPATH/tmp/$APPSHORTNAME-backup-files"

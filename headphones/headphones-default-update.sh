@@ -3,7 +3,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 
-
 echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 # [optional] change to 1 to enable daemon

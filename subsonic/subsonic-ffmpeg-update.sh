@@ -5,7 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
 echo
 echo -e "${YELLOW}--->Copying ffmpeg file to /var/subsonic/transcode/...$ENDCOLOR"

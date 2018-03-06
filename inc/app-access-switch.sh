@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Access Fix$ENDCOLOR"

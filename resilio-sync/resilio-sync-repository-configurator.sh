@@ -5,7 +5,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-
 ARCH=$(uname -m)
     case $ARCH in
         'armv7l')

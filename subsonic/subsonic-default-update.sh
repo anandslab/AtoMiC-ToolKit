@@ -3,7 +3,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 
-
 echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 # [required] user or uid of account to run the program as:

@@ -3,7 +3,6 @@
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
 
-
 echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 
 ## NH_USER= username to run nzbhydra under, the default is nzbhydra

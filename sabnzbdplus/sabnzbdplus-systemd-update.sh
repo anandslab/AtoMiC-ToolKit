@@ -4,7 +4,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-
 sudo sed -i "s@User=sabnzbd@User=$UNAME@g" \
 "/etc/systemd/system/$APPSYSTEMD" || \
 { echo -e "${RED}Modifying USER in SYSTEMD file failed.\

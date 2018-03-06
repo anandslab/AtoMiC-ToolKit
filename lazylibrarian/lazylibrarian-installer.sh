@@ -1,9 +1,7 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Lazy Librarian Installer
 # Author: TommyE123
 # Publisher: http://www.htpcbeginner.com
-
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Nginx" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

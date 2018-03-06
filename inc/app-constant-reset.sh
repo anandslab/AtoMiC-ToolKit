@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ACCESSHOST=''
 APPDEFAULTLOC=''
 APPDEFAULTPASS=''

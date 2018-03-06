@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Nginx Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

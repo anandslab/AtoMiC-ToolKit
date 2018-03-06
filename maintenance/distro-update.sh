@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Force a full update, distro upgrade and autoclean
 
 echo -e "${GREEN}AtoMiC Update Distro and Packages Script$ENDCOLOR"

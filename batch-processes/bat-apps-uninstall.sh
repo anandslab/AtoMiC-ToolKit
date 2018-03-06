@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # Script Name: AtoMiC Batch Test Application uninstaller
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

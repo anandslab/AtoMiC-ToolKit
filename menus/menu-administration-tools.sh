@@ -1,10 +1,8 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Admin Tools Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-
 
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \

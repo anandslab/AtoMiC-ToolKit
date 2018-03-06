@@ -4,7 +4,6 @@
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
 
-
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"

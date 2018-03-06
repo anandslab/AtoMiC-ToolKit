@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC OpenVPN Repo config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

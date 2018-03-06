@@ -1,10 +1,8 @@
 #!/bin/bash
-
 # Script Name: AtoMiC SickGear Menu
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-
 
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage SickGear" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \

@@ -1,10 +1,8 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Plex Media Server Restore Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com
 # License: MIT License (refer to README.md for more details)
-
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}

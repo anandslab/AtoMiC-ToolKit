@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # Script Name: AtoMiC Python Installer
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

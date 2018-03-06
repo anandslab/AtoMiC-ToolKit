@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 checkappversion () {
     if [[ ! -f $SCRIPTPATH/tmp/ServiceVersions.cfg ]]; then
         source "$SCRIPTPATH/inc/commons.sh"

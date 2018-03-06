@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script Name: AtoMiC Nginx Repo config Script
 # Author: TommyE123
 # Publisher: http://www.htpcBeginner.com

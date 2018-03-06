@@ -8,6 +8,7 @@ sleep 1
 
 source "$SCRIPTPATH/inc/fileselect.sh"
 
+exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
     BFILE=$SCRIPTPATH'/backups/'$FILECHOICE
 

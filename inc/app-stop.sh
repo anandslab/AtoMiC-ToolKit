@@ -36,7 +36,7 @@ if IsSystemdSupported; then
 elif [[ -f /etc/init.d/$APPINITD ]]; then
     FOUND=3
     sudo service $APPINITD stop
-    if [[ $(pgrep -cf "$APPINITD") == 0 ]]; then
+    if [[ $(pgrep -cfi "$APPINITD") == 0 ]]; then
         echo -e "$APPINITD is now: ${RED}stopped$ENDCOLOR"
     fi
 fi

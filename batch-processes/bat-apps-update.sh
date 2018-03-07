@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application Update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -m couchpotato
 source "$SCRIPTPATH/setup.sh" -m deluged

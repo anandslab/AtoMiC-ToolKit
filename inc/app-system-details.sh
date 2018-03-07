@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 sleep 1
 echo -e "${YELLOW}--->Finding $APPTITLE System details...$ENDCOLOR"

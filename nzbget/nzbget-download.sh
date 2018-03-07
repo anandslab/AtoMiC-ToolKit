@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC NZBGet Download and Install
-# Author: TommyE123
-# Publisher: http://www.htpcbeginner.com
 
 echo
 echo -e "$YELLOW--->Downloading install file...$ENDCOLOR"

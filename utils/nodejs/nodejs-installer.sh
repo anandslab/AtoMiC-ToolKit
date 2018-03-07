@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Node.js Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "${GREEN}AtoMiC Node.js Installer Script$ENDCOLOR"

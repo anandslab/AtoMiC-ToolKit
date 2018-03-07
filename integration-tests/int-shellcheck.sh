@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Integration Test shellcheck check
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 source "$SCRIPTPATH/inc/commons.sh"

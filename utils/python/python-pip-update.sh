@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Python Pip update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "${GREEN}AtoMiC Python Pip Packages Update Script$ENDCOLOR"

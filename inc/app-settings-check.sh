@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ ! -f "$APPSETTINGS" ]; then
     echo -e $RED $APPSETTINGS 'not found. '$ENDCOLOR$APPTITLE' not installed or incompatible installation.
     Please open '$APPNAME', and try saving the config first else you may need to reinstall. '$ENDCOLOR

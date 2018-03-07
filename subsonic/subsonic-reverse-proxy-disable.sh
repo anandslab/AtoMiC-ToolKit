@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Subsonic Reverse Proxy Disable.
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 if IsSystemdSupported; then
     if sed -i "/ExecStart=\\/usr\\/bin\\/subsonic/c\\ExecStart=\\/usr\\/bin\\/subsonic" "/etc/systemd/system/$APPSYSTEMD"; then

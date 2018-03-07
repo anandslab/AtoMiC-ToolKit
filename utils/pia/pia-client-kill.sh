@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "$YELLOW--->Stopping running PIA Manager processes...$ENDCOLOR"
 if [[ -n $(pgrep -f pia_manager) ]]; then

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "$YELLOW--->Reload Nginx config file...$ENDCOLOR"
 if IsSystemdSupported; then

@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC CouchPotato Menu
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage CouchPotato" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \

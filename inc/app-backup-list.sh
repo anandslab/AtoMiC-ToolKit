@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo -e "$YELLOW--->Creating a list of $APPTITLE files to backup...$ENDCOLOR"
 
 if [[ -f $SCRIPTPATH/utils/$APPNAME/$APPNAME-backup-files ]]; then

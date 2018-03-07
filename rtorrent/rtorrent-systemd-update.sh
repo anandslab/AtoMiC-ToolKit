@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC rTorrent Systemd Update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo -e "${YELLOW}--->Updating $APPTITLE systemd file to run as $CYAN$UNAME$ENDCOLOR...$ENDCOLOR"
 

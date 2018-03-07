@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "${YELLOW}Setting temporary $APPTITLE WebUI password...$ENDCOLOR"
 if [[ -n $UIPASS ]]; then

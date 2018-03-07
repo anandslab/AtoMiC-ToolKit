@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Nginx Location Enabler
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 if [[ -z $1 ]]; then

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd "$SCRIPTPATH/backups" || exit
 FILES=(*)
 cd $SCRIPTPATH || exit

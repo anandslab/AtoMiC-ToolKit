@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Transmission systemd update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "$YELLOW--->Updating transmission-daemon.service.d/override.conf to run as $CYAN$UNAME$ENDCOLOR ...$ENDCOLOR"

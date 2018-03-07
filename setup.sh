@@ -1,8 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC ToolKit
-# Author: htpcBeginner
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
+
 # Set caller id and script path
 CALLER=$(ps -o args= $PPID | awk '{print $NF}')
 export CALLER

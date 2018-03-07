@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 
 if [[ -n $APPSYSTEMDLOC || -n $APPSYSTEMDLOC2 || -n $APPSYSTEMDOVERIDE ]]; then

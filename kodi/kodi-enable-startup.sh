@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Kodi enable Launch on boot
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
 APPDEPS='xorg dbus-x11 xserver-xorg-legacy'

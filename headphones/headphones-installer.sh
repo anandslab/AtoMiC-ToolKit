@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Headphones Installer
-# Author: PREngineer
-# Publisher: http://www.htpcbeginner.com
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

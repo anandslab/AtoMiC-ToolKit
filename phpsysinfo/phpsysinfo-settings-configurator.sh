@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC phpSysInfo settings configurator
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "$YELLOW--->Configuring phpSysInfo Settings...$ENDCOLOR"

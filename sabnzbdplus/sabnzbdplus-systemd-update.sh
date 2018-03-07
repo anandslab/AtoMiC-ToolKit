@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC SABnzbd+ systemd update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 sudo sed -i "s@User=sabnzbd@User=$UNAME@g" \
 "/etc/systemd/system/$APPSYSTEMD" || \

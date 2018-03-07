@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Subsonic Menu
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Subsonic" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \

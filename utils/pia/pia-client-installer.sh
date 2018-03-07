@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Private Internet Access Client Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 # https://installers.privateinternetaccess.com/download
 
 echo

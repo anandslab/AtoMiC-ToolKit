@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Watcher init.d update
-# Author: TommyE123
-# Publisher: http://www.htpcbeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo 'Updating init.d file'
 

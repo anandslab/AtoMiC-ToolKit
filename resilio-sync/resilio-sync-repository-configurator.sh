@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Resilio Sync Repo Config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 ARCH=$(uname -m)
     case $ARCH in

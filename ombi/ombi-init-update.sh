@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi init.d update
-# Author: mgiljum
-# Publisher: http://www.htpcbeginner.com
 
 echo 'Updating init.d file'
 sudo sed -i "s@user=\"ReplaceMe\"@user=\"$UNAME\"@g" /etc/init.d/$APPINITD || \

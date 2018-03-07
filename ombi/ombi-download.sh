@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi Installer
-# Author: mgiljum
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "${YELLOW}--->Latest File Found...$ENDCOLOR"

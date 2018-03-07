@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Transmission init.d update
-# Author: TommyE123
-# Publisher: http://www.htpcbeginner.com
 
 if [[ -f /etc/init.d/$APPINITD ]]; then
     echo 'Updating init.d file'

@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Kodi init.d update
-# Author: TommyE123
-# Publisher: http://www.htpcbeginner.com
 #
 
 echo 'Updating init.d file'

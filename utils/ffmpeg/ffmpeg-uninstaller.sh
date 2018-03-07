@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC FFmpeg Uninstaller
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo -e "${GREEN}AtoMiC FFmpeg Uninstaller Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"

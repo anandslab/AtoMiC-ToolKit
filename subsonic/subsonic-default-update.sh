@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Subsonic default update
-# Author: TommyE123
-# Publisher: http://www.htpcbeginner.com
 
 echo -e "${YELLOW}--->Updating Default file...$ENDCOLOR"
 

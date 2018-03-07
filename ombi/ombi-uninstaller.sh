@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi Uninstaller
-# Author: mgiljum
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 #
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"

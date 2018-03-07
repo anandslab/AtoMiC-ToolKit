@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Madsonic ffmpeg update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-installer.sh"
 echo

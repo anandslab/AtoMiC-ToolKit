@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC rTorrent Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/rtorrent/rtorrent-constants.sh"

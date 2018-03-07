@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged

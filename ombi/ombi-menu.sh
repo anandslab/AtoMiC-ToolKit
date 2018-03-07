@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi Menu
-# Author: mgiljum
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Ombi" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \

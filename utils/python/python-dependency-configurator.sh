@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Python Dependency config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 if [[ $APPNAME = 'python3' ]]; then
     APPDEPS='python3-pip python3-dev python3-setuptools python-setuptools-doc python3-wheel libssl-dev libffi-dev'

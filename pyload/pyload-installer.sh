@@ -1,7 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC pyLoad Installer
-# Author: PREngineer
-# Publisher: http://www.htpcbeginner.com
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

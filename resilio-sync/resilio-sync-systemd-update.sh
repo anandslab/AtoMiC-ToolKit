@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Resilio Sync systemd update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 echo -e "${YELLOW}--->Updating systemd to run as user at logon ...$ENDCOLOR"

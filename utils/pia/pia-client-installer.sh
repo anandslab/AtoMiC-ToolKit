@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Private Internet Access Client Installer
+
 # https://installers.privateinternetaccess.com/download
 
 echo

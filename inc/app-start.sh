@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "$YELLOW--->Starting $APPTITLE...$ENDCOLOR"
 

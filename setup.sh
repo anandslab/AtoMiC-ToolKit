@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC ToolKit
+
 # Set caller id and script path
 CALLER=$(ps -o args= $PPID | awk '{print $NF}')
 export CALLER

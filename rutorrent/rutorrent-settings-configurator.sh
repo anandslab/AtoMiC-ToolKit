@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC rutorrent settings configurator
-#
 
 echo
 echo -e "$YELLOW--->Configuring rutorrent Settings...$ENDCOLOR"

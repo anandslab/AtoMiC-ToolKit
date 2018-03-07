@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "$YELLOW--->Removing AtoMiC-ToolKit Nginx config file...$ENDCOLOR"
 if [[ -f /etc/nginx/sites-available/$APPSETTINGS ]]; then

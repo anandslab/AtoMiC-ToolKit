@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC SickGear Systemd Update
-#
 
 sudo sed -i '/Restart=on-failure/a GuessMainPID=no' /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Adding GUESSMAINPID in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
 sudo sed -i '/Restart=on-failure/a Type=forking' /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Adding TYPE in SYSTEMD file failed.'$ENDCOLOR; exit 1; }

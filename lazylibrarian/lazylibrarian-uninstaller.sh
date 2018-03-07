@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Lazy Librarian uninstaller
-#
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

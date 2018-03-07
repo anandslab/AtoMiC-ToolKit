@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [[ -z $CI ]]; then
     clear
     echo -e "$RED"

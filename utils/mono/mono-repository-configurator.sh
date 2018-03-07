@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Mono Repo config Script
+
 # Remove the old repo if it exists
 if [[ -f /etc/apt/sources.list.d/mono-xamarin.list ]]; then
     echo -e "${YELLOW}---> Removing old mono-xamarin.list...$ENDCOLOR"

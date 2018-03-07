@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC pyLoad init.d update
-#
 
 echo 'Updating init.d file'
 

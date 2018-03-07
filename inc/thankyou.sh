@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [[ -z $CI ]]; then
     echo
     echo -e "${YELLOW}Thank you for using the ${CYAN}AtoMiC ToolKit$YELLOW."

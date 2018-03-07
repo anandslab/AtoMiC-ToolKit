@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Ombi Uninstaller
-#
 
 source "$SCRIPTPATH/inc/app-setup-check.sh"
 source "$SCRIPTPATH/inc/commons.sh"

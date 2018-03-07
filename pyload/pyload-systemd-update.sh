@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC pyLoad systemd update
-#
 
 sudo sed -i "s@User=ReplaceMe@User=$UNAME@g" \
 "/etc/systemd/system/$APPSYSTEMD" || \

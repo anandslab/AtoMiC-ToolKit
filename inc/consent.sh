@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo -e "${GREEN}--->Please read and agree to the following disclaimers:$ENDCOLOR"
 echo -e '1. AtoMiC ToolKit has only been confirmed to work on Ubuntu\Debian variants, Mint, Ubuntu Server and Raspbian.'
 echo -e "2. ${CYAN}www.htpcBeginner.com${ENDCOLOR}, its authors, or ToolKit contributors cannot be held accountable for any problems that might occur while using this ToolKit."

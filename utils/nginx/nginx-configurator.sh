@@ -38,19 +38,19 @@ if [[ ! -f "/etc/nginx/sites-available/$APPSETTINGS" ]] || ! grep -q "#\\ Versio
     if sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with correct PHP Version"
+        echo -e "Updated config file with correct PHP Version $CYAN$FPMVERSION$ENDCOLOR"
     fi
 
-    if sudo sed -i "s@IPADDRESS@$(hostname -I)@g" \
+    if sudo sed -i "s@IPADDRESS@$(hostname -I | cut -d" " -f1)@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying IPADDRESS in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with current IPADDRESS"
+        echo -e "Updated config file with current IPADDRESS with $CYAN$(hostname -I | cut -d" " -f1)$ENDCOLOR"
     fi
 
     if sudo sed -i "s@HOSTNAME@$(hostname)@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying HOSTNAME in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with current HOSTNAME"
+        echo -e "Updated config file with current HOSTNAME with $CYAN$(hostname)$ENDCOLOR"
     fi
 fi
 

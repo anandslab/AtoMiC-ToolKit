@@ -12,7 +12,7 @@
 dir="/opt/jackett"
 user="ReplaceMe"
 
-name=`basename $0`
+name=$(basename "$0")
 PIDDIR="/var/run/$name"
 pid_file="/var/run/$name/$name.pid"
 stdout_log="/var/log/$name.log"
@@ -40,9 +40,9 @@ case "$1" in
         echo "Starting $name"
         cd "$dir" || exit
         if [ -z "$user" ]; then
-            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sudo "$cmd" >> "$stdout_log" 2>> "$stderr_log" &
         else
-            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sudo -u "$user" "$cmd" >> "$stdout_log" 2>> "$stderr_log" &
         fi
         echo $! > "$pid_file"
         if ! is_running; then

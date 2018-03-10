@@ -12,7 +12,7 @@
 #                    /etc/default/deluge-daemon.
 ### END INIT INFO
 
-# Author: Adolfo R. Brandes
+# Author: Adolfo R. Brandes 
 # Updated by: Jean-Philippe "Orax" Roemer
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -30,7 +30,7 @@ PKGNAME=deluged
 SCRIPTNAME=/etc/init.d/$PKGNAME
 
 # Exit if the package is not installed
-[ -x "$DAEMON1" ] && [ -x "$DAEMON2" ] || exit 0
+[ -x "$DAEMON1" -a -x "$DAEMON2" ] || exit 0
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$PKGNAME ] && . /etc/default/$PKGNAME
@@ -42,7 +42,7 @@ SCRIPTNAME=/etc/init.d/$PKGNAME
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
 . /lib/lsb/init-functions
 
-if [ -z "$RUN_AT_STARTUP" ] || [ "$RUN_AT_STARTUP" != "YES" ]
+if [ -z "$RUN_AT_STARTUP" -o "$RUN_AT_STARTUP" != "YES" ]
 then
    log_warning_msg "Not starting $PKGNAME, edit /etc/default/$PKGNAME to start it."
    exit 0
@@ -85,7 +85,7 @@ do_start()
    else
        is_alive $PIDFILE2
        RETVAL2="$?"
-       [ "$RETVAL2" = "0" ] && [ "$RETVAL1" = "0" ] && return 1
+       [ "$RETVAL2" = "0" -a "$RETVAL1" = "0" ] && return 1
    fi
 
    is_alive $PIDFILE2
@@ -98,7 +98,7 @@ do_start()
         --exec $DAEMON2 --chuid $DELUGED_USER --user $DELUGED_USER --umask $UMASK -- $DAEMON2_ARGS
         RETVAL2="$?"
    fi
-   [ "$RETVAL1" = "0" ] && [ "$RETVAL2" = "0" ] || return 2
+   [ "$RETVAL1" = "0" -a "$RETVAL2" = "0" ] || return 2
 }
 
 #
@@ -116,11 +116,11 @@ do_stop()
    RETVAL2="$?"
    start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --user $DELUGED_USER --pidfile $PIDFILE1
    RETVAL1="$?"
-   [ "$RETVAL1" = "2" ] || [ "$RETVAL2" = "2" ] && return 2
+   [ "$RETVAL1" = "2" -o "$RETVAL2" = "2" ] && return 2
 
    rm -f $PIDFILE1 $PIDFILE2
 
-   [ "$RETVAL1" = "0" ] && [ "$RETVAL2" = "0" ] && return 0 || return 1
+   [ "$RETVAL1" = "0" -a "$RETVAL2" = "0" ] && return 0 || return 1
 }
 
 case "$1" in

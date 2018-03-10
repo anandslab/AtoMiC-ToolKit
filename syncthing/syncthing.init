@@ -28,7 +28,7 @@ PKGNAME=syncthing
 SCRIPTNAME=/etc/init.d/$PKGNAME
 
 # Exit if the package is not installed
-[ -x "$DAEMON1" ] && [ -x "$DAEMON2" ] || exit 0
+[ -x "$DAEMON1" -a -x "$DAEMON2" ] || exit 0
 
 # Define LSB log_* functions.
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
@@ -65,7 +65,7 @@ do_start()
    else
        is_alive $PIDFILE2
        RETVAL2="$?"
-       [ "$RETVAL2" = "0" ] && [ "$RETVAL1" = "0" ] && return 1
+       [ "$RETVAL2" = "0" -a "$RETVAL1" = "0" ] && return 1
    fi
 
    is_alive $PIDFILE2
@@ -78,7 +78,7 @@ do_start()
         --exec $DAEMON2 --chuid $SYNCTHING_USER --user $SYNCTHING_USER --umask $UMASK -- $DAEMON2_ARGS
         RETVAL2="$?"
    fi
-   [ "$RETVAL1" = "0" ] && [ "$RETVAL2" = "0" ] || return 2
+   [ "$RETVAL1" = "0" -a "$RETVAL2" = "0" ] || return 2
 }
 
 #
@@ -96,11 +96,11 @@ do_stop()
    RETVAL2="$?"
    start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --user $SYNCTHING_USER --pidfile $PIDFILE1
    RETVAL1="$?"
-   [ "$RETVAL1" = "2" ] || [ "$RETVAL2" = "2" ] && return 2
+   [ "$RETVAL1" = "2" -o "$RETVAL2" = "2" ] && return 2
 
    rm -f $PIDFILE1 $PIDFILE2
 
-   [ "$RETVAL1" = "0" ] && [ "$RETVAL2" = "0" ] && return 0 || return 1
+   [ "$RETVAL1" = "0" -a "$RETVAL2" = "0" ] && return 0 || return 1
 }
 
 case "$1" in

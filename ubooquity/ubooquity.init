@@ -14,7 +14,7 @@ group="ReplaceMe"
 cmd="/usr/bin/java -jar Ubooquity.jar -headless -remoteadmin"
 dir="/opt/ubooquity"
 
-name=$(basename $0)
+name=`basename $0`
 PIDDIR="/var/run/$name"
 pid_file="/var/run/$name/$name.pid"
 stdout_log="/var/log/$name.log"

@@ -13,7 +13,7 @@ user="ReplaceMe"
 group="ReplaceMe"
 cmd="/usr/bin/mono /opt/NzbDrone/NzbDrone.exe -nobrowser #sonarr"
 
-name=$(basename $0)
+name=`basename $0`
 PIDDIR="/var/run/$name"
 pid_file="/var/run/$name/$name.pid"
 stdout_log="/var/log/$name.log"

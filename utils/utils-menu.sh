@@ -5,6 +5,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Certbot" "Automatically obtain certs from Let's Encrypt" \
+"DuckDNS" "Free service to point a DNS to an IP of your choice" \
 "FFmpeg" "Record, convert and stream audio and video" \
 "Java 8" "general-purpose computer programming language" \
 "Mono" "Open source implementation of MS .NET Framework" \
@@ -26,6 +27,8 @@ if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Certbot" )
             source "$SCRIPTPATH/utils/certbot/certbot-menu.sh" ;;
+        "DuckDNS" )
+            source "$SCRIPTPATH/utils/duckdns/duckdns-menu.sh" ;;
         "FFmpeg" )
             source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh" ;;
         "Java 8" )

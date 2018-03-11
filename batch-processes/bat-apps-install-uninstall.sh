@@ -99,6 +99,9 @@ source "$SCRIPTPATH/setup.sh" -u subsonic
 source "$SCRIPTPATH/setup.sh" -i syncthing
 source "$SCRIPTPATH/setup.sh" -x syncthing
 source "$SCRIPTPATH/setup.sh" -u syncthing
+source "$SCRIPTPATH/setup.sh" -i tautulli
+source "$SCRIPTPATH/setup.sh" -x tautulli
+source "$SCRIPTPATH/setup.sh" -u tautulli
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -x transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon

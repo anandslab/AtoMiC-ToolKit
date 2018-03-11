@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC PlexPy Uninstaller
+# Script Name: AtoMiC Tautulli Uninstaller
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

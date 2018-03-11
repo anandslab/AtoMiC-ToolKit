@@ -55,7 +55,7 @@ Features features of AtoMiC ToolKit include:
 <li>Organizr - Install, Uninstall, Update</li>
 <li>PhpSysInfo - Install, Uninstall, Update</li>
 <li>Plex - Install, Uninstall, Update and Backup / Restore</li>
-<li>PlexPy - Install, Uninstall, Update and Backup / Restore</li>
+<li>Tautulli - Install, Uninstall, Update and Backup / Restore</li>
 <li>Private Internet Access - Install, Uninstall, Update</li>
 <li>pyLoad - Install, Uninstall, Update and Backup / Restore</li>
 <li>qBittorrent - Install, Uninstall, Reset Password, Update and Backup / Restore</li>

@@ -1,0 +1,8 @@
+# This file is sourced by /etc/init.d/Tautulli
+#
+# When Tautulli is started using the init script
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+#$RUN_AS, username to run Tautulli under, the default is Tautulli
+TAUTULLI_USER=

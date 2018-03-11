@@ -63,9 +63,6 @@ source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
-source "$SCRIPTPATH/setup.sh" -i plexpy
-source "$SCRIPTPATH/setup.sh" -x plexpy
-source "$SCRIPTPATH/setup.sh" -u plexpy
 source "$SCRIPTPATH/setup.sh" -i pyload
 # source "$SCRIPTPATH/setup.sh" -x pyload
 source "$SCRIPTPATH/setup.sh" -u pyload

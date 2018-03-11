@@ -11,7 +11,7 @@
 
 user="ReplaceMe"
 group="ReplaceMe"
-cmd="/usr/bin/java -jar Ubooquity.jar -headless -remoteadmin"
+cmd="/usr/bin/java -jar Ubooquity.jar -headless -remoteadmin #ubooquity"
 dir="/opt/ubooquity"
 
 name=`basename $0`

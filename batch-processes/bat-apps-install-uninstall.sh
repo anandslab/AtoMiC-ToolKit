@@ -102,10 +102,10 @@ source "$SCRIPTPATH/setup.sh" -u syncthing
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -x transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
-source "$SCRIPTPATH/setup.sh" -i ubooquity
-APPDPORT='2203/ubooquity/admin'
-source "$SCRIPTPATH/setup.sh" -x ubooquity
-source "$SCRIPTPATH/setup.sh" -u ubooquity
+# source "$SCRIPTPATH/setup.sh" -i ubooquity
+# APPDPORT='2203/ubooquity/admin'
+# source "$SCRIPTPATH/setup.sh" -x ubooquity
+# source "$SCRIPTPATH/setup.sh" -u ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher
 source "$SCRIPTPATH/setup.sh" -x watcher
 source "$SCRIPTPATH/setup.sh" -u watcher

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo -e "${GREEN}--->Please read and agree to the following disclaimers:$ENDCOLOR"
 echo -e '1. AtoMiC ToolKit has only been confirmed to work on Ubuntu\Debian variants, Mint, Ubuntu Server and Raspbian.'
 echo -e "2. ${CYAN}www.htpcBeginner.com${ENDCOLOR}, its authors, or ToolKit contributors cannot be held accountable for any problems that might occur while using this ToolKit."
@@ -8,7 +9,7 @@ echo -e '4. By proceeding you agree to assume all risks and authorize the ToolKi
 
 echo
 
-read -p 'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
+read -r -p'Type y/Y and press [ENTER] to AGREE and continue with the installation or any other key to exit: '
 RESP=${REPLY,,}
 
 if [ "$RESP" != "y" ]; then

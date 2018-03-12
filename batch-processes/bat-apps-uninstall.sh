@@ -1,10 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Batch Test Application uninstaller
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -u couchpotato
 source "$SCRIPTPATH/setup.sh" -u deluged
@@ -27,7 +22,6 @@ source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -u organizr
 source "$SCRIPTPATH/setup.sh" -u phpsysinfo
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
-source "$SCRIPTPATH/setup.sh" -u plexpy
 source "$SCRIPTPATH/setup.sh" -u pyload
 source "$SCRIPTPATH/setup.sh" -u qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -u radarr
@@ -42,6 +36,7 @@ source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -u sonarr
 source "$SCRIPTPATH/setup.sh" -u subsonic
 source "$SCRIPTPATH/setup.sh" -u syncthing
+source "$SCRIPTPATH/setup.sh" -i tautulli
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u ubooquity
 source "$SCRIPTPATH/setup.sh" -u watcher

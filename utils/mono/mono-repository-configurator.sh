@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
 # Script Name: AtoMiC Mono Repo config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 # Remove the old repo if it exists
 if [[ -f /etc/apt/sources.list.d/mono-xamarin.list ]]; then

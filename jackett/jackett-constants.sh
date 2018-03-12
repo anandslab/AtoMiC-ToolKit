@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='jackett'
 APPSHORTNAME='jk'
 APPPATH='/opt/jackett'

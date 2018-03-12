@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC OpenVPN Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

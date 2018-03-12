@@ -1,10 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Emby Repository Config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}

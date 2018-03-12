@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 
 echo
 sleep 1

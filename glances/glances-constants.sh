@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='glances'
 APPPATH='/usr/local/share/doc/glances'
 APPTITLE='Glances'

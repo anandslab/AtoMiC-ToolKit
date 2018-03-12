@@ -1,23 +1,26 @@
 #!/bin/bash
 # Script Name: AtoMiC phpSysInfo settings configurator
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
 echo -e "$YELLOW--->Configuring phpSysInfo Settings...$ENDCOLOR"
 
+# This shouldn't get hit but just in case we ever change the install we'll back up the file.
 if [[ -f "$APPPATH/phpsysinfo.ini" ]]; then
-    cp "$APPPATH/phpsysinfo.ini" "$APPPATH\phpsysinfo.ini.bak"
-    echo "backed up $APPPATH/phpsysinfo.ini to $APPPATH/phpsysinfo.ini.bak"
+    if cp "$APPPATH/phpsysinfo.ini" "$APPPATH/phpsysinfo.ini.bak" || \
+            { echo -e "${RED}Failed to backup existing $APPPATH/phpsysinfo.ini$ENDCOLOR"; exit 1; }; then
+        echo "Backed up $APPPATH/phpsysinfo.ini to $APPPATH/phpsysinfo.ini.bak"
+    fi
 fi
 
-sudo cp "$APPPATH/phpsysinfo.ini.new" "$APPPATH/phpsysinfo.ini" || { echo -e "${RED}created new $APPPATH/phpsysinfo.ini$ENDCOLOR"; exit 1; }
-echo "created new $APPPATH/phpsysinfo.ini"
+if sudo cp "$APPPATH/phpsysinfo.ini.new" "$APPPATH/phpsysinfo.ini" || \
+        { echo -e "${RED}Failed to create new $APPPATH/phpsysinfo.ini$ENDCOLOR"; exit 1; }; then
+    echo "Created new $APPPATH/phpsysinfo.ini"
+fi
 
-sudo sed -i "s@PLUGINS=false@PLUGINS=\"PS,PSStatus,SMART\"@g" "$APPPATH/phpsysinfo.ini" \
-|| { echo -e $RED'Modifying "$APPPATH/phpsysinfo.ini" PLUGINS failed.'$ENDCOLOR; exit 1; }
+if sudo sed -i "s@PLUGINS=false@PLUGINS=\"PS,PSStatus,SMART\"@g" "$APPPATH/phpsysinfo.ini" || \
+        { echo -e "${RED}Modifying $APPPATH/phpsysinfo.ini PLUGINS failed.$ENDCOLOR"; exit 1; }; then
+    echo "Updated $APPPATH/phpsysinfo.ini to enable PLUGINS"
+fi
 
 sudo chmod 755 -R "$APPPATH"
 sudo chown -R www-data:www-data "$APPPATH"

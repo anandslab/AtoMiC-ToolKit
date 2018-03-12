@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 if [ ! "$APPREPOSITORYLINK" = "" ]; then
     echo -e "$YELLOW--->Adding $APPTITLE repository...$ENDCOLOR"

@@ -1,10 +1,7 @@
 #!/bin/bash
 # Script Name: AtoMiC Subsonic Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
-cd $(mktemp -d)
+cd "$(mktemp -d)" || exit
 
 FILE=$(curl -s http://www.subsonic.org/pages/download.jsp | grep -o '".*"' | grep -o 'subsonic.*\.deb' | sed 's/"//g' | head -1)
 echo
@@ -19,4 +16,4 @@ else
 fi
 sudo dpkg -i '/var/cache/apt/archives'/$FILE
 
-cd $SCRIPTPATH
+cd $SCRIPTPATH || exit

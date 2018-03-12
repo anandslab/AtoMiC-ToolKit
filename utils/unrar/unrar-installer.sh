@@ -1,17 +1,12 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Unrar Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
 echo -e "${GREEN}AtoMiC Unrar Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/utils/unrar/unrar-constants.sh"
 
-cd "$(mktemp -d)"
+cd "$(mktemp -d)" || exit
 
 URL="https://www.rarlab.com/"
 URL=$URL$(curl -s https://www.rarlab.com/rar_add.htm | grep -o '".*"' | grep 'unrarsrc' | sed 's/"//g')
@@ -25,7 +20,7 @@ echo -e "${YELLOW}Installed Version: $CURRENTUNRAR$ENDCOLOR"
 if [[ ! $CURRENTUNRAR = "1:${VERSION}-1" ]] ; then
     echo
     sudo curl "${URL}" | tar -xz
-    cd unrar
+    cd unrar || exit
     echo
     sudo apt-get remove unrar -y
     echo 'Starting Build'
@@ -37,6 +32,6 @@ else
     echo -e "${GREEN}Unrar update not required.$ENDCOLOR"
 fi
 
-rm -r $(pwd)
-cd "$SCRIPTPATH"
+rm -r "$(pwd)"
+cd "$SCRIPTPATH" || exit
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

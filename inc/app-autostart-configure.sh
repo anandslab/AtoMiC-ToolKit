@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 
 source "$SCRIPTPATH/inc/app-stop.sh"
 echo

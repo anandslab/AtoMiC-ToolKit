@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 sleep 1
 echo -e "$YELLOW--->Creating $APPTITLE files / folders...$ENDCOLOR"

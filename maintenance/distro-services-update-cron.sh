@@ -1,6 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-# shellcheck disable=SC2034
 # Force a full update, distro upgrade and autoclean
 #export TERM=xterm
 logger "Started AtoMiC-ToolKit Services Update"

@@ -1,11 +1,5 @@
-
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Integration Test Application Install
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 SCRIPTPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 

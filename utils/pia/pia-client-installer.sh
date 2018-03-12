@@ -1,9 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Private Internet Access Client Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
+
 # https://installers.privateinternetaccess.com/download
 
 echo
@@ -12,7 +9,7 @@ echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/utils/pia/pia-client-kill.sh"
 
 TEMPDIR="$(mktemp -d)"
-cd "$TEMPDIR"
+cd "$TEMPDIR" || exit
 chown "$UNAME":"$UGROUP" "$TEMPDIR" || { echo -e "${RED}Chown on $TEMPDIR failed.$ENDCOLOR"; exit 1; }
 chmod -R 775 "$TEMPDIR" || { echo -e "${RED}Chmod on $TEMPDIR failed.$ENDCOLOR"; exit 1; }
 chmod -R g+s "$TEMPDIR" || { echo -e "${RED}Chmod on $TEMPDIR failed.$ENDCOLOR"; exit 1; }

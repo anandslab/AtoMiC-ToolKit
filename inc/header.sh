@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1117
+
 if [[ -z $CI ]]; then
     clear
     echo -e "$RED"
@@ -7,7 +7,7 @@ if [[ -z $CI ]]; then
     echo -e " │││││││││ ├─┤ │ ├─┘│  ├┴┐├┤ │ ┬│││││││├┤ ├┬┘ │  │ ││││"
     echo -e " └┴┘└┴┘└┴┘o┴ ┴ ┴ ┴  └─┘└─┘└─┘└─┘┴┘└┘┘└┘└─┘┴└─o└─┘└─┘┴ ┴$CYAN"
     echo -e "                __  ___             "
-    echo -e "  /\ |_ _ |\/|./     | _  _ ||_/.|_ "
-    echo -e " /--\|_(_)|  ||\__   |(_)(_)|| \||_ $ENDCOLOR"
+    echo -e "  /\\ |_ _ |\\/|./     | _  _ ||_/.|_ "
+    echo -e " /--\\|_(_)|  ||\\__   |(_)(_)|| \\||_ $ENDCOLOR"
     echo
 fi

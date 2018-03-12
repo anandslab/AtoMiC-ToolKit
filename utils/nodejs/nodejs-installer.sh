@@ -1,11 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Node.js Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 echo
 echo -e "${GREEN}AtoMiC Node.js Installer Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"

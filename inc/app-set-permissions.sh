@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "${YELLOW}--->Setting permissions...$ENDCOLOR"
 if [[ ! -z $APPPATH ]]; then

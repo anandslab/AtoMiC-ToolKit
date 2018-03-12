@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 echo
 echo -e "${YELLOW}--->configuring NGINX $ENDCOLOR"
 
@@ -38,19 +38,19 @@ if [[ ! -f "/etc/nginx/sites-available/$APPSETTINGS" ]] || ! grep -q "#\\ Versio
     if sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with correct PHP Version"
+        echo -e "Updated config file with correct PHP Version $CYAN$FPMVERSION$ENDCOLOR"
     fi
 
-    if sudo sed -i "s@IPADDRESS@$(hostname -I)@g" \
+    if sudo sed -i "s@IPADDRESS@$(hostname -I | cut -d" " -f1)@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying IPADDRESS in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with current IPADDRESS"
+        echo -e "Updated config file with current IPADDRESS with $CYAN$(hostname -I | cut -d" " -f1)$ENDCOLOR"
     fi
 
     if sudo sed -i "s@HOSTNAME@$(hostname)@g" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Modifying HOSTNAME in Nginx file failed.$ENDCOLOR"; exit 1; }; then
-        echo "Updated config file with current HOSTNAME"
+        echo -e "Updated config file with current HOSTNAME with $CYAN$(hostname)$ENDCOLOR"
     fi
 fi
 
@@ -77,7 +77,7 @@ done
 
 # See if the nginx file is what ATK requires. If not backup and copy over the correct one.
 if ! grep -q "#\\ Version=1.0" /etc/nginx/nginx.conf; then
-    if mv /etc/nginx/nginx.conf /etc/nginx/nginx.old'_'$(date '+%m-%d-%Y_%H-%M') || \
+    if mv /etc/nginx/nginx.conf /etc/nginx/nginx.old'_'"$(date '+%m-%d-%Y_%H-%M')" || \
         { echo -e "${RED}Could not backup existing nginx.conf file.$ENDCOLOR"; exit 1; }; then
         echo "Backed up existing nginx.conf file"
     fi

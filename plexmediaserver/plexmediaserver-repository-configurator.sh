@@ -1,11 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
 # Script Name: AtoMiC Plex Media Server Restore Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}

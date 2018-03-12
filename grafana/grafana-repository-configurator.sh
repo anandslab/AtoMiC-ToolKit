@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
 # Script Name: AtoMiC Grafana Repo Config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 ARCH=$(uname -m)
 CODENAME=$(lsb_release -c -s)

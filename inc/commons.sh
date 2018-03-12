@@ -1,6 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-# shellcheck disable=SC2034
+
 YELLOW='\e[33m'
 RED='\e[31m'
 ENDCOLOR='\033[0m'
@@ -14,7 +13,7 @@ NETLINES=16
 source "$SCRIPTPATH/inc/app-version-check.sh"
 
 pause(){
-    read -p "$*"
+    read -r -p"$*"
 }
 
 IsSystemdSupported()

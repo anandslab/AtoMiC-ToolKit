@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC http response check
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/inc/app-system-details.sh"
 

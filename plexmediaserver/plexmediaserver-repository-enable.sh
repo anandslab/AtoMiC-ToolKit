@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
 # Script Name: AtoMiC Plex Media Server Repo Enable
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo -e "${YELLOW}--->Enable Sources file...$ENDCOLOR"
 OLDREPO='#deb https://downloads.plex.tv/repo/deb/ public main'

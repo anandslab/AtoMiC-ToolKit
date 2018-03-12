@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='kodi'
 APPSHORTNAME='kodi'
 APPPATH='/usr/share/kodi'

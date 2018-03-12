@@ -1,10 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Batch Test Application Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged
@@ -27,7 +22,6 @@ source "$SCRIPTPATH/setup.sh" -i ombi
 source "$SCRIPTPATH/setup.sh" -i organizr
 source "$SCRIPTPATH/setup.sh" -i phpsysinfo
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
-source "$SCRIPTPATH/setup.sh" -i plexpy
 # source "$SCRIPTPATH/setup.sh" -i pyload
 source "$SCRIPTPATH/setup.sh" -i qbittorrent-nox
 source "$SCRIPTPATH/setup.sh" -i radarr
@@ -42,6 +36,7 @@ source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -i sonarr
 # source "$SCRIPTPATH/setup.sh" -i subsonic
 source "$SCRIPTPATH/setup.sh" -i syncthing
+source "$SCRIPTPATH/setup.sh" -i tautulli
 source "$SCRIPTPATH/setup.sh" -i transmission-daemon
 source "$SCRIPTPATH/setup.sh" -i ubooquity
 source "$SCRIPTPATH/setup.sh" -i watcher

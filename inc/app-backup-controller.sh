@@ -1,6 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-source "$SCRIPTPATH/inc/app-setup-check.sh"
+
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Backup Script$ENDCOLOR"

@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC SickGear Reverse Proxy Enable.
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 if sed -i "/web_root/c\\web_root = \"/sickgear\"" "$APPSETTINGS"; then
     echo "Updated web_root in $APPSETTINGS"

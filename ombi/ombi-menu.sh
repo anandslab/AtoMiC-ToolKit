@@ -1,11 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Ombi Menu
-# Author: mgiljum
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Ombi" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \

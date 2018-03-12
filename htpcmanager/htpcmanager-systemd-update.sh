@@ -1,11 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC HTPC Manager systemd update
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
-#
-
-# DO NOT EDIT ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 sudo sed -i "s@ExecStart=-/usr/bin/python /path/to/HTPCManager/Htpc.py --daemon --datadir </path/to/HTPCManager>/userdata --pid </path/to/HTPCManager>/userdata/htpcmanager.pid@ExecStart=/usr/bin/python $APPPATH/Htpc.py --daemon --datadir $APPPATH/userdata @g" /etc/systemd/system/$APPSYSTEMD || { echo -e $RED'Modifying ExecStart in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
 sudo sed -i "s@User=<user>@User=$UNAME@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying USER in SYSTEMD file failed.'$ENDCOLOR; exit 1; }

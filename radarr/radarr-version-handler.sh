@@ -1,9 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
 # Script Name: AtoMiC Radarr Version Check
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 echo
 source "$SCRIPTPATH/inc/commons.sh"

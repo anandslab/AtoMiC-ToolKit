@@ -1,27 +1,22 @@
 #!/bin/bash
-# shellcheck disable=SC1090
-# Script Name: AtoMiC PlexPy Menu
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
+# Script Name: AtoMiC Tautulli Menu
 
-source "$SCRIPTPATH/inc/app-setup-check.sh"
-SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage PlexPy" \
+SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Tautulli" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install" "Install PlexPy" \
-"Uninstall" "Uninstall PlexPy" \
-"Backup" "Backup PlexPy settings" \
-"Restore" "Restore PlexPy settings from a previous backup" \
-"Manual Update" "Manually update PlexPy" \
+"Install" "Install Tautulli (upgrades PlexPy if found)" \
+"Uninstall" "Uninstall Tautulli" \
+"Backup" "Backup Tautulli settings" \
+"Restore" "Restore Tautulli settings from a previous backup" \
+"Manual Update" "Manually update Tautulli" \
 "Enable Reverse Proxy" "Allow access" \
 "Disable Reverse Proxy" "Remove access" \
-"Access Details" "View PlexPy access details" \
+"Access Details" "View Tautulli access details" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [[ $exitstatus = 0 ]]; then
-    source "$SCRIPTPATH/plexpy/plexpy-constants.sh"
+    source "$SCRIPTPATH/tautulli/tautulli-constants.sh"
     case "$SUBCHOICE" in
         "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
         "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo
 echo -e "$YELLOW--->Adding $APPTITLE Keys...$ENDCOLOR"
 if [[ -n $REPRECVKEYSASC ]]; then

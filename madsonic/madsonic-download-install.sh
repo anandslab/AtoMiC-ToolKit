@@ -1,8 +1,5 @@
 #!/bin/bash
 # Script Name: AtoMiC Madsonic Installer
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 FILE=$(curl -s http://beta.madsonic.org/pages/download62.jsp | grep -o '".*"' | grep -o '.*\.deb' | grep -oP '(?<=target=).*' | sed 's/"//g' | head -1)
 echo
@@ -18,4 +15,4 @@ else
 fi
 sudo dpkg -i '/var/cache/apt/archives'/$FILE
 
-cd $SCRIPTPATH
+cd $SCRIPTPATH || exit

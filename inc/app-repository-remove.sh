@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1090
+
 echo
 if [[ -n $APPREPOSITORYLINK ]]; then
     echo -e "$YELLOW--->Removing $APPTITLE repository...$ENDCOLOR"

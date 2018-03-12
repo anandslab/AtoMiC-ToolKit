@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC2034
+
 APPNAME='grafana'
 APPSHORTNAME='gf'
 APPPATH='/etc/grafana'

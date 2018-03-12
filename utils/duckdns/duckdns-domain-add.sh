@@ -4,8 +4,8 @@ echo -e "$YELLOW--->Enablinging Duck DNS in ATK Sites conf...$ENDCOLOR"
 ATKCONFFILE='/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites'
 # Check if the sites file is present
 if [[ -f $ATKCONFFILE ]]; then
-   for i in ${DOMAINNAME//,/ }; do
-   # Loop each of the duckdns domains and add it
+    for i in ${DOMAINNAME//,/ }; do
+    # Loop each of the duckdns domains and add it
         if grep -q "$i.duckdns.org" "$ATKCONFFILE"; then
             echo -e "$CYAN$i.duckdns.org$ENDCOLOR already in $CYAN$ATKCONFFILE$ENDCOLOR"
         else

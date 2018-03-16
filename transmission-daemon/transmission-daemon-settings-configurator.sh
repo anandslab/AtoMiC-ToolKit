@@ -5,6 +5,7 @@ echo
 echo -e "$YELLOW--->Configuring Transmission Settings...$ENDCOLOR"
 
 #Set to allow network access instead of localhost.
+
 if sudo sed -i "s@\"rpc-whitelist-enabled\": \
         true@\"rpc-whitelist-enabled\": false@g" "$APPSETTINGS" || \
         { echo -e "${RED}Modifying whitelist enabled in \

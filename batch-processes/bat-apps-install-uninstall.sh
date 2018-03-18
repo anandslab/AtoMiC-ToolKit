@@ -10,6 +10,8 @@ source "$SCRIPTPATH/setup.sh" -u phpsysinfo
 source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -u rutorrent
 
+source "$SCRIPTPATH/setup.sh" -i aria2-webui
+source "$SCRIPTPATH/setup.sh" -u aria2-webui
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 source "$SCRIPTPATH/setup.sh" -x couchpotato
 source "$SCRIPTPATH/setup.sh" -u couchpotato

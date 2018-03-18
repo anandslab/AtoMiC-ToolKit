@@ -6,6 +6,7 @@ MAINCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "PVRs" "Automatic Media Library Manager" \
 "Usenet Downloaders" "Download binary files from Usenet servers" \
+"General Download Managers" "File Downloaders" \
 "Bittorrent Clients" "Download Torrents" \
 "Personal Media Servers" "Organise and serve Media" \
 "Home Theater" "Media Playback" \
@@ -22,6 +23,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/menus/menu-pvrs.sh" ;;
         "Usenet Downloaders" )
             source "$SCRIPTPATH/menus/menu-usenet.sh" ;;
+        "General Download Managers" )
+            source "$SCRIPTPATH/menus/menu-download-managers.sh" ;;
         "Bittorrent Clients" )
             source "$SCRIPTPATH/menus/menu-bittorrent.sh" ;;
         "Personal Media Servers" )

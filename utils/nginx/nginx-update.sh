@@ -2,7 +2,7 @@
 # Script Name: AtoMiC Nginx Updater
 
 echo
-echo -e "${GREEN}AtoMiC Nginx Installer Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC Nginx Update Script$ENDCOLOR"
 source "$SCRIPTPATH/utils/php/php-installer.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"

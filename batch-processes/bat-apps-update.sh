@@ -18,7 +18,7 @@ source "$SCRIPTPATH/setup.sh" -m mylar
 source "$SCRIPTPATH/setup.sh" -m netdata
 # source "$SCRIPTPATH/setup.sh" -m nzbget
 source "$SCRIPTPATH/setup.sh" -m nzbhydra
-# source "$SCRIPTPATH/setup.sh" -m ombi
+source "$SCRIPTPATH/setup.sh" -m ombi
 source "$SCRIPTPATH/setup.sh" -m organizr
 source "$SCRIPTPATH/setup.sh" -m phpsysinfo
 source "$SCRIPTPATH/setup.sh" -m plexmediaserver

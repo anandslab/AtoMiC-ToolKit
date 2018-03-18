@@ -57,9 +57,9 @@ source "$SCRIPTPATH/setup.sh" -u nzbget
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
 # source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
-# source "$SCRIPTPATH/setup.sh" -i ombi
-# source "$SCRIPTPATH/setup.sh" -x ombi
-# source "$SCRIPTPATH/setup.sh" -u ombi
+source "$SCRIPTPATH/setup.sh" -i ombi
+source "$SCRIPTPATH/setup.sh" -x ombi
+source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver

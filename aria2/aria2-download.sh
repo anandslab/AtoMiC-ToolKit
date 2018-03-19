@@ -18,7 +18,7 @@ echo -e "${YELLOW}Installed Version: $CURRENTARIA2$ENDCOLOR"
 if [[ $CURRENTARIA2 != "1:${VERSION}-1" ]] ; then
     echo
     sudo curl "${URL}" | tar -xz
-    cd aria2 || exit
+    cd "aria2-$VERSION" || exit
     echo
     sudo apt-get remove aria2 -y
     echo 'Starting Build'

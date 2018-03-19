@@ -16,7 +16,7 @@ CURRENTARIA2=$(dpkg -s aria2 | grep Version | cut -d " " -f2-)
 echo -e "${YELLOW}Installed Version: $CURRENTARIA2$ENDCOLOR"
 
 if [[ $CURRENTARIA2 != "1:${VERSION}-1" ]] ; then
-    echo
+    echo $URL
     sudo curl "${OUTPUT}" | tar -xzf --strip-components=1
     echo "start ls" 
     ls

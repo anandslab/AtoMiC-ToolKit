@@ -3,7 +3,7 @@
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"
-echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+echo -e "${GREEN}AtoMiC $APPTITLE Update Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/pause.sh"
 if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-stop.sh"

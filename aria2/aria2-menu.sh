@@ -19,6 +19,8 @@ if [[ $exitstatus = 0 ]]; then
         "Go Back" ) source "$SCRIPTPATH/menus/menu-administration-tools.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
+    source "$SCRIPTPATH/inc/thankyou.sh"
+    source "$SCRIPTPATH/inc/exit.sh"
 else
     source "$SCRIPTPATH/inc/thankyou.sh"
     echo

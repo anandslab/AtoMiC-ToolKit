@@ -32,7 +32,7 @@ vercomp "$AVAILABLEARIA2" "$CURRENTARIA2"
 if [[ $? = 1 ]]; then
     echo
     echo "Downloading $(basename $URL)"
-    if wget -qO- --show-progress "${URL}" | tar -jx --strip-components=1 || \
+    if curl -Lk "$URL" | tar -xj --strip-components=1 || \
             { echo -e "${RED}Failed to download File.$ENDCOLOR" ; exit 1; }; then
         
         echo -e "$YELLOW--->Remove previous version...$ENDCOLOR"

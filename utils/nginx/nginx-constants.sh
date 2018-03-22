@@ -3,6 +3,6 @@
 APPTITLE='Nginx'
 APPNAME='nginx'
 APPDEPS='nginx-common nginx-core'
-APPSETTINGS="AtoMiC-ToolKit-configured-sites"
+APPSETTINGS="server.atomic.conf"
 APPSYSTEMD='nginx.service'
 APPINITD='nginx'

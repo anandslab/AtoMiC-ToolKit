@@ -16,3 +16,6 @@ script:
 
 matrix:
   fast_finish: true
+
+notifications:
+    webhooks: https://www.travisbuddy.com/

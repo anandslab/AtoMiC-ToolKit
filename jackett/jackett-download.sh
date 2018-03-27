@@ -4,6 +4,7 @@
 echo
 echo -e "$YELLOW--->Latest File Found...$ENDCOLOR"
 OUTPUT="$(curl -s https://api.github.com/repos/jackett/jackett/releases | \
+grep Mono.tar.gz | \
 grep browser_download_url | \
 head -n 1 | \
 cut -d '"' -f 4)"

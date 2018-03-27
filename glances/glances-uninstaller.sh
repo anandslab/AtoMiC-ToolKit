@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Name: AtoMiC Glances Uninstaller
+# Script Name: AtoMiC netdata Uninstaller
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/header.sh"

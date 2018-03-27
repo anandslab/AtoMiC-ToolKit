@@ -17,7 +17,6 @@ source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -x deluged
 source "$SCRIPTPATH/setup.sh" -u deluged
 source "$SCRIPTPATH/setup.sh" -i filebot
-source "$SCRIPTPATH/setup.sh" -x filebot
 source "$SCRIPTPATH/setup.sh" -u filebot
 source "$SCRIPTPATH/setup.sh" -i emby-server
 source "$SCRIPTPATH/setup.sh" -x emby-server

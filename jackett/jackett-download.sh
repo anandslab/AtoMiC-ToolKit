@@ -11,4 +11,4 @@ cut -d '"' -f 4)"
 echo "${OUTPUT}"
 echo
 echo -e "$YELLOW--->Downloading and extracting files...$ENDCOLOR"
-sudo curl -L "${OUTPUT}" | tar -xzf -C "$APPPATH" --strip-components=1
+sudo curl -L "${OUTPUT}" | tar -xzf - -C "$APPPATH" --strip-components=1

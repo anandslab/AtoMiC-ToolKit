@@ -60,7 +60,7 @@ source "$SCRIPTPATH/setup.sh" -i nzbhydra
 # source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
 source "$SCRIPTPATH/setup.sh" -i ombi
-source "$SCRIPTPATH/setup.sh" -x ombi
+# source "$SCRIPTPATH/setup.sh" -x ombi # Should work however stops and starts to quickly so fails so needs further investigation.
 source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver

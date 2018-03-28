@@ -8,7 +8,7 @@ grep Mono.tar.gz | \
 grep browser_download_url | \
 head -n 1 | \
 cut -d '"' -f 4)"
-echo "${OUTPUT}"
+echo "$OUTPUT"
 echo
 echo -e "$YELLOW--->Downloading and extracting files...$ENDCOLOR"
-curl -L "${OUTPUT}" | tar -xzf - -C "$APPPATH" --strip-components=1
+curl -L "$OUTPUT" | sudo tar -xzf - -C "$APPPATH" --strip-components=1

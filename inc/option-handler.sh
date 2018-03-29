@@ -44,14 +44,19 @@ while true; do
             shift;
             if [[ -n $1 ]]; then
                 uninstall="$1";
-                if [[ ! -f $SCRIPTPATH/$1/$1-uninstaller.sh ]]; then
+                if [[ -f $SCRIPTPATH/$1/$1-uninstaller.sh ]]; then
+                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                    source "$SCRIPTPATH/$1/$1-uninstaller.sh"
+                elif [[ -f $SCRIPTPATH/utils/$1/$1-uninstaller.sh ]]; then
+                    if [[ -f $SCRIPTPATH/utils/$1/$1-constants.sh ]]; then
+                        source "$SCRIPTPATH/utils/$1/$1-constants.sh"
+                    fi
+                    source "$SCRIPTPATH/utils/$1/$1-uninstaller.sh"
+                else
                     echo
                     echo
                     echo "$BADARG"
                     source "$SCRIPTPATH/inc/exit.sh"
-                else
-                    source "$SCRIPTPATH/$1/$1-constants.sh"
-                    source "$SCRIPTPATH/$1/$1-uninstaller.sh"
                 fi
                 shift;
             fi
@@ -92,14 +97,19 @@ while true; do
             shift;
             if [[ -n $1 ]]; then
                 manualupdate="$1";
-                if [ ! -f "$SCRIPTPATH/$1/$1-update.sh" ]; then
+                if [[ -f $SCRIPTPATH/$1/$1-update.sh ]]; then
+                    source "$SCRIPTPATH/$1/$1-constants.sh"
+                    source "$SCRIPTPATH/$1/$1-update.sh"
+                elif [[ -f $SCRIPTPATH/utils/$1/$1-update.sh ]]; then
+                    if [[ -f $SCRIPTPATH/utils/$1/$1-constants.sh ]]; then
+                        source "$SCRIPTPATH/utils/$1/$1-constants.sh"
+                    fi
+                    source "$SCRIPTPATH/utils/$1/$1-update.sh"
+                else
                     echo
                     echo
                     echo "$BADARG"
                     source "$SCRIPTPATH/inc/exit.sh"
-                else
-                    source "$SCRIPTPATH/$1/$1-constants.sh"
-                    source "$SCRIPTPATH/$1/$1-update.sh"
                 fi
                 shift;
             fi

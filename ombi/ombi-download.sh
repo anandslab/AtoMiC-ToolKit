@@ -10,12 +10,13 @@ else
     FILENAME='linux.tar.gz'
 fi
 
+echo -e "$YELLOW--->Latest File Found...$ENDCOLOR"
 OUTPUT="$(curl -s https://api.github.com/repos/tidusjar/Ombi/releases | \
 grep browser_download_url | \
 grep $FILENAME | \
 head -n 1 | \
 cut -d '"' -f 4)"
-echo "${OUTPUT}"
+echo "$OUTPUT"
 echo
 echo -e "$YELLOW--->Downloading and extracting Latest Release File...$ENDCOLOR"
-sudo curl -L "${OUTPUT}" | tar -xzf - -C "$APPPATH"
+curl -L "$OUTPUT" | sudo tar -xzf - -C "$APPPATH"

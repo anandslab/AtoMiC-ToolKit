@@ -1,8 +1,14 @@
-dist: trusty
+dist:
+    trusty
 
-language: generic
+language:
+    generic
 
-sudo: required
+sudo:
+    required
+
+group:
+    travis_latest
 
 before_install:
     - sudo pip install bashate

@@ -12,7 +12,7 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/radarr/radarr-constants.sh"
     source "$SCRIPTPATH/inc/app-install-deps.sh"
     if "$SCRIPTPATH/radarr/radarr-version-handler.sh"; then
-        source "$SCRIPTPATH/radarr/radarr-download.sh"
+        source "$SCRIPTPATH/inc/app-git-download-release.sh"
     fi
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-start.sh"

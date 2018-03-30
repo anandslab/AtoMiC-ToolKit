@@ -3,13 +3,12 @@
 
 echo
 source "$SCRIPTPATH/inc/commons.sh"
-echo -e "${YELLOW}--->Jackett Version Check...$ENDCOLOR"
-JACKETTVERSION=$(curl -s https://github.com/Jackett/Jackett/releases/latest  | \
-grep -o '".*"' | \
-awk -F / '{print $NF}' | \
-sed s'/[v"]//g')
-echo "Available Version: $JACKETTVERSION"
+source "$SCRIPTPATH/jackett/jackett-constants.sh"
 
-if ! checkappversion "JACKETT" "$JACKETTVERSION" ; then
+echo -e "${YELLOW}--->Jackett Version Check...$ENDCOLOR"
+source "$SCRIPTPATH/inc/app-git-latest-release-version.sh"
+echo "Available Version: $AVAILABLEVERSION"
+
+if ! checkappversion "JACKETT" "$AVAILABLEVERSION" ; then
     exit 1
 fi

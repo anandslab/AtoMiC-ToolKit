@@ -3,8 +3,9 @@
 
 echo
 source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/ombi/ombi-constants.sh"
 echo -e "${YELLOW}--->Ombi Version Check...$ENDCOLOR"
-CONTENT=$(echo 'select content from globalsettings;' | sqlite3 "$APPSETTINGSDB")
+CONTENT=$(echo 'select Content from globalsettings;' | sqlite3 "$APPSETTINGSDB")
 OMBIAPIKEY=$(grep -Po '(?<="ApiKey":")([^"]+)' <<<  "$CONTENT")
 
 if [[ -n $OMBIAPIKEY ]]; then
@@ -16,13 +17,10 @@ else
     echo "Updating continuing however possibly not necessary"
 fi
 
-OMBIAVAILABLETVERSION=$(curl -s https://github.com/tidusjar/Ombi/releases/latest  | \
-grep -o '".*"' | \
-awk -F / '{print $NF}' | \
-sed s'/[v"]//g')
-echo -e "Available Version: ${GREEN}$OMBIAVAILABLETVERSION$ENDCOLOR"
+source "$SCRIPTPATH/inc/app-git-latest-release-version.sh"
+echo -e "Available Version: ${GREEN}$AVAILABLEVERSION$ENDCOLOR"
 
-vercomp "$OMBIINSTALLEDVERSION" "$OMBIAVAILABLETVERSION"
+vercomp "$OMBIINSTALLEDVERSION" "$AVAILABLEVERSION"
 if [[ $? != 2 ]]; then
     echo "Update not required"
     exit 1

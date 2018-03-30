@@ -6,6 +6,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Certbot" "Automatically obtain certs from Let's Encrypt" \
 "DuckDNS" "Free service to point a DNS to an IP of your choice" \
+"FileBot" "TV and Movie renamer / Subtitle downloader" \
 "FFmpeg" "Record, convert and stream audio and video" \
 "Java 8" "general-purpose computer programming language" \
 "Mono" "Open source implementation of MS .NET Framework" \
@@ -31,6 +32,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/utils/duckdns/duckdns-menu.sh" ;;
         "FFmpeg" )
             source "$SCRIPTPATH/utils/ffmpeg/ffmpeg-menu.sh" ;;
+        "FileBot" )
+            source "$SCRIPTPATH/utils/filebot/filebot-menu.sh" ;;
         "Java 8" )
             source "$SCRIPTPATH/utils/java/java-menu.sh" ;;
         "Mono" )

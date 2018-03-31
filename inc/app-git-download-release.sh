@@ -11,7 +11,7 @@ cut -d '"' -f 4)"
 
 #Sometimes it struggles for some reason so try again!
 if [[ -z $OUTPUT ]]; then
-    echo -e "${RED}URL NOT FOUND AT FIRST ATTEMPT.. RETRYING$ENDCOLOR" 
+    echo -e "${RED}URL NOT FOUND AT FIRST ATTEMPT.. RETRYING$ENDCOLOR"
     OUTPUT="$(curl -s "$APPDOWNLOADURL" | \
     grep "$APPDOWNLOADEXT" | \
     grep browser_download_url | \
@@ -20,7 +20,7 @@ if [[ -z $OUTPUT ]]; then
 fi
 
 if [[ -z $OUTPUT ]]; then
-    echo -e "${RED}URL NOT FOUND$ENDCOLOR" 
+    echo -e "${RED}URL NOT FOUND$ENDCOLOR"
     exit 1
 fi
 

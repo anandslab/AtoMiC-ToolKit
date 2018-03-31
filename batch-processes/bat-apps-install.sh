@@ -5,6 +5,7 @@ source "$SCRIPTPATH/setup.sh" -i aria2-webui
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -i emby-server
+source "$SCRIPTPATH/setup.sh" -i filebot
 source "$SCRIPTPATH/setup.sh" -i glances
 source "$SCRIPTPATH/setup.sh" -i grafana
 source "$SCRIPTPATH/setup.sh" -i headphones

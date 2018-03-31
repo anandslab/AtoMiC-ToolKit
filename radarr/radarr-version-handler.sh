@@ -3,16 +3,11 @@
 
 echo
 source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/radarr/radarr-constants.sh"
 echo -e "${YELLOW}--->Radarr Version Check...$ENDCOLOR"
-RADARRVERSION=$(curl -s https://api.github.com/repos/radarr/radarr/releases | \
-    grep browser_download_url | \
-    grep linux.tar.gz | \
-    head -n 1 | \
-    cut -d '"' -f 4 |
-    cut -d/ -f8 |
-    sed s'/[v"]//g')
-echo "Available Version: $RADARRVERSION"
+source "$SCRIPTPATH/inc/app-git-latest-release-version.sh"
+echo -e "Available Version: ${GREEN}$AVAILABLEVERSION$ENDCOLOR"
 
-if ! checkappversion "RADARR" "$RADARRVERSION" ; then
+if ! checkappversion "RADARR" "$AVAILABLEVERSION" ; then
     exit 1
 fi

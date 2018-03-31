@@ -18,6 +18,8 @@ source "$SCRIPTPATH/setup.sh" -u couchpotato
 source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -x deluged
 source "$SCRIPTPATH/setup.sh" -u deluged
+source "$SCRIPTPATH/setup.sh" -i filebot
+source "$SCRIPTPATH/setup.sh" -u filebot
 source "$SCRIPTPATH/setup.sh" -i emby-server
 source "$SCRIPTPATH/setup.sh" -x emby-server
 source "$SCRIPTPATH/setup.sh" -u emby-server
@@ -33,9 +35,9 @@ source "$SCRIPTPATH/setup.sh" -u headphones
 # source "$SCRIPTPATH/setup.sh" -i htpcmanager
 # source "$SCRIPTPATH/setup.sh" -x htpcmanager
 # source "$SCRIPTPATH/setup.sh" -u htpcmanager
-source "$SCRIPTPATH/setup.sh" -i jackett
-source "$SCRIPTPATH/setup.sh" -x jackett
-source "$SCRIPTPATH/setup.sh" -u jackett
+# source "$SCRIPTPATH/setup.sh" -i jackett
+# source "$SCRIPTPATH/setup.sh" -x jackett
+# source "$SCRIPTPATH/setup.sh" -u jackett
 # source "$SCRIPTPATH/setup.sh" -i kodi
 # source "$SCRIPTPATH/setup.sh" -u kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
@@ -59,9 +61,9 @@ source "$SCRIPTPATH/setup.sh" -u nzbget
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
 # source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
-source "$SCRIPTPATH/setup.sh" -i ombi
-source "$SCRIPTPATH/setup.sh" -x ombi
-source "$SCRIPTPATH/setup.sh" -u ombi
+# source "$SCRIPTPATH/setup.sh" -i ombi
+# source "$SCRIPTPATH/setup.sh" -x ombi # Should work however stops and starts to quickly so fails so needs further investigation.
+# source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver

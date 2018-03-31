@@ -1,7 +1,14 @@
 language: none
+
+env:
+  global:
+    - SHIPPABLE_REPO_DIR="/opt/AtoMiC-ToolKit"
+
 before_script:
   - sudo apt-get update
+
 script:
+  - cd $SHIPPABLE_REPO_DIR
   - sudo bash ./integration-tests/int-newline-errors.sh
   - sudo bash ./integration-tests/int-bashate.sh
   - sudo bash ./integration-tests/int-shellcheck.sh

@@ -5,7 +5,7 @@ CODENAME=$(lsb_release -c -s)
 
 case "$CODENAME" in
     'squeeze'|'wheezy')
-        echo -e "${RED}Distro not curently supported." \
+        echo -e "${RED}Distro not currently supported." \
             "Please consider upgrading to a newer version$ENDCOLOR"
         exit 1;;
     'jessie'|'stretch'|'sid')

@@ -12,6 +12,8 @@ sudo apt-get remove aria2 -y
 echo
 echo 'Starting Build'
 sudo checkinstall -y --pkgversion="1:${AVAILABLEVERSION}" --pkgname='aria2' --pakdir='/var/cache/apt/archives'
+# Reinstall ca-certificates as Aria2 breaks the permissions.
+sudo apt-get install --reinstall ca-certificates
 echo
 rm -r "$(pwd)"
 cd "$SCRIPTPATH" || exit

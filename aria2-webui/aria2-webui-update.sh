@@ -8,6 +8,7 @@ source "$SCRIPTPATH/inc/pause.sh"
 
 if DoesAppFolderExist; then
     source "$SCRIPTPATH/utils/nginx/nginx-update.sh"
+    echo
     source "$SCRIPTPATH/aria2/aria2-update.sh"
     source "$SCRIPTPATH/aria2-webui/aria2-webui-constants.sh"
     source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" 'SKIP'

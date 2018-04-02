@@ -16,7 +16,7 @@ if [[ $exitstatus = 0 ]]; then
         "Install" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-installer.sh" ;;
         "Uninstall" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-uninstaller.sh" ;;
         "Manual Update" ) source "$SCRIPTPATH/$APPNAME/$APPNAME-update.sh" ;;
-        "Go Back" ) source "$SCRIPTPATH/menus/menu-administration-tools.sh" ;;
+        "Go Back" ) source "$SCRIPTPATH/menus/menu-download-managers.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
     esac
     source "$SCRIPTPATH/inc/thankyou.sh"

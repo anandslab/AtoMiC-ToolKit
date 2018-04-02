@@ -4,7 +4,7 @@
 SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Aria2" "Lightweight multi-protocol & multi-source command-line download utility" \
+"Aria2" "Lightweight multi-protocol & multi-source cmd download utility" \
 "Aria2-Webui" "Web interface to interact with aria2" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 

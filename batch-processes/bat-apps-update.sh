@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application Update
 
-source "$SCRIPTPATH/setup.sh" -m aria2
 source "$SCRIPTPATH/setup.sh" -m aria2-webui
 source "$SCRIPTPATH/setup.sh" -m couchpotato
 source "$SCRIPTPATH/setup.sh" -m deluged

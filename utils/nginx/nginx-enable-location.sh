@@ -18,7 +18,9 @@ if [[ -d /etc/nginx/ ]]; then
         NGINXCONFNAME="$APPNAME"
     fi
 
-    source "$SCRIPTPATH/inc/app-stop.sh"
+    if [[ $1 != 'SKIP' ]]; then
+        source "$SCRIPTPATH/inc/app-stop.sh"
+    fi
 
     if [[ ! -f /etc/nginx/locations-available/$NGINXCONFNAME.atomic.conf ]]; then
         if cp "$SCRIPTPATH/utils/nginx/locations-available/$NGINXCONFNAME.atomic.conf" \
@@ -26,6 +28,8 @@ if [[ -d /etc/nginx/ ]]; then
             { echo -e "${RED}Could not move location file $NGINXCONFNAME.atomic.conf over.$ENDCOLOR"; exit 1; }; then
             echo "Location file $NGINXCONFNAME.atomic.conf copied over to available"
         fi
+    else
+        echo "$NGINXCONFNAME.atomic.conf file already exists"
     fi
 
     if [[ ! -L "/etc/nginx/locations-enabled/$NGINXCONFNAME.atomic.conf" ]]; then
@@ -42,9 +46,9 @@ if [[ -d /etc/nginx/ ]]; then
     fi
 
     source "$SCRIPTPATH/utils/nginx/nginx-reload.sh"
-    source "$SCRIPTPATH/inc/app-start.sh"
 
     if [[ $1 != 'SKIP' ]]; then
+        source "$SCRIPTPATH/inc/app-start.sh"
         source "$SCRIPTPATH/inc/app-http-responses.sh"
     fi
 else

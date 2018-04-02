@@ -1,6 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Application Install Uninstall
 
+source "$SCRIPTPATH/setup.sh" -i aria2-webui
+source "$SCRIPTPATH/setup.sh" -u aria2-webui
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -u muximux
 source "$SCRIPTPATH/setup.sh" -i organizr
@@ -9,9 +11,6 @@ source "$SCRIPTPATH/setup.sh" -i phpsysinfo
 source "$SCRIPTPATH/setup.sh" -u phpsysinfo
 source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -u rutorrent
-
-source "$SCRIPTPATH/setup.sh" -i aria2-webui
-source "$SCRIPTPATH/setup.sh" -u aria2-webui
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 source "$SCRIPTPATH/setup.sh" -x couchpotato
 source "$SCRIPTPATH/setup.sh" -u couchpotato

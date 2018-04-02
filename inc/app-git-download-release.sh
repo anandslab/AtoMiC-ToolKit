@@ -3,6 +3,7 @@
 
 echo
 echo -e "$YELLOW--->Latest File Found...$ENDCOLOR"
+
 OUTPUT="$(curl -s "$APPDOWNLOADURL" | \
 grep "$APPDOWNLOADEXT" | \
 grep browser_download_url | \
@@ -24,7 +25,13 @@ if [[ -z $OUTPUT ]]; then
     exit 1
 fi
 
+EXTENSION="${OUTPUT##*.}"
+case $EXTENSION in
+  "bz2" ) EXTRACTTYPE='xjf';;
+  "gz")   EXTRACTTYPE="xzf";;
+esac
+
 echo "$OUTPUT"
 echo
 echo -e "$YELLOW--->Downloading and extracting files...$ENDCOLOR"
-curl -L "$OUTPUT" | sudo tar -xzf - -C "$APPPATH" "$APPDOWNLOADSTRIP"
+curl -L "$OUTPUT" | sudo tar -$EXTRACTTYPE - -C "$APPPATH" "$APPDOWNLOADSTRIP"

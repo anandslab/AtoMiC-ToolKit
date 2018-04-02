@@ -27,8 +27,8 @@ fi
 
 EXTENSION="${OUTPUT##*.}"
 case $EXTENSION in
-  "bz2" ) EXTRACTTYPE='xjf';;
-  "gz")   EXTRACTTYPE="xzf";;
+    "bz2" ) EXTRACTTYPE='xjf';;
+    "gz")   EXTRACTTYPE="xzf";;
 esac
 
 echo "$OUTPUT"

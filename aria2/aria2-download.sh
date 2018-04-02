@@ -6,7 +6,7 @@ APPPATH="$(pwd)" # Set the Path to temp so we can extract and build there.
 source "$SCRIPTPATH/aria2/aria2-downloadext.sh"
 source "$SCRIPTPATH/inc/app-git-download-release.sh"
 source "$SCRIPTPATH/inc/app-git-latest-release-version.sh"
-    
+
 echo -e "$YELLOW--->Remove previous version...$ENDCOLOR"
 sudo apt-get remove aria2 -y
 echo

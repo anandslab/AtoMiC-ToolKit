@@ -2,7 +2,6 @@
 
 APPNAME='aria2'
 APPSHORTNAME='a2'
-APPPATH='/usr/share/doc/aria2'
 APPTITLE='Aria2'
 APPDOWNLOADURL='https://api.github.com/repos/q3aql/aria2-static-builds/releases/latest'
 APPDOWNLOADSTRIP='--strip-components=1'

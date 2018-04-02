@@ -13,7 +13,8 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/inc/app-install-deps.sh"
     source "$SCRIPTPATH/inc/app-folders-create.sh"
     if "$SCRIPTPATH/jackett/jackett-version-handler.sh"; then
-        source "$SCRIPTPATH/jackett/jackett-download.sh"
+        source "$SCRIPTPATH/inc/app-git-download-release.sh"
+        echo
     fi
     source "$SCRIPTPATH/inc/app-set-permissions.sh"
     source "$SCRIPTPATH/inc/app-start.sh"

@@ -1,8 +1,14 @@
-dist: trusty
+dist:
+    trusty
 
-language: generic
+language:
+    generic
 
-sudo: required
+sudo:
+    required
+
+group:
+    travis_latest
 
 before_install:
     - sudo pip install bashate
@@ -15,4 +21,5 @@ script:
     - sudo bash ./integration-tests/int-apps-install-uninstall.sh
 
 matrix:
-  fast_finish: true
+    fast_finish: true
+    

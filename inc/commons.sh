@@ -11,6 +11,7 @@ COLUMNS=78
 NETLINES=16
 
 source "$SCRIPTPATH/inc/app-version-check.sh"
+source "$SCRIPTPATH/inc/app-sed-helper.sh"
 
 pause(){
     read -r -p"$*"

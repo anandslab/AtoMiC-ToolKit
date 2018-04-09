@@ -13,7 +13,7 @@ ReplaceString()
 
     #Check Param3 (FILE) to change exists
     if [[ ! -f $3 ]]; then
-        echo -e "${RED}ReplaceString $3 not found$ENDCOLOR"; exit 1        
+        echo -e "${RED}ReplaceString $3 not found$ENDCOLOR"; exit 1
     fi
 
     #Check Param1 exists in the file.
@@ -23,7 +23,7 @@ ReplaceString()
 
     #Perform the Replace
     sed -i "s|$1|$2|" "$3" || { echo -e "${RED}ReplaceString Replacing Param1 with Param2 in Param3 failed.$ENDCOLOR" ; exit 1; }
-        
+
     #Check Param2 exists in the file after the change
     if grep -q "$2" "$3" || \
             { echo -e "${RED}ReplaceString Param2 not found in Param3$ENDCOLOR" ; exit 1; }; then

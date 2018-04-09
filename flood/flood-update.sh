@@ -10,12 +10,12 @@ if DoesAppFolderExist; then
     source "$SCRIPTPATH/rtorrent/rtorrent-update.sh"
     source "$SCRIPTPATH/utils/nodejs/nodejs-update.sh"
     source "$SCRIPTPATH/rutorrent/rutorrent-constants.sh"
-    
+
     if ! git diff-index --quiet HEAD --; then
         source "$SCRIPTPATH/inc/app-git-update.sh"
         source "$SCRIPTPATH/inc/app-install-build-npm.sh"
     fi
-    
+
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"
 fi

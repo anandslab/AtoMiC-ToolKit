@@ -11,3 +11,5 @@ if cp "$APPPATH/config.template.js" "$APPPATH/config.js" || \
 fi
 
 chown "$UNAME":"$UGROUP" "$APPSETTINGS"
+
+ReplaceString "floodServerHost: '127.0.0.1'," "floodServerHost: '0.0.0.0'," "$APPSETTINGS"

@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application Installer
 
+source "$SCRIPTPATH/setup.sh" -i aria2-webui
 source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -i emby-server

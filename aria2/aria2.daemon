@@ -1,0 +1,8 @@
+
+continue
+dir=/home/UNAME/Downloads/aria2
+file-allocation=trunc
+max-connection-per-server=4
+max-concurrent-downloads=2
+max-overall-download-limit=0
+min-split-size=25M

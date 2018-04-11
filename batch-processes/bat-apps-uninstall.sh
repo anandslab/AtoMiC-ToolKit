@@ -1,6 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application uninstaller
 
+source "$SCRIPTPATH/setup.sh" -u aria2-webui
+source "$SCRIPTPATH/setup.sh" -u aria2
 source "$SCRIPTPATH/setup.sh" -u couchpotato
 source "$SCRIPTPATH/setup.sh" -u deluged
 source "$SCRIPTPATH/setup.sh" -u emby-server
@@ -31,13 +33,12 @@ source "$SCRIPTPATH/setup.sh" -u rclone-browser
 source "$SCRIPTPATH/setup.sh" -u resilio-sync
 source "$SCRIPTPATH/setup.sh" -u rtorrent
 source "$SCRIPTPATH/setup.sh" -u rutorrent
-source "$SCRIPTPATH/setup.sh" -u sabnzbdplus
 source "$SCRIPTPATH/setup.sh" -u sickgear
 source "$SCRIPTPATH/setup.sh" -u sickrage
 source "$SCRIPTPATH/setup.sh" -u sonarr
 source "$SCRIPTPATH/setup.sh" -u subsonic
 source "$SCRIPTPATH/setup.sh" -u syncthing
-source "$SCRIPTPATH/setup.sh" -u tautulli
+source "$SCRIPTPATH/setup.sh" -i tautulli
 source "$SCRIPTPATH/setup.sh" -u transmission-daemon
 source "$SCRIPTPATH/setup.sh" -u ubooquity
 source "$SCRIPTPATH/setup.sh" -u watcher

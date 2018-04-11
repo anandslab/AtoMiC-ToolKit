@@ -1,6 +1,6 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides: Glances
+# Provides: Flood
 # Required-Start:    $local_fs $network $remote_fs $syslog
 # Required-Stop:     $local_fs $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
@@ -8,10 +8,11 @@
 # Short-Description: Start daemon at boot time
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
+cd /opt/flood
 
 user="ReplaceMe"
 group="ReplaceMe"
-cmd="/usr/local/bin/glances -w"
+cmd="/usr/bin/npm start /opt/flood"
 
 name=`basename $0`
 PIDDIR="/var/run/$name"

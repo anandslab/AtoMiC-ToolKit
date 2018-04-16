@@ -18,15 +18,17 @@ source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -u deluged
 source "$SCRIPTPATH/setup.sh" -i filebot
 source "$SCRIPTPATH/setup.sh" -u filebot
+source "$SCRIPTPATH/setup.sh" -i grafana
+# source "$SCRIPTPATH/setup.sh" -x grafana
+source "$SCRIPTPATH/setup.sh" -u grafana
+source "$SCRIPTPATH/setup.sh" -i flood # Installs Node which runs on port 3000
+source "$SCRIPTPATH/setup.sh" -u flood
 source "$SCRIPTPATH/setup.sh" -i emby-server
 # source "$SCRIPTPATH/setup.sh" -x emby-server
 source "$SCRIPTPATH/setup.sh" -u emby-server
 source "$SCRIPTPATH/setup.sh" -i glances
 # source "$SCRIPTPATH/setup.sh" -x glances
 source "$SCRIPTPATH/setup.sh" -u glances
-source "$SCRIPTPATH/setup.sh" -i grafana
-# source "$SCRIPTPATH/setup.sh" -x grafana
-source "$SCRIPTPATH/setup.sh" -u grafana
 source "$SCRIPTPATH/setup.sh" -i headphones
 # source "$SCRIPTPATH/setup.sh" -x headphones
 source "$SCRIPTPATH/setup.sh" -u headphones
@@ -81,7 +83,7 @@ source "$SCRIPTPATH/setup.sh" -u rclone-browser
 source "$SCRIPTPATH/setup.sh" -i resilio-sync
 # source "$SCRIPTPATH/setup.sh" -x resilio-sync
 source "$SCRIPTPATH/setup.sh" -u resilio-sync
-source "$SCRIPTPATH/setup.sh" -i rtorrent
+# source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -u rtorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 # source "$SCRIPTPATH/setup.sh" -x sabnzbdplus

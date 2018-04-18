@@ -34,7 +34,7 @@ echo "Set the correct folder permissions on /var/www for user www-data"
 
 ########## AtoMiC-ToolKit Snippets ##########
 # Copy any missing snippet files over but doesnt enable them.
-for f in $SCRIPTPATH/utils/nginx/snippets/*.conf; do
+for f in "$SCRIPTPATH"/utils/nginx/snippets/*.conf; do
     filename=$(basename $f)
     if [[ ! -f /etc/nginx/snippets/$filename ]]; then
         if cp $f "/etc/nginx/snippets/$filename" || \
@@ -103,7 +103,7 @@ fi
 
 ########## AtoMiC-ToolKit Locations Available ##########
 # Copy any missing location files over but doesnt enable them.
-for f in $SCRIPTPATH/utils/nginx/locations-available/*.conf; do
+for f in "$SCRIPTPATH"/utils/nginx/locations-available/*.conf; do
     filename=$(basename $f)
     if [[ ! -f /etc/nginx/locations-available/$filename ]]; then
         if cp $f "/etc/nginx/locations-available/$filename" || \

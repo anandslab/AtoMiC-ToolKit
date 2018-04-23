@@ -78,7 +78,7 @@ Features features of AtoMiC ToolKit include:
 <li>Webmin - Install, Uninstall, Update and Backup / Restore</li>
 </ul></li>
 <li>Reset forgotten WebUI passwords</li>
-<li>Makes moving apps between different computers easier</li>
+<li>Makes moving apps between different computers easier (see dedicated section below)</li>
 <li>Correctly sets required permissions for trouble free operation</li>
 <li>And best of all its FREE! Please consider donating if toolkit helps you.</li>
 </ul>
@@ -143,5 +143,8 @@ $ sudo bash --manualupdate sonarr
 
 <h2>Default Usernames and Passwords</h2>
 Access details have now been simplified and automated. Access details for each app can be obtained through the ToolKit Menus. It is recommended that you set / update usernames and password for all services. 
+
+<h2>Backup/restore process</h2>
+The default location for stored backups is /opt/AtoMiC-ToolKit/backups. If you are transferring to a new machine, you should keep this folder so all the zips are available to restore later. You just need to copy it back, install the application again and restore the backup.
 
 For more information on installation and usage, visit <a href="http://www.htpcbeginner.com/atomic-toolkit/">AtoMiC ToolKit</a> page on on htpcBeginner.com.

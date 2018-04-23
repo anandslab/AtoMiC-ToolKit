@@ -7,7 +7,7 @@ CODENAME=$(lsb_release -c -s)
         'squeeze'|'wheezy'|'jessie'|'stretch')
             DIST='debian'
             ;;
-        'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty')
+        'lucid' | 'oneiric' | 'precise' | 'quantal' | 'raring' | 'saucy' | 'trusty' | 'utopic' | 'vivid' | 'wily' | 'xenial' | 'yakkety' |'zesty' | 'bionic')
             DIST='ubuntu'
             ;;
         'sonya' | 'serena' | 'sarah'| 'sylvia')
@@ -26,7 +26,7 @@ CODENAME=$(lsb_release -c -s)
 
 ARCH=$(uname -m)
 ARCHSHORT=${ARCH:0:3}
-if [[ ! $ARCHSHORT = 'arm' ]]; then
+if [[ $ARCHSHORT != 'arm' && $CODENAME != 'bionic' ]]; then
     APPREPOSITORYNAME='nginx'
     APPREPOSITORYLINK="deb http://nginx.org/packages/mainline/$DIST/ $CODENAME nginx"
     APPREPOSITORYLINKBACKUP="deb-src http://nginx.org/packages/mainline/$DIST/ $CODENAME nginx"
@@ -34,7 +34,7 @@ if [[ ! $ARCHSHORT = 'arm' ]]; then
     REPRECVKEYSHORT='7BD9BF62'
     REPOKEYSREQ='YES'
 elif [[ $DIST = 'ubuntu' ]]; then
-    if [[ $CODENAME = 'trusty' || $CODENAME = 'xenial' || $CODENAME = 'yakkety' ]]; then
+    if [[ $CODENAME = 'zesty' || $CODENAME = 'artful' || $CODENAME = 'xenial' || $CODENAME = 'yakkety' || $CODENAME = 'bionic' ]]; then
         APPREPOSITORYNAME="nginx-development-$CODENAME"
         REPOPPA='YES'
         APPREPOSITORYLINK='ppa:nginx/development'

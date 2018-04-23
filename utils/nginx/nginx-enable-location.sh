@@ -48,6 +48,7 @@ if [[ -d /etc/nginx/ ]]; then
 
     source "$SCRIPTPATH/utils/nginx/nginx-reload.sh"
     if [[ $1 != 'SKIP' ]]; then
+        source "$SCRIPTPATH/inc/app-start.sh"
         source "$SCRIPTPATH/inc/app-http-responses.sh"
     fi
 else
@@ -55,7 +56,6 @@ else
 fi
 
 if [[ $1 != 'SKIP' ]]; then
-    source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"
     source "$SCRIPTPATH/inc/exit.sh"
 fi

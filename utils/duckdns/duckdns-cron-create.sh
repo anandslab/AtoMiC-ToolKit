@@ -20,7 +20,7 @@ else
 
         for Domain in ${DOMAINNAME//,/ }; do
             # Loop each of the duckdns domains and add it
-            source "$SCRIPTPATH/utils/nginx/nginx-domain-add.sh" "$Domain.conf"
+            source "$SCRIPTPATH/utils/nginx/nginx-domain-add.sh" "$Domain.duckdns.org"
         done
 
         echo

@@ -13,19 +13,6 @@ if [[ -L "/etc/nginx/sites-enabled/AtoMiC-ToolKit-configured-sites" ]]; then
     fi
 fi
 
-# Rename the Old Sites file if it exists to make it clear its not used anymore.
-if [[ -f "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites" ]]; then
-
-    # this will create any new required sites found in the server_name.
-    source "$SCRIPTPATH/utils/nginx/nginx-server_name-site-creator.sh"
-
-    if sudo mv "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites" "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites.old" || \
-            { echo -e "${RED}Could not rename AtoMiC-ToolKit-configured-sites. $ENDCOLOR"; exit 1; }; then
-            echo "Renamed AtoMiC-ToolKit-configured-sites to AtoMiC-ToolKit-configured-sites.old"
-        SITESCHANGEREQ=1
-    fi
-fi
-
 # Copy the server.atomic.conf file if needed.
 if [[ ! -f "/etc/nginx/sites-available/$APPSETTINGS" ]] || \
         ! grep -q "#\\ Version=2.1" "/etc/nginx/sites-available/$APPSETTINGS"; then
@@ -54,6 +41,27 @@ if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
         echo "Symlinked $APPSETTINGS virtual host"
         SITESCHANGEREQ=1
     fi
+fi
+
+# Rename the Old Sites file if it exists to make it clear its not used anymore.
+if [[ -f "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites" ]]; then
+
+    # this will create any new required sites found in the server_name.
+    source "$SCRIPTPATH/utils/nginx/nginx-server_name-site-creator.sh"
+
+    if sudo mv "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites" "/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites.old" || \
+            { echo -e "${RED}Could not rename AtoMiC-ToolKit-configured-sites. $ENDCOLOR"; exit 1; }; then
+            echo "Renamed AtoMiC-ToolKit-configured-sites to AtoMiC-ToolKit-configured-sites.old"
+        SITESCHANGEREQ=1
+    fi
+fi
+
+NginxVersion=$(nginx -V 2>&1 | grep -Po '(?<=nginx version: nginx/)(.+)')
+vercomp "$NginxVersion" "$NGINXSSLVERREQ"
+if [[ $? = 2 ]]; then
+    ReplaceString "listen 443 ssl http2;" "listen 443 ssl;" "/etc/nginx/sites-available/$APPSETTINGS" 'IgnoreError'
+    ReplaceString "listen \\[::\\]:443 ssl http2;" "listen \\[::\\]:443 ssl;" "/etc/nginx/sites-available/$APPSETTINGS" 'IgnoreError'
+    SITESCHANGEREQ=1
 fi
 
 if [[ -z $SITESCHANGEREQ ]]; then

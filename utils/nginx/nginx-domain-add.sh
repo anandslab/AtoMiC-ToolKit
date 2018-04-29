@@ -24,6 +24,6 @@ if [[ -f $ATKCONFFILE ]]; then
         fi
 else
     echo -e "${RED}$ATKCONFFILE not found.
-Please install NGINX or you will need to configure your webserer software manually.$ENDCOLOR"
+Please install NGINX or you will need to configure your webserver software manually.$ENDCOLOR"
 fi
 echo

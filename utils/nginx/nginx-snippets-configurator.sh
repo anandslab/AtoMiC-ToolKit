@@ -18,7 +18,6 @@ done
 
 # Set the correct FPMVERSION in php.atomic.conf.
 if [[ -f "/etc/nginx/snippets/php.atomic.conf" ]]; then
-    # TODO - Check if file exists and change to use ReplaceString
     if ! grep -q "fastcgi_pass unix:/var/run/php/$FPMVERSION.sock;" /etc/nginx/snippets/php.atomic.conf; then
         ReplaceString "fastcgi_pass [^;]*;" "fastcgi_pass unix:/var/run/php/$FPMVERSION.sock;" "/etc/nginx/snippets/php.atomic.conf"
         SNIPCHANGEREQ=1

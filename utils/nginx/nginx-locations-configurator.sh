@@ -17,7 +17,7 @@ for f in "$SCRIPTPATH"/utils/nginx/locations-available/*.conf; do
         # Does the file need updating with a new version
         NEWFILEVER=$(grep Version $f | cut -d= -f2)
         EXISTINGFILEVER=$(grep Version /etc/nginx/locations-available/$filename | cut -d= -f2)
-        vercomp "$NEWFILEVER" "$EXISTINGFILEVER"
+        vercomp "$EXISTINGFILEVER" "$NEWFILEVER"
         if [[ $? = 2 ]]; then
             if cp $f "/etc/nginx/locations-available/$filename" || \
                 { echo -e "${RED}Could not move location file $filename over.$ENDCOLOR"; exit 1; }; then

@@ -43,6 +43,9 @@ source "$SCRIPTPATH/setup.sh" -u headphones
 # source "$SCRIPTPATH/setup.sh" -i lazylibrarian # Init.d script broken
 # source "$SCRIPTPATH/setup.sh" -x lazylibrarian
 # source "$SCRIPTPATH/setup.sh" -u lazylibrarian
+source "$SCRIPTPATH/setup.sh" -i lidarr
+# source "$SCRIPTPATH/setup.sh" -x lidarr
+source "$SCRIPTPATH/setup.sh" -u lidarr
 source "$SCRIPTPATH/setup.sh" -i madsonic
 # source "$SCRIPTPATH/setup.sh" -x madsonic
 source "$SCRIPTPATH/setup.sh" -u madsonic

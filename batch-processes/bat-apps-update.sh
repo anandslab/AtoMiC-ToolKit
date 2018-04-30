@@ -13,6 +13,7 @@ source "$SCRIPTPATH/setup.sh" -m htpcmanager
 source "$SCRIPTPATH/setup.sh" -m jackett
 source "$SCRIPTPATH/setup.sh" -m kodi
 source "$SCRIPTPATH/setup.sh" -m lazylibrarian
+source "$SCRIPTPATH/setup.sh" -m lidarr
 source "$SCRIPTPATH/setup.sh" -m madsonic
 source "$SCRIPTPATH/setup.sh" -m medusa
 source "$SCRIPTPATH/setup.sh" -m muximux

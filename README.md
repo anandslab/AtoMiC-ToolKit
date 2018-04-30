@@ -45,6 +45,7 @@ Features features of AtoMiC ToolKit include:
 <li>Jackett - Install, Uninstall, Update and Backup / Restore</li>
 <li>Kodi - Install, Uninstall Autoboot enable and Update</li>
 <li>Lazy Librarian - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
+<li>Lidarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>Madsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Medusa - Install, Uninstall, Update and Backup / Restore</li>
 <li>Muximux - Install, Uninstall, Update</li>

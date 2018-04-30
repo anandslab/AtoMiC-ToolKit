@@ -3,7 +3,7 @@
 
 echo
 echo -e "${GREEN}AtoMiC Certbot Installer Script$ENDCOLOR"
-source "$SCRIPTPATH/utils/python/python-installer.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3'
 source "$SCRIPTPATH/utils/certbot/certbot-constants.sh"
 source "$SCRIPTPATH/utils/certbot/certbot-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-add.sh"

@@ -11,9 +11,9 @@ echo -e "${YELLOW}---> Remove Reverse Proxy file.$ENDCOLOR"
 
 if [[ -z $1 ]]; then
     source "$SCRIPTPATH/inc/pause.sh"
+    source "$SCRIPTPATH/inc/app-stop.sh"
+    echo
 fi
-
-source "$SCRIPTPATH/inc/app-stop.sh"
 
 if [[ -z $NGINXCONFNAME ]]; then
     NGINXCONFNAME="$APPNAME"
@@ -33,9 +33,8 @@ else
     echo "Nginx $NGINXCONFNAME.atomic.conf location file not found"
 fi
 
-source "$SCRIPTPATH/inc/app-start.sh"
-
 if [[ -z $1 ]]; then
+    source "$SCRIPTPATH/inc/app-start.sh"
     source "$SCRIPTPATH/inc/thankyou.sh"
     source "$SCRIPTPATH/inc/exit.sh"
 fi

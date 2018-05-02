@@ -18,15 +18,17 @@ ReplaceString()
 
     #Check Param1 exists in the file.
     if ! grep -q "$1" "$3"; then
-        echo -e "${RED}ReplaceString $1 not found in $3$ENDCOLOR"; exit 1
-    fi
+        if [[ $4 != 'IgnoreError' ]]; then
+            echo -e "${RED}ReplaceString $1 not found in $3$ENDCOLOR"; exit 1
+        fi
+    else
+        #Perform the Replace
+        sed -i "s|$1|$2|" "$3" || { echo -e "${RED}ReplaceString Replacing Param1 with Param2 in Param3 failed.$ENDCOLOR" ; exit 1; }
 
-    #Perform the Replace
-    sed -i "s|$1|$2|" "$3" || { echo -e "${RED}ReplaceString Replacing Param1 with Param2 in Param3 failed.$ENDCOLOR" ; exit 1; }
-
-    #Check Param2 exists in the file after the change
-    if grep -q "$2" "$3" || \
-            { echo -e "${RED}ReplaceString Param2 not found in Param3$ENDCOLOR" ; exit 1; }; then
-        echo -e "Replaced ${CYAN}$1$ENDCOLOR with ${CYAN}$2$ENDCOLOR in ${CYAN}$3$ENDCOLOR"
+        #Check Param2 exists in the file after the change
+        if grep -q "$2" "$3" || \
+                { echo -e "${RED}ReplaceString Param2 not found in Param3$ENDCOLOR" ; exit 1; }; then
+            echo -e "Replaced ${CYAN}$1$ENDCOLOR with ${CYAN}$2$ENDCOLOR in ${CYAN}$3$ENDCOLOR"
+        fi
     fi
 }

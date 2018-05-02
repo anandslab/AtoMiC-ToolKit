@@ -3,9 +3,9 @@
 
 echo
 echo -e "${GREEN}AtoMiC Nginx Installer Script$ENDCOLOR"
-source "$SCRIPTPATH/utils/nginx/nginx-disable-apache2.sh"
 source "$SCRIPTPATH/utils/php/php-installer.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-constants.sh"
+source "$SCRIPTPATH/utils/nginx/nginx-disable-apache2.sh"
 source "$SCRIPTPATH/inc/app-stop.sh"
 source "$SCRIPTPATH/utils/nginx/nginx-repository-configurator.sh"
 source "$SCRIPTPATH/inc/app-repository-remove.sh"

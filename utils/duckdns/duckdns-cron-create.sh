@@ -18,7 +18,11 @@ else
         source "$SCRIPTPATH/inc/crontab-handler.sh"
         AddCronTab
 
-        source "$SCRIPTPATH/utils/duckdns/duckdns-domain-add.sh"
+        for Domain in ${DOMAINNAME//,/ }; do
+            # Loop each of the duckdns domains and add it
+            source "$SCRIPTPATH/utils/nginx/nginx-domain-add.sh" "$Domain.duckdns.org"
+        done
+
         echo
         source "$APPPATH/duck.sh"
 

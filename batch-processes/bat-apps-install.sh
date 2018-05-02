@@ -5,6 +5,7 @@ source "$SCRIPTPATH/setup.sh" -i couchpotato
 # source "$SCRIPTPATH/setup.sh" -i deluged
 source "$SCRIPTPATH/setup.sh" -i emby-server
 source "$SCRIPTPATH/setup.sh" -i filebot
+source "$SCRIPTPATH/setup.sh" -i flood
 source "$SCRIPTPATH/setup.sh" -i glances
 source "$SCRIPTPATH/setup.sh" -i grafana
 source "$SCRIPTPATH/setup.sh" -i headphones
@@ -12,6 +13,7 @@ source "$SCRIPTPATH/setup.sh" -i htpcmanager
 source "$SCRIPTPATH/setup.sh" -i jackett
 source "$SCRIPTPATH/setup.sh" -i kodi
 source "$SCRIPTPATH/setup.sh" -i lazylibrarian
+source "$SCRIPTPATH/setup.sh" -i lidarr
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -i medusa
 source "$SCRIPTPATH/setup.sh" -i muximux
@@ -29,7 +31,6 @@ source "$SCRIPTPATH/setup.sh" -i radarr
 source "$SCRIPTPATH/setup.sh" -i rclone
 source "$SCRIPTPATH/setup.sh" -i rclone-browser
 source "$SCRIPTPATH/setup.sh" -i resilio-sync
-source "$SCRIPTPATH/setup.sh" -i rtorrent
 source "$SCRIPTPATH/setup.sh" -i rutorrent
 source "$SCRIPTPATH/setup.sh" -i sabnzbdplus
 # source "$SCRIPTPATH/setup.sh" -i sickgear

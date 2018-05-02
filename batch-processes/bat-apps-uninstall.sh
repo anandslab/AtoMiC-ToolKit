@@ -5,6 +5,7 @@ source "$SCRIPTPATH/setup.sh" -u couchpotato
 source "$SCRIPTPATH/setup.sh" -u deluged
 source "$SCRIPTPATH/setup.sh" -u emby-server
 source "$SCRIPTPATH/setup.sh" -u filebot
+source "$SCRIPTPATH/setup.sh" -u flood
 source "$SCRIPTPATH/setup.sh" -u glances
 source "$SCRIPTPATH/setup.sh" -u grafana
 source "$SCRIPTPATH/setup.sh" -u headphones
@@ -12,6 +13,7 @@ source "$SCRIPTPATH/setup.sh" -u htpcmanager
 source "$SCRIPTPATH/setup.sh" -u jackett
 source "$SCRIPTPATH/setup.sh" -u kodi
 source "$SCRIPTPATH/setup.sh" -u lazylibrarian
+source "$SCRIPTPATH/setup.sh" -u lidarr
 source "$SCRIPTPATH/setup.sh" -u madsonic
 source "$SCRIPTPATH/setup.sh" -u medusa
 source "$SCRIPTPATH/setup.sh" -u muximux

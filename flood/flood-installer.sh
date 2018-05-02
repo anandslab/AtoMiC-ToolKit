@@ -1,0 +1,22 @@
+#!/bin/bash
+# Script Name: AtoMiC Flood Installer
+
+source "$SCRIPTPATH/inc/commons.sh"
+source "$SCRIPTPATH/inc/header.sh"
+echo -e "${GREEN}AtoMiC $APPTITLE Installer Script$ENDCOLOR"
+source "$SCRIPTPATH/inc/pause.sh"
+source "$SCRIPTPATH/rtorrent/rtorrent-installer.sh"
+source "$SCRIPTPATH/utils/nodejs/nodejs-installer.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh"
+source "$SCRIPTPATH/flood/flood-constants.sh"
+source "$SCRIPTPATH/inc/app-autostart-remove.sh"
+source "$SCRIPTPATH/inc/app-move-previous.sh"
+source "$SCRIPTPATH/inc/app-git-download.sh"
+source "$SCRIPTPATH/inc/app-install-npm-deps.sh"
+source "$SCRIPTPATH/flood/flood-settings-configurator.sh"
+source "$SCRIPTPATH/inc/app-install-build-npm.sh"
+source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+source "$SCRIPTPATH/inc/app-start.sh"
+source "$SCRIPTPATH/inc/app-install-confirmation.sh"
+source "$SCRIPTPATH/inc/thankyou.sh"
+source "$SCRIPTPATH/inc/exit.sh"

@@ -38,6 +38,7 @@ Features features of AtoMiC ToolKit include:
 <li>Deluge - Install, Uninstall, Update and Backup / Restore</li>
 <li>Emby - Install, Uninstall, Update and Backup / Restore</li>
 <li>FileBot - Install, Uninstall, Update</li>
+<li>Flood - Install, Uninstall, Update</li>
 <li>Glances - Install, Uninstall, Update</li>
 <li>Grafana - Install, Uninstall, Update and Backup / Restore</li>
 <li>Headphones - Install, Uninstall, Reset Password, Update and Backup / Restore</li>

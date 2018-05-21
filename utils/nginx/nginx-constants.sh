@@ -3,6 +3,7 @@
 APPTITLE='Nginx'
 APPNAME='nginx'
 APPDEPS='nginx-common nginx-core'
-APPSETTINGS="AtoMiC-ToolKit-configured-sites"
+APPSETTINGS="server.atomic.conf"
+NGINXSSLVERREQ='1.9.5'
 APPSYSTEMD='nginx.service'
 APPINITD='nginx'

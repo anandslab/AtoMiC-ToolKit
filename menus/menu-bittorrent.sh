@@ -5,6 +5,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 --menu "Which app would you like to manage?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Deluge" "Lightweight, Full-featured BitTorrent client" \
+"Flood" "A modern web UI for rTorrent" \
 "Jackett" "API Support for your favorite private trackers" \
 "qBittorrent" "An open-source software alternative to µTorrent" \
 "rTorrent" "Command line bittorrent client" \
@@ -18,6 +19,8 @@ if [[ $exitstatus = 0 ]]; then
     case "$SUBCHOICE" in
         "Deluge" )
             source "$SCRIPTPATH/deluged/deluged-menu.sh" ;;
+        "Flood" )
+            source "$SCRIPTPATH/flood/flood-menu.sh" ;;
         "Jackett" )
             source "$SCRIPTPATH/jackett/jackett-menu.sh" ;;
         "qBittorrent" )

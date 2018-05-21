@@ -21,5 +21,7 @@ script:
     - sudo bash ./integration-tests/int-apps-install-uninstall.sh
 
 matrix:
-    fast_finish: true
-    
+  fast_finish: true
+
+notifications:
+    webhooks: https://www.travisbuddy.com/

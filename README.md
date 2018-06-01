@@ -7,6 +7,7 @@
 <h2>Important Update (June 1, 2018)</h2>
 It takes significant amount of time and effort to develop AtoMiC ToolKit. With the emergence of Docker and Docker compose, setting up a <a href="https://www.smarthomebeginner.com/traefik-reverse-proxy-tutorial-for-docker/">Docker-based media server</a> is now significantly easier. Therefore, over time, our plan is to slowly transition over to <a href-"https://github.com/GhostWriters/DockSTARTer">DockSTARTer</a>, which is an attempt to do what AtoMiC ToolKit does and more using Docker. Development activities on AtoMiC ToolKit may stop eventually. Therefore, we recommend you to start / transition over to DockSTARTer. 
 
+<h2>Introduction</h2>
 <img src="http://www.htpcbeginner.com/images/2015/04/atomic-toolkit-300x162.jpg" alt="AtoMiC ToolKit form htpcBeginner.com" width="300" height="162" align="right"/>AtoMiC ToolKit (<b><i>A</i></b>u<b><i>to</i></b>mate your <b><i>M</i></b>ed<b><i>i</i></b>a <b><i>C</i></b>enter) is a tool that is developed by htpcBeginner.com and its community to simplify installing and managing apps / software on Ubuntu based HTPC, NAS, or Home Server setup. Essentially the AtoMiC ToolKit automates several processes and makes installing, uninstalling, backing up, restoring, resetting, and maintaining download server apps. It is written in bash.
 
 <h2>Support AtoMiC ToolKit Development</h2>

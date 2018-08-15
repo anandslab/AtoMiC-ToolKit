@@ -1,3 +1,13 @@
+<!--
+Important Update (August 15, 2018)
+
+AtoMiC-ToolKit is not currently being maintained. The developers have moved on to using Docker.
+https://github.com/GhostWriters/DockSTARTer
+DockSTARTer is a project that does most everything AtoMiC-ToolKit did but with Docker.
+
+You may still open an issue here, but there is no guarantee that your issue will be addressed.
+-->
+
 <!--- PLEASE CHECK THIS PREVIEWS CORRECTLY BEFORE SUBMITTING! -->
 
 ## New features
